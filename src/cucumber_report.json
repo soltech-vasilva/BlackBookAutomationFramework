@@ -1,0 +1,1726 @@
+[
+  {
+    "id": "Enter-data-on-\"User-Profile\"",
+    "name": "Enter data on \"User Profile\"",
+    "description": "\nRules:\n-Verify that All inputs boxes are working. (Test case A)\n\nQuestion:\n-What happens if email entered is bad (display ERROR)? Yes (Test case B-1)\n-What happens if phone number entered is bad (display ERROR)? Yes (Test case B-2)\n-What happens if fields are empty on require fields (display ERROR)? Yes (Test case C)\n-BUGS WHITE SPACES for first name ,last name , email, and password?",
+    "line": 5,
+    "keyword": "Feature",
+    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_Automation_real/TestAutomation/e2e/features/TestCases/OpenWebsite.feature",
+    "elements": [
+      {
+        "name": "Enter good User Profile data no error display",
+        "id": "Enter-data-on-\"User-Profile\";enter-good-user-profile-data-no-error-display",
+        "line": 43,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A",
+            "line": 22
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1989760
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 24,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 3186796824
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 25,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 382655951
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 26,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 15441943
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 27,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 256256816
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 28,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 16230192
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 29,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 351166840
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 30,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 25526918
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)456-7890",
+            "line": 31,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 209532151
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 32,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 16302686
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 33,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 228734737
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 34,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 17398180
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 215344933
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 17740095
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 37,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 429185
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 151545
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter good User Profile data no error display",
+        "id": "Enter-data-on-\"User-Profile\";enter-good-user-profile-data-no-error-display",
+        "line": 45,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A",
+            "line": 22
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 98505
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 24,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 4071650358
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 25,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 333857493
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 26,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 20131476
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 27,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 332905838
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 28,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 28149576
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 29,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 331620490
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 30,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 15179497
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 31,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 218014034
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 32,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 15769233
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 33,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 245407744
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 34,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 14647784
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 198562567
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 21494487
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 37,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 1204314
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 86315
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter good User Profile data no error display",
+        "id": "Enter-data-on-\"User-Profile\";enter-good-user-profile-data-no-error-display",
+        "line": 47,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A",
+            "line": 22
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 82817
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 24,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 2889949976
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 25,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 234267810
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 26,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 16662958
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 27,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 192005127
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 28,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 27721674
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 29,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 262688560
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 30,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 13889551
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 1234567890",
+            "line": 31,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 220829901
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 32,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 17181310
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 33,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 210425362
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 34,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 15224445
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 228119917
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 19451204
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 37,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 320293
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 152910
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter good User Profile data no error display",
+        "id": "Enter-data-on-\"User-Profile\";enter-good-user-profile-data-no-error-display",
+        "line": 49,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A",
+            "line": 22
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 100356
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 24,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 3397622550
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 25,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 340646874
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 26,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 23242246
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 27,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 286593158
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 28,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 33953843
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 29,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 426015084
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 30,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 16437493
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)4567890",
+            "line": 31,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 217341040
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 32,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 38139839
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 33,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 196349999
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 34,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 11351159
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 211904682
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 16688016
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 37,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 230744
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 121217
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Test Reports",
+        "id": "Enter-data-on-\"User-Profile\";test-reports",
+        "line": 245,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_Reports",
+            "line": 224
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 105835
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 226,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 3203491064
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 227,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 233222258
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 228,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 29645008
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 229,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 200816454
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 230,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 13451335
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 231,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 238786489
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 232,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 12504777
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)456-7890",
+            "line": 233,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 209477058
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 234,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 23100278
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 235,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 228803738
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 236,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 13711570
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 237,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 227455813
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 238,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 22279441
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 239,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 383365
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 432494
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Test Reports",
+        "id": "Enter-data-on-\"User-Profile\";test-reports",
+        "line": 246,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_Reports",
+            "line": 224
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 96774
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 226,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 3711997252
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 227,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 409866016
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 228,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 20685524
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 229,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 271797207
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 230,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 21407248
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 231,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 400455340
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 232,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 19004772
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 233,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 359615806
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 234,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 20575548
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password ",
+            "line": 235,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 161566320
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 236,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 114822489,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 237,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 238,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 239,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 86798
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Test Reports",
+        "id": "Enter-data-on-\"User-Profile\";test-reports",
+        "line": 247,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_Reports",
+            "line": 224
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2532002
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 226,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 3129857282
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 227,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 269838659
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 228,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 13920183
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 229,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 180527650
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 230,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 17466984
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 231,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 238612922
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 232,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 18530298
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 1234567890",
+            "line": 233,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 171709942
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 234,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 22043891
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 235,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 216805721
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 236,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 16251416
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password ",
+            "line": 237,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 135158814
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 238,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 65371852,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 239,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 88798
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Test Reports",
+        "id": "Enter-data-on-\"User-Profile\";test-reports",
+        "line": 248,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_Reports",
+            "line": 224
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 188192
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 226,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 3134555443
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 227,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 310537469
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 228,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 37020038
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 229,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 283200100
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 230,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 30231881
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address ",
+            "line": 231,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 256588470
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 232,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 68488062,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)4567890",
+            "line": 233,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 234,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 235,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 236,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 237,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 238,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 239,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 52315
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Test Reports",
+        "id": "Enter-data-on-\"User-Profile\";test-reports",
+        "line": 249,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_Reports",
+            "line": 224
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 146553
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 226,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 2642472975
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 227,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 236315710
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 228,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 20523929
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name ",
+            "line": 229,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 133166389
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 230,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 67771800,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 231,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 232,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)4567890",
+            "line": 233,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 234,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 235,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 236,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 237,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 238,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 239,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 44311
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Test Reports",
+        "id": "Enter-data-on-\"User-Profile\";test-reports",
+        "line": 250,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_Reports",
+            "line": 224
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 154987
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Website",
+            "line": 226,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 3162794432
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name ",
+            "line": 227,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 150296485
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 228,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 125301384,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name ",
+            "line": 229,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 230,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 231,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 232,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)4567890",
+            "line": 233,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 234,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 235,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 236,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 237,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 238,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 239,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 53337
+            },
+            "match": {}
+          }
+        ]
+      }
+    ]
+  }
+]

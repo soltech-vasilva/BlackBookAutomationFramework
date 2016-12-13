@@ -1,0 +1,20 @@
+<h6>Features</h6>
+
+<table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp" style="width: 100%;">
+  <thead>
+    <tr>
+      <th class="mdl-data-table__cell--non-numeric">User Story</th>
+      <th>% of Scenarios Passing</th>
+      <th>    # of Scenarios</th>
+      <th># of Steps</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="feature in vm.features">
+      <td class="mdl-data-table__cell--non-numeric" alt="{{feature.name}}"><a ng-click="    vm.showFeature(feature);">{{feature.shortName}}</a></td>
+      <td><span>{{feature.passedPercentage}}</span>%</td>
+      <td><span>{{feature.passableScenarios}}</span></td>
+      <td></span>{{feature.totalTests}}</span></td>
+    </tr>
+  </tbody>
+</table>
