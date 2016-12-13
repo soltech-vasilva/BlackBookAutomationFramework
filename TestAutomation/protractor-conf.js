@@ -221,7 +221,7 @@ exports.config = {
         //require: [paths.distFiles, paths.support],
         // require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/support/JsonOutputHook.js'],
 
-        require: ['/Users/Vsilva/WebstormProjects/BlackBook_Automation_real/TestAutomation/e2e/features/step_definitions/my_steps.js' ],
+        require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/step_definitions/my_steps.js' ],
         //tags: '@TestCases_A',
         // tags: '@TestCases_B',
         // tags: '@TestCases_C',

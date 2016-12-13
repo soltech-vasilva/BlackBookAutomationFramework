@@ -8,7 +8,7 @@ chai.use(chaiAsPromised);
 
 var Eyes = require('eyes.protractor').Eyes;
 var request = require("request");
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_Automation_real/TestAutomation/protractor-conf.js');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 var EyesSetUp = function EyesSetUp(){
 

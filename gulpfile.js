@@ -13,7 +13,7 @@ gulp.task('endtoend', ()=>
 
     ])
         .pipe(protractor({
-            configFile: '/Users/Vsilva/WebstormProjects/BlackBook_Automation_real/TestAutomation/protractor-conf.js'
+            configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js'
 
         }))
         .on('end', function(e)

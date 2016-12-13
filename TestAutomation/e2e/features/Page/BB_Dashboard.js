@@ -8,7 +8,7 @@ chai.use(chaiAsPromised);
 
 
 var BB_dashboardRepo =  require('../Repository/BB_DashboardRepo.js');
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_Automation_real/TestAutomation/protractor-conf.js');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var eyesSetUp = require ('../Page/EyesSetUp.js');
 
 var OpenBlackBookDashboard = function OpenBlackBookDashboard(){

@@ -6,7 +6,7 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_Automation_real/TestAutomation/protractor-conf.js');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var eyesSetUp = require ('../Page/EyesSetUp.js');
 
 var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
