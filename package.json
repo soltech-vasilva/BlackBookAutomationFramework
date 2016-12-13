@@ -14,15 +14,6 @@
     "url": "git+https://github.com/JesterXL/cucumber-protractor-report.git"
   },
   "keywords": [
-    "cucumber",
-    "gherkin",
-    "cuke",
-    "protractor",
-    "angular",
-    "selenium",
-    "endtoend",
-    "report",
-    "e2e",
     "javascript"
   ],
   "author": "Jesse Warden",
