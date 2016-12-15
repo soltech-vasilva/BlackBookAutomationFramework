@@ -27,7 +27,7 @@ var OpenBlackBookWebsiteRepo = function OpenBlackBookWebsiteRepo () {
     OpenBlackBookWebsiteRepo.prototype.Select_Xpath_ERRORMESSAGE_LastName = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/form/div[1]/div[3]/div/error-msg/span');
     OpenBlackBookWebsiteRepo.prototype.Select_xpath_ERRORMESSAGE_Email = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/form/div[1]/div[4]/div/error-msg/span');
     OpenBlackBookWebsiteRepo.prototype.Select_xpath_ERRORMESSAGE_PhoneNumber = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/form/div[1]/div[5]/div/error-msg/span');
-    OpenBlackBookWebsiteRepo.prototype.Select_xpath_ERRORMESSAGE_NewPassword = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/form/div[1]/div[7]/div[1]/div/error-msg/span');
+    OpenBlackBookWebsiteRepo.prototype.Select_xpath_ERRORMESSAGE_NewPassword =  by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/form/div[1]/div[7]/div[1]/div/error-msg/span');
     OpenBlackBookWebsiteRepo.prototype.Select_xpath_ERRORMESSAGE_ConfirmNewPassword = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/form/div[1]/div[7]/div[2]/div/error-msg/span');
 
     OpenBlackBookWebsiteRepo.prototype.Select_Element_ERRORMESSAGE_FirstName = element(this.Select_Xpath_ERRORMESSAGE_FirstName);

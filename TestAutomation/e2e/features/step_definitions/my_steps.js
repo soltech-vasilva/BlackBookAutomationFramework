@@ -51,11 +51,11 @@ var myBlackBookSteps = function myBlackBookSteps() {
     // });
 
     this.Before(function () {
-        captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
+        return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
     });
 
     this.After(function() {
-        eyesSetUp.EyesClose_EndTestcase(eyes);
+        return eyesSetUp.EyesClose_EndTestcase(eyes);
     });
 
     this.Given(/^I enter BlackBook Website$/, function () {
@@ -91,7 +91,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see "([^"]*)" errors "([^"]*)" displayed$/, function (str_TextboxName, str_VerifyErrorName) {
-        BB_dashboard.Verify_ErrorMessageToDisplayEmptyFields(str_TextboxName, str_VerifyErrorName);
+        return BB_dashboard.Verify_ErrorMessageToDisplayEmptyFields(str_TextboxName, str_VerifyErrorName);
         // callback();
     });
 
@@ -101,13 +101,41 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see "([^"]*)" errors "([^"]*)" displayed for this "([^"]*)" field$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
-        BB_dashboard.Verify_ErrorMessageToDisplay(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
+        return BB_dashboard.Verify_ErrorMessageToDisplay(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
         // callback();
     });
 
     //EMPTY FUNCTION FOR READABILITY ONLY ON CUCUMBER
     this.When(/^I enter "([^"]*)"$/, function (arg1) {
         // callback();
+    });
+
+    this.Given(/^I enter BlackBook Login Website$/, function () {
+        browser.ignoreSynchronization = true;
+        return browser.driver.get('http://dev-autobahn.blackbookcloud.com');
+
+    });
+
+    this.Given(/^I enter my user email address (.*)$/, function (userEmailAddress) {
+        browser.sleep(1000);
+        var userEmail = element(by.css('input[placeholder="Your Email"]'));
+        userEmail.click();
+        return userEmail.sendKeys(userEmailAddress);
+    });
+
+    this.Given(/^I enter my Password (.*)$/, function (userPassWord) {
+        browser.sleep(1000);
+        var userPass = element(by.css('input[placeholder="Password"]'));
+        userPass.click();
+        return userPass.sendKeys(userPassWord);
+    });
+
+    this.Given(/^I click Login Button$/, function () {
+        return element(by.buttonText('LOGIN')).click();
+    });
+
+    this.Given(/^I wait$/, function () {
+        return browser.sleep(3000);
     });
 };
 

@@ -14,7 +14,8 @@ exports.config = {
     //Running Test Cases in specific order.
     specs: [
         //add test cases here below:
-        'e2e/features/TestCases/OpenWebsite.feature'//,
+        'e2e/features/TestCases/Login.feature'//,
+       // 'e2e/features/TestCases/OpenWebsite.feature'//,
     ],
 
 
@@ -214,7 +215,7 @@ exports.config = {
 
 //relevant cucumber command line options
     cucumberOpts: {
-
+        //keepAlive: true,
         //format: "summary", //simple format
 
 
@@ -223,10 +224,11 @@ exports.config = {
 
         require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/step_definitions/my_steps.js' ],
         //tags: '@TestCases_A',
-        // tags: '@TestCases_B',
-        // tags: '@TestCases_C',
+        // tags: '@TestCases_B-3',
+        // tags: ' @TestCases_C-',
+        //tags: ' @TestCases_C-6',
        // tags: '@TestCases_Reports',
-
+        //tags: '@TestCases_1',
          //format: 'pretty',
         //format: 'json' ,
          format: 'json:./src/cucumber_report.json',
@@ -235,9 +237,7 @@ exports.config = {
         //format: 'json',
         //format: 'summary',
 
-       // tags: false, //leave it false works.
-
-      //  profile: false, //false  it still works on true
+        //  profile: false, //false  it still works on true
      //   'no-source': true,
         //require: ['TestAutomation/e2e/features/step_definitions/my_steps.js', paths.support],
 
@@ -274,8 +274,8 @@ exports.config = {
     //     browser.ignoreSynchronization = false;
     // },
 
-   allScriptsTimeout: 10000 // ,
-  // getPageTimeout: 10000,
+   // allScriptsTimeout: 10000,
+   //getPageTimeout: 10000,
 
     // rootElement: '.my-app'
 };

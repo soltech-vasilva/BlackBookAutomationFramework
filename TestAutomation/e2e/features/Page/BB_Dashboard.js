@@ -27,14 +27,12 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
             //page is non-angular
             browser.ignoreSynchronization = true;
             //Open BlackBook website
-            return browser.driver.get(BB_dashboardRepo.BlackBookUrl)
+             return browser.driver.get(BB_dashboardRepo.BlackBookUrl)
                 .then(()=>
                 {
                     if (protractorConfig.config.ApplitoolsOn == false) {
                         browser.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
                     }
-
-                    browser.sleep(2000);
                     eyesSetUp.EyesCheckWindow(eyes, BB_dashboardRepo.EyesVerify_BB_Dashboard, protractorConfig.config.ApplitoolsOn);
                     success();
             });
@@ -55,8 +53,10 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
    };
 
    OpenBlackBookDashboard.prototype.Enter_FirstName = function (firstName) {
-
+       //timeout issues on loading page so I added 2sec before it starts typing.
+       browser.sleep(2000);
        this.firstName =  OpenBlackBookDashboard.prototype.ReplaceDoubleQuotesWithWhiteSpace(firstName.toString());
+       BB_dashboardRepo.Select_Element_FirstNameTextbox.click();
 
        return new Promise((success, failure)=>
        {
@@ -69,6 +69,7 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
 
     OpenBlackBookDashboard.prototype.Enter_LastName = function (lastName) {
         this.lastName = OpenBlackBookDashboard.prototype.ReplaceDoubleQuotesWithWhiteSpace(lastName.toString());
+        BB_dashboardRepo.Select_Element_LastNameTextbox.click();
 
         return new Promise((success, failure)=> {
             BB_dashboardRepo.Select_Element_LastNameTextbox
@@ -81,6 +82,7 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
 
     OpenBlackBookDashboard.prototype.Enter_EmailAddress = function (emailAddress) {
         this.emailAddress = OpenBlackBookDashboard.prototype.ReplaceDoubleQuotesWithWhiteSpace(emailAddress.toString());
+        BB_dashboardRepo.Select_Element_EmailAddressTextbox.click();
 
         return new Promise((success, failure)=> {
             BB_dashboardRepo.Select_Element_EmailAddressTextbox
@@ -93,6 +95,7 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
 
     OpenBlackBookDashboard.prototype.Enter_PhoneNumber = function (phoneNumber) {
         this.phoneNumber = OpenBlackBookDashboard.prototype.ReplaceDoubleQuotesWithWhiteSpace(phoneNumber.toString());
+        BB_dashboardRepo.Select_Element_PhoneNumberTextbox.click();
 
         return new Promise((success, failure)=> {
             BB_dashboardRepo.Select_Element_PhoneNumberTextbox
@@ -105,6 +108,7 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
 
     OpenBlackBookDashboard.prototype.Enter_NewPassword = function (newPassword) {
         this.newPassword = OpenBlackBookDashboard.prototype.ReplaceDoubleQuotesWithWhiteSpace(newPassword.toString());
+        BB_dashboardRepo.Select_Element_NewPassword.click();
 
         return new Promise((success, failure)=> {
             BB_dashboardRepo.Select_Element_NewPassword
@@ -117,6 +121,7 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
 
     OpenBlackBookDashboard.prototype.Enter_ConfirmNewPassword = function (confirmNewPassword) {
         this.confirmNewPassword = OpenBlackBookDashboard.prototype.ReplaceDoubleQuotesWithWhiteSpace(confirmNewPassword.toString());
+        BB_dashboardRepo.Select_Element_ConfirmNewPassword.click();
 
         return new Promise((success, failure)=> {
             BB_dashboardRepo.Select_Element_ConfirmNewPassword
@@ -127,16 +132,32 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
         });
     };
 
-    OpenBlackBookDashboard.prototype.AssertElementsToDisplay = function ( isElementPresent, elementToCheck, compareValuesString, consoleErrorMessageDisplay  ) {
+    OpenBlackBookDashboard.prototype.AssertElementsToDisplay = function ( isElementPresent, elementToCheck, compareValuesString, consoleErrorMessageDisplay , success, failure ) {
         //browser.sleep(2000);
 
         if (isElementPresent == true) {
-            expect(elementToCheck.getText()).to.eventually.equal(compareValuesString);
+            OpenBlackBookDashboard.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure);
         }
         else {
             console.log(consoleErrorMessageDisplay);
             // process.exit(1);
+            failure();
         }
+    };
+
+    OpenBlackBookDashboard.prototype.ExpectTextEqualsTo = function(elementToCheck,compareValuesString, success, failure){
+
+        return elementToCheck.getText().then((Text)=>{
+            if (Text == compareValuesString) {
+                success();
+            }
+            else {
+                failure();
+            }
+        });
+
+        //this kill script and dont fail gracely and report are blank
+        // expect(elementToCheck.getText()).to.eventually.equal(compareValuesString);
     };
 
     OpenBlackBookDashboard.prototype.AssertElementsNotToDisplay = function ( isElementPresent, elementToCheck, consoleErrorMessageDisplay, success, failure )
@@ -144,8 +165,8 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
        if (isElementPresent == true) {
            return elementToCheck.getText().then((Text)=> {
                console.log('ERROR: ' + Text + '. ' + consoleErrorMessageDisplay);
-               failure();
                //process.exit(1);
+               failure();
            });
        }
         else {
@@ -188,65 +209,74 @@ var OpenBlackBookDashboard = function OpenBlackBookDashboard(){
                     break;
 
                 case 'confirmnewpassword':
-                    browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then((isPresente)=> {
-                        OpenBlackBookDashboard.prototype.AssertElementsNotToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, 'It should not show any errors in Confirm New Password', success, failure);
+                     browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then((isPresente)=> {
+                         OpenBlackBookDashboard.prototype.AssertElementsNotToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, 'It should not show any errors in Confirm New Password', success, failure);
                     });
                     break;
+
+                default:
+                    console.log(TextboxName+' : is not part of switch statement in Verify_ErrorMessagesNotToDisplay function.');
+                    failure();
             }
         });
     };
 
     OpenBlackBookDashboard.prototype.Verify_ErrorMessageToDisplay = function (str_TextboxName , str_VerifyErrorName, FilledOrEmptyField) {
+        return new Promise ((success, failure)=> {
+            switch (str_TextboxName.toLowerCase()) {
+                case 'firstname':
+                    if ((!this.firstName.empty && FilledOrEmptyField == 'filled') || (this.firstName == '' && FilledOrEmptyField == 'empty')) {
+                        browser.isElementPresent(BB_dashboardRepo.Select_Xpath_ERRORMESSAGE_FirstName).then(function (isPresente) {
+                            OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_FirstName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in First Name', success, failure);
+                        });
+                    }
+                    break;
 
-        switch (str_TextboxName.toLowerCase()) {
-            case 'firstname':
-                if ((!this.firstName.empty && FilledOrEmptyField == 'filled') || (this.firstName =='' && FilledOrEmptyField == 'empty')){
-                    browser.isElementPresent(BB_dashboardRepo.Select_Xpath_ERRORMESSAGE_FirstName).then(function (isPresente) {
-                        OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_FirstName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in First Name');
-                    });
-                }
-                break;
+                case 'lastname':
+                    if ((!this.lastName.empty && FilledOrEmptyField == 'filled') || (this.lastName == '' && FilledOrEmptyField == 'empty')) {
+                        browser.isElementPresent(BB_dashboardRepo.Select_Xpath_ERRORMESSAGE_LastName).then(function (isPresente) {
+                            OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_LastName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Last Name', success, failure);
+                        });
+                    }
+                    break;
 
-            case 'lastname':
-                if ((!this.lastName.empty && FilledOrEmptyField == 'filled')|| (this.lastName =='' && FilledOrEmptyField == 'empty')) {
-                    browser.isElementPresent(BB_dashboardRepo.Select_Xpath_ERRORMESSAGE_LastName).then(function (isPresente) {
-                        OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_LastName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Last Name');
-                    });
-                }
-                break;
+                case 'emailaddress':
+                    if ((!this.emailAddress.empty && FilledOrEmptyField == 'filled') || (this.emailAddress == '' && FilledOrEmptyField == 'empty')) {
+                        browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_Email).then(function (isPresente) {
+                            OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_Email, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Email Address', success, failure);
+                        });
+                    }
+                    break;
 
-            case 'emailaddress':
-                if ((!this.emailAddress.empty && FilledOrEmptyField == 'filled')|| (this.emailAddress =='' && FilledOrEmptyField == 'empty')) {
-                    browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_Email).then(function (isPresente) {
-                        OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_Email, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Email Address');
-                    });
-                }
-                break;
+                case 'phonenumber':
+                    if ((!this.phoneNumber.empty && FilledOrEmptyField == 'filled') || (this.phoneNumber == '' && FilledOrEmptyField == 'empty')) {
+                        browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_PhoneNumber).then(function (isPresente) {
+                            OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_PhoneNumber, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Phone Number', success, failure);
+                        });
+                    }
+                    break;
 
-            case 'phonenumber':
-                if ((!this.phoneNumber.empty && FilledOrEmptyField == 'filled')|| (this.phoneNumber == '' && FilledOrEmptyField == 'empty')) {
-                    browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_PhoneNumber).then(function (isPresente) {
-                        OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_PhoneNumber, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Phone Number');
-                    });
-                }
-                break;
+                case 'newpassword':
+                    if ((!this.newPassword.empty && FilledOrEmptyField == 'filled') || (this.newPassword == '' && FilledOrEmptyField == 'empty')) {
+                        browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_NewPassword).then(function (isPresente) {
+                            OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_NewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password', success, failure);
+                        });
+                    }
+                    break;
 
-            case 'newpassword':
-                if ((!this.newPassword.empty && FilledOrEmptyField == 'filled')|| (this.newPassword == '' && FilledOrEmptyField == 'empty')) {
-                    browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_NewPassword).then(function (isPresente) {
-                        OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_NewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password');
-                    });
-                }
-                break;
+                case 'confirmnewpassword':
+                    if ((!this.confirmNewPassword.empty && FilledOrEmptyField == 'filled') || (this.confirmNewPassword == '' && FilledOrEmptyField == 'empty')) {
+                        browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then(function (isPresente) {
+                            OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Confirm New Password', success, failure);
+                        });
+                    }
+                    break;
 
-            case 'confirmnewpassword':
-                if ((!this.confirmNewPassword.empty && FilledOrEmptyField == 'filled')|| (this.confirmNewPassword == '' && FilledOrEmptyField == 'empty')) {
-                    browser.isElementPresent(BB_dashboardRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then(function (isPresente) {
-                        OpenBlackBookDashboard.prototype.AssertElementsToDisplay(isPresente, BB_dashboardRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Confirm New Password');
-                    });
-                }
-                break;
-        }
+                default:
+                    console.log(str_TextboxName+' : is not part of switch statement in Verify_ErrorMessageToDisplay function.');
+                    failure();
+            }
+        });
     };
 
     // if (typeof console == "undefined") {
