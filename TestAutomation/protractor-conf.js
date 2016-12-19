@@ -14,8 +14,8 @@ exports.config = {
     //Running Test Cases in specific order.
     specs: [
         //add test cases here below:
-        'e2e/features/TestCases/Login.feature'//,
-       // 'e2e/features/TestCases/OpenWebsite.feature'//,
+      //  'e2e/features/TestCases/Login.feature'//,
+        'e2e/features/TestCases/OpenWebsite.feature'//,
     ],
 
 
@@ -224,9 +224,17 @@ exports.config = {
 
         require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/step_definitions/my_steps.js' ],
         //tags: '@TestCases_A',
+        // tags: '@TestCases_B-1',
+        // tags: '@TestCases_B-2',
         // tags: '@TestCases_B-3',
-        // tags: ' @TestCases_C-',
-        //tags: ' @TestCases_C-6',
+        // tags: '@TestCases_B-4',
+        // tags: ' @TestCases_C-1',
+        // tags: ' @TestCases_C-2',
+        // tags: ' @TestCases_C-3',
+        // tags: ' @TestCases_C-4',
+        // tags: ' @TestCases_C-5',
+        // tags: ' @TestCases_C-6',
+
        // tags: '@TestCases_Reports',
         //tags: '@TestCases_1',
          //format: 'pretty',

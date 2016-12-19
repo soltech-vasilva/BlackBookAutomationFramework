@@ -54,9 +54,21 @@ function FeaturesFactory($http)
 				feature.totalTests = 0;
 				feature.elements = _.map(feature.elements, (element)=>
 				{
+					if(element.keyword.toLowerCase() === 'background')
+					{
+						element.name = 'Background';
+						var passedSteps = _.partition(element.steps, (step)=>
+						{
+							var passed = 1;
+							step.passed = passed;
+							return passed;
+						});
+					}
+
 					if(element.keyword.toLowerCase() === 'scenario')
 					{
 						feature.passableScenarios++;
+
 						var passedSteps = _.partition(element.steps, (step)=>
 						{
 							feature.totalTests++;
@@ -67,15 +79,12 @@ function FeaturesFactory($http)
 						element.passedPercentage = passedSteps[0].length / element.steps.length;
 						feature.passedPercentage += element.passedPercentage;
 					}
-					if(element.keyword.toLowerCase() === 'background')
-					{
-						element.name = 'Background';
-					}
+
 					return element;
 				});
-				//console.log("****");
-				//console.log("feature.passedPercentage:", feature.passedPercentage);
-				//console.log("feature.passableScenarios:", feature.passableScenarios);
+				// console.log("****");
+				// console.log("feature.passedPercentage:", feature.passedPercentage);
+				// console.log("feature.passableScenarios:", feature.passableScenarios);
 				feature.passedPercentage = (feature.passedPercentage / feature.passableScenarios) * 100;
 				feature.passedPercentage = _.round(feature.passedPercentage, 2);
 				if(_.isNaN(feature.passedPercentage))

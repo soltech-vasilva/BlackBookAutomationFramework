@@ -10,9 +10,11 @@ var Eyes = require('eyes.protractor').Eyes;
 var eyes = new Eyes();
 eyes.setApiKey('zgr3zfZKIc8JyUNkZdxOZv4G4wTcCrYp4PXSG9HE9Ew110');
 
-var BB_dashboard = require('../Page/BB_Dashboard.js');
+var BB_userProfileEdit = require('../Page/BB_UserProfileEdit.js');
+var BB_login = require('../Page/BB_Login');
 var eyesSetUp = require('../Page/EyesSetUp.js');
 var captureBrowserCapabilities = require ('../Page/CaptureBrowserCapabilities.js');
+var utilities = require('../Page/Utilities.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -59,83 +61,94 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter BlackBook Website$/, function () {
-        return BB_dashboard.OpenBlackBookDashboard(eyes);
+        return BB_userProfileEdit.OpenBlackBookDashboard(eyes);
     });
 
     this.When(/^I enter my first name (.*)$/, function (firstName) {
-        return BB_dashboard.Enter_FirstName(firstName);
+        return BB_userProfileEdit.Enter_FirstName(utilities.ReplaceDoubleQuotesWithWhiteSpace(firstName));
     });
 
     this.When(/^I enter my last name (.*)$/, function (lastName ) {
-        return BB_dashboard.Enter_LastName(lastName);
+        return BB_userProfileEdit.Enter_LastName(utilities.ReplaceDoubleQuotesWithWhiteSpace(lastName));
     });
 
     this.When(/^I enter my email address (.*)$/, function (emailAddress) {
-        return BB_dashboard.Enter_EmailAddress(emailAddress);
+        return BB_userProfileEdit.Enter_EmailAddress(utilities.ReplaceDoubleQuotesWithWhiteSpace(emailAddress));
     });
 
     this.When(/^I enter my phone number (.*)$/, function (phoneNumber) {
-        return BB_dashboard.Enter_PhoneNumber(phoneNumber );
+        return BB_userProfileEdit.Enter_PhoneNumber(utilities.ReplaceDoubleQuotesWithWhiteSpace(phoneNumber));
     });
 
     this.When(/^I enter my new Password (.*)$/, function (newPassword) {
-        return BB_dashboard.Enter_NewPassword(newPassword);
+        return BB_userProfileEdit.Enter_NewPassword(utilities.ReplaceDoubleQuotesWithWhiteSpace(newPassword));
     });
 
     this.When(/^I enter my confirm new password (.*)$/, function (confirmNewPassword) {
-        return BB_dashboard.Enter_ConfirmNewPassword(confirmNewPassword);
-    });
-
-    this.When(/^I click Cancel Button$/, function () {
-        element(by.buttonText('Cancel')).click();
-    });
-
-    this.Then(/^I should see "([^"]*)" errors "([^"]*)" displayed$/, function (str_TextboxName, str_VerifyErrorName) {
-        return BB_dashboard.Verify_ErrorMessageToDisplayEmptyFields(str_TextboxName, str_VerifyErrorName);
-        // callback();
+        return BB_userProfileEdit.Enter_ConfirmNewPassword(utilities.ReplaceDoubleQuotesWithWhiteSpace(confirmNewPassword));
     });
 
     this.Then(/^I should not see in "([^"]*)" errors displayed$/, function (str_TextboxName) {
-       return BB_dashboard.Verify_ErrorMessagesNotToDisplay(str_TextboxName);
+       return utilities.Verify_ErrorMessagesNotToDisplay(str_TextboxName);
         // callback();
     });
 
     this.Then(/^I should see "([^"]*)" errors "([^"]*)" displayed for this "([^"]*)" field$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
-        return BB_dashboard.Verify_ErrorMessageToDisplay(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
+        return utilities.Verify_ErrorMessageToDisplay(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
         // callback();
     });
 
     //EMPTY FUNCTION FOR READABILITY ONLY ON CUCUMBER
     this.When(/^I enter "([^"]*)"$/, function (arg1) {
-        // callback();
+
+        return new Promise((success, failure)=> {
+
+            success();
+        });
     });
 
     this.Given(/^I enter BlackBook Login Website$/, function () {
-        browser.ignoreSynchronization = true;
-        return browser.driver.get('http://dev-autobahn.blackbookcloud.com');
-
+        return BB_login.OpenBlackBookLogIn(eyes);
     });
 
-    this.Given(/^I enter my user email address (.*)$/, function (userEmailAddress) {
-        browser.sleep(1000);
-        var userEmail = element(by.css('input[placeholder="Your Email"]'));
-        userEmail.click();
-        return userEmail.sendKeys(userEmailAddress);
+    this.Given(/^I enter my user email address (.*)$/, function (currentEmailAddress) {
+        return BB_login.Enter_CurrentEmailAddress(utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmailAddress));
     });
 
-    this.Given(/^I enter my Password (.*)$/, function (userPassWord) {
-        browser.sleep(1000);
-        var userPass = element(by.css('input[placeholder="Password"]'));
-        userPass.click();
-        return userPass.sendKeys(userPassWord);
+    this.Given(/^I enter my Password (.*)$/, function (currentPassword) {
+        return BB_login.Enter_CurrentPassword(utilities.ReplaceDoubleQuotesWithWhiteSpace(currentPassword));
     });
 
     this.Given(/^I click Login Button$/, function () {
-        return element(by.buttonText('LOGIN')).click();
+        return BB_login.Click_LoginButton();
+    });
+
+    this.Given(/^I click Edit Button$/, function () {
+       return BB_userProfileEdit.Click_EditButton();
+    });
+
+    this.Given(/^I click Reset Button$/, function () {
+        return BB_userProfileEdit.Click_ResetButton ();
     });
 
     this.Given(/^I wait$/, function () {
-        return browser.sleep(3000);
+        return browser.sleep(4000);
+    });
+
+    this.Given(/^I click Profile Button$/, function () {
+        return element(by.css('div.profile-img')).click();
+    });
+
+    this.Given(/^I click My Profile sub menu$/, function () {
+        return element(by.linkText('My Profile')).click();
+    });
+
+    this.Given(/^I click Logout sub menu$/, function () {
+        return element(by.linkText('Logout')).click();
+    });
+
+    this.When(/^I click Cancel Button$/, function () {
+        return element(by.buttonText('Cancel')).click();
     });
 };
 

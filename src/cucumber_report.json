@@ -1,23 +1,77 @@
 [
   {
-    "id": "Enter-data-on-\"LOGIN\"-page",
-    "name": "Enter data on \"LOGIN\" page",
+    "id": "Enter-data-on-\"User-Profile\"",
+    "name": "Enter data on \"User Profile\"",
     "description": "\nRules:\n-Verify that All inputs boxes are working. (Test case A)\n\nQuestion:\n-What happens if email entered is bad (display ERROR)? Yes (Test case B-1)\n-What happens if phone number entered is bad (display ERROR)? Yes (Test case B-2)\n-What happens if fields are empty on require fields (display ERROR)? Yes (Test case C)\n-BUGS WHITE SPACES for first name ,last name , email, and password?",
     "line": 5,
     "keyword": "Feature",
-    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/Login.feature",
+    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/OpenWebsite.feature",
     "elements": [
       {
-        "name": "Enter good data on Login Page",
-        "id": "Enter-data-on-\"LOGIN\"-page;enter-good-data-on-login-page",
-        "line": 36,
+        "name": "",
+        "keyword": "Background",
+        "description": "",
+        "type": "background",
+        "line": 16,
+        "steps": [
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given "
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And "
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And "
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And "
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And "
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And "
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And "
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And "
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "name": "Enter good User Profile data no error display",
+        "id": "Enter-data-on-\"User-Profile\";enter-good-user-profile-data-no-error-display",
+        "line": 53,
         "keyword": "Scenario",
         "description": "",
         "type": "scenario",
         "tags": [
           {
-            "name": "@TestCases_1",
-            "line": 22
+            "name": "@TestCases_A",
+            "line": 31
           }
         ],
         "steps": [
@@ -26,57 +80,225 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3047970
+              "duration": 1897120
             },
             "match": {}
           },
           {
             "name": "I enter BlackBook Login Website",
-            "line": 24,
+            "line": 18,
             "keyword": "Given ",
             "result": {
-              "status": "passed",
-              "duration": 3022755238
+              "status": "failed",
+              "duration": 5004912353,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
             },
             "match": {}
           },
           {
             "name": "I enter my user email address user3@example.com",
-            "line": 25,
+            "line": 19,
             "keyword": "And ",
             "result": {
-              "status": "passed",
-              "duration": 1292391284
+              "status": "skipped"
             },
             "match": {}
           },
           {
             "name": "I enter my Password Password1",
-            "line": 27,
+            "line": 20,
             "keyword": "And ",
             "result": {
-              "status": "passed",
-              "duration": 1202726295
+              "status": "skipped"
             },
             "match": {}
           },
           {
             "name": "I click Login Button",
-            "line": 29,
+            "line": 21,
             "keyword": "And ",
             "result": {
-              "status": "passed",
-              "duration": 98376553
+              "status": "skipped"
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 30,
+            "line": 22,
             "keyword": "And ",
             "result": {
-              "status": "passed",
-              "duration": 3001748647
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 33,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 34,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 38,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)456-7890",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 40,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 42,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 43,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 44,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 45,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 46,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 47,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
             },
             "match": {}
           },
@@ -85,7 +307,5182 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 325853
+              "duration": 1000776
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter good User Profile data no error display",
+        "id": "Enter-data-on-\"User-Profile\";enter-good-user-profile-data-no-error-display",
+        "line": 55,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A",
+            "line": 31
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 181676
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "failed",
+              "duration": 5004389787,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 33,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 34,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 38,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 40,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 42,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 43,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 44,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 45,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 46,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 47,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 106981
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter good User Profile data no error display",
+        "id": "Enter-data-on-\"User-Profile\";enter-good-user-profile-data-no-error-display",
+        "line": 57,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A",
+            "line": 31
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 674316
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "failed",
+              "duration": 5001711900,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 33,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 34,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 38,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 1234567890",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 40,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 42,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 43,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 44,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 45,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 46,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 47,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 73448
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter good User Profile data no error display",
+        "id": "Enter-data-on-\"User-Profile\";enter-good-user-profile-data-no-error-display",
+        "line": 59,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A",
+            "line": 31
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 164001
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "failed",
+              "duration": 5003160444,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 33,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"firstName\" errors displayed",
+            "line": 34,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"lastName\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"emailAddress\" errors displayed",
+            "line": 38,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)4567890",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"phoneNumber\" errors displayed",
+            "line": 40,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"newPassWord\" errors displayed",
+            "line": 42,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 43,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 44,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 45,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 46,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 47,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 179463
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile email address will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-email-address-will-throw-error",
+        "line": 117,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-1",
+            "line": 100
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 265920
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "failed",
+              "duration": 5004198417,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name Afirstname",
+            "line": 102,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name Alastname",
+            "line": 103,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress.@email.com",
+            "line": 104,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong Email Address\"",
+            "line": 105,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"emailAddress\" errors \"Invalid email address\" displayed for this \"filled\" field",
+            "line": 106,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 107,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 108,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 109,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 110,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 111,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 112,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 69869
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile email address will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-email-address-will-throw-error",
+        "line": 119,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-1",
+            "line": 100
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 216106
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "failed",
+              "duration": 5002703914,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 102,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 103,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@@email.com",
+            "line": 104,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong Email Address\"",
+            "line": 105,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"emailAddress\" errors \"Invalid email address\" displayed for this \"filled\" field",
+            "line": 106,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 107,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 108,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 109,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 110,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 111,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 112,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 117808
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile email address will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-email-address-will-throw-error",
+        "line": 121,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-1",
+            "line": 100
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 343297
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "failed",
+              "duration": 5001485838,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 102,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 103,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address A",
+            "line": 104,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong Email Address\"",
+            "line": 105,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"emailAddress\" errors \"Invalid email address\" displayed for this \"filled\" field",
+            "line": 106,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 107,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 108,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 109,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 110,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 111,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 112,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 140550
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile email address will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-email-address-will-throw-error",
+        "line": 123,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-1",
+            "line": 100
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 203224
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "failed",
+              "duration": 5000194821,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 102,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 103,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address A@.c",
+            "line": 104,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong Email Address\"",
+            "line": 105,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"emailAddress\" errors \"Invalid email address\" displayed for this \"filled\" field",
+            "line": 106,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 107,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 108,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 109,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 110,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 111,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 112,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 146464
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile email address will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-email-address-will-throw-error",
+        "line": 125,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-1",
+            "line": 100
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 390353
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "failed",
+              "duration": 5002597754,
+              "error_message": "Error: Step timed out after 5000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 102,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 103,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address A@.",
+            "line": 104,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong Email Address\"",
+            "line": 105,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"emailAddress\" errors \"Invalid email address\" displayed for this \"filled\" field",
+            "line": 106,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 107,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 108,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 109,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 110,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 111,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 112,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 156992
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile phone number will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-phone-number-will-throw-error",
+        "line": 144,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-2",
+            "line": 127
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 212118
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 3055439434
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2313229783
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1178754331
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 95358265
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4001365584
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 103312238
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 128030919
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3121994925
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3126022639
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 129,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 315699798
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 130,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 310066220
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 131,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 307853020
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number a",
+            "line": 132,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 249790268
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong phone number\"",
+            "line": 133,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 302407
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"phoneNumber\" errors \"Must be a valid 10 digit number\" displayed for this \"filled\" field",
+            "line": 134,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4087005527
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 135,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 287472842
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 136,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 263335633
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 137,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 100002379
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 138,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 84632940
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 139,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 136464430
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 90828
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile phone number will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-phone-number-will-throw-error",
+        "line": 146,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-2",
+            "line": 127
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 112195
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1734967823
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2183929162
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 159232474
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 99156780
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4000384283
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 100583168
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 118952711
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3143444457
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3114299619
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 129,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 277695285
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 130,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 254325222
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 131,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 305660615
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number a23-456-7890",
+            "line": 132,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 261987580
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong phone number\"",
+            "line": 133,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 120602
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"phoneNumber\" errors \"Must be a valid 10 digit number\" displayed for this \"filled\" field",
+            "line": 134,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4096197439
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 135,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 280173621
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 136,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 295694620
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 137,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 97558282
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 138,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 89125454
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 139,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 119708555
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 105582
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile phone number will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-phone-number-will-throw-error",
+        "line": 148,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-2",
+            "line": 127
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 166747
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1710906509
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2177751035
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 164760615
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 117498806
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4006681570
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 109500265
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 116608370
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3134386023
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3129377110
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 129,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 286190690
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 130,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 251926123
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 131,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 303927605
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 456-7890",
+            "line": 132,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 263734145
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong phone number\"",
+            "line": 133,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 109965
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"phoneNumber\" errors \"Must be a valid 10 digit number\" displayed for this \"filled\" field",
+            "line": 134,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4097051840
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 135,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 285725792
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 136,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 273622255
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 137,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 89859544
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 138,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 83515995
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 139,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 121399377
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 120290
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile phone number will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-phone-number-will-throw-error",
+        "line": 150,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-2",
+            "line": 127
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 159910
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1686303610
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2191059045
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 149745590
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 84845749
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4004009516
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 104958677
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 115766936
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3186229864
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3115451060
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 129,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 275238213
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 130,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 257660327
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 131,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 299994710
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number \" \"-\" \"-7890",
+            "line": 132,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 256192280
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong phone number\"",
+            "line": 133,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 57984
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"phoneNumber\" errors \"Must be a valid 10 digit number\" displayed for this \"filled\" field",
+            "line": 134,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4069551541
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 135,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 276321515
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 136,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 260572784
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 137,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 99414146
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 138,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 83835467
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 139,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 128036862
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 61363
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile New Password and Confirm New Password will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-new-password-and-confirm-new-password-will-throw-error",
+        "line": 171,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-3",
+            "line": 152
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 242478
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1689119981
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2212342120
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 167449366
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 92575025
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4003530247
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 93393995
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 108242253
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3161269575
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3101335015
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name \"\"",
+            "line": 154,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 236569725
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name \"",
+            "line": 155,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 223626090
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address \"     \"ilAddress@email.com",
+            "line": 156,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 326390505
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 157,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 351163679
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password \"       \"Qa",
+            "line": 158,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 295763902
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong New Password with no number\"",
+            "line": 159,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 100590
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"newPassWord\" errors \"Password must be at least 8 characters, contain a number, and mixed case letters.\" displayed for this \"filled\" field",
+            "line": 160,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 4024594992,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password \"       \"Qa1",
+            "line": 161,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a different Confirm New Password from New Password\"",
+            "line": 162,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"confirmNewPassWord\" errors \"Passwords do not match\" displayed for this \"filled\" field",
+            "line": 163,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 164,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 165,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 166,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 49062
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile New Password and Confirm New Password will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-new-password-and-confirm-new-password-will-throw-error",
+        "line": 173,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-3",
+            "line": 152
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 143857
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1797939646
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2216481133
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 165196636
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 88348232
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4002205770
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 110620672
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 148605532
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3135567524
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3132254406
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name \"\"",
+            "line": 154,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 295857546
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name \"",
+            "line": 155,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 238307014
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address \"     \"ilAddress@email.com",
+            "line": 156,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 337637243
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 157,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 251529672
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password \"       \"Q1",
+            "line": 158,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 238842766
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong New Password with no number\"",
+            "line": 159,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 362874
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"newPassWord\" errors \"Password must be at least 8 characters, contain a number, and mixed case letters.\" displayed for this \"filled\" field",
+            "line": 160,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 4023898892,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password \"       \"a1",
+            "line": 161,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a different Confirm New Password from New Password\"",
+            "line": 162,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"confirmNewPassWord\" errors \"Passwords do not match\" displayed for this \"filled\" field",
+            "line": 163,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 164,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 165,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 166,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 84390
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile New Password and Confirm New Password will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-new-password-and-confirm-new-password-will-throw-error",
+        "line": 175,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-3",
+            "line": 152
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 169113
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1717961516
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2222424731
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 179003843
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 88365255
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4004967505
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 86777775
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 172946703
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3284469774
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3223306444
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name \"\"",
+            "line": 154,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 444535130
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name \"",
+            "line": 155,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 367146867
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address \"     \"ilAddress@email.com",
+            "line": 156,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 460279564
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 157,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 260937952
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password \"       \"",
+            "line": 158,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 244434798
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong New Password with no number\"",
+            "line": 159,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 257320
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"newPassWord\" errors \"Password must be at least 8 characters, contain a number, and mixed case letters.\" displayed for this \"filled\" field",
+            "line": 160,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 4017565764,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password \"       \"1",
+            "line": 161,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a different Confirm New Password from New Password\"",
+            "line": 162,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"confirmNewPassWord\" errors \"Passwords do not match\" displayed for this \"filled\" field",
+            "line": 163,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 164,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 165,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 166,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 44308
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter wrong User Profile \"New Password\" will throw error but Confirmation is the same",
+        "id": "Enter-data-on-\"User-Profile\";enter-wrong-user-profile-\"new-password\"-will-throw-error-but-confirmation-is-the-same",
+        "line": 196,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_B-4",
+            "line": 177
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 134209
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1905045321
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2162545641
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 143647641
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 101959252
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4002842284
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 84084543
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 109221172
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3164340145
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3107008314
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name \"\"",
+            "line": 179,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 251934478
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name \"",
+            "line": 180,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 325915281
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address \"     \"ilAddress@email.com",
+            "line": 181,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 479099036
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number 123-456-7890",
+            "line": 182,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 343074388
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password \"       \"Qa",
+            "line": 183,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 294454610
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"a wrong New Password with no numbers\"",
+            "line": 184,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 71930
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"newPassWord\" errors \"Password must be at least 8 characters, contain a number, and mixed case letters.\" displayed for this \"filled\" field",
+            "line": 185,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 4028477583,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password \"       \"Qa",
+            "line": 186,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"same New Password into Confirm New Password\"",
+            "line": 187,
+            "keyword": "But ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"confirmNewPassWord\" errors displayed",
+            "line": 188,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 189,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 190,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 191,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 54408
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter empty User Profile data will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-empty-user-profile-data-will-throw-error",
+        "line": 226,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_C-1",
+            "line": 200
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 95156
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1700444392
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2256305567
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 167968009
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 91502893
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4003970104
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 88774972
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 118928800
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3138657089
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3099062219
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name ",
+            "line": 202,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 222322350
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"firstName\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 204,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4072420844
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name ",
+            "line": 205,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 219805596
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"lastName\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 207,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4073611229
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address ",
+            "line": 208,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 228273335
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"emailAddress\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 210,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4079404654
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number ",
+            "line": 211,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 215951253
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password ",
+            "line": 213,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 232574032
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"newPassWord\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 215,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 4045147053,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password ",
+            "line": 216,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"confirmNewPassWord\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 218,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 219,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 220,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 221,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 74771
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter empty User Profile data will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-empty-user-profile-data-will-throw-error",
+        "line": 245,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_C-2",
+            "line": 228
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 121798
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1709633157
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2263523919
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 193758217
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 125473942
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4005807497
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 107164460
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 114232417
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3135238244
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3120159964
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name ",
+            "line": 230,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 256541038
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"nothing to first name\"",
+            "line": 231,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 89300
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"firstName\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 232,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4071506262
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 233,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 291794573
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 234,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 298334682
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)456-7890",
+            "line": 235,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 302960985
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 236,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 299031055
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 237,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 248813383
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 238,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 91616082
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 239,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 77496312
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 240,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 108193365
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 69465
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter empty User Profile data will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-empty-user-profile-data-will-throw-error",
+        "line": 264,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_C-3",
+            "line": 247
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 139155
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1638015602
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2219611960
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 153081514
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 82901840
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4002297726
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 95687608
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 116563617
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3147501810
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3106602816
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 249,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 271531124
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name ",
+            "line": 250,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 234300893
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"nothing to last name\"",
+            "line": 251,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 98355
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"lastName\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 252,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4067621108
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 253,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 289287691
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)456-7890",
+            "line": 254,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 259184659
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 255,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 245647833
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 256,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 241206565
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 257,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 103614205
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 258,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 81577925
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 259,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 120016601
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 41816
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter empty User Profile data will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-empty-user-profile-data-will-throw-error",
+        "line": 283,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_C-4",
+            "line": 266
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 69351
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1821834892
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2203106078
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 156712443
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 84324800
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4006393075
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 106223090
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 148527102
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3185597686
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3146001129
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 268,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 321709879
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 269,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 304053664
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address ",
+            "line": 270,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 227565480
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"nothing to email address\"",
+            "line": 271,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 58774
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"emailAddress\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 272,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4057391880
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)456-7890",
+            "line": 273,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 248903717
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 274,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 250489445
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 275,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 243947830
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 276,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 105941535
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 277,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 84127782
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 278,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 113609515
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 69692
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter empty User Profile data will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-empty-user-profile-data-will-throw-error",
+        "line": 301,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_C-5",
+            "line": 285
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 144937
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 1692246340
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2181424115
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 151176387
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 85968641
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4000030572
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 88281215
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 105776280
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3159015933
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3102915427
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 287,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 283514695
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 288,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 259214342
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 289,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 304976900
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number ",
+            "line": 290,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 223389195
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password QaAdmin123",
+            "line": 292,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 242407587
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 293,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 247852436
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 294,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 114106556
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 295,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 87319140
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 296,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 133119690
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 129278
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "Enter empty User Profile data will throw error",
+        "id": "Enter-data-on-\"User-Profile\";enter-empty-user-profile-data-will-throw-error",
+        "line": 321,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_C-6",
+            "line": 303
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 230505
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 18,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 2099249362
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2219264673
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 142894652
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 95299322
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4004371765
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 23,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 93532463
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu",
+            "line": 24,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 109670148
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3132882837
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button",
+            "line": 26,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3107857015
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my first name AfirstName",
+            "line": 305,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 274628595
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my last name AlastName",
+            "line": 306,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 257751470
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my email address AemailAddress@email.com",
+            "line": 307,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 293610018
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my phone number (123)456-7890",
+            "line": 308,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 256032762
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password ",
+            "line": 310,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 203153210
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"nothing to New Password\"",
+            "line": 311,
+            "keyword": "But ",
+            "result": {
+              "status": "passed",
+              "duration": 89070
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"newPassWord\" errors \"Required\" displayed for this \"empty\" field",
+            "line": 312,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 4019412821,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my confirm new password QaAdmin123",
+            "line": 313,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button",
+            "line": 314,
+            "keyword": "When ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Profile Button",
+            "line": 315,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu",
+            "line": 316,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 41692
             },
             "match": {}
           }

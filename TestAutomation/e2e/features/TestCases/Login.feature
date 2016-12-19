@@ -22,15 +22,23 @@ Feature: Enter data on "LOGIN" page
 @TestCases_1
   Scenario Outline: Enter good data on Login Page
     Given I enter BlackBook Login Website
-    And I enter my user email address <userEmailAddress>
-      #Then I should not see in "emailAddress" errors displayed
-    And I enter my Password <userPassWord>
-      #Then I should not see in "newPassWord" errors displayed
+    And I enter my user email address <currentEmailAddress>
+    And I enter my Password <currentPassword>
     And I click Login Button
-  And I wait
+    Then I should not see in "currentEmailAddress" errors displayed
+ # Then I should see "currentEmailAddress" errors "Email Is Required" displayed for this "empty" field
+    And I wait
+    And I click Profile Button
+    And I click My Profile sub menu
+    And I click Edit Button
+    And I click Reset Button
+    And I click Cancel Button
+    And I click Profile Button
+    And I click Logout sub menu
 
     Examples:
-           | userEmailAddress     |   userPassWord  |
+           | currentEmailAddress     |   currentPassword  |
 #phone number inputs
             #valid phone number with parenthesis and dashes
-           | user3@example.com    |   Password1     |
+          | user3@example.com    |   Password1     |
+   #        |                  |             |
