@@ -24,24 +24,11 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
 
         browser.getCapabilities().then(function (capability) {
 
-            // try {
-            //     this.currentBrowserName = protractorConfig.config.capabilities.browserName;
-            //     this.currentOSName = capability.get('platform');
-            // }
-            // catch (e) {
-            //     this.currentBrowserName = capability.get('browserName');
-            //     this.currentOSVersion = capability.get('os_version');
-            //     this.currentOSName = capability.get('os');
-            //
-            //     if (this.currentOSName === undefined)
-            //     {
-            //         this.currentOSName = capability.get('platform');
-            //         this.currentOSName ='';
-            //     }
-            // }
-
-            if (typeof protractorConfig.config.capabilities.browserName == "undefined")
-            {
+            try {
+                this.currentBrowserName = protractorConfig.config.capabilities.browserName;
+                this.currentOSName = capability.get('platform');
+            }
+            catch (e) {
                 this.currentBrowserName = capability.get('browserName');
                 this.currentOSVersion = capability.get('os_version');
                 this.currentOSName = capability.get('os');
@@ -52,10 +39,24 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
                     this.currentOSName ='';
                 }
             }
-            else {
-                this.currentBrowserName = protractorConfig.config.capabilities.browserName;
-                this.currentOSName = capability.get('platform');
-            }
+
+            //hace crash aqui (browserstack ) deje el de ariba
+            // if (typeof protractorConfig.config.capabilities.browserName  == "undefined")
+            // {
+            //     this.currentBrowserName = capability.get('browserName');
+            //     this.currentOSVersion = capability.get('os_version');
+            //     this.currentOSName = capability.get('os');
+            //
+            //     if (this.currentOSName === undefined)
+            //     {
+            //         this.currentOSName = capability.get('platform');
+            //         this.currentOSName ='';
+            //     }
+            // }
+            // else {
+            //     this.currentBrowserName = protractorConfig.config.capabilities.browserName;
+            //     this.currentOSName = capability.get('platform');
+            // }
 
             if (this.currentOSVersion === undefined)
             {

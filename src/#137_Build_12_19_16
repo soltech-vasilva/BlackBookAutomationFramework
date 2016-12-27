@@ -1,0 +1,17 @@
+BUILD: #137
+DATE: 12_19_16
+
+Failing scenarios:
+TestAutomation/e2e/features/TestCases/OpenWebsite.feature:172 # Scenario: Enter wrong User Profile New Password and Confirm New Password will throw error
+    -ERROR: "Password must be at least 8 characters, contain a number, and mixed case letters." is missing in New Password
+TestAutomation/e2e/features/TestCases/OpenWebsite.feature:174 # Scenario: Enter wrong User Profile New Password and Confirm New Password will throw error
+    -ERROR: "Password must be at least 8 characters, contain a number, and mixed case letters." is missing in New Password
+TestAutomation/e2e/features/TestCases/OpenWebsite.feature:176 # Scenario: Enter wrong User Profile New Password and Confirm New Password will throw error
+    -ERROR: "Password must be at least 8 characters, contain a number, and mixed case letters." is missing in New Password
+TestAutomation/e2e/features/TestCases/OpenWebsite.feature:197 # Scenario: Enter wrong User Profile "New Password" will throw error but Confirmation is the same
+    -ERROR: "Password must be at least 8 characters, contain a number, and mixed case letters." is missing in New Password
+TestAutomation/e2e/features/TestCases/OpenWebsite.feature:227 # Scenario: Enter empty User Profile data will throw error
+    -ERROR: "Required" is missing in New Password
+TestAutomation/e2e/features/TestCases/OpenWebsite.feature:322 # Scenario: Enter empty User Profile data will throw error
+    -ERROR: "Required" is missing in New Password
+

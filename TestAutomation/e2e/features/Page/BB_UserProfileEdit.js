@@ -10,6 +10,8 @@ chai.use(chaiAsPromised);
 var BB_userProfileEditRepo =  require('../Repository/BB_UserProfileEditRepo.js');
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var eyesSetUp = require ('../Page/EyesSetUp.js');
+var utilities = require('../Page/Utilities.js');
+var keyStrokesRepo = require ('../Repository/KeyStrokesRepo.js');
 
 var BB_UserProfileEdit = function BB_UserProfileEdit(){
 
@@ -19,6 +21,7 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
     BB_UserProfileEdit.prototype.phoneNumber = '';
     BB_UserProfileEdit.prototype.newPassword = '';
     BB_UserProfileEdit.prototype.confirmNewPassword = '';
+    BB_UserProfileEdit.prototype.previousPassword = '';
 
     BB_UserProfileEdit.prototype.OpenBlackBookDashboard = function(eyes) {
 
@@ -47,7 +50,8 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
    BB_UserProfileEdit.prototype.Enter_FirstName = function (firstName) {
        //timeout issues on loading page so I added 2sec before it starts typing.
        //browser.sleep(2000);
-       this.firstName =  firstName.toString();
+       this.firstName =   utilities.ReplaceDoubleQuotesWithWhiteSpace(firstName.toString());
+       browser.wait(protractor.ExpectedConditions.presenceOf( BB_userProfileEditRepo.Select_Element_FirstNameTextbox), 10000);
        BB_userProfileEditRepo.Select_Element_FirstNameTextbox.click();
 
        return new Promise((success, failure)=> {
@@ -59,8 +63,11 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
    };
 
     BB_UserProfileEdit.prototype.Enter_LastName = function (lastName) {
-        this.lastName = lastName.toString();
+        this.lastName = utilities.ReplaceDoubleQuotesWithWhiteSpace(lastName.toString());
         BB_userProfileEditRepo.Select_Element_LastNameTextbox.click();
+
+        //TODO : delete this clear
+        BB_userProfileEditRepo.Select_Element_LastNameTextbox.clear();
 
         return new Promise((success, failure)=> {
             BB_userProfileEditRepo.Select_Element_LastNameTextbox
@@ -72,8 +79,11 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
     };
 
     BB_UserProfileEdit.prototype.Enter_EmailAddress = function (emailAddress) {
-        this.emailAddress = emailAddress.toString();
+        this.emailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(emailAddress.toString());
         BB_userProfileEditRepo.Select_Element_EmailAddressTextbox.click();
+
+        //TODO : delete this clear
+        BB_userProfileEditRepo.Select_Element_EmailAddressTextbox.clear();
 
         return new Promise((success, failure)=> {
             BB_userProfileEditRepo.Select_Element_EmailAddressTextbox
@@ -85,7 +95,7 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
     };
 
     BB_UserProfileEdit.prototype.Enter_PhoneNumber = function (phoneNumber) {
-        this.phoneNumber = phoneNumber.toString();
+        this.phoneNumber = utilities.ReplaceDoubleQuotesWithWhiteSpace(phoneNumber.toString());
         BB_userProfileEditRepo.Select_Element_PhoneNumberTextbox.click();
 
         return new Promise((success, failure)=> {
@@ -98,7 +108,7 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
     };
 
     BB_UserProfileEdit.prototype.Enter_NewPassword = function (newPassword) {
-        this.newPassword = newPassword.toString();
+        this.newPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(newPassword.toString());
         BB_userProfileEditRepo.Select_Element_NewPassword.click();
 
         return new Promise((success, failure)=> {
@@ -111,7 +121,7 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
     };
 
     BB_UserProfileEdit.prototype.Enter_ConfirmNewPassword = function (confirmNewPassword) {
-        this.confirmNewPassword = confirmNewPassword.toString();
+        this.confirmNewPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(confirmNewPassword.toString());
         BB_userProfileEditRepo.Select_Element_ConfirmNewPassword.click();
 
         return new Promise((success, failure)=> {
@@ -123,8 +133,54 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
         });
     };
 
+    BB_UserProfileEdit.prototype.Enter_PreviousPassword = function (previousPassword) {
+        this.previousPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(previousPassword.toString());
+        BB_userProfileEditRepo.Select_Element_PreviousPassword.click();
+
+        return new Promise((success, failure)=> {
+            BB_userProfileEditRepo.Select_Element_PreviousPassword
+                .sendKeys(this.previousPassword)
+                .then(()=> {
+                    BB_UserProfileEdit.prototype.Click_TittleAddNewUserProfile(success);
+                });
+        });
+    };
+
+    BB_UserProfileEdit.prototype.DeleteContentInTextBox = function (TextboxName) {
+        return new Promise((success, failure)=> {
+            switch (TextboxName.toLowerCase()) {
+                case 'firstname':
+                    BB_UserProfileEdit.prototype.Click_Delete_Content(success, BB_userProfileEditRepo.Select_Element_FirstNameTextbox);
+                    break;
+                case 'lastname':
+                    BB_UserProfileEdit.prototype.Click_Delete_Content(success, BB_userProfileEditRepo.Select_Element_LastNameTextbox);
+                    break;
+                case 'emailaddress':
+                    BB_UserProfileEdit.prototype.Click_Delete_Content(success, BB_userProfileEditRepo.Select_Element_EmailAddressTextbox);
+                    break;
+                case 'newpassword':
+                    BB_UserProfileEdit.prototype.Click_Delete_Content(success, BB_userProfileEditRepo.Select_Element_NewPassword);
+                    break;
+                case 'confirmnewpassword':
+                    BB_UserProfileEdit.prototype.Click_Delete_Content(success, BB_userProfileEditRepo.Select_Element_ConfirmNewPassword);
+                    break;
+                default:
+                    console.log(TextboxName + ' : is not part of switch statement in DeleteContentInTextBox function.');
+                    failure();
+            }
+        });
+    };
+
+    BB_UserProfileEdit.prototype.Click_Delete_Content = function(success, ElementToClick)
+    {
+        ElementToClick.click();
+        keyStrokesRepo.CONTROL_ALL_DELETE();
+        BB_UserProfileEdit.prototype.Click_TittleAddNewUserProfile(success);
+    };
+
     BB_UserProfileEdit.prototype.Click_EditButton = function () {
-        browser.sleep(3000);
+        //This give a time to transition
+        browser.wait(protractor.ExpectedConditions.presenceOf(BB_userProfileEditRepo.Select_Element_EditButton), 10000);
         return new Promise((success, failure)=> {
             BB_userProfileEditRepo.Select_Element_EditButton.click().then(()=> {
                 success();
@@ -133,7 +189,8 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
     };
 
     BB_UserProfileEdit.prototype.Click_ResetButton = function () {
-        browser.sleep(3000);
+        //This give a time to transition
+        browser.wait(protractor.ExpectedConditions.presenceOf(BB_userProfileEditRepo.Select_Element_ResetButton), 10000);
         return new Promise((success, failure)=> {
             BB_userProfileEditRepo.Select_Element_ResetButton.click().then(()=> {
                 success();
@@ -146,7 +203,7 @@ var BB_UserProfileEdit = function BB_UserProfileEdit(){
     //     //browser.sleep(2000);
     //
     //     if (isElementPresent == true) {
-    //         utilities.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure);
+    //         verifyMessage.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure);
     //     }
     //     else {
     //         console.log(consoleErrorMessageDisplay);
