@@ -10,11 +10,13 @@ var Eyes = require('eyes.protractor').Eyes;
 var eyes = new Eyes();
 eyes.setApiKey('zgr3zfZKIc8JyUNkZdxOZv4G4wTcCrYp4PXSG9HE9Ew110');
 
-var BB_userProfileEdit = require('../Page/BB_UserProfileEdit.js');
+var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
 var BB_login = require('../Page/BB_Login');
 var eyesSetUp = require('../Page/EyesSetUp.js');
 var captureBrowserCapabilities = require ('../Page/CaptureBrowserCapabilities.js');
 var verifyMessage = require('../Page/VerifyMessage.js');
+var BB_menu = require ('../Page/BB_Menu.js');
+var BB_userList = require('../Page/BB_UserList');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -52,6 +54,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
     //     }
     // });
 
+    //This is for timeout issues default is 5 sec
+    this.setDefaultTimeout(20 * 1000);
+
     this.Before(function () {
         return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
     });
@@ -75,31 +80,31 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter BlackBook Website$/, function () {
-        return BB_userProfileEdit.OpenBlackBookDashboard(eyes);
+        return BB_editUserProfile.OpenBlackBookDashboard(eyes);
     });
 
     this.When(/^I enter my first name (.*)$/, function (firstName) {
-        return BB_userProfileEdit.Enter_FirstName(firstName);
+        return BB_editUserProfile.Enter_FirstName(firstName);
     });
 
     this.When(/^I enter my last name (.*)$/, function (lastName ) {
-        return BB_userProfileEdit.Enter_LastName(lastName);
+        return BB_editUserProfile.Enter_LastName(lastName);
     });
 
     this.When(/^I enter my email address (.*)$/, function (emailAddress) {
-        return BB_userProfileEdit.Enter_EmailAddress(emailAddress);
+        return BB_editUserProfile.Enter_EmailAddress(emailAddress);
     });
 
     this.When(/^I enter my phone number (.*)$/, function (phoneNumber) {
-        return BB_userProfileEdit.Enter_PhoneNumber(phoneNumber);
+        return BB_editUserProfile.Enter_PhoneNumber(phoneNumber);
     });
 
     this.When(/^I enter my new Password (.*)$/, function (newPassword) {
-        return BB_userProfileEdit.Enter_NewPassword(newPassword);
+        return BB_editUserProfile.Enter_NewPassword(newPassword);
     });
 
     this.When(/^I enter my confirm new password (.*)$/, function (confirmNewPassword) {
-        return BB_userProfileEdit.Enter_ConfirmNewPassword(confirmNewPassword);
+        return BB_editUserProfile.Enter_ConfirmNewPassword(confirmNewPassword);
     });
 
     this.Then(/^I should not see in "([^"]*)" errors displayed$/, function (str_TextboxName) {
@@ -134,40 +139,82 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Edit Button$/, function () {
-       return BB_userProfileEdit.Click_EditButton();
+       return BB_editUserProfile.Click_EditButton();
     });
 
     this.Given(/^I click Reset Button$/, function () {
-        return BB_userProfileEdit.Click_ResetButton ();
+        return BB_editUserProfile.Click_ResetButton ();
     });
 
+    this.Given(/^I click Profile Button$/, function () {
+        return BB_menu.Click_ProfileButton();
+    });
+
+    this.Given(/^I click My Profile sub menu$/, function () {
+        return BB_menu.Click_MyProfileButton();
+    });
+
+    this.Given(/^I click Logout sub menu$/, function () {
+        return BB_menu.Click_LogOutButton();
+    });
+
+    this.When(/^I click Cancel Button$/, function () {
+        return BB_editUserProfile.Click_CancelButton();
+    });
+
+    this.Then(/^I enter my Previous Password (.*)$/, function (previousPassword) {
+        return BB_editUserProfile.Enter_PreviousPassword(previousPassword);
+    });
+
+    this.When(/^I clear text box selected "([^"]*)"$/, function (TextboxName) {
+       return BB_editUserProfile.DeleteContentInTextBox(TextboxName);
+    });
+
+    this.Given(/^I click on Admin Button$/, function () {
+        return BB_menu.Click_AdminTab();
+    });
+
+    this.Given(/^I click on User Button$/, function () {
+        return BB_menu.Click_UsersButton();
+    });
+
+    this.Given(/^I click on New User Button$/, function () {
+        return BB_userList.Click_NewUser();
+    });
+
+    this.Then(/^I click on Save button$/, function () {
+        return BB_editUserProfile.Click_SaveButton();
+    });
+
+
+
+
+
+    ///BUGS FIXES TO TEST OTHER THINGS
     this.Given(/^I wait$/, function () {
         return browser.sleep(4000);
     });
 
-    this.Given(/^I click Profile Button$/, function () {
-        browser.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/header/div[3]/div'))), 10000);
-        return element(by.xpath('//*[@id="page-box"]/header/div[3]/div')).click();
+    this.Then(/^I reload page "([^"]*)"$/, function (URL) {
+        browser.ignoreSynchronization = true;
+        return browser.driver.get(URL);
     });
 
-    this.Given(/^I click My Profile sub menu$/, function () {
-        return element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[2]/a')).click();
-    });
+    this.Given(/^I enter time the same user name and password$/, function () {
 
-    this.Given(/^I click Logout sub menu$/, function () {
-        return element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[1]/a')).click();
-    });
+        // for ( var a=0 ;a > 6 ;a++)
+        // {
+          //  BB_login.Enter_CurrentEmailAddress('user1@example.com');
+          //  BB_login.Enter_CurrentPassword('Password0');
+        // }
 
-    this.When(/^I click Cancel Button$/, function () {
-        return element(by.buttonText('Cancel')).click();
-    });
-
-    this.Then(/^I enter my Previous Password (.*)$/, function (previousPassword) {
-        return BB_userProfileEdit.Enter_PreviousPassword(previousPassword);
-    });
-
-    this.When(/^I clear text box first name "([^"]*)"$/, function (TextboxName) {
-       return BB_userProfileEdit.DeleteContentInTextBox(TextboxName);
+        BB_login.Click_LoginButton();
+        browser.sleep(2000);
+        BB_login.Click_LoginButton();
+        browser.sleep(2000);
+        BB_login.Click_LoginButton();
+        browser.sleep(2000);
+        return  BB_login.Click_LoginButton();
     });
 };
 

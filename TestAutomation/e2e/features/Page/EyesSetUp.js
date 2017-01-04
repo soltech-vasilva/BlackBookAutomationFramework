@@ -47,7 +47,7 @@ var EyesSetUp = function EyesSetUp(){
 
     EyesSetUp.prototype.EyesCheckWindow = function (eyes, verifyScreenElementName , isBooleanApplitoolsOn ) {
         if (isBooleanApplitoolsOn == true) {
-           // eyes.checkWindow(BB_userProfileEditRepo.EyesVerify_BB_Dashboard);
+           // eyes.checkWindow(BB_editUserProfileRepo.EyesVerify_BB_Dashboard);
             eyes.checkWindow(verifyScreenElementName);
         }
     }

@@ -25,9 +25,9 @@ var BB_Login = function BB_Login() {
             browser.driver.get(BB_loginRepo.BlackBookUrl)
                 .then(()=> {
                     if (protractorConfig.config.ApplitoolsOn == false) {
-                        browser.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
+                        browser.driver.manage().window().setSize(protractorConfig.config.width, protractorConfig.config.height);
+                        //browser.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
                     }
-
                     eyesSetUp.EyesCheckWindow(eyes, BB_loginRepo.EyesVerify_BB_Login, protractorConfig.config.ApplitoolsOn);
                     browser.waitForAngular();
                     success();
@@ -36,29 +36,42 @@ var BB_Login = function BB_Login() {
     };
 
     BB_Login.prototype.Enter_CurrentEmailAddress = function (currentEmail) {
-        //timeout issues on loading page so I added 2sec before it starts typing.
-        // browser.sleep(4000);
-        this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString());
 
+        this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString());
         browser.wait(protractor.ExpectedConditions.presenceOf(BB_loginRepo.Select_Element_UserEmailAddressTextbox), 10000);
 
         BB_loginRepo.Select_Element_UserEmailAddressTextbox.click();
+
         return new Promise((success, failure)=> {
-            BB_loginRepo.Select_Element_UserEmailAddressTextbox.sendKeys(this.currentEmailAddress).then(()=> {
+            if (this.currentEmailAddress != '') {
+                BB_loginRepo.Select_Element_UserEmailAddressTextbox.sendKeys(this.currentEmailAddress).then(()=> {
+                    success();
+                });
+            }
+            else {
                 success();
-            });
+            }
         });
     };
 
     BB_Login.prototype.Enter_CurrentPassword = function (currentPasswordEntered) {
-        this.currentPassword =  utilities.ReplaceDoubleQuotesWithWhiteSpace(currentPasswordEntered.toString());
+
+        this.currentPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentPasswordEntered.toString());
         BB_loginRepo.Select_Element_UserPasswordTextbox.click();
 
-        return new Promise((success, failure)=> {
-            BB_loginRepo.Select_Element_UserPasswordTextbox.sendKeys(this.currentPassword).then(()=> {
-                success();
+        if (this.currentPassword != '') {
+            return new Promise((success, failure)=> {
+                if (this.currentPassword != '') {
+                    BB_loginRepo.Select_Element_UserPasswordTextbox.sendKeys(this.currentPassword).then(()=> {
+                        success();
+                    });
+                }
+                else
+                {
+                    success();
+                }
             });
-        });
+        }
     };
 
     BB_Login.prototype.Click_LoginButton = function () {

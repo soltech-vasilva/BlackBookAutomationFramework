@@ -14,8 +14,9 @@ exports.config = {
     //Running Test Cases in specific order.
     specs: [
         //add test cases here below:
+        'e2e/features/TestCases/AddUser.feature',
         'e2e/features/TestCases/Login.feature',
-       // 'e2e/features/TestCases/OpenWebsite.feature'//,
+        'e2e/features/TestCases/EditUserProfile.feature'//,
     ],
 
 
@@ -24,11 +25,11 @@ exports.config = {
     // },
 
     //BrowserStack
-    //seleniumAddress: 'http://hub.browserstack.com/wd/hub',
+    seleniumAddress: 'http://hub.browserstack.com/wd/hub',
 
     //Settings for the local machine (Run "webdriver-manager start" from any directory  + calls inside capabilities)
     //Selenium
-    seleniumAddress: 'http://localhost:4444/wd/hub',
+    //seleniumAddress: 'http://localhost:4444/wd/hub',
 
     //Appium
     //seleniumAddress: 'http://localhost:4733/wd/hub',
@@ -49,134 +50,158 @@ exports.config = {
     ////////////////////
 
     // // //my MAC computer max resolution
-    'width': 1338,
-    'height': 666,
+    // 'width': 1338,
+    // 'height': 666,
 
     // //Test 2 on this resolution (Mac max resolution)
     // 'width': 1814,
     // 'height': 974
 
     // //windows all version max resolution
-    // 'width': 1942,
-    // 'height': 1430
+    'width': 1942,
+    'height': 1430,
     //
-    // 'commonCapabilities': {
-    //      //Label
-    //      'build': 'version 1: ' + new Date().toString(),
-    //      'project': 'Black Book',
-    //      'name': 'Test Automation Suit',
-    //
-    //     'browserstack.user': 'soltech2',
-    //     'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
-    //     //'browserstack.local' : 'true',
-    //      'acceptSslCerts': true,
-    //
-    //      //Screenshot
-    //      'browserstack.debug': 'true',
-    //
-    //      //Video recording
-    //      'browserstack.video': 'true'//,
-    // },
-    //
-    // //Browserstack multiple browsers at a time testing
-    //   multiCapabilities: [
-    //       {
-    //           ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
-    //           // Browser Type
-    //           'os': 'OS X',
-    //           'os_version': 'Sierra',
-    //           'browserName': 'Safari',
-    //           'browser_version': '10.0',
-    //           'resolution': '1920x1080'
-    //       }
-    //       //   ,
-    //       // {
-    //       //     ////////////////////////////////////////////// Windows 10 Firefox 50.0  1920x1200 ///////////////////
-    //       //     // Browser Type
-    //       //     'os': 'Windows',
-    //       //     'os_version': '10',
-    //       //     'browserName': 'Firefox',
-    //       //     'browser_version': '50.0 beta',
-    //       //     'resolution': '1920x1200'
-    //       // }
-    //       // ,
-    //       // {
-    //       //     ////////////////////////////////////////////// Windows 7 FireFox 49.0  1920x1200 ///////////////////
-    //       //     //Browser Type
-    //       //     'os': 'Windows',
-    //       //     'os_version': '7',
-    //       //     'browserName': 'Firefox',
-    //       //     'browser_version': '49.0',
-    //       //     'resolution': '1920x1200'
-    //       // }
-    //       // ,
-    //       // {
-    //       //   ////////////////////////////////////////////// Windows 7 Chrome 54.0  1920x1200 ///////////////////
-    //       //    // Browser Type
-    //       //    'os': 'Windows',
-    //       //    'os_version': '7',
-    //       //    'browserName': 'Chrome',
-    //       //    'browser_version': '54.0',
-    //       //    'resolution': '1920x1200'//,
-    //       //
-    //       //   // 'chromeOptions': {
-    //       //   //     'excludeSwitches': ["disable-popup-blocking"]
-    //       //   // }
-    //       //
-    //       //   // 'chromeOptions': {
-    //       //   //     'args': ["--disable-popup-blocking"]
-    //       //   // }
-    //       //   }
-    //       //   ,
-    //       //   {
-    //       //   ////////////////////////////////////////////// Windows 7 IE 11.0  1920x1200 ///////////////////
-    //       //   // Browser Type
-    //       //   'os': 'Windows',
-    //       //   'os_version': '7',
-    //       //   'browserName': 'IE',
-    //       //   'browser_version': '11.0',
-    //       //   'resolution': '1920x1200'
-    //       //   }
-    //       //  ,
-    //       //
-    //       //   {
-    //       //   ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
-    //       //   //Browser Type
-    //       //   'browserName' : 'IE',
-    //       //   'browser_version' : '11.0',
-    //       //   'os' : 'Windows',
-    //       //   'os_version' : '10',
-    //       //   'resolution' : '1920x1200'
-    //       //   }
-    //       //   ,
-    //       //
-    //       //   {
-    //       //     ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
-    //       //     //Browser Type
-    //       //     'os': 'Windows',
-    //       //     'os_version': '10',
-    //       //     'browserName': 'Edge',
-    //       //     'browser_version': '13.0',
-    //       //     'resolution': '1920x1200'
-    //       //   }
-    //       //  ,
-    //       //   {
-    //       //     ////////////////////////////////////////////// Windows 10 Chrome 54.0 1920x1200 ///////////////////
-    //       //     //Browser Type
-    //       //   'os': 'Windows',
-    //       //   'os_version': '10',
-    //       //   'browserName': 'Chrome',
-    //       //   'browser_version': '54.0',
-    //       //   'resolution': '1920x1200'
-    //       //   }
-    // ],
+    'commonCapabilities': {
+         //Label
+         'build': ' #151 Run: ' + new Date().toString(),
+         'project': 'Black Book',
+         'name': 'Full Test Automation Suit',
 
-    capabilities: {
-    //46.0b9
-    'browserName': 'firefox'
-    //53.0.2785.89
-    //'browserName': 'chrome'
+        'browserstack.user': 'soltech2',
+        'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
+        //'browserstack.local' : 'true',
+         'acceptSslCerts': true,
+
+         //Screenshot
+         'browserstack.debug': 'true',
+
+         //Video recording
+         'browserstack.video': 'true'//,
     },
+
+    //Browserstack multiple browsers at a time testing
+      multiCapabilities: [
+            {
+            ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
+            //Browser Type
+            'browserName' : 'IE',
+            'browser_version' : '11.0',
+            'os' : 'Windows',
+            'os_version' : '10',
+            'resolution' : '1920x1200'
+            }
+          //   ,
+          // {
+          //     ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
+          //     //Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Edge',
+          //     'browser_version': '13.0',
+          //     'resolution': '1920x1200'
+          // }
+          //   ,
+          // {
+          //     ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
+          //     // Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Chrome',
+          //     'browser_version': '55.0',
+          //     'resolution': '1920x1200'//,
+          //
+          //     // 'chromeOptions': {
+          //     //     'excludeSwitches': ["disable-popup-blocking"]
+          //     // }
+          //
+          //     // 'chromeOptions': {
+          //     //     'args': ["--disable-popup-blocking"]
+          //     // }
+          // }
+          // ,
+          // {
+          //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
+          //     // Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Firefox',
+          //     'browser_version': '47.0',
+          //     'resolution': '1920x1200'
+          // }
+          // ,
+          // {
+          //     ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
+          //     // Browser Type
+          //     'os': 'OS X',
+          //     'os_version': 'Sierra',
+          //     'browserName': 'Safari',
+          //     'browser_version': '10.0',
+          //     'resolution': '1920x1080' ,
+          //     'browserstack.safari.enablePopups': false
+          // }
+
+          /////////////NOT NEED FOR MOMENT/////
+          //  ,
+          //   {
+          //   ////////////////////////////////////////////// DOES NOT WORK Windows 7 IE 10.0  1920x1200 ///////////////////
+          //   // Browser Type
+          //   'os': 'Windows',
+          //   'os_version': '7',
+          //   'browserName': 'IE',
+          //   'browser_version': '10.0',
+          //   'resolution': '1920x1200'
+          //   }
+          //  ,
+          //   {
+          //   ////////////////////////////////////////////// Windows 7 IE 11.0  1920x1200 ///////////////////
+          //   // Browser Type
+          //   'os': 'Windows',
+          //   'os_version': '7',
+          //   'browserName': 'IE',
+          //   'browser_version': '11.0',
+          //   'resolution': '1920x1200'
+          //   }
+          // ,
+          // {
+          //   ////////////////////////////////////////////// Windows 7 Chrome 54.0  1920x1200 ///////////////////
+          //    // Browser Type
+          //    'os': 'Windows',
+          //    'os_version': '7',
+          //    'browserName': 'Chrome',
+          //    'browser_version': '54.0',
+          //    'resolution': '1920x1200'//,
+          //
+          //   // 'chromeOptions': {
+          //   //     'excludeSwitches': ["disable-popup-blocking"]
+          //   // }
+          //
+          //   // 'chromeOptions': {
+          //   //     'args': ["--disable-popup-blocking"]
+          //   // }
+          //   }
+          // ,
+          // {
+          //     ////////////////////////////////////////////// Windows 7 FireFox 46.0  1920x1200 ///////////////////
+          //     //Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '7',
+          //     'browserName': 'Firefox',
+          //     'browser_version': '46.0',
+          //     'resolution': '1920x1200'
+          // }
+
+    ],
+
+   //  capabilities: {
+   //  //46.0b9
+   //  'browserName': 'firefox'
+   //  //53.0.2785.89
+   // // 'browserName': 'chrome'
+   //     // 'browserName': 'safari'//,
+   //      // 'acceptSslCerts': true,
+   //      // 'mode' : 'proxy'
+   //
+   //  },
 
     // // // Code to start browserstack local before start of test
     // beforeLaunch: function(){
@@ -223,22 +248,9 @@ exports.config = {
 
         require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/step_definitions/my_steps.js' ],
 
-        //tags: '@TestCases_1',
+        // tags: false,
+       // tags: '@TestCases_C-1',
 
-        //tags: '@TestCases_A',
-        // tags: '@TestCases_B-1',
-        // tags: '@TestCases_B-2',
-        // tags: '@TestCases_B-3',
-        // tags: '@TestCases_B-4',
-        // tags: ' @TestCases_C-1',
-        // tags: ' @TestCases_C-2',
-        // tags: ' @TestCases_C-3',
-        // tags: ' @TestCases_C-4',
-        // tags: ' @TestCases_C-5',
-        // tags: ' @TestCases_C-6',
-
-       // tags: '@TestCases_Reports',
-        //tags: '@TestCases_1',
          //format: 'pretty',
         //format: 'json' ,
          format: 'json:./src/cucumber_report.json',
@@ -282,13 +294,13 @@ exports.config = {
     // ,
     //
 
-    allScriptsTimeout: 10000  //browserstack timeout
-   //getPageTimeout: 10000,
+    getPageTimeout: 20000,
+    allScriptsTimeout: 20000,
 
     // rootElement: '.my-app'
 };
 
-// // Code to support common capabilities
-// exports.config.multiCapabilities.forEach(function(caps){
-//     for(var i in exports.config.commonCapabilities) caps[i] = caps[i] || exports.config.commonCapabilities[i];
-// });
+// Code to support common capabilities
+exports.config.multiCapabilities.forEach(function(caps){
+    for(var i in exports.config.commonCapabilities) caps[i] = caps[i] || exports.config.commonCapabilities[i];
+});

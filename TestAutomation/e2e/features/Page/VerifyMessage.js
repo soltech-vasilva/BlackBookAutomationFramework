@@ -7,38 +7,32 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-
-var BB_userProfileEdit = require('../Page/BB_UserProfileEdit.js');
-var BB_userProfileEditRepo =  require('../Repository/BB_UserProfileEditRepo.js');
+var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
+var BB_AddUserProfileRepo  = require('../Repository/BB_AddUserProfileRepo.js');
+var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
 var BB_login = require('../Page/BB_Login.js');
 var BB_loginRepo = require ('../Repository/BB_LoginRepo.js');
 
 var VerifyMessage = function VerifyMessage(){
 
-    VerifyMessage.prototype.ReplaceDoubleQuotesWithWhiteSpace = function (stringToReplace) {
-        stringToReplace = stringToReplace.replace(/"/g,  " " );
-        return stringToReplace;
-    };
-
     VerifyMessage.prototype.ExpectTextEqualsTo = function(elementToCheck, compareValuesString, success, failure){
-
         return elementToCheck.getText().then((Text)=>{
-            if (Text == compareValuesString) {
+            if (Text.trim() == compareValuesString) {
                 success();
             }
             else {
+                console.log('Text: '+Text+' is not equal to compareValuesString: '+ compareValuesString);
                 failure();
             }
         });
-        //this kill script and dont fail gracely and report are blank
+        //this kill script and dont fail gracely and report are blank "DONT USE EXPECT
         // expect(elementToCheck.getText()).to.eventually.equal(compareValuesString);
     };
 
     VerifyMessage.prototype.AssertElementsToDisplay = function (isElementPresent, elementToCheck, compareValuesString, consoleErrorMessageDisplay , success, failure ) {
-        //browser.sleep(2000);
 
         if (isElementPresent == true) {
-            VerifyMessage.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure);
+             VerifyMessage.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure);
         }
         else {
             console.log(consoleErrorMessageDisplay);
@@ -48,62 +42,97 @@ var VerifyMessage = function VerifyMessage(){
     };
 
     VerifyMessage.prototype.Verify_ErrorMessageToDisplay = function (str_TextboxName , str_VerifyErrorName, FilledOrEmptyField) {
-        browser.sleep(1000);
         return new Promise ((success, failure)=> {
             switch (str_TextboxName.toLowerCase()) {
                 case 'firstname':
                     // console.log(str_TextboxName.toLowerCase());
-                    // console.log('|'+BB_userProfileEdit.firstName+'|');
-                    if ((BB_userProfileEdit.firstName != '' && FilledOrEmptyField == 'filled') || (BB_userProfileEdit.firstName == '' && FilledOrEmptyField == 'empty')) {
-                        browser.isElementPresent(BB_userProfileEditRepo.Select_Xpath_ERRORMESSAGE_FirstName).then(function (isPresente) {
-                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_FirstName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in First Name', success, failure);
+                    // console.log('|'+BB_editUserProfile.firstName+'|');
+
+                    if ((BB_editUserProfile.firstName != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.firstName == '' && FilledOrEmptyField == 'empty')) {
+                        browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName), 10000);
+                        browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_FirstName).then(function (isPresente) {
+                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in First Name', success, failure);
                         });
                     }
                     break;
 
                 case 'lastname':
-                    if ((BB_userProfileEdit.lastName != '' && FilledOrEmptyField == 'filled') || (BB_userProfileEdit.lastName == '' && FilledOrEmptyField == 'empty')) {
-                        browser.isElementPresent(BB_userProfileEditRepo.Select_Xpath_ERRORMESSAGE_LastName).then(function (isPresente) {
-                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_LastName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Last Name', success, failure);
+                    if ((BB_editUserProfile.lastName != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.lastName == '' && FilledOrEmptyField == 'empty')) {
+                        browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_LastName), 10000);
+                        browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_LastName).then(function (isPresente) {
+                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_LastName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Last Name', success, failure);
                         });
                     }
                     break;
 
                 case 'emailaddress':
-                    if ((BB_userProfileEdit.emailAddress != '' && FilledOrEmptyField == 'filled') || (BB_userProfileEdit.emailAddress == '' && FilledOrEmptyField == 'empty')) {
-                        browser.isElementPresent(BB_userProfileEditRepo.Select_xpath_ERRORMESSAGE_Email).then(function (isPresente) {
-                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_Email, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Email Address', success, failure);
+
+                    if ((BB_editUserProfile.emailAddress != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.emailAddress == '' && FilledOrEmptyField == 'empty')) {
+                        browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_Email), 10000);
+                        browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_Email).then(function (isPresente) {
+                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_Email, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Email Address', success, failure);
                         });
                     }
                     break;
 
                 case 'phonenumber':
-                    if ((BB_userProfileEdit.phoneNumber != '' && FilledOrEmptyField == 'filled') || (BB_userProfileEdit.phoneNumber == '' && FilledOrEmptyField == 'empty')) {
-                        browser.isElementPresent(BB_userProfileEditRepo.Select_xpath_ERRORMESSAGE_PhoneNumber).then(function (isPresente) {
-                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_PhoneNumber, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Phone Number', success, failure);
+                    if ((BB_editUserProfile.phoneNumber != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.phoneNumber == '' && FilledOrEmptyField == 'empty')) {
+                        browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PhoneNumber), 10000);
+                        browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PhoneNumber).then(function (isPresente) {
+                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PhoneNumber, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Phone Number', success, failure);
                         });
                     }
                     break;
 
                 case 'newpassword':
-                    if ((BB_userProfileEdit.newPassword != '' && FilledOrEmptyField == 'filled') || (BB_userProfileEdit.newPassword == '' && FilledOrEmptyField == 'empty')) {
-                        browser.isElementPresent(BB_userProfileEditRepo.Select_xpath_ERRORMESSAGE_NewPassword).then(function (isPresente) {
-                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_NewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password', success, failure);
+                    if ((BB_editUserProfile.newPassword != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.newPassword == '' && FilledOrEmptyField == 'empty')) {
+
+                        browser.getCurrentUrl().then(function (getCurrentURL) {
+
+                            if (getCurrentURL.trim() === 'http://qa-autobahn.blackbookcloud.com/user')
+                            {
+                                browser.wait(protractor.ExpectedConditions.presenceOf( BB_AddUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword), 10000);
+                                browser.isElementPresent(BB_AddUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword).then(function (isPresente) {
+                                    VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_AddUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password', success, failure);
+                                });
+                            }
+                            else {
+                                //bug not showing error comment out line below
+                                //TODO: THIS STOP SCRIPT CHANGE IT    BUG
+                                 browser.sleep(4000);
+                                // browser.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword), 10000);
+                                browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword).then(function (isPresente) {
+                                    VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password', success, failure);
+                                });
+                            }
                         });
                     }
                     break;
 
                 case 'confirmnewpassword':
-                    if ((BB_userProfileEdit.confirmNewPassword != '' && FilledOrEmptyField == 'filled') || (BB_userProfileEdit.confirmNewPassword == '' && FilledOrEmptyField == 'empty')) {
-                        browser.isElementPresent(BB_userProfileEditRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then(function (isPresente) {
-                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Confirm New Password', success, failure);
+                    if ((BB_editUserProfile.confirmNewPassword != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.confirmNewPassword == '' && FilledOrEmptyField == 'empty')) {
+
+                        browser.getCurrentUrl().then(function (getCurrentURL) {
+
+                            if (getCurrentURL.trim() === 'http://qa-autobahn.blackbookcloud.com/user') {
+                                browser.wait(protractor.ExpectedConditions.presenceOf( BB_AddUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword), 10000);
+                                browser.isElementPresent(BB_AddUserProfileRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then(function (isPresente) {
+                                    VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_AddUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Confirm New Password', success, failure);
+                                });
+                            }
+                            else {
+                                browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword), 10000);
+                                browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then(function (isPresente) {
+                                    VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Confirm New Password', success, failure);
+                                });
+                            }
                         });
                     }
                     break;
 
                 case 'currentemailaddress' :
                     if ((BB_login.currentEmailAddress != '' && FilledOrEmptyField == 'filled') || (BB_login.currentEmailAddress == '' && FilledOrEmptyField == 'empty')) {
-                        browser.sleep(3000);
+                        browser.wait(protractor.ExpectedConditions.presenceOf( BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword), 10000);
                         browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then(function (isPresente) {
                             VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Current Email Address', success, failure);
                         });
@@ -112,9 +141,19 @@ var VerifyMessage = function VerifyMessage(){
 
                 case 'currentpassword' :
                     if ((BB_login.currentPassword != '' && FilledOrEmptyField == 'filled') || (BB_login.currentPassword == '' && FilledOrEmptyField == 'empty')) {
-                        browser.sleep(3000);
+                        browser.wait(protractor.ExpectedConditions.presenceOf( BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword), 10000);
                         browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then(function (isPresente) {
                             VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Current Password', success, failure);
+                        });
+                    }
+                    break;
+
+                case 'previouspassword' :
+                    if ((BB_editUserProfile.previousPassword != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.previousPassword == '' && FilledOrEmptyField == 'empty')) {
+                        //TODO BUG Application is not using this controller so it will fail
+                        browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PreviousPassword), 10000);
+                        browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PreviousPassword).then(function (isPresente) {
+                            VerifyMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PreviousPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Previous Password', success, failure);
                         });
                     }
                     break;
@@ -153,40 +192,39 @@ var VerifyMessage = function VerifyMessage(){
         browser.sleep(1000);
         return new Promise ((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
-
                 case 'firstname':
-                    browser.isElementPresent(BB_userProfileEditRepo.Select_Xpath_ERRORMESSAGE_FirstName).then((isPresente)=> {
-                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_FirstName, 'It should not show any errors in First Name', success, failure);
+                    browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_FirstName).then((isPresente)=> {
+                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName, 'It should not show any errors in First Name', success, failure);
                     });
                     break;
 
                 case 'lastname':
-                    browser.isElementPresent(BB_userProfileEditRepo.Select_Xpath_ERRORMESSAGE_LastName).then((isPresente)=> {
-                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_LastName, 'It should not show any errors in Last Name', success, failure);
+                    browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_LastName).then((isPresente)=> {
+                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_LastName, 'It should not show any errors in Last Name', success, failure);
                     });
                     break;
 
                 case 'emailaddress':
-                    browser.isElementPresent(BB_userProfileEditRepo.Select_xpath_ERRORMESSAGE_Email).then((isPresente)=> {
-                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_Email, 'It should not show any errors in Email Address', success, failure);
+                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_Email).then((isPresente)=> {
+                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_Email, 'It should not show any errors in Email Address', success, failure);
                     });
                     break;
 
                 case 'phonenumber':
-                    browser.isElementPresent(BB_userProfileEditRepo.Select_xpath_ERRORMESSAGE_PhoneNumber).then((isPresente)=> {
-                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_PhoneNumber, 'It should not show any errors in Phone Number', success, failure);
+                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PhoneNumber).then((isPresente)=> {
+                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PhoneNumber, 'It should not show any errors in Phone Number', success, failure);
                     });
                     break;
 
                 case 'newpassword':
-                    browser.isElementPresent(BB_userProfileEditRepo.Select_xpath_ERRORMESSAGE_NewPassword).then((isPresente)=> {
-                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_NewPassword, 'It should not show any errors in New Password', success, failure);
+                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword).then((isPresente)=> {
+                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword, 'It should not show any errors in New Password', success, failure);
                     });
                     break;
 
                 case 'confirmnewpassword':
-                    browser.isElementPresent(BB_userProfileEditRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then((isPresente)=> {
-                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_userProfileEditRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, 'It should not show any errors in Confirm New Password', success, failure);
+                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword).then((isPresente)=> {
+                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword, 'It should not show any errors in Confirm New Password', success, failure);
                     });
                     break;
 
@@ -201,6 +239,11 @@ var VerifyMessage = function VerifyMessage(){
                     browser.sleep(3000);
                     browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
                         VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword , 'It should not show any errors in Current Password', success, failure);
+                    });
+                    break;
+                case 'previouspassword':
+                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PreviousPassword).then((isPresente)=> {
+                        VerifyMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PreviousPassword , 'It should not show any errors in Previous Password', success, failure);
                     });
                     break;
 
