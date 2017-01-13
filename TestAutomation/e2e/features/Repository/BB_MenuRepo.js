@@ -15,6 +15,5 @@ var BB_MenuRepo = function BB_MenuRepo () {
     BB_MenuRepo.prototype.Select_Element_MyProfileSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[2]/a'));
     BB_MenuRepo.prototype.Select_Element_LogOutSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[1]/a'));
     BB_MenuRepo.prototype.Select_Element_UsersSubMenuButton = element(by.linkText('Users'));
-
 };
 module.exports = new BB_MenuRepo();

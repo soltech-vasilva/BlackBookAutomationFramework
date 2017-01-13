@@ -14,9 +14,11 @@ var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
 var BB_login = require('../Page/BB_Login');
 var eyesSetUp = require('../Page/EyesSetUp.js');
 var captureBrowserCapabilities = require ('../Page/CaptureBrowserCapabilities.js');
-var verifyMessage = require('../Page/VerifyMessage.js');
+var verifyErrorMessage = require('../Page/VerifyErrorMessage.js');
 var BB_menu = require ('../Page/BB_Menu.js');
 var BB_userList = require('../Page/BB_UserList');
+var utilities = require('../Page/Utilities.js');
+var verify_UserInformation = require('../Page/VerifyUserInfo.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -55,7 +57,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     // });
 
     //This is for timeout issues default is 5 sec
-    this.setDefaultTimeout(20 * 1000);
+    this.setDefaultTimeout(80 * 1000);
 
     this.Before(function () {
         return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
@@ -64,6 +66,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.After(function (scenario, callback) {
         eyesSetUp.EyesClose_EndTestcase(eyes);
 
+        //TODO: not working for picture but it is needed for callback()
         if (scenario.isFailed()) {
             browser.takeScreenshot().then(function (base64png) {
                 var decodedImage = new Buffer(base64png, 'base64').toString('binary');
@@ -108,14 +111,14 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should not see in "([^"]*)" errors displayed$/, function (str_TextboxName) {
-       return verifyMessage.Verify_ErrorMessagesNotToDisplay(str_TextboxName);
+       return verifyErrorMessage.Verify_ErrorMessagesNotToDisplay(str_TextboxName);
     });
 
     this.Then(/^I should see "([^"]*)" errors "([^"]*)" displayed for this "([^"]*)" field$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
-        return verifyMessage.Verify_ErrorMessageToDisplay(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
+        return verifyErrorMessage.Verify_ErrorMessageToDisplay(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
     });
 
-    //EMPTY FUNCTION FOR READABILITY ONLY ON CUCUMBER
+    //EMPTY FUNCTION FOR READABILITY ONLY ON CUCUMBER READABILITY
     this.When(/^I enter "([^"]*)"$/, function (c) {
         return new Promise((success, failure)=> {
             success();
@@ -147,15 +150,15 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Profile Button$/, function () {
-        return BB_menu.Click_ProfileButton();
+        return BB_menu.Click_AvatarImageButton();
     });
 
     this.Given(/^I click My Profile sub menu$/, function () {
-        return BB_menu.Click_MyProfileButton();
+        return BB_menu.Click_MyProfileSubmenu();
     });
 
     this.Given(/^I click Logout sub menu$/, function () {
-        return BB_menu.Click_LogOutButton();
+        return BB_menu.Click_LogOutSubmenu();
     });
 
     this.When(/^I click Cancel Button$/, function () {
@@ -170,24 +173,53 @@ var myBlackBookSteps = function myBlackBookSteps() {
        return BB_editUserProfile.DeleteContentInTextBox(TextboxName);
     });
 
-    this.Given(/^I click on Admin Button$/, function () {
+    this.Given(/^I click on Admin Tab$/, function () {
         return BB_menu.Click_AdminTab();
     });
 
-    this.Given(/^I click on User Button$/, function () {
-        return BB_menu.Click_UsersButton();
+    this.Given(/^I click on Users submenu from Admin Tab$/, function () {
+        return BB_menu.Click_Users_Submenu();
     });
 
     this.Given(/^I click on New User Button$/, function () {
-        return BB_userList.Click_NewUser();
+        return BB_userList.Click_NewUser_Button();
     });
 
     this.Then(/^I click on Save button$/, function () {
         return BB_editUserProfile.Click_SaveButton();
     });
 
+    this.Given(/^I enter filter value (.*)$/, function (filterValue) {
+        return BB_userList.EnterValueToFilter_FilterUseList(filterValue);
+    });
 
+    this.Given(/^I click on Gear Icon$/, function () {
+        return BB_userList.Click_GearIcon();
+     });
 
+    this.Given(/^I click Deactivate in submenu from Gear Icon$/, function () {
+        return BB_userList.Click_Gear_Deactivate_Submenu();
+    });
+
+    this.Given(/^I click Status Filter$/, function () {
+        return BB_userList.Click_StatusFilter();
+    });
+
+    this.Given(/^I click Inactive in submenu from Status Filter$/, function () {
+        return BB_userList.Click_StatusFilter_Inactive_Submenu();
+    });
+
+    this.Given(/^I click Activate in submenu from Gear Icon$/, function () {
+        return BB_userList.Click_Gear_Activate_Submenu();
+    });
+
+    this.Given(/^I click View from Gear Icon$/, function () {
+        return BB_userList.Click_Gear_View_Submenu();
+    });
+
+    this.Then(/^I should see user's "([^"]*)" displayed in screen with value "([^"]*)"$/, function (textboxName, valueCompare) {
+        return verify_UserInformation.Verify_UserInformation(textboxName, valueCompare);
+    });
 
 
     ///BUGS FIXES TO TEST OTHER THINGS
@@ -197,7 +229,15 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I reload page "([^"]*)"$/, function (URL) {
         browser.ignoreSynchronization = true;
-        return browser.driver.get(URL);
+        browser.driver.get(URL);
+        browser.sleep(5000);
+        return browser.getCurrentUrl().then(function (getCurrentURL) {
+            if (getCurrentURL.trim() != 'http://qa-autobahn.blackbookcloud.com/login') {
+                browser.ignoreSynchronization = true;
+                browser.driver.get(URL);
+                browser.sleep(5000);
+            }
+        });
     });
 
     this.Given(/^I enter time the same user name and password$/, function () {
@@ -208,13 +248,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
           //  BB_login.Enter_CurrentPassword('Password0');
         // }
 
-        BB_login.Click_LoginButton();
-        browser.sleep(2000);
-        BB_login.Click_LoginButton();
-        browser.sleep(2000);
-        BB_login.Click_LoginButton();
-        browser.sleep(2000);
-        return  BB_login.Click_LoginButton();
+            BB_login.Click_LoginButton();
+            browser.sleep(2000);
+            BB_login.Click_LoginButton();
+            browser.sleep(2000);
+            BB_login.Click_LoginButton();
+            return browser.sleep(2000);
     });
 };
 

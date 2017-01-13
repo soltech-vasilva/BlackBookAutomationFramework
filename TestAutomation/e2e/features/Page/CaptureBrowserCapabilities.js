@@ -20,8 +20,6 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
 
     CaptureBrowserCapabilities.prototype.captureCurrentBrowserCapabilities = function (eyes) {
 
-
-
         browser.getCapabilities().then(function (capability) {
 
             try {
@@ -33,10 +31,9 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
                 this.currentOSVersion = capability.get('os_version');
                 this.currentOSName = capability.get('os');
 
-                if (this.currentOSName === undefined)
-                {
+                if (this.currentOSName === undefined) {
                     this.currentOSName = capability.get('platform');
-                    this.currentOSName ='';
+                    this.currentOSName = '';
                 }
             }
 
@@ -58,13 +55,11 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
             //     this.currentOSName = capability.get('platform');
             // }
 
-            if (this.currentOSVersion === undefined)
-            {
-                this.currentOSVersion ='';
+            if (this.currentOSVersion === undefined) {
+                this.currentOSVersion = '';
             }
-            else
-            {
-                this.currentOSVersion = '('+this.currentOSVersion+')';
+            else {
+                this.currentOSVersion = '(' + this.currentOSVersion + ')';
             }
 
             this.currentBrowserVersion = capability.get('version');
@@ -77,12 +72,12 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
             // console.log(this.currentHeightTestResolution);
             // console.log(this.currentOSVersion);
 
-         if (protractorConfig.config.ApplitoolsOn == true) {
-             eyesSetUp.EyesInitialSetUp(eyes);
-             eyesSetUp.EyesOpen_StartTestCase(eyes, this.currentWidthTestResolution, this.currentHeightTestResolution);
-             eyesSetUp.EyesSetBaseline(eyes, this.currentBrowserName, this.currentBrowserVersion, this.currentWidthTestResolution, this.currentHeightTestResolution);
-             eyesSetUp.EyesSetBatch(eyes, this.currentOSName + this.currentOSVersion , this.currentBrowserName, this.currentBrowserVersion, this.currentWidthTestResolution, this.currentHeightTestResolution);
-         }
+            if (protractorConfig.config.ApplitoolsOn == true) {
+                eyesSetUp.EyesInitialSetUp(eyes);
+                eyesSetUp.EyesOpen_StartTestCase(eyes, this.currentWidthTestResolution, this.currentHeightTestResolution);
+                eyesSetUp.EyesSetBaseline(eyes, this.currentBrowserName, this.currentBrowserVersion, this.currentWidthTestResolution, this.currentHeightTestResolution);
+                eyesSetUp.EyesSetBatch(eyes, this.currentOSName + this.currentOSVersion, this.currentBrowserName, this.currentBrowserVersion, this.currentWidthTestResolution, this.currentHeightTestResolution);
+            }
         });
     };
 };
