@@ -18,6 +18,37 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
     CaptureBrowserCapabilities.prototype.currentWidthTestResolution = '';
     CaptureBrowserCapabilities.prototype.currentHeightTestResolution = '';
 
+    CaptureBrowserCapabilities.prototype.captureCurrentBrowser = function (BrowserCompare, element, eaqualOrNot ) {
+
+        var name = '';
+
+       return browser.wait (  browser.getCapabilities().then(function (capability) {
+
+            try {
+                name = protractorConfig.config.capabilities.browserName;
+            }
+            catch (e) {
+                name = capability.get('browserName');
+            }
+
+            console.log(name);
+
+            if (eaqualOrNot == true) {
+                if (name.toLowerCase() == BrowserCompare) {
+                    browser.actions().mouseMove(element).perform();
+                    console.log("FOUNT IT SAFARI");
+                }
+            }
+            else {
+                if (name.toLowerCase() != BrowserCompare) {
+                    console.log("NOT: SAFARI");
+                }
+            }
+
+            return name;
+        }));
+    };
+
     CaptureBrowserCapabilities.prototype.captureCurrentBrowserCapabilities = function (eyes) {
 
         browser.getCapabilities().then(function (capability) {

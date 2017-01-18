@@ -11,12 +11,14 @@ var BB_UserListRepo = function BB_UserListRepo () {
     //Components Button
     BB_UserListRepo.prototype.Select_Element_NewUserButton  = element(by.buttonText('New User'));
     BB_UserListRepo.prototype.Select_Element_FilterUserListTextbox = element(by.css('input[type="text"]'));
-    BB_UserListRepo.prototype.Select_Element_EditGeardIcon = element(by.css('div.icon-cog.parent'));
 
-    BB_UserListRepo.prototype.Select_Element_Gear_Deactivate_Submenu = element(by.linkText('Deactivate'));
     BB_UserListRepo.prototype.Select_Element_StatusFilter = element(by.css('select[name="statusFilterTerm"]'));
-    BB_UserListRepo.prototype.Select_Element_StatusFilter_Inactive_Submenu = element(by.xpath('//*[@id="page-box"]/user-list/div/div/div/div[1]/div/div[2]/select/option[3]'));
+    BB_UserListRepo.prototype.Select_Element_StatusFilter_Inactive_Submenu = element(by.css('option[value=\"inactive\"]'));
+    BB_UserListRepo.prototype.Select_Element_StatusFilter_Active_Submenu = element(by.css('option[value=\"active\"]'));
+
+    BB_UserListRepo.prototype.Select_Element_EditGeardIcon = element(by.css('div.icon-cog.parent'));
     BB_UserListRepo.prototype.Select_Element_Gear_Activate_Submenu = element(by.linkText('Activate'));
     BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[9]/action-icon/div/div/ul/li[1]/div'));
+    BB_UserListRepo.prototype.Select_Element_Gear_Deactivate_Submenu = element(by.linkText('Deactivate'));
 };
 module.exports = new BB_UserListRepo();

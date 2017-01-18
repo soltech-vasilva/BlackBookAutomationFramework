@@ -33,7 +33,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     VerifyErrorMessage.prototype.AssertElementsToDisplay = function (isElementPresent, elementToCheck, compareValuesString, consoleErrorMessageDisplay , success, failure ) {
 
         if (isElementPresent == true) {
-             VerifyErrorMessage.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure);
+             browser.driver.wait(VerifyErrorMessage.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure));
         }
         else {
             console.log(consoleErrorMessageDisplay);
@@ -53,6 +53,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                         utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName);
                         //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName), 10000);
                         browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_FirstName).then(function (isPresente) {
+                      //      console.log(isPresente);
                             VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in First Name', success, failure);
                         });
                     }
@@ -111,6 +112,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                                     });
                                 }
                                 else {
+                                    utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character);
                                     browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Leastbe8Character).then(function (isPresente) {
                                         VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password', success, failure);
                                     });
@@ -211,7 +213,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     VerifyErrorMessage.prototype.AssertElementsNotToDisplay = function (isElementPresent, elementToCheck, consoleErrorMessageDisplay, success, failure )
     {
         if (isElementPresent == true) {
-            return elementToCheck.getText().then((Text)=> {
+            return browser.driver.wait(elementToCheck.getText().then((Text)=> {
 
                 if (Text.trim() != "") {
                     console.log('ERROR: |' + Text + '|. ' + consoleErrorMessageDisplay);
@@ -223,15 +225,15 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                     console.log('pass: empty string');
                     success();
                 }
-            });
+            }));
         }
         else {
-            success();
+             success();
         }
     };
 
     VerifyErrorMessage.prototype.Verify_ErrorMessagesNotToDisplay = function (TextboxName) {
-        browser.sleep(2000);
+        browser.driver.sleep(2000);
         return new Promise ((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
                 case 'firstname':
@@ -271,21 +273,21 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                     break;
 
                 case 'currentemailaddress':
-                    browser.sleep(3000);
+                    browser.driver.sleep(3000);
                     browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword , 'It should not show any errors in Current Email Address', success, failure);
                     });
                     break;
 
                 case 'currentpassword':
-                    browser.sleep(3000);
+                    browser.driver.sleep(3000);
                     browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword , 'It should not show any errors in Current Password', success, failure);
                     });
                     break;
                 case 'previouspassword':
                     browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PreviousPassword_Require).then((isPresente)=> {
-                        VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PreviousPassword_Require , 'It should not show any errors in Previous Password', success, failure);
+                       VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PreviousPassword_Require , 'It should not show any errors in Previous Password', success, failure);
                     });
                     break;
 

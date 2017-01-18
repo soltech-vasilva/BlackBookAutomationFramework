@@ -1,6 +1,8 @@
 //var paths = require('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/build/paths');
 //var browserstack = require('browserstack-local');
 //var paths = require('build/paths');
+var dateFormat = require('dateformat');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 exports.config = {
 
@@ -61,7 +63,8 @@ exports.config = {
     'height': 1430,
 
     'commonCapabilities': {
-        'build': ' #169 Run: Firefox ' + new Date().toString(),
+       // 'build': ' #169 Run: Firefox ' + new Date().toString(),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : User List______________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
         'name': 'User List',
 

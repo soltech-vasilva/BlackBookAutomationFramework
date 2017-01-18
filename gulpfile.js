@@ -97,7 +97,7 @@ gulp.task('Chrome_UsersList', ['Chrome_EditUserProfile'],()=>
     });
 });
 
-gulp.task('Chrome_Login',['Chrome_UsersList'], ()=>
+gulp.task('Chrome_Login',['Chrome_UsersList'],()=>
 {
     return new Promise((resolve, reject) => {
      gulp.src([])
@@ -266,17 +266,17 @@ gulp.task('Edge_Login',['Edge_UsersList'], ()=>
 });
 });
 
-// gulp.task('default', ['Chrome_AddUser','Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login']);
+ gulp.task('default', ['Chrome_AddUser','Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login']);
 // gulp.task('default', ['Firefox_AddUser','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
 // gulp.task('default', ['IE_AddUser','IE_EditUserProfile','IE_UsersList','IE_Login']);
-// gulp.task('default', ['Edge_AddUser','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);
+//gulp.task('default', ['Edge_AddUser','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);
 
 // git-r-done
-gulp.task('default', [/*'webdriver','report',*/
-    'Chrome_AddUser','Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login',
-    'Firefox_AddUser','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login',
-    'IE_AddUser','IE_EditUserProfile','IE_UsersList','IE_Login',
-    /*'Edge_AddUser','Edge_EditUserProfile','Edge_UsersList','Edge_Login'*/]);
+// gulp.task('default', [/*'webdriver','report',*/
+//     'Chrome_AddUser','Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login',
+//     'Firefox_AddUser','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login',
+//     'IE_AddUser','IE_EditUserProfile','IE_UsersList','IE_Login',
+//     /*'Edge_AddUser','Edge_EditUserProfile','Edge_UsersList','Edge_Login'*/]);
 
 function runCommand(command) {
   return function (cb) {

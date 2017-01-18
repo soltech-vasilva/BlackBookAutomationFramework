@@ -10,6 +10,8 @@ var BB_userListRepo = require('../Repository/BB_userListRepo.js');
 var utilities = require('../Page/Utilities.js');
 var keyStrokesRepo = require ('../Repository/KeyStrokesRepo.js');
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var protractor = require('protractor');
+
 
 var BB_UserList = function BB_UserList() {
 
@@ -53,10 +55,15 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.Click_StatusFilter_Inactive_Submenu = function () {
         browser.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu), protractorConfig.config.WaitTime);
+
         return new Promise((success, failure)=> {
-            keyStrokesRepo.ARROWDOWN();
-            keyStrokesRepo.ENTER();
-            browser.sleep(1000);
+            //EDGE BUG does not like to sendkeys to element.
+            BB_userListRepo.Select_Element_FilterUserListTextbox.click();
+            browser.driver.actions().sendKeys(protractor.Key.TAB).perform();
+            browser.driver.actions().sendKeys('i').perform();
+            browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+            BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click();
+            browser.driver.sleep(1000);
             success();
         });
     };
@@ -75,7 +82,7 @@ var BB_UserList = function BB_UserList() {
         return new Promise((success, failure)=> {
             BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.click().then(()=> {
                 keyStrokesRepo.ENTER();
-                browser.sleep(1000);
+                browser.driver.sleep(1000);
                 success();
             });
         });
@@ -86,7 +93,7 @@ var BB_UserList = function BB_UserList() {
         return new Promise((success, failure)=> {
             BB_userListRepo.Select_Element_Gear_Activate_Submenu.click().then(()=> {
                 keyStrokesRepo.ENTER();
-                browser.sleep(1000);
+                browser.driver.sleep(1000);
                 success();
             });
         });
@@ -97,7 +104,7 @@ var BB_UserList = function BB_UserList() {
         return new Promise((success, failure)=> {
             BB_userListRepo.Select_Element_Gear_View_Submenu.click().then(()=> {
                 keyStrokesRepo.ENTER();
-                browser.sleep(1000);
+                browser.driver.sleep(1000);
                 success();
             });
         });

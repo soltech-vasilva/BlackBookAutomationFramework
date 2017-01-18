@@ -40,7 +40,6 @@ Feature:  "User List"
 #      Then I should see user's "emailAddress" displayed in screen with value "admintestemail1@yopmail.com"
 #    And I wait
 
-
   @TestCases_A-1
   Scenario: " @TestCases_A-1" Deactivate User
     And I click on Admin Tab
@@ -61,17 +60,11 @@ Feature:  "User List"
   Scenario: "@TestCases_A-3" admintestemail6@yopmail.com Activate User
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I enter filter value admintestemail6@yopmail.com
     And I click Status Filter
+    And I enter filter value admintestemail6@yopmail.com
     And I click Inactive in submenu from Status Filter
     And I click on Gear Icon
     And I click Activate in submenu from Gear Icon
-
-
-
-
-
-
 
 #######################################################################################################################
 #                                             Test cases A                                                            #

@@ -55,7 +55,7 @@ var Utilities = function Utilities() {
             browser.wait(protractor.ExpectedConditions.presenceOf(element), protractorConfig.config.WaitTime);
         }
         else {
-            browser.sleep(4000);
+            browser.driver.sleep(5000);
         }
     };
 };

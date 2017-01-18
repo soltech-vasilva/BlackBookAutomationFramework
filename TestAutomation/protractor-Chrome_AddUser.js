@@ -1,6 +1,8 @@
 //var paths = require('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/build/paths');
 //var browserstack = require('browserstack-local');
 //var paths = require('build/paths');
+var dateFormat = require('dateformat');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 exports.config = {
 
@@ -62,7 +64,7 @@ exports.config = {
 
     'commonCapabilities': {
          //Label
-        'build': ' #169 | Run: Chrome| Test: "Add User"| Date: ' + new Date().toString(),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Chrome_______________ Test : Add User______________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
          'name': 'Add User',
 

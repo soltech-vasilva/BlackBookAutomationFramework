@@ -1,6 +1,8 @@
 //var paths = require('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/build/paths');
 //var browserstack = require('browserstack-local');
 //var paths = require('build/paths');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var dateFormat = require('dateformat');
 
 exports.config = {
 
@@ -62,7 +64,8 @@ exports.config = {
 
     'commonCapabilities': {
          //Label
-        'build': ' #169 |Run: EDGE| Test: "Edit User Profile"| Date: ' + new Date().toString(),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : EDGE_________________ Test : Edit User Profile_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+
         'project': 'Black Book',
         'name': 'Edit User Profile',
 

@@ -34,6 +34,7 @@ Feature: Enter data on "Edit User Profile"
       And I click Profile Button
       And I click My Profile sub menu
       And I click Edit Button
+      And I wait
 
 #######################################################################################################################
 #                                             Test cases A                                                            #

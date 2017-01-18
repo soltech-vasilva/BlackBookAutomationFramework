@@ -73,7 +73,7 @@ var BB_Login = function BB_Login() {
 
     BB_Login.prototype.Click_LoginButton = function () {
         //added this to give a buffer to click
-        browser.sleep(2000);
+        browser.driver.sleep(2000);
         return new Promise((success, failure)=> {
             BB_loginRepo.Select_Element_LogInButton.click().then(()=> {
                 success();

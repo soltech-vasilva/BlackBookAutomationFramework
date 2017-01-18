@@ -24,7 +24,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
 
     BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile = function(success){
         return BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText.click().then(()=> {
-            return success();
+             return success();
         });
     };
 
@@ -125,7 +125,6 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
             switch (TextboxName.toLowerCase()) {
                 case 'firstname':
                     BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_FirstNameTextbox);
-                    success();
                     break;
                 case 'lastname':
                     BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_LastNameTextbox);
@@ -150,7 +149,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         ElementToClick.click();
         //it works on Firefox only
         keyStrokesRepo.CONTROL_ALL_DELETE();
-        BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+        return BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
     };
 
     BB_EditUserProfile.prototype.Click_EditButton = function () {
