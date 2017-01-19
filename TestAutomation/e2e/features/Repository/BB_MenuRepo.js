@@ -8,10 +8,8 @@ chai.use(chaiAsPromised);
 
 var BB_MenuRepo = function BB_MenuRepo () {
     //Components Tab
-   // BB_MenuRepo.prototype.Select_Element_AdminTab = element(by.css('a[href="/role/list"]'));
-    BB_MenuRepo.prototype.Select_Element_AdminTab = element(by.linkText('Admin'));
+    BB_MenuRepo.prototype.Select_Element_AdminTab = element(by.linkText('Admin')); //EDGE, Chrome works
     //Components Button
-   // BB_MenuRepo.prototype.Select_Element_ProfileButton = element(by.css('div[style="background-image:url(\\'/assets/images/user.svg\\')"]'));
     BB_MenuRepo.prototype.Select_Element_ProfileButton = element(by.xpath('//*[@id="page-box"]/header/div[3]'));
 
     //Components SubMenu Button

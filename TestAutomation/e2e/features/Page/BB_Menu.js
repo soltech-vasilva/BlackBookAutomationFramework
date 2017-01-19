@@ -51,7 +51,8 @@ var BB_Menu = function BB_Menu() {
                     BB_menuRepo.Select_Element_AdminTab.click().then(() => {
                        // captureBrowserCapabilities.captureCurrentBrowser('safari', false);
                       //  if (protractorConfig.config.capabilities.browserName.toLowerCase() != 'safari') {
-                            browser.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform();
+                        //TODO no quitar sirve para EDGE
+                        browser.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform();
                         //}
                         success();
                     });
@@ -59,7 +60,6 @@ var BB_Menu = function BB_Menu() {
                 else
                 {
                     console.log("could not find Click_AdminTab");
-                    failure();
                 }
             });
         });

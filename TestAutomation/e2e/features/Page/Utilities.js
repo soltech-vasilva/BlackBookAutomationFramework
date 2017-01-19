@@ -26,13 +26,24 @@ var Utilities = function Utilities() {
     };
 
     Utilities.prototype.VerifyValueEntered_RetypeValue = function (Element,  ValueCompare , success) {
-        return Element.getAttribute("value").then(function (currentValue) {
+          return Element.getAttribute("value").then(function (currentValue) {
             this.ValueEntered = currentValue;
             //console.log('Value:|' + this.ValueEntered.toString() + '|');
             if (this.ValueEntered != ValueCompare) {
-                //if (this.ValueEntered != 'dd') {
+                // if  (this.ValueEntered != 'dd') {
                 console.log(this.ValueEntered + ":Different:" + ValueCompare);
+
+                //original
                 Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE, ValueCompare);
+
+                //test on my mac computer
+                //  Element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE);
+                //  browser.sleep(3000);
+                // for (var i = 0; i < ValueCompare.toString().length; i++) {
+                //     var c = ValueCompare.charAt(i);
+                //     Element.sendKeys(c);
+                // }
+
                 //Element.clear();
                 //browser.sleep(2000);
                 //funciona
@@ -44,9 +55,21 @@ var Utilities = function Utilities() {
                 //Element.sendKeys(protractor.Key.chord(protractor.Key.CONTROL, 'a'));
                 //Element.sendKeys(protractor.Key.DELETE);
                 //Element.sendKeys(ValueCompare);
+
             }
-            return success();
+              if (this.ValueEntered != ValueCompare) {
+                  console.log(this.ValueEntered + ":Different:" + ValueCompare);
+
+                  //original
+                  Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE, ValueCompare);
+              }
+             return success();
         });
+
+        // protractor.promise.all(flow.execute(extras)).then(success());
+        //protractor.promise.all(extras).then(success());
+        //Promise.all(extras);
+       // Promise.all(extras).then(success());
     };
 
     Utilities.prototype.ExpectedElement_StopAutomationAtFail = function(element)

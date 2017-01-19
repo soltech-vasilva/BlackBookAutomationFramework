@@ -167,7 +167,6 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         browser.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_ResetButton), protractorConfig.config.WaitTime);
         return new Promise((success, failure)=> {
             BB_editUserProfileRepo.Select_Element_ResetButton.click().then(()=> {
-                browser.waitForAngular();
                 success();
             });
         });

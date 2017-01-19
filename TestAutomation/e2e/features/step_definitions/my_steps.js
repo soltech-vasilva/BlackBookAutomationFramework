@@ -17,8 +17,13 @@ var captureBrowserCapabilities = require ('../Page/CaptureBrowserCapabilities.js
 var verifyErrorMessage = require('../Page/VerifyErrorMessage.js');
 var BB_menu = require ('../Page/BB_Menu.js');
 var BB_userList = require('../Page/BB_UserList');
-var utilities = require('../Page/Utilities.js');
 var verify_UserInformation = require('../Page/VerifyUserInfo.js');
+
+
+//testing
+var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
+var protractor = require('protractor');
+var utilities = require('../Page/Utilities.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -57,7 +62,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     // });
 
     //This is for timeout issues default is 5 sec
-    this.setDefaultTimeout(80 * 1000);
+    this.setDefaultTimeout(25 * 1000);  //todo estaba a 80
 
     this.Before(function () {
         return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
@@ -65,19 +70,26 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.After(function (scenario, callback) {
         eyesSetUp.EyesClose_EndTestcase(eyes);
-
         //TODO: not working for picture but it is needed for callback()
+        // if (scenario.isFailed()) {
+        //     browser.takeScreenshot().then(function (base64png) {
+        //         var decodedImage = new Buffer(base64png, 'base64').toString('binary');
+        //         scenario.attach(decodedImage, '/Users/Vsilva/Desktop');
+        //         console.log("\r\nSenario Failed: Missing Element in Screen");
+        //         callback();
+        //     }, function (err) {
+        //         callback(err);
+        //     });
+        // } else {
+        //     console.log("PASS");
+        //     callback();
+        // }
         if (scenario.isFailed()) {
-            browser.takeScreenshot().then(function (base64png) {
-                var decodedImage = new Buffer(base64png, 'base64').toString('binary');
-                scenario.attach(decodedImage, '/Users/Vsilva/Desktop');
-                console.log("\r\nSenario Failed: Missing Element in Screen");
-                callback();
-            }, function (err) {
-                callback(err);
-            });
-        } else {
-            //console.log("PASS");
+            console.log("\r\nSenario Failed: Missing Element in Screen");
+            callback();
+        }
+        else {
+            console.log("PASS");
             callback();
         }
     });
@@ -94,8 +106,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_editUserProfile.Enter_LastName(lastName);
     });
 
-    this.When(/^I enter my email address (.*)$/, function (emailAddress) {
-        return BB_editUserProfile.Enter_EmailAddress(emailAddress);
+    this.When(/^I enter my email address (.*)$/, function (emailAddress , callback) {
+        BB_editUserProfile.Enter_EmailAddress(emailAddress);
+        callback();
     });
 
     this.When(/^I enter my phone number (.*)$/, function (phoneNumber) {
@@ -129,8 +142,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_login.OpenBlackBookLogIn(eyes);
     });
 
-    this.Given(/^I enter my user email address (.*)$/, function (currentEmailAddress) {
-        return BB_login.Enter_CurrentEmailAddress(currentEmailAddress);
+    this.Given(/^I enter my user email address (.*)$/, function (currentEmailAddress, callback) {
+        BB_login.Enter_CurrentEmailAddress(currentEmailAddress);
+        callback();
     });
 
     this.Given(/^I enter my Password (.*)$/, function (currentPassword) {
@@ -189,8 +203,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_editUserProfile.Click_SaveButton();
     });
 
-    this.Given(/^I enter filter value (.*)$/, function (filterValue) {
-        return BB_userList.EnterValueToFilter_FilterUseList(filterValue);
+    this.Given(/^I enter filter value (.*)$/, function (filterValue, callback ) {
+        BB_userList.EnterValueToFilter_FilterUseList(filterValue);
+        callback();
     });
 
     this.Given(/^I click on Gear Icon$/, function () {
@@ -254,6 +269,27 @@ var myBlackBookSteps = function myBlackBookSteps() {
             browser.sleep(2000);
             BB_login.Click_LoginButton();
             return browser.sleep(2000);
+    });
+
+
+
+    this.Then(/^I add extra string "([^"]*)" to my "([^"]*)"$/, function (addString, TextboxName) {
+        var s = TextboxName;
+        BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click();
+        return BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(addString);
+    });
+
+    this.Then(/^I delete the amount "([^"]*)" characters from my "([^"]*)"$/, function (amountDeleted,TextboxName ) {
+        var s = TextboxName;
+        var amount = parseInt(amountDeleted);
+        // console.log('amount:'+typeof amount+' amountDeleted:'+typeof amountDeleted);
+        BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click();
+        BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(protractor.Key.BACK_SPACE);
+            // for ( var a = 0 ; a == amount ;a++) {
+            //     console.log('a:' + a + ' amountDeleted:' + amountDeleted);
+            //     BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys("ppppppppppp");
+            //     BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(protractor.Key.BACK_SPACE);
+            // }
     });
 };
 

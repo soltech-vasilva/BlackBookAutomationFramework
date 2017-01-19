@@ -9,7 +9,7 @@ exports.config = {
     // ],
     'StopRunAtFail': false,
     'WaitTime': 15000,
-    'BuildTestNumber': '170',
+    'BuildTestNumber': '172',
 
     //Turn off applitool
     'ApplitoolsOn': false,
@@ -18,10 +18,11 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-          'e2e/features/TestCases/AddUser.feature'//,
+         // 'e2e/features/TestCases/AddUser.feature'//,
         //  'e2e/features/TestCases/EditUserProfile.feature'//,
-         // 'e2e/features/TestCases/UsersList.feature'//,
-         // 'e2e/features/TestCases/Login.feature'//,
+        //  'e2e/features/TestCases/UsersList.feature'//,
+        //  'e2e/features/TestCases/Login.feature'//,
+        'e2e/features/TestCases/Bugs.feature'//,
     ],
 
 
@@ -204,16 +205,16 @@ exports.config = {
     //
     // ],
     //
-    // capabilities: {
-    // //46.0b9
-    // //'browserName': 'firefox'
-    // //53.0.2785.89
-    // //'browserName': 'chrome'
-    //     'browserName': 'safari'//,
-    // //     'acceptSslCerts': true,
-    //     // 'mode' : 'proxy'
-    //
-    // },
+    capabilities: {
+    //46.0b9
+    'browserName': 'firefox'
+    //53.0.2785.89
+    //'browserName': 'chrome'
+     //   'browserName': 'safari'//,
+    //     'acceptSslCerts': true,
+        // 'mode' : 'proxy'
+
+    },
 
     //Then update config file and set the browserstack.local capability to true.
     //Code to start browserstack local before start of test

@@ -19,9 +19,9 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Element_ConfirmNewPasswordTextbox = element(by.css('input[placeholder="Confirm New Password"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_PreviousPasswordTextbox = element(by.css('input[placeholder="Previous Password"]'));
     //Components Buttons
-    BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.buttonText('Edit'));
-    BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.buttonText('Reset'));
-    BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.buttonText('Cancel'));
+    BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.css('button.button'));
+    BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.css('.button.yellow-btn.pull-right'));
+    BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.css('.button.red-btn.pull-right'));
     BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.css('button.button.green-btn.pull-right'));
 
     //Components "ERROR DISPLAY REQUIRE"

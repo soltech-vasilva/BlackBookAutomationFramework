@@ -17,7 +17,7 @@ var VerifyUserInfo = function VerifyUserInfo() {
     VerifyUserInfo.prototype.AssertElementAttributeDisplay = function (Element,  ValueCompare , TextboxName, success, failure) {
         return Element.getAttribute("value").then(function (currentValue) {
             this.ValueStored = currentValue;
-            console.log('Value Stored:|' + this.ValueStored.toString() + '|');
+            //console.log('Value Stored:|' + this.ValueStored.toString() + '|');
             if (this.ValueStored == ValueCompare) {
                 //if (this.ValueEntered == 'dd') {
                 Element.click();

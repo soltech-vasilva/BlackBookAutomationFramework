@@ -17,12 +17,11 @@ var BB_Login = function BB_Login() {
     BB_Login.prototype.currentPassword = '';
 
     BB_Login.prototype.OpenBlackBookLogIn = function (eyes) {
-
-        return new Promise((success, failure) => {
+       return new Promise((success, failure) => {
             //page is non-angular
             browser.ignoreSynchronization = true;
             //Open BlackBook website
-            browser.driver.get(BB_loginRepo.BlackBookUrl)
+           browser.wait(browser.driver.get(BB_loginRepo.BlackBookUrl)
                 .then(() => {
                     if (protractorConfig.config.ApplitoolsOn == false) {
                         //browser.driver.manage().window().setSize(protractorConfig.config.width, protractorConfig.config.height);
@@ -30,10 +29,9 @@ var BB_Login = function BB_Login() {
                     }
                     eyesSetUp.EyesCheckWindow(eyes, BB_loginRepo.EyesVerify_BB_Login, protractorConfig.config.ApplitoolsOn);
                     success();
-                });
+                }));
         });
     };
-
 
     BB_Login.prototype.Enter_CurrentEmailAddress = function (currentEmail) {
         this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString());
@@ -44,7 +42,7 @@ var BB_Login = function BB_Login() {
         if (this.currentEmailAddress != '') {
             return new Promise((success, failure)=> {
                 if (this.currentEmailAddress != '') {
-                   browser.wait(utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress, success));
+                    browser.wait(utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress, success));
                 }
                 else {
                     success();
@@ -75,9 +73,9 @@ var BB_Login = function BB_Login() {
         //added this to give a buffer to click
         browser.driver.sleep(2000);
         return new Promise((success, failure)=> {
-            BB_loginRepo.Select_Element_LogInButton.click().then(()=> {
+            browser.wait(BB_loginRepo.Select_Element_LogInButton.click().then(()=> {
                 success();
-            });
+            }));
         });
     };
 };
