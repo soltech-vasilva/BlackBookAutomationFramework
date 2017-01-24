@@ -19,7 +19,10 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Element_ConfirmNewPasswordTextbox = element(by.css('input[placeholder="Confirm New Password"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_PreviousPasswordTextbox = element(by.css('input[placeholder="Previous Password"]'));
     //Components Buttons
-    BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.css('button.button'));
+    //BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.css('button.button')); //TODO IT WORKS IN ALL EXCEPT EDGE lastest
+    BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[@class="button"]')); //no funciono en edge ( pero en chrome si funciono el poiner class)
+    // BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.css('.button')); //no fumciono
+    //BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.buttonText('Edit'));
     BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.css('.button.yellow-btn.pull-right'));
     BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.css('.button.red-btn.pull-right'));
     BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.css('button.button.green-btn.pull-right'));

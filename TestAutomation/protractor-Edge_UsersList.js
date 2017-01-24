@@ -295,8 +295,8 @@ exports.config = {
     // ,
     //
 
-    getPageTimeout: 20000,
-    allScriptsTimeout: 20000,
+    getPageTimeout: 60000,
+    allScriptsTimeout: 60000,
     useAllAngular2AppRoots: true
     // rootElement: '.my-app'
 };

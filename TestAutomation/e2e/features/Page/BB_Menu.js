@@ -83,5 +83,14 @@ var BB_Menu = function BB_Menu() {
             });
         //}
     };
+
+    BB_Menu.prototype.Click_Roles_Submenu = function () {
+        browser.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_RolesSubMenuButton), protractorConfig.config.WaitTime);
+        return new Promise((success, failure) => {
+            BB_menuRepo.Select_Element_RolesSubMenuButton.click().then(() => {
+                success();
+            });
+        });
+    };
 };
 module.exports = new BB_Menu();

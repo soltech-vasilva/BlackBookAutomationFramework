@@ -184,7 +184,7 @@ Feature: Enter data on "LOGIN" page
        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
       And I reload page "http://qa-autobahn.blackbookcloud.com/login"
       And I wait
-      And I enter my user email address user1@example.com
+      And I enter my user email address user3@example.com
       And I enter my Password Password1
       And I click Login Button
       And I click on Admin Tab
@@ -192,7 +192,7 @@ Feature: Enter data on "LOGIN" page
       And I enter filter value <currentEmailAddress>
       And I click Status Filter
       And I click Inactive in submenu from Status Filter
-      And I click on Gear Icon
+      And I click on Gear Icon 0
       And I click Activate in submenu from Gear Icon
       And I click Profile Button
       And I click Logout sub menu

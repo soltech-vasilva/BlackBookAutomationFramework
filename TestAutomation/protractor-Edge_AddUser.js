@@ -71,7 +71,7 @@ exports.config = {
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
          'acceptSslCerts': true,
-        'browserstack.selenium_version' : '3.0.1',
+       // 'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot
          'browserstack.debug': 'true',
@@ -296,8 +296,8 @@ exports.config = {
     // ,
     //
 
-    getPageTimeout: 20000,
-    allScriptsTimeout: 20000,
+    getPageTimeout: 60000,
+    allScriptsTimeout: 60000,
     useAllAngular2AppRoots: true
     // rootElement: '.my-app'
 };
