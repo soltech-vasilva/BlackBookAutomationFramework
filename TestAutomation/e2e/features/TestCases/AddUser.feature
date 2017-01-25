@@ -31,7 +31,7 @@ Feature:  "Add a new User Profile"
       And I reload page "http://qa-autobahn.blackbookcloud.com/login"
       And I wait
       #And I check value on textbox
-      And I enter my user email address user3@example.com
+      And I enter my user email address user1@example.com
       And I enter my Password Password1
       And I click Login Button
       And I click on Admin Tab

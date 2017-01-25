@@ -392,6 +392,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.Given(/^I click on Home Tab$/, function () {
         return element(by.linkText('Home')).click();
     });
+
 };
 
 module.exports = myBlackBookSteps;

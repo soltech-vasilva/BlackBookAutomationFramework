@@ -39,7 +39,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Profile Button
     And I click My Profile sub menu
     And I wait
-      Then I should see user's "emailAddress" displayed in screen with value "user3@example.com"
+      Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
     And I click Profile Button
     And I click Logout sub menu
 
@@ -47,12 +47,12 @@ Feature:  "Verify that this bugs dont return to the application."
   Scenario: "@TestCases_A-2" (BB-384) Verify current User information is not deleted from UI if "RESET"->"CANCEL"
     And I click Profile Button
     And I click My Profile sub menu
-      Then I should see user's "emailAddress" displayed in screen with value "user3@example.com"
+      Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
     And I click Edit Button
     And I click Reset Button
     And I wait
     And I click Cancel Button
-      Then I should see user's "emailAddress" displayed in screen with value "user3@example.com"
+      Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
     And I wait
     And I click Profile Button
     And I click Logout sub menu
@@ -87,26 +87,26 @@ Feature:  "Verify that this bugs dont return to the application."
 #Valid 26 Users input
       |   firstName27  | lastName27    | admintestemail27@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
 
-    @TestCases_A-4
-  Scenario: "@TestCases_A-4" (BB-413) Click "Save" twice in Edit Role list will show error (weird state).
-    And I click on Admin Tab
-      And I wait
-    And I click on Roles submenu from Admin Tab
-    And I wait
-    And I click on Gear Icon 1
-    And I click Edit from Gear Icon
-    And I wait
-    And I click on Save button in Role Editor
-    And I wait
-    And I click X on Message Popup
-    And I wait
-    And I add Permission "Settings"
-    And I click on Save button in Role Editor
-    And I wait
-      Then I should see "Role Update Successful" displayed for popup
-    And I wait
-    And I click X on Message Popup
-    And I wait
+#    @TestCases_A-4  DONT RUN DELETE USER
+#  Scenario: "@TestCases_A-4" (BB-413) Click "Save" twice in Edit Role list will show error (weird state).
+#    And I click on Admin Tab
+#      And I wait
+#    And I click on Roles submenu from Admin Tab
+#    And I wait
+#    And I click on Gear Icon 1
+#    And I click Edit from Gear Icon
+#    And I wait
+#    And I click on Save button in Role Editor
+#    And I wait
+#    And I click X on Message Popup
+#    And I wait
+#    And I add Permission "Settings"
+#    And I click on Save button in Role Editor
+#    And I wait
+#      Then I should see "Role Update Successful" displayed for popup
+#    And I wait
+#    And I click X on Message Popup
+#    And I wait
 
   @TestCases_A-5
   Scenario: "@TestCases_A-5" (BB-247) Entering credential will not go straight to "Home" page.
@@ -118,7 +118,7 @@ Feature:  "Verify that this bugs dont return to the application."
   Scenario: "@TestCases_A-6" (BB-360) Active Status is editable by user.
       And I reload page "http://qa-autobahn.blackbookcloud.com/login"
       And I wait
-      And I enter my user email address user1@example.com
+      And I enter my user email address user2@example.com
       And I enter my Password Password1
       And I click Login Button
       And I wait
