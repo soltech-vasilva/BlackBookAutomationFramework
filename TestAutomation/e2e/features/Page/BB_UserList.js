@@ -28,7 +28,7 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.EnterValueToFilter_FilterUseList = function (stringFilter) {
         this.FilterValue = utilities.ReplaceDoubleQuotesWithWhiteSpace(stringFilter.toString());
-        //browser.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_FilterUserListTextbox), protractorConfig.config.WaitTime);
+        browser.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_FilterUserListTextbox), protractorConfig.config.WaitTime);
         BB_userListRepo.Select_Element_FilterUserListTextbox.click();
         utilities.SendKeysSlower(BB_userListRepo.Select_Element_FilterUserListTextbox, this.FilterValue);
 

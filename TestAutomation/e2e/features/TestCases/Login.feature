@@ -43,6 +43,7 @@ Feature: Enter data on "LOGIN" page
     And I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
 
     Examples:
@@ -66,7 +67,7 @@ Feature: Enter data on "LOGIN" page
     And I enter my user email address <currentEmailAddress>
     And I enter my Password <currentPassword>
     And I click Login Button
-      Then I should see "currentEmailAddress" errors "Email Is Required" displayed for this "empty" field
+      Then I should see "currentEmailAddress" message "Email Is Required" displayed for this "empty" field
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -83,7 +84,7 @@ Feature: Enter data on "LOGIN" page
      And I enter my user email address <currentEmailAddress>
      And I enter my Password <currentPassword>
      And I click Login Button
-      Then I should see "currentEmailAddress" errors "Invalid log in. Please contact your administrator." displayed for this "filled" field
+      Then I should see "currentEmailAddress" message "Invalid log in. Please contact your administrator." displayed for this "filled" field
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -106,7 +107,7 @@ Feature: Enter data on "LOGIN" page
      And I enter my user email address <currentEmailAddress>
      And I enter my Password <currentPassword>
      And I click Login Button
-      Then I should see "currentEmailAddress" errors "Invalid Login. Please try again." displayed for this "filled" field
+      Then I should see "currentEmailAddress" message "Invalid Login. Please try again." displayed for this "filled" field
 
     Examples:
            | currentEmailAddress                |   currentPassword  |
@@ -125,7 +126,7 @@ Feature: Enter data on "LOGIN" page
         #ADDED 2 task
         And I enter time the same user name and password
         And I enter time the same user name and password
-          Then I should see "currentEmailAddress" errors "Invalid login. Please reset your password." displayed for this "filled" field
+          Then I should see "currentEmailAddress" message "Invalid login. Please reset your password." displayed for this "filled" field
 
         Examples:
           | currentEmailAddress                |   currentPassword  |
@@ -146,7 +147,7 @@ Feature: Enter data on "LOGIN" page
     And I enter my user email address <currentEmailAddress>
     And I enter my Password <currentPassword>
     And I click Login Button
-      Then I should see "currentPassword" errors "Password Is Required" displayed for this "empty" field
+      Then I should see "currentPassword" message "Password Is Required" displayed for this "empty" field
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -166,7 +167,7 @@ Feature: Enter data on "LOGIN" page
     And I enter my user email address <currentEmailAddress>
     And I enter my Password <currentPassword>
     And I click Login Button
-      Then I should see "currentEmailAddress" errors "Unable to log in. Please contact your administrator." displayed for this "filled" field
+      Then I should see "currentEmailAddress" message "Unable to log in. Please contact your administrator." displayed for this "filled" field
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -187,20 +188,24 @@ Feature: Enter data on "LOGIN" page
       And I enter my user email address user1@example.com
       And I enter my Password Password1
       And I click Login Button
+      And I wait
       And I click on Admin Tab
       And I click on Users submenu from Admin Tab
       And I enter filter value <currentEmailAddress>
       And I click Status Filter
       And I click Inactive in submenu from Status Filter
+      And I wait
       And I click on Gear Icon 0
       And I click Activate in submenu from Gear Icon
       And I click Profile Button
       And I click Logout sub menu
+      And I wait
       And I reload page "http://qa-autobahn.blackbookcloud.com/login"
       And I wait
       And I enter my user email address <currentEmailAddress>
       And I enter my Password <currentPassword>
       And I click Login Button
+      And I wait
       And I click Profile Button
       And I click Logout sub menu
 

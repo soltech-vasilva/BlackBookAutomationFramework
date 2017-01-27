@@ -22,6 +22,15 @@ var BB_EditRoles = function BB_EditRoles() {
         });
     };
 
+    BB_EditRoles.prototype.Click_CancelButton_RoleEditor = function () {
+        browser.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Cancel_button), protractorConfig.config.WaitTime);
+        return new Promise((success, failure) => {
+            BB_editRolesRepo.Select_Element_Cancel_button.click().then(() => {
+                success();
+            });
+        });
+    };
+
     BB_EditRoles.prototype.Click_X_CloseMessagePopup = function () {
         browser.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_X_button_MessagePopup), protractorConfig.config.WaitTime);
         return new Promise((success, failure) => {
@@ -38,14 +47,6 @@ var BB_EditRoles = function BB_EditRoles() {
                 success();
             });
         });
-    };
-
-    BB_EditRoles.prototype.Verify_SaveMessage = function (compareValuesString) {
-         return new Promise ((success, failure)=> {
-             browser.isElementPresent(BB_editRolesRepo.Select_Xpath_SaveMessage_Popup).then((isPresente) => {
-                 verifyErrorMessage.AssertElementsToDisplay(isPresente, BB_editRolesRepo.Select_Element_SaveMessage_Popup, compareValuesString, 'It is not showing any message', success, failure);
-             });
-         });
     };
 };
 module.exports = new BB_EditRoles();

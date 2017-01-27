@@ -19,6 +19,7 @@ var BB_menu = require ('../Page/BB_Menu.js');
 var BB_userList = require('../Page/BB_UserList');
 var verify_UserInformation = require('../Page/VerifyUserInfo.js');
 var BB_editRoles = require('../Page/BB_EditRoles.js');
+var verifyPopUpMessages = require('../Page/VerifyPopUpMessages.js');
 
 //testing
 var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
@@ -222,7 +223,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return verifyErrorMessage.Verify_ErrorMessagesNotToDisplay(str_TextboxName);
     });
 
-    this.Then(/^I should see "([^"]*)" errors "([^"]*)" displayed for this "([^"]*)" field$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
+    this.Then(/^I should see "([^"]*)" message "([^"]*)" displayed for this "([^"]*)" field$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
         return verifyErrorMessage.Verify_ErrorMessageToDisplay(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
     });
 
@@ -235,22 +236,28 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     ///BUGS FIXES TO TEST OTHER THINGS
     this.Given(/^I wait$/, function () {
-          return   browser.sleep(4000);
+        return new Promise((success, failure)=> {
+             browser.driver.sleep(4000);
+             success();
+        });
     });
 
     this.Then(/^I reload page "([^"]*)"$/, function (URL) {
-        browser.ignoreSynchronization = true;
-        browser.driver.get(URL);
-        browser.sleep(5000);
-        return browser.getCurrentUrl().then(function (getCurrentURL) {
-            var currentURL = getCurrentURL.split("://");
-            console.log(currentURL[1]);
+        return new Promise((success, failure)=> {
+            browser.ignoreSynchronization = true;
+            browser.driver.get(URL);
+            browser.sleep(5000);
 
-            if (currentURL[1].trim() == 'qa-autobahn.blackbookcloud.com/login') {
-                browser.ignoreSynchronization = true;
-                browser.driver.get(URL);
-             return browser.sleep(5000);
-            }
+             browser.wait(browser.getCurrentUrl().then(function (getCurrentURL) {
+                var currentURL = getCurrentURL.split("://");
+
+                if (currentURL[1].trim() != 'qa-autobahn.blackbookcloud.com/login') {
+                    browser.ignoreSynchronization = true;
+                    browser.driver.get(URL);
+                    browser.sleep(5000);
+                }
+                success();
+            }));
         });
     });
 
@@ -318,12 +325,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return   BB_editRoles.Click_PermissionCheckbox_Setting();
     });
 
-    this.Then(/^I should see "([^"]*)" displayed for popup$/, function (VerifyMessage) {
-        return BB_editRoles.Verify_SaveMessage(VerifyMessage)
+    this.Then(/^I should see "([^"]*)" displayed on "([^"]*)" popup$/, function (VerifyMessage, PopUpPageName) {
+        return verifyPopUpMessages.Verify_PopUpMessage(PopUpPageName,VerifyMessage );
     });
 
     this.Given(/^I verify that I am in "([^"]*)" URL$/, function (VerifyURL) {
-
+        browser.sleep(4000);
         return new Promise((success, failure)=> {
             browser.getCurrentUrl().then(function (getCurrentURL) {
 
@@ -393,6 +400,52 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return element(by.linkText('Home')).click();
     });
 
+
+    this.Given(/^I click Refresh$/, function () {
+        return  browser.refresh();
+    });
+
+    this.When(/^I check heading from Grid$/, function () {
+        //return element(by.css('div.ag-header-container')).getText().then(function(arr) {
+        //return element(by.css('div.ag-header')).getText().then(function(arr) {
+        return element(by.id('center')).getText().then(function(arr) {
+            //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
+            var headers = arr.split('/r');
+            console.log(headers[0]);
+        });
+    });
+
+    this.Given(/^I verify User List Edit sub-menu options$/, function () {
+        return new Promise((success, failure)=> {
+         browser.wait(element(by.css('ul.action-menu')).getText().then(function (arr) {
+            //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
+            //var headers = arr.split('/r');
+            var headers = arr.toString().split("\n");
+
+            if (headers[0] == "View")
+            {
+                console.log("header:|"+headers[0]+"|");
+                if (headers[1] == "Edit")
+                {
+                    console.log("header:|"+headers[1]+"|");
+                    if (headers[2] == "Deactivate")
+                    {
+                        console.log("header:|"+headers[2]+"|");
+                        success();
+                    }
+                }
+            }
+        }));
+        });
+    });
+
+    this.Given(/^I click Cancel Button from Edit Roles$/, function () {
+        return BB_editRoles.Click_CancelButton_RoleEditor ();
+     });
+
+    this.When(/^I click on Gear Icons (.*) inactive$/, function (arg1) {
+       return element(by.css('div.icon-cog.parent.inactive')).click();
+    });
 };
 
 module.exports = myBlackBookSteps;

@@ -8,6 +8,7 @@ Feature:  "Add a new User Profile"
 
   Question:
   -Verify 26 user can be created. [TestCases_1]
+  -What happens if User enter already exit "Display ERROR"? Yes [TestCases_2]
   -Verify that All inputs boxes are working "No ERROR". [Test case A]
   -What happens if email entered is bad "Display ERROR"? Yes [Test case B-1]
   -What happens if phone number entered is bad "Display ERROR"? Yes [Test case B-2]
@@ -34,6 +35,7 @@ Feature:  "Add a new User Profile"
       And I enter my user email address user1@example.com
       And I enter my Password Password1
       And I click Login Button
+      And I wait
       And I click on Admin Tab
       And I click on Users submenu from Admin Tab
       And I click on New User Button
@@ -56,6 +58,8 @@ Feature:  "Add a new User Profile"
     And I enter my confirm new password <confirmNewPassWord>
       Then I should not see in "confirmNewPassWord" errors displayed
     And I click on Save button
+      Then I should see "User Creation Successful" displayed on "UserList" popup
+    And I wait
 
 
     Examples:
@@ -88,6 +92,31 @@ Feature:  "Add a new User Profile"
       |   firstName25 | lastName25   | admintestemail25@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName26 | lastName26   | admintestemail26@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
 
+  @TestCases_2
+  Scenario Outline: "TestCases_2" Add a User that was already exist (Email is unique). Error display "User name must be unique"
+    When I enter my first name <firstName>
+    Then I should not see in "firstName" errors displayed
+    And I enter my last name <lastName>
+    Then I should not see in "lastName" errors displayed
+    And I enter my email address <emailAddress>
+    Then I should not see in "emailAddress" errors displayed
+    And I enter my phone number <phoneNumber>
+    Then I should not see in "phoneNumber" errors displayed
+    And I enter my new Password <newPassWord>
+    Then I should not see in "newPassWord" errors displayed
+    And I enter my confirm new password <confirmNewPassWord>
+    Then I should not see in "confirmNewPassWord" errors displayed
+    And I click on Save button
+    Then I should see "User Creation Successful" displayed on "UserList" popup
+    And I wait
+
+
+    Examples:
+      | firstName       | lastName       | emailAddress                 |phoneNumber    | newPassWord | confirmNewPassWord |
+#Valid 26 Users input
+      |   firstName1    | lastName1      | admintestemail1@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
+      |   firstName100  | lastName100    | admintestemail1@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
+
 #######################################################################################################################
 #                                             Test cases A                                                            #
 #######################################################################################################################
@@ -108,6 +137,7 @@ Feature:  "Add a new User Profile"
     When I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName     | lastName     | emailAddress              |phoneNumber    | newPassWord | confirmNewPassWord |
@@ -170,13 +200,14 @@ Feature:  "Add a new User Profile"
     And I enter my last name <lastName>
     And I enter my email address <emailAddress>
       But I enter "a wrong Email Address"
-      Then I should see "emailAddress" errors "Invalid email address" displayed for this "filled" field
+      Then I should see "emailAddress" message "Invalid email address" displayed for this "filled" field
     And I enter my phone number <phoneNumber>
     And I enter my new Password <newPassWord>
     And I enter my confirm new password <confirmNewPassWord>
     When I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName       | lastName     | emailAddress               | phoneNumber   |newPassWord  | confirmNewPassWord |
@@ -198,12 +229,13 @@ Feature:  "Add a new User Profile"
     And I enter my email address <emailAddress>
     And I enter my phone number <phoneNumber>
       But I enter "a wrong phone number"
-      Then I should see "phoneNumber" errors "Must be a valid 10 digit number" displayed for this "filled" field
+      Then I should see "phoneNumber" message "Must be a valid 10 digit number" displayed for this "filled" field
     And I enter my new Password <newPassWord>
     And I enter my confirm new password <confirmNewPassWord>
     When I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       |   firstName       | lastName     | emailAddress               | phoneNumber   |newPassWord  | confirmNewPassWord |
@@ -224,13 +256,14 @@ Feature:  "Add a new User Profile"
     And I enter my phone number <phoneNumber>
     And I enter my new Password <newPassWord>
       But I enter "a wrong New Password with no number"
-      Then I should see "newPassWord" errors "Password must be at least 8 characters, contain a number, and mixed case letters." displayed for this "filled" field
+      Then I should see "newPassWord" message "Password must be at least 8 characters, contain a number, and mixed case letters." displayed for this "filled" field
     When I enter my confirm new password <confirmNewPassWord>
       But I enter "a different Confirm New Password from New Password"
-      Then I should see "confirmNewPassWord" errors "Passwords do not match" displayed for this "filled" field
+      Then I should see "confirmNewPassWord" message "Passwords do not match" displayed for this "filled" field
     When I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName       | lastName     | emailAddress               | phoneNumber      |newPassWord    | confirmNewPassWord   |
@@ -249,13 +282,14 @@ Feature:  "Add a new User Profile"
     And I enter my phone number <phoneNumber>
     And I enter my new Password <newPassWord>
       But I enter "a wrong New Password with no numbers"
-      Then I should see "newPassWord" errors "Password must be at least 8 characters, contain a number, and mixed case letters." displayed for this "filled" field
+      Then I should see "newPassWord" message "Password must be at least 8 characters, contain a number, and mixed case letters." displayed for this "filled" field
     When I enter my confirm new password <confirmNewPassWord>
       But I enter "same New Password into Confirm New Password"
       Then I should not see in "confirmNewPassWord" errors displayed
     And I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName       | lastName     | emailAddress               | phoneNumber      |newPassWord    | confirmNewPassWord   |
@@ -298,7 +332,7 @@ Feature:  "Add a new User Profile"
   Scenario Outline: "@TestCases_C-2" Enter empty firstName  will throw error "Required"
     When I enter my first name <firstName>
       But I enter "nothing to first name"
-      Then I should see "firstName" errors "Required" displayed for this "empty" field
+      Then I should see "firstName" message "Required" displayed for this "empty" field
     And I enter my last name <lastName>
     And I enter my email address <emailAddress>
     And I enter my phone number <phoneNumber>
@@ -307,6 +341,7 @@ Feature:  "Add a new User Profile"
     And I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -319,14 +354,16 @@ Feature:  "Add a new User Profile"
     And I enter my first name <firstName>
     And I enter my last name <lastName>
       But I enter "nothing to last name"
-      Then I should see "lastName" errors "Required" displayed for this "empty" field
+      Then I should see "lastName" message "Required" displayed for this "empty" field
     And I enter my email address <emailAddress>
     And I enter my phone number <phoneNumber>
     And I enter my new Password <newPassWord>
     And I enter my confirm new password <confirmNewPassWord>
     And I click Cancel Button
+    And I wait
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -340,13 +377,14 @@ Feature:  "Add a new User Profile"
     And I enter my last name <lastName>
     And I enter my email address <emailAddress>
       But I enter "nothing to email address"
-      Then I should see "emailAddress" errors "Required" displayed for this "empty" field
+      Then I should see "emailAddress" message "Required" displayed for this "empty" field
     And I enter my phone number <phoneNumber>
     And I enter my new Password <newPassWord>
     And I enter my confirm new password <confirmNewPassWord>
     And I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -362,11 +400,12 @@ Feature:  "Add a new User Profile"
     And I enter my phone number <phoneNumber>
     And I enter my new Password <newPassWord>
       But I enter "nothing to New Password"
-      Then I should see "newPassWord" errors "Required" displayed for this "empty" field
+      Then I should see "newPassWord" message "Required" displayed for this "empty" field
     And I enter my confirm new password <confirmNewPassWord>
     And I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -383,11 +422,12 @@ Feature:  "Add a new User Profile"
     And I enter my new Password <newPassWord>
     And I enter my confirm new password <confirmNewPassWord>
       But I enter "nothing to Confirm New Password"
-      Then I should see "confirmNewPassWord" errors "Required" displayed for this "empty" field
-      Then I should see "confirmNewPassWord" errors "Passwords do not match" displayed for this "empty" field
+      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
+      Then I should see "confirmNewPassWord" message "Passwords do not match" displayed for this "empty" field
     And I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -399,13 +439,13 @@ Feature:  "Add a new User Profile"
     When I click Reset Button
     And I enter my first name <firstName>
       But I enter "(SPACE BAR) for empty strings on firstName"
-      Then I should see "firstName" errors "Spaces are invalid characters" displayed for this "filled" field
+      Then I should see "firstName" message "Spaces are invalid characters" displayed for this "filled" field
     And I enter my last name <lastName>
       But I enter "(SPACE BAR) for empty strings on lastName"
-      Then I should see "lastName" errors "Spaces are invalid characters" displayed for this "filled" field
+      Then I should see "lastName" message "Spaces are invalid characters" displayed for this "filled" field
     And I enter my email address <emailAddress>
       But I enter "(SPACE BAR) for empty strings on emailAddress"
-      Then I should see "emailAddress" errors "Spaces are invalid characters" displayed for this "filled" field
+      Then I should see "emailAddress" message "Spaces are invalid characters" displayed for this "filled" field
     And I enter my phone number <phoneNumber>
       Then  I should not see in "phoneNumber" errors displayed
     And I enter my new Password <newPassWord>
@@ -415,6 +455,7 @@ Feature:  "Add a new User Profile"
     And I click Cancel Button
     And I click Profile Button
     And I click Logout sub menu
+    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord             | confirmNewPassWord   |

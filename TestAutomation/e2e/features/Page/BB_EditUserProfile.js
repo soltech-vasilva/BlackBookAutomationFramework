@@ -156,19 +156,20 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         //This give a time to transition
         browser.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_EditButton), protractorConfig.config.WaitTime);
         return new Promise((success, failure)=> {
-            BB_editUserProfileRepo.Select_Element_EditButton.click().then(()=> {
+            browser.wait(BB_editUserProfileRepo.Select_Element_EditButton.click().then(()=> {
                 success();
-            });
+            }));
         });
     };
 
     BB_EditUserProfile.prototype.Click_ResetButton = function () {
         //This give a time to transition
+        browser.sleep(2000);
         browser.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_ResetButton), protractorConfig.config.WaitTime);
         return new Promise((success, failure)=> {
-            BB_editUserProfileRepo.Select_Element_ResetButton.click().then(()=> {
+            browser.wait(BB_editUserProfileRepo.Select_Element_ResetButton.click().then(()=> {
                 success();
-            });
+            }));
         });
     };
 

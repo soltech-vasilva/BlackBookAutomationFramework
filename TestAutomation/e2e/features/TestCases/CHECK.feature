@@ -100,11 +100,10 @@ Feature:  "Add a new User Profile"
     And I click on Save button in Role Editor
     And I wait
     And I click X on Message Popup
-    And I wait
     And I add Permission "Settings"
     And I click on Save button in Role Editor
     And I wait
-    Then I should see "Role Update Successful" displayed for popup
+    Then I should see "Role Update Successful" displayed on "EditRoles" popup
     And I wait
     And I click X on Message Popup
     And I wait

@@ -12,7 +12,7 @@ var BB_loginRepo = require('../Repository/BB_LoginRepo.js');
 var utilities = require('../Page/Utilities.js');
 
 var BB_Login = function BB_Login() {
-
+    browser.sleep(3000);
     BB_Login.prototype.currentEmailAddress = '';
     BB_Login.prototype.currentPassword = '';
 

@@ -24,6 +24,7 @@ Feature:  "User List"
     And I enter my user email address user1@example.com
     And I enter my Password Password1
     And I click Login Button
+    And I wait
 
 #######################################################################################################################
 #                                             Test cases A                                                            #

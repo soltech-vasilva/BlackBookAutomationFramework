@@ -110,7 +110,7 @@ gulp.task('Chrome_Login',['Chrome_UsersList'],()=>
     });
 });
 
-gulp.task('Firefox_AddUser', ['Chrome_Login'], ()=>
+gulp.task('Firefox_AddUser', /*['Chrome_Login'], */()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
@@ -123,7 +123,7 @@ gulp.task('Firefox_AddUser', ['Chrome_Login'], ()=>
     });
 });
 
-gulp.task('Firefox_EditUserProfile', ['Firefox_AddUser'], ()=>
+gulp.task('Firefox_EditUserProfile', /*['Firefox_AddUser'],*/ ()=>
 {
     return new Promise((resolve, reject) => {
      gulp.src([])
@@ -162,7 +162,7 @@ gulp.task('Firefox_Login', ['Firefox_UsersList'],()=>
     });
 });
 
-gulp.task('IE_AddUser',['Firefox_Login'],()=>
+gulp.task('IE_AddUser',/*['Firefox_Login'],*/()=>
 {
     return new Promise((resolve, reject) => {
      gulp.src([])
@@ -214,7 +214,7 @@ gulp.task('IE_Login', ['IE_UsersList'],()=>
 });
 });
 
-gulp.task('Edge_AddUser',['IE_Login'],()=>
+gulp.task('Edge_AddUser',/*['IE_Login'],*/()=>
 {
     return new Promise((resolve, reject) => {
      gulp.src([])
@@ -227,7 +227,7 @@ gulp.task('Edge_AddUser',['IE_Login'],()=>
     });
 });
 
-gulp.task('Edge_EditUserProfile',/*['Edge_AddUser'],*/ ()=>
+gulp.task('Edge_EditUserProfile',['Edge_AddUser'], ()=>
 {
     return new Promise((resolve, reject) => {
      gulp.src([])
@@ -253,22 +253,36 @@ gulp.task('Edge_UsersList',['Edge_EditUserProfile'], ()=>
     });
 });
 
-gulp.task('Edge_Login',['Edge_UsersList'], ()=>
-{
+gulp.task('Edge_Login',['Edge_UsersList'], ()=> {
     return new Promise((resolve, reject) => {
-     gulp.src([])
+        gulp.src([])
         //EDGE
-        .pipe(protractor({
-            configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Edge_Login.js'
-        }))
-        .on('end', resolve)
-        .on('error', resolve);
-});
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Edge_Login.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
 });
 
-gulp.task('default', ['Chrome_AddUser','Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login']); //falta userlist and login
-// gulp.task('default', [/*'Firefox_AddUser',*/'Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
-//  gulp.task('default', [/*'IE_AddUser',*/'IE_EditUserProfile','IE_UsersList','IE_Login']);
+gulp.task('CHECK',  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Chrome
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_CHECK.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+//gulp.task('default', ['CHECK']);
+
+// gulp.task('default', [/*'Chrome_AddUser','Chrome_EditUserProfile', */'Chrome_UsersList'/*,'Chrome_Login'*/]); //falta userlist and login
+// gulp.task('default', [/*'Firefox_AddUser',*/'Firefox_EditUserProfile'/*,'Firefox_UsersList','Firefox_Login'*/]);
+  gulp.task('default', ['IE_AddUser','IE_EditUserProfile','IE_UsersList','IE_Login']);
 // gulp.task('default', [/*'Edge_AddUser',*/'Edge_EditUserProfile','Edge_UsersList','Edge_Login']); //corrio bien todo
 
 // gulp.task('default', ['IE_EditUserProfile',
