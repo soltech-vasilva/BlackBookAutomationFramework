@@ -17,7 +17,8 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-          'e2e/features/TestCases/UsersList.feature'//,
+        'e2e/features/TestCases/AddUser_part1.feature'//,
+       // 'e2e/features/TestCases/AddUser_part2.feature'//,
     ],
 
 
@@ -63,16 +64,17 @@ exports.config = {
     'height': 1430,
 
     'commonCapabilities': {
-       // 'build': ' #169 Run: Firefox ' + new Date().toString(),
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : User List______________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+         //Label
+        //'build': ' #169 | Run: IE| Test: "Add User"| Date: ' + new Date().toString(),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : IE____________________ Test : Add User Part1_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-        'name': 'User List',
+        'name': 'Add User Part 1',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
-        // 'acceptSslCerts': true,
-        //'browserstack.selenium_version' : '3.0.1',
+       //  'acceptSslCerts': true,
+       // 'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot
          'browserstack.debug': 'true',
@@ -83,15 +85,15 @@ exports.config = {
 
     //Browserstack multiple browsers at a time testing
       multiCapabilities: [
-            // {
-            // ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
-            // //Browser Type
-            // 'browserName' : 'IE',
-            // 'browser_version' : '11.0',
-            // 'os' : 'Windows',
-            // 'os_version' : '10',
-            // 'resolution' : '1920x1200'
-            // }
+            {
+            ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
+            //Browser Type
+            'browserName' : 'IE',
+            'browser_version' : '11.0',
+            'os' : 'Windows',
+            'os_version' : '10',
+            'resolution' : '1920x1200'
+            }
           //   ,
           // {
           //     ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
@@ -121,15 +123,15 @@ exports.config = {
           //     // }
           // }
           // ,
-          {
-              //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
-              // Browser Type
-              'os': 'Windows',
-              'os_version': '10',
-              'browserName': 'Firefox',
-              'browser_version': '47.0',
-              'resolution': '1920x1200'
-          }
+          // {
+          //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
+          //     // Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Firefox',
+          //     'browser_version': '47.0',
+          //     'resolution': '1920x1200'
+          // }
           // ,
           // {
           //     ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////

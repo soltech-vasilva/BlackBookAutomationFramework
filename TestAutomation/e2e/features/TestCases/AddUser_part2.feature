@@ -26,54 +26,47 @@ Feature:  "Add a new User Profile"
   Background:
 
     Given I enter BlackBook Login Website
-         #BUG ADDED THIS TO CONTINUE
-         ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
-    And I reload page "http://qa-autobahn.blackbookcloud.com/login"
+        #BUG ADDED THIS TO CONTINUE
+        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
+    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
-      #And I check value on textbox
-    And I enter my user email address user1@example.com
-    And I enter my Password Password1
+     #And I check value on textbox
+    And I enter my user email address user1@example.com in Login
+    And I enter my Password Password1 in Login
     And I click Login Button
+    And I wait
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click on New User Button
+    And I click on New User Button in User List
 
 #####################################################################################################################
 #                                             Test cases 1                                                            #
 #####################################################################################################################
   @TestCases_1
   Scenario Outline: "TestCases_1" Add 26 User and enter good for User Profile. "No Error" display
-    When I enter my first name <firstName>
+    When I enter my first name <firstName> in Form
     Then I should not see in "firstName" errors displayed
-    And I enter my last name <lastName>
+    And I enter my last name <lastName> in Form
     Then I should not see in "lastName" errors displayed
-    And I enter my email address <emailAddress>
+    And I enter my email address <emailAddress> in Form
     Then I should not see in "emailAddress" errors displayed
-    And I enter my phone number <phoneNumber>
+    And I enter my phone number <phoneNumber> in Form
     Then I should not see in "phoneNumber" errors displayed
-    And I enter my new Password <newPassWord>
+    And I enter my new Password <newPassWord> in Form
     Then I should not see in "newPassWord" errors displayed
-    And I enter my confirm new password <confirmNewPassWord>
+    And I enter my confirm new password <confirmNewPassWord> in Form
     Then I should not see in "confirmNewPassWord" errors displayed
-    And I click on Save button
+    And I check User's Roles "Administrators"
+    And I wait
+    And I click on Save button in Edit User Profile
+    And I wait
+    Then I should see "User Creation Successful" displayed on "UserList" popup
+    And I wait
 
 
     Examples:
       | firstName     | lastName     | emailAddress                |phoneNumber    | newPassWord | confirmNewPassWord |
 #Valid 26 Users input
-      |   firstName1  | lastName1    | admintestemail1@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName2  | lastName2    | admintestemail2@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName3  | lastName3    | admintestemail3@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName4  | lastName4    | admintestemail4@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName5  | lastName5    | admintestemail5@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName6  | lastName6    | admintestemail6@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName7  | lastName7    | admintestemail7@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName8  | lastName8    | admintestemail8@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName9  | lastName9    | admintestemail9@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName10 | lastName10   | admintestemail10@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName11 | lastName11   | admintestemail11@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName12 | lastName12   | admintestemail12@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName13 | lastName13   | admintestemail13@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName14 | lastName14   | admintestemail14@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName15 | lastName15   | admintestemail15@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName16 | lastName16   | admintestemail16@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
@@ -87,23 +80,3 @@ Feature:  "Add a new User Profile"
       |   firstName24 | lastName24   | admintestemail24@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName25 | lastName25   | admintestemail25@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName26 | lastName26   | admintestemail26@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-
-  @TestCases_A-4
-  Scenario: "@TestCases_A-4" (BB-413) Click "Save" twice in Edit Role list will show error (weird state).DONT RUN DELETE USER
-    And I click on Admin Tab
-    And I wait
-    And I click on Roles submenu from Admin Tab
-    And I wait
-    And I click on Gear Icon 1
-    And I click Edit from Gear Icon
-    And I wait
-    And I click on Save button in Role Editor
-    And I wait
-    And I click X on Message Popup
-    And I add Permission "Settings"
-    And I click on Save button in Role Editor
-    And I wait
-    Then I should see "Role Update Successful" displayed on "EditRoles" popup
-    And I wait
-    And I click X on Message Popup
-    And I wait

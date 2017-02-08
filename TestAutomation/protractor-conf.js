@@ -9,7 +9,7 @@ exports.config = {
     // ],
     'StopRunAtFail': false,
     'WaitTime': 10000,
-    'BuildTestNumber': '12',
+    'BuildTestNumber': '26',
 
     //Turn off applitool
     'ApplitoolsOn': false,
@@ -18,13 +18,12 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-         // 'e2e/features/TestCases/AddUser.feature'//,
-        //  'e2e/features/TestCases/EditUserProfile.feature'//,
-        //  'e2e/features/TestCases/UsersList.feature'//,
-        //  'e2e/features/TestCases/Login.feature'//,
+        //'e2e/features/TestCases/AddUser_part1.feature',
+         //'e2e/features/TestCases/AddUser_part2.feature',
+         // 'e2e/features/TestCases/EditUserProfile.feature',
+          // 'e2e/features/TestCases/UsersList.feature',
+          //'e2e/features/TestCases/Login.feature',
         'e2e/features/TestCases/Bugs.feature'//,
-       // 'e2e/features/TestCases/CHECK.feature'//,
-
     ],
 
 
@@ -68,7 +67,7 @@ exports.config = {
     // // //windows all version max resolution
     // 'width': 1942,
     // 'height': 1430,
-
+    //
     // 'commonCapabilities': {
     //      //Label
     //      'build': ' #167 Run: ' + new Date().toString(),
@@ -78,7 +77,7 @@ exports.config = {
     //     'browserstack.user': 'soltech2',
     //     'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
     //     //'browserstack.local' : 'true',
-    //      'acceptSslCerts': true,
+    //     // 'acceptSslCerts': true,
     //     //'browserstack.selenium_version' : '3.0.1',
     //
     //     //Screenshot
@@ -128,32 +127,32 @@ exports.config = {
     //       //     // }
     //       // }
     //       // ,
-    //       {
-    //           //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
-    //           // Browser Type
-    //           'os': 'Windows',
-    //           'os_version': '10',
-    //           'browserName': 'Firefox',
-    //           'browser_version': '47.0',
-    //           'resolution': '1920x1200'
-    //       }
-    //       // ,
     //       // {
-    //       //     ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
+    //       //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
     //       //     // Browser Type
-    //       //     // 'os': 'OS X',
-    //       //     // 'os_version': 'Sierra',
-    //       //     // 'browserName': 'Safari',
-    //       //     // 'browser_version': '10.0',
-    //       //     // 'resolution': '1920x1080'
-    //       //     // //'browserstack.safari.enablePopups': false
-    //       //
-    //       //     'os': 'OS X',
-    //       //     'os_version': 'El Capitan',
-    //       //     'browserName': 'Safari',
-    //       //     'browser_version': '9.1',
-    //       //     'resolution': '1920x1080'
+    //       //     'os': 'Windows',
+    //       //     'os_version': '10',
+    //       //     'browserName': 'Firefox',
+    //       //     'browser_version': '47.0',
+    //       //     'resolution': '1920x1200'
     //       // }
+    //       // ,
+    //       {
+    //           ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
+    //           // Browser Type
+    //           // 'os': 'OS X',
+    //           // 'os_version': 'Sierra',
+    //           // 'browserName': 'Safari',
+    //           // 'browser_version': '10.0',
+    //           // 'resolution': '1920x1080'
+    //           // //'browserstack.safari.enablePopups': false
+    //
+    //           'os': 'OS X',
+    //           'os_version': 'El Capitan',
+    //           'browserName': 'Safari',
+    //           'browser_version': '9.1',
+    //           'resolution': '1920x1080'
+    //       }
     //
     //       /////////////NOT NEED FOR MOMENT/////
     //       //  ,
@@ -240,7 +239,7 @@ exports.config = {
     //     });
     // },
 
-    //directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
+   // directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
 
 
 
@@ -315,8 +314,8 @@ exports.config = {
     useAllAngular2AppRoots: true
     // rootElement: '.my-app'
 };
-
+//
 // // Code to support common capabilities
 // exports.config.multiCapabilities.forEach(function(caps){
 //     for(var i in exports.config.commonCapabilities) caps[i] = caps[i] || exports.config.commonCapabilities[i];
-//  });
+// });

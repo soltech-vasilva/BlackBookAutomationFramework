@@ -71,7 +71,7 @@ exports.config = {
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
-         'acceptSslCerts': true,
+        // 'acceptSslCerts': true,
        // 'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot

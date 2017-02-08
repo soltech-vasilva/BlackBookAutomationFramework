@@ -23,8 +23,7 @@ var BB_UserListRepo = function BB_UserListRepo () {
     BB_UserListRepo.prototype.Select_Element_Gear_Deactivate_Submenu = element(by.linkText('Deactivate'));
     BB_UserListRepo.prototype.Select_Element_Gear_Edit_Submenu = element(by.linkText('Edit'));
 
-
-    BB_UserListRepo.prototype.Select_Xpath_PopUpMESSAGE = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/message-box/div/div');
+    BB_UserListRepo.prototype.Select_Xpath_PopUpMESSAGE = by.xpath('//*[@id="page-box"]/user-list/div/div/div/message-box/div/div');
     BB_UserListRepo.prototype.Select_Element_PopUpMESSAGE = element(this.Select_Xpath_PopUpMESSAGE);
 };
 module.exports = new BB_UserListRepo();

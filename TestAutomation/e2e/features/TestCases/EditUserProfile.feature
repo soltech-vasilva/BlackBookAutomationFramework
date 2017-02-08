@@ -26,93 +26,93 @@ Feature: Enter data on "Edit User Profile"
     Given I enter BlackBook Login Website
        #BUG ADDED THIS TO CONTINUE
        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
-      And I reload page "http://qa-autobahn.blackbookcloud.com/login"
+      And I reload page "https://qa-autobahn.blackbookcloud.com/login"
       And I wait
-      And I enter my user email address user2@example.com
-      And I enter my Password Password1
+      And I enter my user email address user2@example.com in Login
+      And I enter my Password Password1 in Login
       And I click Login Button
       And I wait
-      And I click Profile Button
-      And I click My Profile sub menu
+      And I click Avatar Image Button
+      And I click My Profile sub menu from Avatar
       And I wait
-      And I click Edit Button
+      And I click Edit Button in Edit User Profile
       And I wait
 
-########################################################################################################################
-##                                             Test cases A                                                            #
-########################################################################################################################
-#@TestCases_A
-#  Scenario Outline: "@TestCases_A" Enter good User Profile data. "No Error" display
-#    And I wait
-#  When I click Reset Button
-#    And I enter my first name <firstName>
-#      Then I should not see in "firstName" errors displayed
-#    And I enter my last name <lastName>
-#      Then I should not see in "lastName" errors displayed
-#    And I enter my email address <emailAddress>
-#      Then I should not see in "emailAddress" errors displayed
-#    And I enter my phone number <phoneNumber>
-#      Then I should not see in "phoneNumber" errors displayed
-#    And I enter my new Password <newPassWord>
-#      Then I should not see in "newPassWord" errors displayed
-#    And I enter my confirm new password <confirmNewPassWord>
-#      Then I should not see in "confirmNewPassWord" errors displayed
-#    When I click Cancel Button
-#  And I click Profile Button
-#  And I click Logout sub menu
-#  And I wait
-#
-#    Examples:
-#      | firstName     | lastName     | emailAddress              |phoneNumber    | newPassWord | confirmNewPassWord |
-##phone number inputs
-#            #valid phone number with parenthesis and dashes
-#      |   AfirstName  | AlastName    | AemailAddress@email.com   |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-#            #valid phone number with dashes
-#      |   AfirstName  | AlastName    | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123       |
-#            #valid phone number with no dashes
-#      |   AfirstName  | AlastName    | AemailAddress@email.com   | 1234567890    | QaAdmin123  |   QaAdmin123       |
-#            #valid phone number with parenthesis
-#      |   AfirstName  | AlastName    | AemailAddress@email.com   | (123)4567890  | QaAdmin123  |   QaAdmin123       |
-#
-##first name and last name inputs
-#            #valid first name and last name
-#      |   Afirstname   | Alastname    | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123      |
-#            #valid first name and last name with number
-#      |   Afirstname1  | Alastname1   | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123      |
-#            #valid first name and last name with number and symbols
-#      |   Afirstname1@ | Alastname1@  | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123      |
-#            #valid first name and last name are the same name
-#      |   Afirstname1@ | Afirstname1@ | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123      |
-#
-##email inputs
-#            #valid email with numbers
-#      |   Afirstname   | Alastname    | AemailAddress1@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
-#            #valid email with symbols !
-#      |   Afirstname   | Alastname    | AemailAddress!@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
-#            #valid email with symbols _
-#      |   Afirstname   | Alastname    | AemailAddress_@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
-#            #valid email with symbols . in between letters
-#      |   Afirstname   | Alastname    | Aemail.Address@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
-#            #valid email with less on @ and .
-#      |   Afirstname   | Alastname    | AemailAddress1@a.c         | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
-#         #valid email Uppercase on Email provider .
-#      |   Afirstname   | Alastname    | AemailAddress1@Email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
-#          #valid email Uppercase on .Com
-#      |   Afirstname   | Alastname    | AemailAddress1@Email.Com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
-#
-##New Password and Confirm New Password inputs
-#            #valid Password with letters and number
-#      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | Qaadmin1    |   Qaadmin1       |
-#            #valid Password with letters and number order
-#      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | 1Qaadmin    |   1Qaadmin       |
-#            #valid Password with letters , number order and symbols
-#      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | @1Qaadmin   |   @1Qaadmin      |
-#            #valid Password with letters , number order and symbols
-#      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | @1Q.aadmin  |   @1Q.aadmin     |
-#             #valid Password with letters and number long password
-#      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1  |   Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1 |
-#            #valid Password with few letters and numbers
-#      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | 123456Aa    |   123456Aa       |
+#######################################################################################################################
+#                                             Test cases A                                                            #
+#######################################################################################################################
+@TestCases_A
+  Scenario Outline: "@TestCases_A" Enter good User Profile data. "No Error" display
+    And I wait
+  When I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
+      Then I should not see in "firstName" errors displayed
+    And I enter my last name <lastName> in Form
+      Then I should not see in "lastName" errors displayed
+    And I enter my email address <emailAddress> in Form
+      Then I should not see in "emailAddress" errors displayed
+    And I enter my phone number <phoneNumber> in Form
+      Then I should not see in "phoneNumber" errors displayed
+    And I enter my new Password <newPassWord> in Form
+      Then I should not see in "newPassWord" errors displayed
+    And I enter my confirm new password <confirmNewPassWord> in Form
+      Then I should not see in "confirmNewPassWord" errors displayed
+    When I click Cancel Button in Edit User Profile
+  And I click Avatar Image Button
+  And I click Logout sub menu from Avatar
+  And I wait
+
+    Examples:
+      | firstName     | lastName     | emailAddress              |phoneNumber    | newPassWord | confirmNewPassWord |
+#phone number inputs
+            #valid phone number with parenthesis and dashes
+      |   AfirstName  | AlastName    | AemailAddress@email.com   |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
+            #valid phone number with dashes
+      |   AfirstName  | AlastName    | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123       |
+            #valid phone number with no dashes
+      |   AfirstName  | AlastName    | AemailAddress@email.com   | 1234567890    | QaAdmin123  |   QaAdmin123       |
+            #valid phone number with parenthesis
+      |   AfirstName  | AlastName    | AemailAddress@email.com   | (123)4567890  | QaAdmin123  |   QaAdmin123       |
+
+#first name and last name inputs
+            #valid first name and last name
+      |   Afirstname   | Alastname    | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123      |
+            #valid first name and last name with number
+      |   Afirstname1  | Alastname1   | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123      |
+            #valid first name and last name with number and symbols
+      |   Afirstname1@ | Alastname1@  | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123      |
+            #valid first name and last name are the same name
+      |   Afirstname1@ | Afirstname1@ | AemailAddress@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123      |
+
+#email inputs
+            #valid email with numbers
+      |   Afirstname   | Alastname    | AemailAddress1@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
+            #valid email with symbols !
+      |   Afirstname   | Alastname    | AemailAddress!@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
+            #valid email with symbols _
+      |   Afirstname   | Alastname    | AemailAddress_@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
+            #valid email with symbols . in between letters
+      |   Afirstname   | Alastname    | Aemail.Address@email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
+            #valid email with less on @ and .
+      |   Afirstname   | Alastname    | AemailAddress1@a.c         | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
+         #valid email Uppercase on Email provider .
+      |   Afirstname   | Alastname    | AemailAddress1@Email.com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
+          #valid email Uppercase on .Com
+      |   Afirstname   | Alastname    | AemailAddress1@Email.Com   | 123-456-7890  | QaAdmin123  |   QaAdmin123     |
+
+#New Password and Confirm New Password inputs
+            #valid Password with letters and number
+      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | Qaadmin1    |   Qaadmin1       |
+            #valid Password with letters and number order
+      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | 1Qaadmin    |   1Qaadmin       |
+            #valid Password with letters , number order and symbols
+      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | @1Qaadmin   |   @1Qaadmin      |
+            #valid Password with letters , number order and symbols
+      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | @1Q.aadmin  |   @1Q.aadmin     |
+             #valid Password with letters and number long password
+      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1  |   Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1 |
+            #valid Password with few letters and numbers
+      |     AfirstName | AlastName    | AemailAddress@email.com    | (123)456-7890 | 123456Aa    |   123456Aa       |
 
 #######################################################################################################################
 #                                             Test cases B                                                            #
@@ -120,18 +120,19 @@ Feature: Enter data on "Edit User Profile"
 @TestCases_B-1
   Scenario Outline: "@TestCases_B-1" Enter wrong User Profile Email address will throw error "Invalid email address"
     And I wait
-  And I click Reset Button
-    And I enter my first name <firstName>
-    And I enter my last name <lastName>
-    And I enter my email address <emailAddress>
+  And I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
       But I enter "a wrong Email Address"
       Then I should see "emailAddress" message "Invalid email address" displayed for this "filled" field
-    And I enter my phone number <phoneNumber>
-    And I enter my new Password <newPassWord>
-    And I enter my confirm new password <confirmNewPassWord>
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
+    And I enter my confirm new password <confirmNewPassWord> in Form
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -150,18 +151,19 @@ Feature: Enter data on "Edit User Profile"
 @TestCases_B-2
 Scenario Outline: "@TestCases_B-2" Enter wrong User Profile phone number will throw error "Must be a valid 10 digit number"
   And I wait
-  And I click Reset Button
-  And I enter my first name <firstName>
-  And I enter my last name <lastName>
-  And I enter my email address <emailAddress>
-  And I enter my phone number <phoneNumber>
+  And I click Reset Button in Edit User Profile
+  And I enter my first name <firstName> in Form
+  And I enter my last name <lastName> in Form
+  And I enter my email address <emailAddress> in Form
+  And I enter my phone number <phoneNumber> in Form
     But I enter "a wrong phone number"
     Then I should see "phoneNumber" message "Must be a valid 10 digit number" displayed for this "filled" field
-  And I enter my new Password <newPassWord>
-  And I enter my confirm new password <confirmNewPassWord>
-  And I click Cancel Button
-  And I click Profile Button
-  And I click Logout sub menu
+  And I enter my new Password <newPassWord> in Form
+  And I enter my confirm new password <confirmNewPassWord> in Form
+  And I click Cancel Button in Edit User Profile
+  And I click Avatar Image Button
+  And I wait
+  And I click Logout sub menu from Avatar
   And I wait
 
     Examples:
@@ -178,20 +180,21 @@ Scenario Outline: "@TestCases_B-2" Enter wrong User Profile phone number will th
 @TestCases_B-3
 Scenario Outline: "@TestCases_B-3" Enter wrong User Profile New Password and Confirm New Password will throw error "Password must be at least 8 characters, contain a number, and mixed case letters." and "Passwords do not match"
   And I wait
-  And I click Reset Button
-  And I enter my first name <firstName>
-  And I enter my last name <lastName>
-  And I enter my email address <emailAddress>
-  And I enter my phone number <phoneNumber>
-  And I enter my new Password <newPassWord>
+  And I click Reset Button in Edit User Profile
+  And I enter my first name <firstName> in Form
+  And I enter my last name <lastName> in Form
+  And I enter my email address <emailAddress> in Form
+  And I enter my phone number <phoneNumber> in Form
+  And I enter my new Password <newPassWord> in Form
     But I enter "a wrong New Password with no number"
     Then I should see "newPassWord" message "Password must be at least 8 characters, contain a number, and mixed case letters." displayed for this "filled" field
-  When I enter my confirm new password <confirmNewPassWord>
+  When I enter my confirm new password <confirmNewPassWord> in Form
     But I enter "a different Confirm New Password from New Password"
     Then I should see "confirmNewPassWord" message "Passwords do not match" displayed for this "filled" field
-  And I click Cancel Button
-  And I click Profile Button
-  And I click Logout sub menu
+  And I click Cancel Button in Edit User Profile
+  And I wait
+  And I click Avatar Image Button
+  And I click Logout sub menu from Avatar
   And I wait
 
   Examples:
@@ -206,20 +209,21 @@ Scenario Outline: "@TestCases_B-3" Enter wrong User Profile New Password and Con
 @TestCases_B-4
 Scenario Outline: "@TestCases_B-4" Enter wrong User Profile "New Password" will throw error  "Password must be at least 8 characters, contain a number, and mixed case letters." but Confirm Password is the same "NO ERROR"
   And I wait
-  And I click Reset Button
-  And I enter my first name <firstName>
-  And I enter my last name <lastName>
-  And I enter my email address <emailAddress>
-  And I enter my phone number <phoneNumber>
-  And I enter my new Password <newPassWord>
+  And I click Reset Button in Edit User Profile
+  And I enter my first name <firstName> in Form
+  And I enter my last name <lastName> in Form
+  And I enter my email address <emailAddress> in Form
+  And I enter my phone number <phoneNumber> in Form
+  And I enter my new Password <newPassWord> in Form
     But I enter "a wrong New Password with no numbers"
     Then I should see "newPassWord" message "Password must be at least 8 characters, contain a number, and mixed case letters." displayed for this "filled" field
-  When I enter my confirm new password <confirmNewPassWord>
+  When I enter my confirm new password <confirmNewPassWord> in Form
     But I enter "same New Password into Confirm New Password"
     Then I should not see in "confirmNewPassWord" errors displayed
-  And I click Cancel Button
-  And I click Profile Button
-  And I click Logout sub menu
+  And I click Cancel Button in Edit User Profile
+  And I wait
+  And I click Avatar Image Button
+  And I click Logout sub menu from Avatar
   And I wait
 
 Examples:
@@ -232,27 +236,28 @@ Examples:
 @TestCases_C-1
 Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw error "Required" for all fields
   And I wait
-  And I click Reset Button
-  And I enter my first name <firstName>
+  And I click Reset Button in Edit User Profile
+  And I enter my first name <firstName> in Form
     But I enter "nothing to first name"
     Then I should see "firstName" message "Required" displayed for this "empty" field
-  And I enter my last name <lastName>
+  And I enter my last name <lastName> in Form
     But I enter "nothing to last name"
     Then I should see "lastName" message "Required" displayed for this "empty" field
-  And I enter my email address <emailAddress>
+  And I enter my email address <emailAddress> in Form
     But I enter "nothing to email address"
     Then I should see "emailAddress" message "Required" displayed for this "empty" field
-  And I enter my phone number <phoneNumber>
-  And I enter my Previous Password <previousPassWord>
-  And I enter my new Password <newPassWord>
+  And I enter my phone number <phoneNumber> in Form
+  And I enter my Previous Password <previousPassWord> in Form
+  And I enter my new Password <newPassWord> in Form
     But I enter "nothing to New Password"
     Then I should see "newPassWord" message "Required" displayed for this "empty" field
-  And I enter my confirm new password <confirmNewPassWord>
+  And I enter my confirm new password <confirmNewPassWord> in Form
     But I enter "nothing to Confirm New Password"
     Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
-  And I click Cancel Button
-  And I click Profile Button
-  And I click Logout sub menu
+  And I click Cancel Button in Edit User Profile
+  And I wait
+  And I click Avatar Image Button
+  And I click Logout sub menu from Avatar
   And I wait
 
     Examples:
@@ -264,18 +269,19 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   @TestCases_C-2
   Scenario Outline: "@TestCases_C-2" Enter empty firstName  will throw error "Required"
     And I wait
-    And I click Reset Button
-    And I enter my first name <firstName>
+    And I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
       But I enter "nothing to first name"
       Then I should see "firstName" message "Required" displayed for this "empty" field
-    And I enter my last name <lastName>
-    And I enter my email address <emailAddress>
-    And I enter my phone number <phoneNumber>
-    And I enter my new Password <newPassWord>
-    And I enter my confirm new password <confirmNewPassWord>
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
+    And I enter my confirm new password <confirmNewPassWord> in Form
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -286,18 +292,19 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
     @TestCases_C-3
     Scenario Outline: "@TestCases_C-3" Enter empty lastName  will throw error "Required"
       And I wait
-      And I click Reset Button
-      And I enter my first name <firstName>
-      And I enter my last name <lastName>
+      And I click Reset Button in Edit User Profile
+      And I enter my first name <firstName> in Form
+      And I enter my last name <lastName> in Form
         But I enter "nothing to last name"
         Then I should see "lastName" message "Required" displayed for this "empty" field
-      And I enter my email address <emailAddress>
-      And I enter my phone number <phoneNumber>
-      And I enter my new Password <newPassWord>
-      And I enter my confirm new password <confirmNewPassWord>
-      And I click Cancel Button
-      And I click Profile Button
-      And I click Logout sub menu
+      And I enter my email address <emailAddress> in Form
+      And I enter my phone number <phoneNumber> in Form
+      And I enter my new Password <newPassWord> in Form
+      And I enter my confirm new password <confirmNewPassWord> in Form
+      And I click Cancel Button in Edit User Profile
+      And I wait
+      And I click Avatar Image Button
+      And I click Logout sub menu from Avatar
       And I wait
 
     Examples:
@@ -308,18 +315,19 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   @TestCases_C-4
   Scenario Outline: "@TestCases_C-4" Enter empty emailAddress  will throw error "Required"
     And I wait
-    And I click Reset Button
-    And I enter my first name <firstName>
-    And I enter my last name <lastName>
-    And I enter my email address <emailAddress>
+    And I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
       But I enter "nothing to email address"
       Then I should see "emailAddress" message "Required" displayed for this "empty" field
-    And I enter my phone number <phoneNumber>
-    And I enter my new Password <newPassWord>
-    And I enter my confirm new password <confirmNewPassWord>
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
+    And I enter my confirm new password <confirmNewPassWord> in Form
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -331,21 +339,22 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   @TestCases_C-5
   Scenario Outline: "@TestCases_C-5" Enter empty New Password  will throw error "Required" and previous PassWord "Required"
     And I wait
-    When I click Reset Button
-    And I enter my first name <firstName>
-    And I enter my last name <lastName>
-    And I enter my email address <emailAddress>
-    And I enter my phone number <phoneNumber>
-    And I enter my confirm new password <confirmNewPassWord>
-    And I enter my new Password <newPassWord>
+    When I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my confirm new password <confirmNewPassWord> in Form
+    And I enter my new Password <newPassWord> in Form
     But I enter "nothing to New Password"
     Then I should see "newPassWord" message "Required" displayed for this "empty" field
-    And I enter my Previous Password <previousPassWord>
+    And I enter my Previous Password <previousPassWord> in Form
     But I enter "nothing to Previous PassWord "
     Then I should see "previousPassWord" message "Required" displayed for this "empty" field
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -356,23 +365,24 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   @TestCases_C-6
   Scenario Outline: "@TestCases_C-6" Enter empty Confirm New Password  will throw error "Required" and "Passwords do not match" and previousPassWord "Require"
     And I wait
-    And I click Reset Button
-    And I enter my first name <firstName>
-    And I enter my last name <lastName>
-    And I enter my email address <emailAddress>
-    And I enter my phone number <phoneNumber>
-    And I enter my new Password <newPassWord>
+    And I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
       Then I should not see in "newPassWord" errors displayed
-    And I enter my confirm new password <confirmNewPassWord>
+    And I enter my confirm new password <confirmNewPassWord> in Form
       But I enter "nothing to Confirm New Password"
       Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
       Then I should see "confirmNewPassWord" message "Passwords do not match" displayed for this "empty" field
-    And I enter my Previous Password <previousPassWord>
+    And I enter my Previous Password <previousPassWord> in Form
     But I enter "nothing to Previous PassWord "
     Then I should see "previousPassWord" message "Required" displayed for this "empty" field
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -384,21 +394,22 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   @TestCases_C-7
   Scenario Outline: "@TestCases_C-7" Enter empty Previous PassWord data will throw error "Required"
     And I wait
-    And I click Reset Button
-    And I enter my first name <firstName>
-    And I enter my last name <lastName>
-    And I enter my email address <emailAddress>
-    And I enter my phone number <phoneNumber>
-    And I enter my new Password <newPassWord>
+    And I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
       Then I should not see in "newPassWord" errors displayed
-    And I enter my confirm new password <confirmNewPassWord>
+    And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
-    And I enter my Previous Password <previousPassWord>
+    And I enter my Previous Password <previousPassWord> in Form
     But I enter "nothing to Previous PassWord "
     Then I should see "previousPassWord" message "Required" displayed for this "empty" field
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -410,21 +421,22 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   @TestCases_C-8
   Scenario Outline: "@TestCases_C-8" Enter wrong data on Previous PassWord data will throw error "Password must be at least 8 characters, contain a number, and mixed case letters."
     And I wait
-    And I click Reset Button
-    And I enter my first name <firstName>
-    And I enter my last name <lastName>
-    And I enter my email address <emailAddress>
-    And I enter my phone number <phoneNumber>
-    And I enter my new Password <newPassWord>
+    And I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
       Then I should not see in "newPassWord" errors displayed
-    And I enter my confirm new password <confirmNewPassWord>
+    And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
-    And I enter my Previous Password <previousPassWord>
+    And I enter my Previous Password <previousPassWord> in Form
     But I enter "a wrong Previous PassWord with no number"
     Then I should see "previousPassWord" message "Password must be at least 8 characters, contain a number, and mixed case letters." displayed for this "filled" field
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -438,23 +450,24 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   @TestCases_C-9
   Scenario Outline: "@TestCases_C-9" Enter empty Strings (SPACE BAR) User Profile data will throw error "Spaces are invalid characters"
     And I wait
-    And I click Reset Button
-    And I enter my first name <firstName>
+    And I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
       Then I should see "firstName" message "Spaces are invalid characters" displayed for this "filled" field
-    And I enter my last name <lastName>
+    And I enter my last name <lastName> in Form
       Then I should see "lastName" message "Spaces are invalid characters" displayed for this "filled" field
-    And I enter my email address <emailAddress>
+    And I enter my email address <emailAddress> in Form
       Then I should see "emailAddress" message "Spaces are invalid characters" displayed for this "filled" field
-    And I enter my phone number <phoneNumber>
+    And I enter my phone number <phoneNumber> in Form
       Then  I should not see in "phoneNumber" errors displayed
-    And I enter my Previous Password <previousPassWord>
-    And I enter my new Password <newPassWord>
+    And I enter my Previous Password <previousPassWord> in Form
+    And I enter my new Password <newPassWord> in Form
       Then  I should not see in "newPassWord" errors displayed
-    And I enter my confirm new password <confirmNewPassWord>
+    And I enter my confirm new password <confirmNewPassWord> in Form
       Then  I should not see in "confirmNewPassWord" errors displayed
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -471,9 +484,10 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
       Then I should see "lastName" message "Required" displayed for this "filled" field
     And I clear text box selected "emailAddress"
       Then I should see "emailAddress" message "Required" displayed for this "filled" field
-    And I click Cancel Button
-    And I click Profile Button
-    And I click Logout sub menu
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
     Examples:
@@ -487,7 +501,7 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 ###  @TestCases_Reports
 ##  Scenario Outline: Test Reports
 ##    Given I enter BlackBook Website
-##    When I enter my first name <firstName>
+##    When I enter my first name <firstName> in Form
 ##    Then I should not see in "firstName" errors displayed
 ##    And I enter my last name <lastName>
 ##    Then I should not see in "lastName" errors displayed

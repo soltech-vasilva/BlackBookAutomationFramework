@@ -8,6 +8,8 @@ chai.use(chaiAsPromised);
 
 
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var page = require ('../Page/Page_Objects');
+
 
 var Utilities = function Utilities() {
 
@@ -25,59 +27,45 @@ var Utilities = function Utilities() {
         }
     };
 
-    Utilities.prototype.VerifyValueEntered_RetypeValue = function (Element,  ValueCompare , success) {
+    Utilities.prototype.VerifyValueEntered_RetypeValue = function (Element,  ValueCompare ) {
           return Element.getAttribute("value").then(function (currentValue) {
-            this.ValueEntered = currentValue;
-            console.log('Value:|' + this.ValueEntered.toString() + '|');
-            if (this.ValueEntered != ValueCompare) {
-                // if  (this.ValueEntered != 'dd') {
-                console.log(this.ValueEntered + ":Different:" + ValueCompare);
+              this.ValueEntered = currentValue;
+              //console.log('Value:|' + this.ValueEntered.toString() + '|');
+              var count = 0;
+              // if (this.ValueEntered != ValueCompare) {
+              //if  (this.ValueEntered != 'dd') {
+              //while (this.ValueEntered != 'dd') {
+              while (this.ValueEntered != ValueCompare) {
+                  console.log(this.ValueEntered + ":Different:" + ValueCompare);
+                  //original
+                  page.executeSequence([Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.sleep(1000), Utilities.prototype.SendKeysSlower(Element, ValueCompare)])
+                      .then(()=>{});
 
-                //original
-                Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE, ValueCompare);
-                //test on my mac computer
-                //  Element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE);
-                //  browser.sleep(3000);
-                // for (var i = 0; i < ValueCompare.toString().length; i++) {
-                //     var c = ValueCompare.charAt(i);
-                //     Element.sendKeys(c);
-                // }
-                //Element.clear();
-                //browser.sleep(2000);
-                //funciona
-                //Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL);
-                //Element.sendKeys(protractor.Key.DELETE);
-                //Element.sendKeys(ValueCompare);
-                //funtiona
-                //Element.click();
-                //Element.sendKeys(protractor.Key.chord(protractor.Key.CONTROL, 'a'));
-                //Element.sendKeys(protractor.Key.DELETE);
-                //Element.sendKeys(ValueCompare);
+                  //test on my mac computer COMMAND
+                  // page.executeSequence([Element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.sleep(1000), Utilities.prototype.SendKeysSlower(Element, ValueCompare)])
+                  //     .then(()=>{});
 
-            }
-            //   if (this.ValueEntered != ValueCompare) {
-            //       console.log(this.ValueEntered + ":Different:" + ValueCompare);
-            //       Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE);
-            //       browser.sleep(1000);
-            //       Utilities.prototype.SendKeysSlower(ValueCompare);
-            //   }
-             return success();
-        });
-
-        // protractor.promise.all(flow.execute(extras)).then(success());
-        //protractor.promise.all(extras).then(success());
-        //Promise.all(extras);
-       // Promise.all(extras).then(success());
+                  count++;
+                  if (count == 3) {
+                      break;
+                  }
+              }
+          });
     };
 
     Utilities.prototype.ExpectedElement_StopAutomationAtFail = function(element)
     {
         if (protractorConfig.config.StopRunAtFail == true) {
-            browser.wait(protractor.ExpectedConditions.presenceOf(element), protractorConfig.config.WaitTime);
+            browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), protractorConfig.config.WaitTime);
         }
         else {
-            browser.driver.sleep(5000);
+            page.executeSequence([browser.driver.sleep(5000)]).then(()=>{});
         }
     };
+
+    Utilities.prototype.ElapsedTime = function(startTime)
+    {
+        console.log('Elapsed time: ' + Math.round((((new Date().getTime() - startTime)/1000)/60)*100)/100 + ' minutes');
+    }
 };
 module.exports = new Utilities();

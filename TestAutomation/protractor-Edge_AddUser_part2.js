@@ -1,9 +1,8 @@
 //var paths = require('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/build/paths');
 //var browserstack = require('browserstack-local');
 //var paths = require('build/paths');
-var dateFormat = require('dateformat');
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
-
+var dateFormat = require('dateformat');
 exports.config = {
 
     //specs: [
@@ -17,7 +16,8 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-          'e2e/features/TestCases/AddUser.feature'//,
+        //'e2e/features/TestCases/AddUser_part1.feature'//,
+        'e2e/features/TestCases/AddUser_part2.feature'//,
     ],
 
 
@@ -64,15 +64,14 @@ exports.config = {
 
     'commonCapabilities': {
          //Label
-        //'build': ' #169 | Run: Firefox| Test: "Add User"| Date: ' + new Date().toString(),
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : Add User______________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : EDGE_________________ Test : Add User Part2_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-         'name': 'Add User',
+        'name': 'Add User Part 2',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
-         'acceptSslCerts': true,
+        // 'acceptSslCerts': true,
        // 'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot
@@ -94,15 +93,15 @@ exports.config = {
             // 'resolution' : '1920x1200'
             // }
           //   ,
-          // {
-          //     ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
-          //     //Browser Type
-          //     'os': 'Windows',
-          //     'os_version': '10',
-          //     'browserName': 'Edge',
-          //     'browser_version': '13.0',
-          //     'resolution': '1920x1200'
-          // }
+          {
+              ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
+              //Browser Type
+              'os': 'Windows',
+              'os_version': '10',
+              'browserName': 'Edge',
+              'browser_version': '13.0',
+              'resolution': '1920x1200'
+          }
           //   ,
           // {
           //     ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
@@ -122,15 +121,15 @@ exports.config = {
           //     // }
           // }
           // ,
-          {
-              //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
-              // Browser Type
-              'os': 'Windows',
-              'os_version': '10',
-              'browserName': 'Firefox',
-              'browser_version': '47.0',
-              'resolution': '1920x1200'
-          }
+          // {
+          //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
+          //     // Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Firefox',
+          //     'browser_version': '47.0',
+          //     'resolution': '1920x1200'
+          // }
           // ,
           // {
           //     ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////

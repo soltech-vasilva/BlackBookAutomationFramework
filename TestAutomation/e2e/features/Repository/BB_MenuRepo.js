@@ -10,7 +10,7 @@ var BB_MenuRepo = function BB_MenuRepo () {
 
     //Components Tab
     // BB_MenuRepo.prototype.Select_Element_AdminTab = element(by.linkText('Admin')); //EDGE, Chrome works
-    BB_MenuRepo.prototype.Select_Element_AdminTab = element(by.css('span.nav-item-link')); //todo code change testting this
+    BB_MenuRepo.prototype.Select_Element_AdminTab = element.all(by.css('span.nav-item-link')).get(0); //todo code change testting this
 
     //Components SubMenu Button for Admin Tab
     BB_MenuRepo.prototype.Select_Element_UsersSubMenuButton = element(by.css('a[href="/user/list"]'));

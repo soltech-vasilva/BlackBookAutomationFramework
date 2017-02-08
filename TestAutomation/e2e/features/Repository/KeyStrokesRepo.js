@@ -23,10 +23,10 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
     //Keystroke only on windows machine machine (safai is not working even with COMMAND)
     KeyStrokeRepo.prototype.CONTROL_ALL_DELETE = function () {
         browser.sleep(1000);
-       // if ('safari')
+
         browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.CONTROL, 'a')).sendKeys( protractor.Key.DELETE).perform();
 
-      //  browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys( protractor.Key.DELETE).perform();
+       // browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys( protractor.Key.DELETE).perform();
         browser.sleep(1000);
     };
 };

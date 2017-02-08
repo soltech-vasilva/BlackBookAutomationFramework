@@ -16,7 +16,8 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-          'e2e/features/TestCases/AddUser.feature'//,
+        'e2e/features/TestCases/AddUser_part1.feature'//,
+        //'e2e/features/TestCases/AddUser_part2.feature'//,
     ],
 
 
@@ -63,14 +64,14 @@ exports.config = {
 
     'commonCapabilities': {
          //Label
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : EDGE_________________ Test : Add User______________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : EDGE_________________ Test : Add User Part1_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-         'name': 'Add User',
+        'name': 'Add User Part 1',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
-         'acceptSslCerts': true,
+        // 'acceptSslCerts': true,
        // 'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot

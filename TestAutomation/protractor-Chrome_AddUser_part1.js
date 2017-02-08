@@ -17,7 +17,8 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-          'e2e/features/TestCases/UsersList.feature'//,
+          'e2e/features/TestCases/AddUser_part1.feature'//,
+          //'e2e/features/TestCases/AddUser_part2.feature'//,
     ],
 
 
@@ -63,16 +64,16 @@ exports.config = {
     'height': 1430,
 
     'commonCapabilities': {
-       // 'build': ' #169 Run: Firefox ' + new Date().toString(),
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : User List______________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+         //Label
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Chrome_______________ Test : Add User Part1_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-        'name': 'User List',
+         'name': 'Add User Part 1',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
         // 'acceptSslCerts': true,
-        //'browserstack.selenium_version' : '3.0.1',
+       // 'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot
          'browserstack.debug': 'true',
@@ -103,33 +104,33 @@ exports.config = {
           //     'resolution': '1920x1200'
           // }
           //   ,
-          // {
-          //     ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
-          //     // Browser Type
-          //     'os': 'Windows',
-          //     'os_version': '10',
-          //     'browserName': 'Chrome',
-          //     'browser_version': '55.0',
-          //     'resolution': '1920x1200'//,
-          //
-          //     // 'chromeOptions': {
-          //     //     'excludeSwitches': ["disable-popup-blocking"]
-          //     // }
-          //
-          //     // 'chromeOptions': {
-          //     //     'args': ["--disable-popup-blocking"]
-          //     // }
-          // }
-          // ,
           {
-              //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
+              ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
               // Browser Type
               'os': 'Windows',
               'os_version': '10',
-              'browserName': 'Firefox',
-              'browser_version': '47.0',
-              'resolution': '1920x1200'
+              'browserName': 'Chrome',
+              'browser_version': '55.0',
+              'resolution': '1920x1200'//,
+
+              // 'chromeOptions': {
+              //     'excludeSwitches': ["disable-popup-blocking"]
+              // }
+
+              // 'chromeOptions': {
+              //     'args': ["--disable-popup-blocking"]
+              // }
           }
+          // ,
+          // {
+          //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
+          //     // Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Firefox',
+          //     'browser_version': '47.0',
+          //     'resolution': '1920x1200'
+          // }
           // ,
           // {
           //     ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////

@@ -19,7 +19,7 @@ var BB_userListRepo =  require('../Repository/BB_UserListRepo.js');
 var VerifyErrorMessage = function VerifyErrorMessage(){
 
     VerifyErrorMessage.prototype.ExpectTextEqualsTo = function(elementToCheck, compareValuesString, success, failure){
-        return elementToCheck.getText().then((Text)=>{
+        return browser.driver.wait(elementToCheck.getText()).then((Text)=>{
             if (Text.trim() == compareValuesString) {
                 success();
             }
@@ -97,7 +97,10 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
                         browser.getCurrentUrl().then(function (getCurrentURL) {
 
-                            if (getCurrentURL.trim() === 'http://qa-autobahn.blackbookcloud.com/user') {
+                            var currentURL = getCurrentURL.split("://");
+
+                            if (currentURL[1].trim() == 'qa-autobahn.blackbookcloud.com/user') {
+                            //if (getCurrentURL.trim() === 'http://qa-autobahn.blackbookcloud.com/user') {
                                 utilities.ExpectedElement_StopAutomationAtFail(BB_AddUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character);
                                 //browser.wait(protractor.ExpectedConditions.presenceOf(BB_AddUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character), 10000);
                                 browser.isElementPresent(BB_AddUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Leastbe8Character).then(function (isPresente) {
@@ -129,7 +132,10 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
                         browser.getCurrentUrl().then(function (getCurrentURL) {
 
-                            if (getCurrentURL.trim() === 'http://qa-autobahn.blackbookcloud.com/user') {
+                            var currentURL = getCurrentURL.split("://");
+
+                            if (currentURL[1].trim() == 'qa-autobahn.blackbookcloud.com/user') {
+                            // if (getCurrentURL.trim() === 'https://qa-autobahn.blackbookcloud.com/user') {
                                 if (str_VerifyErrorName == 'Required') {
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_AddUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword_Required);
                                     //browser.wait(protractor.ExpectedConditions.presenceOf(BB_AddUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword_Required), 10000);
@@ -203,6 +209,14 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                             });
                         }
                     }
+                    break;
+
+                case 'userrole' :
+                        utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_UserRole);
+                        browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_UserRole).then(function (isPresente) {
+                            VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente,BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_UserRole, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in User is Roles', success, failure);
+                        });
+
                     break;
 
                 default:
@@ -290,6 +304,12 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                 case 'previouspassword':
                     browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PreviousPassword_Require).then((isPresente)=> {
                        VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PreviousPassword_Require , 'It should not show any errors in Previous Password', success, failure);
+                    });
+                    break;
+
+                case 'userrole' :
+                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_UserRole).then((isPresente)=> {
+                        VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_UserRole , 'It should not show any errors in User is Roles', success, failure);
                     });
                     break;
 
