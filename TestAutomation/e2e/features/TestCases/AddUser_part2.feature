@@ -56,7 +56,7 @@ Feature:  "Add a new User Profile"
     Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
     Then I should not see in "confirmNewPassWord" errors displayed
-    And I check User's Roles "Administrators"
+    And I click checkbox User's Roles "Administrators"
     And I wait
     And I click on Save button in Edit User Profile
     And I wait

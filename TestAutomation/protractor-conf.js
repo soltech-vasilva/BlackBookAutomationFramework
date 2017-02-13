@@ -9,7 +9,7 @@ exports.config = {
     // ],
     'StopRunAtFail': false,
     'WaitTime': 10000,
-    'BuildTestNumber': '26',
+    'BuildTestNumber': '28',
 
     //Turn off applitool
     'ApplitoolsOn': false,

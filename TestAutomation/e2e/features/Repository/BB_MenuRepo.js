@@ -17,12 +17,15 @@ var BB_MenuRepo = function BB_MenuRepo () {
     BB_MenuRepo.prototype.Select_Element_RolesSubMenuButton = element(by.css('a[href="/role/list"]'));
 
     //Components Button
-    BB_MenuRepo.prototype.Select_Element_ProfileButton = element(by.xpath('//*[@id="page-box"]/header/div[3]'));
+   //BB_MenuRepo.prototype.Select_Element_ProfileButton = element(by.xpath('//*[@id="page-box"]/header/div[3]'));
+    BB_MenuRepo.prototype.Select_Element_ProfileButton = element(by.xpath('//*[@id="page-box"]/header/div[2]')); //todo see if iot works it change to 2
 
     //Components SubMenu Button for Profile
-    BB_MenuRepo.prototype.Select_Element_MyProfileSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[2]'));
+    //BB_MenuRepo.prototype.Select_Element_MyProfileSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[2]'));
+    BB_MenuRepo.prototype.Select_Element_MyProfileSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[2]/ul/li[2]/a'));//todo see if iot works it change to a (it might have issues user 1)
 
-    BB_MenuRepo.prototype.Select_Element_LogOutSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[1]'));
+    //BB_MenuRepo.prototype.Select_Element_LogOutSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[1]'));
+    BB_MenuRepo.prototype.Select_Element_LogOutSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[2]/ul/li[1]/a'));
 
 };
 module.exports = new BB_MenuRepo();

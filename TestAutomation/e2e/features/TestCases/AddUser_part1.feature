@@ -35,6 +35,7 @@ Feature:  "Add a new User Profile"
       And I enter my user email address user1@example.com in Login
       And I enter my Password Password1 in Login
       And I click Login Button
+      And I wait
       And I click on Admin Tab
       And I click on Users submenu from Admin Tab
       And I click on New User Button in User List
@@ -56,7 +57,7 @@ Feature:  "Add a new User Profile"
       Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
-    And I check User's Roles "Administrators"
+    And I click checkbox User's Roles "Administrators"
     And I click on Save button in Edit User Profile
     And I wait
       Then I should see "User Creation Successful" displayed on "UserList" popup
@@ -94,7 +95,7 @@ Feature:  "Add a new User Profile"
     Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
     Then I should not see in "confirmNewPassWord" errors displayed
-    And I check User's Roles "Administrators"
+    And I click checkbox User's Roles "Administrators"
     And I wait
     And I click on Save button in Edit User Profile
     And I wait
@@ -105,8 +106,8 @@ Feature:  "Add a new User Profile"
     Examples:
       | firstName       | lastName       | emailAddress                 |phoneNumber    | newPassWord | confirmNewPassWord |
 #Valid 26 Users input
-      |   firstName1    | lastName1      | admintestemail1@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName100  | lastName100    | admintestemail1@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
+      |   firstName1    | lastName1      | admintestemail4@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
+      |   firstName100  | lastName100    | admintestemail4@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
 
 #######################################################################################################################
 #                                             Test cases A                                                            #
@@ -125,7 +126,7 @@ Feature:  "Add a new User Profile"
       Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
-    And I check User's Roles "Administrators"
+    And I click checkbox User's Roles "Administrators"
     When I click Cancel Button in Edit User Profile
     And I wait
     And I click Avatar Image Button

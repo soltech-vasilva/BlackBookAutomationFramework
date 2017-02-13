@@ -34,8 +34,8 @@ Feature:  "User List"
   Scenario: " @TestCases_A-1" Deactivate User
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And  I wait
-    And I enter filter value admintestemail5@yopmail.com
+    And I wait
+    And I enter Filter User List admintestemail5@yopmail.com in User List
     And I click on Gear Icon 1
     And I click Deactivate in submenu from Gear Icon
 
@@ -43,8 +43,8 @@ Feature:  "User List"
   Scenario: "@TestCases_A-2" admintestemail6@yopmail.com Deactivate User
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And  I wait
-    And I enter filter value admintestemail6@yopmail.com
+    And I wait
+    And I enter Filter User List admintestemail6@yopmail.com in User List
     And I click on Gear Icon 1
     And I click Deactivate in submenu from Gear Icon
 
@@ -52,9 +52,9 @@ Feature:  "User List"
   Scenario: "@TestCases_A-3" admintestemail6@yopmail.com Activate User
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And  I wait
+    And I wait
     And I click Status Filter
-    And I enter filter value admintestemail6@yopmail.com
+    And I enter Filter User List admintestemail6@yopmail.com in User List
     And I click Inactive in submenu from Status Filter
     And I click on Gear Icon 1
     And I click Activate in submenu from Gear Icon

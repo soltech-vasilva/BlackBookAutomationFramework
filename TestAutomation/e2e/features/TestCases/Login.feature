@@ -31,19 +31,19 @@ Feature: Enter data on "LOGIN" page
     Given I enter BlackBook Login Website
      #BUG ADDED THIS TO CONTINUE
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
-    And  I wait
+    And I wait
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
     Then I should not see in "currentEmailAddress" errors displayed
-    And  I wait
+    And I wait
     And I click Avatar Image Button
     And I click My Profile sub menu from Avatar
-    And  I wait
+    And I wait
     And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
     And I click Cancel Button in Edit User Profile
-    And  I wait
+    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
     And I wait
@@ -71,7 +71,7 @@ Feature: Enter data on "LOGIN" page
     And I enter my Password <currentPassword> in Login
     And I click Login Button
       Then I should see "currentEmailAddress" message "Email Is Required" displayed for this "empty" field
-    And  I wait
+    And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -89,7 +89,7 @@ Feature: Enter data on "LOGIN" page
      And I enter my Password <currentPassword> in Login
      And I click Login Button
       Then I should see "currentEmailAddress" message "Invalid log in. Please contact your administrator." displayed for this "filled" field
-     And  I wait
+     And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -113,7 +113,7 @@ Feature: Enter data on "LOGIN" page
      And I enter my Password <currentPassword> in Login
      And I click Login Button
       Then I should see "currentEmailAddress" message "Invalid Login. Please try again." displayed for this "filled" field
-    And  I wait
+     And I wait
 
     Examples:
            | currentEmailAddress                |   currentPassword  |
@@ -133,7 +133,7 @@ Feature: Enter data on "LOGIN" page
         And I re-enter the same user name and password
         And I re-enter the same user name and password
           Then I should see "currentEmailAddress" message "Invalid login. Please reset your password." displayed for this "filled" field
-        And  I wait
+        And I wait
 
         Examples:
           | currentEmailAddress                |   currentPassword  |
@@ -155,7 +155,7 @@ Feature: Enter data on "LOGIN" page
     And I enter my Password <currentPassword> in Login
     And I click Login Button
       Then I should see "currentPassword" message "Password Is Required" displayed for this "empty" field
-    And  I wait
+    And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -176,7 +176,7 @@ Feature: Enter data on "LOGIN" page
     And I enter my Password <currentPassword> in Login
     And I click Login Button
       Then I should see "currentEmailAddress" message "Unable to log in. Please contact your administrator." displayed for this "filled" field
-    And  I wait
+    And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -200,14 +200,14 @@ Feature: Enter data on "LOGIN" page
       And I wait
       And I click on Admin Tab
       And I click on Users submenu from Admin Tab
-      And  I wait
-      And I enter filter value <currentEmailAddress>
+      And I wait
+      And I enter Filter User List <currentEmailAddress> in User List
       And I click Status Filter
       And I click Inactive in submenu from Status Filter
       And I wait
       And I click on Gear Icon 1
       And I click Activate in submenu from Gear Icon
-      And  I wait
+      And I wait
       And I click Avatar Image Button
       And I click Logout sub menu from Avatar
       And I wait
@@ -219,7 +219,7 @@ Feature: Enter data on "LOGIN" page
       And I wait
       And I click Avatar Image Button
       And I click Logout sub menu from Avatar
-      And  I wait
+      And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |

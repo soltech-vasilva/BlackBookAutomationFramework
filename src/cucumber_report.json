@@ -47,16 +47,16 @@
         ]
       },
       {
-        "name": "\"@TestCases_A-25\" (BB-480) Adding \"Role\" to new user does not show \"Require\".",
-        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-25\"-(bb-480)-adding-\"role\"-to-new-user-does-not-show-\"require\".",
-        "line": 496,
+        "name": "\"@TestCases_A-29\" (BB-475) Dropdown boxes in Edit Role wont go to Default value after \"Reset\"",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-29\"-(bb-475)-dropdown-boxes-in-edit-role-wont-go-to-default-value-after-\"reset\"",
+        "line": 555,
         "keyword": "Scenario",
         "description": "",
         "type": "scenario",
         "tags": [
           {
-            "name": "@TestCases_A-25",
-            "line": 480
+            "name": "@TestCases_A-29",
+            "line": 554
           }
         ],
         "steps": [
@@ -65,7 +65,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3299465
+              "duration": 3193749
             },
             "match": {}
           },
@@ -75,7 +75,7 @@
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 3642151760
+              "duration": 3283444030
             },
             "match": {}
           },
@@ -85,7 +85,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 8351969565
+              "duration": 7385582737
             },
             "match": {}
           },
@@ -95,7 +95,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 4002934331
+              "duration": 4001670932
             },
             "match": {}
           },
@@ -105,7 +105,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1209462101
+              "duration": 1225099757
             },
             "match": {}
           },
@@ -115,7 +115,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 547109855
+              "duration": 580416866
             },
             "match": {}
           },
@@ -125,117 +125,137 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 105761191
+              "duration": 125801063
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 482,
+            "line": 556,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 4002759873
+              "duration": 4005098361
             },
             "match": {}
           },
           {
             "name": "I click on Admin Tab",
-            "line": 483,
+            "line": 557,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1353090
+              "duration": 1194083
             },
             "match": {}
           },
           {
-            "name": "I click on Users submenu from Admin Tab",
-            "line": 484,
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 558,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 461930816
+              "duration": 459995361
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3",
+            "line": 559,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 546322626
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon",
+            "line": 560,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1285549107
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 485,
+            "line": 561,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 4004392089
+              "duration": 4003513247
             },
             "match": {}
           },
           {
-            "name": "I click on New User Button in User List",
-            "line": 486,
+            "name": "I click Filter By Group dropdown \"Users\" Permissions in Role Editor",
+            "line": 562,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 186099821
+              "duration": 1960185
             },
             "match": {}
           },
           {
-            "name": "I enter my first name  in Form",
-            "line": 487,
-            "keyword": "When ",
-            "result": {
-              "status": "passed",
-              "duration": 696417941
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my last name  in Form",
-            "line": 488,
+            "name": "I click Filter By Status dropdown \"Inactive\" in Role Editor",
+            "line": 563,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 182702390
+              "duration": 3097977
             },
             "match": {}
           },
           {
-            "name": "I enter my email address  in Form",
-            "line": 489,
+            "name": "I wait",
+            "line": 564,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 209446257
+              "duration": 4005716960
             },
             "match": {}
           },
           {
-            "name": "I should see \"userrole\" message \"Required\" displayed for this \"unchecked\" field",
-            "line": 490,
+            "name": "I click Reset Button in Edit Roles",
+            "line": 565,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 247949794
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"All\" display for Filter By Group in Role Editor",
+            "line": 566,
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 5116494078
+              "duration": 34143646
             },
             "match": {}
           },
           {
-            "name": "I check User's Roles \"Administrators\"",
-            "line": 491,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 171005451
-            },
-            "match": {}
-          },
-          {
-            "name": "I should not see in \"userrole\" errors displayed",
-            "line": 492,
+            "name": "I should see \"All\" display for Filter By Status in Role Editor",
+            "line": 567,
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 2026445722
+              "duration": 32835807
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 568,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4003433635
             },
             "match": {}
           },
@@ -244,23 +264,23 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 823516
+              "duration": 657878
             },
             "match": {}
           }
         ]
       },
       {
-        "name": "\"@TestCases_A-26\" (BB-481) (security purpose) values for Password stay log in text box.",
-        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-26\"-(bb-481)-(security-purpose)-values-for-password-stay-log-in-text-box.",
-        "line": 519,
+        "name": "\"@TestCases_A-29\" (BB-475) Dropdown boxes in Edit Role wont go to Default value after \"Reset\"",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-29\"-(bb-475)-dropdown-boxes-in-edit-role-wont-go-to-default-value-after-\"reset\"",
+        "line": 572,
         "keyword": "Scenario",
         "description": "",
         "type": "scenario",
         "tags": [
           {
-            "name": "@TestCases_A-26",
-            "line": 498
+            "name": "@TestCases_A-29",
+            "line": 571
           }
         ],
         "steps": [
@@ -269,7 +289,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 303554
+              "duration": 309505
             },
             "match": {}
           },
@@ -279,7 +299,7 @@
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 2182598694
+              "duration": 1800479551
             },
             "match": {}
           },
@@ -289,7 +309,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 7677029939
+              "duration": 7650096050
             },
             "match": {}
           },
@@ -299,7 +319,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 4002812583
+              "duration": 4004397933
             },
             "match": {}
           },
@@ -309,7 +329,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1348219948
+              "duration": 1320299074
             },
             "match": {}
           },
@@ -319,7 +339,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 809776489
+              "duration": 576767704
             },
             "match": {}
           },
@@ -329,157 +349,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 121387853
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 500,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 4003180972
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 501,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 170013407
-            },
-            "match": {}
-          },
-          {
-            "name": "I click My Profile sub menu from Avatar",
-            "line": 502,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 370431656
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 503,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 4005422419
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Edit Button in Edit User Profile",
-            "line": 504,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2079953
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 505,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 4005722008
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my new Password QaAdmi in Form",
-            "line": 506,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 327651843
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my confirm new password Qa in Form",
-            "line": 507,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 329454099
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Previous Password QaAdmin in Form",
-            "line": 508,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 364001057
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Cancel Button in Edit User Profile",
-            "line": 509,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 184758149
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Edit Button in Edit User Profile",
-            "line": 510,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1211378
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see user's \"previousPassWord\" displayed in screen with value \"\"",
-            "line": 511,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 5067285026
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see user's \"newPassWord\" displayed in screen with value \"\"",
-            "line": 512,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 5036259571
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see user's \"confirmNewPassWord\" displayed in screen with value \"\"",
-            "line": 513,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 5032278732
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 514,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 4006482212
+              "duration": 127311944
             },
             "match": {}
           },
@@ -488,7 +358,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 258717
+              "duration": 114773
             },
             "match": {}
           }

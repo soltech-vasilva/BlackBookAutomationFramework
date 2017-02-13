@@ -66,6 +66,26 @@ var Utilities = function Utilities() {
     Utilities.prototype.ElapsedTime = function(startTime)
     {
         console.log('Elapsed time: ' + Math.round((((new Date().getTime() - startTime)/1000)/60)*100)/100 + ' minutes');
+    };
+
+    Utilities.prototype.VerifyButtonStatus_isEnableorDisable = function(Element , isEnableOrDisable, success, failure)
+    {
+        if (isEnableOrDisable.toString().toLowerCase() == "enable") {
+            browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(Element),3000);
+            return success();
+        }
+        else if (isEnableOrDisable.toString().toLowerCase() == "disable") {
+
+            Element.getAttribute("disabled").then((attribute)=> {
+                if (attribute == 'true') {
+                    return success();
+                }
+                else {
+                    console.log("button Attribute: " + attribute);
+                    return failure();
+                }
+            });
+        }
     }
 };
 module.exports = new Utilities();

@@ -23,7 +23,7 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
                     browser.getCurrentUrl().then(function (getCurrentURL) {
 
                         var currentURL = getCurrentURL.split("://");
-                        //console.log(currentURL[1]);
+                         console.log(currentURL[1]);
 
                         if (currentURL[1].trim() == 'qa-autobahn.blackbookcloud.com/role/list') {
 
