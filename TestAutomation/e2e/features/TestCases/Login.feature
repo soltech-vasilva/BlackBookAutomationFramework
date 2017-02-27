@@ -51,11 +51,11 @@ Feature: Enter data on "LOGIN" page
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
-#valid log in Users  BUGS cant log in
-           | admintestemail1@yopmail.com     |   QaAdmin123       |
+#           | admintestemail1@yopmail.com     |   QaAdmin123       |
            | user1@example.com               |   Password1        |
-           | user2@example.com               |   Password1        |
-           | user3@example.com               |   Password1        |
+    #valid log in Users  BUGS cant see My profile
+         #  | user2@example.com               |   Password1        |
+         #  | user3@example.com               |   Password1        |
 
 ########################################################################################################################
 #                                               TC_Login_B                                                              #

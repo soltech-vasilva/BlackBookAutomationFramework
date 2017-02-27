@@ -22,8 +22,11 @@ var BB_UserListRepo = function BB_UserListRepo () {
     BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[9]/action-icon/div/div/ul/li[1]/div'));
     BB_UserListRepo.prototype.Select_Element_Gear_Deactivate_Submenu = element(by.linkText('Deactivate'));
     BB_UserListRepo.prototype.Select_Element_Gear_Edit_Submenu = element(by.linkText('Edit'));
+    BB_UserListRepo.prototype.Select_Element_Gear_Delete_Submenu = element(by.linkText('Delete'));
 
-    BB_UserListRepo.prototype.Select_Xpath_PopUpMESSAGE = by.xpath('//*[@id="page-box"]/user-list/div/div/div/message-box/div/div');
+    //BB_UserListRepo.prototype.Select_Xpath_PopUpMESSAGE = by.xpath('//*[@id="page-box"]/user-list/div/div/div/message-box/div/div'); //old
+      BB_UserListRepo.prototype.Select_Xpath_PopUpMESSAGE = by.xpath(' //*[@id="page-box"]/user-list/div/div/message-box/div/div');
+
     BB_UserListRepo.prototype.Select_Element_PopUpMESSAGE = element(this.Select_Xpath_PopUpMESSAGE);
 };
 module.exports = new BB_UserListRepo();

@@ -315,7 +315,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I re-enter the same user name and password$/, function () {
-       return page.executeSequence([ BB_login.Click_LoginButton().then(()=>{}),  browser.driver.sleep(2000).then(()=>{BB_login.Click_LoginButton();}),  browser.driver.sleep(2000).then(()=>{BB_login.Click_LoginButton();})]);
+       return page.executeSequence([ browser.driver.sleep(2000).then(()=>{BB_login.Click_LoginButton();}),  browser.driver.sleep(2000).then(()=>{BB_login.Click_LoginButton();}),  browser.driver.sleep(2000).then(()=>{BB_login.Click_LoginButton();})]);
     });
 
     this.Then(/^I add extra string "([^"]*)" to my "([^"]*)"$/, function (addString, TextboxName) {
@@ -348,21 +348,34 @@ var myBlackBookSteps = function myBlackBookSteps() {
        // return browser.wait(protractor.ExpectedConditions.elementToBeSelected(BB_editUserProfileRepo.Select_Element_SaveButton),3000);
     });
 
-    this.Given(/^I should see that I am in "([^"]*)" URL$/, function (VerifyURL) {
+    this.Given(/^I should see that I am in "([^"]*)" "([^"]*)" URL$/, function (partURL, VerifyURL) {
         browser.driver.sleep(4000);
         return new Promise((success, failure)=> {
             browser.driver.getCurrentUrl().then(function (getCurrentURL) {
 
                 var currentURL = getCurrentURL.split("://");
-                //console.log(currentURL[1]);
 
-                if (currentURL[1].trim() == VerifyURL) {
-                    browser.driver.sleep(2000);
-                    success();
-                }
-                else
-                {
-                    failure();
+                switch  (partURL) {
+                    case 'part':
+                        var modURL1 = currentURL[1].split('/');
+                        var modURL2 = modURL1[0] + '/' + modURL1[1];
+                        console.log(modURL2);
+
+                        if (modURL2.trim() == VerifyURL) {
+                            browser.driver.sleep(2000);
+                            success();
+                        }
+                        break;
+
+                    case 'full':
+                        if (currentURL[1].trim() == VerifyURL) {
+                            browser.driver.sleep(2000);
+                            success();
+                        }
+                        break;
+
+                    default:
+                        failure();
                 }
             });
         });
@@ -453,6 +466,10 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     }
                 }
             }
+            else
+            {
+                failure();
+            }
         }));
         });
     });
@@ -497,11 +514,17 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
         return new Promise((success, failure)=> {
             element(by.css('select[name="market"]')).getAttribute('value').then((value) => {
+                console.log('value:'+value);
+                var option = 0;
+
                 if (value == 'null') {
-                    value = 0;
+                    value = 1;
+                    option = parseInt(value);
                 }
 
-                var option = parseInt(value) + 1;
+                if (value > 1) {
+                    option = parseInt(value) - 3/*this is because value 5 from option 2 so -3 for all other options*/;
+                }
 
                 element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[' + option + ']')).getText().then((text) => {
                     currentText = text;
@@ -570,6 +593,18 @@ var myBlackBookSteps = function myBlackBookSteps() {
           });
     });
 
+    this.Then(/^I should see \#of Users has increase value for "([^"]*)" in Role List$/, function (arg1) {
+        return new Promise((success, failure)=> {
+
+            element.all(by.css('div[colid="users"]')).get(4).getText().then((currentValue)=> {
+                console.log(currentValue);
+                numberofUsers = currentValue;
+                success();
+            });
+        });
+    });
+
+
     this.Then(/^I should see user's Role "([^"]*)" in User List$/, function (userRole) {
         return new Promise((success, failure)=> {
 
@@ -597,6 +632,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click();
                     browser.driver.sleep(1000);
                     browser.driver.actions().sendKeys('a').perform();
+                    browser.driver.sleep(1000);
                     browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
                     success();
                     break;
@@ -604,6 +640,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[2]')).click();
                     browser.driver.sleep(1000);
                     browser.driver.actions().sendKeys('u').perform();
+                    browser.driver.sleep(1000);
                     browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
 
                     success();
@@ -612,6 +649,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[3]')).click();
                     browser.driver.sleep(1000);
                     browser.driver.actions().sendKeys('c').perform();
+                    browser.driver.sleep(1000);
                     browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
                     success();
                     break;
@@ -682,6 +720,46 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     failure();
                 }
             }));
+        });
+    });
+
+    this.Given(/^I enter Filter Roles search "([^"]*)" in Edit User Profile$/, function (filterRoleSearch) {
+        element(by.css('input[placeholder="Search"]')).sendKeys(filterRoleSearch);
+    });
+
+    this.Then(/^I click Delete from Gear Icon$/, function () {
+        return BB_userList.Click_Gear_Delete_Submenu();
+    });
+
+    this.Then(/^I should see (.*) displayed for Confirm Role Deletion in Role Editor$/, function (errorMessage) {
+
+        return new Promise((success, failure)=> {
+
+            element(by.css('.warning-msg')).getText().then((currentValue)=> {
+               // console.log("warning-msg: "+currentValue);
+               // console.log("warning-msg: "+errorMessage);
+                if (errorMessage == currentValue) {
+                    success();
+                }
+                else
+                {
+                    failure();
+                }
+            });
+        });
+    });
+
+    this.Then(/^I click "([^"]*)" Button for modal warning message from Edit Roles$/, function (buttonName) {
+        return new Promise((success, failure) => {
+            if (buttonName.toString().toLowerCase() == "cancel" ) {
+                element(by.css('button.button.red-btn')).click();
+                success();
+            }
+
+            if (buttonName.toString().toLowerCase() == "confirm" ) {
+                element(by.css('.button.green-btn.close-modal')).click();
+                success();
+            }
         });
     });
 };

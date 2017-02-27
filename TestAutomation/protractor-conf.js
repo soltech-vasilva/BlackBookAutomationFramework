@@ -8,8 +8,8 @@ exports.config = {
     //'e2e/features/TestCases/*.feature'
     // ],
     'StopRunAtFail': false,
-    'WaitTime': 10000,
-    'BuildTestNumber': '28',
+    'WaitTime': 15000,
+    'BuildTestNumber': '62',
 
     //Turn off applitool
     'ApplitoolsOn': false,
@@ -22,8 +22,8 @@ exports.config = {
          //'e2e/features/TestCases/AddUser_part2.feature',
          // 'e2e/features/TestCases/EditUserProfile.feature',
           // 'e2e/features/TestCases/UsersList.feature',
-          //'e2e/features/TestCases/Login.feature',
-        'e2e/features/TestCases/Bugs.feature'//,
+          'e2e/features/TestCases/Login.feature'//,
+       // 'e2e/features/TestCases/Bugs.feature'//,
     ],
 
 
@@ -208,9 +208,9 @@ exports.config = {
 
     capabilities: {
     //46.0b9
-    'browserName': 'firefox'
+    //'browserName': 'firefox'
     //53.0.2785.89
-    //'browserName': 'chrome'
+    'browserName': 'chrome'
      //   'browserName': 'safari'//,
     //     'acceptSslCerts': true,
         // 'mode' : 'proxy'

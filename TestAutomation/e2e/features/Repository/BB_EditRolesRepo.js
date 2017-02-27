@@ -20,7 +20,8 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     BB_EditRolesRepo.prototype.Select_Element_Permission_AllCheckboxs  =  element.all(by.css('span.ag-group-checkbox'));
 
     //BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/message-box/div/div'));
-    BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup = element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/message-box/div/div'));
+    //BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup = element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/message-box/div/div'));  //old
+      BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup = element(by.xpath('//*[@id="page-box"]/role-list/div/div/message-box/div/div'));
     BB_EditRolesRepo.prototype.Select_Element_SuccessMessage_Popup  = element(by.css('div.message-container.success'));
 
     BB_EditRolesRepo.prototype.Select_Element_FilterPermissionsTextbox = element.all(by.css('input[type="text"]')).get(1);

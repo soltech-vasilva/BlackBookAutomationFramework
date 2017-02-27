@@ -329,12 +329,12 @@ gulp.task('IE_Bugs', ()=> {
     });
 });
 
-//gulp.task('default', ['Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login']); //falta userlist and login
+gulp.task('default', ['Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login']); //falta userlist and login
 // gulp.task('default', ['Firefox_AddUserPart1', 'Firefox_AddUserPart2','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
 //gulp.task('default', ['IE_AddUserPart1','IE_AddUserPart2','IE_EditUserProfile','IE_UsersList','IE_Login']);
 // gulp.task('default', ['Edge_AddUserPart1','Edge_AddUserPart2','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);
 
-gulp.task('default', ['IE_Bugs']);
+//gulp.task('default', ['IE_Bugs']);
 
 // git-r-done
 // gulp.task('default', [/*'webdriver','report',*/

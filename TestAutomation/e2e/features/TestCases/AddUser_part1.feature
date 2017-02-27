@@ -41,7 +41,7 @@ Feature:  "Add a new User Profile"
       And I click on New User Button in User List
 
 #####################################################################################################################
-#                                             Test cases 1                                                            #
+#                                             Test cases 1                                                          #
 #####################################################################################################################
   @TestCases_1
   Scenario Outline: "TestCases_1" Add 26 User and enter good for User Profile. "No Error" display
@@ -295,35 +295,35 @@ Feature:  "Add a new User Profile"
       |      ""         | "            | "     "ilAddress@email.com | 123-456-7890     | "       "Qa   |   "       "Qa        |
 
 
-#######################################################################################################################
-##                        COMMENT OUT FOR NOW  Test cases C     (Same controller show require and pass not match      #
-#######################################################################################################################
-#  @TestCases_C-1
-#  Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw error "Required" for all fields
-#    When I enter my first name <firstName> in Form
-#      But I enter "nothing to first name"
-#      Then I should see "firstName" errors "Required" displayed for this "empty" field
-#    And I enter my last name <lastName>
-#      But I enter "nothing to last name"
-#      Then I should see "lastName" errors "Required" displayed for this "empty" field
-#    And I enter my email address <emailAddress>
-#      But I enter "nothing to email address"
-#      Then I should see "emailAddress" errors "Required" displayed for this "empty" field
-#    And I enter my phone number <phoneNumber>
-#    And I enter my new Password <newPassWord>
-#      But I enter "nothing to New Password"
-#      Then I should see "newPassWord" errors "Required" displayed for this "empty" field
-#    And I enter my confirm new password <confirmNewPassWord>
-#      But I enter "nothing to Confirm New Password"
-#      Then I should see "confirmNewPassWord" errors "Required" displayed for this "empty" field
-#    And I click Cancel Button
-#    And I click Profile Button
-#    And I click Logout sub menu
-#
-#    Examples:
-#      | firstName     | lastName  | emailAddress              | phoneNumber   | newPassWord    | confirmNewPassWord   |
-# #All Empty Fields
-#      |               |           |                           |               |                |                      |
+######################################################################################################################
+#                        COMMENT OUT FOR NOW  Test cases C     (Same controller show require and pass not match      #
+######################################################################################################################
+  @TestCases_C-1
+  Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw error "Required" for all fields
+    When I enter my first name <firstName> in Form
+      But I enter "nothing to first name"
+      Then I should see "firstName" message "Required" displayed for this "empty" field
+    And I enter my last name <lastName> in Form
+      But I enter "nothing to last name"
+      Then I should see "lastName" message "Required" displayed for this "empty" field
+    And I enter my email address <emailAddress> in Form
+      But I enter "nothing to email address"
+      Then I should see "emailAddress" message "Required" displayed for this "empty" field
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
+      But I enter "nothing to New Password"
+      Then I should see "newPassWord" message "Required" displayed for this "empty" field
+    And I enter my confirm new password <confirmNewPassWord> in Form
+      But I enter "nothing to Confirm New Password"
+      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
+    And I click Cancel Button in Edit User Profile
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+
+    Examples:
+      | firstName     | lastName  | emailAddress              | phoneNumber   | newPassWord    | confirmNewPassWord   |
+ #All Empty Fields
+      |               |           |                           |               |                |                      |
 
 
   @TestCases_C-2
@@ -412,6 +412,7 @@ Feature:  "Add a new User Profile"
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
 #Email is Empty Field
       |    AfirstName | AlastName | AemailAddress@email.com   | (123)456-7890 |               |   QaAdmin123         |
+
 
   @TestCases_C-6
   Scenario Outline: "@TestCases_C-6" Enter empty Confirm New Password  will throw error "Required" and "Passwords do not match"

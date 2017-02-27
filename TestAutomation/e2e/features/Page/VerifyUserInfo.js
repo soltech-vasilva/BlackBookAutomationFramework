@@ -76,6 +76,12 @@ var VerifyUserInfo = function VerifyUserInfo() {
                     VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
+                case 'filterroles' :
+                    utilities.ExpectedElement_StopAutomationAtFail(element(by.css('input[placeholder="Search"]')));
+                    //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox), 10000);
+                    VerifyUserInfo.prototype.AssertElementAttributeDisplay( element(by.css('input[placeholder="Search"]')), ValueCompare, TextboxName, success, failure);
+                    break;
+
                 default:
                     console.log(TextboxName+' : is not part of switch statement in Verify_UserInformation function.');
                     failure();

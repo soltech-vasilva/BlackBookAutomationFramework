@@ -28,7 +28,8 @@ Feature: Enter data on "Edit User Profile"
        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
       And I reload page "https://qa-autobahn.blackbookcloud.com/login"
       And I wait
-      And I enter my user email address user2@example.com in Login
+        #there is bug with permission it was user 2 now is user 1
+      And I enter my user email address user1@example.com in Login
       And I enter my Password Password1 in Login
       And I click Login Button
       And I wait

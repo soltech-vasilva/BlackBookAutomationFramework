@@ -23,7 +23,7 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
                     browser.getCurrentUrl().then(function (getCurrentURL) {
 
                         var currentURL = getCurrentURL.split("://");
-                         console.log(currentURL[1]);
+                         //console.log(currentURL[1]);
 
                         if (currentURL[1].trim() == 'qa-autobahn.blackbookcloud.com/role/list') {
 
@@ -32,8 +32,8 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
                             });
                         }
                         else {
-                                browser.isElementPresent(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/message-box/div/div')).then((isPresente) => {
-                                verifyErrorMessage.AssertElementsToDisplay(isPresente, element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/message-box/div/div')), compareValuesString, 'It is not showing any message', success, failure);
+                                browser.isElementPresent(by.xpath('//*[@id="page-box"]/role-profile/div/div/message-box/div/div')).then((isPresente) => {
+                                verifyErrorMessage.AssertElementsToDisplay(isPresente, element(by.xpath('//*[@id="page-box"]/role-profile/div/div/message-box/div/div')), compareValuesString, 'It is not showing any message', success, failure);
                             });
                         }
                     });

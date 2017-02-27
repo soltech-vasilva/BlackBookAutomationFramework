@@ -100,5 +100,12 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([BB_userListRepo.Select_Element_Gear_Edit_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> { success(); });
         });
     };
+
+    BB_UserList.prototype.Click_Gear_Delete_Submenu = function () {
+        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Delete_Submenu), protractorConfig.config.WaitTime);
+        return new Promise((success, failure)=> {
+            page.executeSequence([BB_userListRepo.Select_Element_Gear_Delete_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> { success(); });
+        });
+    };
 };
 module.exports = new BB_UserList();
