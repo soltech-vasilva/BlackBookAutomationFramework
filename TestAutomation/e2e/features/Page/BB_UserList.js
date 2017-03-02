@@ -59,7 +59,8 @@ var BB_UserList = function BB_UserList() {
 
         return new Promise((success, failure)=> {
             //EDGE BUG does not like to sendkeys to element.
-            page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
+           // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
+            page.executeSequence([ BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
         });
     };
 

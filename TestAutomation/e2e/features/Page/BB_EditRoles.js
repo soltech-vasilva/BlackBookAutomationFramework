@@ -105,17 +105,17 @@ var BB_EditRoles = function BB_EditRoles() {
             switch (permissionName.toString().toLowerCase()) {
                 case "users":
                     browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Users_Checkbox), 10000);
-                    checkbox = element.all(by.css('span.icon-check-square.grid-checkbox-checked.grid-checkbox')).get(0);
+                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(0);
                     break;
 
                 case "settings":
                     browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox), 10000);
-                    checkbox = element.all(by.css('span.icon-check-square.grid-checkbox-checked.grid-checkbox')).get(1);
+                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(1);
                     break;
 
                 case "roles":
                     browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox), 10000);
-                    checkbox = element.all(by.css('span.icon-check-square.grid-checkbox-checked.grid-checkbox')).get(2);
+                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(2);
                     break;
 
                 default:
@@ -146,8 +146,28 @@ var BB_EditRoles = function BB_EditRoles() {
         return new Promise((success, failure) => {
             //need buffer to sort and click first box wanted
             browser.driver.sleep(2000);
-            element.all(by.css('.ag-cell-wrapper')).get(0).click().then(() => {
+            BB_editRolesRepo.Select_Element_RolesIsUser_AllCheckbox.get(0).click().then(() => {
                 success();
+            });
+        });
+    };
+
+    BB_EditRoles.prototype.Verify_RoleMarketValue_Dropdownbox_RoleEditor = function (roleMarketSelection) {
+
+        return new Promise((success, failure) => {
+            BB_editRolesRepo.Select_Element_RoleMarket_dropdownbox.getAttribute('value').then((value) => {
+                console.log('value:' + value);
+
+                element(by.css('option[value="'+value+'"]')).getText().then((text) => {
+
+                    console.log('text:' + text);
+                    if (roleMarketSelection == text) {
+                        success();
+                    }
+                    else {
+                        failure();
+                    }
+                });
             });
         });
     };

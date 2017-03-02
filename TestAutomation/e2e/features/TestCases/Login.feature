@@ -167,7 +167,7 @@ Feature: Enter data on "LOGIN" page
 #                                               TC_Login_D                                                              #
 #########################################################################################################################
     @TC_Login_D
-  Scenario Outline: "@TC_Login_D" Enter a Deactivated account for Login Page will throw error "Unable to log in. Please contact your administrator."
+  Scenario Outline: "@TC_Login_D" Enter a Deactivated account for Login Page will throw error "Unable to log in. Please contact your administrator." (Require  @TestCases_A-1 Userlist).
     Given I enter BlackBook Login Website
        #BUG ADDED THIS TO CONTINUE
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"

@@ -479,7 +479,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I click checkbox User's Roles "([^"]*)"$/, function (arg1) {
-       return element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(0).click();
+       return element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2).click();
     });
 
     this.Given(/^I click Forgot Password link$/, function () {
@@ -510,34 +510,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I should see Role Market value "([^"]*)"$/, function (roleMarketSelection) {
-        var currentText = '';
-
-        return new Promise((success, failure)=> {
-            element(by.css('select[name="market"]')).getAttribute('value').then((value) => {
-                console.log('value:'+value);
-                var option = 0;
-
-                if (value == 'null') {
-                    value = 1;
-                    option = parseInt(value);
-                }
-
-                if (value > 1) {
-                    option = parseInt(value) - 3/*this is because value 5 from option 2 so -3 for all other options*/;
-                }
-
-                element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[' + option + ']')).getText().then((text) => {
-                    currentText = text;
-                    if (roleMarketSelection == currentText) {
-                        success();
-                    }
-                    else
-                    {
-                        failure();
-                    }
-                });
-            });
-        });
+        return  BB_editRoles.Verify_RoleMarketValue_Dropdownbox_RoleEditor(roleMarketSelection);
     });
 
     this.Given(/^I click Reset Button in Edit Roles$/, function () {
