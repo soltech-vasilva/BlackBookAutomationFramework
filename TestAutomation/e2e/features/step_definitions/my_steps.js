@@ -28,6 +28,7 @@ var utilities = require('../Page/Utilities.js');
 var page = require ('../Page/Page_Objects');
 var keyStrokesRepo = require ('../Repository/KeyStrokesRepo.js');
 var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
+var BB_userListRepo = require('../Repository/BB_userListRepo.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -272,7 +273,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see "([^"]*)" message "([^"]*)" displayed for this "([^"]*)" field$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
-        return verifyErrorMessage.Verify_ErrorMessageToDisplay(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
+        return verifyErrorMessage.Verify_ErrorMessageToDisplay_UserProfile(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
     });
 
     this.Then(/^I should see "([^"]*)" displayed on "([^"]*)" popup$/, function (VerifyMessage, PopUpPageName) {
@@ -568,11 +569,13 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter Role Name "([^"]*)"$/, function (roleName) {
-        return new Promise((success, failure)=> {
-            browser.driver.sleep(3000);
-             element.all(by.css('input[type="text"]')).get(0).sendKeys(roleName);
-            success();
-        });
+
+        return BB_editRoles.Enter_RoleName_inForm(roleName);
+        // return new Promise((success, failure)=> {
+        //     browser.driver.sleep(3000);
+        //      element.all(by.css('input[type="text"]')).get(0).sendKeys(roleName);
+        //     success();
+        // });
     });
 
     this.Then(/^I should see in "([^"]*)" button "([^"]*)" in Edit Role$/, function (ButtonName, isEnableOrDisable) {
@@ -794,6 +797,24 @@ var myBlackBookSteps = function myBlackBookSteps() {
                 element(by.css('.button.green-btn.close-modal')).click();
                 success();
             }
+        });
+    });
+
+    this.Given(/^I should not see "([^"]*)" Button in User List$/, function (buttonName) {
+        return new Promise((success, failure)=> {
+        browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_userListRepo.Select_Element_NewUserButton), 5000);
+            success();
+        });
+    });
+
+    this.Given(/^I should see "([^"]*)" message "([^"]*)" displayed for this "([^"]*)" field in Role Editor$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
+        return verifyErrorMessage.Verify_ErrorMessageToDisplay_RoleEditor(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
+    });
+
+    this.Given(/^I click View from Gear Icon in Role List$/, function () {
+        browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[5]/div[3]/action-icon/div/div/ul/li[1]/div'))), 5000);
+        return new Promise((success, failure)=> {
+            page.executeSequence([element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[5]/div[3]/action-icon/div/div/ul/li[1]/div')).click(), keyStrokesRepo.ENTER(),browser.driver.sleep(1000)]).then(()=> { success();});
         });
     });
 };

@@ -10,8 +10,29 @@ chai.use(chaiAsPromised);
 var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var verifyErrorMessage = require('../Page/VerifyErrorMessage.js');
+var utilities = require('../Page/Utilities.js');
+var page = require ('../Page/Page_Objects');
+var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
 
 var BB_EditRoles = function BB_EditRoles() {
+
+    BB_EditRoles.prototype.RoleName = '';
+
+    BB_EditRoles.prototype.Enter_RoleName_inForm = function (roleNme) {
+        this.RoleName =   utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString());
+
+        browser.driver.wait(protractor.ExpectedConditions.presenceOf( element.all(by.css('input[type="text"]')).get(0)), protractorConfig.config.WaitTime);
+        element.all(by.css('input[type="text"]')).get(0).click();
+
+        return new Promise((success, failure)=> {
+            if (this.RoleName != '') {
+                element.all(by.css('input[type="text"]')).get(0).sendKeys(this.RoleName);
+                page.executeSequence([utilities.VerifyValueEntered_RetypeValue( element.all(by.css('input[type="text"]')).get(0), this.RoleName)]).then(()=>{});
+            }
+
+            BB_editUserProfile.Click_TittleofPage(BB_editRolesRepo.Select_Element_TittleAddNewRole ,success);
+        });
+    };
 
     BB_EditRoles.prototype.Click_SaveButton_RoleEditor = function () {
         browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Save_button), protractorConfig.config.WaitTime);

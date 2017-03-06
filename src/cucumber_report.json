@@ -52,25 +52,19 @@
         ]
       },
       {
-        "name": "\"@TestCases_A-33A\" (BB-474) (Delete Role): Wrong Error display after delete of \"Role\" (require TC-A-31,32) Delete Created roles next run.",
-        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-33a\"-(bb-474)-(delete-role):-wrong-error-display-after-delete-of-\"role\"-(require-tc-a-31,32)-delete-created-roles-next-run.",
-        "line": 649,
+        "name": "\"@TestCases_A-38\" (BB-601)(Add New Roles): Role Permission does not need to be \"Require\" field. (story)",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-38\"-(bb-601)(add-new-roles):-role-permission-does-not-need-to-be-\"require\"-field.-(story)",
+        "line": 717,
         "keyword": "Scenario",
         "description": "",
         "type": "scenario",
-        "tags": [
-          {
-            "name": "@TestCases_A-33A",
-            "line": 648
-          }
-        ],
         "steps": [
           {
             "keyword": "Before ",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 3951030
+              "duration": 2201456
             },
             "match": {}
           },
@@ -80,7 +74,7 @@
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 4586076676
+              "duration": 3873916326
             },
             "match": {}
           },
@@ -90,7 +84,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 6966316257
+              "duration": 8317341360
             },
             "match": {}
           },
@@ -100,7 +94,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5002629063
+              "duration": 5004396841
             },
             "match": {}
           },
@@ -110,7 +104,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 916025773
+              "duration": 1007538504
             },
             "match": {}
           },
@@ -120,7 +114,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 533412123
+              "duration": 505436249
             },
             "match": {}
           },
@@ -130,7 +124,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 101169012
+              "duration": 105888995
             },
             "match": {}
           },
@@ -140,187 +134,97 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5004465424
+              "duration": 5004334393
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 650,
+            "line": 718,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5001522034
+              "duration": 5006290716
             },
             "match": {}
           },
           {
             "name": "I click on Admin Tab",
-            "line": 651,
+            "line": 719,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1354302
+              "duration": 887245
             },
             "match": {}
           },
           {
             "name": "I click on Roles submenu from Admin Tab",
-            "line": 652,
+            "line": 720,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 335541282
+              "duration": 309436203
             },
             "match": {}
           },
           {
-            "name": "I click on Gear Icon 5",
-            "line": 653,
+            "name": "I click on New Role Button in Role List",
+            "line": 721,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 396139675
+              "duration": 411142433
             },
             "match": {}
           },
           {
-            "name": "I click Edit from Gear Icon",
-            "line": 654,
+            "name": "I enter Role Name \"RoleName8\"",
+            "line": 722,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1169331397
+              "duration": 1051918580
             },
             "match": {}
           },
           {
-            "name": "I enter \"User1\" on Filter Users in Role Editor",
-            "line": 655,
+            "name": "I select Role Market \"US Used Car\" in Role Editor",
+            "line": 723,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 321278197
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 656,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5001788693
-            },
-            "match": {}
-          },
-          {
-            "name": "I click first checkbox found for Roles Users in Role Editor",
-            "line": 657,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2085191777
+              "duration": 3071305
             },
             "match": {}
           },
           {
             "name": "I click on Save button in Role Editor",
-            "line": 658,
+            "line": 724,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 113677457
+              "duration": 885097495
             },
             "match": {}
           },
           {
-            "name": "I click Cancel Button from Edit Roles",
-            "line": 659,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 91491421
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 660,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5002775416
-            },
-            "match": {}
-          },
-          {
-            "name": "I click on Gear Icon 5",
-            "line": 661,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 117010215
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Delete from Gear Icon",
-            "line": 662,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1190625811
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 663,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5003983510
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see Are you sure you want to delete the role, \"RoleName7?\" This action can't be undone. displayed for Confirm Role Deletion in Role Editor",
-            "line": 665,
+            "name": "I should see \"Role has been successfully added\" displayed on \"EditRoles\" popup",
+            "line": 726,
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 46472095
-            },
-            "match": {}
-          },
-          {
-            "name": "I click \"Confirm\" Button for modal warning message from Edit Roles",
-            "line": 666,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 520171
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"The Role has been successfully deleted\" displayed on \"EditRoles\" popup",
-            "line": 667,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 5115305265
+              "duration": 5140464273
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 668,
+            "line": 727,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5006043165
+              "duration": 5002084024
             },
             "match": {}
           },
@@ -329,7 +233,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 808285
+              "duration": 606730
             },
             "match": {}
           }

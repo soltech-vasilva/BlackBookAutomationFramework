@@ -23,8 +23,8 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
     BB_EditUserProfile.prototype.confirmNewPassword = '';
     BB_EditUserProfile.prototype.previousPassword = '';
 
-    BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile = function(success){
-        return page.executeSequence([BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText.click().then(()=> {
+    BB_EditUserProfile.prototype.Click_TittleofPage = function(element, success){
+        return page.executeSequence([element.click().then(()=> {
               success();
         })]);
     };
@@ -39,7 +39,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                BB_editUserProfileRepo.Select_Element_FirstNameTextbox.sendKeys(this.firstName);
                page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_FirstNameTextbox, this.firstName)]).then(()=>{});
            }
-           BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+           BB_EditUserProfile.prototype.Click_TittleofPage( BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
        });
    };
 
@@ -52,7 +52,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                 BB_editUserProfileRepo.Select_Element_LastNameTextbox.sendKeys(this.lastName);
                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_LastNameTextbox, this.lastName)]).then(()=>{});
             }
-            BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+            BB_EditUserProfile.prototype.Click_TittleofPage(success);
         });
     };
 
@@ -65,7 +65,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                 BB_editUserProfileRepo.Select_Element_EmailAddressTextbox.sendKeys(this.emailAddress);
                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox, this.emailAddress)]).then(()=>{});
             }
-            BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+            BB_EditUserProfile.prototype.Click_TittleofPage(success);
         });
     };
 
@@ -78,7 +78,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                 BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox.sendKeys(this.phoneNumber);
                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox, this.phoneNumber)]).then(()=>{});
             }
-            BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+            BB_EditUserProfile.prototype.Click_TittleofPage(success);
         });
     };
 
@@ -91,7 +91,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                 BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(this.newPassword);
                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, this.newPassword)]).then(()=>{});
             }
-            BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+            BB_EditUserProfile.prototype.Click_TittleofPage(success);
         });
     };
 
@@ -104,7 +104,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                 BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox.sendKeys(this.confirmNewPassword);
                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue( BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox, this.confirmNewPassword)]).then(()=>{});
             }
-            BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+            BB_EditUserProfile.prototype.Click_TittleofPage(success);
         });
     };
 
@@ -117,7 +117,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                 BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox.sendKeys(this.previousPassword);
                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue( BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox, this.previousPassword)]).then(()=>{});
             }
-            BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+            BB_EditUserProfile.prototype.Click_TittleofPage(success);
         });
     };
 
@@ -150,7 +150,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         ElementToClick.click();
         //it works on Firefox only
         keyStrokesRepo.CONTROL_ALL_DELETE();
-        return BB_EditUserProfile.prototype.Click_TittleAddNewUserProfile(success);
+        return BB_EditUserProfile.prototype.Click_TittleofPage(success);
     };
 
     BB_EditUserProfile.prototype.Click_EditButton_EditUserProfile = function () {
