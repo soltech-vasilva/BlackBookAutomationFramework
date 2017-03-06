@@ -17,6 +17,7 @@ Feature:  "User List"
   Background:
 
     Given I enter BlackBook Login Website
+    And I wait
        #BUG ADDED THIS TO CONTINUE
        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
@@ -39,6 +40,7 @@ Feature:  "User List"
     And I wait
     And I click on Gear Icon 1
     And I click Deactivate in submenu from Gear Icon
+    And I wait
 
   @TestCases_A-2
   Scenario: "@TestCases_A-2" admintestemail6@yopmail.com Deactivate User
@@ -49,6 +51,7 @@ Feature:  "User List"
     And I wait
     And I click on Gear Icon 1
     And I click Deactivate in submenu from Gear Icon
+    And I wait
 
   @TestCases_A-3
   Scenario: "@TestCases_A-3" admintestemail6@yopmail.com Activate User
@@ -61,6 +64,7 @@ Feature:  "User List"
     And I click Inactive in submenu from Status Filter
     And I click on Gear Icon 1
     And I click Activate in submenu from Gear Icon
+    And I wait
 
 #######################################################################################################################
 #                                             Test cases A                                                            #

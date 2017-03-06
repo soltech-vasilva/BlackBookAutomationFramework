@@ -27,6 +27,7 @@ Feature:  "Add a new User Profile"
   Background:
 
     Given I enter BlackBook Login Website
+      And I wait
          #BUG ADDED THIS TO CONTINUE
          ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
       And I reload page "https://qa-autobahn.blackbookcloud.com/login"
@@ -319,6 +320,7 @@ Feature:  "Add a new User Profile"
     And I click Cancel Button in Edit User Profile
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
+    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   | newPassWord    | confirmNewPassWord   |

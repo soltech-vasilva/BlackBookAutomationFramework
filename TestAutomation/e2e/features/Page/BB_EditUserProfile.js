@@ -155,6 +155,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
 
     BB_EditUserProfile.prototype.Click_EditButton_EditUserProfile = function () {
         //This give a time to transition
+        browser.driver.sleep(2000);
         browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_EditButton), protractorConfig.config.WaitTime);
         return new Promise((success, failure)=> {
             page.executeSequence([BB_editUserProfileRepo.Select_Element_EditButton.click(),success()]).then(()=>{});

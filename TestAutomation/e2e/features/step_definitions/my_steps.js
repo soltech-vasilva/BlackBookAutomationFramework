@@ -66,7 +66,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     // });
 
     //This is for timeout issues default is 5 sec
-    this.setDefaultTimeout(80 * 1000);  //todo estaba a 80
+    this.setDefaultTimeout(120 * 1000);  //todo estaba a 80
     var startTime = new Date().getTime();
 
     this.Before(function () {
@@ -289,69 +289,87 @@ var myBlackBookSteps = function myBlackBookSteps() {
     ///BUGS FIXES TO TEST OTHER THINGS
     this.Given(/^I wait$/, function () {
         return new Promise((success, failure)=> {
-           browser.driver.wait( browser.driver.sleep(4000).then(()=>{
+            page.executeSequence([ browser.driver.sleep(5000).then(()=>{
                 success();
-            }));
-
+            })]).then(()=>{});
         });
     });
 
     this.Then(/^I reload page "([^"]*)"$/, function (URL) {
         return new Promise((success, failure)=> {
             browser.ignoreSynchronization = true;
-            page.executeSequence([browser.driver.get(URL), browser.sleep(5000).then(()=>{
+            page.executeSequence([browser.driver.get(URL), browser.driver.sleep(4000).then(()=>{
 
                 browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
                     var currentURL = getCurrentURL.split("://");
 
                     if (currentURL[1].trim() != 'qa-autobahn.blackbookcloud.com/login') {
                         browser.ignoreSynchronization = true;
-                        page.executeSequence([browser.driver.get(URL), browser.driver.sleep(5000)]).then(()=>{});
+                        page.executeSequence([browser.driver.get(URL), browser.driver.sleep(4000)]).then(()=>{success();});
                     }
-                    success();
+                    else {
+                        success();
+                    }
                 });
             })]).then(()=>{});
         });
     });
 
     this.Given(/^I re-enter the same user name and password$/, function () {
-       return page.executeSequence([ browser.driver.sleep(2000).then(()=>{BB_login.Click_LoginButton();}),  browser.driver.sleep(2000).then(()=>{BB_login.Click_LoginButton();}),  browser.driver.sleep(2000).then(()=>{BB_login.Click_LoginButton();})]);
+        return new Promise((success, failure)=> {
+            page.executeSequence([browser.driver.sleep(2000).then(() => {
+                BB_login.Click_LoginButton();
+            }), browser.driver.sleep(2000).then(() => {
+                BB_login.Click_LoginButton();
+            }), browser.driver.sleep(2000).then(() => {
+                BB_login.Click_LoginButton();
+            }), success()]);
+        });
     });
 
     this.Then(/^I add extra string "([^"]*)" to my "([^"]*)"$/, function (addString, TextboxName) {
-        var s = TextboxName;
-        BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click();
-        return BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(addString);
+        return new Promise((success, failure)=> {
+            var s = TextboxName;
+            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click();
+            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(addString);
+            success();
+        });
     });
 
     this.Then(/^I delete the amount "([^"]*)" characters from my "([^"]*)"$/, function (amountDeleted,TextboxName ) {
-        var s = TextboxName;
-        var amount = parseInt(amountDeleted);
-        // console.log('amount:'+typeof amount+' amountDeleted:'+typeof amountDeleted);
-        BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click();
-        return BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(protractor.Key.BACK_SPACE);
+        return new Promise((success, failure)=> {
+            var s = TextboxName;
+            var amount = parseInt(amountDeleted);
+            // console.log('amount:'+typeof amount+' amountDeleted:'+typeof amountDeleted);
+            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click();
+            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(protractor.Key.BACK_SPACE);
+            success();
             // for ( var a = 0 ; a == amount ;a++) {
             //     console.log('a:' + a + ' amountDeleted:' + amountDeleted);
             //     BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys("ppppppppppp");
             //     BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(protractor.Key.BACK_SPACE);
             // }
+        });
     });
 
     this.Then(/^I should see in "([^"]*)" "([^"]*)"$/, function (ElementName, isEnableOrDisable) {
-        var s = ElementName;
-        var a = isEnableOrDisable;
-        browser.driver.sleep(10000);
+        return new Promise((success, failure)=> {
+            var s = ElementName;
+            var a = isEnableOrDisable;
+            browser.driver.sleep(10000);
 
-        //return browser.wait(protractor.ExpectedConditions.elementToBeSelected( element(by.css('button[disabled=""]'))),3000);
-        // return browser.wait(protractor.ExpectedConditions.elementToBeClickable( element(by.css('button[disabled=""]'))),3000);
-         return browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(BB_editUserProfileRepo.Select_Element_SaveButton),3000);
-       // return browser.wait(protractor.ExpectedConditions.elementToBeSelected(BB_editUserProfileRepo.Select_Element_SaveButton),3000);
+            //return browser.wait(protractor.ExpectedConditions.elementToBeSelected( element(by.css('button[disabled=""]'))),3000);
+            // return browser.wait(protractor.ExpectedConditions.elementToBeClickable( element(by.css('button[disabled=""]'))),3000);
+            browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(BB_editUserProfileRepo.Select_Element_SaveButton), 3000);
+            success();
+            // return browser.wait(protractor.ExpectedConditions.elementToBeSelected(BB_editUserProfileRepo.Select_Element_SaveButton),3000);
+        });
     });
 
     this.Given(/^I should see that I am in "([^"]*)" "([^"]*)" URL$/, function (partURL, VerifyURL) {
         browser.driver.sleep(4000);
         return new Promise((success, failure)=> {
-            browser.driver.getCurrentUrl().then(function (getCurrentURL) {
+            browser.wait(browser.driver.getCurrentUrl().then(function (getCurrentURL) {
 
                 var currentURL = getCurrentURL.split("://");
 
@@ -377,12 +395,16 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     default:
                         failure();
                 }
-            });
+            })
+            );
         });
     });
 
     this.Given(/^I click User Active checkbox$/, function () {
-       return element(by.css('span.checkbox-label')).click();
+        return new Promise((success, failure)=> {
+             element(by.css('span.checkbox-label')).click();
+             success();
+        });
     });
 
     this.Then(/^I click User Active checkbox "([^"]*)"$/, function (isEnableOrDisable) {
@@ -428,21 +450,29 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click on Home Tab$/, function () {
-        return element(by.linkText('Home')).click();
+        return new Promise((success, failure)=> {
+            element(by.linkText('Home')).click().then(()=>{ success();});
+        });
     });
 
 
     this.Given(/^I click Refresh$/, function () {
-        return  browser.refresh();
+        return new Promise((success, failure)=> {
+            browser.refresh();
+            success();
+        });
     });
 
     this.When(/^I check heading from Grid$/, function () {
-        //return element(by.css('div.ag-header-container')).getText().then(function(arr) {
-        //return element(by.css('div.ag-header')).getText().then(function(arr) {
-        return element(by.id('center')).getText().then(function(arr) {
-            //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
-            var headers = arr.split('/r');
-            console.log(headers[0]);
+        return new Promise((success, failure)=> {
+            //return element(by.css('div.ag-header-container')).getText().then(function(arr) {
+            //return element(by.css('div.ag-header')).getText().then(function(arr) {
+            element(by.id('center')).getText().then(function (arr) {
+                //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
+                var headers = arr.split('/r');
+                console.log(headers[0]);
+                success();
+            });
         });
     });
 
@@ -475,23 +505,38 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.When(/^I click on Gear Icons (.*) inactive$/, function (arg1) {
-       return element(by.css('div.icon-cog.parent.inactive')).click();
+        return new Promise((success, failure)=> {
+             element(by.css('div.icon-cog.parent.inactive')).click();
+             success();
+        });
     });
 
     this.Then(/^I click checkbox User's Roles "([^"]*)"$/, function (arg1) {
-       return element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2).click();
+        return new Promise((success, failure)=> {
+            element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2).click();
+            success();
+        });
     });
 
     this.Given(/^I click Forgot Password link$/, function () {
-        return element(by.css('a[href="/login/forgot"]')).click();
+        return new Promise((success, failure)=> {
+             element(by.css('a[href="/login/forgot"]')).click();
+             success();
+        });
     });
 
     this.Given(/^I enter my email "([^"]*)" for Forgot Page$/, function (emailAddress) {
-        return element(by.css('input[name="email"]')).sendKeys(emailAddress);
+        return new Promise((success, failure)=> {
+             element(by.xpath('//*[@id="login-box"]/div/form/div[1]/input')).sendKeys(emailAddress);
+             success();
+        });
     });
 
     this.Given(/^I click Send Link button$/, function () {
-        return element(by.css('button[type="submit"]')).click();
+        return new Promise((success, failure)=> {
+             element(by.css('button[type="submit"]')).click();
+             success();
+        });
     });
 
     this.Then(/^I should see message "([^"]*)" displayed$/, function (Message) {
@@ -510,16 +555,24 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I should see Role Market value "([^"]*)"$/, function (roleMarketSelection) {
-        return  BB_editRoles.Verify_RoleMarketValue_Dropdownbox_RoleEditor(roleMarketSelection);
+
+             return   BB_editRoles.Verify_RoleMarketValue_Dropdownbox_RoleEditor(roleMarketSelection);
+
     });
 
     this.Given(/^I click Reset Button in Edit Roles$/, function () {
-        return element(by.css('button.button.yellow-btn')).click();
+        return new Promise((success, failure)=> {
+            element(by.css('button.button.yellow-btn')).click();
+            success();
+        });
     });
 
     this.Given(/^I enter Role Name "([^"]*)"$/, function (roleName) {
-        browser.driver.sleep(3000);
-        return element.all(by.css('input[type="text"]')).get(0).sendKeys(roleName);
+        return new Promise((success, failure)=> {
+            browser.driver.sleep(3000);
+             element.all(by.css('input[type="text"]')).get(0).sendKeys(roleName);
+            success();
+        });
     });
 
     this.Then(/^I should see in "([^"]*)" button "([^"]*)" in Edit Role$/, function (ButtonName, isEnableOrDisable) {
@@ -542,13 +595,18 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.Then(/^I should see \#of Users has increase value for Administration in Role List$/, function () {
         return new Promise((success, failure)=> {
 
-            element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue)=>{
+            element.all(by.css('div[colid="users"]')).get(3).getText().then((currentValue)=>{
                console.log( currentValue);
                numberofUsers++;
 
                if (numberofUsers == currentValue)
                {
                    success();
+               }
+               else
+               {
+                   console.log('Did not see any change number of users.');
+                   failure();
                }
             });
         });
@@ -558,7 +616,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
           return new Promise((success, failure)=> {
 
-              element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue)=> {
+              element.all(by.css('div[colid="users"]')).get(3).getText().then((currentValue)=> {
                   console.log(currentValue);
                   numberofUsers = currentValue;
                   success();
@@ -569,7 +627,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.Then(/^I should see \#of Users has increase value for "([^"]*)" in Role List$/, function (arg1) {
         return new Promise((success, failure)=> {
 
-            element.all(by.css('div[colid="users"]')).get(4).getText().then((currentValue)=> {
+            element.all(by.css('div[colid="users"]')).get(5).getText().then((currentValue)=> {
                 console.log(currentValue);
                 numberofUsers = currentValue;
                 success();
@@ -697,7 +755,10 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter Filter Roles search "([^"]*)" in Edit User Profile$/, function (filterRoleSearch) {
-        element(by.css('input[placeholder="Search"]')).sendKeys(filterRoleSearch);
+        return new Promise ((success, failure)=> {
+            element(by.css('input[placeholder="Search"]')).sendKeys(filterRoleSearch);
+            success();
+        });
     });
 
     this.Then(/^I click Delete from Gear Icon$/, function () {

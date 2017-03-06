@@ -19,13 +19,12 @@ Feature:  "Verify that this bugs dont return to the application."
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
+    And I wait
 
-
-#
+######################################################################################################################
+#                                             Test cases A                                                            #
 #######################################################################################################################
-##                                             Test cases A                                                            #
-########################################################################################################################
-#
+
 #  @TestCases_A-1
 #  Scenario: "@TestCases_A-1" (BB-368) Verify current User can see current profile after seen other user's profile.(same component call "Caching issues")
 #    When I click on Admin Tab
@@ -44,6 +43,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
 #    And I click Avatar Image Button
 #    And I click Logout sub menu from Avatar
+#    And I wait
 #
 #  @TestCases_A-2
 #  Scenario: "@TestCases_A-2" (BB-384) Verify current User information is not deleted from UI if "RESET"->"CANCEL"
@@ -58,6 +58,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #    And I click Avatar Image Button
 #    And I click Logout sub menu from Avatar
+#    And I wait
 #
 ##  @TestCases_A-3
 ##  Scenario Outline: "@TestCases_A-3" (BB-367) Modify New Password as same Confirm Password cant click "SAVE" button to create user.(NOT FIX) (BUG)
@@ -100,18 +101,17 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Save button in Role Editor
 #    And I wait
 #    #And I click X on Message Popup in Role list
-#    And I wait
+#    #And I wait
 #    And I click checkbox Permission "Settings" in Role Editor
 #    And I click on Save button in Role Editor
 #    And I wait
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
 #    #And I click X on Message Popup in Role list
-#    And I wait
+#    #And I wait
 #
 #  @TestCases_A-5
 #  Scenario: "@TestCases_A-5" (BB-247) Entering credential will not go straight to "Home" page.
-#    And I wait
 #      Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/dashboard" URL
 #    And I wait
 #
@@ -119,21 +119,22 @@ Feature:  "Verify that this bugs dont return to the application."
 #  Scenario: "@TestCases_A-6" (BB-360) Active Status is editable by user.
 #    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
 #    And I wait
-#    And I enter my user email address user2@example.com in Login
+#    And I enter my user email address user3@example.com in Login
 #    And I enter my Password Password1 in Login
 #    And I click Login Button
 #    And I wait
 #    And I click Avatar Image Button
 #    And I click My Profile sub menu from Avatar
+#    And I wait
 #    And I click Edit Button in Edit User Profile
 #    And I wait
 #    And I click User Active checkbox
 #    And I wait
 #      Then I should see on User Active checkbox inactive
+#    And I wait
 #
 #  @TestCases_A-7
 #  Scenario: "@TestCases_A-7" (BB-381) Click "Refresh" on "User List" will show blue background.
-#    And I wait
 #      Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/dashboard" URL
 #    And I wait
 #    And I click on Home Tab
@@ -148,6 +149,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #      Then I should see that I am in "part" "qa-autobahn.blackbookcloud.com/user" URL
 #    And I click Edit Button in Edit User Profile
+#    And I wait
 #
 #  @TestCases_A-8
 #  Scenario: "@TestCases_A-8" (BB-385) Upper Case sensitive on "Filter on User List".
@@ -166,10 +168,9 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #      Then I should see user's "emailAddress" displayed in screen with value "admintestemail6@yopmail.com"
 #    And I wait
-
+#
 #  @TestCases_A-9
 #  Scenario: "@TestCases_A-9" (BB-397) "Cancel" button wont exit out from "New Role" page.
-#    And I wait
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
 #    And I click on Gear Icon 2
@@ -182,12 +183,10 @@ Feature:  "Verify that this bugs dont return to the application."
 #
 #  @TestCases_A-10
 #  Scenario: "@TestCases_A-10" (BB-398) Gear Icon stop working after exiting "New Role" page
-#    And I wait
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
 #    And I click on Gear Icon 2
 #    And I click Edit from Gear Icon
-#    And I wait
 #    And I click Cancel Button from Edit Roles
 #    And I wait
 #      Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/role/list" URL
@@ -198,18 +197,17 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I enter Filter User List admintestemail6@yopmail.com in User List
 #    And I click on Gear Icon 1
 #      Then I should see User List Edit sub-menu options
+#    And I wait
 #
 #  @TestCases_A-11
 #  Scenario: "@TestCases_A-11" (BB-388) "Delete" sub menu on "User List" is missing from menu. (it only needs 3 items)
-#    And I wait
 #    And I click on Admin Tab
 #    And I click on Users submenu from Admin Tab
 #    And I wait
 #    And I enter Filter User List admintestemail6@yopmail.com in User List
 #    And I click on Gear Icon 1
 #      Then I should see User List Edit sub-menu options
-#
-#
+#    And I wait
 #
 #  @TestCases_A-12
 #  Scenario Outline: "@TestCases_A-12" (BB-399) Click "Reset" wont clear Error messages (Add User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress,newPassWord,confirmNewPassWord] (BUG cant click on Edit Roles)
@@ -243,6 +241,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    Then I should see "emailAddress" message "Required" displayed for this "empty" field
 #    Then I should see "newPassWord" message "Required" displayed for this "filled" field
 #    Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
+#    And I wait
 #
 #  Examples:
 #  | firstName     | lastName  | emailAddress              | phoneNumber   | newPassWord    | confirmNewPassWord   |
@@ -256,7 +255,6 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #    And I click Avatar Image Button
 #    And I click My Profile sub menu from Avatar
-#    And I wait
 #    And I click Edit Button in Edit User Profile
 #    And I click Reset Button in Edit User Profile
 #    And I enter my first name <firstName> in Form
@@ -286,6 +284,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should not see in "previousPassWord" errors displayed
 #      Then I should not see in "newPassWord" errors displayed
 #      Then I should not see in "confirmNewPassWord" errors displayed
+#    And I wait
 #
 #    Examples:
 #      | firstName     | lastName  | emailAddress              | phoneNumber   |previousPassWord | newPassWord    | confirmNewPassWord   |
@@ -319,6 +318,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
 #    And I wait
 #    And I enter my Previous Password <previousPassWord> in Form
+#    And I wait
 #
 #  Examples:
 #  |previousPassWord|
@@ -326,22 +326,23 @@ Feature:  "Verify that this bugs dont return to the application."
 #
 #
 #
-##  @TestCases_A-16
-##  Scenario: "@TestCases_A-16" (BB-362) "View" for User list should be gray out (Permissions Not to Vew other users).(changed it will need permission not enforce currently)
-##    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
-##    And I wait
-##    And I enter my user email address user3@example.com in Login
-##    And I enter my Password Password1 in Login
-##    And I click Login Button
-##    And I wait
-##    And I click on Admin Tab
-##    And I click on Users submenu from Admin Tab
-##    And I wait
-##    And I click Status Filter
-##    And I enter Filter User List user2@example.com in User List
-##    And I click on Gear Icons 0 inactive
-##    And I wait
-##    And I click Avatar Image Button
+#  @TestCases_A-16
+#  Scenario: "@TestCases_A-16" (BB-362) "View" for User list should be gray out (Permissions Not to Vew other users).(changed it will need permission not enforce currently)
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user2@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Users submenu from Admin Tab
+#    And I wait
+#    And I click Status Filter
+#    And I enter Filter User List user3@example.com in User List
+#    And I click on Gear Icons 0 inactive
+#    And I wait
+#    And I click Avatar Image Button
+#    And I wait
 #
 #
 #  @TestCases_A-17
@@ -349,6 +350,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
 #    And I wait
 #    And I click Forgot Password link
+#    And I wait
 #    And I enter my email "user1@example.com" for Forgot Page
 #    And I click Send Link button
 #    And  I wait
@@ -372,6 +374,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Avatar Image Button
 #    And I click Logout sub menu from Avatar
 #      Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
+#    And I wait
 #
 #
 #  @TestCases_A-20
@@ -379,12 +382,13 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
 #    And I wait
 #    And I click Forgot Password link
+#    And I wait
 #    And I enter my email "admintestemail1@yopmail.com" for Forgot Page
 #    And I click Send Link button
 #    And  I wait
 #      Then I should see message "Password reset email sent" displayed
 #    And I wait
-#
+
 #
 #  @TestCases_A-21
 #  Scenario: "@TestCases_A-21" (BB-519) Create "New Roles" not working.
@@ -398,7 +402,6 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #    And I select Role Market "US Used Car" in Role Editor
 #    And I click on Save button in Role Editor
-#    And I wait
 #      #Then I should see "There was an error saving this role" displayed on "EditRoles" popup
 #      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
 #    And I wait
@@ -415,6 +418,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Reset Button in Edit Roles
 #    And I wait
 #      Then I should see Role Market value "Select One"
+#    And I wait
 #
 #  @TestCases_A-23
 #  Scenario: "@TestCases_A-23" (BB-414) Button "Save" is gray out in "Editing Roles".
@@ -426,6 +430,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #    And I enter Role Name "HIHI"
 #      Then I should see in "Save" button "enable" in Edit Role
+#    And I wait
 #
 #
 #  @TestCases_A-24
@@ -466,10 +471,11 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Roles submenu from Admin Tab
 #    And I wait
 #      Then I should see #of Users has increase value for Administration in Role List
+#    And I wait
 #
 #    Examples:
 #      | firstName      | lastName      | emailAddress                  |phoneNumber    | newPassWord | confirmNewPassWord |
-#      |   firstName40  | lastName40    | admintestemail40@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
+#      |   firstName47  | lastName47    | admintestemail47@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
 #
 #
 #  @TestCases_A-25
@@ -485,6 +491,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see "userrole" message "Required" displayed for this "unchecked" field
 #    And I click checkbox User's Roles "Administrators"
 #      Then I should not see in "userrole" errors displayed
+#    And I wait
 #
 #    Examples:
 #      | firstName      | lastName      | emailAddress |
@@ -518,7 +525,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3
+#    And I click on Gear Icon 5
 #    And I click Edit from Gear Icon
 #    And I enter "User1" on Filter Users in Role Editor
 #    And I wait
@@ -528,82 +535,122 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    #And I click X on Message Popup in Role list
 #    And I click Cancel Button from Edit Roles
-#    And I click on Gear Icon 3
+#    And I click on Gear Icon 5
 #    And I click Edit from Gear Icon
 #      Then I should see Permissions "Users" checkbox "checked" in Role Editor
 #      Then I should see Permissions "Settings" checkbox "unchecked" in Role Editor
 #      Then I should see Permissions "Roles" checkbox "unchecked" in Role Editor
-
+#    And I wait
+#
 #  @TestCases_A-28
 #  Scenario: "@TestCases_A-28" (BB-460) Close "User Edit" wont go back from where it came from.
 #    And I wait
 #    And I click on Admin Tab
 #    And I click on Users submenu from Admin Tab
-#    And I enter Filter User List admintestemail6@yopmail.com in User List
+#    And I wait
+#    And I enter Filter User List admintestemail7@yopmail.com in User List
 #    And I click on Gear Icon 1
 #    And I click Edit from Gear Icon
 #    And I click Cancel Button in Edit User Profile
 #    And I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
 #    And I wait
+#
+#    @TestCases_A-29
+#  Scenario: "@TestCases_A-29" (BB-475) Dropdown boxes in Edit Role wont go to Default value after "Reset"
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I click on Gear Icon 3
+#    And I click Edit from Gear Icon
+#    And I wait
+#    And I click Filter By Group dropdown "User" Permissions in Role Editor
+#    And I wait
+#    And I click Filter By Status dropdown "Inactive" in Role Editor
+#    And I wait
+#    And I click Reset Button in Edit Roles
+#      Then I should see "All" display for Filter By Group in Role Editor
+#      Then I should see "All" display for Filter By Status in Role Editor
+#    And I wait
+#
+#  @TestCases_A-30
+#  Scenario: "@TestCases_A-30" (BB-477) "Filter Roles" in Edit Profile does not clear after click "Reset"
+#    And I wait
+#    And I click Avatar Image Button
+#    And I click My Profile sub menu from Avatar
+#    And I click Edit Button in Edit User Profile
+#    And I wait
+#    And I enter Filter Roles search "Editor" in Edit User Profile
+#    And I wait
+#    And I click Reset Button in Edit User Profile
+#      Then I should see user's "filterRoles" displayed in screen with value ""
+#    And I wait
+#
+#  @TestCases_A-31
+#  Scenario: "@TestCases_A-31" (BB-472) Creating new Role will not add User to it.
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I click on New Role Button in Role List
+#    And I enter Role Name "RoleName7"
+#    And I enter "Users" on Filter Permissions in Role Editor
+#    And I click checkbox  "0" Permission row in Role Editor
+#    And I wait
+#    And I select Role Market "US Used Car" in Role Editor
+#    And I wait
+#    And I enter "User1" on Filter Users in Role Editor
+#    And I wait
+#    And I click first checkbox found for Roles Users in Role Editor
+#    And I click on Save button in Role Editor
+#    And I wait
+#      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+#    And I wait
+#    #  Then I should see #of Users has increase value for Administration in Role List
+#      Then I should see #of Users has increase value for "RoleName7" in Role List
+#    And I wait
+#
+#  @TestCases_A-32
+#  Scenario: "@TestCases_A-32" (BB-473) Pop Menu Grammar error missing question mark "?" and role name (require TC-A-31)
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I click on Gear Icon 6
+#    And I click Edit from Gear Icon
+#    And I enter "User1" on Filter Users in Role Editor
+#    And I wait
+#    And I click first checkbox found for Roles Users in Role Editor
+#    And I click on Save button in Role Editor
+#    And I click Cancel Button from Edit Roles
+#    And I wait
+#    And I click on Gear Icon 6
+#    And I click Delete from Gear Icon
+#    And I wait
+#    #currently will order by default by number of users
+#      Then I should see Are you sure you want to delete the role, "RoleName6?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
+#    And I click "Cancel" Button for modal warning message from Edit Roles
+#    And I wait
 
-    @TestCases_A-29
-  Scenario: "@TestCases_A-29" (BB-475) Dropdown boxes in Edit Role wont go to Default value after "Reset"
+#    ##TODO aqui
+#  @TestCases_A-33
+#  Scenario: "@TestCases_A-33" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32)
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I click on Gear Icon 6
+#    And I wait
+#    And I click Delete from Gear Icon
+#    And I wait
+#    #currently will order by default by number of users
+#    Then I should see Are you sure you want to delete the role, "RoleName6?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
+#    And I click "Confirm" Button for modal warning message from Edit Roles
+#      Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
+#    And I wait
+
+  @TestCases_A-33A
+    Scenario: "@TestCases_A-33A" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32) Delete Created roles next run.
     And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
-    And I click on Gear Icon 3
-    And I click Edit from Gear Icon
-    And I wait
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-    And I wait
-    And I click Filter By Status dropdown "Inactive" in Role Editor
-    And I wait
-    And I click Reset Button in Edit Roles
-      Then I should see "All" display for Filter By Group in Role Editor
-      Then I should see "All" display for Filter By Status in Role Editor
-    And I wait
-
-  @TestCases_A-30
-  Scenario: "@TestCases_A-30" (BB-477) "Filter Roles" in Edit Profile does not clear after click "Reset"
-    And I wait
-    And I click Avatar Image Button
-    And I click My Profile sub menu from Avatar
-    And I click Edit Button in Edit User Profile
-    And I wait
-    And I enter Filter Roles search "Editor" in Edit User Profile
-    And I wait
-    And I click Reset Button in Edit User Profile
-      Then I should see user's "filterRoles" displayed in screen with value ""
-    And I wait
-
-  @TestCases_A-31
-  Scenario: "@TestCases_A-31" (BB-472) Creating new Role will not add User to it.
-    And I wait
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on New Role Button in Role List
-    And I enter Role Name "RoleName7"
-    And I enter "Users" on Filter Permissions in Role Editor
-    And I click checkbox  "0" Permission row in Role Editor
-    And I wait
-    And I select Role Market "US Used Car" in Role Editor
-    And I wait
-    And I enter "User1" on Filter Users in Role Editor
-    And I wait
-    And I click first checkbox found for Roles Users in Role Editor
-    And I click on Save button in Role Editor
-    And I wait
-      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    And I wait
-    #  Then I should see #of Users has increase value for Administration in Role List
-      Then I should see #of Users has increase value for "RoleName7" in Role List
-
-  @TestCases_A-32
-  Scenario: "@TestCases_A-32" (BB-473) Pop Menu Grammar error missing question mark "?" and role name (require TC-A-31)
-    And I wait
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on Gear Icon 4
+    And I click on Gear Icon 5
     And I click Edit from Gear Icon
     And I enter "User1" on Filter Users in Role Editor
     And I wait
@@ -611,25 +658,10 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Save button in Role Editor
     And I click Cancel Button from Edit Roles
     And I wait
-    And I click on Gear Icon 4
+    And I click on Gear Icon 5
     And I click Delete from Gear Icon
     And I wait
-    #currently will order by default by number of users
-      Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
-    And I click "Cancel" Button for modal warning message from Edit Roles
-    And I wait
-
-    ##TODO aqui
-  @TestCases_A-33
-  Scenario: "@TestCases_A-33" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32)
-    And I wait
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on Gear Icon 4
-    And I wait
-    And I click Delete from Gear Icon
-    And I wait
-    #currently will order by default by number of users
+ #currently will order by default by number of users
     Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
     And I click "Confirm" Button for modal warning message from Edit Roles
       Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
