@@ -662,31 +662,28 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return new Promise((success, failure) => {
             element(by.css('select[name="market"]')).click();
             switch (roleMarketSelection) {
+
                 case "Select One":
                     element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click();
                     browser.driver.sleep(1000);
-                    browser.driver.actions().sendKeys('a').perform();
-                    browser.driver.sleep(1000);
                     browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
                     success();
                     break;
-                case "US Used Car":
-                    element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[2]')).click();
-                    browser.driver.sleep(1000);
-                    browser.driver.actions().sendKeys('u').perform();
-                    browser.driver.sleep(1000);
-                    browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
 
-                    success();
-                    break;
-                case "CA Used Car":
-                    element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[3]')).click();
-                    browser.driver.sleep(1000);
-                    browser.driver.actions().sendKeys('c').perform();
+                case "US Used Car":
+                    element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[11]')).click();
                     browser.driver.sleep(1000);
                     browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
                     success();
                     break;
+
+                case "Canada Used Car":
+                    element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[5]')).click();
+                    browser.driver.sleep(1000);
+                    browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+                    success();
+                    break;
+
                 default:
                     console.log("Role Market selection is not in function.");
                     failure();
@@ -815,6 +812,32 @@ var myBlackBookSteps = function myBlackBookSteps() {
         browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[5]/div[3]/action-icon/div/div/ul/li[1]/div'))), 5000);
         return new Promise((success, failure)=> {
             page.executeSequence([element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[5]/div[3]/action-icon/div/div/ul/li[1]/div')).click(), keyStrokesRepo.ENTER(),browser.driver.sleep(1000)]).then(()=> { success();});
+        });
+    });
+
+    this.Then(/^I should not see "([^"]*)" Button in AdminTab$/, function (buttonName) {
+        return new Promise((success, failure)=> {
+            browser.driver.wait(protractor.ExpectedConditions.stalenessOf(element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a'))), 2000);
+            success();
+        });
+    });
+
+    this.Then(/^I click on Settings submenu from Admin Tab$/, function () {
+        return new Promise((success, failure)=> {
+            element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a')).click();
+            success();
+        });
+    });
+
+    this.Given(/^I clear text box selected "([^"]*)" in Role Editor$/, function (TextboxName) {
+        return BB_editRoles.DeleteContentInTextBox(TextboxName);
+    });
+
+    this.Then(/^I should not see "([^"]*)" "([^"]*)" in Edit Profile$/, function (arg1, arg2) {
+
+        return new Promise((success, failure)=> {
+            browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox), 2000);
+            success();
         });
     });
 };

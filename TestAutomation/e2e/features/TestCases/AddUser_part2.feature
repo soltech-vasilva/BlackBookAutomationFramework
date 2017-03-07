@@ -46,22 +46,23 @@ Feature:  "Add a new User Profile"
   @TestCases_1
   Scenario Outline: "TestCases_1" Add 26 User and enter good for User Profile. "No Error" display
     When I enter my first name <firstName> in Form
-    Then I should not see in "firstName" errors displayed
+      Then I should not see in "firstName" errors displayed
     And I enter my last name <lastName> in Form
-    Then I should not see in "lastName" errors displayed
+      Then I should not see in "lastName" errors displayed
     And I enter my email address <emailAddress> in Form
-    Then I should not see in "emailAddress" errors displayed
+      Then I should not see in "emailAddress" errors displayed
     And I enter my phone number <phoneNumber> in Form
-    Then I should not see in "phoneNumber" errors displayed
+      Then I should not see in "phoneNumber" errors displayed
     And I enter my new Password <newPassWord> in Form
-    Then I should not see in "newPassWord" errors displayed
+      Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
-    Then I should not see in "confirmNewPassWord" errors displayed
+      Then I should not see in "confirmNewPassWord" errors displayed
     And I click checkbox User's Roles "Administrators"
+      Then I should not see in "userrole" errors displayed
     And I wait
     And I click on Save button in Edit User Profile
     And I wait
-    Then I should see "User Creation Successful" displayed on "UserList" popup
+      Then I should see "User Creation Successful" displayed on "UserList" popup
     And I wait
 
 

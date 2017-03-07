@@ -107,8 +107,14 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
-#    #And I click X on Message Popup in Role list
-#    #And I wait
+#    And I click Cancel Button from Edit Roles
+#    And I click on Gear Icon 2
+#    And I click Edit from Gear Icon
+#    #Turn off "Settings" submenu
+#    And I click checkbox Permission "Settings" in Role Editor
+      #Then I should see Permissions "Settings" checkbox "unchecked" in Role Editor
+#    And I click on Save button in Role Editor
+#    And I wait
 #
 #  @TestCases_A-5
 #  Scenario: "@TestCases_A-5" (BB-247) Entering credential will not go straight to "Home" page.
@@ -339,7 +345,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #    And I click Status Filter
 #    And I enter Filter User List user3@example.com in User List
-#    And I click on Gear Icons 0 inactive
+#    And I click on Gear Icons 1 inactive
 #    And I wait
 #    And I click Avatar Image Button
 #    And I wait
@@ -552,7 +558,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Gear Icon 1
 #    And I click Edit from Gear Icon
 #    And I click Cancel Button in Edit User Profile
-#    And I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
+#     Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
 #    And I wait
 #
 #    @TestCases_A-29
@@ -604,7 +610,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
 #    And I wait
-#    #  Then I should see #of Users has increase value for Administration in Role List
+#     #Then I should see #of Users has increase value for Administration in Role List
 #      Then I should see #of Users has increase value for "RoleName7" in Role List
 #    And I wait
 #
@@ -640,7 +646,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Delete from Gear Icon
 #    And I wait
 #    #currently will order by default by number of users
-#    Then I should see Are you sure you want to delete the role, "RoleName6?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
+#     Then I should see Are you sure you want to delete the role, "RoleName6?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
 #    And I click "Confirm" Button for modal warning message from Edit Roles
 #      Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
 #    And I wait
@@ -662,7 +668,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Delete from Gear Icon
 #    And I wait
 # #currently will order by default by number of users
-#    Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
+#     Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
 #    And I click "Confirm" Button for modal warning message from Edit Roles
 #      Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
 #    And I wait
@@ -678,7 +684,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Admin Tab
 #    And I click on Users submenu from Admin Tab
 #    And I wait
-#    And I should not see "New User" Button in User List
+#     Then I should not see "New User" Button in User List
 #    And I wait
 
 #  @TestCases_A-35
@@ -687,8 +693,8 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
 #    And I click on New Role Button in Role List
-#    And I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
-#    And I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
+#     Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
+#     Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
 #    And I wait
 
 #  @TestCases_A-36
@@ -700,6 +706,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click View from Gear Icon in Role List
 #    And I wait
 #      Then I should see Role Market value "US Used Car"
+#    And I wait
 
 #  @TestCases_A-37
 #  Scenario: "@TestCases_A-37" (BB-616)(Add New Roles): Empty Space (SPACE BAR) gets accepted for role name.
@@ -708,21 +715,293 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Roles submenu from Admin Tab
 #    And I click on New Role Button in Role List
 #    And I enter Role Name "  "
-#    And I should see "RoleName" message "This is not a valid role title" displayed for this "filled" field in Role Editor
-#    And I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
+#     Then I should see "RoleName" message "This is not a valid role title" displayed for this "filled" field in Role Editor
+#     Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
 #    And I wait
 
-#   #TODO aqui
-#  @TestCases_A-38
-  Scenario: "@TestCases_A-38" (BB-601)(Add New Roles): Role Permission does not need to be "Require" field. (story) just name and market fill.
-    And I wait
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on New Role Button in Role List
-    And I enter Role Name "RoleName8"
-    And I select Role Market "US Used Car" in Role Editor
-    And I click on Save button in Role Editor
-      #Then I should see "There was an error saving this role" displayed on "EditRoles" popup
-      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    And I wait
+##  @TestCases_A-38
+#  Scenario: "@TestCases_A-38" (BB-601)(Add New Roles): Role Permission does not need to be "Require" field. (story) just name and market fill.
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I click on New Role Button in Role List
+#    And I enter Role Name "RoleName8"
+#    And I select Role Market "US Used Car" in Role Editor
+#    And I click on Save button in Role Editor
+#      #Then I should see "There was an error saving this role" displayed on "EditRoles" popup
+#      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+#    And I wait
 
+##  @TestCases_A-39
+#  Scenario: "@TestCases_A-39" (BB-655) (Edit Roles): Cant change "Role Market". Error Message
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I click on Gear Icon 4
+#    And I click Edit from Gear Icon
+#    And I wait
+#    And I select Role Market "Canada Used Car" in Role Editor
+#    And I wait
+#      Then I should see Role Market value "Canada Used Car"
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+#    And I click Cancel Button from Edit Roles
+#    And I click on Gear Icon 4
+#    And I click Edit from Gear Icon
+#    And I wait
+#    And I select Role Market "US Used Car" in Role Editor
+#    And I wait
+#      Then I should see Role Market value "US Used Car"
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+
+#  @TestCases_A-40
+#  Scenario: "@TestCases_A-40" (BB-626) (Permission canEditSettings): Enable "Settings" for a user will not show Tab "Settings"
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user2@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#      Then I should not see "Setting" Button in AdminTab
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user1@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I wait
+#    And I click on Gear Icon 2
+#    And I click Edit from Gear Icon
+#    #Turn On "Settings" submenu
+#    And I click checkbox Permission "Settings" in Role Editor
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user2@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Settings submenu from Admin Tab
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user1@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I wait
+#    And I click on Gear Icon 2
+#    And I click Edit from Gear Icon
+#    #Turn Off "Settings" submenu
+#    And I click checkbox Permission "Settings" in Role Editor
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+
+#  @TestCases_A-41
+#  Scenario: "@TestCases_A-41" (BB-625) (Permission CanViewOtherUsers): Gear Icons are gray out event if permission is enable.
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user2@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Users submenu from Admin Tab
+#    And I wait
+#    And I click Status Filter
+#    And I enter Filter User List user3@example.com in User List
+#    And I click on Gear Icons 1 inactive
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user1@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I wait
+#    And I click on Gear Icon 2
+#    And I click Edit from Gear Icon
+#     #Enable Permission
+#    And I enter "Can View Other Users" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I wait
+#     #Enable Permission
+#    And I enter "can View Role List" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user2@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Users submenu from Admin Tab
+#    And I wait
+#    And I click Status Filter
+#    And I enter Filter User List user3@example.com in User List
+#    And I click on Gear Icon 1
+#    And I click View from Gear Icon
+#    And I wait
+#      Then I should see user's "emailAddress" displayed in screen with value "user3@example.com"
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user1@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I wait
+#    And I click on Gear Icon 2
+#    And I click Edit from Gear Icon
+#    #Disable Permission
+#    And I enter "Can View Other Users" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I wait
+#     #Disable Permission
+#    And I enter "can View Role List" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+
+#  @TestCases_A-42
+#  Scenario: "@TestCases_A-42" (BB-624) (Permission CanResetUsersPasswords): Unselected permission "Can Reset Users Passwords" can still add password to user.
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I wait
+#    And I click on Gear Icon 2
+#    And I click Edit from Gear Icon
+#    #Enable Permission
+#    And I enter "Can Add/Edit Users" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I wait
+#     #Enable Permission
+#    And I enter "Can View Other Users" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I wait
+#     #Enable Permission
+#    And I enter "Can View Role List" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user2@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Users submenu from Admin Tab
+#    And I wait
+#    And I click Status Filter
+#    And I enter Filter User List user3@example.com in User List
+#    And I click on Gear Icon 1
+#    And I click Edit from Gear Icon
+#      Then I should not see "NewPassword" "Textbox" in Edit Profile
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user1@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I wait
+#    And I click on Gear Icon 2
+#    And I click Edit from Gear Icon
+#    #Enable Permission
+#    And I enter "Can Reset Users Passwords" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user2@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Users submenu from Admin Tab
+#    And I wait
+#    And I click Status Filter
+#    And I enter Filter User List user3@example.com in User List
+#    And I click on Gear Icon 1
+#    And I click Edit from Gear Icon
+#    And I enter my new Password Password1 in Form
+#    And I wait
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+#    And I wait
+#    And I enter my user email address user1@example.com in Login
+#    And I enter my Password Password1 in Login
+#    And I click Login Button
+#    And I wait
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    And I wait
+#    And I click on Gear Icon 2
+#    And I click Edit from Gear Icon
+#    #Disable Permission
+#    And I enter "Can Add/Edit Users" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I wait
+#     #Disable Permission
+#    And I enter "Can View Other Users" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I wait
+#     #Disable Permission
+#    And I enter "Can View Role List" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I wait
+#    #Disable Permission
+#    And I enter "Can Reset Users Passwords" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click on Save button in Role Editor
+#      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+#    And I wait
+
+  #TODO aqui
+  @TestCases_A-43
+  Scenario: "@TestCases_A-43" (BB-471) Gray out "Active Status" in "View" user mode. (make sure is not editable)
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    And I wait
+    And I click Status Filter
+    And I enter Filter User List user3@example.com in User List
+    And I click on Gear Icon 1
+    And I click View from Gear Icon
+    And I wait
+    And I click User Active checkbox
+    And I wait
+      Then I should see on User Active checkbox inactive
+    And I wait

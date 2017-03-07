@@ -249,6 +249,7 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
     But I enter "nothing to email address"
     Then I should see "emailAddress" message "Required" displayed for this "empty" field
   And I enter my phone number <phoneNumber> in Form
+    Then I should not see in "phoneNumber" errors displayed
   And I enter my Previous Password <previousPassWord> in Form
   And I enter my new Password <newPassWord> in Form
     But I enter "nothing to New Password"
@@ -256,6 +257,8 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   And I enter my confirm new password <confirmNewPassWord> in Form
     But I enter "nothing to Confirm New Password"
     Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
+  But I enter "or check nothing to User Roles"
+    Then I should see "userrole" message "Required" displayed for this "unchecked" field
   And I click Cancel Button in Edit User Profile
   And I wait
   And I click Avatar Image Button
@@ -496,6 +499,18 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord             | confirmNewPassWord   |previousPassWord |
 #NewPassword is Empty Field
       |    "       "  | "       " | s"  "s@hot.com            | "           " |   "      "Qa1          |    "      "Qa1       | 1234567Aa       |
+
+   @TestCases_C-11
+   Scenario: "@TestCases_C-11" Enter Edit mode for a user "No error display" (BB-611)
+     And I wait
+     Then I should not see in "firstName" errors displayed
+     Then I should not see in "lastName" errors displayed
+     Then I should not see in "emailAddress" errors displayed
+     Then I should not see in "phoneNumber" errors displayed
+     Then I should not see in "previousPassWord" errors displayed
+     Then I should not see in "newPassWord" errors displayed
+     Then I should not see in "confirmNewPassWord" errors displayed
+     Then I should not see in "userrole" errors displayed
 
 ###########################################################################################################################
 #####                                             Test cases Reports and Framework                                        #

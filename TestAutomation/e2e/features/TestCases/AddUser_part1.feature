@@ -59,6 +59,7 @@ Feature:  "Add a new User Profile"
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
     And I click checkbox User's Roles "Administrators"
+      Then I should not see in "userrole" errors displayed
     And I click on Save button in Edit User Profile
     And I wait
       Then I should see "User Creation Successful" displayed on "UserList" popup
@@ -85,18 +86,19 @@ Feature:  "Add a new User Profile"
   @TestCases_2
   Scenario Outline: "TestCases_2" Add a User that was already exist (Email is unique). Error display "User name must be unique"
     When I enter my first name <firstName> in Form
-    Then I should not see in "firstName" errors displayed
+      Then I should not see in "firstName" errors displayed
     And I enter my last name <lastName> in Form
-    Then I should not see in "lastName" errors displayed
+      Then I should not see in "lastName" errors displayed
     And I enter my email address <emailAddress> in Form
-    Then I should not see in "emailAddress" errors displayed
+      Then I should not see in "emailAddress" errors displayed
     And I enter my phone number <phoneNumber> in Form
-    Then I should not see in "phoneNumber" errors displayed
+      Then I should not see in "phoneNumber" errors displayed
     And I enter my new Password <newPassWord> in Form
-    Then I should not see in "newPassWord" errors displayed
+      Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
-    Then I should not see in "confirmNewPassWord" errors displayed
+      Then I should not see in "confirmNewPassWord" errors displayed
     And I click checkbox User's Roles "Administrators"
+      Then I should not see in "userrole" errors displayed
     And I wait
     And I click on Save button in Edit User Profile
     And I wait
@@ -128,6 +130,7 @@ Feature:  "Add a new User Profile"
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
     And I click checkbox User's Roles "Administrators"
+      Then I should not see in "userrole" errors displayed
     When I click Cancel Button in Edit User Profile
     And I wait
     And I click Avatar Image Button
@@ -300,7 +303,7 @@ Feature:  "Add a new User Profile"
 #                        COMMENT OUT FOR NOW  Test cases C     (Same controller show require and pass not match      #
 ######################################################################################################################
   @TestCases_C-1
-  Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw error "Required" for all fields
+  Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw error "Required" for all fields (BB-579)
     When I enter my first name <firstName> in Form
       But I enter "nothing to first name"
       Then I should see "firstName" message "Required" displayed for this "empty" field
@@ -311,12 +314,15 @@ Feature:  "Add a new User Profile"
       But I enter "nothing to email address"
       Then I should see "emailAddress" message "Required" displayed for this "empty" field
     And I enter my phone number <phoneNumber> in Form
+      Then I should not see in "phoneNumber" errors displayed
     And I enter my new Password <newPassWord> in Form
       But I enter "nothing to New Password"
       Then I should see "newPassWord" message "Required" displayed for this "empty" field
     And I enter my confirm new password <confirmNewPassWord> in Form
       But I enter "nothing to Confirm New Password"
       Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
+    But I enter "or check nothing to User Roles"
+      Then I should see "userrole" message "Required" displayed for this "unchecked" field
     And I click Cancel Button in Edit User Profile
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
@@ -468,3 +474,23 @@ Feature:  "Add a new User Profile"
 #NewPassword is Empty Field
       |    "       "  | "       " | s"  "s@hot.com            | "           " |   "      "Qa1          |    "      "Qa1       |
 
+  @TestCases_C-8
+  Scenario Outline: "@TestCases_C-8" Enter nothing for "User Role" will throw error "Required"
+    And I enter my first name <firstName> in Form
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
+    And I enter my confirm new password <confirmNewPassWord> in Form
+    But I enter "or check nothing to User Roles"
+      Then I should see "userrole" message "Required" displayed for this "unchecked" field
+    And I click Cancel Button in Edit User Profile
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
+
+    Examples:
+      | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
+##Last Name is Empty Field
+      |    AfirstName | AlastName | AemailAddress@email.com   | (123)456-7890 | QaAdmin123    |   QaAdmin123         |

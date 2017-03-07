@@ -52,19 +52,25 @@
         ]
       },
       {
-        "name": "\"@TestCases_A-38\" (BB-601)(Add New Roles): Role Permission does not need to be \"Require\" field. (story)",
-        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-38\"-(bb-601)(add-new-roles):-role-permission-does-not-need-to-be-\"require\"-field.-(story)",
-        "line": 717,
+        "name": "\"@TestCases_A-43\" (BB-471) Gray out \"Active Status\" in view user mode.",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-43\"-(bb-471)-gray-out-\"active-status\"-in-view-user-mode.",
+        "line": 995,
         "keyword": "Scenario",
         "description": "",
         "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-43",
+            "line": 994
+          }
+        ],
         "steps": [
           {
             "keyword": "Before ",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 2201456
+              "duration": 2175005
             },
             "match": {}
           },
@@ -74,7 +80,7 @@
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 3873916326
+              "duration": 3403461540
             },
             "match": {}
           },
@@ -84,7 +90,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 8317341360
+              "duration": 6859515698
             },
             "match": {}
           },
@@ -94,7 +100,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5004396841
+              "duration": 5003231083
             },
             "match": {}
           },
@@ -104,7 +110,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1007538504
+              "duration": 1127069588
             },
             "match": {}
           },
@@ -114,7 +120,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 505436249
+              "duration": 595267021
             },
             "match": {}
           },
@@ -124,7 +130,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 105888995
+              "duration": 116128712
             },
             "match": {}
           },
@@ -134,97 +140,127 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5004334393
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 718,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5006290716
+              "duration": 5004876547
             },
             "match": {}
           },
           {
             "name": "I click on Admin Tab",
-            "line": 719,
+            "line": 996,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 887245
+              "duration": 1491743
             },
             "match": {}
           },
           {
-            "name": "I click on Roles submenu from Admin Tab",
-            "line": 720,
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 997,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 309436203
-            },
-            "match": {}
-          },
-          {
-            "name": "I click on New Role Button in Role List",
-            "line": 721,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 411142433
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter Role Name \"RoleName8\"",
-            "line": 722,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1051918580
-            },
-            "match": {}
-          },
-          {
-            "name": "I select Role Market \"US Used Car\" in Role Editor",
-            "line": 723,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 3071305
-            },
-            "match": {}
-          },
-          {
-            "name": "I click on Save button in Role Editor",
-            "line": 724,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 885097495
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"Role has been successfully added\" displayed on \"EditRoles\" popup",
-            "line": 726,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 5140464273
+              "duration": 444428890
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 727,
+            "line": 998,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5002084024
+              "duration": 5005846668
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Status Filter",
+            "line": 999,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 96075158
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List user3@example.com in User List",
+            "line": 1000,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1804877252
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1",
+            "line": 1001,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 102631360
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon",
+            "line": 1003,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1224458319
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 1004,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5005202180
+            },
+            "match": {}
+          },
+          {
+            "name": "I click User Active checkbox",
+            "line": 1005,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 983743
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 1006,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5002558135
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see on User Active checkbox inactive",
+            "line": 1007,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 1013334233,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 1008,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
             },
             "match": {}
           },
@@ -233,7 +269,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 606730
+              "duration": 522690
             },
             "match": {}
           }

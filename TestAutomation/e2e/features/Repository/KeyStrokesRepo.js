@@ -24,9 +24,9 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
     KeyStrokeRepo.prototype.CONTROL_ALL_DELETE = function () {
         browser.sleep(1000);
 
-        browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.CONTROL, 'a')).sendKeys( protractor.Key.DELETE).perform();
-
-       // browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys( protractor.Key.DELETE).perform();
+       // browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.CONTROL, 'a')).sendKeys( protractor.Key.DELETE).perform();
+        //My Mac computer
+        browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys( protractor.Key.DELETE).perform();
         browser.sleep(1000);
     };
 };

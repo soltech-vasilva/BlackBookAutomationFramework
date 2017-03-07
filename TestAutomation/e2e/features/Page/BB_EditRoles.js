@@ -14,6 +14,7 @@ var utilities = require('../Page/Utilities.js');
 var page = require ('../Page/Page_Objects');
 var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
 
+
 var BB_EditRoles = function BB_EditRoles() {
 
     BB_EditRoles.prototype.RoleName = '';
@@ -190,6 +191,20 @@ var BB_EditRoles = function BB_EditRoles() {
                     }
                 });
             });
+        });
+    };
+
+    BB_EditRoles.prototype.DeleteContentInTextBox = function (TextboxName) {
+        return new Promise((success, failure)=> {
+            switch (TextboxName.toLowerCase()) {
+                case 'filterpermissions':
+                    console.log('filterpermissions');
+                    BB_editUserProfile.Click_Delete_Content(success, BB_editRolesRepo.Select_Element_FilterPermissionsTextbox,BB_editRolesRepo.Select_Element_TittleAddNewRole);
+                    break;
+                default:
+                    console.log(TextboxName + ' : is not part of switch statement in DeleteContentInTextBox function role editor.');
+                    failure();
+            }
         });
     };
 };

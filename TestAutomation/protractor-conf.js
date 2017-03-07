@@ -208,9 +208,9 @@ exports.config = {
 
     capabilities: {
     //46.0b9
-    //'browserName': 'firefox'
+    'browserName': 'firefox'
     //53.0.2785.89
-    'browserName': 'chrome'
+    //'browserName': 'chrome'
      //   'browserName': 'safari'//,
     //     'acceptSslCerts': true,
         // 'mode' : 'proxy'
