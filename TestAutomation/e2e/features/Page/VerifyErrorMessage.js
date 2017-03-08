@@ -50,16 +50,17 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
             switch (str_TextboxName.toLowerCase()) {
                 case 'rolename':
-                     console.log(str_TextboxName.toLowerCase());
+                    // console.log(str_TextboxName.toLowerCase());
                     // console.log('|'+BB_editUserProfile.firstName+'|');
 
                     if ((BB_editRoles.RoleName != '' && FilledOrEmptyField == 'filled') || (BB_editRoles.RoleName == '' && FilledOrEmptyField == 'empty')) {
 
                         if (str_VerifyErrorName == 'Required') {
+                            //console.log('str_VerifyErrorName:'+str_VerifyErrorName);
                             utilities.ExpectedElement_StopAutomationAtFail(BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleName_Require);
                             //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName_Require), 10000);
                             browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleName_Require).then(function (isPresente) {
-                                //      console.log(isPresente);
+                                     // console.log(isPresente);
                                 VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleName_Require, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in First Name', success, failure);
                             });
                         }
@@ -67,17 +68,18 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                             utilities.ExpectedElement_StopAutomationAtFail(BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleName_SpacesAreInvalidCharacters);
                             //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName_Require), 10000);
                             browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleName_SpacesAreInvalidCharacters).then(function (isPresente) {
-                                //      console.log(isPresente);
+                                     // console.log(isPresente);
                                 VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleName_SpacesAreInvalidCharacters, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in First Name', success, failure);
                             });
                         }
                     }
                     break;
                 case 'rolemarket':
+                   // console.log(str_TextboxName.toLowerCase());
                     utilities.ExpectedElement_StopAutomationAtFail(BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleMarket_Require);
                     //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName_Require), 10000);
                     browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleMarket_Require).then(function (isPresente) {
-                        //      console.log(isPresente);
+                             // console.log(isPresente);
                         VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleMarket_Require, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in First Name', success, failure);
                     });
                     break;
@@ -334,7 +336,30 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
         }
     };
 
-    VerifyErrorMessage.prototype.Verify_ErrorMessagesNotToDisplay = function (TextboxName) {
+    VerifyErrorMessage.prototype.Verify_ErrorMessagesNotToDisplay_RoleEditor = function (TextboxName) {
+        browser.driver.sleep(2000);
+        return new Promise((success, failure) => {
+            switch (TextboxName.toLowerCase()) {
+                case 'rolename':
+                    browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleName_Require).then((isPresente) => {
+                        VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleName_Require, 'It should not show any errors in Role Name', success, failure);
+                    });
+                    break;
+
+                case 'rolemarket':
+                    browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleMarket_Require).then((isPresente) => {
+                        VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleMarket_Require, 'It should not show any errors in Role Market', success, failure);
+                    });
+                    break;
+
+                default:
+                    console.log(TextboxName + ' : is not part of switch statement in Verify_ErrorMessagesNotToDisplay_RoleEditor function.');
+                    failure();
+            }
+        });
+    };
+
+    VerifyErrorMessage.prototype.Verify_ErrorMessagesNotToDisplay_UserProfile = function (TextboxName) {
         browser.driver.sleep(2000);
         return new Promise ((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
@@ -400,7 +425,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                     break;
 
                 default:
-                    console.log(TextboxName+' : is not part of switch statement in Verify_ErrorMessagesNotToDisplay function.');
+                    console.log(TextboxName+' : is not part of switch statement in Verify_ErrorMessagesNotToDisplay_UserProfile function.');
                     failure();
             }
         });

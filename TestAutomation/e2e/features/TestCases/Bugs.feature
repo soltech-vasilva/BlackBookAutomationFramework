@@ -112,7 +112,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #    #Turn off "Settings" submenu
 #    And I click checkbox Permission "Settings" in Role Editor
-      #Then I should see Permissions "Settings" checkbox "unchecked" in Role Editor
+#      Then I should see Permissions "Settings" checkbox "unchecked" in Role Editor
 #    And I click on Save button in Role Editor
 #    And I wait
 #
@@ -394,7 +394,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And  I wait
 #      Then I should see message "Password reset email sent" displayed
 #    And I wait
-
+#
 #
 #  @TestCases_A-21
 #  Scenario: "@TestCases_A-21" (BB-519) Create "New Roles" not working.
@@ -404,7 +404,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on New Role Button in Role List
 #    And I enter Role Name "RoleName6"
 #    And I enter "Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "0" Permission row in Role Editor
+#    And I click checkbox  "0" "Users" Permission row in Role Editor
 #    And I wait
 #    And I select Role Market "US Used Car" in Role Editor
 #    And I click on Save button in Role Editor
@@ -485,7 +485,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #
 #
 #  @TestCases_A-25
-#  Scenario Outline: "@TestCases_A-25" (BB-480) Adding "Role" to new user does not show "Require".
+#  Scenario Outline: "@TestCases_A-25" (BB-480) Adding "Role" to new user (Add User) does not show "Require".
 #    And I wait
 #    And I click on Admin Tab
 #    And I click on Users submenu from Admin Tab
@@ -535,7 +535,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #    And I enter "User1" on Filter Users in Role Editor
 #    And I wait
-#    And I click first checkbox found for Roles Users in Role Editor
+#    And I click checkbox on first user found from Filter Users in Role Editor
 #      Then I should see in "Save" button "enable" in Edit Role
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
@@ -599,18 +599,17 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on New Role Button in Role List
 #    And I enter Role Name "RoleName7"
 #    And I enter "Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "0" Permission row in Role Editor
+#    And I click checkbox  "0" "Users" Permission row in Role Editor
 #    And I wait
 #    And I select Role Market "US Used Car" in Role Editor
 #    And I wait
 #    And I enter "User1" on Filter Users in Role Editor
 #    And I wait
-#    And I click first checkbox found for Roles Users in Role Editor
+#    And I click checkbox on first user found from Filter Users in Role Editor
 #    And I click on Save button in Role Editor
 #    And I wait
 #      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
 #    And I wait
-#     #Then I should see #of Users has increase value for Administration in Role List
 #      Then I should see #of Users has increase value for "RoleName7" in Role List
 #    And I wait
 #
@@ -623,7 +622,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #    And I enter "User1" on Filter Users in Role Editor
 #    And I wait
-#    And I click first checkbox found for Roles Users in Role Editor
+#    And I click checkbox on first user found from Filter Users in Role Editor
 #    And I click on Save button in Role Editor
 #    And I click Cancel Button from Edit Roles
 #    And I wait
@@ -634,7 +633,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see Are you sure you want to delete the role, "RoleName6?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
 #    And I click "Cancel" Button for modal warning message from Edit Roles
 #    And I wait
-
+#
 #
 #  @TestCases_A-33
 #  Scenario: "@TestCases_A-33" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32)
@@ -650,7 +649,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click "Confirm" Button for modal warning message from Edit Roles
 #      Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
 #    And I wait
-
+#
 #  @TestCases_A-33A
 #    Scenario: "@TestCases_A-33A" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32) Delete Created roles next run.
 #    And I wait
@@ -660,7 +659,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #    And I enter "User1" on Filter Users in Role Editor
 #    And I wait
-#    And I click first checkbox found for Roles Users in Role Editor
+#    And I click checkbox on first user found from Filter Users in Role Editor
 #    And I click on Save button in Role Editor
 #    And I click Cancel Button from Edit Roles
 #    And I wait
@@ -672,7 +671,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click "Confirm" Button for modal warning message from Edit Roles
 #      Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
 #    And I wait
-
+#
 #  @TestCases_A-34
 #  Scenario: "@TestCases_A-34" (BB-592) (Permission Add User): Add user is not enforce in database. (ROLE:EDITOR CVUL+CVOP+CVRL) "New User" button should not show.
 #    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
@@ -686,7 +685,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #     Then I should not see "New User" Button in User List
 #    And I wait
-
+#
 #  @TestCases_A-35
 #  Scenario: "@TestCases_A-35" (BB-582) (Add New Roles): word "Require" need to show on field require.
 #    And I wait
@@ -696,7 +695,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #     Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
 #     Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
 #    And I wait
-
+#
 #  @TestCases_A-36
 #  Scenario: "@TestCases_A-36" (BB-586) (Role Market): Role Market needs to show "None" or a value in Role View.
 #    And I wait
@@ -707,7 +706,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #      Then I should see Role Market value "US Used Car"
 #    And I wait
-
+#
 #  @TestCases_A-37
 #  Scenario: "@TestCases_A-37" (BB-616)(Add New Roles): Empty Space (SPACE BAR) gets accepted for role name.
 #    And I wait
@@ -718,7 +717,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #     Then I should see "RoleName" message "This is not a valid role title" displayed for this "filled" field in Role Editor
 #     Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
 #    And I wait
-
+#
 ##  @TestCases_A-38
 #  Scenario: "@TestCases_A-38" (BB-601)(Add New Roles): Role Permission does not need to be "Require" field. (story) just name and market fill.
 #    And I wait
@@ -728,10 +727,9 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I enter Role Name "RoleName8"
 #    And I select Role Market "US Used Car" in Role Editor
 #    And I click on Save button in Role Editor
-#      #Then I should see "There was an error saving this role" displayed on "EditRoles" popup
 #      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
 #    And I wait
-
+#
 ##  @TestCases_A-39
 #  Scenario: "@TestCases_A-39" (BB-655) (Edit Roles): Cant change "Role Market". Error Message
 #    And I wait
@@ -756,7 +754,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
-
+#
 #  @TestCases_A-40
 #  Scenario: "@TestCases_A-40" (BB-626) (Permission canEditSettings): Enable "Settings" for a user will not show Tab "Settings"
 #    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
@@ -809,7 +807,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
-
+#
 #  @TestCases_A-41
 #  Scenario: "@TestCases_A-41" (BB-625) (Permission CanViewOtherUsers): Gear Icons are gray out event if permission is enable.
 #    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
@@ -838,12 +836,12 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #     #Enable Permission
 #    And I enter "Can View Other Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can View Other Users" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I wait
 #     #Enable Permission
 #    And I enter "can View Role List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "can View Role List" Permission row in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
@@ -876,16 +874,16 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #    #Disable Permission
 #    And I enter "Can View Other Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can View Other Users" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I wait
 #     #Disable Permission
 #    And I enter "can View Role List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "can View Role List" Permission row in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
-
+#
 #  @TestCases_A-42
 #  Scenario: "@TestCases_A-42" (BB-624) (Permission CanResetUsersPasswords): Unselected permission "Can Reset Users Passwords" can still add password to user.
 #    And I click on Admin Tab
@@ -895,17 +893,17 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #    #Enable Permission
 #    And I enter "Can Add/Edit Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can Add/Edit Users" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I wait
 #     #Enable Permission
 #    And I enter "Can View Other Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can View Other Users" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I wait
 #     #Enable Permission
 #    And I enter "Can View Role List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can View Role List" Permission row in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
@@ -937,7 +935,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #    #Enable Permission
 #    And I enter "Can Reset Users Passwords" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can Reset Users Passwords" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
@@ -970,22 +968,22 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Edit from Gear Icon
 #    #Disable Permission
 #    And I enter "Can Add/Edit Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can Add/Edit Users" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I wait
 #     #Disable Permission
 #    And I enter "Can View Other Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can View Other Users" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I wait
 #     #Disable Permission
 #    And I enter "Can View Role List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can View Role List" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I wait
 #    #Disable Permission
 #    And I enter "Can Reset Users Passwords" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" Permission row in Role Editor
+#    And I click checkbox  "1" "Can Reset Users Passwords" Permission row in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait

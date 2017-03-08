@@ -1,5 +1,5 @@
 ###################################
-# ADD USER PROFILE Test cases    #
+# USER LIST PAGE Test cases       #
 ###################################
 
 Feature:  "User List"

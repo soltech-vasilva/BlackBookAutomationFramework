@@ -1,5 +1,5 @@
 ###################################
-# ADD USER PROFILE Test cases    #
+# ADD USER PROFILE Test cases     #
 ###################################
 
 Feature:  "Add a new User Profile"

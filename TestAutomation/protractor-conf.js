@@ -9,7 +9,7 @@ exports.config = {
     // ],
     'StopRunAtFail': false,
     'WaitTime': 15000,
-    'BuildTestNumber': '77',
+    'BuildTestNumber': '78',
 
     //Turn off applitool
     'ApplitoolsOn': false,
@@ -23,7 +23,8 @@ exports.config = {
          // 'e2e/features/TestCases/EditUserProfile.feature',
           // 'e2e/features/TestCases/UsersList.feature',
           //'e2e/features/TestCases/Login.feature'//,
-        'e2e/features/TestCases/Bugs.feature'//,
+       // 'e2e/features/TestCases/EditRoles.feature'//,
+        //'e2e/features/TestCases/Bugs.feature'//,
     ],
 
 
