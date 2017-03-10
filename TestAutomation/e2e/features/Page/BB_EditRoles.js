@@ -177,7 +177,8 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.Verify_RoleMarketValue_Dropdownbox_RoleEditor = function (roleMarketSelection) {
 
         return new Promise((success, failure) => {
-            BB_editRolesRepo.Select_Element_RoleMarket_dropdownbox.getAttribute('value').then((value) => {
+            browser.driver.wait(
+                BB_editRolesRepo.Select_Element_RoleMarket_dropdownbox.getAttribute('value').then((value) => {
                 console.log('value:' + value);
 
                 element(by.css('option[value="'+value+'"]')).getText().then((text) => {
@@ -190,7 +191,8 @@ var BB_EditRoles = function BB_EditRoles() {
                         failure();
                     }
                 });
-            });
+            })
+            );
         });
     };
 

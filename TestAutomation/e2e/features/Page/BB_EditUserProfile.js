@@ -24,9 +24,8 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
     BB_EditUserProfile.prototype.previousPassword = '';
 
     BB_EditUserProfile.prototype.Click_TittleofPage = function(elementTitlePage, success){
-        return page.executeSequence([elementTitlePage.click().then(()=> {
-              success();
-        })]);
+        return page.executeSequence([elementTitlePage.click(),
+              success()]).then(()=>{});
     };
 
    BB_EditUserProfile.prototype.Enter_FirstName_inForm = function (firstName) {

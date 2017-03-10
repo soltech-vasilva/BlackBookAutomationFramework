@@ -96,7 +96,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
             switch (str_TextboxName.toLowerCase()) {
                 case 'firstname':
                      console.log(str_TextboxName.toLowerCase());
-                    // console.log('|'+BB_editUserProfile.firstName+'|');
+                     console.log('BB_editUserProfile.firstName:|'+BB_editUserProfile.firstName+'|');
 
                     if ((BB_editUserProfile.firstName != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.firstName == '' && FilledOrEmptyField == 'empty')) {
                          console.log("dentro: "+str_TextboxName.toLowerCase());

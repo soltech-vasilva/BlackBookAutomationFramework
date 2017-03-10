@@ -578,6 +578,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Filter By Status dropdown "Inactive" in Role Editor
     And I wait
     And I click Reset Button in Edit Roles
+    And I wait
       Then I should see "All" display for Filter By Group in Role Editor
       Then I should see "All" display for Filter By Status in Role Editor
     And I wait

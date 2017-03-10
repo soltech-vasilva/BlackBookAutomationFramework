@@ -67,7 +67,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     // });
 
     //This is for timeout issues default is 5 sec
-    this.setDefaultTimeout(120 * 1000);  //todo estaba a 80
+    this.setDefaultTimeout(80 * 1000);  //todo estaba a 80
     var startTime = new Date().getTime();
 
     this.Before(function () {

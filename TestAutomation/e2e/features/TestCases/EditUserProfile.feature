@@ -484,13 +484,14 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   Scenario: "@TestCases_C-10" Delete information from Textboxes will throw error "Required"
     When I clear text box selected "firstName"
    # And I wait
-      Then I should see "firstName" message "Required" displayed for this "empty" field
+    #it is Filled (browserstack) since it deletes value and returns "    "
+      Then I should see "firstName" message "Required" displayed for this "filled" field
     And I clear text box selected "lastName"
     #And I wait
-      Then I should see "lastName" message "Required" displayed for this "empty" field
+      Then I should see "lastName" message "Required" displayed for this "filled" field
     And I clear text box selected "emailAddress"
     #And I wait
-      Then I should see "emailAddress" message "Required" displayed for this "empty" field
+      Then I should see "emailAddress" message "Required" displayed for this "filled" field
     And I click Cancel Button in Edit User Profile
     And I wait
     And I click Avatar Image Button
