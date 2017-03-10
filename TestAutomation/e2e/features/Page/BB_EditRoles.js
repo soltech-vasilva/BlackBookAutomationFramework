@@ -22,13 +22,13 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.Enter_RoleName_inForm = function (roleNme) {
         this.RoleName =   utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString());
 
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf( element.all(by.css('input[type="text"]')).get(0)), protractorConfig.config.WaitTime);
-        element.all(by.css('input[type="text"]')).get(0).click();
+        browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_editRolesRepo.Select_Element_RoleNameTextbox), protractorConfig.config.WaitTime);
+        BB_editRolesRepo.Select_Element_RoleNameTextbox.click();
 
         return new Promise((success, failure)=> {
             if (this.RoleName != '') {
-                element.all(by.css('input[type="text"]')).get(0).sendKeys(this.RoleName);
-                page.executeSequence([utilities.VerifyValueEntered_RetypeValue( element.all(by.css('input[type="text"]')).get(0), this.RoleName)]).then(()=>{});
+                BB_editRolesRepo.Select_Element_RoleNameTextbox.sendKeys(this.RoleName);
+                page.executeSequence([utilities.VerifyValueEntered_RetypeValue( BB_editRolesRepo.Select_Element_RoleNameTextbox, this.RoleName)]).then(()=>{});
             }
 
             BB_editUserProfile.Click_TittleofPage(BB_editRolesRepo.Select_Element_TittleAddNewRole ,success);
@@ -127,17 +127,17 @@ var BB_EditRoles = function BB_EditRoles() {
             switch (permissionName.toString().toLowerCase()) {
                 case "users":
                     browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Users_Checkbox), 10000);
-                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(0);
+                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(5);
                     break;
 
                 case "settings":
                     browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox), 10000);
-                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(1);
+                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(3);
                     break;
 
                 case "roles":
                     browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox), 10000);
-                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(2);
+                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(1);
                     break;
 
                 default:
@@ -145,19 +145,19 @@ var BB_EditRoles = function BB_EditRoles() {
                     return failure();
             }
 
-            checkbox.getAttribute('style').then((currentstyle)=>{
+            checkbox.getAttribute('class').then((currentClass)=>{
 
-                if (currentstyle == "display: inline;" && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
-                    //console.log('|style:|' + currentstyle);
+                if (currentClass == "icon-check-square grid-checkbox-checked grid-checkbox" && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
+                   // console.log('|style:|' + currentClass);
                     return success();
                 }
-                else  if (currentstyle == "display: none;" && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
-                    //console.log('|style:|' + currentstyle);
+                else  if (currentClass == "icon-check-square grid-checkbox-checked grid-checkbox ag-hidden" && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
+                   // console.log('|style:|' + currentClass);
                     return success();
                 }
                 else
                 {
-                    console.log('|FAIL for checkbox:|' + currentstyle);
+                    console.log('FAIL for checkbox:|' + currentClass +'|');
                     return failure();
                 }
             });
@@ -197,9 +197,17 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.DeleteContentInTextBox = function (TextboxName) {
         return new Promise((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
+                case 'rolename':
+                    console.log('rolename');
+                    BB_editUserProfile.Click_Delete_Content(success, BB_editRolesRepo.Select_Element_RoleNameTextbox,BB_editRolesRepo.Select_Element_TittleAddNewRole);
+                    break;
                 case 'filterpermissions':
                     console.log('filterpermissions');
                     BB_editUserProfile.Click_Delete_Content(success, BB_editRolesRepo.Select_Element_FilterPermissionsTextbox,BB_editRolesRepo.Select_Element_TittleAddNewRole);
+                    break;
+                case 'filterusers':
+                    console.log('filterusers');
+                    BB_editUserProfile.Click_Delete_Content(success, BB_editRolesRepo.Select_Element_FilterUsersTextbox,BB_editRolesRepo.Select_Element_TittleAddNewRole);
                     break;
                 default:
                     console.log(TextboxName + ' : is not part of switch statement in DeleteContentInTextBox function role editor.');

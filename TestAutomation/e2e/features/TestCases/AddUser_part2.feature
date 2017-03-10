@@ -61,7 +61,6 @@ Feature:  "Add a new User Profile"
       Then I should not see in "userrole" errors displayed
     And I wait
     And I click on Save button in Edit User Profile
-    And I wait
       Then I should see "User Creation Successful" displayed on "UserList" popup
     And I wait
 

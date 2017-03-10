@@ -18,7 +18,7 @@ var BB_UserListRepo = function BB_UserListRepo () {
 
     BB_UserListRepo.prototype.Select_Element_EditGeardIcon = element.all(by.css('div.icon-cog.parent'));
 
-    BB_UserListRepo.prototype.Select_Element_Gear_Activate_Submenu = element(by.linkText('Activate'));
+    BB_UserListRepo.prototype.Select_Element_Gear_Activate_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[9]/action-icon/div/div/ul/li[3]/a'));
 
     BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[9]/action-icon/div/div/ul/li[1]/div'));  //original
     //BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[5]/div[3]/action-icon/div/div/ul/li[1]/div'));  //roles original

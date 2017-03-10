@@ -13,7 +13,7 @@ var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_Automa
 var EyesSetUp = function EyesSetUp(){
 
     EyesSetUp.prototype.EyesInitialSetUp = function (eyes) {
-        eyes.setBranchName('BranchName CulturaLink',1);
+        eyes.setBranchName('BranchName BlackBook',1);
         eyes.setForceFullPageScreenshot(true);
         eyes.setStitchMode(Eyes.StitchMode.CSS);
         //eyes.setMatchLevel('Layout2');
@@ -24,11 +24,11 @@ var EyesSetUp = function EyesSetUp(){
     };
 
     EyesSetUp.prototype.EyesSetBatch = function (eyes , currentOSName, currentBrowserName, currentBrowserVersion, currentWidthTestResolution, currentHeightTestResolution) {
-        eyes.setBatch('"CulturaLink" '+ currentOSName+'  '+ currentBrowserName+ ':'+ currentBrowserVersion +' : ' + currentWidthTestResolution +'X' + currentHeightTestResolution );
+        eyes.setBatch('"BlackBOOk" '+ currentOSName+'  '+ currentBrowserName+ ':'+ currentBrowserVersion +' : ' + currentWidthTestResolution +'X' + currentHeightTestResolution );
     };
 
     EyesSetUp.prototype.EyesOpen_StartTestCase = function (eyes, currentWidthTestResolution, currentHeightTestResolution) {
-        eyes.open(browser, 'App Name: CulturaLink' , 'Test Name: Simple CulturaLink Test', {width: currentWidthTestResolution , height: currentHeightTestResolution});
+        eyes.open(browser, 'App Name: BlackBook' , 'Test Name: Simple BlackBook Test', {width: currentWidthTestResolution , height: currentHeightTestResolution});
     };
 
     EyesSetUp.prototype.EyesClose_EndTestcase = function(eyes){

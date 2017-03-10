@@ -95,11 +95,11 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
             switch (str_TextboxName.toLowerCase()) {
                 case 'firstname':
-                    // console.log(str_TextboxName.toLowerCase());
+                     console.log(str_TextboxName.toLowerCase());
                     // console.log('|'+BB_editUserProfile.firstName+'|');
 
                     if ((BB_editUserProfile.firstName != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.firstName == '' && FilledOrEmptyField == 'empty')) {
-
+                         console.log("dentro: "+str_TextboxName.toLowerCase());
                         if (str_VerifyErrorName == 'Required') {
                             utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName_Require);
                             //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName_Require), 10000);

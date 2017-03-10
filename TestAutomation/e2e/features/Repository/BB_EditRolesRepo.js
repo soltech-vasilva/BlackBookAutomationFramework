@@ -16,9 +16,9 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
 
     BB_EditRolesRepo.prototype.Select_Element_X_button_MessagePopup  = element(by.css('span.pull-right.clear-btn'));
 
-    BB_EditRolesRepo.prototype.Select_Element_Permission_Users_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(0);
-    BB_EditRolesRepo.prototype.Select_Element_Permission_Settings_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(1);
-    BB_EditRolesRepo.prototype.Select_Element_Permission_Roles_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(2);
+    BB_EditRolesRepo.prototype.Select_Element_Permission_Users_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(4);
+    BB_EditRolesRepo.prototype.Select_Element_Permission_Settings_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(2);
+    BB_EditRolesRepo.prototype.Select_Element_Permission_Roles_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(0);
     BB_EditRolesRepo.prototype.Select_Element_RolesIsUser_AllCheckbox  = element.all(by.css('.ag-cell-wrapper'));
     BB_EditRolesRepo.prototype.Select_Element_Permission_AllCheckboxs  =  element.all(by.css('span.ag-group-checkbox'));
     BB_EditRolesRepo.prototype.Select_Element_Permission_GridCheckbox  = element.all(by.css('span.icon-check-square.grid-checkbox-checked.grid-checkbox'));
@@ -30,7 +30,7 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
 
     BB_EditRolesRepo.prototype.Select_Element_FilterPermissionsTextbox = element.all(by.css('input[type="text"]')).get(1);
     BB_EditRolesRepo.prototype.Select_Element_FilterUsersTextbox = element.all(by.css('input[type="text"]')).get(2);
-
+    BB_EditRolesRepo.prototype.Select_Element_RoleNameTextbox = element.all(by.css('input[type="text"]')).get(0);
 
     //Components "ERROR DISPLAY REQUIRE"
 

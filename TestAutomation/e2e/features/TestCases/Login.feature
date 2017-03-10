@@ -52,11 +52,12 @@ Feature: Enter data on "LOGIN" page
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
-#           | admintestemail1@yopmail.com     |   QaAdmin123       |
+#With Role attached
+           | admintestemail1@yopmail.com     |   QaAdmin123       |
            | user1@example.com               |   Password1        |
-    #valid log in Users  BUGS cant see My profile
-         #  | user2@example.com               |   Password1        |
-         #  | user3@example.com               |   Password1        |
+           | user3@example.com               |   Password1        |
+#With No Role attached
+           | user2@example.com               |   Password1        |
 
 ########################################################################################################################
 #                                               TC_Login_B                                                              #
@@ -137,6 +138,7 @@ Feature: Enter data on "LOGIN" page
         #ADDED 2 task
         And I re-enter the same user name and password
         And I re-enter the same user name and password
+        #And I re-enter the same user name and password
           Then I should see "currentEmailAddress" message "Invalid login. Please reset your password." displayed for this "filled" field
         And I wait
 
@@ -213,7 +215,7 @@ Feature: Enter data on "LOGIN" page
       And I click Status Filter
       And I click Inactive in submenu from Status Filter
       And I wait
-      And I click on Gear Icon 1
+      And I click on Gear Icon 1 "admintestemail5@yopmail.com in User List"
       And I click Activate in submenu from Gear Icon
       And I wait
       And I click Avatar Image Button

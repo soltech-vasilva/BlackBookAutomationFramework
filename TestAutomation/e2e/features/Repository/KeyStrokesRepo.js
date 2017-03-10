@@ -4,7 +4,9 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
+var captureBrowserCapabilities = require ('../Page/CaptureBrowserCapabilities.js');
 var protractor = require('protractor');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 var KeyStrokeRepo = function KeyStrokeRepo () {
 
@@ -22,12 +24,21 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
 
     //Keystroke only on windows machine machine (safai is not working even with COMMAND)
     KeyStrokeRepo.prototype.CONTROL_ALL_DELETE = function () {
-        browser.sleep(1000);
 
-       // browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.CONTROL, 'a')).sendKeys( protractor.Key.DELETE).perform();
-        //My Mac computer
-        browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys( protractor.Key.DELETE).perform();
-        browser.sleep(1000);
+        browser.getProcessedConfig().then((config) => {
+           // console.log(config);
+            console.log('config.capabilities.os: |'+config.capabilities.os+'|');
+          //  console.log(" config.capabilities.browserName: " +  config.capabilities.browserName);
+            browser.driver.sleep(1000);
+
+            if (config.capabilities.browserName == 'safari' || config.capabilities.os === undefined) {
+                console.log('Mycomputer');
+                browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys(protractor.Key.DELETE).perform();
+            }
+            else {
+                browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.CONTROL, 'a')).sendKeys(protractor.Key.DELETE).perform();
+            }
+        });
     };
 };
 module.exports = new KeyStrokeRepo();

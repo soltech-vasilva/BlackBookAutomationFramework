@@ -47,35 +47,34 @@ Feature:  "Add a new Role"
 
 
 
-
-
-
-  @TestCases_1
-  Scenario: "TestCases_1" Create a new Role "Basic Account". "No Error" Display
-    And I click on New Role Button in Role List
-    And I enter Role Name ""
-      Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
-      Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
-    And I enter Role Name "Basic Account"
-      Then I should not see in "RoleName" errors displayed in Edit Role
-      Then I should see in "Save" button "disable" in Edit Role
-    And I select Role Market "US Used Car" in Role Editor
-    And I wait
-      Then I should not see in "RoleMarket" errors displayed in Edit Role
-      Then I should see Role Market value "US Used Car"
-      Then I should see in "Save" button "enable" in Edit Role
-    And I enter "Can View User List" on Filter Permissions in Role Editor
-    And I wait
-    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-    And I clear text box selected "FilterPermissions" in Role Editor
-    And I wait
-    And I enter "admintestemail10@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I wait
-    And I click on Save button in Role Editor
-      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    And I wait
-
+#got this on setup
+##  @TestCases_1
+##  Scenario: "TestCases_1" Create a new Role "Basic Account". "No Error" Display
+##    And I click on New Role Button in Role List
+##    And I enter Role Name ""
+##      Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
+##      Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
+##    And I enter Role Name "Basic Account"
+##      Then I should not see in "RoleName" errors displayed in Edit Role
+##      Then I should see in "Save" button "disable" in Edit Role
+##    And I select Role Market "US Used Car" in Role Editor
+##    And I wait
+##      Then I should not see in "RoleMarket" errors displayed in Edit Role
+##      Then I should see Role Market value "US Used Car"
+##      Then I should see in "Save" button "enable" in Edit Role
+##    And I enter "Can View User List" on Filter Permissions in Role Editor
+##    And I wait
+##    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+##    And I clear text box selected "FilterPermissions" in Role Editor
+##    And I wait
+##    And I enter "admintestemail10@yopmail.com" on Filter Users in Role Editor
+##    And I click checkbox on first user found from Filter Users in Role Editor
+##    And I wait
+##    And I click on Save button in Role Editor
+##      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+##    And I wait
+#
+#
   @TestCases_2
   Scenario: "TestCases_2" Create a role with same existing Role Name. "Error" Display "Role was not added, please try again."
     And I click on New Role Button in Role List
@@ -111,7 +110,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "Admin View All Only"
+    And I enter Role Name "F_Admin View All Only"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
@@ -152,7 +151,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "Edit Other Users Basic"
+    And I enter Role Name "G_Edit Other Users Basic"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
@@ -191,7 +190,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "Edit Other Users Basic + Password"
+    And I enter Role Name "H_Edit Other Users Basic + Password"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
@@ -230,7 +229,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "Edit Other Users Basic + Roles"
+    And I enter Role Name "I_Edit Other Users Basic + Roles"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
@@ -269,7 +268,7 @@ Feature:  "Add a new Role"
     Then I should see in "Save" button "disable" in Edit Role
     Then I should see Role Market value "US Used Car"
     Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "Edit Other Users Basic + Roles + Password"
+    And I enter Role Name "J_Edit Other Users Basic + Roles + Password"
     And I wait
     Then I should not see in "RoleName" errors displayed in Edit Role
     Then I should see in "Save" button "enable" in Edit Role

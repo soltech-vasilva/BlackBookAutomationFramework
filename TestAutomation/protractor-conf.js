@@ -9,7 +9,7 @@ exports.config = {
     // ],
     'StopRunAtFail': false,
     'WaitTime': 15000,
-    'BuildTestNumber': '78',
+    'BuildTestNumber': '83',
 
     //Turn off applitool
     'ApplitoolsOn': false,
@@ -18,13 +18,13 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-        //'e2e/features/TestCases/AddUser_part1.feature',
+       // 'e2e/features/TestCases/AddUser_part1.feature'//,
          //'e2e/features/TestCases/AddUser_part2.feature',
-         // 'e2e/features/TestCases/EditUserProfile.feature',
-          // 'e2e/features/TestCases/UsersList.feature',
+          //'e2e/features/TestCases/EditUserProfile.feature'//,
+         //  'e2e/features/TestCases/UsersList.feature'//,
           //'e2e/features/TestCases/Login.feature'//,
        // 'e2e/features/TestCases/EditRoles.feature'//,
-        //'e2e/features/TestCases/Bugs.feature'//,
+        'e2e/features/TestCases/Bugs.feature'//,
     ],
 
 

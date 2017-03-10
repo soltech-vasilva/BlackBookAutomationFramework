@@ -29,8 +29,8 @@ Feature: Enter data on "Edit User Profile"
        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
       And I reload page "https://qa-autobahn.blackbookcloud.com/login"
       And I wait
-      #Remmeber to add permission BUG just to use "My Profile"
-      And I enter my user email address user2@example.com in Login
+      #Remmeber to add permission "CanAdd/EditUser","CanResetUsersPasswords","CanViewOtherUsers","CanViewUserList", "CanAdd/EditRoles","CanViewRoleList"
+      And I enter my user email address user3@example.com in Login
       And I enter my Password Password1 in Login
       And I click Login Button
       And I wait
@@ -481,28 +481,26 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
       |    "       "  | "       " | s"  "s@hot.com            | "           " |   "      "Qa1          |    "      "Qa1       | 1234567Aa       |
 
   @TestCases_C-10
-  Scenario Outline: "@TestCases_C-10" Delete information from Textboxes will throw error "Required" ONLY FIREFOX
-    And I wait
+  Scenario: "@TestCases_C-10" Delete information from Textboxes will throw error "Required"
     When I clear text box selected "firstName"
-      Then I should see "firstName" message "Required" displayed for this "filled" field
+   # And I wait
+      Then I should see "firstName" message "Required" displayed for this "empty" field
     And I clear text box selected "lastName"
-      Then I should see "lastName" message "Required" displayed for this "filled" field
+    #And I wait
+      Then I should see "lastName" message "Required" displayed for this "empty" field
     And I clear text box selected "emailAddress"
-      Then I should see "emailAddress" message "Required" displayed for this "filled" field
+    #And I wait
+      Then I should see "emailAddress" message "Required" displayed for this "empty" field
     And I click Cancel Button in Edit User Profile
     And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
     And I wait
 
-    Examples:
-      | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord             | confirmNewPassWord   |previousPassWord |
-#NewPassword is Empty Field
-      |    "       "  | "       " | s"  "s@hot.com            | "           " |   "      "Qa1          |    "      "Qa1       | 1234567Aa       |
 
    @TestCases_C-11
    Scenario: "@TestCases_C-11" Enter Edit mode for a user "No error display" (BB-611)
-     And I wait
+     #And I wait
      Then I should not see in "firstName" errors displayed
      Then I should not see in "lastName" errors displayed
      Then I should not see in "emailAddress" errors displayed
@@ -511,6 +509,7 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
      Then I should not see in "newPassWord" errors displayed
      Then I should not see in "confirmNewPassWord" errors displayed
      Then I should not see in "userrole" errors displayed
+     And I wait
 
 ###########################################################################################################################
 #####                                             Test cases Reports and Framework                                        #

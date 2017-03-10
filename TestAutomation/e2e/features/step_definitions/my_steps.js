@@ -8,7 +8,7 @@ chai.use(chaiAsPromised);
 
 var Eyes = require('eyes.protractor').Eyes;
 var eyes = new Eyes();
-eyes.setApiKey('zgr3zfZKIc8JyUNkZdxOZv4G4wTcCrYp4PXSG9HE9Ew110');
+eyes.setApiKey('3YYHRcaSI3DcqsNPRFm3WnU1BFg3vP72Ftxe6e8t6iY110');
 
 var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
 var BB_login = require('../Page/BB_Login');
@@ -207,7 +207,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_userList.Click_StatusFilter_Inactive_Submenu();
     });
 
-    this.Given(/^I click on Gear Icon (.*)$/, function (ElementToSelect) {
+    this.Given(/^I click on Gear Icon (.*) "([^"]*)"$/, function (ElementToSelect, arg2) {
         return BB_userList.Click_GearIcon(ElementToSelect);
     });
 
@@ -223,7 +223,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_userList.Click_Gear_View_Submenu();
     });
 
-    this.Given(/^I click Edit from Gear Icon$/, function () {
+    this.Given(/^I click Edit from Gear Icon "([^"]*)"$/, function (arg1) {
         return BB_userList.Click_Gear_Edit_Submenu();
     });
 
@@ -231,6 +231,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_editRoles.Click_SaveButton_RoleEditor ();
     });
 
+    //TODO delete is not used anymore to close pop ups it better to change it to click to close
     this.Given(/^I click X on Message Popup in Role list$/, function ( ) {
         return   BB_editRoles.Click_X_CloseMessagePopup_RoleEditor();
     });
@@ -290,9 +291,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
     ///BUGS FIXES TO TEST OTHER THINGS
     this.Given(/^I wait$/, function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([ browser.driver.sleep(5000).then(()=>{
-                success();
-            })]).then(()=>{});
+            page.executeSequence([ browser.driver.sleep(4000).then(()=>{ success()})
+            ]).then(()=>{});
         });
     });
 
@@ -318,13 +318,13 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I re-enter the same user name and password$/, function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.sleep(2000).then(() => {
-                BB_login.Click_LoginButton();
-            }), browser.driver.sleep(2000).then(() => {
-                BB_login.Click_LoginButton();
-            }), browser.driver.sleep(2000).then(() => {
-                BB_login.Click_LoginButton();
-            }), success()]);
+            page.executeSequence([
+                                BB_login.Click_LoginButton(),
+                                browser.driver.sleep(2000),
+                                BB_login.Click_LoginButton(),
+                                browser.driver.sleep(2000),
+                                BB_login.Click_LoginButton(),
+                                browser.driver.sleep(2000).then(()=>{success()})]).then(()=>{});
         });
     });
 
@@ -535,7 +535,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I click Send Link button$/, function () {
         return new Promise((success, failure)=> {
-             element(by.css('button[type="submit"]')).click();
+             element(by.xpath('//*[@id="login-box"]/div/form/div[2]/div[1]/button')).click();
              success();
         });
     });
@@ -602,7 +602,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.Then(/^I should see \#of Users has increase value for Administration in Role List$/, function () {
         return new Promise((success, failure)=> {
 
-            element.all(by.css('div[colid="users"]')).get(3).getText().then((currentValue)=>{
+            element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue)=>{
                console.log( currentValue);
                numberofUsers++;
 
@@ -623,7 +623,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
           return new Promise((success, failure)=> {
 
-              element.all(by.css('div[colid="users"]')).get(3).getText().then((currentValue)=> {
+              element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue)=> {
                   console.log(currentValue);
                   numberofUsers = currentValue;
                   success();
@@ -822,9 +822,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click View from Gear Icon in Role List$/, function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[5]/div[3]/action-icon/div/div/ul/li[1]/div'))), 5000);
+        browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[2]/div[3]/action-icon/div/div/ul/li[1]/div'))), 5000);
         return new Promise((success, failure)=> {
-            page.executeSequence([element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[5]/div[3]/action-icon/div/div/ul/li[1]/div')).click(), keyStrokesRepo.ENTER(),browser.driver.sleep(1000)]).then(()=> { success();});
+            page.executeSequence([element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[2]/div[3]/action-icon/div/div/ul/li[1]/div')).click(), keyStrokesRepo.ENTER(),browser.driver.sleep(1000)]).then(()=> { success();});
         });
     });
 

@@ -38,7 +38,7 @@ Feature:  "User List"
     And I wait
     And I enter Filter User List admintestemail5@yopmail.com in User List
     And I wait
-    And I click on Gear Icon 1
+    And I click on Gear Icon 1 "admintestemail5@yopmail.com in User List"
     And I click Deactivate in submenu from Gear Icon
     And I wait
 
@@ -49,7 +49,7 @@ Feature:  "User List"
     And I wait
     And I enter Filter User List admintestemail6@yopmail.com in User List
     And I wait
-    And I click on Gear Icon 1
+    And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
     And I click Deactivate in submenu from Gear Icon
     And I wait
 
@@ -62,7 +62,8 @@ Feature:  "User List"
     And I enter Filter User List admintestemail6@yopmail.com in User List
     And I wait
     And I click Inactive in submenu from Status Filter
-    And I click on Gear Icon 1
+    And I wait
+    And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
     And I click Activate in submenu from Gear Icon
     And I wait
 

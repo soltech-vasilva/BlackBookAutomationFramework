@@ -125,19 +125,19 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         return new Promise((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
                 case 'firstname':
-                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_FirstNameTextbox);
+                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_FirstNameTextbox,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText);
                     break;
                 case 'lastname':
-                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_LastNameTextbox);
+                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_LastNameTextbox,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText);
                     break;
                 case 'emailaddress':
-                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_EmailAddressTextbox);
+                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_EmailAddressTextbox,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText);
                     break;
                 case 'newpassword':
-                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_NewPasswordTextbox);
+                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_NewPasswordTextbox,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText);
                     break;
                 case 'confirmnewpassword':
-                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox);
+                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText);
                     break;
                 default:
                     console.log(TextboxName + ' : is not part of switch statement in DeleteContentInTextBox function.');
@@ -148,7 +148,6 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
 
     BB_EditUserProfile.prototype.Click_Delete_Content = function(success, elementToClick, elementTitlePage) {
         elementToClick.click();
-        //it works on Firefox only
         keyStrokesRepo.CONTROL_ALL_DELETE();
         return BB_EditUserProfile.prototype.Click_TittleofPage(elementTitlePage, success);
     };

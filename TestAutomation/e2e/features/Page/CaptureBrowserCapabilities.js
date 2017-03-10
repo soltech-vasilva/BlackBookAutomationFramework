@@ -22,7 +22,7 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
 
         var name = '';
 
-       return browser.wait (  browser.getCapabilities().then(function (capability) {
+       return browser.driver.wait (  browser.driver.getCapabilities().then(function (capability) {
 
             try {
                 name = protractorConfig.config.capabilities.browserName;
@@ -35,7 +35,7 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
 
             if (eaqualOrNot == true) {
                 if (name.toLowerCase() == BrowserCompare) {
-                    browser.actions().mouseMove(element).perform();
+                    browser.driver.actions().mouseMove(element).perform();
                     console.log("FOUNT IT SAFARI");
                 }
             }
@@ -51,7 +51,7 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
 
     CaptureBrowserCapabilities.prototype.captureCurrentBrowserCapabilities = function (eyes) {
 
-        browser.getCapabilities().then(function (capability) {
+        browser.driver.getCapabilities().then(function (capability) {
 
             try {
                 this.currentBrowserName = protractorConfig.config.capabilities.browserName;
