@@ -20,7 +20,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 1584062
+              "duration": 2854727
             },
             "match": {}
           },
@@ -30,7 +30,7 @@
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 1031400
+              "duration": 1300490
             },
             "match": {}
           },
@@ -39,7 +39,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 586586
+              "duration": 605011
             },
             "match": {}
           }
@@ -68,8 +68,13 @@
             "keyword": "Given "
           },
           {
-            "name": "I wait",
+            "name": "I verify BlackBook \"Login\" page with Applitools",
             "line": 14,
+            "keyword": "Then "
+          },
+          {
+            "name": "I wait",
+            "line": 15,
             "keyword": "And "
           }
         ]
@@ -77,14 +82,14 @@
       {
         "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
         "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
-        "line": 45,
+        "line": 58,
         "keyword": "Scenario",
         "description": "",
         "type": "scenario",
         "tags": [
           {
             "name": "@TC_Login_A",
-            "line": 20
+            "line": 21
           }
         ],
         "steps": [
@@ -93,7 +98,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 190112
+              "duration": 273579
             },
             "match": {}
           },
@@ -103,187 +108,297 @@
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 24993756401
+              "duration": 4192903763
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Login\" page with Applitools",
+            "line": 14,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 14857436860
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 14,
+            "line": 15,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5009936060
+              "duration": 5005487676
             },
             "match": {}
           },
           {
             "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/login\"",
-            "line": 23,
+            "line": 24,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 7850640405
+              "duration": 7420314115
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 24,
+            "line": 25,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5007353534
+              "duration": 5003999018
             },
             "match": {}
           },
           {
             "name": "I enter my user email address user1@example.com in Login",
-            "line": 25,
+            "line": 26,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 16379739267
+              "duration": 11998986197
             },
             "match": {}
           },
           {
             "name": "I enter my Password Password1 in Login",
-            "line": 26,
+            "line": 27,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 8500236558
+              "duration": 6492746362
             },
             "match": {}
           },
           {
             "name": "I click Login Button",
-            "line": 27,
+            "line": 28,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 921883931
+              "duration": 870903936
             },
             "match": {}
           },
           {
             "name": "I should not see in \"currentEmailAddress\" errors displayed",
-            "line": 28,
+            "line": 29,
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 5706794668
+              "duration": 5526993720
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 29,
+            "line": 30,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5004132514
+              "duration": 5004207360
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Home\" page with Applitools",
+            "line": 31,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7653438301
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 32,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 755797
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Admin Tab-Submenu (Administartor Account)\" page with Applitools",
+            "line": 33,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9197959474
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 34,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 871425288
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Role List\" page with Applitools",
+            "line": 35,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7394645529
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 36,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 411977
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2945781943
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"User List\" page with Applitools",
+            "line": 38,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 8354310695
             },
             "match": {}
           },
           {
             "name": "I click Avatar Image Button",
-            "line": 30,
+            "line": 42,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2057068560
+              "duration": 1505839608
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Avatar button-Submenu\" page with Applitools",
+            "line": 43,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 8016608711
             },
             "match": {}
           },
           {
             "name": "I click My Profile sub menu from Avatar",
-            "line": 31,
+            "line": 44,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1434396702
+              "duration": 960753005
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 32,
+            "line": 45,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5004835130
+              "duration": 5006377350
             },
             "match": {}
           },
           {
             "name": "I click Edit Button in Edit User Profile",
-            "line": 33,
+            "line": 46,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 912275
+              "duration": 2215293
             },
             "match": {}
           },
           {
             "name": "I click Reset Button in Edit User Profile",
-            "line": 34,
+            "line": 47,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5216875406
+              "duration": 2974049096
             },
             "match": {}
           },
           {
             "name": "I click Cancel Button in Edit User Profile",
-            "line": 35,
+            "line": 48,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1338736716
+              "duration": 1026579452
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 36,
+            "line": 49,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5005171916
+              "duration": 5006027996
             },
             "match": {}
           },
           {
             "name": "I click Avatar Image Button",
-            "line": 37,
+            "line": 50,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2164820170
+              "duration": 2051241263
             },
             "match": {}
           },
           {
             "name": "I click Logout sub menu from Avatar",
-            "line": 38,
+            "line": 51,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1227105766
+              "duration": 1216713481
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Login\" page with Applitools",
+            "line": 52,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 14043974110
             },
             "match": {}
           },
           {
             "name": "I wait",
-            "line": 39,
+            "line": 53,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5005876605
+              "duration": 5002362029
             },
             "match": {}
           },
@@ -292,231 +407,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 463504
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
-        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
-        "line": 46,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_A",
-            "line": 20
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 196861
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 13,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 19636133632
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 14,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5004398976
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/login\"",
-            "line": 23,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 7973843532
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 24,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5003934276
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address user1@example.com in Login",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 17640174140
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 26,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 11066270929
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 27,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1354071180
-            },
-            "match": {}
-          },
-          {
-            "name": "I should not see in \"currentEmailAddress\" errors displayed",
-            "line": 28,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 5734812025
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 29,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5004460672
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 30,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2324942046
-            },
-            "match": {}
-          },
-          {
-            "name": "I click My Profile sub menu from Avatar",
-            "line": 31,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1368831042
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 32,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5004860507
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Edit Button in Edit User Profile",
-            "line": 33,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1487880
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Reset Button in Edit User Profile",
-            "line": 34,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 3998469171
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Cancel Button in Edit User Profile",
-            "line": 35,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1536163837
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 36,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5005657453
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 37,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2463318128
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Logout sub menu from Avatar",
-            "line": 38,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1334831330
-            },
-            "match": {}
-          },
-          {
-            "name": "I wait",
-            "line": 39,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 5003557082
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 624779
+              "duration": 474874
             },
             "match": {}
           }
@@ -545,7 +436,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 721708
+              "duration": 161918
             },
             "match": {}
           },
@@ -555,7 +446,7 @@
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 1200696
+              "duration": 464817
             },
             "match": {}
           },
@@ -564,7 +455,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 116642
+              "duration": 81582
             },
             "match": {}
           }

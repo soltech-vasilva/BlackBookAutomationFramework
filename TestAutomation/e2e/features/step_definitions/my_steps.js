@@ -910,6 +910,14 @@ var myBlackBookSteps = function myBlackBookSteps() {
         captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
         callback();
     });
+
+    this.Then(/^I verify BlackBook "([^"]*)" page with Applitools$/, function (namePage) {
+        return new Promise((success, failure)=> {
+            page.executeSequence([eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn)]).then(() => {
+                success()
+            });
+        });
+    });
 };
 
 module.exports = myBlackBookSteps;

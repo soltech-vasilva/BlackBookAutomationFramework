@@ -10,7 +10,10 @@ var BB_LoginRepo = function BB_LoginRepo () {
 
     //Strings
     BB_LoginRepo.prototype.EyesVerify_BB_Login = 'BlackBook LogIn';
-    BB_LoginRepo.prototype.BlackBookUrl = 'https://qa-autobahn.blackbookcloud.com';
+    //BB_LoginRepo.prototype.BlackBookUrl = 'https://qa-autobahn.blackbookcloud.com';
+    //TODO take this out above real
+    BB_LoginRepo.prototype.BlackBookUrl = 'https://qa-autobahn.blackbookcloud.com/login';
+
     //Components TextBox
     BB_LoginRepo.prototype.Select_Element_UserEmailAddressTextbox  =  element(by.css('input[name="username"]'));
     BB_LoginRepo.prototype.Select_Element_UserPasswordTextbox = element(by.css('input[name="password"]'));
