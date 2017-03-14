@@ -15,19 +15,20 @@ var VerifyUserInfo = function VerifyUserInfo() {
     VerifyUserInfo.prototype.ValueStored = '';
 
     VerifyUserInfo.prototype.AssertElementAttributeDisplay = function (Element,  ValueCompare , TextboxName, success, failure) {
-        return Element.getAttribute("value").then(function (currentValue) {
-            this.ValueStored = currentValue;
-            //console.log('Value Stored:|' + this.ValueStored.toString() + '|');
-            if (this.ValueStored == ValueCompare) {
-                //if (this.ValueEntered == 'dd') {
-                Element.click();
-                return success();
-            }
-            else {
-                console.log(TextboxName+' value stored: |'+this.ValueStored+'| is not equal to Value (Compare): |'+ ValueCompare+'|');
-                return failure ();
-            }
-        });
+
+            return Element.getAttribute("value").then(function (currentValue) {
+                this.ValueStored = currentValue;
+                //console.log('Value Stored:|' + this.ValueStored.toString() + '|');
+                if (this.ValueStored == ValueCompare) {
+                    //if (this.ValueEntered == 'dd') {
+                    Element.click();
+                    return success();
+                }
+                else {
+                    console.log(TextboxName + ' value stored: |' + this.ValueStored + '| is not equal to Value (Compare): |' + ValueCompare + '|');
+                    return failure();
+                }
+            });
     };
 
     VerifyUserInfo.prototype.Verify_UserInformation = function (TextboxName , ValueCompare) {
@@ -47,9 +48,9 @@ var VerifyUserInfo = function VerifyUserInfo() {
                     break;
 
                 case 'emailaddress':
-                    utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox);
-                    //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_EmailAddressTextbox), 10000);
-                    VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_EmailAddressTextbox, ValueCompare, TextboxName, success, failure);
+                        utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox);
+                        //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_EmailAddressTextbox), 10000);
+                        VerifyUserInfo.prototype.AssertElementAttributeDisplay(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 case 'phonenumber':

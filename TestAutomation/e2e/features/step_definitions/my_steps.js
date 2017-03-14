@@ -71,12 +71,13 @@ var myBlackBookSteps = function myBlackBookSteps() {
     var startTime = new Date().getTime();
 
     this.Before(function () {
-        utilities.ElapsedTime(startTime);
-        return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
+       return utilities.ElapsedTime(startTime);
+        // return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
     });
 
     this.After(function (scenario, callback) {
-        eyesSetUp.EyesClose_EndTestcase(eyes);
+
+
         //TODO: not working for picture but it is needed for callback()
         // if (scenario.isFailed()) {
         //     browser.takeScreenshot().then(function (base64png) {
@@ -91,10 +92,14 @@ var myBlackBookSteps = function myBlackBookSteps() {
         //     console.log("PASS");
         //     callback();
         // }
+
+
+        //eyesSetUp.EyesClose_EndTestcase(eyes);
         if (scenario.isFailed()) {
-            if (protractorConfig.config.ApplitoolsOn == true) {
-                 eyes.abortIfNotClosed();
-            }
+            // if (protractorConfig.config.ApplitoolsOn == true) {
+            //     console.log("FAIL ABORT EYES");
+            //      eyes.abortIfNotClosed();
+            // }
             utilities.ElapsedTime(startTime);
             console.log("\r\nSenario Failed: Missing Element in Screen");
             callback();
@@ -102,9 +107,6 @@ var myBlackBookSteps = function myBlackBookSteps() {
         else {
             utilities.ElapsedTime(startTime);
             console.log("PASS");
-            if (protractorConfig.config.ApplitoolsOn == true) {
-                eyes.abortIfNotClosed();
-            }
             callback();
         }
     });
@@ -303,14 +305,16 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I reload page "([^"]*)"$/, function (URL) {
+
         return new Promise((success, failure)=> {
             browser.ignoreSynchronization = true;
             page.executeSequence([browser.driver.get(URL), browser.driver.sleep(4000).then(()=>{
 
                 browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
                     var currentURL = getCurrentURL.split("://");
+                    var getURL = URL.toString().split("://");
 
-                    if (currentURL[1].trim() != 'qa-autobahn.blackbookcloud.com/login') {
+                    if (currentURL[1].trim() != getURL[1].trim()) {
                         browser.ignoreSynchronization = true;
                         page.executeSequence([browser.driver.get(URL), browser.driver.sleep(4000)]).then(()=>{success();});
                     }
@@ -675,27 +679,43 @@ var myBlackBookSteps = function myBlackBookSteps() {
             switch (roleMarketSelection) {
 
                 case "Select One":
-                    element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click();
-                    browser.driver.sleep(1000);
-                    browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-                    browser.driver.sleep(1000);
-                    success();
+                    page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click(),
+                                            browser.driver.sleep(1000),
+                                            browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
+                                            browser.driver.sleep(1000) ]).then(()=>{ success();});
+                    // element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click();
+                    // browser.driver.sleep(1000);
+                    // browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+                    // browser.driver.sleep(1000);
+                    // success();
                     break;
 
                 case "US Used Car":
-                    element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[11]')).click();
-                    browser.driver.sleep(1000);
-                    browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-                    browser.driver.sleep(1000);
-                    success();
+
+                    page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[11]')).click(),
+                        browser.driver.sleep(1000),
+                        browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
+                        browser.driver.sleep(1000) ]).then(()=>{ success();});
+
+                    // element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[11]')).click();
+                    // browser.driver.sleep(1000);
+                    // browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+                    // browser.driver.sleep(1000);
+                    // success();
                     break;
 
                 case "Canada Used Car":
-                    element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[5]')).click();
-                    browser.driver.sleep(1000);
-                    browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-                    browser.driver.sleep(1000);
-                    success();
+
+                    page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[5]')).click(),
+                        browser.driver.sleep(1000),
+                        browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
+                        browser.driver.sleep(1000) ]).then(()=>{ success();});
+
+                    // element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[5]')).click();
+                    // browser.driver.sleep(1000);
+                    // browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+                    // browser.driver.sleep(1000);
+                    // success();
                     break;
 
                 default:
@@ -879,6 +899,16 @@ var myBlackBookSteps = function myBlackBookSteps() {
             // browser.driver.sleep(3000);
             // success();
             //});
+    });
+
+    this.Given(/^I END test suite/, function (callback) {
+        eyesSetUp.EyesClose_EndTestcase(eyes);
+        callback();
+    });
+
+    this.Given(/^I START test suite/, function (callback) {
+        captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
+        callback();
     });
 };
 

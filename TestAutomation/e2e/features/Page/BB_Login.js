@@ -37,8 +37,7 @@ var BB_Login = function BB_Login() {
                         browser.driver.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
                     }
                     //TODO prueba
-                    //eyesSetUp.EyesCheckWindow(eyes, BB_loginRepo.EyesVerify_BB_Login, protractorConfig.config.ApplitoolsOn);
-                    success();
+                    page.executeSequence([eyesSetUp.EyesCheckWindow(eyes, BB_loginRepo.EyesVerify_BB_Login, protractorConfig.config.ApplitoolsOn)]).then(()=>{success()});
                 });
         });
     };

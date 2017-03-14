@@ -41,8 +41,10 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
 
     BB_EditUserProfileRepo.prototype.Select_xpath_ERRORMESSAGE_ConfirmNewPassword_PassDontMatch = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[7]/div[3]/div/error-msg/span');
     BB_EditUserProfileRepo.prototype.Select_xpath_ERRORMESSAGE_ConfirmNewPassword_Require = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[7]/div[3]/div/span');
+
     BB_EditUserProfileRepo.prototype.Select_xpath_ERRORMESSAGE_PreviousPassword_Require = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[7]/div[1]/div/span');
     BB_EditUserProfileRepo.prototype.Select_xpath_ERRORMESSAGE_PreviousPassword_Leastbe8Character = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[7]/div[1]/div/error-msg/span');
+
     BB_EditUserProfileRepo.prototype.Select_xpath_ERRORMESSAGE_UserRole = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[3]/div[4]/span');
 
     BB_EditUserProfileRepo.prototype.Select_Element_ERRORMESSAGE_FirstName_SpacesAreInvalidCharacters = element(this.Select_Xpath_ERRORMESSAGE_FirstName_SpacesAreInvalidCharacters);

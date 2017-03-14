@@ -54,13 +54,13 @@ exports.config = {
     // 'width': 1338,
     // 'height': 666,
 
-    // //Test 2 on this resolution (Mac max resolution)
-    // 'width': 1814,
-    // 'height': 974,
+    //Test 2 on this resolution (Mac max resolution)
+    'width': 1814,
+    'height': 974,
 
-    // //windows all version max resolution
-    'width': 1942,
-    'height': 1430,
+    // // //windows all version max resolution
+    // 'width': 1942,
+    // 'height': 1430,
 
     'commonCapabilities': {
        // 'build': ' #169| Run: IE| Test: "User List"| Date: ' + new Date().toString(),

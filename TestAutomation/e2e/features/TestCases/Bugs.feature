@@ -407,6 +407,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click checkbox  "0" "Users" Permission row in Role Editor
     And I wait
     And I select Role Market "US Used Car" in Role Editor
+    And I wait
     And I click on Save button in Role Editor
       Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     And I wait
@@ -537,6 +538,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Cancel Button from Edit Roles
     And I click on Gear Icon 5 "RoleName6 in Role List"
     And I click Edit from Gear Icon "in Role List"
+    And I wait
       Then I should see Permissions "Users" checkbox "checked" in Role Editor
       Then I should see Permissions "Settings" checkbox "unchecked" in Role Editor
       Then I should see Permissions "Roles" checkbox "unchecked" in Role Editor
@@ -710,6 +712,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on New Role Button in Role List
     And I enter Role Name "RoleName8"
     And I select Role Market "US Used Car" in Role Editor
+    And I wait
     And I click on Save button in Role Editor
     And I wait
       Then I should see "Role has been successfully added" displayed on "EditRoles" popup

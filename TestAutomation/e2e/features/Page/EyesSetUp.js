@@ -9,6 +9,7 @@ chai.use(chaiAsPromised);
 var Eyes = require('eyes.protractor').Eyes;
 var request = require("request");
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var page = require ('../Page/Page_Objects');
 
 var EyesSetUp = function EyesSetUp(){
 
@@ -32,27 +33,24 @@ var EyesSetUp = function EyesSetUp(){
     };
 
     EyesSetUp.prototype.EyesClose_EndTestcase = function(eyes){
+
         if (protractorConfig.config.ApplitoolsOn == true) {
-            eyes.close();
             console.log("EYE close");
+            browser.driver.wait(eyes.close(false).then(function (testResults) {
+                // request({
+                //     uri: "https://soltech2:mnKfscqSMQ8C7jFfZR2Y@www.browserstack.com/automate/sessions/<session-id>.json",
+                //     method: "PUT",
+                //     form: {"status": "completed", "reason": ""}
+                // });
+                // console.log('testResults:'+ request);
+            }));
         }
-        //real just testing above statement
-        // if (protractorConfig.config.ApplitoolsOn == true) {
-        //     eyes.close(false).then(function (testResults) {
-        //         request({
-        //             uri: "https://victorsilva8:xCzjDLuovykUS3dzL6tK@www.browserstack.com/automate/sessions/<session-id>.json",
-        //             method: "PUT",
-        //             form: {"status": "completed", "reason": ""}
-        //         });
-        //         console.log(testResults);
-        //     });
-        // }
     };
 
     EyesSetUp.prototype.EyesCheckWindow = function (eyes, verifyScreenElementName , isBooleanApplitoolsOn ) {
         if (isBooleanApplitoolsOn == true) {
            // eyes.checkWindow(BB_editUserProfileRepo.EyesVerify_BB_Dashboard);
-            eyes.checkWindow(verifyScreenElementName);
+            page.executeSequence([eyes.checkWindow(verifyScreenElementName).then(()=>{ console.log("before sleep");}), browser.driver.sleep(2000).then(()=>{ console.log("after sleep");})]).then(( )=>{console.log("Capture:"+verifyScreenElementName)});
         }
     }
 };

@@ -17,37 +17,37 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
     CaptureBrowserCapabilities.prototype.currentOSVersion = '';
     CaptureBrowserCapabilities.prototype.currentWidthTestResolution = '';
     CaptureBrowserCapabilities.prototype.currentHeightTestResolution = '';
-
-    CaptureBrowserCapabilities.prototype.captureCurrentBrowser = function (BrowserCompare, element, eaqualOrNot ) {
-
-        var name = '';
-
-       return browser.driver.wait (  browser.driver.getCapabilities().then(function (capability) {
-
-            try {
-                name = protractorConfig.config.capabilities.browserName;
-            }
-            catch (e) {
-                name = capability.get('browserName');
-            }
-
-            console.log(name);
-
-            if (eaqualOrNot == true) {
-                if (name.toLowerCase() == BrowserCompare) {
-                    browser.driver.actions().mouseMove(element).perform();
-                    console.log("FOUNT IT SAFARI");
-                }
-            }
-            else {
-                if (name.toLowerCase() != BrowserCompare) {
-                    console.log("NOT: SAFARI");
-                }
-            }
-
-            return name;
-        }));
-    };
+    //
+    // CaptureBrowserCapabilities.prototype.captureCurrentBrowser = function (BrowserCompare, element, eaqualOrNot ) {
+    //
+    //     var name = '';
+    //
+    //    return browser.driver.wait (  browser.driver.getCapabilities().then(function (capability) {
+    //
+    //         try {
+    //             name = protractorConfig.config.capabilities.browserName;
+    //         }
+    //         catch (e) {
+    //             name = capability.get('browserName');
+    //         }
+    //
+    //         console.log(name);
+    //
+    //         if (eaqualOrNot == true) {
+    //             if (name.toLowerCase() == BrowserCompare) {
+    //                 browser.driver.actions().mouseMove(element).perform();
+    //                 console.log("FOUNT IT SAFARI");
+    //             }
+    //         }
+    //         else {
+    //             if (name.toLowerCase() != BrowserCompare) {
+    //                 console.log("NOT: SAFARI");
+    //             }
+    //         }
+    //
+    //         return name;
+    //     }));
+    // };
 
     CaptureBrowserCapabilities.prototype.captureCurrentBrowserCapabilities = function (eyes) {
 
@@ -104,6 +104,7 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
             // console.log(this.currentOSVersion);
 
             if (protractorConfig.config.ApplitoolsOn == true) {
+                console.log('START EYES');
                 eyesSetUp.EyesInitialSetUp(eyes);
                 eyesSetUp.EyesOpen_StartTestCase(eyes, this.currentWidthTestResolution, this.currentHeightTestResolution);
                 eyesSetUp.EyesSetBaseline(eyes, this.currentBrowserName, this.currentBrowserVersion, this.currentWidthTestResolution, this.currentHeightTestResolution);

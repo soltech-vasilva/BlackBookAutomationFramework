@@ -38,7 +38,7 @@ Scenario: "Setup Roles"
   And I clear text box selected "FilterUsers" in Role Editor
   And I wait
   And I click on Save button in Role Editor
-    #Then I should see "Role successfully updated" displayed on "EditRoles" popup
+    Then I should see "Role successfully updated" displayed on "EditRoles" popup
   And I wait
       #Editor Role Edit
   And I click on Admin Tab
@@ -76,7 +76,7 @@ Scenario: "Setup Roles"
   And I clear text box selected "FilterUsers" in Role Editor
   And I wait
   And I click on Save button in Role Editor
-    #Then I should see "Role successfully updated" displayed on "EditRoles" popup
+    Then I should see "Role successfully updated" displayed on "EditRoles" popup
   And I wait
   And I click on Admin Tab
   And I click on Roles submenu from Admin Tab
@@ -94,5 +94,5 @@ Scenario: "Setup Roles"
   And I click checkbox on first user found from Filter Users in Role Editor
   And I wait
   And I click on Save button in Role Editor
-    #Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
   And I wait
