@@ -19,8 +19,9 @@ Feature: Enter data on "LOGIN" page
 
   -BUG: not loading the page correctly , I am adding reload page.
   
-#  Background:
-    #Given I enter BlackBook Website
+  Background:
+  Given I enter BlackBook Login Website
+  And I wait
 
 #######################################################################################################################
 #                                             TC_Login_A                                                              #
@@ -28,8 +29,6 @@ Feature: Enter data on "LOGIN" page
 
   @TC_Login_A
   Scenario Outline: "@TC_Login_A" Enter good data for Login Page (NO ERRORS) display
-    Given I enter BlackBook Login Website
-    And I wait
      #BUG ADDED THIS TO CONTINUE
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
@@ -65,8 +64,6 @@ Feature: Enter data on "LOGIN" page
 
   @TC_Login_B-1
   Scenario Outline: "@TC_Login_B-1" Enter nothing on email/User for Login Page will throw error "Email Is Required"
-    Given I enter BlackBook Login Website
-    And I wait
        #BUG ADDED THIS TO CONTINUE
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
@@ -84,8 +81,6 @@ Feature: Enter data on "LOGIN" page
 
    @TC_Login_B-2
    Scenario Outline: "@TC_Login_B-2" Enter bad data on email for Login Page will throw error "Invalid log in. Please contact your administrator."
-     Given I enter BlackBook Login Website
-     And I wait
         #BUG ADDED THIS TO CONTINUE
      And I reload page "https://qa-autobahn.blackbookcloud.com/login"
      And I wait
@@ -109,8 +104,6 @@ Feature: Enter data on "LOGIN" page
 
   @TC_Login_B-3
   Scenario Outline: "@TC_Login_B-3" Enter bad data on password for Login Page will throw error ("Invalid Login. Please try again." first time entering bad password)
-     Given I enter BlackBook Login Website
-    And I wait
        #BUG ADDED THIS TO CONTINUE
      And I reload page "https://qa-autobahn.blackbookcloud.com/login"
      And I wait
@@ -127,8 +120,6 @@ Feature: Enter data on "LOGIN" page
 
       @TC_Login_B-4
       Scenario Outline: "@TC_Login_B-4" Enter invalid login 6 times for Login Page will throw error "Invalid login. Please reset your password."
-     Given I enter BlackBook Login Website
-        And I wait
            #BUG ADDED THIS TO CONTINUE
         And I reload page "https://qa-autobahn.blackbookcloud.com/login"
         And I wait
@@ -154,8 +145,6 @@ Feature: Enter data on "LOGIN" page
 
   @TC_Login_C
   Scenario Outline: "@TC_Login_C" Enter nothing on Password for Login Page will throw error "Password Is Required"
-    Given I enter BlackBook Login Website
-    And I wait
        #BUG ADDED THIS TO CONTINUE
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
@@ -176,8 +165,6 @@ Feature: Enter data on "LOGIN" page
 #########################################################################################################################
     @TC_Login_D
   Scenario Outline: "@TC_Login_D" Enter a Deactivated account for Login Page will throw error "Unable to log in. Please contact your administrator." (Require  @TestCases_A-1 Userlist).
-    Given I enter BlackBook Login Website
-      And I wait
        #BUG ADDED THIS TO CONTINUE
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
@@ -197,9 +184,6 @@ Feature: Enter data on "LOGIN" page
 #########################################################################################################################
   @TC_Login_E
   Scenario Outline: "@TC_Login_E" Activate a Deactivated account.Then, Login with Account. (NO ERROR)
-
-    Given I enter BlackBook Login Website
-    And I wait
        #BUG ADDED THIS TO CONTINUE
        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
       And I reload page "https://qa-autobahn.blackbookcloud.com/login"

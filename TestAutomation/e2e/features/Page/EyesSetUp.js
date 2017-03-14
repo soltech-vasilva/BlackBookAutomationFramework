@@ -32,17 +32,21 @@ var EyesSetUp = function EyesSetUp(){
     };
 
     EyesSetUp.prototype.EyesClose_EndTestcase = function(eyes){
-        //eyes.close();
         if (protractorConfig.config.ApplitoolsOn == true) {
-            eyes.close(false).then(function (testResults) {
-                request({
-                    uri: "https://victorsilva8:xCzjDLuovykUS3dzL6tK@www.browserstack.com/automate/sessions/<session-id>.json",
-                    method: "PUT",
-                    form: {"status": "completed", "reason": ""}
-                });
-                console.log(testResults);
-            });
+            eyes.close();
+            console.log("EYE close");
         }
+        //real just testing above statement
+        // if (protractorConfig.config.ApplitoolsOn == true) {
+        //     eyes.close(false).then(function (testResults) {
+        //         request({
+        //             uri: "https://victorsilva8:xCzjDLuovykUS3dzL6tK@www.browserstack.com/automate/sessions/<session-id>.json",
+        //             method: "PUT",
+        //             form: {"status": "completed", "reason": ""}
+        //         });
+        //         console.log(testResults);
+        //     });
+        // }
     };
 
     EyesSetUp.prototype.EyesCheckWindow = function (eyes, verifyScreenElementName , isBooleanApplitoolsOn ) {

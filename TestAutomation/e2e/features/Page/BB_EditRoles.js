@@ -20,19 +20,37 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.RoleName = '';
 
     BB_EditRoles.prototype.Enter_RoleName_inForm = function (roleNme) {
-        this.RoleName =   utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString());
-
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_editRolesRepo.Select_Element_RoleNameTextbox), protractorConfig.config.WaitTime);
-        BB_editRolesRepo.Select_Element_RoleNameTextbox.click();
 
         return new Promise((success, failure)=> {
-            if (this.RoleName != '') {
-                BB_editRolesRepo.Select_Element_RoleNameTextbox.sendKeys(this.RoleName);
-                page.executeSequence([utilities.VerifyValueEntered_RetypeValue( BB_editRolesRepo.Select_Element_RoleNameTextbox, this.RoleName)]).then(()=>{});
-            }
-
-            BB_editUserProfile.Click_TittleofPage(BB_editRolesRepo.Select_Element_TittleAddNewRole ,success);
+            page.executeSequence([
+                this.RoleName = utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString()),
+                browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_RoleNameTextbox), protractorConfig.config.WaitTime),
+                BB_editRolesRepo.Select_Element_RoleNameTextbox.click().then(() => {
+                    if (this.RoleName != '') {
+                        BB_editRolesRepo.Select_Element_RoleNameTextbox.sendKeys(this.RoleName);
+                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editRolesRepo.Select_Element_RoleNameTextbox, this.RoleName)]).then(() => {
+                        });
+                    }
+                })
+            ]).then(() => {
+                BB_editUserProfile.Click_TittleofPage(BB_editRolesRepo.Select_Element_TittleAddNewRole, success)
+            });
         });
+
+
+        // this.RoleName =   utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString());
+        //
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_editRolesRepo.Select_Element_RoleNameTextbox), protractorConfig.config.WaitTime);
+        // BB_editRolesRepo.Select_Element_RoleNameTextbox.click();
+        //
+        // return new Promise((success, failure)=> {
+        //     if (this.RoleName != '') {
+        //         BB_editRolesRepo.Select_Element_RoleNameTextbox.sendKeys(this.RoleName);
+        //         page.executeSequence([utilities.VerifyValueEntered_RetypeValue( BB_editRolesRepo.Select_Element_RoleNameTextbox, this.RoleName)]).then(()=>{});
+        //     }
+        //
+        //     BB_editUserProfile.Click_TittleofPage(BB_editRolesRepo.Select_Element_TittleAddNewRole ,success);
+        // });
     };
 
     BB_EditRoles.prototype.Click_SaveButton_RoleEditor = function () {

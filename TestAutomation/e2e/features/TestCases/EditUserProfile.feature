@@ -45,7 +45,6 @@ Feature: Enter data on "Edit User Profile"
 #######################################################################################################################
 @TestCases_A
   Scenario Outline: "@TestCases_A" Enter good User Profile data. "No Error" display
-    And I wait
   When I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
       Then I should not see in "firstName" errors displayed
@@ -121,8 +120,7 @@ Feature: Enter data on "Edit User Profile"
 #######################################################################################################################
 @TestCases_B-1
   Scenario Outline: "@TestCases_B-1" Enter wrong User Profile Email address will throw error "Invalid email address"
-    And I wait
-  And I click Reset Button in Edit User Profile
+    And I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
     And I enter my last name <lastName> in Form
     And I enter my email address <emailAddress> in Form
@@ -152,7 +150,6 @@ Feature: Enter data on "Edit User Profile"
 
 @TestCases_B-2
 Scenario Outline: "@TestCases_B-2" Enter wrong User Profile phone number will throw error "Must be a valid 10 digit number"
-  And I wait
   And I click Reset Button in Edit User Profile
   And I enter my first name <firstName> in Form
   And I enter my last name <lastName> in Form
@@ -181,7 +178,6 @@ Scenario Outline: "@TestCases_B-2" Enter wrong User Profile phone number will th
 
 @TestCases_B-3
 Scenario Outline: "@TestCases_B-3" Enter wrong User Profile New Password and Confirm New Password will throw error "Password must be at least 8 characters, contain a number, and mixed case letters." and "Passwords do not match"
-  And I wait
   And I click Reset Button in Edit User Profile
   And I enter my first name <firstName> in Form
   And I enter my last name <lastName> in Form
@@ -210,7 +206,6 @@ Scenario Outline: "@TestCases_B-3" Enter wrong User Profile New Password and Con
 
 @TestCases_B-4
 Scenario Outline: "@TestCases_B-4" Enter wrong User Profile "New Password" will throw error  "Password must be at least 8 characters, contain a number, and mixed case letters." but Confirm Password is the same "NO ERROR"
-  And I wait
   And I click Reset Button in Edit User Profile
   And I enter my first name <firstName> in Form
   And I enter my last name <lastName> in Form
@@ -237,7 +232,6 @@ Examples:
 ######################################################################################################################
 @TestCases_C-1
 Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw error "Required" for all fields
-  And I wait
   And I click Reset Button in Edit User Profile
   And I enter my first name <firstName> in Form
     But I enter "nothing to first name"
@@ -273,7 +267,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 
   @TestCases_C-2
   Scenario Outline: "@TestCases_C-2" Enter empty firstName  will throw error "Required"
-    And I wait
     And I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
       But I enter "nothing to first name"
@@ -296,7 +289,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 
     @TestCases_C-3
     Scenario Outline: "@TestCases_C-3" Enter empty lastName  will throw error "Required"
-      And I wait
       And I click Reset Button in Edit User Profile
       And I enter my first name <firstName> in Form
       And I enter my last name <lastName> in Form
@@ -319,7 +311,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 
   @TestCases_C-4
   Scenario Outline: "@TestCases_C-4" Enter empty emailAddress  will throw error "Required"
-    And I wait
     And I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
     And I enter my last name <lastName> in Form
@@ -343,7 +334,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 
   @TestCases_C-5
   Scenario Outline: "@TestCases_C-5" Enter empty New Password  will throw error "Required" and previous PassWord "Required"
-    And I wait
     When I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
     And I enter my last name <lastName> in Form
@@ -369,7 +359,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 
   @TestCases_C-6
   Scenario Outline: "@TestCases_C-6" Enter empty Confirm New Password  will throw error "Required" and "Passwords do not match" and previousPassWord "Require"
-    And I wait
     And I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
     And I enter my last name <lastName> in Form
@@ -398,7 +387,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 
   @TestCases_C-7
   Scenario Outline: "@TestCases_C-7" Enter empty Previous PassWord data will throw error "Required"
-    And I wait
     And I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
     And I enter my last name <lastName> in Form
@@ -425,7 +413,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 
   @TestCases_C-8
   Scenario Outline: "@TestCases_C-8" Enter wrong data on Previous PassWord data will throw error "Password must be at least 8 characters, contain a number, and mixed case letters."
-    And I wait
     And I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
     And I enter my last name <lastName> in Form
@@ -454,7 +441,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
 
   @TestCases_C-9
   Scenario Outline: "@TestCases_C-9" Enter empty Strings (SPACE BAR) User Profile data will throw error "Spaces are invalid characters"
-    And I wait
     And I click Reset Button in Edit User Profile
     And I enter my first name <firstName> in Form
       Then I should see "firstName" message "Spaces are invalid characters" displayed for this "filled" field

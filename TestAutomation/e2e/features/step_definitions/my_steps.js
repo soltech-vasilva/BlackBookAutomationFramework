@@ -20,7 +20,7 @@ var BB_userList = require('../Page/BB_UserList');
 var verify_UserInformation = require('../Page/VerifyUserInfo.js');
 var BB_editRoles = require('../Page/BB_EditRoles.js');
 var verifyPopUpMessages = require('../Page/VerifyPopUpMessages.js');
-
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 //testing
 var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
 var protractor = require('protractor');
@@ -92,6 +92,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
         //     callback();
         // }
         if (scenario.isFailed()) {
+            if (protractorConfig.config.ApplitoolsOn == true) {
+                 eyes.abortIfNotClosed();
+            }
             utilities.ElapsedTime(startTime);
             console.log("\r\nSenario Failed: Missing Element in Screen");
             callback();
@@ -99,6 +102,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
         else {
             utilities.ElapsedTime(startTime);
             console.log("PASS");
+            if (protractorConfig.config.ApplitoolsOn == true) {
+                eyes.abortIfNotClosed();
+            }
             callback();
         }
     });
@@ -291,8 +297,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
     ///BUGS FIXES TO TEST OTHER THINGS
     this.Given(/^I wait$/, function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([ browser.driver.sleep(4000).then(()=>{ success()})
-            ]).then(()=>{});
+            page.executeSequence([ browser.driver.sleep(5000).then(()=>{ console.log("wait before success"); success(); })
+            ]).then(()=>{console.log("wait sequence then");});
         });
     });
 
@@ -312,7 +318,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                         success();
                     }
                 });
-            })]).then(()=>{});
+            })]).then(()=>{ });
         });
     });
 

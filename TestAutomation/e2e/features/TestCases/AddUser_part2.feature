@@ -39,6 +39,7 @@ Feature:  "Add a new User Profile"
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
     And I click on New User Button in User List
+    And I wait
 
 #####################################################################################################################
 #                                             Test cases 1                                                            #

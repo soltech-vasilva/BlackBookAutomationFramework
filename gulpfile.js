@@ -57,8 +57,20 @@ var exec                = require('child_process').exec;
 gulp.task('webdriver', runCommand('webdriver-manager start'));
 gulp.task('report', runCommand('node server-report'));
 
+gulp.task('Chrome_Setup',  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Chrome
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_Setup.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
 
-gulp.task('Chrome_AddUserPart1',  ()=>
+gulp.task('Chrome_AddUserPart1', ['Chrome_Setup'], ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
@@ -135,7 +147,19 @@ gulp.task('Chrome_Bugs',['Chrome_Login'], ()=> {
     });
 });
 
-gulp.task('Firefox_AddUserPart1', ['Chrome_Bugs'], ()=>
+gulp.task('Chrome_EditRoles',['Chrome_Bugs'], ()=> {
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //EDGE
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_EditRoles.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('Firefox_AddUserPart1', ['Chrome_EditRoles'], ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
@@ -343,7 +367,7 @@ gulp.task('IE_Bugs', ()=> {
 
 
 
-gulp.task('default', ['Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login','Chrome_Bugs']); //falta userlist and login
+gulp.task('default', ['Chrome_Setup' , 'Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login','Chrome_Bugs', 'Chrome_EditRoles']); //falta userlist and login
 // gulp.task('default', ['Firefox_AddUserPart1', 'Firefox_AddUserPart2','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
 //gulp.task('default', ['IE_AddUserPart1','IE_AddUserPart2','IE_EditUserProfile','IE_UsersList','IE_Login']);
 // gulp.task('default', ['Edge_AddUserPart1','Edge_AddUserPart2','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);

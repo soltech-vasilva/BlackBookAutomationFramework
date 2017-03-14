@@ -12,6 +12,7 @@ Feature:  "Verify that this bugs dont return to the application."
   Background:
 
     Given I enter BlackBook Login Website
+    And I wait
        #BUG ADDED THIS TO CONTINUE
        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
@@ -220,7 +221,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-12
   Scenario Outline: "@TestCases_A-12" (BB-399) Click "Reset" wont clear Error messages (Add User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress,newPassWord,confirmNewPassWord] (BUG cant click on Edit Roles)
-    And I wait
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
     And I click on New User Button in User List
@@ -261,7 +261,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-13
   Scenario Outline: "@TestCases_A-13" (BB-287) Click "Reset" wont clear Error messages. (Edit User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress]
-    And I wait
     And I click Avatar Image Button
     And I click My Profile sub menu from Avatar
     And I click Edit Button in Edit User Profile
@@ -302,7 +301,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-14
   Scenario: "@TestCases_A-14" (BB-416) Click "Admin" on top menu will open "Roles" page.
-    And I wait
     And I click on Admin Tab
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/dashboard" URL
     And I wait
@@ -310,7 +308,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-15
   Scenario Outline: "@TestCases_A-15" (BB-459) "Previous Password" disappears when toggle from other User to "My profile".
-    And I wait
     When I click on Admin Tab
     And I click on Users submenu from Admin Tab
     And I wait
@@ -370,7 +367,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-18
   Scenario: "@TestCases_A-18" (BB-365) Pressing "Cancel wont exit Edit mode
-    And I wait
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
     And I click on New User Button in User List
@@ -403,7 +399,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-21
   Scenario: "@TestCases_A-21" (BB-519) Create "New Roles" not working.
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on New Role Button in Role List
@@ -418,7 +413,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-22
   Scenario: "@TestCases_A-22" (BB-476) "Role Market" dropdown box get clear after "Reset".
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 4 "Editor in Role List"
@@ -432,7 +426,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-23
   Scenario: "@TestCases_A-23" (BB-414) Button "Save" is gray out in "Editing Roles".
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 4 "Editor in Role List"
@@ -446,7 +439,7 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-24
   Scenario Outline: "@TestCases_A-24" (BB-479) Creation of "New User" wont attached roles to it when added.
-    And I wait
+    #And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I wait
@@ -490,7 +483,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-25
   Scenario Outline: "@TestCases_A-25" (BB-480) Adding "Role" to new user (Add User) does not show "Require".
-    And I wait
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
     And I wait
@@ -509,7 +501,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-26
   Scenario Outline: "@TestCases_A-26" (BB-481) (security purpose) values for Password stay log in text box.
-    And I wait
     And I click Avatar Image Button
     And I click My Profile sub menu from Avatar
     And I wait
@@ -532,7 +523,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-27
   Scenario: "@TestCases_A-27" (BB-441) Permissions gets reset after adding "Role's Users"  (re-Open)
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 5 "RoleName6 in Role List"
@@ -554,7 +544,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-28
   Scenario: "@TestCases_A-28" (BB-460) Close "User Edit" wont go back from where it came from.
-    And I wait
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
     And I wait
@@ -567,7 +556,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
     @TestCases_A-29
   Scenario: "@TestCases_A-29" (BB-475) Dropdown boxes in Edit Role wont go to Default value after "Reset"
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 4 "Editors in Role List"
@@ -585,7 +573,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-30
   Scenario: "@TestCases_A-30" (BB-477) "Filter Roles" in Edit Profile does not clear after click "Reset"
-    And I wait
     And I click Avatar Image Button
     And I click My Profile sub menu from Avatar
     And I click Edit Button in Edit User Profile
@@ -598,7 +585,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-31
   Scenario: "@TestCases_A-31" (BB-472) Creating new Role will not add User to it.
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on New Role Button in Role List
@@ -619,7 +605,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-32
   Scenario: "@TestCases_A-32" (BB-473) Pop Menu Grammar error missing question mark "?" and role name (require TC-A-31)
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 6 "RoleName7 in Role List"
@@ -641,7 +626,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-33
   Scenario: "@TestCases_A-33" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32)
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 6 "RoleName7 in Role List"
@@ -656,7 +640,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-33A
     Scenario: "@TestCases_A-33A" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32) Delete Created roles next run.
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 5 "RoleName6 in Role List"
@@ -692,7 +675,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-35
   Scenario: "@TestCases_A-35" (BB-582) (Add New Roles): word "Require" need to show on field require.
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on New Role Button in Role List
@@ -703,7 +685,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-36
   Scenario: "@TestCases_A-36" (BB-586) (Role Market): Role Market needs to show "None" or a value in Role View.
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 2 "AllPermissions in Role List"
@@ -714,7 +695,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-37
   Scenario: "@TestCases_A-37" (BB-616)(Add New Roles): Empty Space (SPACE BAR) gets accepted for role name.
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on New Role Button in Role List
@@ -725,13 +705,13 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-38
   Scenario: "@TestCases_A-38" (BB-601)(Add New Roles): Role Permission does not need to be "Require" field. (story) just name and market fill.
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on New Role Button in Role List
     And I enter Role Name "RoleName8"
     And I select Role Market "US Used Car" in Role Editor
     And I click on Save button in Role Editor
+    And I wait
       Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     And I wait
     And I click on Admin Tab
@@ -746,7 +726,6 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-39
   Scenario: "@TestCases_A-39" (BB-655) (Edit Roles): Cant change "Role Market". Error Message
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 4 "Editors in Role List"
@@ -1016,273 +995,4 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click User Active checkbox
     And I wait
       Then I should see on User Active checkbox inactive
-    And I wait
-
-
-  @TestCases_2
-  Scenario: "TestCases_2" Create a role with same existing Role Name. "Error" Display "Role was not added, please try again."
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on New Role Button in Role List
-    And I enter Role Name ""
-    Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
-    Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
-    And I select Role Market "US Used Car" in Role Editor
-    Then I should see in "Save" button "disable" in Edit Role
-    Then I should see Role Market value "US Used Car"
-    Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "Basic Account"
-    And I wait
-    Then I should not see in "RoleName" errors displayed in Edit Role
-    Then I should see in "Save" button "enable" in Edit Role
-    And I enter "Can View User List" on Filter Permissions in Role Editor
-    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-    And I clear text box selected "FilterPermissions" in Role Editor
-    And I wait
-    And I enter "admintestemail10@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I wait
-    And I click on Save button in Role Editor
-    Then I should see "Role was not added, please try again." displayed on "EditRoles" popup
-    And I wait
-
-  @TestCases_3
-  Scenario: "TestCases_3" Create a new role Using Filters "Admin View All Only". "No Error" Display
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on New Role Button in Role List
-    And I enter Role Name ""
-    Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
-    Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
-    And I select Role Market "US Used Car" in Role Editor
-    Then I should see in "Save" button "disable" in Edit Role
-    Then I should see Role Market value "US Used Car"
-    Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "F_Admin View All Only"
-    And I wait
-    Then I should not see in "RoleName" errors displayed in Edit Role
-    Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-    And I wait
-    Then I should see "User" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-    And I click checkbox  "5" "Can view Other Users" Permission row in Role Editor
-    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
-    And I wait
-    Then I should see "Roles" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
-    And I wait
-    Then I should see "Settings" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "0" "Settings" Permission row in Role Editor
-    And I wait
-    And I click Filter By Status dropdown "Active" in Role Editor
-    And I wait
-    Then I should see "Active" display for Filter By Status in Role Editor
-    And I enter "admintestemail11@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I wait
-    And I click on Save button in Role Editor
-    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    And I wait
-
-  @TestCases_4
-  Scenario: "TestCases_4" Create a new role Using Filters "Edit Other Users Basic". "No Error" Display
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on New Role Button in Role List
-    And I enter Role Name ""
-    Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
-    Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
-    And I select Role Market "US Used Car" in Role Editor
-    Then I should see in "Save" button "disable" in Edit Role
-    Then I should see Role Market value "US Used Car"
-    Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "G_Edit Other Users Basic"
-    And I wait
-    Then I should not see in "RoleName" errors displayed in Edit Role
-    Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-    And I wait
-    Then I should see "User" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-    And I click checkbox  "2" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "5" "Can view Other Users" Permission row in Role Editor
-    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
-    And I wait
-    Then I should see "Roles" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
-    And I wait
-    And I click Filter By Status dropdown "Active" in Role Editor
-    And I wait
-    Then I should see "Active" display for Filter By Status in Role Editor
-    And I enter "admintestemail12@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I wait
-    And I click on Save button in Role Editor
-    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    And I wait
-
-
-  @TestCases_5
-  Scenario: "TestCases_5" Create a new role Using Filters "Edit Other Users Basic + Password". "No Error" Display
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on New Role Button in Role List
-    And I enter Role Name ""
-    Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
-    Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
-    And I select Role Market "US Used Car" in Role Editor
-    Then I should see in "Save" button "disable" in Edit Role
-    Then I should see Role Market value "US Used Car"
-    Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "H_Edit Other Users Basic + Password"
-    And I wait
-    Then I should not see in "RoleName" errors displayed in Edit Role
-    Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-    And I wait
-    Then I should see "User" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "2" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "5" "Can View Other Users" Permission row in Role Editor
-    And I click checkbox  "4" "Can Reset Users Passwords" Permission row in Role Editor
-    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
-    And I wait
-    Then I should see "Roles" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
-    And I wait
-    And I click Filter By Status dropdown "Active" in Role Editor
-    And I wait
-    Then I should see "Active" display for Filter By Status in Role Editor
-    And I enter "admintestemail13@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I wait
-    And I click on Save button in Role Editor
-    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    And I wait
-
-  @TestCases_6
-  Scenario: "TestCases_6" Create a new role Using Filters "Edit Other Users Basic + Roles". "No Error" Display
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on New Role Button in Role List
-    And I enter Role Name ""
-    Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
-    Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
-    And I select Role Market "US Used Car" in Role Editor
-    Then I should see in "Save" button "disable" in Edit Role
-    Then I should see Role Market value "US Used Car"
-    Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "I_Edit Other Users Basic + Roles"
-    And I wait
-    Then I should not see in "RoleName" errors displayed in Edit Role
-    Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-    And I wait
-    Then I should see "User" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "2" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "5" "Can View Other Users" Permission row in Role Editor
-    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
-    And I wait
-    Then I should see "Roles" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can Add/Edit Roles" Permission row in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
-    And I wait
-    And I click Filter By Status dropdown "Active" in Role Editor
-    And I wait
-    Then I should see "Active" display for Filter By Status in Role Editor
-    And I enter "admintestemail14@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I wait
-    And I click on Save button in Role Editor
-    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    And I wait
-
-  @TestCases_7
-  Scenario: "TestCases_7" Create a new role Using Filters "Edit Other Users Basic + Roles + Password". "No Error" Display
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on New Role Button in Role List
-    And I enter Role Name ""
-    Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
-    Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
-    And I select Role Market "US Used Car" in Role Editor
-    Then I should see in "Save" button "disable" in Edit Role
-    Then I should see Role Market value "US Used Car"
-    Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "J_Edit Other Users Basic + Roles + Password"
-    And I wait
-    Then I should not see in "RoleName" errors displayed in Edit Role
-    Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-    And I wait
-    Then I should see "User" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "2" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "4" "Can Reset Users Passwords" Permission row in Role Editor
-    And I click checkbox  "5" "Can View Other Users" Permission row in Role Editor
-    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
-    And I wait
-    Then I should see "Roles" display for Filter By Group in Role Editor
-    And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can Add/Edit Roles" Permission row in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
-    And I wait
-    And I click Filter By Status dropdown "Active" in Role Editor
-    And I wait
-    Then I should see "Active" display for Filter By Status in Role Editor
-    And I enter "admintestemail15@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I wait
-    And I click on Save button in Role Editor
-    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    And I wait
-
-
-  @TestCases_8
-  Scenario: "TestCases_8" Edit Roles- Remove users from "Administrators" Role admintestemail11@yopmail.com-admintestemail15@yopmail.com
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    And I click on Gear Icon 1 "Administrator in Role List"
-    And I click Edit from Gear Icon "in Role List"
-    And I wait
-    And I enter "admintestemail11@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I clear text box selected "FilterUsers" in Role Editor
-    And I wait
-    And I enter "admintestemail12@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I clear text box selected "FilterUsers" in Role Editor
-    And I wait
-    And I enter "admintestemail13@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I clear text box selected "FilterUsers" in Role Editor
-    And I wait
-    And I enter "admintestemail14@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I clear text box selected "FilterUsers" in Role Editor
-    And I wait
-    And I enter "admintestemail15@yopmail.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I clear text box selected "FilterUsers" in Role Editor
-    And I wait
-    And I click on Save button in Role Editor
-      Then I should see "Role successfully updated" displayed on "EditRoles" popup
-    And I click Cancel Button from Edit Roles
     And I wait
