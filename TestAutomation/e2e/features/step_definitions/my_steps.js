@@ -71,8 +71,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
     var startTime = new Date().getTime();
 
     this.Before(function () {
-       return utilities.ElapsedTime(startTime);
-        // return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
+       //return utilities.ElapsedTime(startTime);
+        utilities.ElapsedTime(startTime);
+        return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
     });
 
     this.After(function (scenario, callback) {
@@ -94,12 +95,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
         // }
 
 
-        //eyesSetUp.EyesClose_EndTestcase(eyes);
+        eyesSetUp.EyesClose_EndTestcase(eyes);
         if (scenario.isFailed()) {
-            // if (protractorConfig.config.ApplitoolsOn == true) {
-            //     console.log("FAIL ABORT EYES");
-            //      eyes.abortIfNotClosed();
-            // }
+            if (protractorConfig.config.ApplitoolsOn == true) {
+                console.log("FAIL ABORT EYES");
+                 eyes.abortIfNotClosed();
+            }
             utilities.ElapsedTime(startTime);
             console.log("\r\nSenario Failed: Missing Element in Screen");
             callback();
@@ -863,8 +864,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I click on Settings submenu from Admin Tab$/, function () {
         return new Promise((success, failure)=> {
-            element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a')).click();
-            success();
+            page.executeSequence([element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a')).click()]).then(()=>{success();});
         });
     });
 

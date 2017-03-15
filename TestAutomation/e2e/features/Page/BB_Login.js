@@ -18,29 +18,19 @@ var BB_Login = function BB_Login() {
 
     BB_Login.prototype.OpenBlackBookLogIn_Page = function (eyes) {
        return new Promise((success, failure) => {
-            // page.executeSequence([ page.openUrl(true, BB_loginRepo.BlackBookUrl)]).then(() => {
-            //     if (protractorConfig.config.ApplitoolsOn == false) {
-            //         //browser.driver.manage().window().setSize(protractorConfig.config.width, protractorConfig.config.height);
-            //         browser.driver.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
-            //     }
-            //     eyesSetUp.EyesCheckWindow(eyes, BB_loginRepo.EyesVerify_BB_Login, protractorConfig.config.ApplitoolsOn);
-            //     success();
-            // });
-
-            //page is non-angular
-            browser.ignoreSynchronization = true;
-            //Open BlackBook website
-           browser.driver.wait(browser.driver.get(BB_loginRepo.BlackBookUrl))
-                .then(() => {
-                    if (protractorConfig.config.ApplitoolsOn == false) {
-                        //browser.driver.manage().window().setSize(protractorConfig.config.width, protractorConfig.config.height);
-                        browser.driver.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
-                    }
-                    //TODO prueba
-                  //  page.executeSequence([eyesSetUp.EyesCheckWindow(eyes, BB_loginRepo.EyesVerify_BB_Login, protractorConfig.config.ApplitoolsOn)]).then(()=>{success()});
-                    success();
-                });
-        });
+           //page is non-angular
+           browser.ignoreSynchronization = true;
+           //Open BlackBook website
+           page.executeSequence([(browser.driver.get(BB_loginRepo.BlackBookUrl)).then(() => {
+               console.log('dentro getURL');
+               if (protractorConfig.config.ApplitoolsOn == false) {
+                   //browser.driver.manage().window().setSize(protractorConfig.config.width, protractorConfig.config.height);
+                   browser.driver.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
+               }
+               //TODO prueba
+               //  page.executeSequence([eyesSetUp.EyesCheckWindow(eyes, BB_loginRepo.EyesVerify_BB_Login, protractorConfig.config.ApplitoolsOn)]).then(()=>{success()});
+           })]).then(()=>{success(); console.log('afuera getURL');});
+       });
     };
 
     BB_Login.prototype.Enter_CurrentEmailAddress_Login = function (currentEmail) {

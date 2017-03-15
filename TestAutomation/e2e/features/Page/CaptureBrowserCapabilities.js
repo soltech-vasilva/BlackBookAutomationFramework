@@ -106,9 +106,10 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
             if (protractorConfig.config.ApplitoolsOn == true) {
                 console.log('START EYES');
                 eyesSetUp.EyesInitialSetUp(eyes);
+                eyesSetUp.EyesSetBranchName(eyes);
+                eyesSetUp.EyesSetBatch(eyes, this.currentOSName + this.currentOSVersion, this.currentBrowserName, this.currentBrowserVersion, this.currentWidthTestResolution, this.currentHeightTestResolution);
                 eyesSetUp.EyesOpen_StartTestCase(eyes, this.currentWidthTestResolution, this.currentHeightTestResolution);
                 eyesSetUp.EyesSetBaseline(eyes, this.currentBrowserName, this.currentBrowserVersion, this.currentWidthTestResolution, this.currentHeightTestResolution);
-                eyesSetUp.EyesSetBatch(eyes, this.currentOSName + this.currentOSVersion, this.currentBrowserName, this.currentBrowserVersion, this.currentWidthTestResolution, this.currentHeightTestResolution);
             }
         });
     };

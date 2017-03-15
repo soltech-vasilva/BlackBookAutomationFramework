@@ -14,22 +14,28 @@ var page = require ('../Page/Page_Objects');
 var EyesSetUp = function EyesSetUp(){
 
     EyesSetUp.prototype.EyesInitialSetUp = function (eyes) {
-        eyes.setBranchName('BranchName BlackBook',1);
         eyes.setForceFullPageScreenshot(true);
         eyes.setStitchMode(Eyes.StitchMode.CSS);
         //eyes.setMatchLevel('Layout2');
     };
 
-    EyesSetUp.prototype.EyesSetBaseline = function(eyes, currentBrowserName, currentBrowserVersion, currentWidthTestResolution, currentHeightTestResolution){
-        eyes.setBaselineName ('Baseline  '+currentBrowserName+':' + currentBrowserVersion +'  :  ' + currentWidthTestResolution +'x' + currentHeightTestResolution);
+    EyesSetUp.prototype.EyesSetBranchName = function (eyes) {
+          eyes.setBranchName('BranchName BlackBook',1);
     };
 
     EyesSetUp.prototype.EyesSetBatch = function (eyes , currentOSName, currentBrowserName, currentBrowserVersion, currentWidthTestResolution, currentHeightTestResolution) {
-        eyes.setBatch('"BlackBOOk" '+ currentOSName+'  '+ currentBrowserName+ ':'+ currentBrowserVersion +' : ' + currentWidthTestResolution +'X' + currentHeightTestResolution );
+        //Left column name display  the number is the ID: 1
+        eyes.setBatch('"BlackBook" '+ currentOSName+'  '+ currentBrowserName+ ':'+ currentBrowserVersion +' : ' + currentWidthTestResolution +'X' + currentHeightTestResolution, 1 );
     };
 
     EyesSetUp.prototype.EyesOpen_StartTestCase = function (eyes, currentWidthTestResolution, currentHeightTestResolution) {
+        //dentro del batch (test case)
         eyes.open(browser, 'App Name: BlackBook' , 'Test Name: Simple BlackBook Test', {width: currentWidthTestResolution , height: currentHeightTestResolution});
+    };
+
+    EyesSetUp.prototype.EyesSetBaseline = function(eyes, currentBrowserName, currentBrowserVersion, currentWidthTestResolution, currentHeightTestResolution){
+        //dentro del test case (detalles)
+        eyes.setBaselineName ('Baseline  '+currentBrowserName+':' + currentBrowserVersion +'  :  ' + currentWidthTestResolution +'x' + currentHeightTestResolution);
     };
 
     EyesSetUp.prototype.EyesClose_EndTestcase = function(eyes){

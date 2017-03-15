@@ -1,53 +1,5 @@
 [
   {
-    "id": "start-test-case",
-    "name": "start test case",
-    "description": "",
-    "line": 1,
-    "keyword": "Feature",
-    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/START_eyes.feature",
-    "elements": [
-      {
-        "name": "start test case",
-        "id": "start-test-case;start-test-case",
-        "line": 3,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2854727
-            },
-            "match": {}
-          },
-          {
-            "name": "I START test suite",
-            "line": 4,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 1300490
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 605011
-            },
-            "match": {}
-          }
-        ]
-      }
-    ]
-  },
-  {
     "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\"",
     "name": "\"Verify that this bugs dont return to the application.\"",
     "description": "\nRules: Verify \"User List\" opens\n\nQuestion:",
@@ -98,7 +50,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 273579
+              "duration": 2173989
             },
             "match": {}
           },
@@ -108,7 +60,7 @@
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 4192903763
+              "duration": 5899781860
             },
             "match": {}
           },
@@ -118,7 +70,7 @@
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 14857436860
+              "duration": 16080816053
             },
             "match": {}
           },
@@ -128,7 +80,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5005487676
+              "duration": 5002123720
             },
             "match": {}
           },
@@ -138,7 +90,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 7420314115
+              "duration": 6689459515
             },
             "match": {}
           },
@@ -148,7 +100,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5003999018
+              "duration": 5002520316
             },
             "match": {}
           },
@@ -158,7 +110,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 11998986197
+              "duration": 10684786384
             },
             "match": {}
           },
@@ -168,7 +120,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 6492746362
+              "duration": 6880363536
             },
             "match": {}
           },
@@ -178,7 +130,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 870903936
+              "duration": 770534282
             },
             "match": {}
           },
@@ -188,7 +140,7 @@
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 5526993720
+              "duration": 5455506678
             },
             "match": {}
           },
@@ -198,7 +150,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5004207360
+              "duration": 5005218832
             },
             "match": {}
           },
@@ -208,7 +160,7 @@
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 7653438301
+              "duration": 7538469410
             },
             "match": {}
           },
@@ -218,7 +170,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 755797
+              "duration": 738572
             },
             "match": {}
           },
@@ -228,7 +180,7 @@
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 9197959474
+              "duration": 9276215815
             },
             "match": {}
           },
@@ -238,7 +190,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 871425288
+              "duration": 993040680
             },
             "match": {}
           },
@@ -248,7 +200,7 @@
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 7394645529
+              "duration": 12401843395
             },
             "match": {}
           },
@@ -258,7 +210,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 411977
+              "duration": 587482
             },
             "match": {}
           },
@@ -268,7 +220,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2945781943
+              "duration": 2521891501
             },
             "match": {}
           },
@@ -278,7 +230,37 @@
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 8354310695
+              "duration": 12048808438
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1281714
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Settings submenu from Admin Tab",
+            "line": 40,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2585478188
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Settings\" page with Applitools",
+            "line": 41,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 8392184632
             },
             "match": {}
           },
@@ -288,7 +270,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1505839608
+              "duration": 1260753857
             },
             "match": {}
           },
@@ -298,7 +280,7 @@
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 8016608711
+              "duration": 8454566292
             },
             "match": {}
           },
@@ -308,7 +290,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 960753005
+              "duration": 757026430
             },
             "match": {}
           },
@@ -318,7 +300,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5006377350
+              "duration": 5006421375
             },
             "match": {}
           },
@@ -328,7 +310,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2215293
+              "duration": 749852
             },
             "match": {}
           },
@@ -338,7 +320,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2974049096
+              "duration": 2692808542
             },
             "match": {}
           },
@@ -348,7 +330,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1026579452
+              "duration": 958067164
             },
             "match": {}
           },
@@ -358,7 +340,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5006027996
+              "duration": 5007000736
             },
             "match": {}
           },
@@ -368,7 +350,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2051241263
+              "duration": 1089167795
             },
             "match": {}
           },
@@ -378,7 +360,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1216713481
+              "duration": 699257060
             },
             "match": {}
           },
@@ -388,7 +370,7 @@
             "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 14043974110
+              "duration": 12526627817
             },
             "match": {}
           },
@@ -398,7 +380,7 @@
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 5002362029
+              "duration": 5001946477
             },
             "match": {}
           },
@@ -407,46 +389,362 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 474874
+              "duration": 1073667
             },
             "match": {}
           }
         ]
-      }
-    ]
-  },
-  {
-    "id": "End-testcase",
-    "name": "End testcase",
-    "description": "",
-    "line": 1,
-    "keyword": "Feature",
-    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/END_eyes.feature",
-    "elements": [
+      },
       {
-        "name": "End testcase",
-        "id": "End-testcase;end-testcase",
-        "line": 3,
+        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
+        "line": 97,
         "keyword": "Scenario",
         "description": "",
         "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B",
+            "line": 60
+          }
+        ],
         "steps": [
           {
             "keyword": "Before ",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 161918
+              "duration": 466490
             },
             "match": {}
           },
           {
-            "name": "I END test suite",
-            "line": 4,
+            "name": "I enter BlackBook Login Website",
+            "line": 13,
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 464817
+              "duration": 2869560376
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Login\" page with Applitools",
+            "line": 14,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 13131655533
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 15,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5003941854
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/login\"",
+            "line": 63,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7204400505
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 64,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5005123760
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 65,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 11701201713
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 66,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6746375737
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 67,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 791451353
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"currentEmailAddress\" errors displayed",
+            "line": 68,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 5769645641
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 69,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5001816354
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Home\" page with Applitools",
+            "line": 70,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9957683414
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 71,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1212868
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Admin Tab-Submenu (Administartor Account)\" page with Applitools",
+            "line": 72,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 10924116187
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 73,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 914581959
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Role List\" page with Applitools",
+            "line": 74,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 14993750410
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 75,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1672497
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Settings submenu from Admin Tab",
+            "line": 76,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3117265652
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Settings\" page with Applitools",
+            "line": 77,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 10023314047
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 78,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 669062
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 79,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2314316364
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"User List\" page with Applitools",
+            "line": 80,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 11726137503
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 81,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1207541315
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Avatar button-Submenu\" page with Applitools",
+            "line": 82,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 10241864343
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 83,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 964095258
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 84,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5003365970
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 85,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1901734
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 86,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2733488599
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 87,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1244863775
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 88,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5001775780
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 89,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1439413545
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 90,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 765035286
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Login\" page with Applitools",
+            "line": 91,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 12738239568
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 92,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5004889004
             },
             "match": {}
           },
@@ -455,7 +753,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 81582
+              "duration": 2624010
             },
             "match": {}
           }

@@ -135,7 +135,7 @@ gulp.task('Chrome_Login',['Chrome_UsersList'],()=>
     });
 });
 
-gulp.task('Chrome_Bugs',['Chrome_Login'], ()=> {
+gulp.task('Chrome_Bugs',/*['Chrome_Login'],*/ ()=> {
     return new Promise((resolve, reject) => {
         gulp.src([])
         //EDGE
@@ -367,7 +367,7 @@ gulp.task('IE_Bugs', ()=> {
 
 
 
-gulp.task('default', ['Chrome_Setup' , 'Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login','Chrome_Bugs', 'Chrome_EditRoles']); //falta userlist and login
+gulp.task('default', [/*'Chrome_Setup' , 'Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login',*/'Chrome_Bugs'/*, 'Chrome_EditRoles'*/]); //falta userlist and login
 // gulp.task('default', ['Firefox_AddUserPart1', 'Firefox_AddUserPart2','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
 //gulp.task('default', ['IE_AddUserPart1','IE_AddUserPart2','IE_EditUserProfile','IE_UsersList','IE_Login']);
 // gulp.task('default', ['Edge_AddUserPart1','Edge_AddUserPart2','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);
