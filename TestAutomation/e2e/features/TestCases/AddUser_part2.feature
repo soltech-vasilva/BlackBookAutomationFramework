@@ -4,24 +4,10 @@
 
 Feature:  "Add a new User Profile"
 
-  Rules: Add a new User
+  Rules: Add a new user with Administrators Role.
 
   Question:
-  -Verify 26 user can be created. [TestCases_1]
-  -Verify that All inputs boxes are working "No ERROR". [Test case A]
-  -What happens if email entered is bad "Display ERROR"? Yes [Test case B-1]
-  -What happens if phone number entered is bad "Display ERROR"? Yes [Test case B-2]
-  -What Happens if Password does not meet requirements and Confirm Password is different "Display ERROR"?Yes ON BOTH  [Test case B-3]
-  -What Happens if Password does not meet requirements and Password is same "Display ERROR"? Yes ON Password Only [Test case B-4]
-  -What happens if fields are all empty on require fields "Display ERROR"? Yes [TestCases_C-1]
-  -what happens if first name is empty on require fields "Display ERROR"? Yes [TestCases_C-2]
-  -what happens if last name is empty on require fields "Display ERROR"? Yes [TestCases_C-3]
-  -what happens if email address is empty on require fields "Display ERROR"? Yes [TestCases_C-4]
-  -what happens if new Password is empty on require fields "Display ERROR"? Yes [TestCases_C-5]
-  -what happens if Confirm new Password is empty on require fields "Display ERROR"? Yes [TestCases_C-6]
-  -what happens if enter empty strings "white spaces" (SPACE BAR) "Display ERROR"? Yes [TestCases_C-7]
-
-  -BUG: not loading the page correctly , I am adding reload page.
+  -Verify 13-26 user can be created. [TestCases_A-1]
 
   Background:
 
@@ -42,10 +28,10 @@ Feature:  "Add a new User Profile"
     And I wait
 
 #####################################################################################################################
-#                                             Test cases 1                                                            #
+#                                             Test cases A-1                                                        #
 #####################################################################################################################
-  @TestCases_1
-  Scenario Outline: "TestCases_1" Add 26 User and enter good for User Profile. "No Error" display
+  @TestCases_A-1
+  Scenario Outline: "TestCases_A-1" Add 13-26 User and enter good data for User Profile. "No Error" display
     When I enter my first name <firstName> in Form
       Then I should not see in "firstName" errors displayed
     And I enter my last name <lastName> in Form
@@ -68,7 +54,8 @@ Feature:  "Add a new User Profile"
 
     Examples:
       | firstName     | lastName     | emailAddress                |phoneNumber    | newPassWord | confirmNewPassWord |
-#Valid 26 Users input
+#Valid 13-26 Users input
+      |   firstName13 | lastName13   | admintestemail13@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName14 | lastName14   | admintestemail14@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName15 | lastName15   | admintestemail15@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName16 | lastName16   | admintestemail16@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |

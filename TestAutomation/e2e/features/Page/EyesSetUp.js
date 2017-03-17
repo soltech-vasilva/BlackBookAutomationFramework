@@ -28,9 +28,9 @@ var EyesSetUp = function EyesSetUp(){
         eyes.setBatch('"BlackBook" '+ currentOSName+'  '+ currentBrowserName+ ':'+ currentBrowserVersion +' : ' + currentWidthTestResolution +'X' + currentHeightTestResolution, 1 );
     };
 
-    EyesSetUp.prototype.EyesOpen_StartTestCase = function (eyes, currentWidthTestResolution, currentHeightTestResolution) {
+    EyesSetUp.prototype.EyesOpen_StartTestCase = function (eyes, currentWidthTestResolution, currentHeightTestResolution, scenario) {
         //dentro del batch (test case)
-        eyes.open(browser, 'App Name: BlackBook' , 'Test Name: Simple BlackBook Test', {width: currentWidthTestResolution , height: currentHeightTestResolution});
+        eyes.open(browser, 'App Name: BlackBook' , 'Test Name: '+ scenario.getName(), {width: currentWidthTestResolution , height: currentHeightTestResolution});
     };
 
     EyesSetUp.prototype.EyesSetBaseline = function(eyes, currentBrowserName, currentBrowserVersion, currentWidthTestResolution, currentHeightTestResolution){

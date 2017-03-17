@@ -70,10 +70,10 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.setDefaultTimeout(80 * 1000);  //todo estaba a 80
     var startTime = new Date().getTime();
 
-    this.Before(function () {
-       //return utilities.ElapsedTime(startTime);
-        utilities.ElapsedTime(startTime);
-        return captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes);
+    this.Before(function (scenario) {
+        return new Promise((success, failure)=> {
+           page.executeSequence([utilities.ElapsedTime(startTime),captureBrowserCapabilities.captureCurrentBrowserCapabilities(eyes, scenario)]).then(()=>{success();});
+        });
     });
 
     this.After(function (scenario, callback) {
@@ -95,8 +95,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
         // }
 
 
-        eyesSetUp.EyesClose_EndTestcase(eyes);
-        if (scenario.isFailed()) {
+       eyesSetUp.EyesClose_EndTestcase(eyes);
+         if (scenario.isFailed()) {
             if (protractorConfig.config.ApplitoolsOn == true) {
                 console.log("FAIL ABORT EYES");
                  eyes.abortIfNotClosed();
@@ -156,7 +156,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_editUserProfile.Click_SaveButton_EditUserProfile();
     });
 
-    this.When(/^I clear text box selected "([^"]*)"$/, function (TextboxName) {
+    this.When(/^I clear text box selected "([^"]*)" in User Profile$/, function (TextboxName) {
         return BB_editUserProfile.DeleteContentInTextBox(TextboxName);
     });
 
@@ -212,7 +212,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_userList.Click_StatusFilter();
     });
 
-    this.Given(/^I click Inactive in submenu from Status Filter$/, function () {
+    this.Given(/^I click Inactive in submenu from Status FilterValue/, function () {
         return BB_userList.Click_StatusFilter_Inactive_Submenu();
     });
 
@@ -228,8 +228,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_userList.Click_Gear_Activate_Submenu();
     });
 
-    this.Given(/^I click View from Gear Icon$/, function () {
-        return BB_userList.Click_Gear_View_Submenu();
+    this.Given(/^I click (.*) View from Gear Icon in User List$/, function (rowNumber) {
+        return BB_userList.Click_Gear_View_Submenu(rowNumber);
     });
 
     this.Given(/^I click Edit from Gear Icon "([^"]*)"$/, function (arg1) {
@@ -372,7 +372,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
             //return browser.wait(protractor.ExpectedConditions.elementToBeSelected( element(by.css('button[disabled=""]'))),3000);
             // return browser.wait(protractor.ExpectedConditions.elementToBeClickable( element(by.css('button[disabled=""]'))),3000);
-            browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(BB_editUserProfileRepo.Select_Element_SaveButton), 3000);
+            browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(BB_editUserProfileRepo.Select_Element_SaveButton), protractorConfig.config.WaitTime);
             success();
             // return browser.wait(protractor.ExpectedConditions.elementToBeSelected(BB_editUserProfileRepo.Select_Element_SaveButton),3000);
         });
@@ -573,10 +573,15 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Reset Button in Edit Roles$/, function () {
-        return new Promise((success, failure)=> {
-            element(by.css('button.button.yellow-btn')).click();
-            success();
+
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( element(by.css('button.button.yellow-btn'))), protractorConfig.config.WaitTime),
+                element(by.css('button.button.yellow-btn')).click()
+            ]).then(() => {
+                success();
+            });
         });
+
     });
 
     this.Given(/^I enter Role Name "([^"]*)"$/, function (roleName) {
@@ -849,9 +854,13 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click View from Gear Icon in Role List$/, function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[2]/div[3]/action-icon/div/div/ul/li[1]/div'))), 5000);
         return new Promise((success, failure)=> {
-            page.executeSequence([element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[2]/div[3]/action-icon/div/div/ul/li[1]/div')).click(), keyStrokesRepo.ENTER(),browser.driver.sleep(1000)]).then(()=> { success();});
+            //console.log('before View gear icon');
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element.all(by.css('div.action-menu-link')).get(0)), 5000), /*, element.all(by.css('div.action-menu-link')).get(0).getText().then((text)=>{console.log('text: '+text);})*/
+            element.all(by.css('div.action-menu-link')).get(0).click()/*, keyStrokesRepo.ENTER(), browser.driver.sleep(1000)*/]).then(() => {
+                success();
+                //console.log('Pass View gear icon');
+            });
         });
     });
 
@@ -873,10 +882,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should not see "([^"]*)" "([^"]*)" in Edit Profile$/, function (arg1, arg2) {
-
         return new Promise((success, failure)=> {
-            browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox), 2000);
-            success();
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox), protractorConfig.config.WaitTime)]).then(()=>{success()});
         });
     });
 
@@ -918,6 +925,23 @@ var myBlackBookSteps = function myBlackBookSteps() {
             });
         });
     });
-};
 
+    this.Then(/^I click Edit Button in Edit Roles$/, function () {
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button'))), protractorConfig.config.WaitTime),
+                element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button')).click()
+            ]).then(() => {
+                success();
+            });
+        });
+    });
+
+    this.Then(/^I click All in submenu from Status FilterValue$/, function () {
+        return BB_userList.Click_StatusFilter_All_Submenu();
+    });
+
+    this.Then(/^I click Active in submenu from Status FilterValue$/, function () {
+        return BB_userList.Click_StatusFilter_Active_Submenu();
+    });
+};
 module.exports = myBlackBookSteps;

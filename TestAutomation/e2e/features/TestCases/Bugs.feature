@@ -23,7 +23,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I wait
 
 ######################################################################################################################
-#                                             Test cases A                                                            #
+#                                             Test cases A                                                           #
 #######################################################################################################################
 
   @TestCases_A-1
@@ -33,7 +33,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I wait
     And I enter Filter User List admintestemail1@yopmail.com in User List
     And I click on Gear Icon 1 "admintestemail1@yopmail.com in User List"
-    And I click View from Gear Icon
+    And I click 1 View from Gear Icon in User List
     And I wait
     And I click Edit Button in Edit User Profile
     And I wait
@@ -314,7 +314,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Status Filter
     And I enter Filter User List admintestemail1@yopmail.com in User List
     And I click on Gear Icon 1 "admintestemail1@yopmail.com in User List"
-    And I click View from Gear Icon
+    And I click 1 View from Gear Icon in User List
     And I wait
     And I click Edit Button in Edit User Profile
       Then I should see user's "emailAddress" displayed in screen with value "admintestemail1@yopmail.com"
@@ -806,6 +806,18 @@ Feature:  "Verify that this bugs dont return to the application."
 
   @TestCases_A-41
   Scenario: "@TestCases_A-41" (BB-625) (Permission CanViewOtherUsers): Gear Icons are gray out event if permission is enable.
+    #USER 1
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I wait
+    And I click on Gear Icon 3 "Basic Account in Role List"
+    And I click Edit from Gear Icon "in Role List"
+    #Enable Permission
+    And I enter "Can View User List" on Filter Permissions in Role Editor
+    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
+    And I wait
+    #USER 2
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
     And I enter my user email address user2@example.com in Login
@@ -819,6 +831,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icons 1 inactive
     And I wait
+    #USER 1
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
     And I enter my user email address user1@example.com in Login
@@ -841,6 +854,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
     And I wait
+     #USER 2
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
     And I enter my user email address user2@example.com in Login
@@ -853,10 +867,11 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Status Filter
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icon 1 "user3@example.com in User List"
-    And I click View from Gear Icon
+    And I click 1 View from Gear Icon in User List
     And I wait
       Then I should see user's "emailAddress" displayed in screen with value "user3@example.com"
     And I wait
+     #USER 1   disable all permission Basic Account
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
     And I enter my user email address user1@example.com in Login
@@ -878,6 +893,11 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click checkbox  "1" "can View Role List" Permission row in Role Editor
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
+    And I wait
+     #Disable Permission
+    And I enter "Can View User List" on Filter Permissions in Role Editor
+    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
     And I wait
 
   @TestCases_A-42
@@ -993,7 +1013,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Status Filter
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icon 1 "user3@example.com in User List"
-    And I click View from Gear Icon
+    And I click 1 View from Gear Icon in User List
     And I wait
     And I click User Active checkbox
     And I wait

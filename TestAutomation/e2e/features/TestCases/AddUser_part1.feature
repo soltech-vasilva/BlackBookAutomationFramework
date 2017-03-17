@@ -4,12 +4,12 @@
 
 Feature:  "Add a new User Profile"
 
-  Rules: Add a new User
+  Rules: Add a new user with Administrators Role.
 
   Question:
-  -Verify 26 user can be created. [TestCases_1]
-  -What happens if User enter already exit "Display ERROR"? Yes [TestCases_2]
-  -Verify that All inputs boxes are working "No ERROR". [Test case A]
+  -Verify 8-12 user can be created. [TestCases_A-1]
+  -Verify user (email) is already created "Display ERROR". [TestCases_A-2]
+  -Verify that All inputs boxes are working "No ERROR". [Test case A3]
   -What happens if email entered is bad "Display ERROR"? Yes [Test case B-1]
   -What happens if phone number entered is bad "Display ERROR"? Yes [Test case B-2]
   -What Happens if Password does not meet requirements and Confirm Password is different "Display ERROR"?Yes ON BOTH  [Test case B-3]
@@ -32,7 +32,6 @@ Feature:  "Add a new User Profile"
          ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
       And I reload page "https://qa-autobahn.blackbookcloud.com/login"
       And I wait
-      #And I check value on textbox
       And I enter my user email address user1@example.com in Login
       And I enter my Password Password1 in Login
       And I click Login Button
@@ -43,11 +42,11 @@ Feature:  "Add a new User Profile"
       And I wait
 
 #####################################################################################################################
-#                                             Test cases 1                                                          #
+#                                             Test cases A-1,A-2                                                    #
 #####################################################################################################################
 
-  @TestCases_1
-  Scenario Outline: "TestCases_1" Add 26 User and enter good for User Profile. "No Error" display
+  @TestCases_A-1
+  Scenario Outline: "TestCases_A-1" Add 8-12 User and enter good data for User Profile. "No Error" display
     When I enter my first name <firstName> in Form
       Then I should not see in "firstName" errors displayed
     And I enter my last name <lastName> in Form
@@ -70,23 +69,15 @@ Feature:  "Add a new User Profile"
 
     Examples:
       | firstName     | lastName     | emailAddress                |phoneNumber    | newPassWord | confirmNewPassWord |
-#Valid 26 Users input
-      |   firstName1  | lastName1    | admintestemail1@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName2  | lastName2    | admintestemail2@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName3  | lastName3    | admintestemail3@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName4  | lastName4    | admintestemail4@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName5  | lastName5    | admintestemail5@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName6  | lastName6    | admintestemail6@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName7  | lastName7    | admintestemail7@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
+#Valid 8-12 Users input
       |   firstName8  | lastName8    | admintestemail8@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName9  | lastName9    | admintestemail9@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName10 | lastName10   | admintestemail10@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName11 | lastName11   | admintestemail11@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName12 | lastName12   | admintestemail12@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName13 | lastName13   | admintestemail13@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
 
-  @TestCases_2
-  Scenario Outline: "TestCases_2" Add a User that was already exist (Email is unique). Error display "User name must be unique"
+  @TestCases_A-2
+  Scenario Outline: "TestCases_A-2" Add a User that was already exist (Email is unique). Error display "User name must be unique"
     When I enter my first name <firstName> in Form
       Then I should not see in "firstName" errors displayed
     And I enter my last name <lastName> in Form
@@ -109,15 +100,15 @@ Feature:  "Add a new User Profile"
 
     Examples:
       | firstName       | lastName       | emailAddress                 |phoneNumber    | newPassWord | confirmNewPassWord |
-#Valid 26 Users input
+#email already exist in database
       |   firstName1    | lastName1      | admintestemail4@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName100  | lastName100    | admintestemail4@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
 
 #######################################################################################################################
-#                                             Test cases A                                                            #
+#                                             Test cases A-3                                                          #
 #######################################################################################################################
-  @TestCases_A
-  Scenario Outline: "@TestCases_A" Enter good Add User Profile page. "No Error" display
+  @TestCases_A-3
+  Scenario Outline: "@TestCases_A-3" Enter good data to "Add User Profile" page. "No Error" display
     When I enter my first name <firstName> in Form
       Then I should not see in "firstName" errors displayed
     And I enter my last name <lastName> in Form
@@ -397,7 +388,7 @@ Feature:  "Add a new User Profile"
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
-#Email is Empty Field
+#Email Address is Empty Field
       |    AfirstName | AlastName |                           | (123)456-7890 | QaAdmin123    |   QaAdmin123         |
 
   @TestCases_C-5
@@ -419,7 +410,7 @@ Feature:  "Add a new User Profile"
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
-#Email is Empty Field
+#New PassWord is Empty Field
       |    AfirstName | AlastName | AemailAddress@email.com   | (123)456-7890 |               |   QaAdmin123         |
 
 
@@ -443,7 +434,7 @@ Feature:  "Add a new User Profile"
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
-#Email is Empty Field
+#Confirm New PassWord is Empty Field
       |    AfirstName | AlastName | AemailAddress@email.com   | (123)456-7890 |  QaAdmin123   |                      |
 
   @TestCases_C-7
@@ -472,7 +463,7 @@ Feature:  "Add a new User Profile"
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord             | confirmNewPassWord   |
-#NewPassword is Empty Field
+#Empty Field
       |    "       "  | "       " | s"  "s@hot.com            | "           " |   "      "Qa1          |    "      "Qa1       |
 
   @TestCases_C-8
@@ -493,5 +484,4 @@ Feature:  "Add a new User Profile"
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
-##Last Name is Empty Field
       |    AfirstName | AlastName | AemailAddress@email.com   | (123)456-7890 | QaAdmin123    |   QaAdmin123         |

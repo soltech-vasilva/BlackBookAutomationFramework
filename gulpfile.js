@@ -365,9 +365,35 @@ gulp.task('IE_Bugs', ()=> {
     });
 });
 
+gulp.task('Test1',()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Chrome
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('Test2',['Test1'],()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Chrome
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf1.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+//gulp.task('default', ['Test1','Test2']); //falta userlist and login
 
 
-gulp.task('default', [/*'Chrome_Setup' , 'Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login',*/'Chrome_Bugs'/*, 'Chrome_EditRoles'*/]); //falta userlist and login
+gulp.task('default', ['Chrome_Setup' /*, 'Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login','Chrome_Bugs', 'Chrome_EditRoles'*/]); //falta userlist and login
 // gulp.task('default', ['Firefox_AddUserPart1', 'Firefox_AddUserPart2','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
 //gulp.task('default', ['IE_AddUserPart1','IE_AddUserPart2','IE_EditUserProfile','IE_UsersList','IE_Login']);
 // gulp.task('default', ['Edge_AddUserPart1','Edge_AddUserPart2','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);

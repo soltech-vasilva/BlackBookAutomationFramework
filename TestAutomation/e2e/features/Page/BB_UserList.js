@@ -12,6 +12,7 @@ var keyStrokesRepo = require ('../Repository/KeyStrokesRepo.js');
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var protractor = require('protractor');
 var page = require ('../Page/Page_Objects');
+var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
 
 var BB_UserList = function BB_UserList() {
 
@@ -46,73 +47,130 @@ var BB_UserList = function BB_UserList() {
     };
 
     BB_UserList.prototype.Click_StatusFilter = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter), protractorConfig.config.WaitTime);
         return new Promise((success, failure)=> {
-            BB_userListRepo.Select_Element_StatusFilter.click().then(()=> {
-                success();
-            });
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_StatusFilter), protractorConfig.config.WaitTime),
+                BB_userListRepo.Select_Element_StatusFilter.click()]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
         });
+
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter), protractorConfig.config.WaitTime);
+        // return new Promise((success, failure)=> {
+        //     BB_userListRepo.Select_Element_StatusFilter.click().then(()=> {
+        //         success();
+        //     });
+        // });
     };
 
     BB_UserList.prototype.Click_StatusFilter_Inactive_Submenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu), protractorConfig.config.WaitTime);
 
         return new Promise((success, failure)=> {
             //EDGE BUG does not like to sendkeys to element.
            // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
-            page.executeSequence([ BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click(),
+            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu), protractorConfig.config.WaitTime),
+            BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click(),
                 //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
                 browser.driver.actions().sendKeys('i').perform(),
-                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
-                success()]).then(()=>{});
+                browser.driver.sleep(1000),
+                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+        });
+    };
+
+    BB_UserList.prototype.Click_StatusFilter_All_Submenu = function () {
+
+        return new Promise((success, failure)=> {
+            //EDGE BUG does not like to sendkeys to element.
+            // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
+            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_All_Submenu), protractorConfig.config.WaitTime),
+                BB_userListRepo.Select_Element_StatusFilter_All_Submenu.click(),
+                //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
+                //browser.driver.actions().sendKeys('a').perform(),
+                browser.driver.sleep(1000),
+                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+        });
+    };
+
+    BB_UserList.prototype.Click_StatusFilter_Active_Submenu = function () {
+
+        return new Promise((success, failure)=> {
+            //EDGE BUG does not like to sendkeys to element.
+            // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
+            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_Active_Submenu), protractorConfig.config.WaitTime),
+                BB_userListRepo.Select_Element_StatusFilter_Active_Submenu.click(),
+                //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
+                // browser.driver.actions().sendKeys('a').perform(),
+                // browser.driver.sleep(1000),
+                // browser.driver.actions().sendKeys('a').perform(),
+                browser.driver.sleep(1000),
+                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
         });
     };
 
     BB_UserList.prototype.Click_GearIcon = function (numberElementToSelect) {
         var index = parseInt(numberElementToSelect) - 1;
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_EditGeardIcon.get(index)), protractorConfig.config.WaitTime);
         return new Promise((success, failure)=> {
-            browser.driver.wait(BB_userListRepo.Select_Element_EditGeardIcon.get(index).click()).then(()=> {
-                success();
+            //browser.driver.wait(BB_userListRepo.Select_Element_EditGeardIcon.get(index).click()).then(()=> {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_EditGeardIcon.get(index)), protractorConfig.config.WaitTime),
+            BB_userListRepo.Select_Element_EditGeardIcon.get(index).click()]).then(()=> {
+                 success();
             });
         });
     };
 
     BB_UserList.prototype.Click_Gear_Deactivate_Submenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Deactivate_Submenu), protractorConfig.config.WaitTime);
-        return new Promise((success, failure)=> {
-            page.executeSequence([BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then (()=>{success();});
+         return new Promise((success, failure)=> {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu), protractorConfig.config.WaitTime),
+                BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
         });
     };
 
     BB_UserList.prototype.Click_Gear_Activate_Submenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Activate_Submenu), protractorConfig.config.WaitTime);
+
         return new Promise((success, failure)=> {
-            page.executeSequence([BB_userListRepo.Select_Element_Gear_Activate_Submenu.click(),
-                browser.driver.sleep(1000),
-                keyStrokesRepo.ENTER(), browser.driver.sleep(1000),success()]).then(()=>{});
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_Gear_Activate_Submenu), protractorConfig.config.WaitTime),
+                BB_userListRepo.Select_Element_Gear_Activate_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
         });
+
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Activate_Submenu), protractorConfig.config.WaitTime);
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([BB_userListRepo.Select_Element_Gear_Activate_Submenu.click(),
+        //         browser.driver.sleep(1000),
+        //         keyStrokesRepo.ENTER(), browser.driver.sleep(1000),success()]).then(()=>{});
+        // });
     };
 
-    BB_UserList.prototype.Click_Gear_View_Submenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_View_Submenu), protractorConfig.config.WaitTime);
-        return new Promise((success, failure)=> {
-            page.executeSequence([BB_userListRepo.Select_Element_Gear_View_Submenu.click(), keyStrokesRepo.ENTER(),browser.driver.sleep(1000)]).then(()=> { success();});
+    BB_UserList.prototype.Click_Gear_View_Submenu = function (rowNumber) {
+
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber.toString()+']/div[9]/action-icon/div/div/ul/li[1]/div'))), protractorConfig.config.WaitTime),
+                element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber.toString()+']/div[9]/action-icon/div/div/ul/li[1]/div')).click()
+            ]).then(() => {
+                 success();
+            });
         });
+
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_View_Submenu), protractorConfig.config.WaitTime);
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([BB_userListRepo.Select_Element_Gear_View_Submenu.click(), keyStrokesRepo.ENTER(),browser.driver.sleep(1000)]).then(()=> { success();});
+        // });
     };
 
     BB_UserList.prototype.Click_Gear_Edit_Submenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Edit_Submenu), protractorConfig.config.WaitTime);
         return new Promise((success, failure)=> {
-            page.executeSequence([BB_userListRepo.Select_Element_Gear_Edit_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> { success(); });
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Edit_Submenu), protractorConfig.config.WaitTime),
+                BB_userListRepo.Select_Element_Gear_Edit_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> {   success();});
         });
     };
 
     BB_UserList.prototype.Click_Gear_Delete_Submenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Delete_Submenu), protractorConfig.config.WaitTime);
+
         return new Promise((success, failure)=> {
-            page.executeSequence([BB_userListRepo.Select_Element_Gear_Delete_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> { success(); });
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Delete_Submenu), protractorConfig.config.WaitTime),
+                BB_userListRepo.Select_Element_Gear_Delete_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> {   success(); });
         });
+
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Delete_Submenu), protractorConfig.config.WaitTime);
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([BB_userListRepo.Select_Element_Gear_Delete_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> { success(); });
+        // });
     };
 };
 module.exports = new BB_UserList();

@@ -7,7 +7,7 @@ var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
 var BB_UserListRepo = function BB_UserListRepo () {
-
+    BB_UserListRepo.prototype.Select_Element_TittleUserList  = element(by.xpath('//*[@id="page-box"]/user-list/div/div/h1/span'));
     //Components Button
     BB_UserListRepo.prototype.Select_Element_NewUserButton  = element(by.css('button.button'));
     BB_UserListRepo.prototype.Select_Element_FilterUserListTextbox = element(by.css('input[type="text"]')); //TODO no quitar orijinal problemas con chrome viejo en mi computadora. Pero sirve con el nuevo.
@@ -15,12 +15,13 @@ var BB_UserListRepo = function BB_UserListRepo () {
     BB_UserListRepo.prototype.Select_Element_StatusFilter = element(by.css('select[name="statusFilterTerm"]'));
     BB_UserListRepo.prototype.Select_Element_StatusFilter_Inactive_Submenu = element(by.css('option[value=\"inactive\"]'));
     BB_UserListRepo.prototype.Select_Element_StatusFilter_Active_Submenu = element(by.css('option[value=\"active\"]'));
+    BB_UserListRepo.prototype.Select_Element_StatusFilter_All_Submenu = element(by.css('option[value=\"all\"]'));
 
     BB_UserListRepo.prototype.Select_Element_EditGeardIcon = element.all(by.css('div.icon-cog.parent'));
 
     BB_UserListRepo.prototype.Select_Element_Gear_Activate_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[9]/action-icon/div/div/ul/li[3]/a'));
-
-    BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[9]/action-icon/div/div/ul/li[1]/div'));  //original
+                                                                                   //*[@id="center"]/div/div[4]/div[3]/div/div/div[2]/div[9]/action-icon/div/div/ul/li[1]/div
+    //BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber+']/div[9]/action-icon/div/div/ul/li[1]/div'));  //original
     //BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[5]/div[3]/action-icon/div/div/ul/li[1]/div'));  //roles original
     //BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu = element(by.linkText('View')); //test
     BB_UserListRepo.prototype.Select_Element_Gear_Deactivate_Submenu = element(by.linkText('Deactivate'));

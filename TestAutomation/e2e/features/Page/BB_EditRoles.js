@@ -7,13 +7,13 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
+
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var verifyErrorMessage = require('../Page/VerifyErrorMessage.js');
 var utilities = require('../Page/Utilities.js');
 var page = require ('../Page/Page_Objects');
 var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
-
+var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 
 var BB_EditRoles = function BB_EditRoles() {
 
@@ -63,12 +63,21 @@ var BB_EditRoles = function BB_EditRoles() {
     };
 
     BB_EditRoles.prototype.Click_CancelButton_RoleEditor = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Cancel_button), protractorConfig.config.WaitTime);
+
         return new Promise((success, failure) => {
-            BB_editRolesRepo.Select_Element_Cancel_button.click().then(() => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_editRolesRepo.Select_Element_Cancel_button), protractorConfig.config.WaitTime),
+                BB_editRolesRepo.Select_Element_Cancel_button.click()
+            ]).then(() => {
                 success();
             });
         });
+
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Cancel_button), protractorConfig.config.WaitTime);
+        // return new Promise((success, failure) => {
+        //     BB_editRolesRepo.Select_Element_Cancel_button.click().then(() => {
+        //         success();
+        //     });
+        // });
     };
 
     BB_EditRoles.prototype.Click_X_CloseMessagePopup_RoleEditor = function () {
