@@ -4,6 +4,8 @@
 
 Feature:  "SetUp"
 
+  Rules: Make sure all settings are set before running regression test.
+
   Background:
 
     Given I enter BlackBook Login Website
@@ -46,7 +48,10 @@ Feature:  "SetUp"
     And I click on Gear Icon 3 "Editor in Role List"
     And I click Edit from Gear Icon "in Role List"
     And I wait
-         #Remmeber to add permission "CanAdd/EditUser","CanResetUsersPasswords","CanViewOtherUsers","CanViewUserList", "CanAdd/EditRoles","CanViewRoleList"
+    And I clear text box selected "RoleName" in Role Editor
+    And I enter Role Name "Editor-Full-User"
+    #Enable
+         #Remmeber to add permission "CanAssignedUserRoles","CanAdd/EditUser","CanResetUsersPasswords","CanViewOtherUsers","CanViewUserList", "CanAdd/EditRoles","CanViewRoleList"
     And I enter "Can Add/Edit User" on Filter Permissions in Role Editor
     And I wait
     And I click checkbox  "1" "Can Add/Edit User" Permission row in Role Editor
@@ -67,6 +72,17 @@ Feature:  "SetUp"
     And I click checkbox  "1" "Can Add/Edit Roles" Permission row in Role Editor
     And I clear text box selected "FilterPermissions" in Role Editor
     And I wait
+    And I enter "Can Assign Users Roles" on Filter Permissions in Role Editor
+    And I wait
+    And I click checkbox  "1" "Can Assign Users Roles" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
+    And I wait
+    #Disable
+    And I enter "Can View Other Users Profiles" on Filter Permissions in Role Editor
+    And I wait
+    And I click checkbox  "1" "Can View Other Users Profiles" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
+    And I wait
     And I enter "editor@example.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I clear text box selected "FilterUsers" in Role Editor
@@ -78,12 +94,12 @@ Feature:  "SetUp"
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
     And I wait
-    #Create new Role "Basic Account"
+    #Create new Role "Basic Role-No Permissions"
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on New Role Button in Role List
     And I enter Role Name ""
-    And I enter Role Name "Basic Account"
+    And I enter Role Name "Basic Role-No Permissions"
     And I select Role Market "US Used Car" in Role Editor
     And I wait
     And I enter "user2@example.com" on Filter Users in Role Editor
@@ -91,6 +107,49 @@ Feature:  "SetUp"
     And I wait
     And I click on Save button in Role Editor
       Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+    And I wait
+    #Create new Role "Editor-Full-Roles"
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I click on New Role Button in Role List
+    And I enter Role Name ""
+    And I enter Role Name "Editor-Full-Roles"
+    And I select Role Market "US Used Car" in Role Editor
+    And I wait
+    And I enter "editor@example.com" on Filter Users in Role Editor
+    And I click checkbox on first user found from Filter Users in Role Editor
+    And I wait
+    And I enter "Roles" on Filter Permissions in Role Editor
+    And I wait
+    And I click checkbox  "0" "Roles" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
+    And I wait
+    And I enter "Can view User List" on Filter Permissions in Role Editor
+    And I wait
+    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
+    And I wait
+    And I click on Save button in Role Editor
+      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+    And I wait
+     #Create new Role "Setting-Only"
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I click on New Role Button in Role List
+    And I enter Role Name ""
+    And I enter Role Name "Setting-Only"
+    And I select Role Market "US Used Car" in Role Editor
+    And I wait
+    And I enter "admin@example.com" on Filter Users in Role Editor
+    And I click checkbox on first user found from Filter Users in Role Editor
+    And I wait
+    And I enter "Setting" on Filter Permissions in Role Editor
+    And I wait
+    And I click checkbox  "0" "Setting" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
+    And I wait
+    And I click on Save button in Role Editor
+    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     And I wait
     #USER 1 edit first name
     And I click on Admin Tab

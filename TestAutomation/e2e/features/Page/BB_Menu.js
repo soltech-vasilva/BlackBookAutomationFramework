@@ -78,9 +78,10 @@ var BB_Menu = function BB_Menu() {
         //    browser.driver.get('http://qa-autobahn.blackbookcloud.com/user/list');
         // }
         // else {
-            browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_UsersSubMenuButton), protractorConfig.config.WaitTime);
+
             return new Promise((success, failure) => {
-                page.executeSequence([BB_menuRepo.Select_Element_UsersSubMenuButton.click()]).then(() => {
+                page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_UsersSubMenuButton), protractorConfig.config.WaitTime),
+                    BB_menuRepo.Select_Element_UsersSubMenuButton.click()]).then(() => {
                     success();
                 });
             });

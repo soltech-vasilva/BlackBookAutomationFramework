@@ -122,16 +122,16 @@ var BB_EditRoles = function BB_EditRoles() {
 
     BB_EditRoles.prototype.Click_AddRowPermissionCheckbox_RoleEditor = function (permissionRowNumber) {
         return new Promise((success, failure) => {
-            BB_editRolesRepo.Select_Element_Permission_AllCheckboxs.get(permissionRowNumber).click().then(()=> {
+            page.executeSequence([ browser.driver.sleep(2000), BB_editRolesRepo.Select_Element_Permission_AllCheckboxs.get(permissionRowNumber).click()]).then(()=> {
                 success();
             });
         });
     };
 
     BB_EditRoles.prototype.Enter_FilterPermissions_RoleEditor = function (filterPermissions) {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_FilterPermissionsTextbox), protractorConfig.config.WaitTime);
         return new Promise((success, failure) => {
-            BB_editRolesRepo.Select_Element_FilterPermissionsTextbox.sendKeys(filterPermissions).then(() => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_FilterPermissionsTextbox), protractorConfig.config.WaitTime),
+            BB_editRolesRepo.Select_Element_FilterPermissionsTextbox.sendKeys(filterPermissions)]).then(() => {
                 success();
             });
         });

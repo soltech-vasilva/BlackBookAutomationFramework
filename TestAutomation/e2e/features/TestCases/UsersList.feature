@@ -61,13 +61,8 @@ Feature:  "User List"
     And I click Status Filter
     And I enter Filter User List admintestemail6@yopmail.com in User List
     And I wait
-    And I click Inactive in submenu from Status Filter
+    And I click Inactive in submenu from Status FilterValue
     And I wait
     And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
     And I click Activate in submenu from Gear Icon
     And I wait
-
-#######################################################################################################################
-#                                             Test cases A                                                            #
-#######################################################################################################################
-

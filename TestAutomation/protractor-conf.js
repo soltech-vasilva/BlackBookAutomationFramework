@@ -9,24 +9,26 @@ exports.config = {
     // ],
     'StopRunAtFail': false,
     'WaitTime': 15000,
-    'BuildTestNumber': '1',
+    'BuildTestNumber': '100',
 
     //Turn off applitool
-    'ApplitoolsOn': true,
+    'ApplitoolsOn': false,
 
     //Running Test Cases in specific order.
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
       //  'e2e/features/TestCases/START_eyes.feature',
+       //   'e2e/features/TestCases/AddUser_part0.feature'
+         //'e2e/features/TestCases/AddUser_part0.feature'//,
        // 'e2e/features/TestCases/AddUser_part1.feature'//,
          //'e2e/features/TestCases/AddUser_part2.feature'//,
           //'e2e/features/TestCases/EditUserProfile.feature'//,
          //  'e2e/features/TestCases/UsersList.feature'//,
           //'e2e/features/TestCases/Login.feature'//,
        // 'e2e/features/TestCases/EditRoles.feature'//,
-        //'e2e/features/TestCases/Bugs.feature'//,
-        'e2e/features/TestCases/Test.feature'//,
+        'e2e/features/TestCases/Bugs.feature'//,
+       // 'e2e/features/TestCases/VerifyRolesUI.feature'//,
         //'e2e/features/TestCases/Test1.feature'//,
        // 'e2e/features/TestCases/END_eyes.feature'//,
     ],

@@ -83,7 +83,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "F_Admin View All Only"
+    And I enter Role Name "T_Admin View All Only"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
@@ -125,7 +125,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "G_Edit Other Users Basic"
+    And I enter Role Name "U_Edit Other Users Basic"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
@@ -165,7 +165,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "H_Edit Other Users Basic + Password"
+    And I enter Role Name "V_Edit Other Users Basic + Password"
     And I wait
     Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
@@ -205,7 +205,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "I_Edit Other Users Basic + Roles"
+    And I enter Role Name "W_Edit Other Users Basic + Roles"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
@@ -245,7 +245,7 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "J_Edit Other Users Basic + Roles + Password"
+    And I enter Role Name "X_Edit Other Users Basic + Roles + Password"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role

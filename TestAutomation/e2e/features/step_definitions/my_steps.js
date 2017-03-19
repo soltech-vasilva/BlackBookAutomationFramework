@@ -650,7 +650,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.Then(/^I should see \#of Users has increase value for "([^"]*)" in Role List$/, function (arg1) {
         return new Promise((success, failure)=> {
 
-            element.all(by.css('div[colid="users"]')).get(5).getText().then((currentValue)=> {
+            element.all(by.css('div[colid="users"]')).get(7).getText().then((currentValue)=> {
                 console.log(currentValue);
                 numberofUsers = currentValue;
                 success();
@@ -733,21 +733,19 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I click Filter By Group dropdown "([^"]*)" Permissions in Role Editor$/, function (PermissionsName) {
 
-
-
         return new Promise ((success, failure)=>{
-            element.all(by.css('select[name="filterGroupTerm"]')).get(0).click();
 
-            if(PermissionsName.toString().toLowerCase() == 'all') {
+            page.executeSequence([ element.all(by.css('select[name="filterGroupTerm"]')).get(0).click().then(()=>{
+                if(PermissionsName.toString().toLowerCase() == 'all') {
                 element.all(by.css('option[value="' + PermissionsName.toString().toLowerCase() + '"]')).get(0).click();
                 browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
             }
             else {
-               // browser.driver.actions().sendKeys('u').perform();
+                // browser.driver.actions().sendKeys('u').perform();
                 browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
                 element(by.css('option[value="' + PermissionsName.toString().toLowerCase() + '"]')).click();
             }
-            success();
+            })]).then(()=>{ success();});
         });
     });
 
@@ -844,8 +842,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I should not see "([^"]*)" Button in User List$/, function (buttonName) {
         return new Promise((success, failure)=> {
-        browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_userListRepo.Select_Element_NewUserButton), 5000);
-            success();
+        page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_userListRepo.Select_Element_NewUserButton), protractorConfig.config.WaitTime)]).then(()=>{ success();});
         });
     });
 
@@ -853,11 +850,17 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return verifyErrorMessage.Verify_ErrorMessageToDisplay_RoleEditor(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
     });
 
-    this.Given(/^I click View from Gear Icon in Role List$/, function () {
+    this.Given(/^I click (.*) View from Gear Icon in Role List$/, function (rowNumber) {
         return new Promise((success, failure)=> {
+            //var number = parseInt(rowNumber);
+            //console.log('number:'+number);
             //console.log('before View gear icon');
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element.all(by.css('div.action-menu-link')).get(0)), 5000), /*, element.all(by.css('div.action-menu-link')).get(0).getText().then((text)=>{console.log('text: '+text);})*/
-            element.all(by.css('div.action-menu-link')).get(0).click()/*, keyStrokesRepo.ENTER(), browser.driver.sleep(1000)*/]).then(() => {
+            //page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element.all(by.css('div.action-menu-link')).get(number)), protractorConfig.config.WaitTime), /*, element.all(by.css('div.action-menu-link')).get(0).getText().then((text)=>{console.log('text: '+text);})*/
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber+']/div[3]/action-icon/div/div/ul/li[1]/div'))), protractorConfig.config.WaitTime), /*, element.all(by.css('div.action-menu-link')).get(0).getText().then((text)=>{console.log('text: '+text);})*/
+
+                element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber+']/div[3]/action-icon/div/div/ul/li[1]/div')).click()/*, keyStrokesRepo.ENTER(), browser.driver.sleep(1000)*/]).then(() => {
+
+
                 success();
                 //console.log('Pass View gear icon');
             });
@@ -942,6 +945,20 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I click Active in submenu from Status FilterValue$/, function () {
         return BB_userList.Click_StatusFilter_Active_Submenu();
+    });
+
+    this.Then(/^I should see in "([^"]*)" button "([^"]*)" in User List$/, function (ButtonName, isEnableOrDisable) {
+        return new Promise((success, failure)=>{
+            switch (ButtonName.toString().toLowerCase()) {
+                case "newuser":
+                    utilities.VerifyButtonStatus_isEnableorDisable(BB_userListRepo.Select_Element_NewUserButton,isEnableOrDisable,success, failure);
+                    break;
+
+                default:
+                    console.log("Button Name selection is not in function.");
+                    failure();
+            }
+        });
     });
 };
 module.exports = myBlackBookSteps;

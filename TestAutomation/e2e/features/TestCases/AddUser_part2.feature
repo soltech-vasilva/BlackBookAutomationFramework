@@ -55,9 +55,6 @@ Feature:  "Add a new User Profile"
     Examples:
       | firstName     | lastName     | emailAddress                |phoneNumber    | newPassWord | confirmNewPassWord |
 #Valid 13-26 Users input
-      |   firstName13 | lastName13   | admintestemail13@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName14 | lastName14   | admintestemail14@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName15 | lastName15   | admintestemail15@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName16 | lastName16   | admintestemail16@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName17 | lastName17   | admintestemail17@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName18 | lastName18   | admintestemail18@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
