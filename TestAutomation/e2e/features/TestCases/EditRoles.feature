@@ -57,10 +57,11 @@ Feature:  "Add a new Role"
       Then I should see in "Save" button "disable" in Edit Role
       Then I should see Role Market value "US Used Car"
       Then I should not see in "RoleMarket" errors displayed in Edit Role
-    And I enter Role Name "Basic Account"
+    And I enter Role Name "Basic Role-No Permissions"
     And I wait
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
+    And I click Filter By Group dropdown "User" Permissions in Role Editor
     And I enter "Can View User List" on Filter Permissions in Role Editor
     And I click checkbox  "1" "Can view User List" Permission row in Role Editor
     And I clear text box selected "FilterPermissions" in Role Editor
@@ -91,13 +92,23 @@ Feature:  "Add a new Role"
     And I wait
       Then I should see "User" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-    And I click checkbox  "5" "Can view Other Users" Permission row in Role Editor
+    And I wait
+    #fix below delete
+    And I click checkbox  "0" "Users" Permission row in Role Editor
+    And I click checkbox  "6" "Can view User List" Permission row in Role Editor
+    And I click checkbox  "4" "Can view Other Users" Permission row in Role Editor
+    #fix below delete
+    And I click checkbox  "0" "Users" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
     And I wait
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
+    And I wait
+     #fix below delete
+    And I click checkbox  "0" "Roles" Permission row in Role Editor
     And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
+     #fix below delete
+    And I click checkbox  "0" "Roles" Permission row in Role Editor
     And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I wait
       Then I should see "Settings" display for Filter By Group in Role Editor
@@ -133,16 +144,22 @@ Feature:  "Add a new Role"
     And I wait
       Then I should see "User" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-    And I click checkbox  "2" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "5" "Can view Other Users" Permission row in Role Editor
+    And I wait
+    And I click checkbox  "0" "Can Add/Edit Users" Permission row in Role Editor
+    And I click checkbox  "6" "Can view User List" Permission row in Role Editor
+    And I click checkbox  "4" "Can view Other Users" Permission row in Role Editor
     And I wait
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
     And I wait
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
+    And I wait
+    #fix below delete
+    And I click checkbox  "0" "Roles" Permission row in Role Editor
     And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
+     #fix below delete
+    And I click checkbox  "0" "Roles" Permission row in Role Editor
+    #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I wait
     And I click Filter By Status dropdown "Active" in Role Editor
     And I wait
@@ -173,16 +190,22 @@ Feature:  "Add a new Role"
     And I wait
       Then I should see "User" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "2" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "5" "Can View Other Users" Permission row in Role Editor
-    And I click checkbox  "4" "Can Reset Users Passwords" Permission row in Role Editor
+    And I wait
+    And I click checkbox  "0" "Can Add/Edit Users" Permission row in Role Editor
+    And I click checkbox  "6" "Can View User List" Permission row in Role Editor
+    And I click checkbox  "4" "Can View Other Users" Permission row in Role Editor
+    And I click checkbox  "3" "Can Reset Users Passwords" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
     And I wait
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
+    And I wait
+    #fix below delete
+    And I click checkbox  "0" "Roles" Permission row in Role Editor
     And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
+     #fix below delete
+    And I click checkbox  "0" "Roles" Permission row in Role Editor
+    #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I wait
     And I click Filter By Status dropdown "Active" in Role Editor
     And I wait
@@ -213,16 +236,18 @@ Feature:  "Add a new Role"
     And I wait
       Then I should see "User" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "2" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "5" "Can View Other Users" Permission row in Role Editor
+    And I wait
+    And I click checkbox  "0" "Can Add/Edit Users" Permission row in Role Editor
+    And I click checkbox  "6" "Can View User List" Permission row in Role Editor
+    And I click checkbox  "4" "Can View Other Users" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
     And I wait
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can Add/Edit Roles" Permission row in Role Editor
+    And I wait
+    And I click checkbox  "0" "Can Add/Edit Roles" Permission row in Role Editor
     And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
+    #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I wait
     And I click Filter By Status dropdown "Active" in Role Editor
     And I wait
@@ -253,17 +278,19 @@ Feature:  "Add a new Role"
     And I wait
       Then I should see "User" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "2" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "4" "Can Reset Users Passwords" Permission row in Role Editor
-    And I click checkbox  "5" "Can View Other Users" Permission row in Role Editor
+    And I wait
+    And I click checkbox  "0" "Can Add/Edit Users" Permission row in Role Editor
+    And I click checkbox  "6" "Can View User List" Permission row in Role Editor
+    And I click checkbox  "3" "Can Reset Users Passwords" Permission row in Role Editor
+    And I click checkbox  "4" "Can View Other Users" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
     And I wait
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Can Add/Edit Roles" Permission row in Role Editor
+    And I wait
+    And I click checkbox  "0" "Can Add/Edit Roles" Permission row in Role Editor
     And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
-    And I click Filter By Group dropdown "Settings" Permissions in Role Editor
+    #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I wait
     And I click Filter By Status dropdown "Active" in Role Editor
     And I wait
