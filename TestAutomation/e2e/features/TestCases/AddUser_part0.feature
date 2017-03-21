@@ -44,6 +44,7 @@ Feature:  "Add a new User Profile"
       Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
+    #add refactoring
     And I click checkbox User's Roles "Administrators"
       Then I should not see in "userrole" errors displayed
     And I click on Save button in Edit User Profile

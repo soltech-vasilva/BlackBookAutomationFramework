@@ -23,10 +23,10 @@ var BB_Login = function BB_Login() {
            //Open BlackBook website
            page.executeSequence([(browser.driver.get(BB_loginRepo.BlackBookUrl)).then(() => {
                console.log('dentro getURL');
-               if (protractorConfig.config.ApplitoolsOn == false) {
-                   //browser.driver.manage().window().setSize(protractorConfig.config.width, protractorConfig.config.height);
-                   browser.driver.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
-               }
+               //if (protractorConfig.config.ApplitoolsOn == false) {
+                   browser.driver.manage().window().setSize(protractorConfig.config.width, protractorConfig.config.height);
+                 //  browser.driver.manage().window().maximize();  //comment out since Applitool does not like on firefox both.
+               //}
                //TODO prueba
                //  page.executeSequence([eyesSetUp.EyesCheckWindow(eyes, BB_loginRepo.EyesVerify_BB_Login, protractorConfig.config.ApplitoolsOn)]).then(()=>{success()});
            })]).then(()=>{success(); console.log('afuera getURL');});

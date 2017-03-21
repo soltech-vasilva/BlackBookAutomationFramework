@@ -8,6 +8,7 @@ chai.use(chaiAsPromised);
 
 var BB_MenuRepo = function BB_MenuRepo () {
 
+    BB_MenuRepo.prototype.Select_Element_MainLogo = element(by.xpath('//*[@id="page-box"]/header/div[1]'));
     //Components Tab
     // BB_MenuRepo.prototype.Select_Element_AdminTab = element(by.linkText('Admin')); //EDGE, Chrome works
     BB_MenuRepo.prototype.Select_Element_AdminTab = element.all(by.css('span.nav-item-link')).get(0); //todo code change testting this

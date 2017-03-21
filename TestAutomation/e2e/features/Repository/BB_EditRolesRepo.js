@@ -8,9 +8,12 @@ chai.use(chaiAsPromised);
 
 var BB_EditRolesRepo = function BB_EditRolesRepo () {
 
+    //string
+    BB_EditRolesRepo.prototype.AttributeString_Permission_GridCheckbox_Checked  = "icon-check-square grid-checkbox-checked grid-checkbox";
+    BB_EditRolesRepo.prototype.AttributeString_Permission_GridCheckbox_Unchecked  = "icon-check-square grid-checkbox-checked grid-checkbox ag-hidden";
+
     BB_EditRolesRepo.prototype.Select_Element_TittleAddNewRole  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/h1/span'));
     //Components
-
     BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.css('button.button.green-btn'));
     BB_EditRolesRepo.prototype.Select_Element_Cancel_button  = element(by.buttonText('Cancel'));
 

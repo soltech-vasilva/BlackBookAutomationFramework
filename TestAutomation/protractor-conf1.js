@@ -26,7 +26,7 @@ exports.config = {
           //'e2e/features/TestCases/Login.feature'//,
        // 'e2e/features/TestCases/EditRoles.feature'//,
         //'e2e/features/TestCases/Bugs.feature'//,
-       // 'e2e/features/TestCases/VerifyRolesUI.feature',
+       // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature',
         'e2e/features/TestCases/Test1.feature'//,
        // 'e2e/features/TestCases/END_eyes.feature'//,
     ],

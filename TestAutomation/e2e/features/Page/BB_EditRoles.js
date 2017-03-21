@@ -174,11 +174,11 @@ var BB_EditRoles = function BB_EditRoles() {
 
             checkbox.getAttribute('class').then((currentClass)=>{
 
-                if (currentClass == "icon-check-square grid-checkbox-checked grid-checkbox" && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
+                if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Checked && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
                    // console.log('|style:|' + currentClass);
                     return success();
                 }
-                else  if (currentClass == "icon-check-square grid-checkbox-checked grid-checkbox ag-hidden" && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
+                else  if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Unchecked && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
                    // console.log('|style:|' + currentClass);
                     return success();
                 }

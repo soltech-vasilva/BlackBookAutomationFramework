@@ -1,37 +1,36 @@
 //var paths = require('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/build/paths');
 //var browserstack = require('browserstack-local');
 //var paths = require('build/paths');
+var dateFormat = require('dateformat');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 exports.config = {
 
     //specs: [
     //'e2e/features/TestCases/*.feature'
     // ],
-    'StopRunAtFail': false,
-    'WaitTime': 15000,
-    'BuildTestNumber': '106',
 
     //Turn off applitool
-    'ApplitoolsOn': true,
+    'ApplitoolsOn': false,
 
     //Running Test Cases in specific order.
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-      //  'e2e/features/TestCases/START_eyes.feature',
-         //'e2e/features/TestCases/AddUser_part0.feature'//,
-       // 'e2e/features/TestCases/AddUser_part1.feature'//,
-         //'e2e/features/TestCases/AddUser_part2.feature'//,
-         // 'e2e/features/TestCases/EditUserProfile.feature'//,
-         //  'e2e/features/TestCases/UsersList.feature'//,
-          //'e2e/features/TestCases/Login.feature'//,
-       // 'e2e/features/TestCases/EditRoles.feature'//,
-       // 'e2e/features/TestCases/Bugs.feature'//,
-       'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
-        // 'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
+        //  'e2e/features/TestCases/START_eyes.feature',
+        //  'e2e/features/TestCases/AddUser_part0.feature'
+        //'e2e/features/TestCases/AddUser_part0.feature'//,
+        // 'e2e/features/TestCases/AddUser_part1.feature'//,
+        //'e2e/features/TestCases/AddUser_part2.feature'//,
+        // 'e2e/features/TestCases/EditUserProfile.feature'//,
+        //  'e2e/features/TestCases/UsersList.feature'//,
+        //'e2e/features/TestCases/Login.feature'//,
+        // 'e2e/features/TestCases/EditRoles.feature'//,
+        // 'e2e/features/TestCases/Bugs.feature'//,
+        // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
+         'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
         //'e2e/features/TestCases/Test1.feature'//,
-       // 'e2e/features/TestCases/END_eyes.feature'//,
-       // 'e2e/features/TestCases/Setup.feature'//,
+        // 'e2e/features/TestCases/END_eyes.feature'//,
     ],
 
 
@@ -75,18 +74,18 @@ exports.config = {
     // // //windows all version max resolution
     // 'width': 1942,
     // 'height': 1430,
-    //
+
     'commonCapabilities': {
          //Label
-         'build': ' #167 Run: ' + new Date().toString(),
-         'project': 'Black Book',
-         'name': 'Full Test Automation Suit',
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Chrome_______________ Test : Verify Roles Part 2____ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+        'project': 'Black Book',
+         'name': 'Add User Part 1',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
         // 'acceptSslCerts': true,
-        //'browserstack.selenium_version' : '3.0.1',
+       // 'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot
          'browserstack.debug': 'true',
@@ -94,18 +93,18 @@ exports.config = {
          //Video recording
          'browserstack.video': 'true'//,
     },
-    //
+
     //Browserstack multiple browsers at a time testing
       multiCapabilities: [
-            {
-            ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
-            //Browser Type
-            'browserName' : 'IE',
-            'browser_version' : '11.0',
-            'os' : 'Windows',
-            'os_version' : '10',
-            'resolution' : '1920x1200'
-            }
+            // {
+            // ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
+            // //Browser Type
+            // 'browserName' : 'IE',
+            // 'browser_version' : '11.0',
+            // 'os' : 'Windows',
+            // 'os_version' : '10',
+            // 'resolution' : '1920x1200'
+            // }
           //   ,
           // {
           //     ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
@@ -117,23 +116,23 @@ exports.config = {
           //     'resolution': '1920x1200'
           // }
           //   ,
-          // {
-          //     ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
-          //     // Browser Type
-          //     'os': 'Windows',
-          //     'os_version': '10',
-          //     'browserName': 'Chrome',
-          //     'browser_version': '55.0',
-          //     'resolution': '1920x1200'//,
-          //
-          //     // 'chromeOptions': {
-          //     //     'excludeSwitches': ["disable-popup-blocking"]
-          //     // }
-          //
-          //     // 'chromeOptions': {
-          //     //     'args': ["--disable-popup-blocking"]
-          //     // }
-          // }
+          {
+              ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
+              // Browser Type
+              'os': 'Windows',
+              'os_version': '10',
+              'browserName': 'Chrome',
+              'browser_version': '55.0',
+              'resolution': '1920x1200'//,
+
+              // 'chromeOptions': {
+              //     'excludeSwitches': ["disable-popup-blocking"]
+              // }
+
+              // 'chromeOptions': {
+              //     'args': ["--disable-popup-blocking"]
+              // }
+          }
           // ,
           // {
           //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
@@ -148,18 +147,12 @@ exports.config = {
           // {
           //     ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
           //     // Browser Type
-          //     // 'os': 'OS X',
-          //     // 'os_version': 'Sierra',
-          //     // 'browserName': 'Safari',
-          //     // 'browser_version': '10.0',
-          //     // 'resolution': '1920x1080'
-          //     // //'browserstack.safari.enablePopups': false
-          //
           //     'os': 'OS X',
-          //     'os_version': 'El Capitan',
+          //     'os_version': 'Sierra',
           //     'browserName': 'Safari',
-          //     'browser_version': '9.1',
-          //     'resolution': '1920x1080'
+          //     'browser_version': '10.0',
+          //     'resolution': '1920x1080' //,
+          //     //'browserstack.safari.enablePopups': false
           // }
 
           /////////////NOT NEED FOR MOMENT/////
@@ -216,10 +209,10 @@ exports.config = {
 
     // capabilities: {
     // //46.0b9
-    // 'browserName': 'firefox'
+    // //'browserName': 'firefox'
     // //53.0.2785.89
-    // //'browserName': 'chrome'
-    //  //   'browserName': 'safari'//,
+    // 'browserName': 'chrome'
+    //   //  'browserName': 'safari'//,
     // //     'acceptSslCerts': true,
     //     // 'mode' : 'proxy'
     //
@@ -247,7 +240,7 @@ exports.config = {
     //     });
     // },
 
-   // directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
+    //directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
 
 
 
@@ -272,7 +265,7 @@ exports.config = {
         require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/step_definitions/my_steps.js' ],
 
         // tags: false,
-       // tags: '@TC_Login_B-3',
+        //tags: ' @TestCases_C-7',
 
          //format: 'pretty',
         //format: 'json' ,

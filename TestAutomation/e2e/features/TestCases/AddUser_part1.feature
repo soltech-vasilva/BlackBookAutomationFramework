@@ -71,7 +71,6 @@ Feature:  "Add a new User Profile"
 #Valid 8-12 Users input
       |   firstName8  | lastName8    | admintestemail8@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName9  | lastName9    | admintestemail9@yopmail.com  |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
-      |   firstName10 | lastName10   | admintestemail10@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
 
   @TestCases_A-2
   Scenario Outline: "TestCases_A-2" Add a User that was already exist (Email is unique). Error display "User name must be unique"

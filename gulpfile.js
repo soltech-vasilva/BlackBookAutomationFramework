@@ -70,13 +70,13 @@ gulp.task('Chrome_Setup',  ()=>
     });
 });
 
-gulp.task('Chrome_Setup',  ()=>
+gulp.task('Chrome_VerifyRoles_Part1', ['Chrome_Setup'], ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
         //Chrome
             .pipe(protractor({
-                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_Setup.js'
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_VerifyRoles_Part1.js'
             }))
             .on('end', resolve)
             .on('error', resolve);
@@ -84,33 +84,72 @@ gulp.task('Chrome_Setup',  ()=>
 });
 
 
-gulp.task('Chrome_AddUserPart1', ['Chrome_Setup'], ()=>
+gulp.task('Chrome_AddUserPart0', ['Chrome_VerifyRoles_Part1'], ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
         //Chrome
         .pipe(protractor({
-            configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_AddUser_part1.js'
+            configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_AddUser_part0.js'
         }))
         .on('end', resolve)
         .on('error', resolve);
         });
 });
 
-gulp.task('Chrome_AddUserPart2', ['Chrome_AddUserPart1'],  ()=>
+gulp.task('Chrome_EditRoles', ['Chrome_AddUserPart0'],  ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
         //Chrome
             .pipe(protractor({
-                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_AddUser_part2.js'
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_EditRoles.js'
             }))
             .on('end', resolve)
             .on('error', resolve);
     });
 });
 
-gulp.task('Chrome_EditUserProfile', ['Chrome_AddUserPart2'],()=>
+gulp.task('Chrome_VerifyRoles_Part2', ['Chrome_EditRoles'],  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Chrome
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_VerifyRoles_Part2.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('Chrome_Bugs', ['Chrome_VerifyRoles_Part2'],  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Chrome
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_Bugs.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('Chrome_AddUserPart1', ['Chrome_Bugs'],  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Chrome
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_AddUser_part1.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('Chrome_EditUserProfile', ['Chrome_AddUserPart1'],()=>
 {
     return new Promise((resolve, reject) => {
      gulp.src([])
@@ -149,31 +188,8 @@ gulp.task('Chrome_Login',['Chrome_UsersList'],()=>
     });
 });
 
-gulp.task('Chrome_Bugs',/*['Chrome_Login'],*/ ()=> {
-    return new Promise((resolve, reject) => {
-        gulp.src([])
-        //EDGE
-            .pipe(protractor({
-                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_Bugs.js'
-            }))
-            .on('end', resolve)
-            .on('error', resolve);
-    });
-});
 
-gulp.task('Chrome_EditRoles',['Chrome_Bugs'], ()=> {
-    return new Promise((resolve, reject) => {
-        gulp.src([])
-        //EDGE
-            .pipe(protractor({
-                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_EditRoles.js'
-            }))
-            .on('end', resolve)
-            .on('error', resolve);
-    });
-});
-
-gulp.task('Firefox_AddUserPart1', ['Chrome_EditRoles'], ()=>
+gulp.task('Firefox_AddUserPart1', ['Chrome_Login'], ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
@@ -407,7 +423,7 @@ gulp.task('Test2',['Test1'],()=>
 //gulp.task('default', ['Test1','Test2']); //falta userlist and login
 
 
-gulp.task('default', ['Chrome_Setup' /*, 'Chrome_AddUserPart1', 'Chrome_AddUserPart2', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login','Chrome_Bugs', 'Chrome_EditRoles'*/]); //falta userlist and login
+gulp.task('default', ['Chrome_Setup' ,'Chrome_VerifyRoles_Part1', 'Chrome_AddUserPart0','Chrome_EditRoles','Chrome_VerifyRoles_Part2', 'Chrome_Bugs','Chrome_AddUserPart1', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login']); //falta userlist and login
 // gulp.task('default', ['Firefox_AddUserPart1', 'Firefox_AddUserPart2','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
 //gulp.task('default', ['IE_AddUserPart1','IE_AddUserPart2','IE_EditUserProfile','IE_UsersList','IE_Login']);
 // gulp.task('default', ['Edge_AddUserPart1','Edge_AddUserPart2','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);

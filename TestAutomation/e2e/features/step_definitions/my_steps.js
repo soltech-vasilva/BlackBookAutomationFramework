@@ -379,9 +379,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see that I am in "([^"]*)" "([^"]*)" URL$/, function (partURL, VerifyURL) {
-        browser.driver.sleep(4000);
         return new Promise((success, failure)=> {
-            browser.wait(browser.driver.getCurrentUrl().then(function (getCurrentURL) {
+            page.executeSequence([browser.driver.sleep(4000),
+            browser.driver.wait(browser.driver.getCurrentUrl().then(function (getCurrentURL) {
 
                 var currentURL = getCurrentURL.split("://");
 
@@ -398,6 +398,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                         break;
 
                     case 'full':
+                        console.log(currentURL[1].trim());
                         if (currentURL[1].trim() == VerifyURL) {
                             browser.driver.sleep(2000);
                             success();
@@ -408,7 +409,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                         failure();
                 }
             })
-            );
+            )])
         });
     });
 
@@ -525,8 +526,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I click checkbox User's Roles "([^"]*)"$/, function (arg1) {
         return new Promise((success, failure)=> {
-            element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2).click();
-            success();
+            page.executeSequence([ element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2).click()]).then(()=>{ success();});
         });
     });
 
@@ -834,8 +834,10 @@ var myBlackBookSteps = function myBlackBookSteps() {
             }
 
             if (buttonName.toString().toLowerCase() == "confirm" ) {
-                element(by.css('.button.green-btn.close-modal')).click();
-                success();
+                console.log('Confirm button');
+               page.executeSequence([ element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(()=>{
+                   success();
+               });
             }
         });
     });
@@ -958,6 +960,15 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     console.log("Button Name selection is not in function.");
                     failure();
             }
+        });
+    });
+
+    this.Then(/^I click on Delete button in Role Editor$/, function () {
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button[2]'))), protractorConfig.config.WaitTime),
+                element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button[2]')).click()]).then(() => {
+                success();
+            });
         });
     });
 };

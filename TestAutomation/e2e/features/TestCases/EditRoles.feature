@@ -219,6 +219,7 @@ Feature:  "Add a new Role"
 
   @TestCases_5
   Scenario: "TestCases_5" Create a new role Using Filters "Edit Other Users Basic + Roles". "No Error" Display
+    #(BB-666)
     And I click on New Role Button in Role List
     And I enter Role Name ""
       Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
@@ -261,6 +262,7 @@ Feature:  "Add a new Role"
 
   @TestCases_6
   Scenario: "TestCases_6" Create a new role Using Filters "Edit Other Users Basic + Roles + Password". "No Error" Display
+    #(BB-668)
     And I click on New Role Button in Role List
     And I enter Role Name ""
       Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
