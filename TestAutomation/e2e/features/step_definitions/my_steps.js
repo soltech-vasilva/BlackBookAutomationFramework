@@ -751,26 +751,25 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I click Filter By Status dropdown "([^"]*)" in Role Editor$/, function (FilterByStatusName) {
 
-
-
         return new Promise((success, failure) => {
-            element.all(by.css('select[name="filterGroupTerm"]')).get(1).click();
-
-            if (FilterByStatusName.toString().toLowerCase() == 'all') {
-                element.all(by.css('option[value="' + FilterByStatusName.toString().toLowerCase() + '"]')).get(1).click();
-                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-            }
-            else {
-                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-                element(by.css('option[value="' + FilterByStatusName.toString().toLowerCase() + '"]')).click();
-            }
-            success();
+            page.executeSequence([
+                element.all(by.css('select[name="filterGroupTerm"]')).get(1).click().then(()=>{
+                    if (FilterByStatusName.toString().toLowerCase() == 'all') {
+                        element.all(by.css('option[value="' + FilterByStatusName.toString().toLowerCase() + '"]')).get(1).click();
+                        browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+                    }
+                    else {
+                        browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+                        element(by.css('option[value="' + FilterByStatusName.toString().toLowerCase() + '"]')).click();
+                    }
+                })
+            ]).then(()=>{success()});
         });
     });
 
     this.Then(/^I should see "([^"]*)" display for Filter By Group in Role Editor$/, function (PermissionsName) {
         return new Promise ((success, failure)=> {
-            browser.driver.wait(element.all(by.css('select[name="filterGroupTerm"]')).get(0).getAttribute('value').then((attributeValue) => {
+            page.executeSequence([browser.driver.wait(element.all(by.css('select[name="filterGroupTerm"]')).get(0).getAttribute('value').then((attributeValue) => {
                 console.log("text:" + attributeValue);
                 if (PermissionsName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
                     success();
@@ -778,7 +777,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                 else {
                     failure();
                 }
-            }));
+            }))]).then(()=>{});
         });
 
     });
@@ -799,8 +798,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I enter Filter Roles search "([^"]*)" in Edit User Profile$/, function (filterRoleSearch) {
         return new Promise ((success, failure)=> {
-            element(by.css('input[placeholder="Search"]')).sendKeys(filterRoleSearch);
-            success();
+            page.executeSequence([element(by.css('input[placeholder="Search"]')).sendKeys(filterRoleSearch)]).then(()=>{  success();});
         });
     });
 
@@ -810,32 +808,33 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I should see (.*) displayed for Confirm Role Deletion in Role Editor$/, function (errorMessage) {
 
-        return new Promise((success, failure)=> {
-
-            element(by.css('.warning-msg')).getText().then((currentValue)=> {
-               // console.log("warning-msg: "+currentValue);
-               // console.log("warning-msg: "+errorMessage);
-                if (errorMessage == currentValue) {
-                    success();
-                }
-                else
-                {
-                    failure();
-                }
+        return new Promise((success, failure) => {
+            page.executeSequence([
+                element(by.css('.warning-msg')).getText().then((currentValue) => {
+                    // console.log("warning-msg: "+currentValue);
+                    // console.log("warning-msg: "+errorMessage);
+                    if (errorMessage == currentValue) {
+                        success();
+                    }
+                    else {
+                        failure();
+                    }
+                })]).then(() => {
             });
+
         });
     });
 
     this.Then(/^I click "([^"]*)" Button for modal warning message from Edit Roles$/, function (buttonName) {
         return new Promise((success, failure) => {
             if (buttonName.toString().toLowerCase() == "cancel" ) {
-                element(by.css('button.button.red-btn')).click();
-                success();
+                page.executeSequence([element(by.css('button.button.red-btn')).click()]).then(()=>{success();});
             }
 
             if (buttonName.toString().toLowerCase() == "confirm" ) {
                 console.log('Confirm button');
-               page.executeSequence([ element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(()=>{
+              // page.executeSequence([ element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(()=>{
+               page.executeSequence([ element(by.xpath('  //*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(()=>{
                    success();
                });
             }

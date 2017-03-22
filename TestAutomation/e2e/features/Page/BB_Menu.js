@@ -46,25 +46,25 @@ var BB_Menu = function BB_Menu() {
 
     BB_Menu.prototype.Click_AdminTab = function () {
         //TODO EXPERIMENT FOR BUTTONS FAIL PASS
-       // utilities.ExpectedElement_StopAutomationAtFail(BB_menuRepo.Select_Element_AdminTab);
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_AdminTab), protractorConfig.config.WaitTime);
-        browser.isElementPresent(BB_menuRepo.Select_Element_AdminTab).then((isPresente)=> {
-           // browser.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_AdminTab), protractorConfig.config.WaitTime);
             return new Promise((success, failure) => {
-                if (isPresente) {
-                    browser.driver.wait(BB_menuRepo.Select_Element_AdminTab.click()).then(() => {
-                       // captureBrowserCapabilities.captureCurrentBrowser('safari', false);
-                      //  if (protractorConfig.config.capabilities.browserName.toLowerCase() != 'safari') {
-                        //TODO no quitar sirve para EDGE
-                        page.executeSequence([browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform()]).then(()=>{ success();});
-                        //}
-                    });
-                }
-                else
-                {
-                    console.log("could not find Click_AdminTab");
-                }
-            });
+                page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_AdminTab), protractorConfig.config.WaitTime),
+                    browser.isElementPresent(BB_menuRepo.Select_Element_AdminTab).then((isPresente)=> {
+
+                        if (isPresente) {
+                            browser.driver.wait(BB_menuRepo.Select_Element_AdminTab.click()).then(() => {
+                                // captureBrowserCapabilities.captureCurrentBrowser('safari', false);
+                                //  if (protractorConfig.config.capabilities.browserName.toLowerCase() != 'safari') {
+                                //TODO no quitar sirve para EDGE
+                                page.executeSequence([browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform()]).then(()=>{ success();});
+                                //}
+                            });
+                        }
+                        else
+                        {
+                            console.log("could not find Click_AdminTab");
+                        }
+                    })
+                ]).then(()=>{});
         });
     };
 
@@ -89,9 +89,9 @@ var BB_Menu = function BB_Menu() {
     };
 
     BB_Menu.prototype.Click_Roles_Submenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_RolesSubMenuButton), protractorConfig.config.WaitTime);
         return new Promise((success, failure) => {
-            page.executeSequence([BB_menuRepo.Select_Element_RolesSubMenuButton.click()]).then(() => {
+            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_RolesSubMenuButton), protractorConfig.config.WaitTime),
+                BB_menuRepo.Select_Element_RolesSubMenuButton.click()]).then(() => {
                 success();
             });
         });
