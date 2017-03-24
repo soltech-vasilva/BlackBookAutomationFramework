@@ -10,6 +10,7 @@ Feature:  "Verify each Role UI"
 
   Background:
   Given I enter BlackBook Login Website
+    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     #Then I verify BlackBook "Login" page with Applitools
   And I wait
 
@@ -19,9 +20,7 @@ Feature:  "Verify each Role UI"
 
   @TC_CheckRoles_UI_A
   Scenario Outline: "@TC_CheckRoles_UI_A" Verify "T_Admin View All Only" Role UI.(After EditRoles)
-    #(BB-663)
-     #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+    #(BB-663) (BB-736)
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -73,9 +72,7 @@ Feature:  "Verify each Role UI"
 
   @TC_CheckRoles_UI_B
   Scenario Outline: "@TC_CheckRoles_UI_B" Verify "U_Edit Other Users Basic" Role UI.(After EditRoles)
-    #(BB-664)
-      #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+    #(BB-664) (BB-751)
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -125,8 +122,6 @@ Feature:  "Verify each Role UI"
 
   @TC_CheckRoles_UI_C
   Scenario Outline: "@TC_CheckRoles_UI_C" Verify "V_Edit Other Users Basic + Password" Role UI.(After EditRoles)
-      #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -175,8 +170,6 @@ Feature:  "Verify each Role UI"
 
   @TC_CheckRoles_UI_D
   Scenario Outline: "@TC_CheckRoles_UI_D" Verify "W_Edit Other Users Basic + Roles" Role UI.(After EditRoles)
-      #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -226,8 +219,6 @@ Feature:  "Verify each Role UI"
 
   @TC_CheckRoles_UI_E
   Scenario Outline: "@TC_CheckRoles_UI_E" Verify "X_Edit Other Users Basic + Roles + Password" Role UI.(After EditRoles)
-      #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button

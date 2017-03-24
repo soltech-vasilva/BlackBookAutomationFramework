@@ -48,7 +48,6 @@ Feature: Enter data on "LOGIN" page
     And I click Logout sub menu from Avatar
     And I wait
 
-
     Examples:
            | currentEmailAddress             |   currentPassword  |
 #With Role attached
@@ -59,7 +58,7 @@ Feature: Enter data on "LOGIN" page
            | user2@example.com               |   Password1        |
 
 ########################################################################################################################
-#                                               TC_Login_B                                                              #
+#                                               TC_Login_B                                                             #
 ########################################################################################################################
 
   @TC_Login_B-1
@@ -111,7 +110,7 @@ Feature: Enter data on "LOGIN" page
      And I enter my Password <currentPassword> in Login
      And I click Login Button
       Then I should see "currentEmailAddress" message "Invalid Login. Please try again." displayed for this "filled" field
-     And I wait
+    And I wait
 
     Examples:
            | currentEmailAddress                |   currentPassword  |

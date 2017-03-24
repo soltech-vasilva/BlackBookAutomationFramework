@@ -10,10 +10,10 @@ Feature:  "Verify each Role UI"
 
   Background:
   Given I enter BlackBook Login Website
-  And I wait
-    Then I verify BlackBook "Login" page with Applitools
-  And I wait
-
+     #BUG ADDED THIS TO CONTINUE
+    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+      Then I verify BlackBook "Login" page with Applitools
+    And I wait
 #######################################################################################################################
 #                                            Administration                                                           #
 #######################################################################################################################
@@ -21,8 +21,6 @@ Feature:  "Verify each Role UI"
   @TC_CheckRoles_UI_A
   Scenario Outline: "@TC_CheckRoles_UI_A" Verify "Administration" Role UI.(After Setup)
      #(BB-726),(BB-725)(BB-588)(BB-471 p-2) (BB-732) (BB-734)
-     #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -112,6 +110,7 @@ Feature:  "Verify each Role UI"
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
+    And I wait
       Then I verify BlackBook "Login" page with Applitools
     And I wait
 
@@ -128,8 +127,6 @@ Feature:  "Verify each Role UI"
   @TC_CheckRoles_UI_B
   Scenario Outline: "@TC_CheckRoles_UI_B" Verify "Basic Role-No Permissions" Role UI.(After Setup)
     #(BB-471 p-1) (BB-723)
-    #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -165,8 +162,6 @@ Examples:
 
  @TC_CheckRoles_UI_C
   Scenario Outline: "@TC_CheckRoles_UI_C" Verify "Editor-Full-User" Role UI.(After Setup)
-     #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -244,8 +239,6 @@ Examples:
 
   @TC_CheckRoles_UI_D
   Scenario Outline: "@TC_CheckRoles_UI_D" Verify "Editor-Full-Roles" Role UI.(After Setup)
-     #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -318,7 +311,6 @@ Examples:
   @TC_CheckRoles_UI_E
   Scenario Outline: "@TC_CheckRoles_UI_E" Verify "Setting-Only" Role UI.(After Setup)
      #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -361,7 +353,6 @@ Examples:
   @TC_CheckRoles_UI_F
   Scenario Outline: "@TC_CheckRoles_UI_F" Verify "NO ROLE ATTACHED" Role UI.(After Setup)
      #BUG ADDED THIS TO CONTINUE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -395,8 +386,7 @@ Examples:
   @TestCases_A-1
   #TODO VISUAL TESTING add back and forward too
   Scenario Outline: "@TestCases_A-1" Click "Refresh" on "User List" will show blue background.
-    #(BB-381)
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+    #(BB-381)(BB-610)
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -428,7 +418,6 @@ Examples:
   @TestCases_A-2
   Scenario Outline: "@TestCases_A-2" (Add New Roles): Role Permission does not need to be "Require" field. (story) just name and market fill.
     #(BB-601)(BB-733)
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
@@ -477,6 +466,9 @@ Examples:
     And I click "Confirm" Button for modal warning message from Edit Roles
       Then I verify BlackBook "Role List" page with Applitools
     And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
 
   Examples:
   | currentEmailAddress             |   currentPassword  |
@@ -485,7 +477,95 @@ Examples:
 
 
 
+  @TestCases_A-3
+  Scenario Outline: "@TestCases_A-3" Creation of "New User" wont attached roles to it when added.
+    # (BB-479)(BB-744)(BB-622)(BB-478)
+    And I enter my user email address user1@example.com in Login
+    And I enter my Password Password1 in Login
+    And I click Login Button
+    And I wait
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I wait
+      Then  I store value #of Users displayed for Administration in Role List
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    And I wait
+    And I click on New User Button in User List
+     Then I verify BlackBook "Add New User Profile" page with Applitools
+    When I enter my first name <firstName> in Form
+      Then I should not see in "firstName" errors displayed
+    And I enter my last name <lastName> in Form
+      Then I should not see in "lastName" errors displayed
+    And I enter my email address <emailAddress> in Form
+      Then I should not see in "emailAddress" errors displayed
+    And I enter my phone number <phoneNumber> in Form
+      Then I should not see in "phoneNumber" errors displayed
+    And I enter my new Password <newPassWord> in Form
+      Then I should not see in "newPassWord" errors displayed
+    And I enter my confirm new password <confirmNewPassWord> in Form
+      Then I should not see in "confirmNewPassWord" errors displayed
+    And I enter Filter Roles search "Administrators" in Edit User Profile
+    And I click checkbox User's Roles "Administrators"
+      Then I verify BlackBook "New User -Form Fill-" page with Applitools
+    And I wait
+    And I click on Save button in Edit User Profile
+      Then I should see "User Creation Successful" displayed on "UserList" popup
+    And I wait
+    And I click Status Filter
+    And I enter Filter User List <emailAddress> in User List
+    And I wait
+      Then I should see user's Role "Administrators" in User List
+    And I wait
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I wait
+      Then I should see #of Users has increase value for Administration in Role List
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
+    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+    And I wait
+    And I enter my user email address admintestemail40@yopmail.com in Login
+    And I enter my Password Password1 in Login
+    And I click Login Button
+    And I wait
+    And I click Avatar Image Button
+    And I click My Profile sub menu from Avatar
+    And I click Edit Button in Edit User Profile
+      Then I verify BlackBook "Edit User Profile -Current Form-" page with Applitools
+    And I enter my phone number 123-1234567 in Form
+    And I click Cancel Button in Edit User Profile
+      Then I verify BlackBook "Edit My Profile" page with Applitools
+    And I click Edit Button in Edit User Profile
+      Then I verify BlackBook "Edit User Profile -Current Form-" page with Applitools
+    And I clear text box selected "FirstName" in User Profile
+    And I enter my first name firstName39 in Form
+    And I clear text box selected "LastName" in User Profile
+    And I enter my last name LastName39 in Form
+    And I clear text box selected "EmailAddress" in User Profile
+    And I enter my email address admintestemail39@yopmail.com in Form
+    And  I clear text box selected "PhoneNumber" in User Profile
+      Then I verify BlackBook "Edit User Profile -Update Form-" page with Applitools
+    And I wait
+    And I click on Save button in Edit User Profile
+      Then I verify BlackBook "Save User Profile admintestemail39@yopmail.com" page with Applitools
+    And I click Cancel Button in Edit User Profile
+      Then I verify BlackBook "Edit My Profile" page with Applitools
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
+    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+    And I wait
+    And I enter my user email address admintestemail39@yopmail.com in Login
+    And I enter my Password Password1 in Login
+    And I click Login Button
+    And I wait
 
+    Examples:
+      | firstName      | lastName      | emailAddress                  |phoneNumber    | newPassWord | confirmNewPassWord |
+      |   firstName40  | lastName40    | admintestemail40@yopmail.com  |               | Password1   |   Password1        |
 
 
 

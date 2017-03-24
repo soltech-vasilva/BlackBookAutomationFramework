@@ -65,7 +65,9 @@ Feature:  "Add a new User Profile"
     And I click on Save button in Edit User Profile
       Then I should see "User Creation Successful" displayed on "UserList" popup
     And I wait
-
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
 
     Examples:
       | firstName     | lastName     | emailAddress                |phoneNumber    | newPassWord | confirmNewPassWord |
@@ -93,7 +95,9 @@ Feature:  "Add a new User Profile"
     And I click on Save button in Edit User Profile
     Then I should see "Username must not exist" displayed on "UserList" popup
     And I wait
-
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
 
     Examples:
       | firstName       | lastName       | emailAddress                 |phoneNumber    | newPassWord | confirmNewPassWord |
@@ -313,6 +317,7 @@ Feature:  "Add a new User Profile"
     But I enter "or check nothing to User Roles"
       Then I should see "userrole" message "Required" displayed for this "unchecked" field
     And I click Cancel Button in Edit User Profile
+    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
     And I wait

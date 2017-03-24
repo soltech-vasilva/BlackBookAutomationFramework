@@ -2,8 +2,6 @@
  * Created by Vsilva on 1/30/17.
  */
 
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
-
 var Page_Objects = function Page_Objects () {
 
     var flow = browser.controlFlow();
@@ -28,16 +26,40 @@ var Page_Objects = function Page_Objects () {
     };
 
 
+    page.setResolution = function (int_width, int_height) {
+        browser.driver.manage().window().setSize(int_width, int_height);
+    };
+
     /**
      * Opens the page.baseUrl appending the suffix parameter
      * @param {string} suffix
      * @returns {Promise}
      */
-    page.openUrl = function(bool_IgnoreSynchronisation, str_URL) {
+    page.openUrl = function(bool_IgnoreSynchronisation, str_URL, waitTime) {
+        //page is non-angular
         browser.ignoreSynchronisation = bool_IgnoreSynchronisation;
         return page.executeSequence([
-            browser.driver.get(str_URL)
+            browser.driver.get(str_URL),
+            browser.driver.sleep(waitTime)
         ]);
+    };
+
+    page.verifyCurrentUrl = function (str_compareURL, element_PageVerify , int_WaitTime , success, failure) {
+        return page.executeSequence([browser.driver.getCurrentUrl().then(function (getCurrentURL) {
+            var currentURL = getCurrentURL.split("://");
+            var compareURL = str_compareURL.toString().split("://");
+
+            if (currentURL[1].trim() == compareURL[1].trim()) {
+                page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element_PageVerify), int_WaitTime)])
+                    .then(() => {
+                        success();
+                    });
+            }
+            else {
+                failure();
+            }
+        })]).then(() => {
+        });
     };
 
     /**
@@ -71,7 +93,7 @@ var Page_Objects = function Page_Objects () {
         return page.executeSequence([
             // clear focus first to avoid a rare condition where the click only clears
             // focus from another element instead of actually clicking the thing you want
-            //page.clearFocus(),
+           // page.clearFocus(),
             browser.driver.actions().click(element).perform()
         ]);
     };
@@ -90,7 +112,7 @@ var Page_Objects = function Page_Objects () {
      * @returns {Promise}
      */
     page.clearFocus = function () {
-        return browser.actions().mouseMove({x: 9999, y: 9999}).click().perform();
+        return browser.driver.actions().mouseMove({x: 9999, y: 9999}).click().perform();
     };
 
     /**
@@ -198,8 +220,8 @@ var Page_Objects = function Page_Objects () {
      * Waits until a particular element is present on the page
      * @returns {Promise}
      */
-    page.waitForElemenTobePresent = function(element) {
-        return browser.wait(protractor.ExpectedConditions.presenceOf(element), protractorConfig.config.WaitTime);
+    page.waitForElementTobePresent = function(element , int_WaitTime) {
+       return page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), int_WaitTime)]).then(()=>{});
     };
 };
 module.exports =  new Page_Objects();

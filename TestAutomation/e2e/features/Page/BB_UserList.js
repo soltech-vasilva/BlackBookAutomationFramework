@@ -19,9 +19,10 @@ var BB_UserList = function BB_UserList() {
     BB_UserList.prototype.FilterValue = '';
 
     BB_UserList.prototype.Click_NewUser_Button = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_NewUserButton), protractorConfig.config.WaitTime);
+
         return new Promise((success, failure)=> {
-            page.executeSequence([BB_userListRepo.Select_Element_NewUserButton.click()]).then(()=> {
+            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_NewUserButton), protractorConfig.config.WaitTime),
+                BB_userListRepo.Select_Element_NewUserButton.click()]).then(()=> {
                 success();
             });
         });

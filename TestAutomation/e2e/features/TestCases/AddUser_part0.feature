@@ -50,7 +50,9 @@ Feature:  "Add a new User Profile"
     And I click on Save button in Edit User Profile
       Then I should see "User Creation Successful" displayed on "UserList" popup
     And I wait
-
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
 
     Examples:
       | firstName     | lastName     | emailAddress                |phoneNumber    | newPassWord | confirmNewPassWord |

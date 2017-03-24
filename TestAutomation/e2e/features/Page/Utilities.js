@@ -28,7 +28,7 @@ var Utilities = function Utilities() {
     };
 
     Utilities.prototype.VerifyValueEntered_RetypeValue = function (Element,  ValueCompare ) {
-          return Element.getAttribute("value").then(function (currentValue) {
+          return browser.driver.wait(Element.getAttribute("value").then(function (currentValue) {
               this.ValueEntered = currentValue;
               //console.log('Value:|' + this.ValueEntered.toString() + '|');
               var count = 0;
@@ -50,13 +50,13 @@ var Utilities = function Utilities() {
                       break;
                   }
               }
-          });
+          }));
     };
 
     Utilities.prototype.ExpectedElement_StopAutomationAtFail = function(element)
     {
         if (protractorConfig.config.StopRunAtFail == true) {
-            browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), protractorConfig.config.WaitTime);
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), protractorConfig.config.WaitTime)]).then(()=>{});
         }
         else {
             page.executeSequence([browser.driver.sleep(5000)]).then(()=>{});

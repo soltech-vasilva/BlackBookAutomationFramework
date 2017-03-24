@@ -12,6 +12,7 @@ eyes.setApiKey('3YYHRcaSI3DcqsNPRFm3WnU1BFg3vP72Ftxe6e8t6iY110');
 
 var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
 var BB_login = require('../Page/BB_Login');
+var BB_loginRepo = require('../Repository/BB_LoginRepo.js');
 var eyesSetUp = require('../Page/EyesSetUp.js');
 var captureBrowserCapabilities = require ('../Page/CaptureBrowserCapabilities.js');
 var verifyErrorMessage = require('../Page/VerifyErrorMessage.js');
@@ -29,6 +30,7 @@ var page = require ('../Page/Page_Objects');
 var keyStrokesRepo = require ('../Repository/KeyStrokesRepo.js');
 var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 var BB_userListRepo = require('../Repository/BB_userListRepo.js');
+var BB_menuRepo = require('../Repository/BB_MenuRepo.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -161,7 +163,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter BlackBook Login Website$/, function () {
-        return BB_login.OpenBlackBookLogIn_Page(eyes);
+        return BB_login.OpenBlackBookLogIn_Page();
     });
 
     this.Given(/^I enter my user email address (.*) in Login$/, function (currentEmailAddress) {
@@ -300,8 +302,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     ///BUGS FIXES TO TEST OTHER THINGS
     this.Given(/^I wait$/, function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([ browser.driver.sleep(5000).then(()=>{ console.log("wait before success"); success(); })
-            ]).then(()=>{console.log("wait sequence then");});
+            page.executeSequence([ browser.driver.sleep(5000).then(()=>{ console.log("wait before success"); })]).then(()=>{ success(); console.log("wait sequence then");});
         });
     });
 
@@ -323,7 +324,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
                         success();
                     }
                 });
-            })]).then(()=>{ });
+            })]).then(()=>{
+                //menu login (image)
+
+                browser.driver.wait( BB_loginRepo.Select_Element_AutoBahnLogInPageImage.click(), 60000);
+               // browser.driver.wait(element(by.xpath('//*[@id="login-box"]/div/div/img')).click(), 60000);
+            });
         });
     });
 
@@ -546,14 +552,13 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I click Send Link button$/, function () {
         return new Promise((success, failure)=> {
-             element(by.xpath('//*[@id="login-box"]/div/form/div[2]/div[1]/button')).click();
-             success();
+            page.executeSequence([ element(by.xpath('//*[@id="login-box"]/div/form/div[2]/div[1]/button')).click()]).then(()=>{ success();});
         });
     });
 
     this.Then(/^I should see message "([^"]*)" displayed$/, function (Message) {
         return new Promise((success, failure)=> {
-            browser.driver.wait(element(by.css('.message-container.success')).getText()).then((GetText) => {
+           page.executeSequence([ browser.driver.wait(element(by.css('.message-container.success')).getText()).then((GetText) => {
                 //console.log("GetText:"+GetText +" Message:"+Message);
                 if (GetText == Message) {
                     success();
@@ -562,8 +567,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
                 {
                     failure();
                 }
-            });
-        });
+            })
+            ]).then(()=>{})});
     });
 
     this.Then(/^I should see Role Market value "([^"]*)"$/, function (roleMarketSelection) {
@@ -809,7 +814,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.Then(/^I should see (.*) displayed for Confirm Role Deletion in Role Editor$/, function (errorMessage) {
 
         return new Promise((success, failure) => {
-            page.executeSequence([
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('.warning-msg'))), protractorConfig.config.WaitTime),
                 element(by.css('.warning-msg')).getText().then((currentValue) => {
                     // console.log("warning-msg: "+currentValue);
                     // console.log("warning-msg: "+errorMessage);
@@ -827,16 +832,33 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I click "([^"]*)" Button for modal warning message from Edit Roles$/, function (buttonName) {
         return new Promise((success, failure) => {
-            if (buttonName.toString().toLowerCase() == "cancel" ) {
-                page.executeSequence([element(by.css('button.button.red-btn')).click()]).then(()=>{success();});
+            if (buttonName.toString().toLowerCase() == "cancel") {
+                page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('button.button.red-btn')),protractorConfig.config.WaitTime)),
+                    element(by.css('button.button.red-btn')).click()]).then(() => {
+                    success();
+                });
             }
 
-            if (buttonName.toString().toLowerCase() == "confirm" ) {
+            if (buttonName.toString().toLowerCase() == "confirm") {
                 console.log('Confirm button');
-              // page.executeSequence([ element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(()=>{
-               page.executeSequence([ element(by.xpath('  //*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(()=>{
-                   success();
-               });
+
+                browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+                    var currentURL = getCurrentURL.split("://");
+                    console.log('currentURL:'+currentURL[1]);
+                    if (currentURL[1].toString() == 'qa-autobahn.blackbookcloud.com/role/list') {
+                        page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')),protractorConfig.config.WaitTime)),
+                            element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
+                            success();
+                        });
+                    }
+                    else {
+                        console.log('Confirm button on other page CHECK URL BUG');
+                        console.log('currentURL:'+currentURL[1]);
+                        page.executeSequence([element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
+                            success();
+                        });
+                    }
+                });
             }
         });
     });
@@ -924,7 +946,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I verify BlackBook "([^"]*)" page with Applitools$/, function (namePage) {
         return new Promise((success, failure)=> {
-            page.executeSequence([eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn)]).then(() => {
+            page.executeSequence([browser.driver.sleep(1000) , eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn), browser.driver.sleep(1000)]).then(() => {
                 success()
             });
         });

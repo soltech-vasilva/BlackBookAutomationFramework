@@ -193,3 +193,6 @@ Feature:  "SetUp"
     And I enter my first name user3 in Form
     And I click on Save button in Edit User Profile
     And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait

@@ -16,6 +16,7 @@ var utilities = require('../Page/Utilities.js');
 var BB_userListRepo =  require('../Repository/BB_UserListRepo.js');
 var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 var BB_editRoles = require('../Page/BB_EditRoles.js');
+var page = require ('../Page/Page_Objects');
 
 var VerifyErrorMessage = function VerifyErrorMessage(){
 
@@ -36,7 +37,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     VerifyErrorMessage.prototype.AssertElementsToDisplay = function (isElementPresent, elementToCheck, compareValuesString, consoleErrorMessageDisplay , success, failure ) {
 
         if (isElementPresent == true) {
-             browser.driver.wait(VerifyErrorMessage.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure));
+            page.executeSequence([ browser.driver.wait(VerifyErrorMessage.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure))]).then(()=>{});
         }
         else {
             console.log(consoleErrorMessageDisplay);
@@ -92,7 +93,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
     VerifyErrorMessage.prototype.Verify_ErrorMessageToDisplay_UserProfile = function (str_TextboxName , str_VerifyErrorName, FilledOrEmptyField) {
         return new Promise ((success, failure)=> {
-
+            console.log(str_TextboxName.toLowerCase());
             switch (str_TextboxName.toLowerCase()) {
                 case 'firstname':
                      console.log(str_TextboxName.toLowerCase());
@@ -262,9 +263,11 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
                 case 'currentemailaddress' :
                     if ((BB_login.currentEmailAddress != '' && FilledOrEmptyField == 'filled') || (BB_login.currentEmailAddress == '' && FilledOrEmptyField == 'empty')) {
+                        console.log('currentpassword login page');
                         utilities.ExpectedElement_StopAutomationAtFail(BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword);
                         //browser.wait(protractor.ExpectedConditions.visibilityOf( BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword), 10000);
                         browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then(function (isPresente) {
+                            console.log('isPresente:'+isPresente.toString());
                             VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Current Email Address', success, failure);
                         });
                     }
@@ -278,6 +281,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                             VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Current Password', success, failure);
                         });
                     }
+
                     break;
 
                 case 'previouspassword' :

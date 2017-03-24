@@ -15,19 +15,22 @@ var BB_Menu = function BB_Menu() {
        // browser.sleep(3000);
        // browser.executeScript("return $(\"a:contains ('button'\").mousemover();");
         //browser.executeScript("document.getElementsByClassName('profile-img')[0].scrollIntoView();");
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_ProfileButton), protractorConfig.config.WaitTime);
-        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform();
+
+
         return new Promise((success, failure)=> {
-            page.executeSequence([ BB_menuRepo.Select_Element_ProfileButton.click()]).then(()=> {
+            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_ProfileButton), protractorConfig.config.WaitTime),
+                BB_menuRepo.Select_Element_ProfileButton.click(),
+                browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform()]).then(()=> {
                 success();
             });
         });
     };
 
     BB_Menu.prototype.Click_MyProfileSubmenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_MyProfileSubMenuButton), protractorConfig.config.WaitTime);
+
         return new Promise((success, failure)=> {
-            page.executeSequence([ BB_menuRepo.Select_Element_MyProfileSubMenuButton.click()]).then(()=> {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_MyProfileSubMenuButton), protractorConfig.config.WaitTime),
+                BB_menuRepo.Select_Element_MyProfileSubMenuButton.click()]).then(()=> {
                // browser.actions().mouseMove(BB_menuRepo.Select_Element_MyProfileSubMenuButton).perform();
                 success();
             });
@@ -35,9 +38,9 @@ var BB_Menu = function BB_Menu() {
     };
 
     BB_Menu.prototype.Click_LogOutSubmenu = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_LogOutSubMenuButton), protractorConfig.config.WaitTime);
         return new Promise((success, failure)=> {
-            page.executeSequence([BB_menuRepo.Select_Element_LogOutSubMenuButton.click()]).then(()=> {
+            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_LogOutSubMenuButton), protractorConfig.config.WaitTime) ,
+                BB_menuRepo.Select_Element_LogOutSubMenuButton.click()]).then(()=> {
              //   browser.actions().mouseMove(BB_menuRepo.Select_Element_LogOutSubMenuButton).perform();
                 success();
             });

@@ -10,9 +10,8 @@ var BB_LoginRepo = function BB_LoginRepo () {
 
     //Strings
     BB_LoginRepo.prototype.EyesVerify_BB_Login = 'BlackBook LogIn';
-    //BB_LoginRepo.prototype.BlackBookUrl = 'https://qa-autobahn.blackbookcloud.com';
-    //TODO take this out above real
-    BB_LoginRepo.prototype.BlackBookUrl = 'https://qa-autobahn.blackbookcloud.com/login';
+    BB_LoginRepo.prototype.BlackBookEnvironmentUrl = 'https://qa-autobahn.';
+    BB_LoginRepo.prototype.BlackBookUrl = this.BlackBookEnvironmentUrl+'blackbookcloud.com';
 
     //Components TextBox
     BB_LoginRepo.prototype.Select_Element_UserEmailAddressTextbox  =  element(by.css('input[name="username"]'));
@@ -20,8 +19,14 @@ var BB_LoginRepo = function BB_LoginRepo () {
     //Components Button
     BB_LoginRepo.prototype.Select_Element_LogInButton =  element(by.css('button[type="submit"]'));
 
+    //Image
+    BB_LoginRepo.prototype.Select_Element_AutoBahnLogInPageImage = element(by.xpath('//*[@id="login-box"]/div/div/img'));
+
     //Components "ERROR DISPLAY REQUIRE"
     BB_LoginRepo.prototype.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword = by.xpath('//*[@id="login-box"]/div/form/div[4]');
     BB_LoginRepo.prototype.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword = element(this.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword);
+
+
+
 };
 module.exports = new BB_LoginRepo();

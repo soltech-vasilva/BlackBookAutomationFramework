@@ -15,7 +15,8 @@ var EyesSetUp = function EyesSetUp(){
 
     EyesSetUp.prototype.EyesInitialSetUp = function (eyes) {
         eyes.setForceFullPageScreenshot(true);
-        eyes.setStitchMode(Eyes.StitchMode.CSS);
+        //TODO quite esto por que solo la pagina LOGIN me la cortaba. Ver que hacer si lo necesito.
+       // eyes.setStitchMode(Eyes.StitchMode.CSS);
         //eyes.setMatchLevel('Layout2');
     };
 

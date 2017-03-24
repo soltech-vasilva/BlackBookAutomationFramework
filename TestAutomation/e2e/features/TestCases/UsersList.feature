@@ -41,6 +41,9 @@ Feature:  "User List"
     And I click on Gear Icon 1 "admintestemail5@yopmail.com in User List"
     And I click Deactivate in submenu from Gear Icon
     And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
 
   @TestCases_A-2
   Scenario: "@TestCases_A-2" admintestemail6@yopmail.com Deactivate User
@@ -51,6 +54,9 @@ Feature:  "User List"
     And I wait
     And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
     And I click Deactivate in submenu from Gear Icon
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait
 
   @TestCases_A-3
@@ -65,4 +71,7 @@ Feature:  "User List"
     And I wait
     And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
     And I click Activate in submenu from Gear Icon
+    And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
     And I wait

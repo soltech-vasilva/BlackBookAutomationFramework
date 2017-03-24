@@ -165,6 +165,9 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                 case 'emailaddress':
                     BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_EmailAddressTextbox,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText);
                     break;
+                case 'phonenumber':
+                    BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText);
+                    break;
                 case 'newpassword':
                     BB_EditUserProfile.prototype.Click_Delete_Content(success, BB_editUserProfileRepo.Select_Element_NewPasswordTextbox,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText);
                     break;
@@ -208,9 +211,10 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
 
     BB_EditUserProfile.prototype.Click_CancelButton_EditUserProfile = function () {
         return new Promise((success, failure)=> {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_CancelButton), protractorConfig.config.WaitTime);
-
-            page.executeSequence([BB_editUserProfileRepo.Select_Element_CancelButton.click()]).then(()=>{success();});
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_CancelButton), protractorConfig.config.WaitTime),
+                BB_editUserProfileRepo.Select_Element_CancelButton.click()]).then(() => {
+                success();
+            });
         });
     };
 
