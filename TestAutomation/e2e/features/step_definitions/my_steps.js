@@ -525,8 +525,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.When(/^I click on Gear Icons (.*) inactive$/, function (arg1) {
         return new Promise((success, failure)=> {
-             element(by.css('div.icon-cog.parent.inactive')).click();
-             success();
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( element(by.css('div.icon-cog.parent.inactive'))), protractorConfig.config.WaitTime),
+                element(by.css('div.icon-cog.parent.inactive')).click()]).then(()=>{ success();});
         });
     });
 
@@ -803,7 +803,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I enter Filter Roles search "([^"]*)" in Edit User Profile$/, function (filterRoleSearch) {
         return new Promise ((success, failure)=> {
-            page.executeSequence([element(by.css('input[placeholder="Search"]')).sendKeys(filterRoleSearch)]).then(()=>{  success();});
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox), protractorConfig.config.WaitTime),
+                BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox.sendKeys(filterRoleSearch)]).then(()=>{  success();});
         });
     });
 

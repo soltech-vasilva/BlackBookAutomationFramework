@@ -78,9 +78,9 @@ var VerifyUserInfo = function VerifyUserInfo() {
                     break;
 
                 case 'filterroles' :
-                    utilities.ExpectedElement_StopAutomationAtFail(element(by.css('input[placeholder="Search"]')));
+                    utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox);
                     //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox), 10000);
-                    VerifyUserInfo.prototype.AssertElementAttributeDisplay( element(by.css('input[placeholder="Search"]')), ValueCompare, TextboxName, success, failure);
+                    VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 default:

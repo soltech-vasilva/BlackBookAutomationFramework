@@ -18,6 +18,8 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Element_NewPasswordTextbox = element(by.css('input[placeholder="New Password"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_ConfirmNewPasswordTextbox = element(by.css('input[placeholder="Confirm New Password"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_PreviousPasswordTextbox = element(by.css('input[placeholder="Previous Password"]'));
+    BB_EditUserProfileRepo.prototype.Select_Element_FilterRoleSearchTextbox   = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[3]/div[2]/div/div/input'));
+
     //Components Buttons
      BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element.all(by.css('button.button')).get(0);
     BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.css('.button.yellow-btn.pull-right'));
