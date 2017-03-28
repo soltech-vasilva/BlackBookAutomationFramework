@@ -420,51 +420,56 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click User Active checkbox$/, function () {
-        return new Promise((success, failure)=> {
-             element(by.css('span.checkbox-label')).click();
-             success();
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
+                element(by.css('span.checkbox-label')).click()]).then(() => {
+                success();
+            });
         });
     });
 
     this.Then(/^I click User Active checkbox "([^"]*)"$/, function (isEnableOrDisable) {
-        return new Promise((success, failure)=> {
-            element(by.css('span.checkbox-label')).click();
-            browser.driver.sleep(1000);
-            //Si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
-            browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content')
-                .then(function (data) {
-                   // console.log(data);
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
+                element(by.css('span.checkbox-label')).click(),
+                browser.driver.sleep(1000),
+                //Si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
+                browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content')
+                    .then(function (data) {
+                        // console.log(data);
 
-                    if (data == '""' && isEnableOrDisable == "Disable") {
-                        console.log("Disable");
-                        element(by.css('span.checkbox-label')).click();
-                    }
-                    if (data == 'none' && isEnableOrDisable == "Enable") {
-                        console.log("Enable");
-                        element(by.css('span.checkbox-label')).click();
-                    }
+                        if (data == '""' && isEnableOrDisable == "Disable") {
+                            console.log("Disable");
+                            element(by.css('span.checkbox-label')).click();
+                        }
+                        if (data == 'none' && isEnableOrDisable == "Enable") {
+                            console.log("Enable");
+                            element(by.css('span.checkbox-label')).click();
+                        }
 
-                    success();
-                });
+                        success();
+                    })]);
         });
     });
 
     this.Then(/^I should see on User Active checkbox inactive$/, function () {
-        return new Promise((success, failure)=> {
-            browser.sleep(1000);
-            //TODO si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
-            browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content').then(function (data) {
-                // console.log(data);
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
+                browser.driver.sleep(1000),
+                //TODO si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
+                browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content').then(function (data) {
+                    // console.log(data);
 
-                if (data == '""') {
-                    console.log('Pass, It wont change setting');
-                    success();
-                }
-                else {
-                    console.log("Fail, User Active change settings");
-                    failure();
-                }
-            });
+                    if (data == '""') {
+                        console.log('Pass, It wont change setting');
+                        success();
+                    }
+                    else {
+                        console.log("Fail, User Active change settings");
+                        failure();
+                    }
+                })
+            ]).then(()=>{});
         });
     });
 

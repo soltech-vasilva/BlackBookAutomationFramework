@@ -20,11 +20,11 @@ exports.config = {
         //add test cases here below:
       //  'e2e/features/TestCases/START_eyes.feature',
       //   'e2e/features/TestCases/AddUser_part0.feature'//,
-        'e2e/features/TestCases/AddUser_part1.feature'//,
+       // 'e2e/features/TestCases/AddUser_part1.feature'//,
          //'e2e/features/TestCases/AddUser_part2.feature'//,
          // 'e2e/features/TestCases/EditUserProfile.feature'//,
          //  'e2e/features/TestCases/UsersList.feature'//,
-          //'e2e/features/TestCases/Login.feature'//,
+        //  'e2e/features/TestCases/Login.feature'//,
         //'e2e/features/TestCases/EditRoles.feature'//,
        // 'e2e/features/TestCases/Bugs.feature'//,
       // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
