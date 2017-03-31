@@ -54,23 +54,33 @@ var BB_EditRoles = function BB_EditRoles() {
     };
 
     BB_EditRoles.prototype.Click_SaveButton_RoleEditor = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Save_button), protractorConfig.config.WaitTime);
+
         return new Promise((success, failure) => {
-            BB_editRolesRepo.Select_Element_Save_button.click().then(() => {
-                success();
-            });
+            page.executeSequence([page.clickButton(BB_editRolesRepo.Select_Element_Save_button,protractorConfig.config.WaitTime, success)
+            ]).then(()=>{});
         });
+
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Save_button), protractorConfig.config.WaitTime);
+        // return new Promise((success, failure) => {
+        //     BB_editRolesRepo.Select_Element_Save_button.click().then(() => {
+        //         success();
+        //     });
+        // });
     };
 
     BB_EditRoles.prototype.Click_CancelButton_RoleEditor = function () {
 
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_editRolesRepo.Select_Element_Cancel_button), protractorConfig.config.WaitTime),
-                BB_editRolesRepo.Select_Element_Cancel_button.click()
-            ]).then(() => {
-                success();
-            });
+            page.clickButton(BB_editRolesRepo.Select_Element_Cancel_button, protractorConfig.config.WaitTime, success);
         });
+
+        // return new Promise((success, failure) => {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_editRolesRepo.Select_Element_Cancel_button), protractorConfig.config.WaitTime),
+        //         BB_editRolesRepo.Select_Element_Cancel_button.click()
+        //     ]).then(() => {
+        //         success();
+        //     });
+        // });
 
         // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Cancel_button), protractorConfig.config.WaitTime);
         // return new Promise((success, failure) => {
@@ -93,24 +103,29 @@ var BB_EditRoles = function BB_EditRoles() {
         return new Promise((success, failure) => {
             switch (permissionName.toLowerCase()) {
                 case "settings":
-                        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox), protractorConfig.config.WaitTime);
-                        BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox.click().then(() => {
-                          success();
-                        });
+                        page.clickButton(BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox,protractorConfig.config.WaitTime, success );
+                        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox), protractorConfig.config.WaitTime);
+                        // BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox.click().then(() => {
+                        //   success();
+                        // });
 
                     break;
                 case "users":
-                    browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Users_Checkbox), protractorConfig.config.WaitTime);
-                        BB_editRolesRepo.Select_Element_Permission_Users_Checkbox.click().then(() => {
-                            success();
-                        });
+                    page.clickButton(BB_editRolesRepo.Select_Element_Permission_Users_Checkbox, protractorConfig.config.WaitTime,success );
+
+                    // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Users_Checkbox), protractorConfig.config.WaitTime);
+                    //     BB_editRolesRepo.Select_Element_Permission_Users_Checkbox.click().then(() => {
+                    //         success();
+                    //     });
 
                     break;
                 case "roles":
-                    browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox), protractorConfig.config.WaitTime);
-                        BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox.click().then(() => {
-                            success();
-                        });
+                    page.clickButton(BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox, protractorConfig.config.WaitTime,success );
+
+                    // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox), protractorConfig.config.WaitTime);
+                    //     BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox.click().then(() => {
+                    //         success();
+                    //     });
 
                     break;
                 default:
@@ -153,18 +168,26 @@ var BB_EditRoles = function BB_EditRoles() {
 
             switch (permissionName.toString().toLowerCase()) {
                 case "users":
-                    browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Users_Checkbox), 10000);
-                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(5);
+                    page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_Permission_Users_Checkbox, protractorConfig.config.WaitTime),
+                        checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(5)]).then(()=>{});
+                    // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Users_Checkbox), 10000);
+                    // checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(5);
                     break;
 
                 case "settings":
-                    browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox), 10000);
-                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(3);
+                    page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox, protractorConfig.config.WaitTime),
+                        checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(3)]).then(()=>{});
+
+                    // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Settings_Checkbox), 10000);
+                    // checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(3);
                     break;
 
                 case "roles":
-                    browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox), 10000);
-                    checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(1);
+                    page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox, protractorConfig.config.WaitTime),
+                        checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(1)]).then(()=>{});
+
+                    // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Permission_Roles_Checkbox), 10000);
+                    // checkbox = BB_editRolesRepo.Select_Element_Permission_GridCheckbox.get(1);
                     break;
 
                 default:

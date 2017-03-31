@@ -20,7 +20,7 @@ Feature:  "Verify each Role UI"
 
   @TC_CheckRoles_UI_A
   Scenario Outline: "@TC_CheckRoles_UI_A" Verify "T_Admin View All Only" Role UI.(After EditRoles)
-    #(BB-663) (BB-736)
+    #(BB-663) (BB-736) (BB-577)
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button

@@ -42,60 +42,79 @@ var BB_Login = function BB_Login() {
     };
 
     BB_Login.prototype.Enter_CurrentEmailAddress_Login = function (currentEmail) {
+
         return new Promise((success, failure)=> {
-            this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString());
-            page.executeSequence([page.waitForElementTobePresent(BB_loginRepo.Select_Element_UserEmailAddressTextbox),
-                page.click(BB_loginRepo.Select_Element_UserEmailAddressTextbox),
-                utilities.SendKeysSlower(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress)
-            ]).then(() => {
-               //if (this.currentEmailAddress != '') {
-                    if (this.currentEmailAddress != '') {
-                        // browser.wait(utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress)).then(() => {
-                        //     success();
-                        // });
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress)]).then(() => {
-                            success();
-                        });
-                    }
-                    else {
-                        success();
-                    }
-                //}
-            });
+            page.executeSequence([this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString()),
+            page.fill(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress, protractorConfig.config.WaitTime,BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        //     this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString());
+        //     page.executeSequence([page.waitForElementTobePresent(BB_loginRepo.Select_Element_UserEmailAddressTextbox, protractorConfig.config.WaitTime),
+        //         page.clickElement(BB_loginRepo.Select_Element_UserEmailAddressTextbox, protractorConfig.config.WaitTime),
+        //         utilities.SendKeysSlower(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress)
+        //     ]).then(() => {
+        //        //if (this.currentEmailAddress != '') {
+        //             if (this.currentEmailAddress != '') {
+        //                 // browser.wait(utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress)).then(() => {
+        //                 //     success();
+        //                 // });
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress)]).then(() => {
+        //                     success();
+        //                 });
+        //             }
+        //             else {
+        //                 success();
+        //             }
+        //         //}
+        //     });
+        // });
     };
 
     BB_Login.prototype.Enter_CurrentPassword_Login = function (currentPasswordEntered) {
-        return new Promise((success, failure) => {
-            this.currentPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentPasswordEntered.toString());
-            page.executeSequence([page.waitForElementTobePresent(BB_loginRepo.Select_Element_UserPasswordTextbox),
-                page.click(BB_loginRepo.Select_Element_UserPasswordTextbox),
-                utilities.SendKeysSlower(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword)
-            ]).then(() => {
-                //if (this.currentPassword != '') {
-                    if (this.currentPassword != '') {
-                        // browser.wait(utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword)).then(() => {
-                        //     success();
-                        // });
 
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword)]).then(() => {
-                            success();
-                        });
-                    }
-                    else {
-                        success();
-                    }
-               // }
-            });
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.currentPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentPasswordEntered.toString()),
+                page.fill(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword, protractorConfig.config.WaitTime,BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
+            ]).then(()=>{});
         });
+
+
+        // return new Promise((success, failure) => {
+        //     this.currentPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentPasswordEntered.toString());
+        //     page.executeSequence([page.waitForElementTobePresent(BB_loginRepo.Select_Element_UserPasswordTextbox, protractorConfig.config.WaitTime),
+        //         page.clickElement(BB_loginRepo.Select_Element_UserPasswordTextbox, protractorConfig.config.WaitTime),
+        //         utilities.SendKeysSlower(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword)
+        //     ]).then(() => {
+        //         //if (this.currentPassword != '') {
+        //             if (this.currentPassword != '') {
+        //                 // browser.wait(utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword)).then(() => {
+        //                 //     success();
+        //                 // });
+        //
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword)]).then(() => {
+        //                     success();
+        //                 });
+        //             }
+        //             else {
+        //                 success();
+        //             }
+        //        // }
+        //     });
+        // });
     };
 
     BB_Login.prototype.Click_LoginButton = function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([page.waitForElementTobePresent(BB_loginRepo.Select_Element_LogInButton),BB_loginRepo.Select_Element_LogInButton.click()]).then(()=> {
-                success();
-            });
+           page.clickButton(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime,success);
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([page.waitForElementTobePresent(BB_loginRepo.Select_Element_LogInButton,protractorConfig.config.WaitTime),BB_loginRepo.Select_Element_LogInButton.click()]).then(()=> {
+        //         success();
+        //     });
+        // });
     };
 };
 module.exports = new BB_Login();

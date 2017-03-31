@@ -163,7 +163,7 @@ Feature:  "SetUp"
     And I clear text box selected "FilterPermissions" in Role Editor
     And I wait
     And I click on Save button in Role Editor
-    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     And I wait
     #USER 1 edit first name
     And I click on Admin Tab

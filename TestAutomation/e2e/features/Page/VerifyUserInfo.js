@@ -9,6 +9,8 @@ chai.use(chaiAsPromised);
 
 var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
 var utilities = require('../Page/Utilities.js');
+var page = require ('../Page/Page_Objects');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 var VerifyUserInfo = function VerifyUserInfo() {
 
@@ -21,8 +23,9 @@ var VerifyUserInfo = function VerifyUserInfo() {
                 //console.log('Value Stored:|' + this.ValueStored.toString() + '|');
                 if (this.ValueStored == ValueCompare) {
                     //if (this.ValueEntered == 'dd') {
-                    Element.click();
-                    return success();
+                    return page.clickButton(Element, protractorConfig.config.WaitTime,success);
+                    //Element.click();
+                    //return success();
                 }
                 else {
                     console.log(TextboxName + ' value stored: |' + this.ValueStored + '| is not equal to Value (Compare): |' + ValueCompare + '|');

@@ -56,7 +56,8 @@ var Utilities = function Utilities() {
     Utilities.prototype.ExpectedElement_StopAutomationAtFail = function(element)
     {
         if (protractorConfig.config.StopRunAtFail == true) {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), protractorConfig.config.WaitTime)]).then(()=>{});
+            page.waitForElementTobePresent(element, protractorConfig.config.WaitTime).then(()=>{});
+           // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), protractorConfig.config.WaitTime)]).then(()=>{});
         }
         else {
             page.executeSequence([browser.driver.sleep(5000)]).then(()=>{});

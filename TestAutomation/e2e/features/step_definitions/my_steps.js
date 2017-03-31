@@ -307,30 +307,51 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I reload page "([^"]*)"$/, function (URL) {
-
         return new Promise((success, failure)=> {
             browser.ignoreSynchronization = true;
-            page.executeSequence([browser.driver.get(URL), browser.driver.sleep(4000).then(()=>{
-
-                browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+            page.executeSequence([ browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
                     var currentURL = getCurrentURL.split("://");
                     var getURL = URL.toString().split("://");
 
                     if (currentURL[1].trim() != getURL[1].trim()) {
-                        browser.ignoreSynchronization = true;
-                        page.executeSequence([browser.driver.get(URL), browser.driver.sleep(4000)]).then(()=>{success();});
+                        page.openUrl(true, URL, 4000).then(()=> {
+                            success();
+                        });
                     }
                     else {
                         success();
                     }
-                });
-            })]).then(()=>{
+                })]).then(()=>{
                 //menu login (image)
-
-                browser.driver.wait( BB_loginRepo.Select_Element_AutoBahnLogInPageImage.click(), 60000);
-               // browser.driver.wait(element(by.xpath('//*[@id="login-box"]/div/div/img')).click(), 60000);
+                page.clickElement( BB_loginRepo.Select_Element_AutoBahnLogInPageImage, protractorConfig.config.WaitTime).then(()=>{});
+                //browser.driver.wait( BB_loginRepo.Select_Element_AutoBahnLogInPageImage.click(), 60000);
+                // browser.driver.wait(element(by.xpath('//*[@id="login-box"]/div/div/img')).click(), 60000);
             });
         });
+
+        // return new Promise((success, failure)=> {
+        //     browser.ignoreSynchronization = true;
+        //     page.executeSequence([browser.driver.get(URL), browser.driver.sleep(4000).then(()=>{
+        //
+        //         browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+        //             var currentURL = getCurrentURL.split("://");
+        //             var getURL = URL.toString().split("://");
+        //
+        //             if (currentURL[1].trim() != getURL[1].trim()) {
+        //                 browser.ignoreSynchronization = true;
+        //                 page.executeSequence([browser.driver.get(URL), browser.driver.sleep(4000)]).then(()=>{success();});
+        //             }
+        //             else {
+        //                 success();
+        //             }
+        //         });
+        //     })]).then(()=>{
+        //         //menu login (image)
+        //
+        //         browser.driver.wait( BB_loginRepo.Select_Element_AutoBahnLogInPageImage.click(), 60000);
+        //        // browser.driver.wait(element(by.xpath('//*[@id="login-box"]/div/div/img')).click(), 60000);
+        //     });
+        // });
     });
 
     this.Given(/^I re-enter the same user name and password$/, function () {

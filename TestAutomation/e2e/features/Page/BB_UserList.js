@@ -29,22 +29,30 @@ var BB_UserList = function BB_UserList() {
     };
 
     BB_UserList.prototype.EnterValueToFilter_FilterUseList = function (stringFilter) {
-        this.FilterValue = utilities.ReplaceDoubleQuotesWithWhiteSpace(stringFilter.toString());
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_FilterUserListTextbox), protractorConfig.config.WaitTime);
-        page.executeSequence([ page.click(BB_userListRepo.Select_Element_FilterUserListTextbox)]).then (()=>{utilities.SendKeysSlower(BB_userListRepo.Select_Element_FilterUserListTextbox, stringFilter );});
 
-        if (this.FilterValue != '') {
-            return new Promise((success, failure)=> {
-                if (this.currentPassword != '') {
-                    browser.driver.wait(utilities.VerifyValueEntered_RetypeValue( BB_userListRepo.Select_Element_FilterUserListTextbox, this.FilterValue)).then(()=> {
-                        success();
-                    });
-                }
-                else {
-                    success();
-                }
-            });
-        }
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.FilterValue = utilities.ReplaceDoubleQuotesWithWhiteSpace(stringFilter.toString()),
+                page.fill(BB_userListRepo.Select_Element_FilterUserListTextbox, this.FilterValue, protractorConfig.config.WaitTime,BB_userListRepo.Select_Element_TittleUserList, success)
+            ]).then(()=>{});
+        });
+
+
+        // this.FilterValue = utilities.ReplaceDoubleQuotesWithWhiteSpace(stringFilter.toString());
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_FilterUserListTextbox), protractorConfig.config.WaitTime);
+        // page.executeSequence([ page.clickElement(BB_userListRepo.Select_Element_FilterUserListTextbox, protractorConfig.config.WaitTime)]).then (()=>{utilities.SendKeysSlower(BB_userListRepo.Select_Element_FilterUserListTextbox, stringFilter );});
+        //
+        // if (this.FilterValue != '') {
+        //     return new Promise((success, failure)=> {
+        //         if (this.currentPassword != '') {
+        //             browser.driver.wait(utilities.VerifyValueEntered_RetypeValue( BB_userListRepo.Select_Element_FilterUserListTextbox, this.FilterValue)).then(()=> {
+        //                 success();
+        //             });
+        //         }
+        //         else {
+        //             success();
+        //         }
+        //     });
+        // }
     };
 
     BB_UserList.prototype.Click_StatusFilter = function () {
@@ -107,13 +115,19 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.Click_GearIcon = function (numberElementToSelect) {
         var index = parseInt(numberElementToSelect) - 1;
+        console.log('restando gear index');
         return new Promise((success, failure)=> {
-            //browser.driver.wait(BB_userListRepo.Select_Element_EditGeardIcon.get(index).click()).then(()=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_EditGeardIcon.get(index)), protractorConfig.config.WaitTime),
-            BB_userListRepo.Select_Element_EditGeardIcon.get(index).click()]).then(()=> {
-                 success();
-            });
+            page.executeSequence([page.clickButton(BB_userListRepo.Select_Element_EditGeardIcon.get(index), protractorConfig.config.WaitTime, success)]).then(()=>{});
         });
+
+        // var index = parseInt(numberElementToSelect) - 1;
+        // return new Promise((success, failure)=> {
+        //     //browser.driver.wait(BB_userListRepo.Select_Element_EditGeardIcon.get(index).click()).then(()=> {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_EditGeardIcon.get(index)), protractorConfig.config.WaitTime),
+        //     BB_userListRepo.Select_Element_EditGeardIcon.get(index).click()]).then(()=> {
+        //          success();
+        //     });
+        // });
     };
 
     BB_UserList.prototype.Click_Gear_Deactivate_Submenu = function () {
@@ -139,14 +153,18 @@ var BB_UserList = function BB_UserList() {
     };
 
     BB_UserList.prototype.Click_Gear_View_Submenu = function (rowNumber) {
-
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber.toString()+']/div[9]/action-icon/div/div/ul/li[1]/div'))), protractorConfig.config.WaitTime),
-                element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber.toString()+']/div[9]/action-icon/div/div/ul/li[1]/div')).click()
-            ]).then(() => {
-                 success();
-            });
+            page.executeSequence([
+            page.clickButton(BB_userListRepo.Select_Element_Gear_View_Submenu(rowNumber),protractorConfig.config.WaitTime,success)]).then(() => {});
         });
+
+        // return new Promise((success, failure) => {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber.toString()+']/div[9]/action-icon/div/div/ul/li[1]/div'))), protractorConfig.config.WaitTime),
+        //         element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber.toString()+']/div[9]/action-icon/div/div/ul/li[1]/div')).click()
+        //     ]).then(() => {
+        //          success();
+        //     });
+        // });
 
         // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_View_Submenu), protractorConfig.config.WaitTime);
         // return new Promise((success, failure)=> {
@@ -156,9 +174,15 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.Click_Gear_Edit_Submenu = function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Edit_Submenu), protractorConfig.config.WaitTime),
-                BB_userListRepo.Select_Element_Gear_Edit_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> {   success();});
+            page.clickButton(BB_userListRepo.Select_Element_Gear_Edit_Submenu, protractorConfig.config.WaitTime, success);
+            // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Edit_Submenu), protractorConfig.config.WaitTime),
+            //     BB_userListRepo.Select_Element_Gear_Edit_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> {   success();});
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Edit_Submenu), protractorConfig.config.WaitTime),
+        //         BB_userListRepo.Select_Element_Gear_Edit_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> {   success();});
+        // });
     };
 
     BB_UserList.prototype.Click_Gear_Delete_Submenu = function () {

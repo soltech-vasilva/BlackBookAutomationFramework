@@ -12,14 +12,14 @@ Feature:  "Verify that this bugs dont return to the application."
   Background:
 
     Given I enter BlackBook Login Website
-    And I wait
+    #And I wait
        #BUG ADDED THIS TO CONTINUE
        ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
-    And I wait
+    #And I wait
 
 ######################################################################################################################
 #                                             Test cases A                                                           #
@@ -29,21 +29,21 @@ Feature:  "Verify that this bugs dont return to the application."
   Scenario: "@TestCases_A-1" (BB-368) Verify current User can see current profile after seen other user's profile.(same component call "Caching issues")
     When I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I wait
+    #And I wait
     And I enter Filter User List admintestemail1@yopmail.com in User List
     And I click on Gear Icon 1 "admintestemail1@yopmail.com in User List"
     And I click 1 View from Gear Icon in User List
-    And I wait
+    #And I wait
     And I click Edit Button in Edit User Profile
-    And I wait
+    #And I wait
       Then I should see user's "emailAddress" displayed in screen with value "admintestemail1@yopmail.com"
     And I click Avatar Image Button
     And I click My Profile sub menu from Avatar
-    And I wait
+    #And I wait
       Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
+    #And I wait
 
   @TestCases_A-2
   Scenario: "@TestCases_A-2" (BB-384) Verify current User information is not deleted from UI if "RESET"->"CANCEL"
@@ -52,13 +52,13 @@ Feature:  "Verify that this bugs dont return to the application."
       Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
     And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
-    And I wait
+    #And I wait
     And I click Cancel Button in Edit User Profile
       Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
-    And I wait
+    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
+    #And I wait
 
 #  @TestCases_A-3
 #  Scenario Outline: "@TestCases_A-3" (BB-367) Modify New Password as same Confirm Password cant click "SAVE" button to create user.(NOT FIX) (BUG)
@@ -92,54 +92,55 @@ Feature:  "Verify that this bugs dont return to the application."
     @TestCases_A-4
   Scenario: "@TestCases_A-4" (BB-413) Click "Save" twice in Edit Role list will show error (weird state).
     And I click on Admin Tab
-    And I wait
+    #And I wait
     And I click on Roles submenu from Admin Tab
-    And I wait
+    #And I wait
     And I click on Gear Icon 3 "Basic Role-No Permissions in Role List"
     And I click Edit from Gear Icon "in Role List"
-    And I wait
+    #And I wait
     And I click on Save button in Role Editor
-    And I wait
+    #And I wait
     #Turn On "Settings" submenu
     And I click checkbox Permission "Settings" in Role Editor
-      And I wait
+      #And I wait
       Then I should see Permissions "Settings" checkbox "checked" in Role Editor
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
-    And I wait
+    #And I wait
     And I click Cancel Button from Edit Roles
     And I click on Gear Icon 3 "Basic Role-No Permissions in Role List"
     And I click Edit from Gear Icon "in Role List"
     #Turn off "Settings" submenu
     And I click checkbox Permission "Settings" in Role Editor
-      And I wait
+     # And I wait
       Then I should see Permissions "Settings" checkbox "unchecked" in Role Editor
     And I click on Save button in Role Editor
-    And I wait
+    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
+    #And I wait
 
   @TestCases_A-5
   Scenario: "@TestCases_A-5" (BB-247) Entering credential will not go straight to "Home" page.
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/dashboard" URL
-    And I wait
+    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
+    #And I wait
 
+  #Todo continue refactoring
   @TestCases_A-6
   Scenario: "@TestCases_A-6" (BB-360) Active Status is editable by user.
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     And I wait
+    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
     #User has "Edit-Full-Roles"
     And I enter my user email address editor@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
-    And I wait
+    #And I wait
     And I click Avatar Image Button
     And I click My Profile sub menu from Avatar
-    And I wait
+    #And I wait
     And I click Edit Button in Edit User Profile
     And I wait
     And I click User Active checkbox

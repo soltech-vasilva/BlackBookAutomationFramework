@@ -55,9 +55,21 @@ var EyesSetUp = function EyesSetUp(){
     };
 
     EyesSetUp.prototype.EyesCheckWindow = function (eyes, verifyScreenElementName , isBooleanApplitoolsOn ) {
+
         if (isBooleanApplitoolsOn == true) {
-           // eyes.checkWindow(BB_editUserProfileRepo.EyesVerify_BB_Dashboard);
-            page.executeSequence([eyes.checkWindow(verifyScreenElementName).then(()=>{ console.log("before sleep");}), browser.driver.sleep(2000).then(()=>{ console.log("after sleep");})]).then(( )=>{console.log("Capture:"+verifyScreenElementName)});
+            eyes.checkWindow(verifyScreenElementName);
+            console.log("Capture:" + verifyScreenElementName);
+
+            // page.executeSequence([browser.driver.sleep(2000),
+            //     eyes.checkWindow(verifyScreenElementName).then(() => {
+            //         console.log("before sleep");
+            //     }),
+            //     browser.driver.sleep(2000).then(() => {
+            //         console.log("after sleep");
+            //     })
+            // ]).then(() => {
+            //     console.log("Capture:" + verifyScreenElementName)
+            // });
         }
     }
 };

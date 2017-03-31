@@ -182,40 +182,63 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
     };
 
     BB_EditUserProfile.prototype.Click_Delete_Content = function(success, elementToClick, elementTitlePage) {
-        elementToClick.click();
-        keyStrokesRepo.CONTROL_ALL_DELETE();
-        return BB_EditUserProfile.prototype.Click_TittleofPage(elementTitlePage, success);
+
+        return page.executeSequence([page.clickElement(elementToClick, protractorConfig.config.WaitTime),
+            //elementToClick.click();
+            keyStrokesRepo.CONTROL_ALL_DELETE(),
+            page.focus(elementTitlePage, success)]).then(() => {
+        });
+        //return BB_EditUserProfile.prototype.Click_TittleofPage(elementTitlePage, success);
+
     };
 
     BB_EditUserProfile.prototype.Click_EditButton_EditUserProfile = function () {
         return new Promise((success, failure) => {
-            //This give a time to transition
-            //browser.driver.sleep(2000);
-            browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_EditButton), protractorConfig.config.WaitTime);
-
-            page.executeSequence([BB_editUserProfileRepo.Select_Element_EditButton.click(), success()]).then(() => {
-            });
+            page.executeSequence([page.clickElement(BB_editUserProfileRepo.Select_Element_EditButton,protractorConfig.config.WaitTime),
+            page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure) => {
+        //     //This give a time to transition
+        //     //browser.driver.sleep(2000);
+        //     browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_EditButton), protractorConfig.config.WaitTime);
+        //
+        //     page.executeSequence([BB_editUserProfileRepo.Select_Element_EditButton.click(), success()]).then(() => {
+        //     });
+        // });
     };
 
     BB_EditUserProfile.prototype.Click_ResetButton_EditUserProfile = function () {
-        return new Promise((success, failure)=> {
-        //This give a time to transition
-        //page.executeSequence([browser.driver.sleep(2000).then (()=>{browser.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_ResetButton), protractorConfig.config.WaitTime);})]);
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_ResetButton), protractorConfig.config.WaitTime);
 
-
-            page.executeSequence([BB_editUserProfileRepo.Select_Element_ResetButton.click()]).then(()=>{success();});
+        return new Promise((success, failure) => {
+            page.executeSequence([page.clickElement(BB_editUserProfileRepo.Select_Element_ResetButton,protractorConfig.config.WaitTime),
+                page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        // //This give a time to transition
+        // //page.executeSequence([browser.driver.sleep(2000).then (()=>{browser.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_ResetButton), protractorConfig.config.WaitTime);})]);
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_ResetButton), protractorConfig.config.WaitTime);
+        //
+        //
+        //     page.executeSequence([BB_editUserProfileRepo.Select_Element_ResetButton.click()]).then(()=>{success();});
+        // });
     };
 
     BB_EditUserProfile.prototype.Click_CancelButton_EditUserProfile = function () {
-        return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_CancelButton), protractorConfig.config.WaitTime),
-                BB_editUserProfileRepo.Select_Element_CancelButton.click()]).then(() => {
-                success();
-            });
+        return new Promise((success, failure) => {
+            page.executeSequence([page.clickButton(BB_editUserProfileRepo.Select_Element_CancelButton,protractorConfig.config.WaitTime,success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_CancelButton), protractorConfig.config.WaitTime),
+        //         BB_editUserProfileRepo.Select_Element_CancelButton.click()]).then(() => {
+        //         success();
+        //     });
+        // });
     };
 
     BB_EditUserProfile.prototype.Click_SaveButton_EditUserProfile = function () {

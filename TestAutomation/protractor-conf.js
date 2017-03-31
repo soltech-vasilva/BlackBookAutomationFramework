@@ -7,9 +7,9 @@ exports.config = {
     //specs: [
     //'e2e/features/TestCases/*.feature'
     // ],
-    'StopRunAtFail': false,
+    'StopRunAtFail': true,   //false original
     'WaitTime': 15000,
-    'BuildTestNumber': '116',
+    'BuildTestNumber': '126',
 
     //Turn off applitool
     'ApplitoolsOn': true,
@@ -26,7 +26,7 @@ exports.config = {
          //  'e2e/features/TestCases/UsersList.feature'//,
         //  'e2e/features/TestCases/Login.feature'//,
         //'e2e/features/TestCases/EditRoles.feature'//,
-       // 'e2e/features/TestCases/Bugs.feature'//,
+        'e2e/features/TestCases/Bugs.feature'//,
       // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
         // 'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
         //'e2e/features/TestCases/Test1.feature'//,

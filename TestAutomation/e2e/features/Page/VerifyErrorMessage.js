@@ -17,19 +17,20 @@ var BB_userListRepo =  require('../Repository/BB_UserListRepo.js');
 var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 var BB_editRoles = require('../Page/BB_EditRoles.js');
 var page = require ('../Page/Page_Objects');
+var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 var VerifyErrorMessage = function VerifyErrorMessage(){
 
     VerifyErrorMessage.prototype.ExpectTextEqualsTo = function(elementToCheck, compareValuesString, success, failure){
-        return browser.driver.wait(elementToCheck.getText()).then((Text)=>{
+        return page.executeSequence([browser.driver.wait(elementToCheck.getText()).then((Text)=>{
             if (Text.trim() == compareValuesString) {
-                success();
+                page.clickButton(elementToCheck, protractorConfig.config.WaitTime, success);
             }
             else {
                 console.log('Text: |'+Text+'| is not equal to compareValuesString: |'+ compareValuesString+'|');
                 failure();
             }
-        });
+        })]);
         //this kill script and dont fail gracely and report are blank "DONT USE EXPECT
         // expect(elementToCheck.getText()).to.eventually.equal(compareValuesString);
     };

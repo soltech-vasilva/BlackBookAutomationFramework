@@ -1,6 +1,8 @@
 /**
  * Created by Vsilva on 1/30/17.
  */
+var keyStrokesRepo = require ('../Repository/KeyStrokesRepo.js');
+var protractor = require('protractor');
 
 var Page_Objects = function Page_Objects () {
 
@@ -25,9 +27,10 @@ var Page_Objects = function Page_Objects () {
         );
     };
 
-
     page.setResolution = function (int_width, int_height) {
-        browser.driver.manage().window().setSize(int_width, int_height);
+        page.executeSequence([ browser.driver.sleep(1000),
+            browser.driver.manage().window().setSize(int_width, int_height),
+            browser.driver.sleep(1000)]).then(()=>{});
     };
 
     /**
@@ -44,13 +47,13 @@ var Page_Objects = function Page_Objects () {
         ]);
     };
 
-    page.verifyCurrentUrl = function (str_compareURL, element_PageVerify , int_WaitTime , success, failure) {
+    page.verifyCurrentUrl = function (str_compareURL, element_PageVerify , WaitTime , success, failure) {
         return page.executeSequence([browser.driver.getCurrentUrl().then(function (getCurrentURL) {
             var currentURL = getCurrentURL.split("://");
             var compareURL = str_compareURL.toString().split("://");
 
             if (currentURL[1].trim() == compareURL[1].trim()) {
-                page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element_PageVerify), int_WaitTime)])
+                page.waitForElementTobePresent(element_PageVerify, WaitTime)
                     .then(() => {
                         success();
                     });
@@ -89,13 +92,30 @@ var Page_Objects = function Page_Objects () {
      * @param {WebElement} element
      * @returns {Promise}
      */
-    page.click = function(element) {
-        return page.executeSequence([
-            // clear focus first to avoid a rare condition where the click only clears
-            // focus from another element instead of actually clicking the thing you want
-           // page.clearFocus(),
-            browser.driver.actions().click(element).perform()
+    // page.click = function(element) {
+    //     return page.executeSequence([
+    //         // clear focus first to avoid a rare condition where the click only clears
+    //         // focus from another element instead of actually clicking the thing you want
+    //        // page.clearFocus(),
+    //         browser.driver.actions().click(element).perform()
+    //     ]);
+    // };
+
+    page.clickElement = function(element, WaitTime) {
+        // clear focus first to avoid a rare condition where the click only clears 
+        // focus from another element instead of actually clicking the thing you want 
+        // page.clearFocus(), 
+        return page.executeSequence([page.waitForElementTobePresent(element, WaitTime),
+             browser.driver.actions().click(element).perform()
+           // element.click()
         ]);
+    };
+
+    page.clickButton = function(element, WaitTime, success) {
+        page.executeSequence([page.clickElement(element, WaitTime)
+        ]).then(() => {
+            success();
+        });
     };
 
     /**
@@ -103,8 +123,14 @@ var Page_Objects = function Page_Objects () {
      * @param {WebElement} element
      * @returns {Promise}
      */
-    page.focus = function(element) {
-        return page.click(element);
+    // page.focus = function(element) {
+    //     return page.click(element);
+    // };
+
+    page.focus = function(element, success) {
+        return page.executeSequence([page.clickElement(element)]).then(() => {
+            success();
+        });
     };
 
     /**
@@ -130,22 +156,76 @@ var Page_Objects = function Page_Objects () {
      * @param {string} value
      * @returns {Promise}
      */
-    page.fill = function (element, value) {
-        return element.sendKeys(value);
+    // page.fill = function (element, value) {
+    //     return element.sendKeys(value);
+    // };
+
+    page.fill = function (element , str_SendValue, WaitTime , elementClearFocus , success) {
+        return page.executeSequence([
+            page.clickElement(element, WaitTime).then(() => {
+                if (str_SendValue != '') {
+                    page.executeSequence([ element.sendKeys(str_SendValue),
+                        page.VerifyValueEntered_RetypeValue(element, str_SendValue)]).then(() => {
+                    });
+                }
+            })]).then(() => {
+            page.focus(elementClearFocus, success);
+        });
     };
 
+    page.VerifyValueEntered_RetypeValue = function (Element,  ValueCompare ) {
+        return page.executeSequence([browser.driver.wait(Element.getAttribute("value").then(function (currentValue) {
+            var ValueEntered = currentValue;
+            var count = 0;
+            browser.getProcessedConfig().then((config) => {
+                while (ValueEntered != ValueCompare) {
+                    //console.log(ValueEntered + ":Different:" + ValueCompare); 
+                    // console.log('config.capabilities.os: |' + config.capabilities.os + '|'); 
+                    //  console.log(" config.capabilities.browserName: " +  config.capabilities.browserName);  
+                    if (config.capabilities.browserName == 'safari' || config.capabilities.os === undefined) {
+                        //console.log('Mycomputer'); 
+                        page.executeSequence([browser.driver.sleep(1000), Element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.sleep(1000), page.SendKeysSlower(Element, ValueCompare)])
+                            .then(() => {
+                            });
+                    } else {
+                        page.executeSequence([browser.driver.sleep(1000), Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(Element, ValueCompare)])
+                            .then(() => {
+                            });
+                    }
+                    count++;
+                    if (count == 3) {
+                        break;
+                    }
+                }
+            });
+        }))]);
+    };
+      
+    page.SendKeysSlower = function (Element , strValue) {
+        for (var i = 0; i < strValue.toString().length; i++) {
+            var c = strValue.charAt(i);
+            Element.sendKeys(c);
+        }
+    };   
+
+    page.ClickDeleteContent = function( elementToClick, elementClearFocus, success) {
+       return page.executeSequence([ page.clickElement(elementToClick),
+        keyStrokesRepo.CONTROL_ALL_DELETE(),
+         page.focus(elementClearFocus, success)]);
+    };
     /**
      * Clears any content from an input before entering a new value
      * @param {WebElement} element
      * @param {string} value
      * @returns {Promise}
      */
-    page.clearAndFill = function(element, value) {
-        return page.executeSequence([
-            element.clear(),
-            page.fill(element, value)
-        ]);
-    };
+
+    // page.clearAndFill = function(element, value) {
+    //     return page.executeSequence([
+    //         element.clear(),
+    //         page.fill(element, value)
+    //     ]);
+    // };
 
     /**
      * Gets the content of an element (value if an input)
@@ -220,8 +300,8 @@ var Page_Objects = function Page_Objects () {
      * Waits until a particular element is present on the page
      * @returns {Promise}
      */
-    page.waitForElementTobePresent = function(element , int_WaitTime) {
-       return page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), int_WaitTime)]).then(()=>{});
+    page.waitForElementTobePresent = function(element , WaitTime) {
+       return page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), WaitTime)]).then(()=>{});
     };
 };
 module.exports =  new Page_Objects();
