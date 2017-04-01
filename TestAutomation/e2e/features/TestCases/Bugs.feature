@@ -81,7 +81,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should not see in "confirmNewPassWord" errors displayed
 #    And I add extra string "1" to my "newPassWord"
 #    And I delete the amount "1" characters from my "newPassWord"
-#    And I click checkbox User's Roles "Administrators"
+#    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
 #    And I wait
 #      Then I should see in "Save button" "active"
 #
@@ -192,7 +192,6 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Logout sub menu from Avatar
     #And I wait
 
-  #Todo continue refactoring
   @TestCases_A-9
   Scenario: "@TestCases_A-9" (BB-398) Gear Icon stop working after exiting "New Role" page
     And I click on Admin Tab
@@ -200,77 +199,76 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Gear Icon 2 "AllPermissions in Role List"
     And I click Edit from Gear Icon "in Role List"
     And I click Cancel Button from Edit Roles
-    And I wait
-      #Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/role/list" URL
-      Then I should see that I am in "full" "autobahn.blackbookcloud.com/role/list" URL
-    And I wait
+    #And I wait
+      Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/role/list" URL
+      #Then I should see that I am in "full" "autobahn.blackbookcloud.com/role/list" URL
+    #And I wait
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I wait
+    #And I wait
     And I enter Filter User List admintestemail6@yopmail.com in User List
     And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
-      Then I should see User List Edit sub-menu options
-    And I wait
+      Then I should see Gear sub-menu options "in Role List"
+    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
+    #And I wait
 
-#  @TestCases_A-10
-#  Scenario: "@TestCases_A-10" (BB-388) "Delete" sub menu on "User List" is missing from menu. (it only needs 3 items)
-#    And I click on Admin Tab
-#    And I click on Users submenu from Admin Tab
-#    And I wait
-#    And I enter Filter User List admintestemail6@yopmail.com in User List
-#    And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
-#      Then I should see User List Edit sub-menu options
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#  @TestCases_A-11
-#  Scenario Outline: "@TestCases_A-11" (BB-399) Click "Reset" wont clear Error messages (Add User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress,newPassWord,confirmNewPassWord] (BUG cant click on Edit Roles)
-#    And I click on Admin Tab
-#    And I click on Users submenu from Admin Tab
-#    And I click on New User Button in User List
-#    And I wait
-#    And I enter my first name <firstName> in Form
-#      But I enter "nothing to first name"
-#      Then I should see "firstName" message "Required" displayed for this "empty" field
-#    And I enter my last name <lastName> in Form
-#      But I enter "nothing to last name"
-#      Then I should see "lastName" message "Required" displayed for this "empty" field
-#    And I enter my email address <emailAddress> in Form
-#      But I enter "nothing to email address"
-#      Then I should see "emailAddress" message "Required" displayed for this "empty" field
-#    And I enter my phone number <phoneNumber> in Form
-#    And I enter my new Password <newPassWord> in Form
-#      #there is bug were there is no Require showing so I added value for new password to show error on new password
-#      #But I enter "nothing to New Password"
-#      #Then I should see "newPassWord" message "Required" displayed for this "empty" field
-#    And I enter my confirm new password <confirmNewPassWord> in Form
-#      But I enter "nothing to Confirm New Password"
-#      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
-#    And I click checkbox User's Roles "Administrators"
-#    And I click Reset Button in Edit User Profile
-#    And I wait
-#      Then I should see "firstName" message "Required" displayed for this "empty" field
-#      Then I should see "lastName" message "Required" displayed for this "empty" field
-#      Then I should see "emailAddress" message "Required" displayed for this "empty" field
-#      Then I should see "newPassWord" message "Required" displayed for this "filled" field
-#      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#  Examples:
-#  | firstName     | lastName  | emailAddress              | phoneNumber   | newPassWord    | confirmNewPassWord   |
-##All Empty Fields
-#  |               |           |                           |               |  Password1     |                      |
-#
-#
-#
+  @TestCases_A-10
+  Scenario: "@TestCases_A-10" (BB-388) "Delete" sub menu on "User List" is missing from menu. (it only needs 3 items)
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    #And I wait
+    And I enter Filter User List admintestemail6@yopmail.com in User List
+    And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
+      Then I should see Gear sub-menu options "in User List"
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+    #Todo continue refactoring
+  @TestCases_A-11
+  Scenario Outline: "@TestCases_A-11" (BB-399) Click "Reset" wont clear Error messages (Add User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress,newPassWord,confirmNewPassWord] (BUG cant click on Edit Roles)
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    And I click on New User Button in User List
+    #And I wait
+    And I enter my first name <firstName> in Form
+      But I enter "nothing to first name"
+      Then I should see "firstName" message "Required" displayed for this "empty" field
+    And I enter my last name <lastName> in Form
+      But I enter "nothing to last name"
+      Then I should see "lastName" message "Required" displayed for this "empty" field
+    And I enter my email address <emailAddress> in Form
+      But I enter "nothing to email address"
+      Then I should see "emailAddress" message "Required" displayed for this "empty" field
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my new Password <newPassWord> in Form
+      #there is bug were there is no Require showing so I added value for new password to show error on new password
+      #But I enter "nothing to New Password"
+      #Then I should see "newPassWord" message "Required" displayed for this "empty" field
+    And I enter my confirm new password <confirmNewPassWord> in Form
+      But I enter "nothing to Confirm New Password"
+      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
+    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
+    And I click Reset Button in Edit User Profile
+    #And I wait
+      Then I should see "firstName" message "Required" displayed for this "empty" field
+      Then I should see "lastName" message "Required" displayed for this "empty" field
+      Then I should see "emailAddress" message "Required" displayed for this "empty" field
+      Then I should see "newPassWord" message "Required" displayed for this "filled" field
+      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+  Examples:
+  | firstName     | lastName  | emailAddress              | phoneNumber   | newPassWord    | confirmNewPassWord   |
+#All Empty Fields
+  |               |           |                           |               |  Password1     |                      |
+
 #  @TestCases_A-12
 #  Scenario Outline: "@TestCases_A-12" (BB-287) Click "Reset" wont clear Error messages. (Edit User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress]
 #    And I click Avatar Image Button
@@ -294,7 +292,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I enter my confirm new password <confirmNewPassWord> in Form
 #      But I enter "nothing to Confirm New Password"
 #      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
-#    And I click checkbox User's Roles "Administrators"
+#    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
 #    And I click Reset Button in Edit User Profile
 #    And I wait
 #    Then I should see "firstName" message "Required" displayed for this "empty" field
@@ -507,7 +505,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I enter my last name <lastName> in Form
 #    And I enter my email address <emailAddress> in Form
 #      Then I should see "userrole" message "Required" displayed for this "unchecked" field
-#    And I click checkbox User's Roles "Administrators"
+#    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
 #      Then I should not see in "userrole" errors displayed
 #    And I wait
 #    And I click Avatar Image Button

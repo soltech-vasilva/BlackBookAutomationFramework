@@ -34,6 +34,7 @@ var BB_UserListRepo = function BB_UserListRepo () {
     BB_UserListRepo.prototype.Select_Element_Gear_Deactivate_Submenu = element(by.linkText('Deactivate'));
     BB_UserListRepo.prototype.Select_Element_Gear_Edit_Submenu = element(by.linkText('Edit'));
     BB_UserListRepo.prototype.Select_Element_Gear_Delete_Submenu = element(by.linkText('Delete'));
+    BB_UserListRepo.prototype.Select_Element_Gear_All_Submenu  = element(by.css('ul.action-menu'));
 
     //BB_UserListRepo.prototype.Select_Xpath_PopUpMESSAGE = by.xpath('//*[@id="page-box"]/user-list/div/div/div/message-box/div/div'); //old
       BB_UserListRepo.prototype.Select_Xpath_PopUpMESSAGE = by.xpath(' //*[@id="page-box"]/user-list/div/div/message-box/div/div');

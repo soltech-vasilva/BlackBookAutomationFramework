@@ -28,129 +28,177 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
     };
 
    BB_EditUserProfile.prototype.Enter_FirstName_inForm = function (firstName) {
+
        return new Promise((success, failure)=> {
-            page.executeSequence([
-               this.firstName = utilities.ReplaceDoubleQuotesWithWhiteSpace(firstName.toString()),
-               browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_FirstNameTextbox), protractorConfig.config.WaitTime),
-               BB_editUserProfileRepo.Select_Element_FirstNameTextbox.click().then(() => {
-                   if (this.firstName != '') {
-                       BB_editUserProfileRepo.Select_Element_FirstNameTextbox.sendKeys(this.firstName);
-                       page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_FirstNameTextbox, this.firstName)]).then(() => {
-                       });
-                   }
-               })
-           ]).then(() => {
-               BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
-           });
+           page.executeSequence([this.firstName = utilities.ReplaceDoubleQuotesWithWhiteSpace(firstName.toString()),
+               page.fill(BB_editUserProfileRepo.Select_Element_FirstNameTextbox, this.firstName, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+           ]).then(()=>{});
        });
+
+       // return new Promise((success, failure)=> {
+       //      page.executeSequence([
+       //         this.firstName = utilities.ReplaceDoubleQuotesWithWhiteSpace(firstName.toString()),
+       //         browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_FirstNameTextbox), protractorConfig.config.WaitTime),
+       //         BB_editUserProfileRepo.Select_Element_FirstNameTextbox.click().then(() => {
+       //             if (this.firstName != '') {
+       //                 BB_editUserProfileRepo.Select_Element_FirstNameTextbox.sendKeys(this.firstName);
+       //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_FirstNameTextbox, this.firstName)]).then(() => {
+       //                 });
+       //             }
+       //         })
+       //     ]).then(() => {
+       //         BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
+       //     });
+       // });
    };
 
     BB_EditUserProfile.prototype.Enter_LastName_inForm = function (lastName) {
-        return new Promise((success, failure)=> {
-            page.executeSequence([
-                this.lastName = utilities.ReplaceDoubleQuotesWithWhiteSpace(lastName.toString()),
-                BB_editUserProfileRepo.Select_Element_LastNameTextbox.click().then(() => {
 
-                    if (this.lastName != '') {
-                        BB_editUserProfileRepo.Select_Element_LastNameTextbox.sendKeys(this.lastName);
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_LastNameTextbox, this.lastName)]).then(() => {
-                        });
-                    }
-                })
-            ]).then(() => {
-                BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
-            });
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.lastName = utilities.ReplaceDoubleQuotesWithWhiteSpace(lastName.toString()),
+                page.fill(BB_editUserProfileRepo.Select_Element_LastNameTextbox, this.lastName, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([
+        //         this.lastName = utilities.ReplaceDoubleQuotesWithWhiteSpace(lastName.toString()),
+        //         BB_editUserProfileRepo.Select_Element_LastNameTextbox.click().then(() => {
+        //
+        //             if (this.lastName != '') {
+        //                 BB_editUserProfileRepo.Select_Element_LastNameTextbox.sendKeys(this.lastName);
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_LastNameTextbox, this.lastName)]).then(() => {
+        //                 });
+        //             }
+        //         })
+        //     ]).then(() => {
+        //         BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
+        //     });
+        // });
     };
 
     BB_EditUserProfile.prototype.Enter_EmailAddress_inForm = function (emailAddress) {
-        return new Promise((success, failure)=> {
-            page.executeSequence([
-                this.emailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(emailAddress.toString()),
-                BB_editUserProfileRepo.Select_Element_EmailAddressTextbox.click().then(() => {
 
-                    if (this.emailAddress != '') {
-                        BB_editUserProfileRepo.Select_Element_EmailAddressTextbox.sendKeys(this.emailAddress);
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox, this.emailAddress)]).then(() => {
-                        });
-                    }
-                })
-            ]).then(() => {
-                BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
-            });
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.emailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(emailAddress.toString()),
+                page.fill(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox, this.emailAddress, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([
+        //         this.emailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(emailAddress.toString()),
+        //         BB_editUserProfileRepo.Select_Element_EmailAddressTextbox.click().then(() => {
+        //
+        //             if (this.emailAddress != '') {
+        //                 BB_editUserProfileRepo.Select_Element_EmailAddressTextbox.sendKeys(this.emailAddress);
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox, this.emailAddress)]).then(() => {
+        //                 });
+        //             }
+        //         })
+        //     ]).then(() => {
+        //         BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
+        //     });
+        // });
     };
 
     BB_EditUserProfile.prototype.Enter_PhoneNumber_inForm = function (phoneNumber) {
-        return new Promise((success, failure)=> {
-            page.executeSequence([
-                this.phoneNumber = utilities.ReplaceDoubleQuotesWithWhiteSpace(phoneNumber.toString()),
-                BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox.click().then(() => {
 
-                    if (this.phoneNumber != '') {
-                        BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox.sendKeys(this.phoneNumber);
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox, this.phoneNumber)]).then(() => {
-                        });
-                    }
-                })
-            ]).then(() => {
-                BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
-            });
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.phoneNumber = utilities.ReplaceDoubleQuotesWithWhiteSpace(phoneNumber.toString()),
+                page.fill(BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox, this.phoneNumber, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([
+        //         this.phoneNumber = utilities.ReplaceDoubleQuotesWithWhiteSpace(phoneNumber.toString()),
+        //         BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox.click().then(() => {
+        //
+        //             if (this.phoneNumber != '') {
+        //                 BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox.sendKeys(this.phoneNumber);
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox, this.phoneNumber)]).then(() => {
+        //                 });
+        //             }
+        //         })
+        //     ]).then(() => {
+        //         BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
+        //     });
+        // });
     };
 
     BB_EditUserProfile.prototype.Enter_NewPassword_inForm = function (newPassword) {
         return new Promise((success, failure)=> {
-            page.executeSequence([
-                this.newPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(newPassword.toString()),
-                BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click().then(() => {
-
-                    if (this.newPassword != '') {
-                        BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(this.newPassword);
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, this.newPassword)]).then(() => {
-                        });
-                    }
-                })
-            ]).then(() => {
-                BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
-            });
+            page.executeSequence([this.newPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(newPassword.toString()),
+                page.fill(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, this.newPassword, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([
+        //         this.newPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(newPassword.toString()),
+        //         BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click().then(() => {
+        //
+        //             if (this.newPassword != '') {
+        //                 BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(this.newPassword);
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, this.newPassword)]).then(() => {
+        //                 });
+        //             }
+        //         })
+        //     ]).then(() => {
+        //         BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
+        //     });
+        // });
     };
 
     BB_EditUserProfile.prototype.Enter_ConfirmNewPassword_inForm = function (confirmNewPassword) {
-        return new Promise((success, failure) => {
-            page.executeSequence([
-                this.confirmNewPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(confirmNewPassword.toString()),
-                BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox.click().then(() => {
 
-                    if (this.confirmNewPassword != '') {
-                        BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox.sendKeys(this.confirmNewPassword);
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox, this.confirmNewPassword)]).then(() => {
-                        });
-                    }
-                })
-            ]).then(() => {
-                BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
-            });
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.confirmNewPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(confirmNewPassword.toString()),
+                page.fill(BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox, this.confirmNewPassword, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure) => {
+        //     page.executeSequence([
+        //         this.confirmNewPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(confirmNewPassword.toString()),
+        //         BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox.click().then(() => {
+        //
+        //             if (this.confirmNewPassword != '') {
+        //                 BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox.sendKeys(this.confirmNewPassword);
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox, this.confirmNewPassword)]).then(() => {
+        //                 });
+        //             }
+        //         })
+        //     ]).then(() => {
+        //         BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
+        //     });
+        // });
     };
 
     BB_EditUserProfile.prototype.Enter_PreviousPassword_inForm = function (previousPassword) {
-        return new Promise((success, failure) => {
-            page.executeSequence([
-                this.previousPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(previousPassword.toString()),
-                BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox.click().then(() => {
 
-                    if (this.previousPassword != '') {
-                        BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox.sendKeys(this.previousPassword);
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox, this.previousPassword)]).then(() => {
-                        });
-                    }
-                })
-            ]).then(() => {
-                BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
-            });
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.previousPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(previousPassword.toString()),
+                page.fill(BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox, this.previousPassword, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure) => {
+        //     page.executeSequence([
+        //         this.previousPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(previousPassword.toString()),
+        //         BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox.click().then(() => {
+        //
+        //             if (this.previousPassword != '') {
+        //                 BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox.sendKeys(this.previousPassword);
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox, this.previousPassword)]).then(() => {
+        //                 });
+        //             }
+        //         })
+        //     ]).then(() => {
+        //         BB_EditUserProfile.prototype.Click_TittleofPage(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success);
+        //     });
+        // });
     };
 
     BB_EditUserProfile.prototype.DeleteContentInTextBox = function (TextboxName) {

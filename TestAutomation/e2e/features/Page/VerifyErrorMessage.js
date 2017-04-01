@@ -94,14 +94,15 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
     VerifyErrorMessage.prototype.Verify_ErrorMessageToDisplay_UserProfile = function (str_TextboxName , str_VerifyErrorName, FilledOrEmptyField) {
         return new Promise ((success, failure)=> {
-            console.log(str_TextboxName.toLowerCase());
+            var URL = BB_loginRepo.BlackBookUrl+'/user';
+            //console.log(str_TextboxName.toLowerCase());
             switch (str_TextboxName.toLowerCase()) {
                 case 'firstname':
-                     console.log(str_TextboxName.toLowerCase());
-                     console.log('BB_editUserProfile.firstName:|'+BB_editUserProfile.firstName+'|');
+                     //console.log(str_TextboxName.toLowerCase());
+                     //console.log('BB_editUserProfile.firstName:|'+BB_editUserProfile.firstName+'|');
 
                     if ((BB_editUserProfile.firstName != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.firstName == '' && FilledOrEmptyField == 'empty')) {
-                         console.log("dentro: "+str_TextboxName.toLowerCase());
+                         //console.log("dentro: "+str_TextboxName.toLowerCase());
                         if (str_VerifyErrorName == 'Required') {
                             utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName_Require);
                             //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName_Require), 10000);
@@ -179,16 +180,17 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                         browser.getCurrentUrl().then(function (getCurrentURL) {
 
                             var currentURL = getCurrentURL.split("://");
+
                             if (str_VerifyErrorName == 'Required') {
-                                if (currentURL[1].trim() == 'qa-autobahn.blackbookcloud.com/user') {
-                                    console.log('R user');
+                                if (currentURL[1].trim() == URL) {
+                                    //console.log('R user');
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Require);
                                     browser.isElementPresent(BB_addUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Require).then(function (isPresente) {
                                         VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Require, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password', success, failure);
                                     });
                                 }
                                 else {
-                                    console.log('not R user');
+                                    //console.log('not R user');
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Require);
                                     browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Require).then(function (isPresente) {
                                         VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Require, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password', success, failure);
@@ -197,8 +199,8 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                             }
                             else
                             {
-                                if (currentURL[1].trim() == 'qa-autobahn.blackbookcloud.com/user') {
-                                    console.log('8 user');
+                                if (currentURL[1].trim() == URL) {
+                                    //console.log('8 user');
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character);
                                     //browser.wait(protractor.ExpectedConditions.presenceOf(BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character), 10000);
                                     browser.isElementPresent(BB_addUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Leastbe8Character).then(function (isPresente) {
@@ -206,7 +208,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                                     });
                                 }
                                 else {
-                                    console.log('not 8 user');
+                                    //console.log('not 8 user');
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character);
                                     browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Leastbe8Character).then(function (isPresente) {
                                         VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in New Password', success, failure);
@@ -224,7 +226,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
                             var currentURL = getCurrentURL.split("://");
 
-                            if (currentURL[1].trim() == 'qa-autobahn.blackbookcloud.com/user') {
+                            if (currentURL[1].trim() == URL) {
                             // if (getCurrentURL.trim() === 'https://qa-autobahn.blackbookcloud.com/user') {
                                 if (str_VerifyErrorName == 'Required') {
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword_Required);
@@ -264,11 +266,11 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
                 case 'currentemailaddress' :
                     if ((BB_login.currentEmailAddress != '' && FilledOrEmptyField == 'filled') || (BB_login.currentEmailAddress == '' && FilledOrEmptyField == 'empty')) {
-                        console.log('currentpassword login page');
+                        //console.log('currentpassword login page');
                         utilities.ExpectedElement_StopAutomationAtFail(BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword);
                         //browser.wait(protractor.ExpectedConditions.visibilityOf( BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword), 10000);
                         browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then(function (isPresente) {
-                            console.log('isPresente:'+isPresente.toString());
+                           // console.log('isPresente:'+isPresente.toString());
                             VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Current Email Address', success, failure);
                         });
                     }

@@ -21,11 +21,20 @@ var BB_UserList = function BB_UserList() {
     BB_UserList.prototype.Click_NewUser_Button = function () {
 
         return new Promise((success, failure)=> {
-            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_NewUserButton), protractorConfig.config.WaitTime),
-                BB_userListRepo.Select_Element_NewUserButton.click()]).then(()=> {
-                success();
-            });
+
+            page.clickButton(BB_userListRepo.Select_Element_NewUserButton, protractorConfig.config.WaitTime, success );
+            // page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_NewUserButton), protractorConfig.config.WaitTime),
+            //     BB_userListRepo.Select_Element_NewUserButton.click()]).then(()=> {
+            //     success();
+            // });
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_NewUserButton), protractorConfig.config.WaitTime),
+        //         BB_userListRepo.Select_Element_NewUserButton.click()]).then(()=> {
+        //         success();
+        //     });
+        // });
     };
 
     BB_UserList.prototype.EnterValueToFilter_FilterUseList = function (stringFilter) {

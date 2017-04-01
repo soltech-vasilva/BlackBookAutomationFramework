@@ -522,22 +522,22 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-    this.Then(/^I should see User List Edit sub-menu options$/, function () {
+    this.Then(/^I should see Gear sub-menu options "([^"]*)"$/, function (arg) {
         return new Promise((success, failure)=> {
-         browser.wait(element(by.css('ul.action-menu')).getText().then(function (arr) {
+         page.executeSequence([browser.driver.wait(BB_userListRepo.Select_Element_Gear_All_Submenu.getText().then(function (arr) {
             //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
             //var headers = arr.split('/r');
             var headers = arr.toString().split("\n");
 
             if (headers[0] == "View")
             {
-                console.log("header:|"+headers[0]+"|");
+                //console.log("header:|"+headers[0]+"|");
                 if (headers[1] == "Edit")
                 {
-                    console.log("header:|"+headers[1]+"|");
+                  //  console.log("header:|"+headers[1]+"|");
                     if (headers[2] == "Deactivate")
                     {
-                        console.log("header:|"+headers[2]+"|");
+                    //    console.log("header:|"+headers[2]+"|");
                         success();
                     }
                 }
@@ -546,7 +546,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
             {
                 failure();
             }
-        }));
+        }))]).then(()=>{});
         });
     });
 
@@ -557,7 +557,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-    this.Then(/^I click checkbox User's Roles "([^"]*)"$/, function (arg1) {
+    this.Then(/^I click checkbox User's Roles "([^"]*)" "([^"]*)"$/, function (arg1, arg2) {
         return new Promise((success, failure)=> {
             page.executeSequence([ element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2).click()]).then(()=>{ success();});
         });
