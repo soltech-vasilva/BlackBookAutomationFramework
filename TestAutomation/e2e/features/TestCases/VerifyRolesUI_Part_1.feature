@@ -270,7 +270,7 @@ Examples:
     And I click Reset Button in Edit Roles
       Then I verify BlackBook "Reset Administration Role" page with Applitools
     And I click Cancel Button from Edit Roles
-    Then I verify BlackBook "Role List" page with Applitools
+      Then I verify BlackBook "Role List" page with Applitools
     #USER need more
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab

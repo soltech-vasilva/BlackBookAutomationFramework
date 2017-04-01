@@ -306,7 +306,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-    this.Then(/^I reload page "([^"]*)"$/, function (URL) {
+    this.Then(/^I reload page "([^"]*)"$/, function (arg) {
+        var URL = BB_loginRepo.BlackBookUrl+'/login';
         return new Promise((success, failure)=> {
             browser.ignoreSynchronization = true;
             page.executeSequence([ browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
@@ -440,14 +441,6 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-    this.Given(/^I click User Active checkbox$/, function () {
-        return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
-                element(by.css('span.checkbox-label')).click()]).then(() => {
-                success();
-            });
-        });
-    });
 
     this.Then(/^I click User Active checkbox "([^"]*)"$/, function (isEnableOrDisable) {
         return new Promise((success, failure) => {
@@ -473,10 +466,18 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
+
+    this.Given(/^I click User Active checkbox$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime, success);
+        });
+    });
+
     this.Then(/^I should see on User Active checkbox inactive$/, function () {
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
-                browser.driver.sleep(1000),
+            page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime),
+                // browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
+                // browser.driver.sleep(1000),
                 //TODO si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
                 browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content').then(function (data) {
                     // console.log(data);
@@ -766,9 +767,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
         return new Promise ((success, failure)=>{
 
-            page.executeSequence([ element.all(by.css('select[name="filterGroupTerm"]')).get(0).click().then(()=>{
+            page.executeSequence([ element(by.css('select[name="filterGroupTerm"]')).click().then(()=>{
                 if(PermissionsName.toString().toLowerCase() == 'all') {
-                element.all(by.css('option[value="' + PermissionsName.toString().toLowerCase() + '"]')).get(0).click();
+                element(by.css('option[value="' + PermissionsName.toString().toLowerCase() + '"]')).click();
                 browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
             }
             else {

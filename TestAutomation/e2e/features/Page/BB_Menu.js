@@ -16,9 +16,13 @@ var BB_Menu = function BB_Menu() {
        // browser.sleep(3000);
        // browser.executeScript("return $(\"a:contains ('button'\").mousemover();");
         //browser.executeScript("document.getElementsByClassName('profile-img')[0].scrollIntoView();");
-        //TODO i did not add mouseMove to this check later if it raly need it.
+
         return new Promise((success, failure)=> {
-            page.clickButton(BB_menuRepo.Select_Element_ProfileButton,protractorConfig.config.WaitTime, success);
+            page.executeSequence([page.clickElement(BB_menuRepo.Select_Element_ProfileButton, protractorConfig.config.WaitTime),
+                browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform()
+            ]).then(() => {
+                success();
+            });
         });
 
         // return new Promise((success, failure)=> {

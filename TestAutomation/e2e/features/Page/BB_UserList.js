@@ -57,8 +57,11 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.Click_StatusFilter = function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_StatusFilter), protractorConfig.config.WaitTime),
-                BB_userListRepo.Select_Element_StatusFilter.click()]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+            page.executeSequence([page.clickElement(BB_userListRepo.Select_Element_StatusFilter,protractorConfig.config.WaitTime ),
+                page.focus(BB_userListRepo.Select_Element_TittleUserList, success)
+            ]).then(()=>{});
+            // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_StatusFilter), protractorConfig.config.WaitTime),
+            //     BB_userListRepo.Select_Element_StatusFilter.click()]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
         });
 
         // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter), protractorConfig.config.WaitTime);
@@ -115,7 +118,7 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.Click_GearIcon = function (numberElementToSelect) {
         var index = parseInt(numberElementToSelect) - 1;
-        console.log('restando gear index');
+        //console.log('restando gear index');
         return new Promise((success, failure)=> {
             page.executeSequence([page.clickButton(BB_userListRepo.Select_Element_EditGeardIcon.get(index), protractorConfig.config.WaitTime, success)]).then(()=>{});
         });

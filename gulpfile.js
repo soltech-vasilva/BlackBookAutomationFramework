@@ -70,7 +70,7 @@ gulp.task('Chrome_Setup',  ()=>
     });
 });
 
-gulp.task('Chrome_VerifyRoles_Part1',/* ['Chrome_Setup'],*/ ()=>
+gulp.task('Chrome_VerifyRoles_Part1', ['Chrome_Setup'], ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
@@ -84,7 +84,7 @@ gulp.task('Chrome_VerifyRoles_Part1',/* ['Chrome_Setup'],*/ ()=>
 });
 
 
-gulp.task('Chrome_AddUserPart0', ['Chrome_VerifyRoles_Part1'], ()=>
+gulp.task('Chrome_AddUserPart0', /*['Chrome_VerifyRoles_Part1'], */()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
@@ -123,7 +123,7 @@ gulp.task('Chrome_VerifyRoles_Part2', ['Chrome_EditRoles'],  ()=>
     });
 });
 
-gulp.task('Chrome_Bugs', ['Chrome_VerifyRoles_Part2'],  ()=>
+gulp.task('Chrome_Bugs',/* ['Chrome_VerifyRoles_Part2'], */ ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
@@ -423,7 +423,7 @@ gulp.task('Test2',['Test1'],()=>
 //gulp.task('default', ['Test1','Test2']); //falta userlist and login
 
 
-gulp.task('default', [/*'Chrome_Setup' ,*/'Chrome_VerifyRoles_Part1'/*, 'Chrome_AddUserPart0','Chrome_EditRoles','Chrome_VerifyRoles_Part2', 'Chrome_Bugs','Chrome_AddUserPart1', 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login'*/]); //falta userlist and login
+gulp.task('default', [/*'Chrome_Setup' ,'Chrome_VerifyRoles_Part1', 'Chrome_AddUserPart0','Chrome_EditRoles','Chrome_VerifyRoles_Part2', 'Chrome_Bugs',*/'Chrome_AddUserPart1' /*, 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login'*/]); //falta userlist and login
 // gulp.task('default', ['Firefox_AddUserPart1', 'Firefox_AddUserPart2','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
 //gulp.task('default', ['IE_AddUserPart1','IE_AddUserPart2','IE_EditUserProfile','IE_UsersList','IE_Login']);
 // gulp.task('default', ['Edge_AddUserPart1','Edge_AddUserPart2','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);

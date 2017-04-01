@@ -1,0 +1,1404 @@
+[
+  {
+    "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\"",
+    "name": "\"Verify that this bugs dont return to the application.\"",
+    "description": "\nRules: Verify \"User List\" opens\n\nQuestion:",
+    "line": 5,
+    "keyword": "Feature",
+    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/Bugs.feature",
+    "elements": [
+      {
+        "name": "",
+        "keyword": "Background",
+        "description": "",
+        "type": "background",
+        "line": 12,
+        "steps": [
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given "
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 19,
+            "keyword": "And "
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 20,
+            "keyword": "And "
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 21,
+            "keyword": "And "
+          },
+          {
+            "name": "I click Login Button",
+            "line": 22,
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-1\" (BB-368) Verify current User can see current profile after seen other user's profile.(same component call \"Caching issues\")",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-1\"-(bb-368)-verify-current-user-can-see-current-profile-after-seen-other-user's-profile.(same-component-call-\"caching-issues\")",
+        "line": 30,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-1",
+            "line": 29
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 21861632
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 10392143830
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 83768765
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2233020665
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1513691185
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 616046988
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 31,
+            "keyword": "When ",
+            "result": {
+              "status": "passed",
+              "duration": 2255294264
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 32,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 720483366
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List admintestemail1@yopmail.com in User List",
+            "line": 34,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2250864416
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"admintestemail1@yopmail.com in User List\"",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 459829396
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 1 View from Gear Icon in User List",
+            "line": 36,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1269839421
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 38,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2239745521
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see user's \"emailAddress\" displayed in screen with value \"admintestemail1@yopmail.com\"",
+            "line": 40,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 903011343
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 988114783
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 42,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1213517192
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see user's \"emailAddress\" displayed in screen with value \"user1@example.com\"",
+            "line": 44,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 916873889
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 45,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 590549105
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 46,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 441427989
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1470826
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-2\" (BB-384) Verify current User information is not deleted from UI if \"RESET\"->\"CANCEL\"",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-2\"-(bb-384)-verify-current-user-information-is-not-deleted-from-ui-if-\"reset\"->\"cancel\"",
+        "line": 50,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-2",
+            "line": 49
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 5136774
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8839394310
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 101795193
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1855510594
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1698127148
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 617413919
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 51,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2195138176
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 52,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1349315384
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see user's \"emailAddress\" displayed in screen with value \"user1@example.com\"",
+            "line": 53,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 754582843
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 54,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1342227437
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 55,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 941734496
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 57,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 784166336
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see user's \"emailAddress\" displayed in screen with value \"user1@example.com\"",
+            "line": 58,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 819915401
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 60,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 921691334
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 61,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 361314208
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 325098
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-4\" (BB-413) Click \"Save\" twice in Edit Role list will show error (weird state).",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-4\"-(bb-413)-click-\"save\"-twice-in-edit-role-list-will-show-error-(weird-state).",
+        "line": 94,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-4",
+            "line": 93
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2639439
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8810202299
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 74507895
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1619357519
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1638994067
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 618971623
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 95,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2087500686
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 97,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 622736479
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3 \"Basic Role-No Permissions in Role List\"",
+            "line": 99,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1087630505
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 100,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 703104469
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 102,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1133964074
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox Permission \"Settings\" in Role Editor",
+            "line": 105,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 608541140
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see Permissions \"Settings\" checkbox \"checked\" in Role Editor",
+            "line": 107,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 586362193
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 108,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 349955105
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 109,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2875109045
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button from Edit Roles",
+            "line": 111,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 508608611
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3 \"Basic Role-No Permissions in Role List\"",
+            "line": 112,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1310034367
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 113,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 604917371
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox Permission \"Settings\" in Role Editor",
+            "line": 115,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1148322484
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see Permissions \"Settings\" checkbox \"unchecked\" in Role Editor",
+            "line": 117,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 524393011
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 118,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 463987576
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 120,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 693973838
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 121,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 797730904
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 353494
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-5\" (BB-247) Entering credential will not go straight to \"Home\" page.",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-5\"-(bb-247)-entering-credential-will-not-go-straight-to-\"home\"-page.",
+        "line": 125,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-5",
+            "line": 124
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4947759
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8804852889
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 122177980
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1682184251
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1531654545
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 706973609
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/dashboard\" URL",
+            "line": 127,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4069584493
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 130,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 639105531
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 131,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 430735867
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 351201
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-6\" (BB-360) Active Status is editable by user.",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-6\"-(bb-360)-active-status-is-editable-by-user.",
+        "line": 135,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-6",
+            "line": 134
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4652567
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 9078422956
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 81080668
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1855390778
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1569953686
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 367979629
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 137,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5003141422
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 139,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7013798074
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address editor@example.com in Login",
+            "line": 141,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1764424152
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 142,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1711479304
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 143,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 490535840
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 145,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2032950007
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 146,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1632476009
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 148,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2936604576
+            },
+            "match": {}
+          },
+          {
+            "name": "I click User Active checkbox",
+            "line": 150,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 542843761
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see on User Active checkbox inactive",
+            "line": 152,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 559500424
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 154,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 697237700
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 155,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 475236007
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 276213
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-7\" (BB-385) Upper Case sensitive on \"Filter on User List\".",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-7\"-(bb-385)-upper-case-sensitive-on-\"filter-on-user-list\".",
+        "line": 159,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-7",
+            "line": 158
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2611515
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8845327401
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 74449935
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1574515430
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1483131355
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 598882336
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 160,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2122435684
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 161,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 689584634
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Status Filter",
+            "line": 162,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1672103344
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List admintestemail6@yopmail.com in User List",
+            "line": 163,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1902388037
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"admintestemail6@yopmail.com in User List\"",
+            "line": 164,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 646348249
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in User List\"",
+            "line": 165,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 647048292
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see user's \"emailAddress\" displayed in screen with value \"admintestemail6@yopmail.com\"",
+            "line": 166,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 1104525591
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 167,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 934203226
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 168,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 458446466
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Status Filter",
+            "line": 169,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1596633762
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List AdminTestEmail6@Yopmail.Com in User List",
+            "line": 170,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2089330512
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"AdminTestEmail6@Yopmail.Com in User List\"",
+            "line": 171,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 541994629
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in User List\"",
+            "line": 172,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 767370365
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see user's \"emailAddress\" displayed in screen with value \"admintestemail6@yopmail.com\"",
+            "line": 173,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 1073275375
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 175,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 664346693
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 176,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 609899497
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 247755
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-8\" (BB-397) \"Cancel\" button wont exit out from \"New Role\" page.",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-8\"-(bb-397)-\"cancel\"-button-wont-exit-out-from-\"new-role\"-page.",
+        "line": 181,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-8",
+            "line": 180
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1903525
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 9033533280
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://autobahn.blackbookcloud.com/login\"",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 76627840
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 20,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2774226021
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 21,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1744236288
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 22,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 593333834
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 182,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1956973560
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 183,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 685146580
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 2 \"AllPermissions in Role List\"",
+            "line": 184,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 779202214
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 185,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 537156222
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button from Edit Roles",
+            "line": 187,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1533294773
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/role/list\" URL",
+            "line": 189,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4088303804
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 192,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 695071770
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 193,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 490424498
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 459355
+            },
+            "match": {}
+          }
+        ]
+      }
+    ]
+  }
+]

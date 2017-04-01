@@ -19,7 +19,7 @@ exports.config = {
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
       //  'e2e/features/TestCases/START_eyes.feature',
-      //   'e2e/features/TestCases/AddUser_part0.feature'//,
+        // 'e2e/features/TestCases/AddUser_part0.feature',
        // 'e2e/features/TestCases/AddUser_part1.feature'//,
          //'e2e/features/TestCases/AddUser_part2.feature'//,
          // 'e2e/features/TestCases/EditUserProfile.feature'//,
