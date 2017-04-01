@@ -30,6 +30,7 @@ var BB_LoginForgot = function BB_LoginForgot() {
         return new Promise((success, failure) => {
             page.executeSequence([
                 page.clickElement(BB_loginForgotRepo.Select_Element_SendLinkButton, protractorConfig.config.WaitTime),
+                browser.driver.sleep(1000),
                 page.focus(BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
             ]).then(()=>{});
         });

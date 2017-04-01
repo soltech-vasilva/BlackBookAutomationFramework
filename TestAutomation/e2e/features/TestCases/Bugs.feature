@@ -425,41 +425,42 @@ Feature:  "Verify that this bugs dont return to the application."
     #And I wait
 
   #Todo continue refactoring
-#  @TestCases_A-17
-#  Scenario: "@TestCases_A-17" (BB-365) Pressing "Cancel wont exit Edit mode
-#    And I click on Admin Tab
-#    And I click on Users submenu from Admin Tab
-#    And I click on New User Button in User List
-#    And I click Cancel Button in Edit User Profile
-#      #Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
-#      Then I should see that I am in "full" "autobahn.blackbookcloud.com/user/list" URL
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#  @TestCases_A-18
-#  Scenario: "@TestCases_A-18" (BB-290) Logout account will not go back to Login page.
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#      #Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-#      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I wait
-#
-#  @TestCases_A-19
-#  Scenario: "@TestCases_A-19" (BB-245) Using a valid email will not show "Password reset email sent"
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#    And I click Forgot Password link
-#    And I wait
-#    And I enter my email "admintestemail1@yopmail.com" for Forgot Page
-#    And I wait
-#    And I click Send Link button
-#    And I wait
-#      Then I should see message "Password reset email sent" displayed
-#    And I wait
-#
+  @TestCases_A-17
+  Scenario: "@TestCases_A-17" (BB-365) Pressing "Cancel wont exit Edit mode
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    And I click on New User Button in User List
+    And I click Cancel Button in Edit User Profile
+      Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
+      #Then I should see that I am in "full" "autobahn.blackbookcloud.com/user/list" URL
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+  @TestCases_A-18
+  Scenario: "@TestCases_A-18" (BB-290) Logout account will not go back to Login page.
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+      Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
+      #Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
+    #And I wait
+
+  @TestCases_A-19
+  Scenario: "@TestCases_A-19" (BB-245) Using a valid email will not show "Password reset email sent"
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+   # And I wait
+    And I click Forgot Password link
+   # And I wait
+    And I enter my email "admintestemail1@yopmail.com" for Forgot Page
+   # And I wait
+    And I click Send Link button
+    #And I wait
+    Then I should see "Password reset email sent" displayed on "Login" popup
+    #  Then I should see message "Password reset email sent" displayed
+    #And I wait
+
 #
 #
 #
