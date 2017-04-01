@@ -95,6 +95,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     VerifyErrorMessage.prototype.Verify_ErrorMessageToDisplay_UserProfile = function (str_TextboxName , str_VerifyErrorName, FilledOrEmptyField) {
         return new Promise ((success, failure)=> {
             var URL = BB_loginRepo.BlackBookUrl+'/user';
+             URL = URL.toString().split("://");
             //console.log(str_TextboxName.toLowerCase());
             switch (str_TextboxName.toLowerCase()) {
                 case 'firstname':
@@ -175,14 +176,14 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                     break;
 
                 case 'newpassword':
-                    console.log("BB_editUserProfile.newPassword:|" + BB_editUserProfile.newPassword.toString()+'|');
+                   // console.log("BB_editUserProfile.newPassword:|" + BB_editUserProfile.newPassword.toString()+'|');
                     if ((BB_editUserProfile.newPassword != '' && FilledOrEmptyField == 'filled') || (BB_editUserProfile.newPassword == '' && FilledOrEmptyField == 'empty')) {
                         browser.getCurrentUrl().then(function (getCurrentURL) {
 
                             var currentURL = getCurrentURL.split("://");
 
                             if (str_VerifyErrorName == 'Required') {
-                                if (currentURL[1].trim() == URL) {
+                                if (currentURL[1].trim() == URL[1]) {
                                     //console.log('R user');
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Require);
                                     browser.isElementPresent(BB_addUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Require).then(function (isPresente) {
@@ -199,7 +200,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                             }
                             else
                             {
-                                if (currentURL[1].trim() == URL) {
+                                if (currentURL[1].trim() == URL[1]) {
                                     //console.log('8 user');
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character);
                                     //browser.wait(protractor.ExpectedConditions.presenceOf(BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character), 10000);
@@ -226,7 +227,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
 
                             var currentURL = getCurrentURL.split("://");
 
-                            if (currentURL[1].trim() == URL) {
+                            if (currentURL[1].trim() == URL[1]) {
                             // if (getCurrentURL.trim() === 'https://qa-autobahn.blackbookcloud.com/user') {
                                 if (str_VerifyErrorName == 'Required') {
                                     utilities.ExpectedElement_StopAutomationAtFail(BB_addUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword_Required);

@@ -249,6 +249,7 @@ Feature:  "Verify that this bugs dont return to the application."
       #But I enter "nothing to New Password"
       #Then I should see "newPassWord" message "Required" displayed for this "empty" field
     And I enter my confirm new password <confirmNewPassWord> in Form
+    #And I wait
       But I enter "nothing to Confirm New Password"
       Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
     And I click checkbox User's Roles "Administrators" "in Edit User Profile"

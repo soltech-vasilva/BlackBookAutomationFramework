@@ -302,7 +302,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
     ///BUGS FIXES TO TEST OTHER THINGS
     this.Given(/^I wait$/, function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([ browser.driver.sleep(5000).then(()=>{ console.log("wait before success"); })]).then(()=>{ success(); console.log("wait sequence then");});
+            page.executeSequence([browser.driver.sleep(5000).then(() => {
+                console.log("wait before success");
+            })]).then(() => {
+                success();
+                console.log("wait sequence then");
+            });
         });
     });
 
