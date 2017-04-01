@@ -22,20 +22,26 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.Enter_RoleName_inForm = function (roleNme) {
 
         return new Promise((success, failure)=> {
-            page.executeSequence([
-                this.RoleName = utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString()),
-                browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_RoleNameTextbox), protractorConfig.config.WaitTime),
-                BB_editRolesRepo.Select_Element_RoleNameTextbox.click().then(() => {
-                    if (this.RoleName != '') {
-                        BB_editRolesRepo.Select_Element_RoleNameTextbox.sendKeys(this.RoleName);
-                        page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editRolesRepo.Select_Element_RoleNameTextbox, this.RoleName)]).then(() => {
-                        });
-                    }
-                })
-            ]).then(() => {
-                BB_editUserProfile.Click_TittleofPage(BB_editRolesRepo.Select_Element_TittleAddNewRole, success)
-            });
+            page.executeSequence([this.RoleName = utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString()),
+                page.fill(BB_editRolesRepo.Select_Element_RoleNameTextbox, this.RoleName, protractorConfig.config.WaitTime,BB_editRolesRepo.Select_Element_TittleAddNewRole, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([
+        //         this.RoleName = utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString()),
+        //         browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_RoleNameTextbox), protractorConfig.config.WaitTime),
+        //         BB_editRolesRepo.Select_Element_RoleNameTextbox.click().then(() => {
+        //             if (this.RoleName != '') {
+        //                 BB_editRolesRepo.Select_Element_RoleNameTextbox.sendKeys(this.RoleName);
+        //                 page.executeSequence([utilities.VerifyValueEntered_RetypeValue(BB_editRolesRepo.Select_Element_RoleNameTextbox, this.RoleName)]).then(() => {
+        //                 });
+        //             }
+        //         })
+        //     ]).then(() => {
+        //         BB_editUserProfile.Click_TittleofPage(BB_editRolesRepo.Select_Element_TittleAddNewRole, success)
+        //     });
+        // });
 
 
         // this.RoleName =   utilities.ReplaceDoubleQuotesWithWhiteSpace(roleNme.toString());
@@ -51,6 +57,18 @@ var BB_EditRoles = function BB_EditRoles() {
         //
         //     BB_editUserProfile.Click_TittleofPage(BB_editRolesRepo.Select_Element_TittleAddNewRole ,success);
         // });
+    };
+
+    BB_EditRoles.prototype.Click_ResetButton_RoleEditor = function () {
+        return new Promise((success, failure) => {
+            page.executeSequence([page.clickElement(BB_editRolesRepo.Select_Element_Reset_button, protractorConfig.config.WaitTime),
+                page.focus(BB_editRolesRepo.Select_Element_TittleAddNewRole ,success)]).then(()=>{});
+            // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( element(by.css('button.button.yellow-btn'))), protractorConfig.config.WaitTime),
+            //     element(by.css('button.button.yellow-btn')).click()
+            // ]).then(() => {
+            //     success();
+            // });
+        });
     };
 
     BB_EditRoles.prototype.Click_SaveButton_RoleEditor = function () {
@@ -227,22 +245,20 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.Verify_RoleMarketValue_Dropdownbox_RoleEditor = function (roleMarketSelection) {
 
         return new Promise((success, failure) => {
-            browser.driver.wait(
-                BB_editRolesRepo.Select_Element_RoleMarket_dropdownbox.getAttribute('value').then((value) => {
-                console.log('value:' + value);
-
-                element(by.css('option[value="'+value+'"]')).getText().then((text) => {
-
-                    console.log('text:' + text);
-                    if (roleMarketSelection == text) {
-                        success();
-                    }
-                    else {
-                        failure();
-                    }
-                });
-            })
-            );
+            page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_RoleMarket_dropdownbox, protractorConfig.config.WaitTime),
+                browser.driver.wait(BB_editRolesRepo.Select_Element_RoleMarket_dropdownbox.getAttribute('value').then((value) => {
+                   // console.log('value:' + value);
+                    element(by.css('option[value="' + value + '"]')).getText().then((text) => {
+                     //   console.log('text:' + text);
+                        if (roleMarketSelection == text) {
+                            success();
+                        }
+                        else {
+                            failure();
+                        }
+                    });
+                })
+            )]).then(()=>{});
         });
     };
 
@@ -250,15 +266,15 @@ var BB_EditRoles = function BB_EditRoles() {
         return new Promise((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
                 case 'rolename':
-                    console.log('rolename');
+                    //console.log('rolename');
                     BB_editUserProfile.Click_Delete_Content(success, BB_editRolesRepo.Select_Element_RoleNameTextbox,BB_editRolesRepo.Select_Element_TittleAddNewRole);
                     break;
                 case 'filterpermissions':
-                    console.log('filterpermissions');
+                    //console.log('filterpermissions');
                     BB_editUserProfile.Click_Delete_Content(success, BB_editRolesRepo.Select_Element_FilterPermissionsTextbox,BB_editRolesRepo.Select_Element_TittleAddNewRole);
                     break;
                 case 'filterusers':
-                    console.log('filterusers');
+                    //console.log('filterusers');
                     BB_editUserProfile.Click_Delete_Content(success, BB_editRolesRepo.Select_Element_FilterUsersTextbox,BB_editRolesRepo.Select_Element_TittleAddNewRole);
                     break;
                 default:

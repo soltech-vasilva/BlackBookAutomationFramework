@@ -424,7 +424,7 @@ Feature:  "Verify that this bugs dont return to the application."
       #Then I should see message "Password reset email sent" displayed
     #And I wait
 
-  #Todo continue refactoring
+
   @TestCases_A-17
   Scenario: "@TestCases_A-17" (BB-365) Pressing "Cancel wont exit Edit mode
     And I click on Admin Tab
@@ -461,126 +461,125 @@ Feature:  "Verify that this bugs dont return to the application."
     #  Then I should see message "Password reset email sent" displayed
     #And I wait
 
-#
-#
-#
-#
-#  @TestCases_A-20
-#  Scenario: "@TestCases_A-20" (BB-476) "Role Market" dropdown box get clear after "Reset".
-#    And I click on Admin Tab
-#    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 5 "Editor-Full-User in Role List"
-#    And I click Edit from Gear Icon "in Role List"
-#    And I wait
-#      Then I should see Role Market value "US Used Car"
-#    And I click Reset Button in Edit Roles
-#    And I wait
-#      Then I should see Role Market value "Select One"
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#  @TestCases_A-21
-#  Scenario: "@TestCases_A-21" (BB-414) Button "Save" is gray out in "Editing Roles".
-#    And I click on Admin Tab
-#    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 5 "Editor-Full-User in Role List"
-#    And I click Edit from Gear Icon "in Role List"
-#    And I wait
-#    And I clear text box selected "RoleName" in Role Editor
-#    And I enter Role Name "Editor-Full-UserHIHI"
-#      Then I should see in "Save" button "enable" in Edit Role
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#
-#  @TestCases_A-22
-#  Scenario Outline: "@TestCases_A-22" (BB-480) Adding "Role" to new user (Add User) does not show "Require".
-#    And I click on Admin Tab
-#    And I click on Users submenu from Admin Tab
-#    And I wait
-#    And I click on New User Button in User List
-#    When I enter my first name <firstName> in Form
-#    And I enter my last name <lastName> in Form
-#    And I enter my email address <emailAddress> in Form
-#      Then I should see "userrole" message "Required" displayed for this "unchecked" field
-#    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
-#      Then I should not see in "userrole" errors displayed
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#    Examples:
-#      | firstName      | lastName      | emailAddress |
-#      |                |               |              |
-#
-#  @TestCases_A-23
-#  Scenario Outline: "@TestCases_A-23" (BB-481) (security purpose) values for Password stay log in text box.
-#    And I click Avatar Image Button
-#    And I click My Profile sub menu from Avatar
-#    And I wait
-#    And I click Edit Button in Edit User Profile
-#    And I wait
-#    And I enter my new Password <newPassWord> in Form
-#    And I enter my confirm new password <confirmNewPassWord> in Form
-#    And I enter my Previous Password <previousPassWord> in Form
-#    And I click Cancel Button in Edit User Profile
-#    And I click Edit Button in Edit User Profile
-#      Then I should see user's "previousPassWord" displayed in screen with value ""
-#      Then I should see user's "newPassWord" displayed in screen with value ""
-#      Then I should see user's "confirmNewPassWord" displayed in screen with value ""
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#    Examples:
-#      |previousPassWord |newPassWord    | confirmNewPassWord   |
-#
-#      | QaAdmin         |  QaAdmi       |      Qa              |
-#
-#
-#
-#  @TestCases_A-24
-#  Scenario: "@TestCases_A-24" (BB-460) Close "User Edit" wont go back from where it came from.
-#    And I click on Admin Tab
-#    And I click on Users submenu from Admin Tab
-#    And I wait
-#    And I enter Filter User List admintestemail7@yopmail.com in User List
-#    And I click on Gear Icon 1 "admintestemail7@yopmail.com in User List"
-#    And I click Edit from Gear Icon "in User List"
-#    And I click Cancel Button in Edit User Profile
-#     #Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
-#     Then I should see that I am in "full" "autobahn.blackbookcloud.com/user/list" URL
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
+  @TestCases_A-20
+  Scenario: "@TestCases_A-20" (BB-476) "Role Market" dropdown box get clear after "Reset".
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I click on Gear Icon 5 "Editor-Full-User in Role List"
+    And I click Edit from Gear Icon "in Role List"
+    #And I wait
+      Then I should see Role Market value "US Used Car"
+    And I click Reset Button in Edit Roles
+    #And I wait
+      Then I should see Role Market value "Select One"
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+
+  @TestCases_A-21
+  Scenario: "@TestCases_A-21" (BB-414) Button "Save" is gray out in "Editing Roles".
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I click on Gear Icon 5 "Editor-Full-User in Role List"
+    And I click Edit from Gear Icon "in Role List"
+    #And I wait
+    And I clear text box selected "RoleName" in Role Editor
+    And I enter Role Name "Editor-Full-UserHIHI"
+      Then I should see in "Save" button "enable" in Edit Role
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+
+  @TestCases_A-22
+  Scenario Outline: "@TestCases_A-22" (BB-480) Adding "Role" to new user (Add User) does not show "Require".
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    #And I wait
+    And I click on New User Button in User List
+    When I enter my first name <firstName> in Form
+    And I enter my last name <lastName> in Form
+    And I enter my email address <emailAddress> in Form
+      Then I should see "userrole" message "Required" displayed for this "unchecked" field
+    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
+      Then I should not see in "userrole" errors displayed
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+    Examples:
+      | firstName      | lastName      | emailAddress |
+      |                |               |              |
+
+
+  @TestCases_A-23
+  Scenario Outline: "@TestCases_A-23" (BB-481) (security purpose) values for Password stay log in text box.
+    And I click Avatar Image Button
+    And I click My Profile sub menu from Avatar
+    #And I wait
+    And I click Edit Button in Edit User Profile
+    #And I wait
+    And I enter my new Password <newPassWord> in Form
+    And I enter my confirm new password <confirmNewPassWord> in Form
+    And I enter my Previous Password <previousPassWord> in Form
+    And I click Cancel Button in Edit User Profile
+    And I click Edit Button in Edit User Profile
+      Then I should see user's "previousPassWord" displayed in screen with value ""
+      Then I should see user's "newPassWord" displayed in screen with value ""
+      Then I should see user's "confirmNewPassWord" displayed in screen with value ""
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+    Examples:
+      |previousPassWord |newPassWord    | confirmNewPassWord   |
+
+      | QaAdmin         |  QaAdmi       |      Qa              |
+
+
+
+  @TestCases_A-24
+  Scenario: "@TestCases_A-24" (BB-460) Close "User Edit" wont go back from where it came from.
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    #And I wait
+    And I enter Filter User List admintestemail7@yopmail.com in User List
+    And I click on Gear Icon 1 "admintestemail7@yopmail.com in User List"
+    And I click Edit from Gear Icon "in User List"
+    And I click Cancel Button in Edit User Profile
+     #Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
+     Then I should see that I am in "full" "autobahn.blackbookcloud.com/user/list" URL
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+#    #Todo continue refactoring
 #    @TestCases_A-25
 #  Scenario: "@TestCases_A-25" (BB-475) Dropdown boxes in Edit Role wont go to Default value after "Reset"
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
 #    And I click on Gear Icon 2 "AllPermissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
-#    And I wait
+#    #And I wait
 #    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And I wait
+#    #And I wait
 #    And I click Filter By Status dropdown "Inactive" in Role Editor
-#    And I wait
+#    #And I wait
 #    And I click Reset Button in Edit Roles
-#    And I wait
+#    #And I wait
 #      Then I should see "All" display for Filter By Group in Role Editor
 #      Then I should see "All" display for Filter By Status in Role Editor
-#    And I wait
+#    #And I wait
 #    And I click Avatar Image Button
 #    And I click Logout sub menu from Avatar
-#    And I wait
-#
+#    #And I wait
+
 #  @TestCases_A-26
 #  Scenario: "@TestCases_A-26" (BB-477) "Filter Roles" in Edit Profile does not clear after click "Reset"
 #    And I click Avatar Image Button

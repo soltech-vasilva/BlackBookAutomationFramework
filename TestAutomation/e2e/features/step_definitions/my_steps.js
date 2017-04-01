@@ -569,7 +569,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I click checkbox User's Roles "([^"]*)" "([^"]*)"$/, function (arg1, arg2) {
         return new Promise((success, failure)=> {
-            page.executeSequence([ element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2).click()]).then(()=>{ success();});
+            page.clickButton(BB_editUserProfileRepo.Select_Element_UsersRolesCheckbox_Administrator, protractorConfig.config.WaitTime, success);
+            // page.executeSequence([ BB_editUserProfileRepo.Select_Element_UsersRolesCheckbox_Administrator.click()]).then(()=>{ success();});
         });
     });
 
@@ -616,21 +617,11 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see Role Market value "([^"]*)"$/, function (roleMarketSelection) {
-
-             return   BB_editRoles.Verify_RoleMarketValue_Dropdownbox_RoleEditor(roleMarketSelection);
-
+        return   BB_editRoles.Verify_RoleMarketValue_Dropdownbox_RoleEditor(roleMarketSelection);
     });
 
     this.Given(/^I click Reset Button in Edit Roles$/, function () {
-
-        return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( element(by.css('button.button.yellow-btn'))), protractorConfig.config.WaitTime),
-                element(by.css('button.button.yellow-btn')).click()
-            ]).then(() => {
-                success();
-            });
-        });
-
+        return BB_editRoles.Click_ResetButton_RoleEditor();
     });
 
     this.Given(/^I enter Role Name "([^"]*)"$/, function (roleName) {
@@ -647,11 +638,13 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return new Promise((success, failure)=>{
             switch (ButtonName.toString().toLowerCase()) {
                 case "save":
-                    utilities.VerifyButtonStatus_isEnableorDisable(element(by.css('button.button.green-btn')),isEnableOrDisable,success, failure);
+                   // utilities.VerifyButtonStatus_isEnableorDisable(element(by.css('button.button.green-btn')),isEnableOrDisable,success, failure);
+                    utilities.VerifyButtonStatus_isEnableorDisable(BB_editRolesRepo.Select_Element_Save_button,isEnableOrDisable,success, failure);
                     break;
 
-                case "delete":
-                    utilities.VerifyButtonStatus_isEnableorDisable(element(by.css('button.button.red-btn')),isEnableOrDisable,success, failure);
+                 case "delete":
+                //     utilities.VerifyButtonStatus_isEnableorDisable(element(by.css('button.button.red-btn')),isEnableOrDisable,success, failure);
+                    utilities.VerifyButtonStatus_isEnableorDisable(BB_editRolesRepo.Select_Element_Delete_button,isEnableOrDisable,success, failure);
                     break;
 
                 default:

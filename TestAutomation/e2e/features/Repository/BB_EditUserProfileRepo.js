@@ -27,7 +27,7 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.css('.button.red-btn.pull-right'));
     BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.css('button.button.green-btn.pull-right'));
     BB_EditUserProfileRepo.prototype.Select_Element_UserActiveCheckbox = element(by.css('span.checkbox-label'));
-
+    BB_EditUserProfileRepo.prototype.Select_Element_UsersRolesCheckbox_Administrator = element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2);
     //Components "ERROR DISPLAY REQUIRE"
     BB_EditUserProfileRepo.prototype.Select_Xpath_ERRORMESSAGE_FirstName_SpacesAreInvalidCharacters = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[2]/div/error-msg/span'); //old
     BB_EditUserProfileRepo.prototype.Select_Xpath_ERRORMESSAGE_FirstName_Require = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[2]/div/span');

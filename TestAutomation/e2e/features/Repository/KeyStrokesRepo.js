@@ -27,7 +27,7 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
 
         browser.getProcessedConfig().then((config) => {
            // console.log(config);
-            console.log('config.capabilities.os: |'+config.capabilities.os+'|');
+           // console.log('config.capabilities.os: |'+config.capabilities.os+'|');
           //  console.log(" config.capabilities.browserName: " +  config.capabilities.browserName);
             browser.driver.sleep(1000);
 

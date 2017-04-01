@@ -16,7 +16,8 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     //Components
     BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.css('button.button.green-btn'));
     BB_EditRolesRepo.prototype.Select_Element_Cancel_button  = element(by.buttonText('Cancel'));
-
+    BB_EditRolesRepo.prototype.Select_Element_Reset_button  = element(by.css('button.button.yellow-btn'));
+    BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.css('button.button.red-btn'));
     BB_EditRolesRepo.prototype.Select_Element_X_button_MessagePopup  = element(by.css('span.pull-right.clear-btn'));
 
     BB_EditRolesRepo.prototype.Select_Element_Permission_Users_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(4);
