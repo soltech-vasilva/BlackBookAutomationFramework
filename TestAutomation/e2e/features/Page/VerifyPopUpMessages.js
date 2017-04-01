@@ -85,7 +85,14 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
                         }
                     })]).then(()=>{});
                     break;
+                case 'login':
+                    page.executeSequence([page.waitForElementTobePresent(BB_loginRepo.Select_Element_SuccessMessage_Popup_Login, protractorConfig.config.WaitTime),
+                        browser.isElementPresent(BB_loginRepo.Select_Xpath_SuccessMessage_Popup_Login).then((isPresente) => {
+                            verifyErrorMessage.AssertElementsToDisplay(isPresente, BB_loginRepo.Select_Element_SuccessMessage_Popup_Login, compareValuesString, 'It is not showing any message', success, failure);
+                        })]).then(() => {
+                    });
 
+                    break;
                 default:
                     console.log(PopUpPageName+' : is not part of switch statement in Verify_UserInformation function.');
                     failure();

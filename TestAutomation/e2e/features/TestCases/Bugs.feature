@@ -227,7 +227,6 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Logout sub menu from Avatar
     #And I wait
 
-    #Todo continue refactoring
   @TestCases_A-11
   Scenario Outline: "@TestCases_A-11" (BB-399) Click "Reset" wont clear Error messages (Add User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress,newPassWord,confirmNewPassWord] (BUG cant click on Edit Roles)
     And I click on Admin Tab
@@ -270,161 +269,162 @@ Feature:  "Verify that this bugs dont return to the application."
 #All Empty Fields
   |               |           |                           |               |  Password1     |                      |
 
-#  @TestCases_A-12
-#  Scenario Outline: "@TestCases_A-12" (BB-287) Click "Reset" wont clear Error messages. (Edit User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress]
-#    And I click Avatar Image Button
-#    And I click My Profile sub menu from Avatar
-#    And I click Edit Button in Edit User Profile
-#    And I click Reset Button in Edit User Profile
-#    And I enter my first name <firstName> in Form
-#      But I enter "nothing to first name"
-#      Then I should see "firstName" message "Required" displayed for this "empty" field
-#    And I enter my last name <lastName> in Form
-#      But I enter "nothing to last name"
-#      Then I should see "lastName" message "Required" displayed for this "empty" field
-#    And I enter my email address <emailAddress> in Form
-#      But I enter "nothing to email address"
-#      Then I should see "emailAddress" message "Required" displayed for this "empty" field
-#    And I enter my phone number <phoneNumber> in Form
-#    And I enter my Previous Password <previousPassWord> in Form
-#    And I enter my new Password <newPassWord> in Form
-#      But I enter "nothing to New Password"
-#      Then I should see "newPassWord" message "Required" displayed for this "empty" field
-#    And I enter my confirm new password <confirmNewPassWord> in Form
-#      But I enter "nothing to Confirm New Password"
-#      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
-#    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
-#    And I click Reset Button in Edit User Profile
-#    And I wait
-#    Then I should see "firstName" message "Required" displayed for this "empty" field
-#    Then I should see "lastName" message "Required" displayed for this "empty" field
-#    Then I should see "emailAddress" message "Required" displayed for this "empty" field
-#      Then I should not see in "phoneNumber" errors displayed
-#      Then I should not see in "previousPassWord" errors displayed
-#      Then I should not see in "newPassWord" errors displayed
-#      Then I should not see in "confirmNewPassWord" errors displayed
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#    Examples:
-#      | firstName     | lastName  | emailAddress              | phoneNumber   |previousPassWord | newPassWord    | confirmNewPassWord   |
-#    #All Empty Fields
-#      |               |           |                           |               |  Password1      |                |                      |
-#
-#  @TestCases_A-13
-#  Scenario: "@TestCases_A-13" (BB-416) Click "Admin" on top menu will open "Roles" page.
+
+  @TestCases_A-12
+  Scenario Outline: "@TestCases_A-12" (BB-287) Click "Reset" wont clear Error messages. (Edit User) [This changed 2-22-17 it should not erase "Require" in fields after reset button.firstName, lastName, emailAddress]
+    And I click Avatar Image Button
+    And I click My Profile sub menu from Avatar
+    And I click Edit Button in Edit User Profile
+    And I click Reset Button in Edit User Profile
+    And I enter my first name <firstName> in Form
+      But I enter "nothing to first name"
+      Then I should see "firstName" message "Required" displayed for this "empty" field
+    And I enter my last name <lastName> in Form
+      But I enter "nothing to last name"
+      Then I should see "lastName" message "Required" displayed for this "empty" field
+    And I enter my email address <emailAddress> in Form
+      But I enter "nothing to email address"
+      Then I should see "emailAddress" message "Required" displayed for this "empty" field
+    And I enter my phone number <phoneNumber> in Form
+    And I enter my Previous Password <previousPassWord> in Form
+    And I enter my new Password <newPassWord> in Form
+      But I enter "nothing to New Password"
+      Then I should see "newPassWord" message "Required" displayed for this "empty" field
+    And I enter my confirm new password <confirmNewPassWord> in Form
+      But I enter "nothing to Confirm New Password"
+      Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
+    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
+    And I click Reset Button in Edit User Profile
+    #And I wait
+      Then I should see "firstName" message "Required" displayed for this "empty" field
+      Then I should see "lastName" message "Required" displayed for this "empty" field
+      Then I should see "emailAddress" message "Required" displayed for this "empty" field
+      Then I should not see in "phoneNumber" errors displayed
+      Then I should not see in "previousPassWord" errors displayed
+      Then I should not see in "newPassWord" errors displayed
+      Then I should not see in "confirmNewPassWord" errors displayed
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+    Examples:
+      | firstName     | lastName  | emailAddress              | phoneNumber   |previousPassWord | newPassWord    | confirmNewPassWord   |
+    #All Empty Fields
+      |               |           |                           |               |  Password1      |                |                      |
+
+  @TestCases_A-13
+  Scenario: "@TestCases_A-13" (BB-416) Click "Admin" on top menu will open "Roles" page.
+    And I click on Admin Tab
+      Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/dashboard" URL
+      #Then I should see that I am in "full" "autobahn.blackbookcloud.com/dashboard" URL
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+  @TestCases_A-14
+  Scenario Outline: "@TestCases_A-15" (BB-459) "Previous Password" disappears when toggle from other User to "My profile".
+    When I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    #And I wait
+    And I click Status Filter
+    And I enter Filter User List admintestemail1@yopmail.com in User List
+    And I click on Gear Icon 1 "admintestemail1@yopmail.com in User List"
+    And I click 1 View from Gear Icon in User List
+    #And I wait
+    And I click Edit Button in Edit User Profile
+      Then I should see user's "emailAddress" displayed in screen with value "admintestemail1@yopmail.com"
+    And I click Avatar Image Button
+    And I click My Profile sub menu from Avatar
+    #And I wait
+      Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
+    #And I wait
+    And I enter my Previous Password <previousPassWord> in Form
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+  Examples:
+  |previousPassWord|
+  |  Password1     |
+
+  @TestCases_A-15
+  Scenario: "@TestCases_A-15" (BB-362) "View" for User list should be gray out (Permissions Not to Vew other users).(changed it will need permission not enforce currently)
+     #USER 1
 #    And I click on Admin Tab
-#      #Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/dashboard" URL
-#      Then I should see that I am in "full" "autobahn.blackbookcloud.com/dashboard" URL
+#    And I click on Roles submenu from Admin Tab
 #    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
+#    And I click on Gear Icon 3 "Basic Account in Role List"
+#    And I click Edit from Gear Icon "in Role List"
+#    #Enable Permission
+#    And I click Filter By Group dropdown "User" Permissions in Role Editor
+#    And I enter "Can View User List" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I click on Save button in Role Editor
+#    Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
-#
-#
-#  @TestCases_A-14
-#  Scenario Outline: "@TestCases_A-15" (BB-459) "Previous Password" disappears when toggle from other User to "My profile".
-#    When I click on Admin Tab
-#    And I click on Users submenu from Admin Tab
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+    #User2
+    #And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+    And I reload page "https://autobahn.blackbookcloud.com/login"
+    #And I wait
+    And I enter my user email address editor@example.com in Login
+    And I enter my Password Password1 in Login
+    And I click Login Button
+    #And I wait
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+    #And I wait
+    And I click Status Filter
+    And I enter Filter User List user3@example.com in User List
+    And I click on Gear Icons 1 inactive "in User List"
+    #And I wait
+    And I click Avatar Image Button
+#    #USER 1   disable all permission Basic Account
+#    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
 #    And I wait
-#    And I click Status Filter
-#    And I enter Filter User List admintestemail1@yopmail.com in User List
-#    And I click on Gear Icon 1 "admintestemail1@yopmail.com in User List"
-#    And I click 1 View from Gear Icon in User List
-#    And I wait
-#    And I click Edit Button in Edit User Profile
-#      Then I should see user's "emailAddress" displayed in screen with value "admintestemail1@yopmail.com"
-#    And I click Avatar Image Button
-#    And I click My Profile sub menu from Avatar
-#    And I wait
-#      Then I should see user's "emailAddress" displayed in screen with value "user1@example.com"
-#    And I wait
-#    And I enter my Previous Password <previousPassWord> in Form
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#  Examples:
-#  |previousPassWord|
-#  |  Password1     |
-#
-#
-#
-#  @TestCases_A-15
-#  Scenario: "@TestCases_A-15" (BB-362) "View" for User list should be gray out (Permissions Not to Vew other users).(changed it will need permission not enforce currently)
-#     #USER 1
-##    And I click on Admin Tab
-##    And I click on Roles submenu from Admin Tab
-##    And I wait
-##    And I click on Gear Icon 3 "Basic Account in Role List"
-##    And I click Edit from Gear Icon "in Role List"
-##    #Enable Permission
-##    And I click Filter By Group dropdown "User" Permissions in Role Editor
-##    And I enter "Can View User List" on Filter Permissions in Role Editor
-##    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-##    And I clear text box selected "FilterPermissions" in Role Editor
-##    And I click on Save button in Role Editor
-##    Then I should see "Role successfully updated" displayed on "EditRoles" popup
-##    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#    #User2
-#    #And I reload page "https://qa-autobahn.blackbookcloud.com/login"
-#    And I reload page "https://autobahn.blackbookcloud.com/login"
-#    And I wait
-#    And I enter my user email address editor@example.com in Login
+#    And I enter my user email address user1@example.com in Login
 #    And I enter my Password Password1 in Login
 #    And I click Login Button
 #    And I wait
 #    And I click on Admin Tab
-#    And I click on Users submenu from Admin Tab
+#    And I click on Roles submenu from Admin Tab
 #    And I wait
-#    And I click Status Filter
-#    And I enter Filter User List user3@example.com in User List
-#    And I click on Gear Icons 1 inactive
+#    And I click on Gear Icon 3 "Basic Account in Role List"
+#    And I click Edit from Gear Icon "in Role List"
+#     #Disable Permission
+#    And I click Filter By Group dropdown "User" Permissions in Role Editor
+#    And I enter "Can View User List" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+#    And I clear text box selected "FilterPermissions" in Role Editor
+#    And I click on Save button in Role Editor
+#    Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I wait
-#    And I click Avatar Image Button
-##    #USER 1   disable all permission Basic Account
-##    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
-##    And I wait
-##    And I enter my user email address user1@example.com in Login
-##    And I enter my Password Password1 in Login
-##    And I click Login Button
-##    And I wait
-##    And I click on Admin Tab
-##    And I click on Roles submenu from Admin Tab
-##    And I wait
-##    And I click on Gear Icon 3 "Basic Account in Role List"
-##    And I click Edit from Gear Icon "in Role List"
-##     #Disable Permission
-##    And I click Filter By Group dropdown "User" Permissions in Role Editor
-##    And I enter "Can View User List" on Filter Permissions in Role Editor
-##    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-##    And I clear text box selected "FilterPermissions" in Role Editor
-##    And I click on Save button in Role Editor
-##    Then I should see "Role successfully updated" displayed on "EditRoles" popup
-##    And I wait
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#  @TestCases_A-16
-#  Scenario: "@TestCases_A-16" (BB-246) Better vocabulary on Password send message
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#    And I click Forgot Password link
-#    And I wait
-#    And I enter my email "user1@example.com" for Forgot Page
-#    And I wait
-#    And I click Send Link button
-#    And I wait
-#      Then I should see message "Password reset email sent" displayed
-#    And I wait
-#
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+
+  @TestCases_A-16
+  Scenario: "@TestCases_A-16" (BB-246) Better vocabulary on Password send message
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+    And I click Forgot Password link
+    #And I wait
+    And I enter my email "user1@example.com" for Forgot Page
+    #And I wait
+    And I click Send Link button
+    #And I wait
+      Then I should see "Password reset email sent" displayed on "Login" popup
+      #Then I should see message "Password reset email sent" displayed
+    #And I wait
+
+  #Todo continue refactoring
 #  @TestCases_A-17
 #  Scenario: "@TestCases_A-17" (BB-365) Pressing "Cancel wont exit Edit mode
 #    And I click on Admin Tab

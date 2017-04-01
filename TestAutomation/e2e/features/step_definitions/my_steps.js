@@ -31,6 +31,7 @@ var keyStrokesRepo = require ('../Repository/KeyStrokesRepo.js');
 var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 var BB_userListRepo = require('../Repository/BB_userListRepo.js');
 var BB_menuRepo = require('../Repository/BB_MenuRepo.js');
+var BB_loginForgot = require('../Page/BB_LoginForgot.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -555,11 +556,15 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-    this.When(/^I click on Gear Icons (.*) inactive$/, function (arg1) {
+    this.When(/^I click on Gear Icons (.*) inactive "([^"]*)"$/, function (arg1, arg2) {
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( element(by.css('div.icon-cog.parent.inactive'))), protractorConfig.config.WaitTime),
-                element(by.css('div.icon-cog.parent.inactive')).click()]).then(()=>{ success();});
+            page.clickButton( BB_userListRepo.Select_Element_GeardIcon_Inactive, protractorConfig.config.WaitTime, success);
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_GeardIcon_Inactive), protractorConfig.config.WaitTime),
+        //         BB_userListRepo.Select_Element_GeardIcon_Inactive.click()]).then(()=>{ success();});
+        // });
     });
 
     this.Then(/^I click checkbox User's Roles "([^"]*)" "([^"]*)"$/, function (arg1, arg2) {
@@ -569,38 +574,45 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Forgot Password link$/, function () {
-        return new Promise((success, failure)=> {
-             element(by.css('a[href="/login/forgot"]')).click();
-             success();
-        });
+
+        return BB_login.Click_ForgotPasswordLink();
+
+        /// / return new Promise((success, failure)=> {
+        //      element(by.css('a[href="/login/forgot"]')).click();
+        //      success();
+        // });
     });
 
     this.Given(/^I enter my email "([^"]*)" for Forgot Page$/, function (emailAddress) {
-        return new Promise((success, failure)=> {
-             element(by.xpath('//*[@id="login-box"]/div/form/div[1]/input')).sendKeys(emailAddress);
-             success();
-        });
+
+        return BB_loginForgot.Enter_EmailAdress(emailAddress);
+        // return new Promise((success, failure)=> {
+        //      element(by.xpath('//*[@id="login-box"]/div/form/div[1]/input')).sendKeys(emailAddress);
+        //      success();
+        // });
     });
 
     this.Given(/^I click Send Link button$/, function () {
-        return new Promise((success, failure)=> {
-            page.executeSequence([ element(by.xpath('//*[@id="login-box"]/div/form/div[2]/div[1]/button')).click()]).then(()=>{ success();});
-        });
+
+        return BB_loginForgot.Click_SendLinkButton();
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([ element(by.xpath('//*[@id="login-box"]/div/form/div[2]/div[1]/button')).click()]).then(()=>{ success();});
+        // });
     });
 
     this.Then(/^I should see message "([^"]*)" displayed$/, function (Message) {
-        return new Promise((success, failure)=> {
-           page.executeSequence([ browser.driver.wait(element(by.css('.message-container.success')).getText()).then((GetText) => {
-                //console.log("GetText:"+GetText +" Message:"+Message);
-                if (GetText == Message) {
-                    success();
-                }
-                else
-                {
-                    failure();
-                }
-            })
-            ]).then(()=>{})});
+        // return new Promise((success, failure)=> {
+        //    page.executeSequence([ browser.driver.wait(BB_loginRepo.Select_Element_SuccessMessage_Popup_Login.getText()).then((GetText) => {
+        //         //console.log("GetText:"+GetText +" Message:"+Message);
+        //         if (GetText == Message) {
+        //             success();
+        //         }
+        //         else
+        //         {
+        //             failure();
+        //         }
+        //     })
+        //     ]).then(()=>{})});
     });
 
     this.Then(/^I should see Role Market value "([^"]*)"$/, function (roleMarketSelection) {

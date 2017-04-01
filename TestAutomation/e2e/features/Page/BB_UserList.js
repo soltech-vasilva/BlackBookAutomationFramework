@@ -166,8 +166,10 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.Click_Gear_View_Submenu = function (rowNumber) {
         return new Promise((success, failure) => {
-            page.executeSequence([
-            page.clickButton(BB_userListRepo.Select_Element_Gear_View_Submenu(rowNumber),protractorConfig.config.WaitTime,success)]).then(() => {});
+            //TODO aqui modifique
+           // page.executeSequence([
+            page.clickButton(BB_userListRepo.Select_Element_Gear_View_Submenu(rowNumber),protractorConfig.config.WaitTime,success);
+            //]).then(() => {});
         });
 
         // return new Promise((success, failure) => {

@@ -368,7 +368,8 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     };
 
     VerifyErrorMessage.prototype.Verify_ErrorMessagesNotToDisplay_UserProfile = function (TextboxName) {
-        browser.driver.sleep(2000);
+        //TODO quite los sleeps por si acaso se rope regresarlos 2, 3, 3
+        //browser.driver.sleep(2000);
         return new Promise ((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
                 case 'firstname':
@@ -408,14 +409,14 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                     break;
 
                 case 'currentemailaddress':
-                    browser.driver.sleep(3000);
+                    //browser.driver.sleep(3000);
                     browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword , 'It should not show any errors in Current Email Address', success, failure);
                     });
                     break;
 
                 case 'currentpassword':
-                    browser.driver.sleep(3000);
+                    //browser.driver.sleep(3000);
                     browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword , 'It should not show any errors in Current Password', success, failure);
                     });

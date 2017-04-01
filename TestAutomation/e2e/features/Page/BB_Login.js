@@ -116,5 +116,11 @@ var BB_Login = function BB_Login() {
         //     });
         // });
     };
+
+    BB_Login.prototype.Click_ForgotPasswordLink = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_loginRepo.Select_Element_ForgotPasswordLink, protractorConfig.config.WaitTime, success);
+        });
+    };
 };
 module.exports = new BB_Login();

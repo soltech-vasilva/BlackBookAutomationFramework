@@ -241,8 +241,10 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
     };
 
     BB_EditUserProfile.prototype.Click_EditButton_EditUserProfile = function () {
+        //Todo modifi que por que para elemento no se encuwentra
         return new Promise((success, failure) => {
             page.executeSequence([page.clickElement(BB_editUserProfileRepo.Select_Element_EditButton,protractorConfig.config.WaitTime),
+                browser.sleep(1000),
             page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
             ]).then(()=>{});
         });
