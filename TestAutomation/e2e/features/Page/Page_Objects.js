@@ -260,7 +260,7 @@ var Page_Objects = function Page_Objects () {
      */
     page.selectDropdownItemByIndex = function(dropdown, index) {
         return page.executeSequence([
-            page.click(dropdown),
+            page.clickElement(dropdown),
             dropdown.all(by.tagName('option')).get(index).click(),
             page.clearFocus()
         ]);
@@ -273,8 +273,8 @@ var Page_Objects = function Page_Objects () {
      */
     page.selectDropdownItemByLabel = function(dropdown, label) {
         return page.executeSequence([
-            page.click(dropdown),
-            dropdown.all(by.css('option[label="' + label + '"]')).first().click(),
+            page.clickElement(dropdown),
+            dropdown.all(by.css('option[label="' + label.toString().toLowerCase() + '"]')).first().click(),
             page.clearFocus()
         ]);
     };
@@ -284,12 +284,12 @@ var Page_Objects = function Page_Objects () {
      * @param {WebElement} dropdown
      * @param {string} value
      */
-    page.selectDropdownItemByValue = function(dropdown, value) {
+    page.selectDropdownItemByValue = function(dropdown, value, success) {
         return page.executeSequence([
-            page.click(dropdown),
-            dropdown.all(by.css('option[value="' + value + '"]')).first().click(),
+            page.clickElement(dropdown),
+            dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).first().click(),
             page.clearFocus()
-        ]);
+        ]).then(()=>{success();});
     };
 
     /* * * * * * * * * * * * * * *

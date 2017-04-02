@@ -777,42 +777,52 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
         return new Promise ((success, failure)=>{
 
-            page.executeSequence([ element(by.css('select[name="filterGroupTerm"]')).click().then(()=>{
-                if(PermissionsName.toString().toLowerCase() == 'all') {
-                element(by.css('option[value="' + PermissionsName.toString().toLowerCase() + '"]')).click();
-                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-            }
-            else {
-                // browser.driver.actions().sendKeys('u').perform();
-                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-                element(by.css('option[value="' + PermissionsName.toString().toLowerCase() + '"]')).click();
-            }
-            })]).then(()=>{ success();});
+            page.selectDropdownItemByValue(element.all(by.css('select[name="filterGroupTerm"]')).get(0), PermissionsName, success);
         });
+
+        // return new Promise ((success, failure)=>{
+        //
+        //     page.executeSequence([ element(by.css('select[name="filterGroupTerm"]')).click().then(()=> {
+        //         if (PermissionsName.toString().toLowerCase() == 'all') {
+        //             element(by.css('option[value="' + PermissionsName.toString().toLowerCase() + '"]')).click();
+        //             browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+        //         }
+        //         else {
+        //             // browser.driver.actions().sendKeys('u').perform();
+        //             browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+        //             element(by.css('option[value="' + PermissionsName.toString().toLowerCase() + '"]')).click();
+        //         }
+        //     })]).then(()=>{ success();});
+        // });
     });
 
     this.Given(/^I click Filter By Status dropdown "([^"]*)" in Role Editor$/, function (FilterByStatusName) {
 
-        return new Promise((success, failure) => {
-            page.executeSequence([
-                element.all(by.css('select[name="filterGroupTerm"]')).get(1).click().then(()=>{
-                    if (FilterByStatusName.toString().toLowerCase() == 'all') {
-                        element.all(by.css('option[value="' + FilterByStatusName.toString().toLowerCase() + '"]')).get(1).click();
-                        browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-                    }
-                    else {
-                        browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-                        element(by.css('option[value="' + FilterByStatusName.toString().toLowerCase() + '"]')).click();
-                    }
-                })
-            ]).then(()=>{success()});
+        return new Promise ((success, failure)=>{
+
+            page.selectDropdownItemByValue(element.all(by.css('select[name="filterGroupTerm"]')).get(1), FilterByStatusName, success);
         });
+
+        // return new Promise((success, failure) => {
+        //     page.executeSequence([
+        //         element.all(by.css('select[name="filterGroupTerm"]')).get(1).click().then(()=>{
+        //             if (FilterByStatusName.toString().toLowerCase() == 'all') {
+        //                 element.all(by.css('option[value="' + FilterByStatusName.toString().toLowerCase() + '"]')).get(1).click();
+        //                 browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+        //             }
+        //             else {
+        //                 browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+        //                 element(by.css('option[value="' + FilterByStatusName.toString().toLowerCase() + '"]')).click();
+        //             }
+        //         })
+        //     ]).then(()=>{success()});
+        // });
     });
 
     this.Then(/^I should see "([^"]*)" display for Filter By Group in Role Editor$/, function (PermissionsName) {
         return new Promise ((success, failure)=> {
             page.executeSequence([browser.driver.wait(element.all(by.css('select[name="filterGroupTerm"]')).get(0).getAttribute('value').then((attributeValue) => {
-                console.log("text:" + attributeValue);
+                //console.log("text:" + attributeValue);
                 if (PermissionsName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
                     success();
                 }
@@ -827,7 +837,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.Then(/^I should see "([^"]*)" display for Filter By Status in Role Editor$/, function (FilterByStatusName) {
         return new Promise ((success, failure)=> {
             browser.driver.wait(element.all(by.css('select[name="filterGroupTerm"]')).get(1).getAttribute('value').then((attributeValue) => {
-                console.log("text:" + attributeValue);
+                //console.log("text:" + attributeValue);
                 if (FilterByStatusName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
                     success();
                 }

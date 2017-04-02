@@ -559,26 +559,26 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Logout sub menu from Avatar
     #And I wait
 
-#    #Todo continue refactoring
-#    @TestCases_A-25
-#  Scenario: "@TestCases_A-25" (BB-475) Dropdown boxes in Edit Role wont go to Default value after "Reset"
-#    And I click on Admin Tab
-#    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 2 "AllPermissions in Role List"
-#    And I click Edit from Gear Icon "in Role List"
-#    #And I wait
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    #And I wait
-#    And I click Filter By Status dropdown "Inactive" in Role Editor
-#    #And I wait
-#    And I click Reset Button in Edit Roles
-#    #And I wait
-#      Then I should see "All" display for Filter By Group in Role Editor
-#      Then I should see "All" display for Filter By Status in Role Editor
-#    #And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    #And I wait
+    #Todo continue refactoring
+    @TestCases_A-25
+  Scenario: "@TestCases_A-25" (BB-475) Dropdown boxes in Edit Role wont go to Default value after "Reset"
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I click on Gear Icon 2 "AllPermissions in Role List"
+    And I click Edit from Gear Icon "in Role List"
+    #And I wait
+    And I click Filter By Group dropdown "User" Permissions in Role Editor
+    #And I wait
+    And I click Filter By Status dropdown "Inactive" in Role Editor
+    #And I wait
+    And I click Reset Button in Edit Roles
+    #And I wait
+      Then I should see "All" display for Filter By Group in Role Editor
+      Then I should see "All" display for Filter By Status in Role Editor
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
 
 #  @TestCases_A-26
 #  Scenario: "@TestCases_A-26" (BB-477) "Filter Roles" in Edit Profile does not clear after click "Reset"
