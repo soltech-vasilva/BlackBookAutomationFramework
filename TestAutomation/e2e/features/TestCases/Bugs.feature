@@ -552,8 +552,8 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Gear Icon 1 "admintestemail7@yopmail.com in User List"
     And I click Edit from Gear Icon "in User List"
     And I click Cancel Button in Edit User Profile
-     #Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
-     Then I should see that I am in "full" "autobahn.blackbookcloud.com/user/list" URL
+     Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/user/list" URL
+     #Then I should see that I am in "full" "autobahn.blackbookcloud.com/user/list" URL
     #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
