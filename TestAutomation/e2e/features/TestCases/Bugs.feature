@@ -559,7 +559,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Logout sub menu from Avatar
     #And I wait
 
-    #Todo continue refactoring
+
     @TestCases_A-25
   Scenario: "@TestCases_A-25" (BB-475) Dropdown boxes in Edit Role wont go to Default value after "Reset"
     And I click on Admin Tab
@@ -580,44 +580,45 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Logout sub menu from Avatar
     #And I wait
 
-#  @TestCases_A-26
-#  Scenario: "@TestCases_A-26" (BB-477) "Filter Roles" in Edit Profile does not clear after click "Reset"
-#    And I click Avatar Image Button
-#    And I click My Profile sub menu from Avatar
-#    And I click Edit Button in Edit User Profile
-#    And I wait
-#    And I enter Filter Roles search "Editor" in Edit User Profile
-#    And I wait
-#    And I click Reset Button in Edit User Profile
-#      Then I should see user's "filterRoles" displayed in screen with value ""
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
-#  @TestCases_A-27
-#  Scenario: "@TestCases_A-27" (BB-519) Create "New Roles" not working.
-#    And I click on Admin Tab
-#    And I click on Roles submenu from Admin Tab
-#    And I click on New Role Button in Role List
-#    And I enter Role Name "RoleName6"
-#  #BUG where html has User as Value but Users as text.
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And  I wait
-#    And I click checkbox  "0" "Users" Permission row in Role Editor
-#    And I wait
-#    And I select Role Market "US Used Car" in Role Editor
-#    And I wait
-#    And I click on Save button in Role Editor
-#    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-#    And I wait
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#
+  @TestCases_A-26
+  Scenario: "@TestCases_A-26" (BB-477) "Filter Roles" in Edit Profile does not clear after click "Reset"
+    And I click Avatar Image Button
+    And I click My Profile sub menu from Avatar
+    And I click Edit Button in Edit User Profile
+   # And I wait
+    And I enter Filter Roles search "Editor" in Edit User Profile
+    #And I wait
+    And I click Reset Button in Edit User Profile
+      Then I should see user's "filterRoles" displayed in screen with value ""
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    #And I wait
+
+  @TestCases_A-27
+  Scenario: "@TestCases_A-27" (BB-519) Create "New Roles" not working.
+    And I click on Admin Tab
+    And I click on Roles submenu from Admin Tab
+    And I click on New Role Button in Role List
+    And I enter Role Name "RoleName6"
+  #BUG where html has User as Value but Users as text.
+    And I click Filter By Group dropdown "User" Permissions in Role Editor
+    #And  I wait
+    And I click checkbox  "0" "Users" Permission row in Role Editor
+    #And I wait
+    And I select Role Market "US Used Car" in Role Editor
+    #And I wait
+    And I click on Save button in Role Editor
+    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+    #And I wait
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+#    #And I wait
+
+#     #Todo continue refactoring
 #     @TestCases_A-28
 #  Scenario: "@TestCases_A-28" (BB-441) Permissions gets reset after adding "Role's Users"  (re-Open)
-# #require @TestCases_A-20
+#    #require @TestCases_A-27
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
 #    And I click on Gear Icon 6 "RoleName6 in Role List"
@@ -640,7 +641,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Avatar Image Button
 #    And I click Logout sub menu from Avatar
 #    And I wait
-#
+
 #  @TestCases_A-29
 #  Scenario: "@TestCases_A-29" (BB-472) Creating new Role will not add User to it.
 #    And I click on Admin Tab

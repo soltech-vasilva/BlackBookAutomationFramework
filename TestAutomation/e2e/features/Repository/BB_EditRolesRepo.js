@@ -19,7 +19,9 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     BB_EditRolesRepo.prototype.Select_Element_Reset_button  = element(by.css('button.button.yellow-btn'));
     BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.css('button.button.red-btn'));
     BB_EditRolesRepo.prototype.Select_Element_X_button_MessagePopup  = element(by.css('span.pull-right.clear-btn'));
-
+    BB_EditRolesRepo.prototype.Select_Element_FilterByGroupDropdown  = element.all(by.css('select[name="filterGroupTerm"]')).get(0);
+    BB_EditRolesRepo.prototype.Select_Element_FilterByStatusDropdown  = element.all(by.css('select[name="filterGroupTerm"]')).get(1);
+   // BB_EditRolesRepo.prototype.Select_Element_RoleMarketDropdown  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select'));
     BB_EditRolesRepo.prototype.Select_Element_Permission_Users_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(4);
     BB_EditRolesRepo.prototype.Select_Element_Permission_Settings_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(2);
     BB_EditRolesRepo.prototype.Select_Element_Permission_Roles_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(0);
@@ -33,7 +35,7 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup_EditRoles =by.xpath('//*[@id="page-box"]/role-profile/div/div/message-box/div/div');
     BB_EditRolesRepo.prototype.Select_Element_SuccessMessage_Popup_EditRoles = element(this.Select_Xpath_SuccessMessage_Popup_EditRoles);
 
-    BB_EditRolesRepo.prototype.Select_Element_RoleMarket_dropdownbox = element(by.css('select[name="market"]'));
+    BB_EditRolesRepo.prototype.Select_Element_RoleMarketDropdown = element(by.css('select[name="market"]'));
 
     BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup_RoleList =by.xpath('//*[@id="page-box"]/role-list/div/div/message-box/div/div');
     //BB_EditRolesRepo.prototype.Select_Element_SuccessMessage_Popup_RoleList  = element(this.Select_Xpath_SuccessMessage_Popup_RoleList);  for some reason does not like xpath

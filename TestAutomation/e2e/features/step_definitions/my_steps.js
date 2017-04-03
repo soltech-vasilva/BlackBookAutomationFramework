@@ -32,6 +32,7 @@ var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 var BB_userListRepo = require('../Repository/BB_userListRepo.js');
 var BB_menuRepo = require('../Repository/BB_MenuRepo.js');
 var BB_loginForgot = require('../Page/BB_LoginForgot.js');
+var BB_roleList = require('../Page/BB_RoleList.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -715,9 +716,15 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click on New Role Button in Role List$/, function () {
+        return BB_roleList.Click_NewRole_Button();
+        // return new Promise((success, failure) => {
+        //     page.clickButton(element(by.css('button.button')), protractorConfig.config.WaitTime, success);
+        //     });
+
         //return page.executeSequence([ browser.wait(protractor.ExpectedConditions.presenceOf(element(by.css('button.button'))),4000), element(by.css('button.button')).click()]);
-          browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('button.button'))),4000);
-        return element(by.css('button.button')).click();
+
+         // browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('button.button'))),4000);
+        //return element(by.css('button.button')).click();
     });
 
     this.Given(/^I select Role Market "([^"]*)" in Role Editor$/, function (roleMarketSelection) {
@@ -726,24 +733,27 @@ var myBlackBookSteps = function myBlackBookSteps() {
             //element(by.css('select[name="market"]')).click();
             switch (roleMarketSelection) {
 
-                case "Select One":
-                    page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click(),
-                                            browser.driver.sleep(1000),
-                                            browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
-                                            browser.driver.sleep(1000) ]).then(()=>{ success();});
-                    // element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click();
-                    // browser.driver.sleep(1000);
-                    // browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
-                    // browser.driver.sleep(1000);
-                    // success();
-                    break;
+                // Todo mejor quitarlo no se puede selectionar
+                // case "Select One":
+                //    //page.clickElement(element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')), protractorConfig.config.WaitTime).then(()=>{});
+                //
+                //     page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click(),
+                //                             browser.driver.sleep(1000),
+                //                             browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
+                //                             browser.driver.sleep(1000) ]).then(()=>{ success();});
+                //     element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[1]')).click();
+                //     // browser.driver.sleep(1000);
+                //     // browser.driver.actions().sendKeys(protractor.Key.ENTER).perform();
+                //     // browser.driver.sleep(1000);
+                //     // success();
+                //     break;
 
                 case "US Used Car":
-
-                    page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[11]')).click(),
-                        browser.driver.sleep(1000),
-                        browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
-                        browser.driver.sleep(1000) ]).then(()=>{ success();});
+                    page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_RoleMarketDropdown, '5', success);
+                    // page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[11]')).click(),
+                    //     browser.driver.sleep(1000),
+                    //     browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
+                    //     browser.driver.sleep(1000) ]).then(()=>{ success();});
 
                     // element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[11]')).click();
                     // browser.driver.sleep(1000);
@@ -753,11 +763,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     break;
 
                 case "Canada Used Car":
+                    page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_RoleMarketDropdown, '6', success);
 
-                    page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[5]')).click(),
-                        browser.driver.sleep(1000),
-                        browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
-                        browser.driver.sleep(1000) ]).then(()=>{ success();});
+                    // page.executeSequence([  element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[5]')).click(),
+                    //     browser.driver.sleep(1000),
+                    //     browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(),
+                    //     browser.driver.sleep(1000) ]).then(()=>{ success();});
 
                     // element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/form/div[2]/div[2]/div/select/option[5]')).click();
                     // browser.driver.sleep(1000);
@@ -777,7 +788,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
         return new Promise ((success, failure)=>{
 
-            page.selectDropdownItemByValue(element.all(by.css('select[name="filterGroupTerm"]')).get(0), PermissionsName, success);
+            page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_FilterByGroupDropdown, PermissionsName, success);
         });
 
         // return new Promise ((success, failure)=>{
@@ -800,7 +811,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
         return new Promise ((success, failure)=>{
 
-            page.selectDropdownItemByValue(element.all(by.css('select[name="filterGroupTerm"]')).get(1), FilterByStatusName, success);
+            page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_FilterByStatusDropdown, FilterByStatusName, success);
         });
 
         // return new Promise((success, failure) => {
@@ -821,37 +832,66 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I should see "([^"]*)" display for Filter By Group in Role Editor$/, function (PermissionsName) {
         return new Promise ((success, failure)=> {
-            page.executeSequence([browser.driver.wait(element.all(by.css('select[name="filterGroupTerm"]')).get(0).getAttribute('value').then((attributeValue) => {
-                //console.log("text:" + attributeValue);
-                if (PermissionsName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
-                    success();
-                }
-                else {
-                    failure();
-                }
-            }))]).then(()=>{});
+
+            page.VerifyDropdownAttributeValue(BB_editRolesRepo.Select_Element_FilterByGroupDropdown, PermissionsName, success, failure).then(()=>{});
+
+            // page.executeSequence([page.getContent(BB_editRolesRepo.Select_Element_FilterByGroupDropdown).then((attributeValue) => {
+            //    // console.log(attributeValue);
+            //         if (PermissionsName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
+            //             success();
+            //         }
+            //         else {
+            //             failure();
+            //         }
+            //     })]).then(() => {});
         });
+
+        // return new Promise ((success, failure)=> {
+        //     page.executeSequence([browser.driver.wait(element.all(by.css('select[name="filterGroupTerm"]')).get(0).getAttribute('value').then((attributeValue) => {
+        //         //console.log("text:" + attributeValue);
+        //         if (PermissionsName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
+        //             success();
+        //         }
+        //         else {
+        //             failure();
+        //         }
+        //     }))]).then(()=>{});
+        // });
 
     });
 
     this.Then(/^I should see "([^"]*)" display for Filter By Status in Role Editor$/, function (FilterByStatusName) {
         return new Promise ((success, failure)=> {
-            browser.driver.wait(element.all(by.css('select[name="filterGroupTerm"]')).get(1).getAttribute('value').then((attributeValue) => {
-                //console.log("text:" + attributeValue);
-                if (FilterByStatusName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
-                    success();
-                }
-                else {
-                    failure();
-                }
-            }));
+            page.VerifyDropdownAttributeValue(BB_editRolesRepo.Select_Element_FilterByStatusDropdown,FilterByStatusName, success, failure ).then(()=>{});
+            // page.executeSequence([page.getContent(BB_editRolesRepo.Select_Element_FilterByStatusDropdown).then((attributeValue) => {
+            //     //console.log("text:" + attributeValue);
+            //     if (FilterByStatusName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
+            //         success();
+            //     }
+            //     else {
+            //         failure();
+            //     }
+            // })]).then(()=>{});
         });
+
+        // return new Promise ((success, failure)=> {
+        //     browser.driver.wait(element.all(by.css('select[name="filterGroupTerm"]')).get(1).getAttribute('value').then((attributeValue) => {
+        //         //console.log("text:" + attributeValue);
+        //         if (FilterByStatusName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
+        //             success();
+        //         }
+        //         else {
+        //             failure();
+        //         }
+        //     }));
+        // });
     });
 
     this.Given(/^I enter Filter Roles search "([^"]*)" in Edit User Profile$/, function (filterRoleSearch) {
         return new Promise ((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox), protractorConfig.config.WaitTime),
-                BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox.sendKeys(filterRoleSearch)]).then(()=>{  success();});
+            page.fill(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox, filterRoleSearch,protractorConfig.config.WaitTime, BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success ).then(()=>{});
+            // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox), protractorConfig.config.WaitTime),
+            //     BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox.sendKeys(filterRoleSearch)]).then(()=>{  success();});
         });
     });
 

@@ -32,7 +32,7 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
 
                         if (currentURL[1].trim() == URL[1] + '/role/list') {
 //TODO check mesage xpath.
-                            console.log('yes role/list');
+                           // console.log('yes role/list');
                             page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_SuccessMessage_Popup_RoleList, protractorConfig.config.WaitTime),
                                 browser.isElementPresent(BB_editRolesRepo.Select_Xpath_SuccessMessage_Popup_RoleList).then((isPresente) => {
                                     verifyErrorMessage.AssertElementsToDisplay(isPresente, BB_editRolesRepo.Select_Element_SuccessMessage_Popup_RoleList, compareValuesString, 'It is not showing any message', success, failure);

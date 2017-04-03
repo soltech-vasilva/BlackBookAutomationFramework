@@ -155,10 +155,17 @@ var BB_EditRoles = function BB_EditRoles() {
 
     BB_EditRoles.prototype.Click_AddRowPermissionCheckbox_RoleEditor = function (permissionRowNumber) {
         return new Promise((success, failure) => {
-            page.executeSequence([ browser.driver.sleep(2000), BB_editRolesRepo.Select_Element_Permission_AllCheckboxs.get(permissionRowNumber).click()]).then(()=> {
-                success();
-            });
+            page.clickButton(BB_editRolesRepo.Select_Element_Permission_AllCheckboxs.get(permissionRowNumber), protractorConfig.config.WaitTime, success);
+            // page.executeSequence([ browser.driver.sleep(2000), BB_editRolesRepo.Select_Element_Permission_AllCheckboxs.get(permissionRowNumber).click()]).then(()=> {
+            //     success();
+            // });
         });
+
+        //return new Promise((success, failure) => {
+        //     page.executeSequence([ browser.driver.sleep(2000), BB_editRolesRepo.Select_Element_Permission_AllCheckboxs.get(permissionRowNumber).click()]).then(()=> {
+        //         success();
+        //     });
+        // });
     };
 
     BB_EditRoles.prototype.Enter_FilterPermissions_RoleEditor = function (filterPermissions) {
@@ -245,8 +252,8 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.Verify_RoleMarketValue_Dropdownbox_RoleEditor = function (roleMarketSelection) {
 
         return new Promise((success, failure) => {
-            page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_RoleMarket_dropdownbox, protractorConfig.config.WaitTime),
-                browser.driver.wait(BB_editRolesRepo.Select_Element_RoleMarket_dropdownbox.getAttribute('value').then((value) => {
+            page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_RoleMarketDropdown, protractorConfig.config.WaitTime),
+                browser.driver.wait(BB_editRolesRepo.Select_Element_RoleMarketDropdown.getAttribute('value').then((value) => {
                    // console.log('value:' + value);
                     element(by.css('option[value="' + value + '"]')).getText().then((text) => {
                      //   console.log('text:' + text);

@@ -108,7 +108,7 @@ var Page_Objects = function Page_Objects () {
         return page.executeSequence([page.waitForElementTobePresent(element, WaitTime),
              browser.driver.actions().click(element).perform()
            // element.click()
-        ]);
+        ]).then(()=>{});
     };
 
     page.clickButton = function(element, WaitTime, success) {
@@ -232,13 +232,27 @@ var Page_Objects = function Page_Objects () {
      * @param {WebElement} element
      * @returns {Promise}
      */
+
+page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,success, failure ) {
+    return page.executeSequence([page.getContent(element).then((attributeValue) => {
+        //console.log("text:" + attributeValue);
+        if (verifyDropdownName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
+            success();
+        }
+        else {
+            failure();
+        }
+    })]).then(() => {
+    });
+};
+
     page.getContent = function(element) {
-        return element.getAttribute('value')
+        return page.executeSequence([element.getAttribute('value')
             .then(function (val) {
                 return (val === null) ?
                     element.getText() :
                     val;
-            });
+            })]);
     };
 
     /**
