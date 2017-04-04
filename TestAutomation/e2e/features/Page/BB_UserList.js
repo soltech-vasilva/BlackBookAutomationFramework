@@ -202,9 +202,13 @@ var BB_UserList = function BB_UserList() {
     BB_UserList.prototype.Click_Gear_Delete_Submenu = function () {
 
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Delete_Submenu), protractorConfig.config.WaitTime),
-                BB_userListRepo.Select_Element_Gear_Delete_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> {   success(); });
+            page.clickButton(BB_userListRepo.Select_Element_Gear_Delete_Submenu, protractorConfig.config.WaitTime, success);
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Delete_Submenu), protractorConfig.config.WaitTime),
+        //         BB_userListRepo.Select_Element_Gear_Delete_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then(()=> {   success(); });
+        // });
 
         // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Delete_Submenu), protractorConfig.config.WaitTime);
         // return new Promise((success, failure)=> {

@@ -933,7 +933,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
                 browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
                     var currentURL = getCurrentURL.split("://");
                     console.log('currentURL:'+currentURL[1]);
-                    if (currentURL[1].toString() == 'qa-autobahn.blackbookcloud.com/role/list') {
+
+                    var URL = BB_loginRepo.BlackBookUrl.split("://");
+                    //console.log("URL:"+URL[1]);
+
+                    if (currentURL[1].trim() == URL[1] + '/role/list') {
+                    //if (currentURL[1].toString() == 'qa-autobahn.blackbookcloud.com/role/list') {
                         page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')),protractorConfig.config.WaitTime)),
                             element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
                             success();

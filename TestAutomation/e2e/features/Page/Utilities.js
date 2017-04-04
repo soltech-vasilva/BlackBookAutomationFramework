@@ -69,15 +69,15 @@ var Utilities = function Utilities() {
         console.log('Elapsed time: ' + Math.round((((new Date().getTime() - startTime)/1000)/60)*100)/100 + ' minutes');
     };
 
-    Utilities.prototype.VerifyButtonStatus_isEnableorDisable = function(Element , isEnableOrDisable, success, failure)
-    {
+    Utilities.prototype.VerifyButtonStatus_isEnableorDisable = function(Element , isEnableOrDisable, success, failure) {
         if (isEnableOrDisable.toString().toLowerCase() == "enable") {
-            browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(Element),3000);
-            return success();
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(Element), 3000)]).then(() => {
+                success();
+            });
         }
         else if (isEnableOrDisable.toString().toLowerCase() == "disable") {
-
-            Element.getAttribute("disabled").then((attribute)=> {
+            page.waitForElementTobePresent(Element, protractorConfig.config.WaitTime).then(()=>{});
+            Element.getAttribute("disabled").then((attribute) => {
                 if (attribute == 'true') {
                     return success();
                 }

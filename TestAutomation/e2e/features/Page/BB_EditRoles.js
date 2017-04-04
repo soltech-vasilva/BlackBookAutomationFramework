@@ -18,6 +18,8 @@ var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 var BB_EditRoles = function BB_EditRoles() {
 
     BB_EditRoles.prototype.RoleName = '';
+    BB_EditRoles.prototype.FilterUser = '';
+    BB_EditRoles.prototype.FilterPermissions = '';
 
     BB_EditRoles.prototype.Enter_RoleName_inForm = function (roleNme) {
 
@@ -169,21 +171,35 @@ var BB_EditRoles = function BB_EditRoles() {
     };
 
     BB_EditRoles.prototype.Enter_FilterPermissions_RoleEditor = function (filterPermissions) {
-        return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_FilterPermissionsTextbox), protractorConfig.config.WaitTime),
-            BB_editRolesRepo.Select_Element_FilterPermissionsTextbox.sendKeys(filterPermissions)]).then(() => {
-                success();
-            });
+
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.FilterPermissions = utilities.ReplaceDoubleQuotesWithWhiteSpace(filterPermissions.toString()),
+                page.fill(BB_editRolesRepo.Select_Element_FilterPermissionsTextbox, this.FilterPermissions, protractorConfig.config.WaitTime,BB_editRolesRepo.Select_Element_TittleAddNewRole, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise((success, failure) => {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_FilterPermissionsTextbox), protractorConfig.config.WaitTime),
+        //     BB_editRolesRepo.Select_Element_FilterPermissionsTextbox.sendKeys(filterPermissions)]).then(() => {
+        //         success();
+        //     });
+        // });
     };
 
     BB_EditRoles.prototype.Enter_FilterUsers_RoleEditor = function (filterUser) {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_FilterUsersTextbox), protractorConfig.config.WaitTime);
-        return new Promise((success, failure) => {
-            BB_editRolesRepo.Select_Element_FilterUsersTextbox.sendKeys(filterUser).then(() => {
-                success();
-            });
+
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.FilterUser = utilities.ReplaceDoubleQuotesWithWhiteSpace(filterUser.toString()),
+                page.fill(BB_editRolesRepo.Select_Element_FilterUsersTextbox, this.FilterUser, protractorConfig.config.WaitTime,BB_editRolesRepo.Select_Element_TittleAddNewRole, success)
+            ]).then(()=>{});
         });
+
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_FilterUsersTextbox), protractorConfig.config.WaitTime);
+        // return new Promise((success, failure) => {
+        //     BB_editRolesRepo.Select_Element_FilterUsersTextbox.sendKeys(filterUser).then(() => {
+        //         success();
+        //     });
+        // });
     };
 
     BB_EditRoles.prototype.Verify_RolePermissions_CheckedorUnchecked_RoleEditor = function(permissionName, isCheckedorUnchecked){
@@ -241,12 +257,16 @@ var BB_EditRoles = function BB_EditRoles() {
 
     BB_EditRoles.prototype.Click_CheckboxfoundFilterUsers_RoleEditor = function () {
         return new Promise((success, failure) => {
-            //need buffer to sort and click first box wanted
-            browser.driver.sleep(2000);
-            BB_editRolesRepo.Select_Element_RolesIsUser_AllCheckbox.get(0).click().then(() => {
-                success();
-            });
+           page.clickButton(BB_editRolesRepo.Select_Element_RolesIsUser_AllCheckbox.get(0), protractorConfig.config.WaitTime, success);
         });
+
+        // return new Promise((success, failure) => {
+        //     //need buffer to sort and click first box wanted
+        //     browser.driver.sleep(2000);
+        //     BB_editRolesRepo.Select_Element_RolesIsUser_AllCheckbox.get(0).click().then(() => {
+        //         success();
+        //     });
+        // });
     };
 
     BB_EditRoles.prototype.Verify_RoleMarketValue_Dropdownbox_RoleEditor = function (roleMarketSelection) {
