@@ -33,6 +33,7 @@ var BB_userListRepo = require('../Repository/BB_userListRepo.js');
 var BB_menuRepo = require('../Repository/BB_MenuRepo.js');
 var BB_loginForgot = require('../Page/BB_LoginForgot.js');
 var BB_roleList = require('../Page/BB_RoleList.js');
+var BB_roleListRepo = require('../Repository/BB_RoleListRepo.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -117,26 +118,32 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter my first name (.*) in Form$/, function (firstName ) {
+        //todo refactored
         return BB_editUserProfile.Enter_FirstName_inForm(firstName);
     });
 
     this.Given(/^I enter my last name (.*) in Form$/, function (lastName ) {
+        //todo refactored
         return BB_editUserProfile.Enter_LastName_inForm(lastName);
     });
 
     this.Given(/^I enter my email address (.*) in Form$/, function (emailAddress ) {
+        //todo refactored
         return  BB_editUserProfile.Enter_EmailAddress_inForm(emailAddress);
     });
 
     this.When(/^I enter my phone number (.*) in Form$/, function (phoneNumber) {
+        //todo refactored
         return BB_editUserProfile.Enter_PhoneNumber_inForm(phoneNumber);
     });
 
     this.When(/^I enter my new Password (.*) in Form$/, function (newPassword) {
+        //todo refactored
         return BB_editUserProfile.Enter_NewPassword_inForm(newPassword);
     });
 
     this.When(/^I enter my confirm new password (.*) in Form$/, function (confirmNewPassword) {
+        //todo refactored
         return BB_editUserProfile.Enter_ConfirmNewPassword_inForm(confirmNewPassword);
     });
 
@@ -149,38 +156,47 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Reset Button in Edit User Profile$/, function () {
+        //todo refactored
         return BB_editUserProfile.Click_ResetButton_EditUserProfile ();
     });
 
     this.When(/^I click Cancel Button in Edit User Profile$/, function () {
+        //todo refactored
         return BB_editUserProfile.Click_CancelButton_EditUserProfile();
     });
 
     this.Then(/^I click on Save button in Edit User Profile$/, function () {
+        //todo refactored
         return BB_editUserProfile.Click_SaveButton_EditUserProfile();
     });
 
     this.When(/^I clear text box selected "([^"]*)" in User Profile$/, function (TextboxName) {
+        //todo refactored
         return BB_editUserProfile.DeleteContentInTextBox(TextboxName);
     });
 
     this.Given(/^I enter BlackBook Login Website$/, function () {
+        //todo refactored
         return BB_login.OpenBlackBookLogIn_Page();
     });
 
     this.Given(/^I enter my user email address (.*) in Login$/, function (currentEmailAddress) {
+        //todo refactored
         return BB_login.Enter_CurrentEmailAddress_Login(currentEmailAddress);
     });
 
     this.Given(/^I enter my Password (.*) in Login$/, function (currentPassword) {
+        //todo refactored
         return BB_login.Enter_CurrentPassword_Login(currentPassword);
     });
 
     this.Given(/^I click Login Button$/, function () {
+        //todo refactored
         return BB_login.Click_LoginButton();
     });
 
     this.Given(/^I click Avatar Image Button$/, function () {
+        //todo refactored
         return BB_menu.Click_AvatarImageButton();
     });
 
@@ -189,30 +205,37 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Logout sub menu from Avatar$/, function () {
+        //todo refactored
         return BB_menu.Click_LogOutSubmenu();
     });
 
     this.Given(/^I click on Admin Tab$/, function () {
+        //todo refactored
         return BB_menu.Click_AdminTab();
     });
 
     this.Given(/^I click on Users submenu from Admin Tab$/, function () {
+        //todo refactored
         return BB_menu.Click_Users_Submenu();
     });
 
     this.Given(/^I click on Roles submenu from Admin Tab$/, function () {
+        //todo refactored
         return BB_menu.Click_Roles_Submenu();
     });
 
     this.Given(/^I click on New User Button in User List$/, function () {
+        //todo refactored
         return BB_userList.Click_NewUser_Button();
     });
 
     this.Given(/^I enter Filter User List (.*) in User List$/, function (filterValue) {
+        //todo refactored
         return BB_userList.EnterValueToFilter_FilterUseList(filterValue);
     });
 
     this.Given(/^I click Status Filter$/, function () {
+        //todo refactored
         return BB_userList.Click_StatusFilter();
     });
 
@@ -221,6 +244,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click on Gear Icon (.*) "([^"]*)"$/, function (ElementToSelect, arg2) {
+        //todo refactored
         return BB_userList.Click_GearIcon(ElementToSelect);
     });
 
@@ -233,14 +257,17 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click (.*) View from Gear Icon in User List$/, function (rowNumber) {
+        //todo refactored
         return BB_userList.Click_Gear_View_Submenu(rowNumber);
     });
 
     this.Given(/^I click Edit from Gear Icon "([^"]*)"$/, function (arg1) {
+        //todo refactored
         return BB_userList.Click_Gear_Edit_Submenu();
     });
 
     this.Given(/^I click on Save button in Role Editor$/, function () {
+        //todo refactored
         return BB_editRoles.Click_SaveButton_RoleEditor ();
     });
 
@@ -254,18 +281,22 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Cancel Button from Edit Roles$/, function () {
+        //todo refactored
         return BB_editRoles.Click_CancelButton_RoleEditor ();
     });
 
     this.Given(/^I enter "([^"]*)" on Filter Permissions in Role Editor$/, function (filterPermissions) {
+        //todo refactored
         return BB_editRoles.Enter_FilterPermissions_RoleEditor(filterPermissions);
     });
 
     this.Given(/^I click checkbox  "([^"]*)" "([^"]*)" Permission row in Role Editor/, function (permissionRowNumber, arg2) {
+        //todo refactored
         return BB_editRoles.Click_AddRowPermissionCheckbox_RoleEditor(permissionRowNumber);
     });
 
     this.Given(/^I enter "([^"]*)" on Filter Users in Role Editor$/, function (filterUser) {
+        //todo refactored
         return BB_editRoles.Enter_FilterUsers_RoleEditor(filterUser);
     });
 
@@ -274,6 +305,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click checkbox on first user found from Filter Users in Role Editor$/, function () {
+        //todo refactored
         return BB_editRoles.Click_CheckboxfoundFilterUsers_RoleEditor();
     });
 
@@ -283,14 +315,17 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should not see in "([^"]*)" errors displayed$/, function (str_TextboxName) {
+        //todo refactored
         return verifyErrorMessage.Verify_ErrorMessagesNotToDisplay_UserProfile(str_TextboxName);
     });
 
     this.Then(/^I should see "([^"]*)" message "([^"]*)" displayed for this "([^"]*)" field$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
+        //todo refactored
         return verifyErrorMessage.Verify_ErrorMessageToDisplay_UserProfile(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
     });
 
     this.Then(/^I should see "([^"]*)" displayed on "([^"]*)" popup$/, function (VerifyMessage, PopUpPageName) {
+        //todo refactored
         return verifyPopUpMessages.Verify_PopUpMessage(PopUpPageName,VerifyMessage );
     });
 
@@ -313,11 +348,37 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-    this.Then(/^I reload page "([^"]*)"$/, function (arg) {
-        var URL = BB_loginRepo.BlackBookUrl+'/login';
+    this.Then(/^I reload page "([^"]*)"$/, function (url) {
+        //todo refactored
+        var URL = url;
         return new Promise((success, failure)=> {
             browser.ignoreSynchronization = true;
             page.executeSequence([ browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+                var currentURL = getCurrentURL.split("://");
+                var getURL = URL.toString().split("://");
+
+                if (currentURL[1].trim() != getURL[1].trim()) {
+                    page.openUrl(true, URL, 4000).then(()=> {
+                        success();
+                    });
+                }
+                else {
+                    success();
+                }
+            })]).then(()=>{
+                page.clickElement( BB_loginRepo.Select_Element_AutoBahnLogInPageImage, protractorConfig.config.WaitTime).then(()=>{});
+            });
+        });
+    });
+
+    this.Given(/^I reload LogIn Page$/, function () {
+
+        //todo refactored
+        var URL = BB_loginRepo.BlackBookUrl+'/login';
+        return new Promise((success, failure)=> {
+            browser.ignoreSynchronization = true;
+            page.executeSequence([
+                browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
                     var currentURL = getCurrentURL.split("://");
                     var getURL = URL.toString().split("://");
 
@@ -329,12 +390,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     else {
                         success();
                     }
-                })]).then(()=>{
-                //menu login (image)
-                page.clickElement( BB_loginRepo.Select_Element_AutoBahnLogInPageImage, protractorConfig.config.WaitTime).then(()=>{});
-                //browser.driver.wait( BB_loginRepo.Select_Element_AutoBahnLogInPageImage.click(), 60000);
-                // browser.driver.wait(element(by.xpath('//*[@id="login-box"]/div/div/img')).click(), 60000);
-            });
+                })]).then(()=>{page.clickElement( BB_loginRepo.Select_Element_AutoBahnLogInPageImage, protractorConfig.config.WaitTime);});
         });
 
         // return new Promise((success, failure)=> {
@@ -377,9 +433,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
     this.Then(/^I add extra string "([^"]*)" to my "([^"]*)"$/, function (addString, TextboxName) {
         return new Promise((success, failure)=> {
             var s = TextboxName;
-            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click();
-            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(addString);
-            success();
+            page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, protractorConfig.config.WaitTime),
+            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click(),
+            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(addString)]).then(()=>{success();});
         });
     });
 
@@ -387,10 +443,11 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return new Promise((success, failure)=> {
             var s = TextboxName;
             var amount = parseInt(amountDeleted);
+            page.executeSequence([page.waitForElementTobePresent( BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, protractorConfig.config.WaitTime),
             // console.log('amount:'+typeof amount+' amountDeleted:'+typeof amountDeleted);
-            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click();
-            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(protractor.Key.BACK_SPACE);
-            success();
+            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.click(),
+            BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys(protractor.Key.BACK_SPACE)]).then(()=>{ success();});
+
             // for ( var a = 0 ; a == amount ;a++) {
             //     console.log('a:' + a + ' amountDeleted:' + amountDeleted);
             //     BB_editUserProfileRepo.Select_Element_NewPasswordTextbox.sendKeys("ppppppppppp");
@@ -414,6 +471,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see that I am in "([^"]*)" "([^"]*)" URL$/, function (partURL, VerifyURL) {
+        //todo refactored
         return new Promise((success, failure)=> {
             page.executeSequence([browser.driver.sleep(4000),
             browser.driver.wait(browser.driver.getCurrentUrl().then(function (getCurrentURL) {
@@ -475,12 +533,14 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
 
     this.Given(/^I click User Active checkbox$/, function () {
+        //todo refactored
         return new Promise((success, failure) => {
             page.clickButton(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime, success);
         });
     });
 
     this.Then(/^I should see on User Active checkbox inactive$/, function () {
+        //todo refactored
         return new Promise((success, failure) => {
             page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime),
                 // browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
@@ -504,7 +564,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I click on Home Tab$/, function () {
         return new Promise((success, failure)=> {
-            element(by.linkText('Home')).click().then(()=>{ success();});
+            page.executeSequence([page.waitForElementTobePresent(element(by.linkText('Home')),protractorConfig.config.WaitTime),
+            element(by.linkText('Home')).click()]).then(()=>{ success();});
         });
     });
 
@@ -518,42 +579,38 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.When(/^I check heading from Grid$/, function () {
         return new Promise((success, failure)=> {
+            page.executeSequence([page.waitForElementTobePresent(element(by.id('center')), protractorConfig.config.WaitTime),
             //return element(by.css('div.ag-header-container')).getText().then(function(arr) {
             //return element(by.css('div.ag-header')).getText().then(function(arr) {
             element(by.id('center')).getText().then(function (arr) {
                 //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
                 var headers = arr.split('/r');
                 console.log(headers[0]);
-                success();
-            });
+            })]).then(()=>{success();});
         });
     });
 
     this.Then(/^I should see Gear sub-menu options "([^"]*)"$/, function (arg) {
-        return new Promise((success, failure)=> {
-         page.executeSequence([browser.driver.wait(BB_userListRepo.Select_Element_Gear_All_Submenu.getText().then(function (arr) {
-            //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
-            //var headers = arr.split('/r');
-            var headers = arr.toString().split("\n");
+        return new Promise((success, failure) => {
+            page.executeSequence([BB_userListRepo.Select_Element_Gear_All_Submenu.getText().then(function (arr) {
+                //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
+                //var headers = arr.split('/r');
+                var headers = arr.toString().split("\n");
 
-            if (headers[0] == "View")
-            {
-                //console.log("header:|"+headers[0]+"|");
-                if (headers[1] == "Edit")
-                {
-                  //  console.log("header:|"+headers[1]+"|");
-                    if (headers[2] == "Deactivate")
-                    {
-                    //    console.log("header:|"+headers[2]+"|");
-                        success();
+                if (headers[0] == "View") {
+                    //console.log("header:|"+headers[0]+"|");
+                    if (headers[1] == "Edit") {
+                        //  console.log("header:|"+headers[1]+"|");
+                        if (headers[2] == "Deactivate") {
+                            //    console.log("header:|"+headers[2]+"|");
+                            success();
+                        }
                     }
                 }
-            }
-            else
-            {
-                failure();
-            }
-        }))]).then(()=>{});
+                else {
+                    failure();
+                }
+            })]).then(() => {});
         });
     });
 
@@ -569,6 +626,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I click checkbox User's Roles "([^"]*)" "([^"]*)"$/, function (arg1, arg2) {
+        //todo refactored
         return new Promise((success, failure)=> {
             page.clickButton(BB_editUserProfileRepo.Select_Element_UsersRolesCheckbox_Administrator, protractorConfig.config.WaitTime, success);
             // page.executeSequence([ BB_editUserProfileRepo.Select_Element_UsersRolesCheckbox_Administrator.click()]).then(()=>{ success();});
@@ -618,6 +676,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see Role Market value "([^"]*)"$/, function (roleMarketSelection) {
+        //todo refactored
         return   BB_editRoles.Verify_RoleMarketValue_Dropdownbox_RoleEditor(roleMarketSelection);
     });
 
@@ -626,7 +685,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter Role Name "([^"]*)"$/, function (roleName) {
-
+        //todo refactored
         return BB_editRoles.Enter_RoleName_inForm(roleName);
         // return new Promise((success, failure)=> {
         //     browser.driver.sleep(3000);
@@ -636,6 +695,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see in "([^"]*)" button "([^"]*)" in Edit Role$/, function (ButtonName, isEnableOrDisable) {
+        //todo refactored
         return new Promise((success, failure)=>{
             switch (ButtonName.toString().toLowerCase()) {
                 case "save":
@@ -660,8 +720,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I should see \#of Users has increase value for Administration in Role List$/, function () {
         return new Promise((success, failure)=> {
+            page.executeSequence([ page.waitForElementTobePresent(element.all(by.css('div[colid="users"]')).get(1), protractorConfig.config.WaitTime),
 
-            element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue)=>{
+                element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue)=>{
                console.log( currentValue);
                numberofUsers++;
 
@@ -674,48 +735,65 @@ var myBlackBookSteps = function myBlackBookSteps() {
                    console.log('Did not see any change number of users.');
                    failure();
                }
-            });
+            })]).then(()=>{});
         });
     });
 
     this.Given(/^I store value \#of Users displayed for Administration in Role List$/, function () {
 
           return new Promise((success, failure)=> {
-
-              element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue)=> {
-                  console.log(currentValue);
-                  numberofUsers = currentValue;
-                  success();
-              });
+              page.executeSequence([ page.waitForElementTobePresent(element.all(by.css('div[colid="users"]')).get(1), protractorConfig.config.WaitTime),
+                  element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue) => {
+                      console.log(currentValue);
+                      numberofUsers = currentValue;
+                      success();
+                  })]).then(()=>{});
           });
     });
 
     this.Then(/^I should see \#of Users has increase value for "([^"]*)" in Role List$/, function (arg1) {
         return new Promise((success, failure)=> {
+            page.executeSequence([ page.waitForElementTobePresent( BB_roleListRepo.Select_Element_NumberOfUsersColumn.get(7), protractorConfig.config.WaitTime),
 
-            element.all(by.css('div[colid="users"]')).get(7).getText().then((currentValue)=> {
+                BB_roleListRepo.Select_Element_NumberOfUsersColumn.get(7).getText().then((currentValue)=> {
                 console.log(currentValue);
                 numberofUsers = currentValue;
                 success();
-            });
+            })]).then(()=>{});
+
+            // element.all(by.css('div[colid="users"]')).get(7).getText().then((currentValue)=> {
+            //     console.log(currentValue);
+            //     numberofUsers = currentValue;
+            //     success();
+            // });
         });
     });
 
 
     this.Then(/^I should see user's Role "([^"]*)" in User List$/, function (userRole) {
-        return new Promise((success, failure)=> {
 
-            element(by.css('div.role-cell')).getText().then((currentValue)=> {
-                console.log("user roles: "+currentValue);
-
-                if (userRole == currentValue) {
-                    success();
-                }
+        return new Promise((success, failure) => {
+            page.executeSequence([page.waitForElementTobePresent(element(by.css('div.role-cell')), protractorConfig.config.WaitTime),
+                browser.isElementPresent(element(by.css('div.role-cell'))).then((isPresente) => {
+                    verifyErrorMessage.AssertElementsToDisplay(isPresente, element(by.css('div.role-cell')), userRole, 'It is not showing any message', success, failure);
+                })]).then(() => {
             });
         });
+
+        // return new Promise((success, failure)=> {
+        //
+        //     element(by.css('div.role-cell')).getText().then((currentValue)=> {
+        //         console.log("user roles: "+currentValue);
+        //
+        //         if (userRole == currentValue) {
+        //             success();
+        //         }
+        //     });
+        // });
     });
 
     this.Given(/^I click on New Role Button in Role List$/, function () {
+        //todo refactored
         return BB_roleList.Click_NewRole_Button();
         // return new Promise((success, failure) => {
         //     page.clickButton(element(by.css('button.button')), protractorConfig.config.WaitTime, success);
@@ -728,6 +806,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I select Role Market "([^"]*)" in Role Editor$/, function (roleMarketSelection) {
+        //todo refactored
         return new Promise((success, failure) => {
             //took this out and it worked
             //element(by.css('select[name="market"]')).click();
@@ -785,9 +864,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Filter By Group dropdown "([^"]*)" Permissions in Role Editor$/, function (PermissionsName) {
-
+        //todo refactored
         return new Promise ((success, failure)=>{
-
             page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_FilterByGroupDropdown, PermissionsName, success);
         });
 
@@ -808,7 +886,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Filter By Status dropdown "([^"]*)" in Role Editor$/, function (FilterByStatusName) {
-
+        //todo refactored
         return new Promise ((success, failure)=>{
 
             page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_FilterByStatusDropdown, FilterByStatusName, success);
@@ -831,6 +909,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see "([^"]*)" display for Filter By Group in Role Editor$/, function (PermissionsName) {
+        //todo refactored
         return new Promise ((success, failure)=> {
 
             page.VerifyDropdownAttributeValue(BB_editRolesRepo.Select_Element_FilterByGroupDropdown, PermissionsName, success, failure).then(()=>{});
@@ -888,11 +967,19 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter Filter Roles search "([^"]*)" in Edit User Profile$/, function (filterRoleSearch) {
-        return new Promise ((success, failure)=> {
-            page.fill(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox, filterRoleSearch,protractorConfig.config.WaitTime, BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success ).then(()=>{});
-            // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox), protractorConfig.config.WaitTime),
-            //     BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox.sendKeys(filterRoleSearch)]).then(()=>{  success();});
+        //todo refactored
+        var filterRoles = '';
+        return new Promise((success, failure)=> {
+            page.executeSequence([filterRoles = utilities.ReplaceDoubleQuotesWithWhiteSpace(filterRoleSearch.toString()),
+                page.fill(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox, filterRoles, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+            ]).then(()=>{});
         });
+
+        // return new Promise ((success, failure)=> {
+        //     page.fill(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox, filterRoleSearch,protractorConfig.config.WaitTime, BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success ).then(()=>{});
+        //     // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox), protractorConfig.config.WaitTime),
+        //     //     BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox.sendKeys(filterRoleSearch)]).then(()=>{  success();});
+        // });
     });
 
     this.Then(/^I click Delete from Gear Icon$/, function () {
@@ -900,59 +987,110 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see (.*) displayed for Confirm Role Deletion in Role Editor$/, function (errorMessage) {
-
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('.warning-msg'))), protractorConfig.config.WaitTime),
-                element(by.css('.warning-msg')).getText().then((currentValue) => {
-                    // console.log("warning-msg: "+currentValue);
-                    // console.log("warning-msg: "+errorMessage);
-                    if (errorMessage == currentValue) {
-                        success();
-                    }
-                    else {
-                        failure();
-                    }
+            page.executeSequence([page.waitForElementTobePresent(BB_roleListRepo.Select_Element_ConfirmPopupMessage_Popup_RoleList, protractorConfig.config.WaitTime),
+                browser.isElementPresent(BB_roleListRepo.Select_Element_ConfirmPopupMessage_Popup_RoleList).then((isPresente) => {
+                    verifyErrorMessage.AssertElementsToDisplay(isPresente, BB_roleListRepo.Select_Element_ConfirmPopupMessage_Popup_RoleList, errorMessage, 'It is not showing any message', success, failure);
                 })]).then(() => {
             });
-
         });
+
+        // return new Promise((success, failure) => {
+        //         page.executeSequence([page.waitForElementTobePresent(BB_roleListRepo.Select_Element_ConfirmPopupMessage_Popup_RoleList, protractorConfig.config.WaitTime),
+        //             browser.isElementPresent(BB_roleListRepo.Select_Element_Xpath_ConfirmPopupMessage_Popup_RoleList).then((isPresente) => {
+        //                 verifyErrorMessage.AssertElementsToDisplay(isPresente, (BB_roleListRepo.Select_Element_ConfirmPopupMessage_Popup_RoleList, compareValuesString, 'It is not showing any message', success, failure);
+        //             })]).then(() => {
+        //         });
+
+               //  page.waitForElementTobePresent(BB_roleListRepo.Select_Element_ConfirmPopupMessage_Popup_RoleList, protractorConfig.config.WaitTime),
+               //  verifyErrorMessage.ExpectTextEqualsTo()
+               // // browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('.warning-msg'))), protractorConfig.config.WaitTime),
+               //  BB_roleListRepo.Select_Element_ConfirmPopupMessage_Popup_RoleList.getText().then((currentValue) => {
+               //      // console.log("warning-msg: "+currentValue);
+               //      // console.log("warning-msg: "+errorMessage);
+               //      if (errorMessage == currentValue) {
+               //          success();
+               //      }
+               //      else {
+               //          failure();
+               //      }
+               //  })]).then(() => {});
+      // ]);
     });
 
     this.Then(/^I click "([^"]*)" Button for modal warning message from Edit Roles$/, function (buttonName) {
         return new Promise((success, failure) => {
-            if (buttonName.toString().toLowerCase() == "cancel") {
-                page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('button.button.red-btn')),protractorConfig.config.WaitTime)),
-                    element(by.css('button.button.red-btn')).click()]).then(() => {
-                    success();
-                });
-            }
+            switch (buttonName.toString().toLowerCase()) {
+                case 'cancel':
+                    page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('button.button.red-btn')),protractorConfig.config.WaitTime)),
+                        element(by.css('button.button.red-btn')).click()]).then(() => {
+                        success();
+                    });
+                    break;
+                case 'confirm':
 
-            if (buttonName.toString().toLowerCase() == "confirm") {
-                console.log('Confirm button');
+                    console.log('Confirm button');
 
-                browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
-                    var currentURL = getCurrentURL.split("://");
-                    console.log('currentURL:'+currentURL[1]);
-
-                    var URL = BB_loginRepo.BlackBookUrl.split("://");
-                    //console.log("URL:"+URL[1]);
-
-                    if (currentURL[1].trim() == URL[1] + '/role/list') {
-                    //if (currentURL[1].toString() == 'qa-autobahn.blackbookcloud.com/role/list') {
-                        page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')),protractorConfig.config.WaitTime)),
-                            element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
-                            success();
-                        });
-                    }
-                    else {
-                        console.log('Confirm button on other page CHECK URL BUG');
+                    browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+                        var currentURL = getCurrentURL.split("://");
                         console.log('currentURL:'+currentURL[1]);
-                        page.executeSequence([element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
-                            success();
-                        });
-                    }
-                });
+
+                        var URL = BB_loginRepo.BlackBookUrl.split("://");
+                        //console.log("URL:"+URL[1]);
+
+                        if (currentURL[1].trim() == URL[1] + '/role/list') {
+                            //if (currentURL[1].toString() == 'qa-autobahn.blackbookcloud.com/role/list') {
+                            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')),protractorConfig.config.WaitTime)),
+                                element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
+                                success();
+                            });
+                        }
+                        else {
+                            console.log('Confirm button on other page CHECK URL BUG');
+                            console.log('currentURL:'+currentURL[1]);
+                            page.executeSequence([element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
+                                success();
+                            });
+                        }
+                    });
+                    break;
+                default:
+                    console.log(TextboxName+' : is not part of switch statement in Verify_UserInformation function.');
+                    failure();
             }
+            // if (buttonName.toString().toLowerCase() == "cancel") {
+            //     page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('button.button.red-btn')),protractorConfig.config.WaitTime)),
+            //         element(by.css('button.button.red-btn')).click()]).then(() => {
+            //         success();
+            //     });
+            // }
+
+            // if (buttonName.toString().toLowerCase() == "confirm") {
+            //     console.log('Confirm button');
+            //
+            //     browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+            //         var currentURL = getCurrentURL.split("://");
+            //         console.log('currentURL:'+currentURL[1]);
+            //
+            //         var URL = BB_loginRepo.BlackBookUrl.split("://");
+            //         //console.log("URL:"+URL[1]);
+            //
+            //         if (currentURL[1].trim() == URL[1] + '/role/list') {
+            //         //if (currentURL[1].toString() == 'qa-autobahn.blackbookcloud.com/role/list') {
+            //             page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')),protractorConfig.config.WaitTime)),
+            //                 element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
+            //                 success();
+            //             });
+            //         }
+            //         else {
+            //             console.log('Confirm button on other page CHECK URL BUG');
+            //             console.log('currentURL:'+currentURL[1]);
+            //             page.executeSequence([element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button')).click()]).then(() => {
+            //                 success();
+            //             });
+            //         }
+            //     });
+            // }
         });
     });
 
@@ -963,6 +1101,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see "([^"]*)" message "([^"]*)" displayed for this "([^"]*)" field in Role Editor$/, function (str_TextboxName, str_VerifyErrorName, FilledOrEmptyField) {
+        //todo refactored
         return verifyErrorMessage.Verify_ErrorMessageToDisplay_RoleEditor(str_TextboxName, str_VerifyErrorName, FilledOrEmptyField);
     });
 
@@ -985,18 +1124,19 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Then(/^I should not see "([^"]*)" Button in AdminTab$/, function (buttonName) {
         return new Promise((success, failure)=> {
-            browser.driver.wait(protractor.ExpectedConditions.stalenessOf(element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a'))), 2000);
-            success();
+            browser.driver.wait(protractor.ExpectedConditions.stalenessOf(element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a'))), 2000).then(()=>{success();});
         });
     });
 
     this.Given(/^I click on Settings submenu from Admin Tab$/, function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a')).click()]).then(()=>{success();});
+            page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a')), protractorConfig.config.WaitTime),
+                element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a')).click()]).then(()=>{success();});
         });
     });
 
     this.Given(/^I clear text box selected "([^"]*)" in Role Editor$/, function (TextboxName) {
+        //todo refactored
         return BB_editRoles.DeleteContentInTextBox(TextboxName);
     });
 
@@ -1007,18 +1147,23 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should not see in "([^"]*)" errors displayed in Edit Role$/, function (str_TextboxName) {
+        //todo refactored
         return verifyErrorMessage.Verify_ErrorMessagesNotToDisplay_RoleEditor(str_TextboxName);
     });
 
 
     this.Then(/^I click Circle icon in permissions grid to "([^"]*)" in Role Editor$/, function (expandOrCollapse) {
+
+        //todo refactored
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.sleep(2000).then(() => {
-                    element.all(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div/span/span[2]/span')).get(0).click();
-            }), browser.driver.sleep(2000).then(() => {
-                success();
-            })]).then(()=>{});
+            page.clickButton(BB_editRolesRepo.Select_Element_CircleIconPermission.get(0),protractorConfig.config.WaitTime, success );
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_CircleIconPermission.get(0), protractorConfig.config.WaitTime),
+        //         BB_editRolesRepo.Select_Element_CircleIconPermission.get(0).click()
+        //     ]).then(()=>{success();});
+        // });
 
             // browser.driver.sleep(3000);
             // element.all(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div/span/span[2]/span')).get(0).click();
@@ -1038,9 +1183,15 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I verify BlackBook "([^"]*)" page with Applitools$/, function (namePage) {
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([ eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn)]).then(() => {
+        //         success();
+        //     });
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.sleep(1000) , eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn), browser.driver.sleep(1000)]).then(() => {
-                success()
+            page.executeSequence([browser.driver.sleep(1000) ,
+                eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn),
+                browser.driver.sleep(1000) ]).then(() => {
+                success();
             });
         });
     });

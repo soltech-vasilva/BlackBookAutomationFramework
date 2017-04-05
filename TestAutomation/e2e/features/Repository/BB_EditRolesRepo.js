@@ -31,7 +31,7 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     //BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/message-box/div/div'));
     //BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup = element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/message-box/div/div'));  //old
 
-
+    BB_EditRolesRepo.prototype.Select_Element_CircleIconPermission = element.all(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div/span/span[2]/span'));
     BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup_EditRoles =by.xpath('//*[@id="page-box"]/role-profile/div/div/message-box/div/div');
     BB_EditRolesRepo.prototype.Select_Element_SuccessMessage_Popup_EditRoles = element(this.Select_Xpath_SuccessMessage_Popup_EditRoles);
 

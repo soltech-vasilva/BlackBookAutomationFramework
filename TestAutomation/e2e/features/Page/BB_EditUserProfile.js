@@ -279,8 +279,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
 
     BB_EditUserProfile.prototype.Click_CancelButton_EditUserProfile = function () {
         return new Promise((success, failure) => {
-            page.executeSequence([page.clickButton(BB_editUserProfileRepo.Select_Element_CancelButton,protractorConfig.config.WaitTime,success)
-            ]).then(()=>{});
+            page.clickButton(BB_editUserProfileRepo.Select_Element_CancelButton,protractorConfig.config.WaitTime,success);
         });
 
         // return new Promise((success, failure)=> {
@@ -293,9 +292,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
 
     BB_EditUserProfile.prototype.Click_SaveButton_EditUserProfile = function () {
         return new Promise((success, failure)=> {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editUserProfileRepo.Select_Element_SaveButton), protractorConfig.config.WaitTime);
-
-            page.executeSequence([BB_editUserProfileRepo.Select_Element_SaveButton.click()]).then(()=>{success();});
+            page.clickButton(BB_editUserProfileRepo.Select_Element_SaveButton, protractorConfig.config.WaitTime, success);
         });
     };
 

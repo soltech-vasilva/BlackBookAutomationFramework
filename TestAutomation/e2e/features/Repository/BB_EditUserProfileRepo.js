@@ -33,7 +33,7 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Xpath_ERRORMESSAGE_FirstName_Require = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[2]/div/span');
 
     BB_EditUserProfileRepo.prototype.Select_Xpath_ERRORMESSAGE_LastName_SpacesAreInvalidCharacters = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[3]/div/error-msg/span'); //old
-    BB_EditUserProfileRepo.prototype.Select_Xpath_ERRORMESSAGE_LastName_Require = by.xpath(' //*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[3]/div/span');
+    BB_EditUserProfileRepo.prototype.Select_Xpath_ERRORMESSAGE_LastName_Require = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[3]/div/span');
 
     BB_EditUserProfileRepo.prototype.Select_xpath_ERRORMESSAGE_Email_InvalidEmailAddress = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[4]/div/error-msg/span');
     BB_EditUserProfileRepo.prototype.Select_xpath_ERRORMESSAGE_Email_Require = by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[1]/div[4]/div/span');

@@ -161,34 +161,34 @@ var Page_Objects = function Page_Objects () {
     // };
 
     page.fill = function (element , str_SendValue, WaitTime , elementClearFocus , success) {
-        return page.executeSequence([
-            page.clickElement(element, WaitTime).then(() => {
+        return page.executeSequence([page.clickElement(element, WaitTime).then(() => {
                 if (str_SendValue != '') {
-                    page.executeSequence([ element.sendKeys(str_SendValue),
-                        page.VerifyValueEntered_RetypeValue(element, str_SendValue)]).then(() => {
-                    });
+                    page.executeSequence([
+                        element.sendKeys(str_SendValue),
+                        page.VerifyValueEntered_RetypeValue(element, str_SendValue)]).then(()=>{});
                 }
-            })]).then(() => {
-            page.focus(elementClearFocus, success);
-        });
+            })]).then(()=>{page.focus(elementClearFocus, success);});
     };
 
-    page.VerifyValueEntered_RetypeValue = function (Element,  ValueCompare ) {
-        return page.executeSequence([browser.driver.wait(Element.getAttribute("value").then(function (currentValue) {
-            var ValueEntered = currentValue;
-            var count = 0;
-            browser.getProcessedConfig().then((config) => {
+    page.VerifyValueEntered_RetypeValue = function (element,  ValueCompare ) {
+        var ValueEntered = '';
+        var count = 0;
+
+        return page.executeSequence([element.getAttribute("value").then( (currentValue)=> {
+            ValueEntered = currentValue;
+            page.executeSequence([browser.getProcessedConfig().then((config) => {
+                //console.log('BEFORE: ValueEntered:'+ValueEntered + ":Different:" + 'ValueCompare'+ValueCompare);
                 while (ValueEntered != ValueCompare) {
-                    //console.log(ValueEntered + ":Different:" + ValueCompare); 
+                    //console.log('AFTER: ValueEntered:'+ValueEntered + ":Different:" + 'ValueCompare'+ValueCompare); 
                     // console.log('config.capabilities.os: |' + config.capabilities.os + '|'); 
                     //  console.log(" config.capabilities.browserName: " +  config.capabilities.browserName);  
                     if (config.capabilities.browserName == 'safari' || config.capabilities.os === undefined) {
                         //console.log('Mycomputer'); 
-                        page.executeSequence([browser.driver.sleep(1000), Element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.sleep(1000), page.SendKeysSlower(Element, ValueCompare)])
+                        page.executeSequence([browser.driver.sleep(1000), element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(element, ValueCompare)])
                             .then(() => {
                             });
                     } else {
-                        page.executeSequence([browser.driver.sleep(1000), Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(Element, ValueCompare)])
+                        page.executeSequence([browser.driver.sleep(1000), element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(element, ValueCompare)])
                             .then(() => {
                             });
                     }
@@ -197,8 +197,8 @@ var Page_Objects = function Page_Objects () {
                         break;
                     }
                 }
-            });
-        }))]);
+            })]).then(()=>{});
+        })]).then(()=>{});
     };
       
     page.SendKeysSlower = function (Element , strValue) {

@@ -71,12 +71,12 @@ var Utilities = function Utilities() {
 
     Utilities.prototype.VerifyButtonStatus_isEnableorDisable = function(Element , isEnableOrDisable, success, failure) {
         if (isEnableOrDisable.toString().toLowerCase() == "enable") {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(Element), 3000)]).then(() => {
+            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(Element), protractorConfig.config.WaitTime)]).then(() => {
                 success();
             });
         }
         else if (isEnableOrDisable.toString().toLowerCase() == "disable") {
-            page.waitForElementTobePresent(Element, protractorConfig.config.WaitTime).then(()=>{});
+            page.executeSequence([page.waitForElementTobePresent(Element, protractorConfig.config.WaitTime),
             Element.getAttribute("disabled").then((attribute) => {
                 if (attribute == 'true') {
                     return success();
@@ -85,7 +85,7 @@ var Utilities = function Utilities() {
                     console.log("button Attribute: " + attribute);
                     return failure();
                 }
-            });
+            })]).then(()=>{});
         }
     }
 };

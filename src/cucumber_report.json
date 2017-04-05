@@ -1,0 +1,2730 @@
+[
+  {
+    "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\"",
+    "name": "\"Verify that this bugs dont return to the application.\"",
+    "description": "\nRules: Verify \"User List\" opens\n\nQuestion:",
+    "line": 5,
+    "keyword": "Feature",
+    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/Bugs.feature",
+    "elements": [
+      {
+        "name": "",
+        "keyword": "Background",
+        "description": "",
+        "type": "background",
+        "line": 12,
+        "steps": [
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given "
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 16,
+            "keyword": "And "
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 17,
+            "keyword": "And "
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 18,
+            "keyword": "And "
+          },
+          {
+            "name": "I click Login Button",
+            "line": 19,
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-38\" (BB-626) (Permission canEditSettings): Enable \"Settings\" for a user will not show Tab \"Settings\"",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-38\"-(bb-626)-(permission-caneditsettings):-enable-\"settings\"-for-a-user-will-not-show-tab-\"settings\"",
+        "line": 674,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-38",
+            "line": 673
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 16258033
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 12428615892
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 16,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 136091871
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 17,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1706325369
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 18,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1837451526
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 540786665
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 676,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5006379631
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 678,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7018153017
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user2@example.com in Login",
+            "line": 680,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1779757066
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 681,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1314643461
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 682,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 529153840
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 684,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2051831241
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see \"Setting\" Button in AdminTab",
+            "line": 686,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 75964741
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 689,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7150775524
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 691,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1276216423
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 692,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1194426255
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 693,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 605502454
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 695,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1963425323
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 696,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 541027094
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3 \"Basic Role-No Permissions in Role List\"",
+            "line": 698,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1039958309
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 699,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 637194428
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox Permission \"Settings\" in Role Editor",
+            "line": 701,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1127372655
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 702,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 670539207
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 703,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2766524604
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 706,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6997208081
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user2@example.com in Login",
+            "line": 708,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1494494946
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 709,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1393677608
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 710,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 578086281
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 712,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2259298245
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Settings submenu from Admin Tab",
+            "line": 714,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 846483510
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 717,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7147891301
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 719,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1632904028
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 720,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1111855925
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 721,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 892731250
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 723,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1986330947
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 724,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 449170711
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3 \"Basic Role-No Permissions in Role List\"",
+            "line": 726,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 888283480
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 727,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 794221251
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox Permission \"Settings\" in Role Editor",
+            "line": 729,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1190178102
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 730,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 656570672
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 731,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2563285499
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 926859
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-41\" (BB-625) (Permission CanViewOtherUsers): Gear Icons are gray out event if permission is enable.",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-41\"-(bb-625)-(permission-canviewotherusers):-gear-icons-are-gray-out-event-if-permission-is-enable.",
+        "line": 737,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-39",
+            "line": 736
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 11319675
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8523767461
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 16,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6717552793
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 17,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1462095476
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 18,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1139372629
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 677049388
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 739,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2216611804
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 740,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 445868106
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3  \"Basic Role-No Permissions in Role List\"",
+            "line": 742,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1030559453
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 743,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 721745331
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"User\" Permissions in Role Editor",
+            "line": 746,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2108011682
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can View User List\" on Filter Permissions in Role Editor",
+            "line": 747,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1483584483
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can view User List\" Permission row in Role Editor",
+            "line": 749,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 447280433
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 750,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2180545694
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 752,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 477505282
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 753,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2552342944
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 757,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6683562119
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user2@example.com in Login",
+            "line": 758,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1514535230
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 759,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1316241072
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 760,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 523605147
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 762,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2267696865
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 763,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 433220725
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Status Filter",
+            "line": 765,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1575645726
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List user3@example.com in User List",
+            "line": 766,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1388993862
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icons 1 inactive \"in User List\"",
+            "line": 767,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 396392671
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 771,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7158916098
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 772,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1399456392
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 773,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1561942799
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 774,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 423269543
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 776,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2031776580
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 777,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 483874241
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3  \"Basic Role-No Permissions in Role List\"",
+            "line": 779,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 900745926
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 780,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 605434538
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"User\" Permissions in Role Editor",
+            "line": 782,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1683382937
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can View Other Users\" on Filter Permissions in Role Editor",
+            "line": 783,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1290038750
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can View Other Users\" Permission row in Role Editor",
+            "line": 785,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 525875800
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 786,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2251503500
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"Roles\" Permissions in Role Editor",
+            "line": 789,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1093092014
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"can View Role List\" on Filter Permissions in Role Editor",
+            "line": 790,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1950838741
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"can View Role List\" Permission row in Role Editor",
+            "line": 792,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 449305387
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 793,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 668235896
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 794,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2462590026
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 798,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6720908285
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user2@example.com in Login",
+            "line": 799,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1489360517
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 800,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1205769470
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 801,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 391515193
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 803,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2199208750
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 804,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 777681108
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Status Filter",
+            "line": 806,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1339354016
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List user3@example.com in User List",
+            "line": 807,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1718147656
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"user3@example.com in User List\"",
+            "line": 809,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 608290175
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 1 View from Gear Icon in User List",
+            "line": 810,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 672692895
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see user's \"emailAddress\" displayed in screen with value \"user3@example.com\"",
+            "line": 812,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 1368542962
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 816,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7166613515
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 817,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1267708604
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 818,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1062044786
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 819,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 459350036
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 821,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2011018969
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 822,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 428237481
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3  \"Basic Role-No Permissions in Role List\"",
+            "line": 824,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 780878217
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 825,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 669796364
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"User\" Permissions in Role Editor",
+            "line": 827,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1787124512
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can View Other Users\" on Filter Permissions in Role Editor",
+            "line": 828,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1634572205
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can View Other Users\" Permission row in Role Editor",
+            "line": 830,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 602744431
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 831,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2214123632
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"Roles\" Permissions in Role Editor",
+            "line": 834,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1002480095
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"can View Role List\" on Filter Permissions in Role Editor",
+            "line": 835,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1782108396
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"can View Role List\" Permission row in Role Editor",
+            "line": 837,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 624250281
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 838,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2127456802
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"User\" Permissions in Role Editor",
+            "line": 841,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1161597577
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can View User List\" on Filter Permissions in Role Editor",
+            "line": 842,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1456222716
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can view User List\" Permission row in Role Editor",
+            "line": 844,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 490373838
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 845,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2151628280
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 847,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 493488393
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 848,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2679993280
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1294308
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-40\" (BB-624) (Permission CanResetUsersPasswords): Unselected permission \"Can Reset Users Passwords\" can still add password to user.",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-40\"-(bb-624)-(permission-canresetuserspasswords):-unselected-permission-\"can-reset-users-passwords\"-can-still-add-password-to-user.",
+        "line": 853,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-40",
+            "line": 852
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 15146563
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8517182512
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 16,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6919580550
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 17,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1241933778
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 18,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1423634722
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 736552345
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 854,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2161135552
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 855,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 407496144
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3  \"Basic Role-No Permissions in Role List\"",
+            "line": 856,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 990290303
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 857,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 619589310
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"User\" Permissions in Role Editor",
+            "line": 859,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1632918492
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can Add/Edit Users\" on Filter Permissions in Role Editor",
+            "line": 860,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1825585000
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can Add/Edit Users\" Permission row in Role Editor",
+            "line": 861,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 452900778
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 862,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2409798715
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can View Other Users\" on Filter Permissions in Role Editor",
+            "line": 864,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1445916061
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can View Other Users\" Permission row in Role Editor",
+            "line": 865,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 443441753
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 866,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1816150847
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can View User List\" on Filter Permissions in Role Editor",
+            "line": 868,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1646537227
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can View User List\" Permission row in Role Editor",
+            "line": 869,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 483466119
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 870,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 581046697
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 871,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2641026963
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 873,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6705244041
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user2@example.com in Login",
+            "line": 874,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1415728755
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 875,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1340948040
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 876,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 570325289
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 877,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2656635809
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 878,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 637592602
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Status Filter",
+            "line": 879,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1686720980
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List user3@example.com in User List",
+            "line": 880,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1552278500
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"user3@example.com in User List\"",
+            "line": 881,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 593142426
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in User List\"",
+            "line": 882,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 550167061
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see \"NewPassword\" \"Textbox\" in Edit Profile",
+            "line": 883,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 101917757
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 885,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7253348419
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 886,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1659765600
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 887,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1097143174
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 888,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 635109029
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 889,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2061175888
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 890,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 468094242
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3  \"Basic Role-No Permissions in Role List\"",
+            "line": 891,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 840691114
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 892,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 509031086
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"User\" Permissions in Role Editor",
+            "line": 894,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1942005261
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can Reset Users Passwords\" on Filter Permissions in Role Editor",
+            "line": 895,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1384695091
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can Reset Users Passwords\" Permission row in Role Editor",
+            "line": 896,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 764058027
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 897,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2385313119
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 898,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 361817629
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 899,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2540843696
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 901,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6634949602
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user2@example.com in Login",
+            "line": 902,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1456519488
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 903,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1369627699
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 904,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 545980928
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 905,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2213570517
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 906,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 466500175
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Status Filter",
+            "line": 907,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1787656233
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List user3@example.com in User List",
+            "line": 908,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1429523492
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"user3@example.com in User List\"",
+            "line": 909,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 777340152
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in User List\"",
+            "line": 910,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 728263782
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my new Password Password1 in Form",
+            "line": 911,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1430973914
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 913,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7213951001
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 914,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1429941930
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 915,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1604527372
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 916,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 534016094
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 917,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2143849189
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 918,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 535205733
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 3  \"Basic Role-No Permissions in Role List\"",
+            "line": 919,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 823954237
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit from Gear Icon \"in Role List\"",
+            "line": 920,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 567483151
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By Group dropdown \"User\" Permissions in Role Editor",
+            "line": 922,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2056609200
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can Add/Edit Users\" on Filter Permissions in Role Editor",
+            "line": 923,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1671464052
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can Add/Edit Users\" Permission row in Role Editor",
+            "line": 924,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 642546779
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 925,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2434546789
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can View Other Users\" on Filter Permissions in Role Editor",
+            "line": 927,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1337068559
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can View Other Users\" Permission row in Role Editor",
+            "line": 928,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 644447555
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 929,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2164444529
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can Reset Users Passwords\" on Filter Permissions in Role Editor",
+            "line": 931,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1313138878
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can Reset Users Passwords\" Permission row in Role Editor",
+            "line": 932,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 627304636
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 933,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2241175511
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter \"Can View User List\" on Filter Permissions in Role Editor",
+            "line": 935,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2055738145
+            },
+            "match": {}
+          },
+          {
+            "name": "I click checkbox  \"1\" \"Can View User List\" Permission row in Role Editor",
+            "line": 936,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 403030817
+            },
+            "match": {}
+          },
+          {
+            "name": "I clear text box selected \"FilterPermissions\" in Role Editor",
+            "line": 937,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2563318947
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Role Editor",
+            "line": 938,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 533033381
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"Role successfully updated\" displayed on \"EditRoles\" popup",
+            "line": 939,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2436919327
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1117998
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-41\" (BB-471) Gray out \"Active Status\" in \"View\" user mode. (make sure is not editable)",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-41\"-(bb-471)-gray-out-\"active-status\"-in-\"view\"-user-mode.-(make-sure-is-not-editable)",
+        "line": 942,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-41",
+            "line": 941
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 12510447
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8740213160
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 16,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6396885696
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 17,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1514228327
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 18,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1766968112
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 599522315
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 943,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2422802627
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 944,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 715295260
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Status Filter",
+            "line": 945,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1910304216
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List user3@example.com in User List",
+            "line": 946,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1827410022
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"user3@example.com in User List\"",
+            "line": 947,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 833717210
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 1 View from Gear Icon in User List",
+            "line": 948,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 736355708
+            },
+            "match": {}
+          },
+          {
+            "name": "I click User Active checkbox",
+            "line": 949,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1042107684
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see on User Active checkbox inactive",
+            "line": 950,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 348804272
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 951,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1966974979
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 952,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 753265720
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 466125
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-42\" (BB-348) Using basic ULR will load Dashboard instead of Login page.",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-42\"-(bb-348)-using-basic-ulr-will-load-dashboard-instead-of-login-page.",
+        "line": 955,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-42",
+            "line": 954
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4257294
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8580047247
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 16,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 134649485
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 17,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1247632815
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 18,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1277595205
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 661768948
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 956,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3213345098
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 957,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 472199386
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com\"",
+            "line": 958,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6634616526
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 960,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4128818077
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 515711
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TestCases_A-43\" (BB-254) Using URL directory bypass Login process",
+        "id": "\"Verify-that-this-bugs-dont-return-to-the-application.\";\"@testcases_a-43\"-(bb-254)-using-url-directory-bypass-login-process",
+        "line": 965,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TestCases_A-43",
+            "line": 964
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3982686
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 14,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8408451969
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 16,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 106584610
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 17,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1321923183
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 18,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1527073264
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 19,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 667536974
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 966,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3086161980
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 967,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 403684802
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/dashboard\"",
+            "line": 969,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6686514325
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 970,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4094508589
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/role/list\"",
+            "line": 974,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6360406388
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 975,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4056436640
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/role\"",
+            "line": 976,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6586492917
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 977,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4062130331
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/role/2\"",
+            "line": 978,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6481233754
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 979,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4226037945
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/role/2?edit=true\"",
+            "line": 980,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6414642885
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 981,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4089580840
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/user/list\"",
+            "line": 991,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6455754431
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 992,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4058546739
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/user\"",
+            "line": 993,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6592018614
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 994,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4079051609
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/user/6\"",
+            "line": 995,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6355836135
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 996,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4122307305
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/user/6?edit=true\"",
+            "line": 997,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6520892216
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 998,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4149944027
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/settings\"",
+            "line": 999,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6288565869
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 1000,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4061119773
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/segments/list\"",
+            "line": 1012,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6584568616
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 1013,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4089243048
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/segments\"",
+            "line": 1014,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 6551267202
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see that I am in \"full\" \"qa-autobahn.blackbookcloud.com/login\" URL",
+            "line": 1015,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 4066867432
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 424217
+            },
+            "match": {}
+          }
+        ]
+      }
+    ]
+  }
+]

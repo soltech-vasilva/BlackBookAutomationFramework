@@ -22,9 +22,9 @@ var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_Automa
 var VerifyErrorMessage = function VerifyErrorMessage(){
 
     VerifyErrorMessage.prototype.ExpectTextEqualsTo = function(elementToCheck, compareValuesString, success, failure){
-        return page.executeSequence([browser.driver.wait(elementToCheck.getText()).then((Text)=>{
+        return page.executeSequence([elementToCheck.getText().then((Text)=>{
             if (Text.trim() == compareValuesString) {
-                page.clickButton(elementToCheck, protractorConfig.config.WaitTime, success);
+                success();
             }
             else {
                 console.log('Text: |'+Text+'| is not equal to compareValuesString: |'+ compareValuesString+'|');
@@ -38,7 +38,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     VerifyErrorMessage.prototype.AssertElementsToDisplay = function (isElementPresent, elementToCheck, compareValuesString, consoleErrorMessageDisplay , success, failure ) {
 
         if (isElementPresent == true) {
-            page.executeSequence([ browser.driver.wait(VerifyErrorMessage.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure))]).then(()=>{});
+            return  page.executeSequence([VerifyErrorMessage.prototype.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure)]).then(()=>{});
         }
         else {
             console.log(consoleErrorMessageDisplay);
@@ -93,6 +93,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     };
 
     VerifyErrorMessage.prototype.Verify_ErrorMessageToDisplay_UserProfile = function (str_TextboxName , str_VerifyErrorName, FilledOrEmptyField) {
+
         return new Promise ((success, failure)=> {
             var URL = BB_loginRepo.BlackBookUrl+'/user';
              URL = URL.toString().split("://");

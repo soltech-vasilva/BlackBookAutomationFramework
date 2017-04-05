@@ -27,20 +27,14 @@ Feature:  "Add a new User Profile"
   Background:
 
     Given I enter BlackBook Login Website
-      And I wait
-         #BUG ADDED THIS TO CONTINUE
-         ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
-      #And I reload page "https://qa-autobahn.blackbookcloud.com/login"
-      And I reload page "https://autobahn.blackbookcloud.com/login"
-      And I wait
+     #ADDED THIS TO CONTINUE TEST CASES
+      And I reload LogIn Page
       And I enter my user email address user1@example.com in Login
       And I enter my Password Password1 in Login
       And I click Login Button
-      And I wait
       And I click on Admin Tab
       And I click on Users submenu from Admin Tab
       And I click on New User Button in User List
-      And I wait
 
 #####################################################################################################################
 #                                             Test cases A-1,A-2                                                    #
@@ -61,14 +55,12 @@ Feature:  "Add a new User Profile"
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
     And I enter Filter Roles search "Administrators" in Edit User Profile
-    And I click checkbox User's Roles "Administrators"
+    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
       Then I should not see in "userrole" errors displayed
     And I click on Save button in Edit User Profile
       Then I should see "User Creation Successful" displayed on "UserList" popup
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName     | emailAddress                |phoneNumber    | newPassWord | confirmNewPassWord |
@@ -90,15 +82,12 @@ Feature:  "Add a new User Profile"
       Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
-    And I click checkbox User's Roles "Administrators"
+    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
       Then I should not see in "userrole" errors displayed
-    And I wait
     And I click on Save button in Edit User Profile
     Then I should see "Username must not exist" displayed on "UserList" popup
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName       | lastName       | emailAddress                 |phoneNumber    | newPassWord | confirmNewPassWord |
@@ -123,13 +112,11 @@ Feature:  "Add a new User Profile"
       Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
-    And I click checkbox User's Roles "Administrators"
+    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
       Then I should not see in "userrole" errors displayed
     When I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName     | emailAddress              |phoneNumber    | newPassWord | confirmNewPassWord |
@@ -197,10 +184,8 @@ Feature:  "Add a new User Profile"
     And I enter my new Password <newPassWord> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName       | lastName     | emailAddress               | phoneNumber   |newPassWord  | confirmNewPassWord |
@@ -226,10 +211,8 @@ Feature:  "Add a new User Profile"
     And I enter my new Password <newPassWord> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       |   firstName       | lastName     | emailAddress               | phoneNumber   |newPassWord  | confirmNewPassWord |
@@ -255,10 +238,8 @@ Feature:  "Add a new User Profile"
       But I enter "a different Confirm New Password from New Password"
       Then I should see "confirmNewPassWord" message "Passwords do not match" displayed for this "filled" field
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName       | lastName     | emailAddress               | phoneNumber      |newPassWord    | confirmNewPassWord   |
@@ -282,10 +263,8 @@ Feature:  "Add a new User Profile"
       But I enter "same New Password into Confirm New Password"
       Then I should not see in "confirmNewPassWord" errors displayed
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName       | lastName     | emailAddress               | phoneNumber      |newPassWord    | confirmNewPassWord   |
@@ -318,10 +297,8 @@ Feature:  "Add a new User Profile"
     But I enter "or check nothing to User Roles"
       Then I should see "userrole" message "Required" displayed for this "unchecked" field
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   | newPassWord    | confirmNewPassWord   |
@@ -340,10 +317,8 @@ Feature:  "Add a new User Profile"
     And I enter my new Password <newPassWord> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -362,10 +337,8 @@ Feature:  "Add a new User Profile"
     And I enter my new Password <newPassWord> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -384,10 +357,8 @@ Feature:  "Add a new User Profile"
     And I enter my new Password <newPassWord> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -406,10 +377,8 @@ Feature:  "Add a new User Profile"
       Then I should see "newPassWord" message "Required" displayed for this "empty" field
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -430,10 +399,8 @@ Feature:  "Add a new User Profile"
       Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
       Then I should see "confirmNewPassWord" message "Passwords do not match" displayed for this "empty" field
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -459,10 +426,8 @@ Feature:  "Add a new User Profile"
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then  I should not see in "confirmNewPassWord" errors displayed
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord             | confirmNewPassWord   |
@@ -480,10 +445,8 @@ Feature:  "Add a new User Profile"
     But I enter "or check nothing to User Roles"
       Then I should see "userrole" message "Required" displayed for this "unchecked" field
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |

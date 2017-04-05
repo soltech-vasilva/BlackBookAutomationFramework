@@ -19,10 +19,9 @@ var BB_Menu = function BB_Menu() {
 
         return new Promise((success, failure)=> {
             page.executeSequence([page.clickElement(BB_menuRepo.Select_Element_ProfileButton, protractorConfig.config.WaitTime),
-                browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform()
-            ]).then(() => {
-                success();
-            });
+                browser.driver.sleep(1000),
+                browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform().then(()=>{success();})
+            ]).then(() => {});
         });
 
         // return new Promise((success, failure)=> {
@@ -68,10 +67,8 @@ var BB_Menu = function BB_Menu() {
     BB_Menu.prototype.Click_AdminTab = function () {
         return new Promise((success, failure) => {
             page.executeSequence([page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
-                browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform()
-            ]).then(() => {
-                success();
-            });
+                browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform().then(()=>{  success();})
+            ]).then(() => {});
         });
 
         // //TODO EXPERIMENT FOR BUTTONS FAIL PASS

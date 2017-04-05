@@ -76,8 +76,7 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.Click_SaveButton_RoleEditor = function () {
 
         return new Promise((success, failure) => {
-            page.executeSequence([page.clickButton(BB_editRolesRepo.Select_Element_Save_button,protractorConfig.config.WaitTime, success)
-            ]).then(()=>{});
+            page.clickButton(BB_editRolesRepo.Select_Element_Save_button,protractorConfig.config.WaitTime, success);
         });
 
         // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Save_button), protractorConfig.config.WaitTime);
@@ -111,12 +110,15 @@ var BB_EditRoles = function BB_EditRoles() {
     };
 
     BB_EditRoles.prototype.Click_X_CloseMessagePopup_RoleEditor = function () {
-        browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_X_button_MessagePopup), protractorConfig.config.WaitTime);
         return new Promise((success, failure) => {
-            BB_editRolesRepo.Select_Element_X_button_MessagePopup.click().then(() => {
-                success();
-            });
+            page.clickButton(BB_editRolesRepo.Select_Element_SuccessMessage_Popup_EditRoles, protractorConfig.config.WaitTime, success);
         });
+        // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_X_button_MessagePopup), protractorConfig.config.WaitTime);
+        // return new Promise((success, failure) => {
+        //     BB_editRolesRepo.Select_Element_X_button_MessagePopup.click().then(() => {
+        //         success();
+        //     });
+        // });
     };
 
     BB_EditRoles.prototype.Click_AddNamePermissionCheckbox_RoleEditor = function (permissionName) {
@@ -270,6 +272,7 @@ var BB_EditRoles = function BB_EditRoles() {
     };
 
     BB_EditRoles.prototype.Verify_RoleMarketValue_Dropdownbox_RoleEditor = function (roleMarketSelection) {
+
 
         return new Promise((success, failure) => {
             page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_RoleMarketDropdown, protractorConfig.config.WaitTime),

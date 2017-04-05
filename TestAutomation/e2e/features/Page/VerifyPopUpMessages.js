@@ -73,11 +73,10 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
                         }
                         else {
                             console.log('NO user/list');
-                            page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Element_ErrorMessage_Popup, protractorConfig.config.WaitTime),
+                            page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Xpath_ErrorMessage_Popup, protractorConfig.config.WaitTime),
                                 browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ErrorMessage_Popup).then((isPresente) => {
-                                    verifyErrorMessage.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ErrorMessage_Popup, compareValuesString, 'It is not showing any message', success, failure);
-                                })]).then(() => {
-                            });
+                                    verifyErrorMessage.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Xpath_ErrorMessage_Popup, compareValuesString, 'It is not showing any message', success, failure);
+                                })]).then(() => {});
 
                             // browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ErrorMessage_Popup).then((isPresente) => {
                             //     verifyErrorMessage.AssertElementsToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ErrorMessage_Popup, compareValuesString, 'It is not showing any message', success, failure);

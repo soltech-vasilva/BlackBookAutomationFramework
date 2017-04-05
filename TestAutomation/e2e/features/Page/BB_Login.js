@@ -36,8 +36,8 @@ var BB_Login = function BB_Login() {
 
         return new Promise((success, failure) => {
             page.executeSequence([page.setResolution(protractorConfig.config.width, protractorConfig.config.height),
-                page.openUrl(true, BB_loginRepo.BlackBookUrl, 4000)
-            ]).then(()=>{ success();});
+                page.openUrl(true, BB_loginRepo.BlackBookUrl, 4000).then(()=>{success();})
+            ]).then(()=>{});
         });
     };
 

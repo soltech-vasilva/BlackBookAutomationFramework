@@ -12,20 +12,14 @@ Feature:  "Add a new User Profile"
   Background:
 
     Given I enter BlackBook Login Website
-    And I wait
-         #BUG ADDED THIS TO CONTINUE
-         ## bug that bypasses login happens only in desktop catches issues (it thinks is login) , browserstack works fine
-    #And I reload page "https://qa-autobahn.blackbookcloud.com/login"
-    And I reload page "https://autobahn.blackbookcloud.com/login"
-    And I wait
+    #ADDED THIS TO CONTINUE TEST CASES
+    And I reload LogIn Page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
-    And I wait
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
     And I click on New User Button in User List
-    And I wait
 
 #####################################################################################################################
 #                                             Test cases A-1                                                          #
@@ -45,15 +39,12 @@ Feature:  "Add a new User Profile"
       Then I should not see in "newPassWord" errors displayed
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then I should not see in "confirmNewPassWord" errors displayed
-    #add refactoring
-    And I click checkbox User's Roles "Administrators"
-      Then I should not see in "userrole" errors displayed
+    And I click checkbox User's Roles "Administrators" "in Add New User"
+       Then I should not see in "userrole" errors displayed
     And I click on Save button in Edit User Profile
       Then I should see "User Creation Successful" displayed on "UserList" popup
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName     | emailAddress                |phoneNumber    | newPassWord | confirmNewPassWord |

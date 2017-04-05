@@ -129,7 +129,7 @@ var BB_UserList = function BB_UserList() {
         var index = parseInt(numberElementToSelect) - 1;
         //console.log('restando gear index');
         return new Promise((success, failure)=> {
-            page.executeSequence([page.clickButton(BB_userListRepo.Select_Element_EditGeardIcon.get(index), protractorConfig.config.WaitTime, success)]).then(()=>{});
+            page.clickButton(BB_userListRepo.Select_Element_EditGeardIcon.get(index), protractorConfig.config.WaitTime, success);
         });
 
         // var index = parseInt(numberElementToSelect) - 1;
@@ -166,7 +166,6 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.Click_Gear_View_Submenu = function (rowNumber) {
         return new Promise((success, failure) => {
-            //TODO aqui modifique
            // page.executeSequence([
             page.clickButton(BB_userListRepo.Select_Element_Gear_View_Submenu(rowNumber),protractorConfig.config.WaitTime,success);
             //]).then(() => {});
