@@ -277,6 +277,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click checkbox Permission "([^"]*)" in Role Editor$/, function (permissionName ) {
+        //todo refactored
         return   BB_editRoles.Click_AddNamePermissionCheckbox_RoleEditor(permissionName);
     });
 
@@ -311,6 +312,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     //VERIFY
     this.Then(/^I should see user's "([^"]*)" displayed in screen with value "([^"]*)"$/, function (textboxName, valueCompare) {
+        //todo refactored
         return verify_UserInformation.Verify_UserInformation(textboxName, valueCompare);
     });
 
@@ -615,6 +617,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.When(/^I click on Gear Icons (.*) inactive "([^"]*)"$/, function (arg1, arg2) {
+        //todo refactored
         return new Promise((success, failure)=> {
             page.clickButton( BB_userListRepo.Select_Element_GeardIcon_Inactive, protractorConfig.config.WaitTime, success);
         });
@@ -1106,32 +1109,35 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click (.*) View from Gear Icon in Role List$/, function (rowNumber) {
-        return new Promise((success, failure)=> {
-            //var number = parseInt(rowNumber);
-            //console.log('number:'+number);
-            //console.log('before View gear icon');
-            //page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element.all(by.css('div.action-menu-link')).get(number)), protractorConfig.config.WaitTime), /*, element.all(by.css('div.action-menu-link')).get(0).getText().then((text)=>{console.log('text: '+text);})*/
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber+']/div[3]/action-icon/div/div/ul/li[1]/div'))), protractorConfig.config.WaitTime), /*, element.all(by.css('div.action-menu-link')).get(0).getText().then((text)=>{console.log('text: '+text);})*/
+        //todo refactored
+       return BB_roleList.Click_Gear_View_Submenu(rowNumber);
 
-                element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber+']/div[3]/action-icon/div/div/ul/li[1]/div')).click()/*, keyStrokesRepo.ENTER(), browser.driver.sleep(1000)*/]).then(() => {
-
-
-                success();
-                //console.log('Pass View gear icon');
-            });
-        });
+        // return new Promise((success, failure)=> {
+        //     //var number = parseInt(rowNumber);
+        //     //console.log('number:'+number);
+        //     //console.log('before View gear icon');
+        //     //page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element.all(by.css('div.action-menu-link')).get(number)), protractorConfig.config.WaitTime), /*, element.all(by.css('div.action-menu-link')).get(0).getText().then((text)=>{console.log('text: '+text);})*/
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber+']/div[3]/action-icon/div/div/ul/li[1]/div'))), protractorConfig.config.WaitTime), /*, element.all(by.css('div.action-menu-link')).get(0).getText().then((text)=>{console.log('text: '+text);})*/
+        //
+        //         element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+rowNumber+']/div[3]/action-icon/div/div/ul/li[1]/div')).click()/*, keyStrokesRepo.ENTER(), browser.driver.sleep(1000)*/]).then(() => {
+        //
+        //
+        //         success();
+        //         //console.log('Pass View gear icon');
+        //     });
+        // });
     });
 
     this.Then(/^I should not see "([^"]*)" Button in AdminTab$/, function (buttonName) {
         return new Promise((success, failure)=> {
-            browser.driver.wait(protractor.ExpectedConditions.stalenessOf(element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a'))), 2000).then(()=>{success();});
+            page.verifyElementNotInPage(BB_menuRepo.Select_Element_SettingsSubMenuButton, 4000, success);
         });
     });
 
     this.Given(/^I click on Settings submenu from Admin Tab$/, function () {
+        //todo refactored
         return new Promise((success, failure)=> {
-            page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a')), protractorConfig.config.WaitTime),
-                element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a')).click()]).then(()=>{success();});
+            BB_menu.Click_Settings_Submenu();
         });
     });
 
@@ -1141,8 +1147,10 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should not see "([^"]*)" "([^"]*)" in Edit Profile$/, function (arg1, arg2) {
+        //todo refactored
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox), protractorConfig.config.WaitTime)]).then(()=>{success()});
+            page.verifyElementNotInPage(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, 4000, success);
+           // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox), protractorConfig.config.WaitTime)]).then(()=>{success()});
         });
     });
 

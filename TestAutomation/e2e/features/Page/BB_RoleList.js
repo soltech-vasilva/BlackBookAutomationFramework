@@ -20,5 +20,13 @@ var BB_RoleList = function BB_RoleList() {
         });
     };
 
+    BB_RoleList.prototype.Click_Gear_View_Submenu = function (rowNumber) {
+
+        return new Promise((success, failure) => {
+
+            page.clickButton(BB_roleListRepo.Select_Element_Gear_View_Submenu(rowNumber),protractorConfig.config.WaitTime,success);
+        });
+    };
+
 };
 module.exports = new BB_RoleList();

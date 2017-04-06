@@ -118,6 +118,12 @@ var Page_Objects = function Page_Objects () {
         });
     };
 
+    page.verifyElementNotInPage = function ( element ,WaitTime, success) {
+        page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(element), WaitTime)])
+            .then(() => {
+                success();
+            });
+    };
     /**
      * Give focus to an element (just a descriptive alias for a click)
      * @param {WebElement} element
@@ -165,9 +171,13 @@ var Page_Objects = function Page_Objects () {
                 if (str_SendValue != '') {
                     page.executeSequence([
                         element.sendKeys(str_SendValue),
-                        page.VerifyValueEntered_RetypeValue(element, str_SendValue)]).then(()=>{});
+                        page.VerifyValueEntered_RetypeValue(element, str_SendValue)]).then(()=>{page.focus(elementClearFocus, success);});
                 }
-            })]).then(()=>{page.focus(elementClearFocus, success);});
+                else
+                {
+                    page.focus(elementClearFocus, success);
+                }
+            })]).then(()=>{});
     };
 
     page.VerifyValueEntered_RetypeValue = function (element,  ValueCompare ) {

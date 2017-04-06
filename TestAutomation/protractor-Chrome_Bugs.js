@@ -26,7 +26,7 @@ exports.config = {
     // },
 
     //BrowserStack
-    seleniumAddress: 'http://hub.browserstack.com/wd/hub',
+    'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 
     //Settings for the local machine (Run "webdriver-manager start" from any directory  + calls inside capabilities)
     //Selenium

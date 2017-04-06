@@ -131,5 +131,18 @@ var BB_Menu = function BB_Menu() {
         //     });
         // });
     };
+
+    BB_Menu.prototype.Click_Settings_Submenu = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_menuRepo.Select_Element_SettingsSubMenuButton, protractorConfig.config.WaitTime, success);
+        });
+
+        // return new Promise((success, failure) => {
+        //     page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_menuRepo.Select_Element_RolesSubMenuButton), protractorConfig.config.WaitTime),
+        //         BB_menuRepo.Select_Element_RolesSubMenuButton.click()]).then(() => {
+        //         success();
+        //     });
+        // });
+    };
 };
 module.exports = new BB_Menu();

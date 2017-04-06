@@ -16,6 +16,7 @@ var BB_MenuRepo = function BB_MenuRepo () {
     //Components SubMenu Button for Admin Tab
     BB_MenuRepo.prototype.Select_Element_UsersSubMenuButton = element(by.css('a[href="/user/list"]'));
     BB_MenuRepo.prototype.Select_Element_RolesSubMenuButton = element(by.css('a[href="/role/list"]'));
+    BB_MenuRepo.prototype.Select_Element_SettingsSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/ul/li[3]/a'));
 
     //Components Button
    //BB_MenuRepo.prototype.Select_Element_ProfileButton = element(by.xpath('//*[@id="page-box"]/header/div[3]'));

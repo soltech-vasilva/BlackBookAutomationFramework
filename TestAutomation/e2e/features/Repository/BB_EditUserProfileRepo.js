@@ -14,7 +14,9 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Element_FirstNameTextbox  = element(by.css('input[placeholder="First Name"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_LastNameTextbox = element(by.css('input[placeholder="Last Name"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_EmailAddressTextbox = element(by.css('input[placeholder="Email"]'));
+
     BB_EditUserProfileRepo.prototype.Select_Element_PhoneNumberTextbox = element(by.css('input[placeholder="Phone Number"]'));
+    
     BB_EditUserProfileRepo.prototype.Select_Element_NewPasswordTextbox = element(by.css('input[placeholder="New Password"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_ConfirmNewPasswordTextbox = element(by.css('input[placeholder="Confirm New Password"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_PreviousPasswordTextbox = element(by.css('input[placeholder="Previous Password"]'));
