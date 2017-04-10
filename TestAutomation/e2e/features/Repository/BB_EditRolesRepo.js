@@ -16,10 +16,14 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
 //Components
     BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleList  =    element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button'));
     BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleProfile  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button'));
+    BB_EditRolesRepo.prototype.Select_Element_Edit_button  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button'));
     BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.css('button.button.green-btn'));
     BB_EditRolesRepo.prototype.Select_Element_Cancel_button  = element(by.buttonText('Cancel'));
     BB_EditRolesRepo.prototype.Select_Element_Reset_button  = element(by.css('button.button.yellow-btn'));
-    BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.css('button.button.red-btn'));
+
+    BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button[2]'));
+
+    BB_EditRolesRepo.prototype.Select_Element_Cancel_button_PopMenu  = element(by.css('button.button.red-btn'));
     BB_EditRolesRepo.prototype.Select_Element_X_button_MessagePopup  = element(by.css('span.pull-right.clear-btn'));
     BB_EditRolesRepo.prototype.Select_Element_FilterByGroupDropdown  = element.all(by.css('select[name="filterGroupTerm"]')).get(0);
     BB_EditRolesRepo.prototype.Select_Element_FilterByStatusDropdown  = element.all(by.css('select[name="filterGroupTerm"]')).get(1);
@@ -55,5 +59,7 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     BB_EditRolesRepo.prototype.Select_Element_ERRORMESSAGE_RoleName_Require = element( this.Select_xpath_ERRORMESSAGE_RoleName_Require);
     BB_EditRolesRepo.prototype.Select_Element_ERRORMESSAGE_RoleName_SpacesAreInvalidCharacters = element( this.Select_xpath_ERRORMESSAGE_RoleName_SpacesAreInvalidCharacters);
     BB_EditRolesRepo.prototype.Select_Element_ERRORMESSAGE_RoleMarket_Require = element( this.Select_xpath_ERRORMESSAGE_RoleMarket_Require);
+
+
 };
 module.exports = new BB_EditRolesRepo();

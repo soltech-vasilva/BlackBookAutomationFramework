@@ -41,10 +41,8 @@ Feature:  "Add a new User Profile"
     And I enter Filter Roles search "Administrators" in Edit User Profile
     And I click checkbox User's Roles "Administrators" "in Edit User Profile"
       Then I should not see in "userrole" errors displayed
-    #And I wait
     And I click on Save button in Edit User Profile
       Then I should see "User Creation Successful" displayed on "UserList" popup
-    #And I wait
 
 
     Examples:

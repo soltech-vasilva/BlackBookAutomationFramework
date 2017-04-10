@@ -29,5 +29,7 @@ var BB_MenuRepo = function BB_MenuRepo () {
     //BB_MenuRepo.prototype.Select_Element_LogOutSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[3]/ul/li[1]'));
     BB_MenuRepo.prototype.Select_Element_LogOutSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[2]/ul/li[1]/a'));
 
+    BB_MenuRepo.prototype.Select_Element_HomeTab = element(by.linkText('Home'));
+
 };
 module.exports = new BB_MenuRepo();

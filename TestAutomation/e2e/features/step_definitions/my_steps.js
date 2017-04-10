@@ -869,9 +869,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return new Promise((success, failure) => {
             switch (buttonName.toString().toLowerCase()) {
                 case 'cancel':
-                    page.clickButton(BB_editRolesRepo.Select_Element_Delete_button ,protractorConfig.config.WaitTime, success);
-                    // page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Delete_button ,protractorConfig.config.WaitTime)),
-                    //     BB_editRolesRepo.Select_Element_Delete_button.click()]).then(() => {
+                    page.clickButton(BB_editRolesRepo.Select_Element_Cancel_button_PopMenu ,protractorConfig.config.WaitTime, success);
+                    // page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Cancel_button_PopMenu ,protractorConfig.config.WaitTime)),
+                    //     BB_editRolesRepo.Select_Element_Cancel_button_PopMenu.click()]).then(() => {
                     //     success();
                     // });
                     break;
@@ -945,34 +945,26 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click on Home Tab$/, function () {
-        return new Promise((success, failure)=> {
-            page.executeSequence([page.waitForElementTobePresent(element(by.linkText('Home')),protractorConfig.config.WaitTime),
-            element(by.linkText('Home')).click()]).then(()=>{ success();});
+        //todo refactored
+        return new Promise((success, failure) => {
+            page.clickButton(BB_menuRepo.Select_Element_HomeTab, protractorConfig.config.WaitTime, success);
+            //     page.executeSequence([page.waitForElementTobePresent(BB_menuRepo.Select_Element_HomeTab,protractorConfig.config.WaitTime),
+            //         BB_menuRepo.Select_Element_HomeTab.click()]).then(()=>{ success();});
+            // });
         });
     });
-
 
     this.Given(/^I click Refresh$/, function () {
-        return new Promise((success, failure)=> {
-            browser.refresh();
-            success();
-        });
-    });
-
-    this.When(/^I check heading from Grid$/, function () {
-        return new Promise((success, failure)=> {
-            page.executeSequence([page.waitForElementTobePresent(element(by.id('center')), protractorConfig.config.WaitTime),
-            //return element(by.css('div.ag-header-container')).getText().then(function(arr) {
-            //return element(by.css('div.ag-header')).getText().then(function(arr) {
-            element(by.id('center')).getText().then(function (arr) {
-                //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
-                var headers = arr.split('/r');
-                console.log(headers[0]);
-            })]).then(()=>{success();});
+        //todo refactored
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.refresh(),
+                success()]).then(() => {
+            });
         });
     });
 
     this.Then(/^I should see Gear sub-menu options "([^"]*)"$/, function (arg) {
+        //todo refactored
         return new Promise((success, failure) => {
             page.executeSequence([BB_userListRepo.Select_Element_Gear_All_Submenu.getText().then(function (arr) {
                 //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
@@ -996,10 +988,8 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-
-
     this.Given(/^I click Forgot Password link$/, function () {
-
+        //todo refactored
         return BB_login.Click_ForgotPasswordLink();
 
         /// / return new Promise((success, failure)=> {
@@ -1009,7 +999,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I enter my email "([^"]*)" for Forgot Page$/, function (emailAddress) {
-
+        //todo refactored
         return BB_loginForgot.Enter_EmailAdress(emailAddress);
         // return new Promise((success, failure)=> {
         //      element(by.xpath('//*[@id="login-box"]/div/form/div[1]/input')).sendKeys(emailAddress);
@@ -1018,27 +1008,27 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Send Link button$/, function () {
-
+    //todo refactored
         return BB_loginForgot.Click_SendLinkButton();
         // return new Promise((success, failure)=> {
         //     page.executeSequence([ element(by.xpath('//*[@id="login-box"]/div/form/div[2]/div[1]/button')).click()]).then(()=>{ success();});
         // });
     });
 
-    this.Then(/^I should see message "([^"]*)" displayed$/, function (Message) {
-        // return new Promise((success, failure)=> {
-        //    page.executeSequence([ browser.driver.wait(BB_loginRepo.Select_Element_SuccessMessage_Popup_Login.getText()).then((GetText) => {
-        //         //console.log("GetText:"+GetText +" Message:"+Message);
-        //         if (GetText == Message) {
-        //             success();
-        //         }
-        //         else
-        //         {
-        //             failure();
-        //         }
-        //     })
-        //     ]).then(()=>{})});
-    });
+    // this.Then(/^I should see message "([^"]*)" displayed$/, function (Message) {
+    //     // return new Promise((success, failure)=> {
+    //     //    page.executeSequence([ browser.driver.wait(BB_loginRepo.Select_Element_SuccessMessage_Popup_Login.getText()).then((GetText) => {
+    //     //         //console.log("GetText:"+GetText +" Message:"+Message);
+    //     //         if (GetText == Message) {
+    //     //             success();
+    //     //         }
+    //     //         else
+    //     //         {
+    //     //             failure();
+    //     //         }
+    //     //     })
+    //     //     ]).then(()=>{})});
+    // });
 
 
 
@@ -1046,10 +1036,11 @@ var myBlackBookSteps = function myBlackBookSteps() {
     var numberofUsers = 0;
 
     this.Then(/^I should see \#of Users has increase value for Administration in Role List$/, function () {
+        //todo refactored
         return new Promise((success, failure)=> {
-            page.executeSequence([ page.waitForElementTobePresent(element.all(by.css('div[colid="users"]')).get(1), protractorConfig.config.WaitTime),
+            page.executeSequence([ page.waitForElementTobePresent(BB_roleListRepo.Select_Element_ColumnNumberOfUsers.get(1), protractorConfig.config.WaitTime),
 
-                element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue)=>{
+                BB_roleListRepo.Select_Element_ColumnNumberOfUsers.get(1).getText().then((currentValue)=>{
                console.log( currentValue);
                numberofUsers++;
 
@@ -1067,26 +1058,36 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I store value \#of Users displayed for Administration in Role List$/, function () {
-
+        //todo refactored
           return new Promise((success, failure)=> {
-              page.executeSequence([ page.waitForElementTobePresent(element.all(by.css('div[colid="users"]')).get(1), protractorConfig.config.WaitTime),
-                  element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue) => {
+              page.executeSequence([ page.waitForElementTobePresent(BB_roleListRepo.Select_Element_ColumnNumberOfUsers.get(1), protractorConfig.config.WaitTime),
+                  BB_roleListRepo.Select_Element_ColumnNumberOfUsers.get(1).getText().then((currentValue) => {
                       console.log(currentValue);
                       numberofUsers = currentValue;
                       success();
                   })]).then(()=>{});
           });
+
+          // return new Promise((success, failure)=> {
+          //     page.executeSequence([ page.waitForElementTobePresent(element.all(by.css('div[colid="users"]')).get(1), protractorConfig.config.WaitTime),
+          //         element.all(by.css('div[colid="users"]')).get(1).getText().then((currentValue) => {
+          //             console.log(currentValue);
+          //             numberofUsers = currentValue;
+          //             success();
+          //         })]).then(()=>{});
+          // });
     });
 
 
     this.Then(/^I should see user's Role "([^"]*)" in User List$/, function (userRole) {
-
+        //todo refactored
         return new Promise((success, failure) => {
-            page.executeSequence([page.waitForElementTobePresent(element(by.css('div.role-cell')), protractorConfig.config.WaitTime),
-                browser.isElementPresent(element(by.css('div.role-cell'))).then((isPresente) => {
-                    verifyErrorMessage.AssertElementsToDisplay(isPresente, element(by.css('div.role-cell')), userRole, 'It is not showing any message', success, failure);
-                })]).then(() => {
-            });
+            page.verifyMessageDisplay(BB_userListRepo.Select_Element_CellAdmin, userRole, protractorConfig.config.WaitTime,success, failure );
+            // page.executeSequence([page.waitForElementTobePresent(BB_userListRepo.Select_Element_CellAdmin, protractorConfig.config.WaitTime),
+            //     browser.isElementPresent(BB_userListRepo.Select_Element_CellAdmin).then((isPresente) => {
+            //         verifyErrorMessage.AssertElementsToDisplay(isPresente, BB_userListRepo.Select_Element_CellAdmin, userRole, 'It is not showing any message', success, failure);
+            //     })]).then(() => {
+            // });
         });
 
         // return new Promise((success, failure)=> {
@@ -1104,6 +1105,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
 
     this.Then(/^I should see "([^"]*)" display for Filter By Status in Role Editor$/, function (FilterByStatusName) {
+        //todo refactored
         return new Promise ((success, failure)=> {
             page.VerifyDropdownAttributeValue(BB_editRolesRepo.Select_Element_FilterByStatusDropdown,FilterByStatusName, success, failure ).then(()=>{});
             // page.executeSequence([page.getContent(BB_editRolesRepo.Select_Element_FilterByStatusDropdown).then((attributeValue) => {
@@ -1133,14 +1135,16 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
 
     this.Then(/^I should not see "([^"]*)" Button in User List$/, function (buttonName) {
+        //todo refactored
         return new Promise((success, failure)=> {
-        page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_userListRepo.Select_Element_NewUserButton), protractorConfig.config.WaitTime)]).then(()=>{ success();});
+            page.verifyElementNotInPage(BB_userListRepo.Select_Element_NewUserButton, 4000, success);
+        //page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(BB_userListRepo.Select_Element_NewUserButton), protractorConfig.config.WaitTime)]).then(()=>{ success();});
         });
     });
 
 
-
     this.Then(/^I should not see "([^"]*)" Button in AdminTab$/, function (buttonName) {
+        //todo refactored
         return new Promise((success, failure)=> {
             page.verifyElementNotInPage(BB_menuRepo.Select_Element_SettingsSubMenuButton, 4000, success);
         });
@@ -1150,6 +1154,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
 
     this.Then(/^I verify BlackBook "([^"]*)" page with Applitools$/, function (namePage) {
+        //todo refactored
         // return new Promise((success, failure)=> {
         //     page.executeSequence([ eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn)]).then(() => {
         //         success();
@@ -1164,12 +1169,14 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I click Edit Button in Edit Roles$/, function () {
+        //todo refactored
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button'))), protractorConfig.config.WaitTime),
-                element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button')).click()
-            ]).then(() => {
-                success();
-            });
+            page.clickButton(BB_editRolesRepo.Select_Element_Edit_button,protractorConfig.config.WaitTime, success );
+            // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Edit_button), protractorConfig.config.WaitTime),
+            //     BB_editRolesRepo.Select_Element_Edit_button.click()
+            // ]).then(() => {
+            //     success();
+            // });
         });
     });
 
@@ -1177,22 +1184,26 @@ var myBlackBookSteps = function myBlackBookSteps() {
     //     return BB_userList.Click_StatusFilter_All_Submenu();
     // });
 
-    this.Then(/^I click Active in submenu from Status FilterValue$/, function () {
-        return BB_userList.Click_StatusFilter_Active_Submenu();
-    });
+    // this.Then(/^I click Active in submenu from Status FilterValue$/, function () {
+    //     return BB_userList.Click_StatusFilter_Active_Submenu();
+    // });
 
 
 
     this.Then(/^I click on Delete button in Role Editor$/, function () {
+        //todo refactored
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button[2]'))), protractorConfig.config.WaitTime),
-                element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button[2]')).click()]).then(() => {
-                success();
-            });
+            page.clickButton(BB_editRolesRepo.Select_Element_Delete_button, protractorConfig.config.WaitTime,success );
+            //
+            // page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_editRolesRepo.Select_Element_Delete_button), protractorConfig.config.WaitTime),
+            //     BB_editRolesRepo.Select_Element_Delete_button.click()]).then(() => {
+            //     success();
+            // });
         });
     });
 
     this.Given(/^I re-enter the same user name and password$/, function () {
+        //todo refactored
         return page.executeSequence([
                 page.clickElement(BB_loginRepo.Select_Element_UserPasswordTextbox,protractorConfig.config.WaitTime ),
                 browser.driver.sleep(2000),
@@ -1202,6 +1213,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I add extra string "([^"]*)" to my "([^"]*)"$/, function (addString, TextboxName) {
+        //todo refactored
         return new Promise((success, failure)=> {
             var s = TextboxName;
             page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, protractorConfig.config.WaitTime),
@@ -1211,6 +1223,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I delete the amount "([^"]*)" characters from my "([^"]*)"$/, function (amountDeleted,TextboxName ) {
+        //todo refactored
         return new Promise((success, failure)=> {
             var s = TextboxName;
             var amount = parseInt(amountDeleted);
@@ -1228,41 +1241,57 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I should see in "([^"]*)" "([^"]*)"$/, function (ElementName, isEnableOrDisable) {
+        //todo refactored
         return new Promise((success, failure)=> {
             var s = ElementName;
             var a = isEnableOrDisable;
-            browser.driver.sleep(10000);
 
+            page.executeSequence([
             //return browser.wait(protractor.ExpectedConditions.elementToBeSelected( element(by.css('button[disabled=""]'))),3000);
             // return browser.wait(protractor.ExpectedConditions.elementToBeClickable( element(by.css('button[disabled=""]'))),3000);
-            browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(BB_editUserProfileRepo.Select_Element_SaveButton), protractorConfig.config.WaitTime);
-            success();
+            browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(BB_editUserProfileRepo.Select_Element_SaveButton), protractorConfig.config.WaitTime)]).then(()=>{success();});
             // return browser.wait(protractor.ExpectedConditions.elementToBeSelected(BB_editUserProfileRepo.Select_Element_SaveButton),3000);
         });
     });
 
-    this.Then(/^I click User Active checkbox "([^"]*)"$/, function (isEnableOrDisable) {
-        return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
-                element(by.css('span.checkbox-label')).click(),
-                browser.driver.sleep(1000),
-                //Si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
-                browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content')
-                    .then(function (data) {
-                        // console.log(data);
+    //TODO STILL NOT USED BUT SAVE FOR TEST CASES
+    // this.Then(/^I click User Active checkbox "([^"]*)"$/, function (isEnableOrDisable) {
+    //     return new Promise((success, failure) => {
+    //         page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
+    //             element(by.css('span.checkbox-label')).click(),
+    //             browser.driver.sleep(1000),
+    //             //Si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
+    //             browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content')
+    //                 .then(function (data) {
+    //                     // console.log(data);
+    //
+    //                     if (data == '""' && isEnableOrDisable == "Disable") {
+    //                         console.log("Disable");
+    //                         element(by.css('span.checkbox-label')).click();
+    //                     }
+    //                     if (data == 'none' && isEnableOrDisable == "Enable") {
+    //                         console.log("Enable");
+    //                         element(by.css('span.checkbox-label')).click();
+    //                     }
+    //
+    //                     success();
+    //                 })]);
+    //     });
+    // });
 
-                        if (data == '""' && isEnableOrDisable == "Disable") {
-                            console.log("Disable");
-                            element(by.css('span.checkbox-label')).click();
-                        }
-                        if (data == 'none' && isEnableOrDisable == "Enable") {
-                            console.log("Enable");
-                            element(by.css('span.checkbox-label')).click();
-                        }
+    //TODO STILL NOT USED BUT SAVE FOR TEST CASES
+    // this.When(/^I check heading from Grid$/, function () {
+    //     return new Promise((success, failure)=> {
+    //         page.executeSequence([page.waitForElementTobePresent(element(by.id('center')), protractorConfig.config.WaitTime),
+    //             //return element(by.css('div.ag-header-container')).getText().then(function(arr) {
+    //             //return element(by.css('div.ag-header')).getText().then(function(arr) {
+    //             element(by.id('center')).getText().then(function (arr) {
+    //                 //arr[0].evaluate('cat.id'); // This is a promise which resolves to the id.
+    //                 var headers = arr.split('/r');
+    //                 console.log(headers[0]);
+    //             })]).then(()=>{success();});
+    //     });
+    // });
 
-                        success();
-                    })]);
-        });
-    });
 };
 module.exports = myBlackBookSteps;

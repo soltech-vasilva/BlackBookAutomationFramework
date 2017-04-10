@@ -53,7 +53,7 @@ Feature:  "Verify each Role UI"
     And I click Reset Button in Edit Roles
       Then I verify BlackBook "Reset Administration Role" page with Applitools
     And I click Cancel Button from Edit Roles
-    Then I verify BlackBook "Role List" page with Applitools
+      Then I verify BlackBook "Role List" page with Applitools
     #USER
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
@@ -405,24 +405,18 @@ Examples:
     And I enter my Password <currentPassword> in Login
     And I click Login Button
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/dashboard" URL
-    #And I wait
     And I click on Home Tab
     And I click Refresh
-    #And I wait
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/dashboard" URL
       Then I verify BlackBook "Home" page with Applitools
     And I click on Home Tab
     And I click Avatar Image Button
     And I click My Profile sub menu from Avatar
-    #And I wait
     And I click Refresh
-    #And I wait
       Then I should see that I am in "part" "qa-autobahn.blackbookcloud.com/user" URL
       Then I verify BlackBook "User List" page with Applitools
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -435,7 +429,6 @@ Examples:
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
-    #And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
       Then I verify BlackBook "Role List" page with Applitools
@@ -445,45 +438,34 @@ Examples:
     And I enter Role Name "RoleName8"
       Then I verify BlackBook "-Require- is gone for fields in Add New Role" page with Applitools
     And I click Filter By Group dropdown "User" Permissions in Role Editor
-    #And I wait
     And I enter "view" on Filter Permissions in Role Editor
-    #And I wait
     And I click checkbox  "0" "User (Filter auto select in tree)" Permission row in Role Editor
       Then I verify BlackBook "Filter auto select in tree -View- 3 words" page with Applitools
     And I clear text box selected "FilterPermissions" in Role Editor
       Then I verify BlackBook "Filter auto select in tree -view- 3 word" page with Applitools
     #Enable User
-    #And I wait
     And I enter "user1@example.com" on Filter Users in Role Editor
-    #And I wait
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
       Then I verify BlackBook "Save RoleName8 Role" page with Applitools
-    #And I wait
     And I click on Gear Icon 6 "RoleName8 in Role List"
     And I click Delete from Gear Icon
       Then I verify BlackBook "Error Message: User are assigned to Role.." page with Applitools
-    #And I wait
     And I click on Gear Icon 6 "RoleName8 in Role List"
     And I click Edit from Gear Icon "in Role List"
       Then I verify BlackBook "Edit RoleName8 Role" page with Applitools
     #Didable User
-    #And I wait
     And I enter "user1@example.com" on Filter Users in Role Editor
-    #And I wait
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
       Then I verify BlackBook "Save RoleName8 Role message" page with Applitools
-    #And I wait
     And I click Edit Button in Edit Roles
     And I click on Delete button in Role Editor
       Then I verify BlackBook "Pop up:Are you sure you want to delete the role, RoleName8? This action can't be undone." page with Applitools
     And I click "Confirm" Button for modal warning message from Edit Roles
       Then I verify BlackBook "Role List" page with Applitools
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
   Examples:
   | currentEmailAddress             |   currentPassword  |
@@ -497,14 +479,11 @@ Examples:
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
-    #And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
-    #And I wait
       Then  I store value #of Users displayed for Administration in Role List
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    #And I wait
     And I click on New User Button in User List
      Then I verify BlackBook "Add New User Profile" page with Applitools
     When I enter my first name <firstName> in Form
@@ -522,29 +501,19 @@ Examples:
     And I enter Filter Roles search "Administrators" in Edit User Profile
     And I click checkbox User's Roles "Administrators" "in Edit User Profile"
       Then I verify BlackBook "New User -Form Fill-" page with Applitools
-    #And I wait
     And I click on Save button in Edit User Profile
       Then I should see "User Creation Successful" displayed on "UserList" popup
-    #And I wait
-    #And I click Status Filter
     And I enter Filter User List <emailAddress> in User List
-    #And I wait
       Then I should see user's Role "Administrators" in User List
-    #And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
-    #And I wait
       Then I should see #of Users has increase value for Administration in Role List
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
-    #And I wait
     And I enter my user email address admintestemail40@yopmail.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
-    #And I wait
     And I click Avatar Image Button
     And I click My Profile sub menu from Avatar
     And I click Edit Button in Edit User Profile
@@ -562,7 +531,6 @@ Examples:
     And I enter my email address admintestemail39@yopmail.com in Form
     And I clear text box selected "PhoneNumber" in User Profile
       Then I verify BlackBook "Edit User Profile -Update Form-" page with Applitools
-    #And I wait
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile admintestemail39@yopmail.com" page with Applitools
     And I click Edit Button in Edit User Profile
@@ -570,13 +538,10 @@ Examples:
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
     And I reload page "https://qa-autobahn.blackbookcloud.com/login"
-    #And I wait
     And I enter my user email address admintestemail39@yopmail.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
-    #And I wait
 
     Examples:
       | firstName      | lastName      | emailAddress                  |phoneNumber    | newPassWord | confirmNewPassWord |

@@ -12,7 +12,6 @@ Feature:  "Verify each Role UI"
   Given I enter BlackBook Login Website
    #ADDED THIS TO CONTINUE TEST CASES
     And I reload LogIn Page
-  #And I wait
 
 #######################################################################################################################
 #                                            T_Admin View All Only                                                    #
@@ -59,7 +58,6 @@ Feature:  "Verify each Role UI"
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
       #Then I verify BlackBook "Login" page with Applitools
-    #And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -110,7 +108,6 @@ Feature:  "Verify each Role UI"
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
       #Then I verify BlackBook "Login" page with Applitools
-    #And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -160,7 +157,6 @@ Feature:  "Verify each Role UI"
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
       #Then I verify BlackBook "Login" page with Applitools
-    #And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -209,7 +205,6 @@ Feature:  "Verify each Role UI"
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
       #Then I verify BlackBook "Login" page with Applitools
-    #And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
@@ -259,7 +254,6 @@ Feature:  "Verify each Role UI"
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
       #Then I verify BlackBook "Login" page with Applitools
-    #And I wait
 
     Examples:
            | currentEmailAddress             |   currentPassword  |
