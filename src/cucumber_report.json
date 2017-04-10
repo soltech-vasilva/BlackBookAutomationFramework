@@ -1,0 +1,1847 @@
+[
+  {
+    "id": "Enter-data-on-\"LOGIN\"-page",
+    "name": "Enter data on \"LOGIN\" page",
+    "description": "\nRules:\n-Verify that All inputs boxes are working and login correctly \"No ERROR\". (TC_Login_A)\n\nQuestion:\n-What happens if email entered is empty \"Display ERROR\"? Yes [TC_Login_B-1]\n-What happens if data entered on  email is bad \"Display ERROR\"? Yes [TC_Login_B-2]\n-What happens if data entered on  email is good and password is bad \"Display ERROR\"? Yes [TC_Login_B-3]\n-What happens if data user and password entered too many times \"6 time\" wrong \"Display ERROR\"? Yes [TC_Login_B-4]\n-What happens if password entered is empty \"Display ERROR\"? Yes [TC_Login_C]\n-What happens if User is Desactivated \"Display ERROR\"? YES [TC_Login_D]\n-What happens on successful log in (home page)? for now (TC_Login_A)\n-What happens if Password is Expired?\n\n-BUG: not loading the page correctly , I am adding reload page.",
+    "line": 5,
+    "keyword": "Feature",
+    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/Login.feature",
+    "elements": [
+      {
+        "name": "",
+        "keyword": "Background",
+        "description": "",
+        "type": "background",
+        "line": 22,
+        "steps": [
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given "
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
+        "line": 48,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_A",
+            "line": 29
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 8037358
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 11491439235
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 32,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 249417664
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail1@yopmail.com in Login",
+            "line": 33,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 906657807
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password QaAdmin123 in Login",
+            "line": 34,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 801171914
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 254917575
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"currentEmailAddress\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 245588417
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2484270663
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 38,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1044467953
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2585538350
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 40,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 551754150
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 300292424
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 42,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1561149105
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 43,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 254347720
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 730043
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
+        "line": 49,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_A",
+            "line": 29
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2653667
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8429559842
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 32,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 120084479
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 33,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 761231437
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 34,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 743260455
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 240127145
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"currentEmailAddress\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 207101096
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2429177860
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 38,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1143637225
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2575605472
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 40,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 552922565
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 323099483
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 42,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1380496090
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 43,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 280533295
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 241962
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
+        "line": 50,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_A",
+            "line": 29
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1899358
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8298951285
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 32,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 69419694
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user3@example.com in Login",
+            "line": 33,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 834658447
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 34,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 717959165
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 279037727
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"currentEmailAddress\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 240254545
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2442364477
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 38,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 989839057
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2560537090
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 40,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 473028225
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 304522695
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 42,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1345973694
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 43,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 261659988
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 205507
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
+        "line": 52,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_A",
+            "line": 29
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2071413
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8391114890
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 32,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 50583530
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user2@example.com in Login",
+            "line": 33,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 755058337
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 34,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 866672318
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 35,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 301458195
+            },
+            "match": {}
+          },
+          {
+            "name": "I should not see in \"currentEmailAddress\" errors displayed",
+            "line": 36,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 202938425
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 37,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2486985065
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 38,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1055387905
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2561586417
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 40,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 550286092
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 41,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 274877935
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 42,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1404227164
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 43,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 280676780
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 388785
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-1\" Enter nothing on email/User for Login Page will throw error \"Email Is Required\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-1\"-enter-nothing-on-email/user-for-login-page-will-throw-error-\"email-is-required\"",
+        "line": 70,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-1",
+            "line": 58
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1285722
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8520339334
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 61,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 61172834
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address  in Login",
+            "line": 62,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 629849959
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 63,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 835793988
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 64,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 269070825
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Email Is Required\" displayed for this \"empty\" field",
+            "line": 65,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 315910025
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 435420
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
+        "line": 85,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-2",
+            "line": 73
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3042125
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8239855863
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 76,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 56937549
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address \"\"\" in Login",
+            "line": 77,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 796131530
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 78,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 730176852
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 79,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 275243763
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
+            "line": 80,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 325927823
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 201950
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
+        "line": 86,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-2",
+            "line": 73
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2903758
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8140315576
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 76,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 56304295
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address emailAddress in Login",
+            "line": 77,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 870664711
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 78,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 663912312
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 79,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 229298758
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
+            "line": 80,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 334135148
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 124944
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
+        "line": 87,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-2",
+            "line": 73
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1344750
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8228027763
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 76,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 52805090
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address AemailAddress.@email.com in Login",
+            "line": 77,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 823598560
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 78,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 729544617
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 79,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 245697413
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
+            "line": 80,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 306341287
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 112882
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
+        "line": 88,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-2",
+            "line": 73
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1417235
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8165969306
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 76,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 75460744
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address AemailAddress@@email.com in Login",
+            "line": 77,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 842620446
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 78,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 660660195
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 79,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 280196715
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
+            "line": 80,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 306438295
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 237115
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
+        "line": 89,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-2",
+            "line": 73
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2912958
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8102256353
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 76,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 43151115
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address A in Login",
+            "line": 77,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 734309144
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 78,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 758048208
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 79,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 261632313
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
+            "line": 80,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 335835840
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 176600
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
+        "line": 90,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-2",
+            "line": 73
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3370548
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8097855086
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 76,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 47339800
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address A@.c in Login",
+            "line": 77,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 724363953
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 78,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 733984998
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 79,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 272225027
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
+            "line": 80,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 335638118
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 169525
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
+        "line": 91,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-2",
+            "line": 73
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2049755
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8194723465
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 76,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 58827957
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address A@. in Login",
+            "line": 77,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 830982519
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 78,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 981265155
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 79,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 300518720
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
+            "line": 80,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 346797810
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 276323
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-3\" Enter bad data on password for Login Page will throw error (\"Invalid Login. Please try again.\" first time entering bad password)",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-3\"-enter-bad-data-on-password-for-login-page-will-throw-error-(\"invalid-login.-please-try-again.\"-first-time-entering-bad-password)",
+        "line": 106,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-3",
+            "line": 94
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3553995
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8197520409
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 97,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 53380477
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail2@yopmail.com in Login",
+            "line": 98,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1177736933
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password0 in Login",
+            "line": 99,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 824226977
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 100,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 241703839
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid Login. Please try again.\" displayed for this \"filled\" field",
+            "line": 101,
+            "keyword": "Then ",
+            "result": {
+              "status": "failed",
+              "duration": 287310940,
+              "error_message": "Error: Step failure\n    at process._tickCallback (internal/process/next_tick.js:103:7)"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 733672
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_C\" Enter nothing on Password for Login Page will throw error \"Password Is Required\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_c\"-enter-nothing-on-password-for-login-page-will-throw-error-\"password-is-required\"",
+        "line": 144,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_C",
+            "line": 132
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1728895
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8247259227
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 135,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 175622065
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail4@yopmail.com in Login",
+            "line": 136,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 975079188
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password  in Login",
+            "line": 137,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 632152060
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 138,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 272482012
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentPassword\" message \"Password Is Required\" displayed for this \"empty\" field",
+            "line": 139,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 364037020
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 180840
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_E\" Activate a Deactivated account.Then, Login with Account. (NO ERROR)",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_e\"-activate-a-deactivated-account.then,-login-with-account.-(no-error)",
+        "line": 195,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_E",
+            "line": 169
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2083526
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8560907349
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload LogIn Page",
+            "line": 172,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 302179937
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address user1@example.com in Login",
+            "line": 173,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 827888118
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password1 in Login",
+            "line": 174,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 690661165
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 175,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 281381642
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 176,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1773867177
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 177,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 305550665
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List admintestemail5@yopmail.com in User List",
+            "line": 178,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1411977453
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Filter By User List Status dropdown \"Inactive\" in User List",
+            "line": 180,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 595300703
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"admintestemail5@yopmail.com in User List\"",
+            "line": 181,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 404362435
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Activate in submenu from Gear Icon",
+            "line": 182,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 472049543
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 183,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1357518050
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 184,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 330558348
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload page \"https://qa-autobahn.blackbookcloud.com/login\"",
+            "line": 185,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7058777185
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail5@yopmail.com in Login",
+            "line": 186,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 891315342
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password QaAdmin123 in Login",
+            "line": 187,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 766979660
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 188,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 257224159
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 189,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2775350502
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 190,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 234546442
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 154084
+            },
+            "match": {}
+          }
+        ]
+      }
+    ]
+  }
+]

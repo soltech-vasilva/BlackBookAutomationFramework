@@ -254,10 +254,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Deactivate in submenu from Gear Icon$/, function () {
+        //todo refactored
         return BB_userList.Click_Gear_Deactivate_Submenu();
     });
 
     this.Given(/^I click Activate in submenu from Gear Icon$/, function () {
+        //todo refactored
         return BB_userList.Click_Gear_Activate_Submenu();
     });
 
@@ -306,6 +308,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_editRoles.Enter_FilterUsers_RoleEditor(filterUser);
     });
 
+    //TODO CHECK FOR THIS FUNTION REFACTOR
     this.Then(/^I should see Permissions "([^"]*)" checkbox "([^"]*)" in Role Editor$/, function (permissionName, isCheckedorUnchecked) {
         return BB_editRoles.Verify_RolePermissions_CheckedorUnchecked_RoleEditor(permissionName, isCheckedorUnchecked);
     });
@@ -520,6 +523,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Reset Button in Edit Roles$/, function () {
+        //todo refactored
         return BB_editRoles.Click_ResetButton_RoleEditor();
     });
 
