@@ -134,14 +134,14 @@ Feature:  "Verify that this bugs dont return to the application."
   Scenario: "@TestCases_A-7" (BB-385) Upper Case sensitive on "Filter on User List".
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List admintestemail6@yopmail.com in User List
     And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
     And I click Edit from Gear Icon "in User List"
       Then I should see user's "emailAddress" displayed in screen with value "admintestemail6@yopmail.com"
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List AdminTestEmail6@Yopmail.Com in User List
     And I click on Gear Icon 1 "AdminTestEmail6@Yopmail.Com in User List"
     And I click Edit from Gear Icon "in User List"
@@ -275,7 +275,7 @@ Feature:  "Verify that this bugs dont return to the application."
   Scenario Outline: "@TestCases_A-15" (BB-459) "Previous Password" disappears when toggle from other User to "My profile".
     When I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List admintestemail1@yopmail.com in User List
     And I click on Gear Icon 1 "admintestemail1@yopmail.com in User List"
     And I click 1 View from Gear Icon in User List
@@ -305,7 +305,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Login Button
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icons 1 inactive "in User List"
     And I click Avatar Image Button
@@ -698,7 +698,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Login Button
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icons 1 inactive "in User List"
     #USER 1
@@ -730,7 +730,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Login Button
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icon 1 "user3@example.com in User List"
     And I click 1 View from Gear Icon in User List
@@ -791,7 +791,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Login Button
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icon 1 "user3@example.com in User List"
     And I click Edit from Gear Icon "in User List"
@@ -819,7 +819,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Login Button
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icon 1 "user3@example.com in User List"
     And I click Edit from Gear Icon "in User List"
@@ -857,7 +857,7 @@ Feature:  "Verify that this bugs dont return to the application."
   Scenario: "@TestCases_A-41" (BB-471) Gray out "Active Status" in "View" user mode. (make sure is not editable)
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List user3@example.com in User List
     And I click on Gear Icon 1 "user3@example.com in User List"
     And I click 1 View from Gear Icon in User List

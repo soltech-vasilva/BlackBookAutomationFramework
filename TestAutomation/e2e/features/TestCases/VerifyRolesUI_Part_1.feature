@@ -79,14 +79,16 @@ Feature:  "Verify each Role UI"
     And I click on Gear Icon 2 "USER all@example.com in User List"
     And I click Deactivate in submenu from Gear Icon
       Then I verify BlackBook "Should Not see USER all@example.com (Deactivate) in User List" page with Applitools
-    And I click All in submenu from Status FilterValue
+    And I click Filter By User List Status dropdown "All" in User List
+    #And I click All in submenu from Status FilterValue
      Then I verify BlackBook "All active and Inactive Users in User List" page with Applitools
-    And I click Inactive in submenu from Status FilterValue
+    And I click Filter By User List Status dropdown "Inactive" in User List
       Then I verify BlackBook "Inactive USER all@example.com in User List" page with Applitools
     And I click on Gear Icon 1 "USER all@example.com in User List"
     And I click Activate in submenu from Gear Icon
       Then I verify BlackBook "Should Not see USER all@example.com (Activate) in User List" page with Applitools
-    And I click Active in submenu from Status FilterValue
+    And I click Filter By User List Status dropdown "Active" in User List
+    #And I click Active in submenu from Status FilterValue
       Then I verify BlackBook "User List" page with Applitools
     And I click on New User Button in User List
       Then I verify BlackBook "Add New User" page with Applitools
@@ -200,14 +202,16 @@ Examples:
     And I click on Gear Icon 2 "USER all@example.com in User List"
     And I click Deactivate in submenu from Gear Icon
       Then I verify BlackBook "Should Not see USER all@example.com (Deactivate) in User List" page with Applitools
-    And I click All in submenu from Status FilterValue
+   And I click Filter By User List Status dropdown "All" in User List
+    #And I click All in submenu from Status FilterValue
      Then I verify BlackBook "All active and Inactive Users in User List" page with Applitools
-    And I click Inactive in submenu from Status FilterValue
+    And I click Filter By User List Status dropdown "Inactive" in User List
       Then I verify BlackBook "Inactive USER all@example.com in User List" page with Applitools
     And I click on Gear Icon 1 "USER all@example.com in User List"
     And I click Activate in submenu from Gear Icon
       Then I verify BlackBook "All active Users in User List" page with Applitools
-    And I click Active in submenu from Status FilterValue
+   And I click Filter By User List Status dropdown "Active" in User List
+    #And I click Active in submenu from Status FilterValue
       Then I verify BlackBook "Should Not see USER all@example.com (Activate) in User List" page with Applitools
     And I click on New User Button in User List
       Then I verify BlackBook "Add New User" page with Applitools
@@ -487,7 +491,6 @@ Examples:
   | user1@example.com               |   Password1        |
 
 
-
   @TestCases_A-3
   Scenario Outline: "@TestCases_A-3" Creation of "New User" wont attached roles to it when added.
     # (BB-479)(BB-744)(BB-622)(BB-478)
@@ -523,7 +526,7 @@ Examples:
     And I click on Save button in Edit User Profile
       Then I should see "User Creation Successful" displayed on "UserList" popup
     #And I wait
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List <emailAddress> in User List
     #And I wait
       Then I should see user's Role "Administrators" in User List

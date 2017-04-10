@@ -9,10 +9,10 @@ exports.config = {
     // ],
     'StopRunAtFail': true,   //false original
     'WaitTime': 15000,
-    'BuildTestNumber': '142',
+    'BuildTestNumber': '148',
 
     //Turn off applitool
-    'ApplitoolsOn': true,
+    'ApplitoolsOn': false,
 
     //Running Test Cases in specific order.
     specs: [
@@ -30,14 +30,7 @@ exports.config = {
          //'e2e/features/TestCases/AddUser_part2.feature'//,
          // 'e2e/features/TestCases/EditUserProfile.feature'//,
          //  'e2e/features/TestCases/UsersList.feature'//,
-        //  'e2e/features/TestCases/Login.feature'//,
-
-
-
-
-        //'e2e/features/TestCases/Test1.feature'//,
-       // 'e2e/features/TestCases/END_eyes.feature'//,
-
+          'e2e/features/TestCases/Login.feature'//,
     ],
 
 

@@ -81,49 +81,54 @@ var BB_UserList = function BB_UserList() {
         // });
     };
 
-    BB_UserList.prototype.Click_StatusFilter_Inactive_Submenu = function () {
+    BB_UserList.prototype.Click_FilterUserListStatus_Submenu = function (PermissionsName) {
 
-        return new Promise((success, failure)=> {
-            //EDGE BUG does not like to sendkeys to element.
-           // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
-            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu), protractorConfig.config.WaitTime),
-            BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click(),
-                //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
-                browser.driver.actions().sendKeys('i').perform(),
-                browser.driver.sleep(1000),
-                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+
+        return new Promise ((success, failure)=>{
+            page.selectDropdownItemByValue(BB_userListRepo.Select_Element_StatusFilter, PermissionsName, success);
         });
+
+        // return new Promise((success, failure)=> {
+        //     //EDGE BUG does not like to sendkeys to element.
+        //    // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
+        //     page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu), protractorConfig.config.WaitTime),
+        //     BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click(),
+        //         //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
+        //         browser.driver.actions().sendKeys('i').perform(),
+        //         browser.driver.sleep(1000),
+        //         browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+        // });
     };
 
-    BB_UserList.prototype.Click_StatusFilter_All_Submenu = function () {
+    // BB_UserList.prototype.Click_StatusFilter_All_Submenu = function () {
+    //
+    //     return new Promise((success, failure)=> {
+    //         //EDGE BUG does not like to sendkeys to element.
+    //         // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
+    //         page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_All_Submenu), protractorConfig.config.WaitTime),
+    //             BB_userListRepo.Select_Element_StatusFilter_All_Submenu.click(),
+    //             //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
+    //             //browser.driver.actions().sendKeys('a').perform(),
+    //             browser.driver.sleep(1000),
+    //             browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+    //     });
+    // };
 
-        return new Promise((success, failure)=> {
-            //EDGE BUG does not like to sendkeys to element.
-            // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
-            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_All_Submenu), protractorConfig.config.WaitTime),
-                BB_userListRepo.Select_Element_StatusFilter_All_Submenu.click(),
-                //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
-                //browser.driver.actions().sendKeys('a').perform(),
-                browser.driver.sleep(1000),
-                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
-        });
-    };
-
-    BB_UserList.prototype.Click_StatusFilter_Active_Submenu = function () {
-
-        return new Promise((success, failure)=> {
-            //EDGE BUG does not like to sendkeys to element.
-            // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
-            page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_Active_Submenu), protractorConfig.config.WaitTime),
-                BB_userListRepo.Select_Element_StatusFilter_Active_Submenu.click(),
-                //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
-                // browser.driver.actions().sendKeys('a').perform(),
-                // browser.driver.sleep(1000),
-                // browser.driver.actions().sendKeys('a').perform(),
-                browser.driver.sleep(1000),
-                browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
-        });
-    };
+    // BB_UserList.prototype.Click_StatusFilter_Active_Submenu = function () {
+    //
+    //     return new Promise((success, failure)=> {
+    //         //EDGE BUG does not like to sendkeys to element.
+    //         // page.executeSequence([ BB_userListRepo.Select_Element_FilterUserListTextbox.click(), browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),  browser.driver.actions().sendKeys('i').perform(), browser.driver.actions().sendKeys(protractor.Key.ENTER).perform(), BB_userListRepo.Select_Element_StatusFilter_Inactive_Submenu.click() ]).then(()=>{success();});
+    //         page.executeSequence([ browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_StatusFilter_Active_Submenu), protractorConfig.config.WaitTime),
+    //             BB_userListRepo.Select_Element_StatusFilter_Active_Submenu.click(),
+    //             //browser.driver.actions().sendKeys(protractor.Key.TAB).perform(),
+    //             // browser.driver.actions().sendKeys('a').perform(),
+    //             // browser.driver.sleep(1000),
+    //             // browser.driver.actions().sendKeys('a').perform(),
+    //             browser.driver.sleep(1000),
+    //             browser.driver.actions().sendKeys(protractor.Key.ENTER).perform()]).then(()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+    //     });
+    // };
 
     BB_UserList.prototype.Click_GearIcon = function (numberElementToSelect) {
         var index = parseInt(numberElementToSelect) - 1;
@@ -143,18 +148,28 @@ var BB_UserList = function BB_UserList() {
     };
 
     BB_UserList.prototype.Click_Gear_Deactivate_Submenu = function () {
-         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu), protractorConfig.config.WaitTime),
-                BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+
+        return new Promise((success, failure)=> {
+            page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu, protractorConfig.config.WaitTime),
+                page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
         });
+
+        //  return new Promise((success, failure)=> {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu), protractorConfig.config.WaitTime),
+        //         BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+        // });
     };
 
     BB_UserList.prototype.Click_Gear_Activate_Submenu = function () {
-
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_Gear_Activate_Submenu), protractorConfig.config.WaitTime),
-                BB_userListRepo.Select_Element_Gear_Activate_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+            page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Activate_Submenu, protractorConfig.config.WaitTime),
+                page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
         });
+
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf( BB_userListRepo.Select_Element_Gear_Activate_Submenu), protractorConfig.config.WaitTime),
+        //         BB_userListRepo.Select_Element_Gear_Activate_Submenu.click(), keyStrokesRepo.ENTER(), browser.driver.sleep(1000)]).then (()=>{ BB_editUserProfile.Click_TittleofPage(BB_userListRepo.Select_Element_TittleUserList, success);});
+        // });
 
         // browser.driver.wait(protractor.ExpectedConditions.presenceOf(BB_userListRepo.Select_Element_Gear_Activate_Submenu), protractorConfig.config.WaitTime);
         // return new Promise((success, failure)=> {

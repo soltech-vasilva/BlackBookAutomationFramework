@@ -148,6 +148,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Then(/^I enter my Previous Password (.*) in Form$/, function (previousPassword) {
+        //todo refactored
         return BB_editUserProfile.Enter_PreviousPassword_inForm(previousPassword);
     });
 
@@ -202,6 +203,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click My Profile sub menu from Avatar$/, function () {
+        //todo refactored
         return BB_menu.Click_MyProfileSubmenu();
     });
 
@@ -236,12 +238,14 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I click Status Filter$/, function () {
+        //NOT USED RIGHT NOW
         //todo refactored
         return BB_userList.Click_StatusFilter();
     });
 
-    this.Given(/^I click Inactive in submenu from Status FilterValue/, function () {
-        return BB_userList.Click_StatusFilter_Inactive_Submenu();
+    this.Given(/^I click Filter By User List Status dropdown "([^"]*)" in User List$/, function (PermissionsName ) {
+        //todo refactored
+        return BB_userList.Click_FilterUserListStatus_Submenu(PermissionsName);
     });
 
     this.Given(/^I click on Gear Icon (.*) "([^"]*)"$/, function (ElementToSelect, arg2) {
@@ -1165,9 +1169,9 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-    this.Then(/^I click All in submenu from Status FilterValue$/, function () {
-        return BB_userList.Click_StatusFilter_All_Submenu();
-    });
+    // this.Then(/^I click All in submenu from Status FilterValue$/, function () {
+    //     return BB_userList.Click_StatusFilter_All_Submenu();
+    // });
 
     this.Then(/^I click Active in submenu from Status FilterValue$/, function () {
         return BB_userList.Click_StatusFilter_Active_Submenu();
@@ -1185,15 +1189,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     this.Given(/^I re-enter the same user name and password$/, function () {
-        return new Promise((success, failure)=> {
-            page.executeSequence([
-                BB_login.Click_LoginButton(),
+        return page.executeSequence([
+                page.clickElement(BB_loginRepo.Select_Element_UserPasswordTextbox,protractorConfig.config.WaitTime ),
                 browser.driver.sleep(2000),
-                BB_login.Click_LoginButton(),
+                page.clickElement(BB_loginRepo.Select_Element_UserPasswordTextbox,protractorConfig.config.WaitTime ),
                 browser.driver.sleep(2000),
-                BB_login.Click_LoginButton(),
-                browser.driver.sleep(2000).then(()=>{success()})]).then(()=>{});
-        });
+                BB_login.Click_LoginButton()]).then(()=>{});
     });
 
     this.Then(/^I add extra string "([^"]*)" to my "([^"]*)"$/, function (addString, TextboxName) {

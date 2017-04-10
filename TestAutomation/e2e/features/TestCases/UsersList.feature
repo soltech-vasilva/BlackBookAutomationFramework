@@ -63,10 +63,10 @@ Feature:  "User List"
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
     #And I wait
-    And I click Status Filter
+    #And I click Status Filter
     And I enter Filter User List admintestemail6@yopmail.com in User List
     #And I wait
-    And I click Inactive in submenu from Status FilterValue
+    And I click Filter By User List Status dropdown "Inactive" in User List
     #And I wait
     And I click on Gear Icon 1 "admintestemail6@yopmail.com in User List"
     And I click Activate in submenu from Gear Icon

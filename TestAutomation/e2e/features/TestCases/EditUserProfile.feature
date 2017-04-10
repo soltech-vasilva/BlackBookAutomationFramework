@@ -27,17 +27,13 @@ Feature: Enter data on "Edit User Profile"
     And I wait
        #ADDED THIS TO CONTINUE TEST CASES
     And I reload LogIn Page
-      #And I wait
       #Remmeber to add permission "CanAdd/EditUser","CanResetUsersPasswords","CanViewOtherUsers","CanViewUserList", "CanAdd/EditRoles","CanViewRoleList"
       And I enter my user email address user3@example.com in Login
       And I enter my Password Password1 in Login
       And I click Login Button
-      #And I wait
       And I click Avatar Image Button
       And I click My Profile sub menu from Avatar
-      #And I wait
       And I click Edit Button in Edit User Profile
-      #And I wait
 
 #######################################################################################################################
 #                                             Test cases A                                                            #
@@ -60,7 +56,6 @@ Feature: Enter data on "Edit User Profile"
     When I click Cancel Button in Edit User Profile
   And I click Avatar Image Button
   And I click Logout sub menu from Avatar
-  #And I wait
 
     Examples:
       | firstName     | lastName     | emailAddress              |phoneNumber    | newPassWord | confirmNewPassWord |
@@ -129,10 +124,8 @@ Feature: Enter data on "Edit User Profile"
     And I enter my new Password <newPassWord> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
     Examples:
       | firstName       | lastName     | emailAddress               | phoneNumber   |newPassWord  | confirmNewPassWord |
@@ -160,9 +153,7 @@ Scenario Outline: "@TestCases_B-2" Enter wrong User Profile phone number will th
   And I enter my confirm new password <confirmNewPassWord> in Form
   And I click Cancel Button in Edit User Profile
   And I click Avatar Image Button
-  #And I wait
   And I click Logout sub menu from Avatar
-  #And I wait
 
     Examples:
       |   firstName       | lastName     | emailAddress               | phoneNumber   |newPassWord  | confirmNewPassWord |
@@ -189,10 +180,8 @@ Scenario Outline: "@TestCases_B-3" Enter wrong User Profile New Password and Con
     But I enter "a different Confirm New Password from New Password"
     Then I should see "confirmNewPassWord" message "Passwords do not match" displayed for this "filled" field
   And I click Cancel Button in Edit User Profile
-  #And I wait
   And I click Avatar Image Button
   And I click Logout sub menu from Avatar
-  #And I wait
 
   Examples:
     | firstName       | lastName     | emailAddress               | phoneNumber      |newPassWord    | confirmNewPassWord   |
@@ -217,10 +206,8 @@ Scenario Outline: "@TestCases_B-4" Enter wrong User Profile "New Password" will 
     But I enter "same New Password into Confirm New Password"
     Then I should not see in "confirmNewPassWord" errors displayed
   And I click Cancel Button in Edit User Profile
-  #And I wait
   And I click Avatar Image Button
   And I click Logout sub menu from Avatar
-  #And I wait
 
 Examples:
   | firstName       | lastName     | emailAddress               | phoneNumber      |newPassWord    | confirmNewPassWord   |
@@ -253,10 +240,8 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   But I enter "or check nothing to User Roles"
     Then I should see "userrole" message "Required" displayed for this "unchecked" field
   And I click Cancel Button in Edit User Profile
-  #And I wait
   And I click Avatar Image Button
   And I click Logout sub menu from Avatar
-  #And I wait
 
     Examples:
      | firstName     | lastName  | emailAddress              | phoneNumber   |previousPassWord | newPassWord    | confirmNewPassWord   |
@@ -276,10 +261,8 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
     And I enter my new Password <newPassWord> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -298,10 +281,8 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
       And I enter my new Password <newPassWord> in Form
       And I enter my confirm new password <confirmNewPassWord> in Form
       And I click Cancel Button in Edit User Profile
-      #And I wait
       And I click Avatar Image Button
       And I click Logout sub menu from Avatar
-      #And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -320,10 +301,8 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
     And I enter my new Password <newPassWord> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I click Cancel Button in Edit User Profile
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord    | confirmNewPassWord   |
@@ -340,16 +319,14 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
     And I enter my phone number <phoneNumber> in Form
     And I enter my confirm new password <confirmNewPassWord> in Form
     And I enter my new Password <newPassWord> in Form
-    But I enter "nothing to New Password"
-    Then I should see "newPassWord" message "Required" displayed for this "empty" field
+      But I enter "nothing to New Password"
+      Then I should see "newPassWord" message "Required" displayed for this "empty" field
     And I enter my Previous Password <previousPassWord> in Form
-    But I enter "nothing to Previous PassWord "
-    Then I should see "previousPassWord" message "Required" displayed for this "empty" field
+      But I enter "nothing to Previous PassWord "
+      Then I should see "previousPassWord" message "Required" displayed for this "empty" field
     And I click Cancel Button in Edit User Profile
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   | previousPassWord |newPassWord    | confirmNewPassWord   |
@@ -370,13 +347,11 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
       Then I should see "confirmNewPassWord" message "Required" displayed for this "empty" field
       Then I should see "confirmNewPassWord" message "Passwords do not match" displayed for this "empty" field
     And I enter my Previous Password <previousPassWord> in Form
-    But I enter "nothing to Previous PassWord "
-    Then I should see "previousPassWord" message "Required" displayed for this "empty" field
+      But I enter "nothing to Previous PassWord "
+      Then I should see "previousPassWord" message "Required" displayed for this "empty" field
     And I click Cancel Button in Edit User Profile
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |previousPassWord |newPassWord    | confirmNewPassWord   |
@@ -397,12 +372,10 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
       Then I should not see in "confirmNewPassWord" errors displayed
     And I enter my Previous Password <previousPassWord> in Form
     But I enter "nothing to Previous PassWord "
-    Then I should see "previousPassWord" message "Required" displayed for this "empty" field
+      Then I should see "previousPassWord" message "Required" displayed for this "empty" field
     And I click Cancel Button in Edit User Profile
-    And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   | previousPassWord    |newPassWord    | confirmNewPassWord   |
@@ -425,10 +398,8 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
     But I enter "a wrong Previous PassWord with no number"
     Then I should see "previousPassWord" message "Password must be at least 8 characters, contain a number, and mixed case letters." displayed for this "filled" field
     And I click Cancel Button in Edit User Profile
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   | previousPassWord    |newPassWord    | confirmNewPassWord   |
@@ -455,10 +426,8 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
     And I enter my confirm new password <confirmNewPassWord> in Form
       Then  I should not see in "confirmNewPassWord" errors displayed
     And I click Cancel Button in Edit User Profile
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   |newPassWord             | confirmNewPassWord   |previousPassWord |
@@ -468,25 +437,18 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
   @TestCases_C-10
   Scenario: "@TestCases_C-10" Delete information from Textboxes will throw error "Required"
     When I clear text box selected "firstName" in User Profile
-   # And I wait
     #it is Filled (browserstack) since it deletes value and returns "    "
       Then I should see "firstName" message "Required" displayed for this "filled" field
     And I clear text box selected "lastName" in User Profile
-    #And I wait
       Then I should see "lastName" message "Required" displayed for this "filled" field
     And I clear text box selected "emailAddress" in User Profile
-    #And I wait
       Then I should see "emailAddress" message "Required" displayed for this "filled" field
     And I click Cancel Button in Edit User Profile
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
-
 
    @TestCases_C-11
    Scenario: "@TestCases_C-11" Enter Edit mode for a user "No error display" (BB-611)
-     #And I wait
      Then I should not see in "firstName" errors displayed
      Then I should not see in "lastName" errors displayed
      Then I should not see in "emailAddress" errors displayed
@@ -495,7 +457,6 @@ Scenario Outline: "@TestCases_C-1" Enter empty User Profile data will throw erro
      Then I should not see in "newPassWord" errors displayed
      Then I should not see in "confirmNewPassWord" errors displayed
      Then I should not see in "userrole" errors displayed
-     #And I wait
 
 ###########################################################################################################################
 #####                                             Test cases Reports and Framework                                        #
