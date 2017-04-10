@@ -9,7 +9,7 @@ exports.config = {
     // ],
     'StopRunAtFail': true,   //false original
     'WaitTime': 15000,
-    'BuildTestNumber': '135',
+    'BuildTestNumber': '142',
 
     //Turn off applitool
     'ApplitoolsOn': true,
@@ -18,20 +18,26 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-      //  'e2e/features/TestCases/START_eyes.feature',
-        // 'e2e/features/TestCases/AddUser_part0.feature',
+        // 'e2e/features/TestCases/Setup.feature',
+        // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
+        // 'e2e/features/TestCases/AddUser_part0.feature'//,
+         //'e2e/features/TestCases/EditRoles.feature'//,
+        // 'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
+       // 'e2e/features/TestCases/Bugs.feature'//,
+
+
        // 'e2e/features/TestCases/AddUser_part1.feature'//,
          //'e2e/features/TestCases/AddUser_part2.feature'//,
          // 'e2e/features/TestCases/EditUserProfile.feature'//,
          //  'e2e/features/TestCases/UsersList.feature'//,
         //  'e2e/features/TestCases/Login.feature'//,
-        //'e2e/features/TestCases/EditRoles.feature'//,
-        //'e2e/features/TestCases/Bugs.feature'//,
-       'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
-        // 'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
+
+
+
+
         //'e2e/features/TestCases/Test1.feature'//,
        // 'e2e/features/TestCases/END_eyes.feature'//,
-       // 'e2e/features/TestCases/Setup.feature'//,
+
     ],
 
 
@@ -40,7 +46,7 @@ exports.config = {
     // },
 
     //BrowserStack
-    seleniumAddress: 'http://hub.browserstack.com/wd/hub',
+    'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 
     //Settings for the local machine (Run "webdriver-manager start" from any directory  + calls inside capabilities)
     //Selenium
@@ -89,10 +95,10 @@ exports.config = {
         //'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot
-         'browserstack.debug': 'true',
+         'browserstack.debug': 'false',
 
          //Video recording
-         'browserstack.video': 'true'//,
+         'browserstack.video': 'false'//,
     },
     //
     //Browserstack multiple browsers at a time testing

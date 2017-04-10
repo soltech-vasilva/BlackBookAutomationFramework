@@ -274,6 +274,7 @@ Feature:  "Add a new Role"
     And I clear text box selected "FilterUsers" in Role Editor
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
+    And I click Edit Button in Edit Roles
     And I click Cancel Button from Edit Roles
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar

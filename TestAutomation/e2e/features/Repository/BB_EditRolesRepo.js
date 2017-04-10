@@ -11,9 +11,11 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     //string
     BB_EditRolesRepo.prototype.AttributeString_Permission_GridCheckbox_Checked  = "icon-check-square grid-checkbox-checked grid-checkbox";
     BB_EditRolesRepo.prototype.AttributeString_Permission_GridCheckbox_Unchecked  = "icon-check-square grid-checkbox-checked grid-checkbox ag-hidden";
-
     BB_EditRolesRepo.prototype.Select_Element_TittleAddNewRole  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/h1/span'));
-    //Components
+
+//Components
+    BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleList  =    element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button'));
+    BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleProfile  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button'));
     BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.css('button.button.green-btn'));
     BB_EditRolesRepo.prototype.Select_Element_Cancel_button  = element(by.buttonText('Cancel'));
     BB_EditRolesRepo.prototype.Select_Element_Reset_button  = element(by.css('button.button.yellow-btn'));

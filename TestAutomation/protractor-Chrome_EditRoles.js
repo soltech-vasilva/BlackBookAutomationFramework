@@ -26,7 +26,7 @@ exports.config = {
     // },
 
     //BrowserStack
-    seleniumAddress: 'http://hub.browserstack.com/wd/hub',
+    'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 
     //Settings for the local machine (Run "webdriver-manager start" from any directory  + calls inside capabilities)
     //Selenium
@@ -75,10 +75,10 @@ exports.config = {
        // 'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot
-         'browserstack.debug': 'true',
+         'browserstack.debug': 'false',
 
          //Video recording
-         'browserstack.video': 'true'//,
+         'browserstack.video': 'false'//,
     },
 
     //Browserstack multiple browsers at a time testing

@@ -87,12 +87,14 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
       And I click X on Message Popup in Role list
+      And I click Edit Button in Edit Roles
     #Turn On "Settings" submenu
     And I click checkbox Permission "Settings" in Role Editor
       Then I should see Permissions "Settings" checkbox "checked" in Role Editor
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
       And I click X on Message Popup in Role list
+      And I click Edit Button in Edit Roles
     And I click Cancel Button from Edit Roles
     And I click on Gear Icon 3 "Basic Role-No Permissions in Role List"
     And I click Edit from Gear Icon "in Role List"
@@ -474,6 +476,7 @@ Feature:  "Verify that this bugs dont return to the application."
        Then I should see in "Save" button "enable" in Edit Role
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
+       And I click Edit Button in Edit Roles
     And I click Cancel Button from Edit Roles
     And I click on Gear Icon 6 "RoleName6 in Role List"
     And I click Edit from Gear Icon "in Role List"
@@ -491,24 +494,16 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on New Role Button in Role List
     And I enter Role Name "RoleName7"
     And I enter "Users" on Filter Permissions in Role Editor
-    #And  I wait
     And I click checkbox  "0" "Users" Permission row in Role Editor
-    #And I wait
     And I select Role Market "US Used Car" in Role Editor
-    #And I wait
     And I enter "User1" on Filter Users in Role Editor
-    #And I wait
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
       Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-    #And I wait
       Then I should see #of Users has increase value for "RoleName7" in Role List
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
-  #Todo continue refactoring
   @TestCases_A-30
   Scenario: "@TestCases_A-30" (BB-473) Pop Menu Grammar error missing question mark "?" and role name (require TC-A-31)
     #require @TestCases_A-29
@@ -517,22 +512,17 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Gear Icon 7 "RoleName7 in Role List"
     And I click Edit from Gear Icon "in Role List"
     And I enter "User1" on Filter Users in Role Editor
-    #And I wait
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
+    And I click Edit Button in Edit Roles
     And I click Cancel Button from Edit Roles
-    #And I wait
     And I click on Gear Icon 7 "RoleName7 in Role List"
     And I click Delete from Gear Icon
-    #And I wait
     #currently will order by default by number of users
       Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
-     #Todo refactor this maybe
     And I click "Cancel" Button for modal warning message from Edit Roles
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
   @TestCases_A-31
   Scenario: "@TestCases_A-31" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32)
@@ -540,19 +530,14 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 7 "RoleName7 in Role List"
-    #And I wait
     And I click Delete from Gear Icon
-    #And I wait
     #currently will order by default by number of users
-     #Todo refactor this maybe
       Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
-     #Todo refactor this maybe
     And I click "Confirm" Button for modal warning message from Edit Roles
       Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
+
 
   @TestCases_A-32
     Scenario: "@TestCases_A-32" (BB-474) (Delete Role): Wrong Error display after delete of "Role" (require TC-A-31,32) Delete Created roles next run.
@@ -563,44 +548,31 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Edit from Gear Icon "in Role List"
     #Disable User
     And I enter "User1" on Filter Users in Role Editor
-    #And I wait
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
+    And I click Edit Button in Edit Roles
     And I click Cancel Button from Edit Roles
-    #And I wait
     And I click on Gear Icon 6 "RoleName6 in Role List"
     And I click Delete from Gear Icon
-    #And I wait
-     #Todo refactor this maybe
      Then I should see Are you sure you want to delete the role, "RoleName6?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
-     #Todo refactor this maybe
     And I click "Confirm" Button for modal warning message from Edit Roles
       Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
   @TestCases_A-33
   Scenario: "@TestCases_A-33" (BB-592) (Permission Add User): Add user is not enforce in database. (ROLE:EDITOR CVUL+CVOP+CVRL) "New User" button should not show.
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
     And I enter my user email address editor@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
-    #And I wait
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
-    #And I wait
      #Instead of hiddden button (grayout instead)
-     #Then I should not see "New User" Button in User List
       Then I should see in "NewUser" button "disable" in User List
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
   @TestCases_A-34
   Scenario: "@TestCases_A-34" (BB-582) (Add New Roles): word "Require" need to show on field require.
@@ -610,10 +582,8 @@ Feature:  "Verify that this bugs dont return to the application."
     And I enter Role Name ""
      Then I should see "RoleName" message "Required" displayed for this "empty" field in Role Editor
      Then I should see "RoleMarket" message "Required" displayed for this "empty" field in Role Editor
-    #And I wait
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    #And I wait
 
   @TestCases_A-35
   Scenario: "@TestCases_A-35" (BB-586) (Role Market): Role Market needs to show "None" or a value in Role View.
@@ -646,6 +616,7 @@ Feature:  "Verify that this bugs dont return to the application."
       Then I should see Role Market value "Canada Used Car"
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
+    And I click Edit Button in Edit Roles
     And I click Cancel Button from Edit Roles
     And I click on Gear Icon 4 "Editor-Full_Roles in Role List"
     And I click Edit from Gear Icon "in Role List"
@@ -957,9 +928,7 @@ Feature:  "Verify that this bugs dont return to the application."
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
     And I reload page "https://qa-autobahn.blackbookcloud.com/segments"
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    #And I wait
 #    And I reload page "https://autobahn.blackbookcloud.com/segments/list"
 #    Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
 #    And I reload page "https://autobahn.blackbookcloud.com/segments"
 #    Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I wait

@@ -14,7 +14,8 @@ var BB_UserListRepo = function BB_UserListRepo () {
     //BB_UserListRepo.prototype.Select_Element_NewUserButton  = element(by.css('button.button'));
     BB_UserListRepo.prototype.Select_Element_NewUserButton  = element(by.xpath('//*[@id="page-box"]/user-list/div/div/div/div[1]/button'));
 
-    BB_UserListRepo.prototype.Select_Element_FilterUserListTextbox = element(by.css('input[type="text"]')); //TODO no quitar orijinal problemas con chrome viejo en mi computadora. Pero sirve con el nuevo.
+   // BB_UserListRepo.prototype.Select_Element_FilterUserListTextbox = element(by.css('input[type="text"]')); //TODO no quitar orijinal problemas con chrome viejo en mi computadora. Pero sirve con el nuevo.
+    BB_UserListRepo.prototype.Select_Element_FilterUserListTextbox = element(by.xpath('//*[@id="page-box"]/user-list/div/div/div/div[1]/div/div[1]/input'));
 
     BB_UserListRepo.prototype.Select_Element_StatusFilter = element(by.css('select[name="statusFilterTerm"]'));
     BB_UserListRepo.prototype.Select_Element_StatusFilter_Inactive_Submenu = element(by.css('option[value=\"inactive\"]'));

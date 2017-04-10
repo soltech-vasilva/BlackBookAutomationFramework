@@ -112,18 +112,53 @@ var Page_Objects = function Page_Objects () {
     };
 
     page.clickButton = function(element, WaitTime, success) {
-        page.executeSequence([page.clickElement(element, WaitTime)
+        return page.executeSequence([page.clickElement(element, WaitTime)
         ]).then(() => {
             success();
         });
     };
 
     page.verifyElementNotInPage = function ( element ,WaitTime, success) {
-        page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(element), WaitTime)])
+        return page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(element), WaitTime)])
             .then(() => {
                 success();
             });
     };
+
+    page.verifyMessageDisplay = function ( element , errorMessage, WaitTime, success, failure) {
+        return  page.executeSequence([page.waitForElementTobePresent(element, WaitTime),
+            browser.isElementPresent(element).then((isPresente) => {
+                page.AssertElementsToDisplay(isPresente, element, errorMessage, 'It is not showing any message', success, failure);
+            })]).then(() => {
+        });
+    };
+
+    page.AssertElementsToDisplay = function (isElementPresent, elementToCheck, compareValuesString, consoleErrorMessageDisplay , success, failure ) {
+
+        if (isElementPresent == true) {
+            return  page.executeSequence([page.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure)]).then(()=>{});
+        }
+        else {
+            console.log(consoleErrorMessageDisplay);
+            // process.exit(1);
+            failure();
+        }
+    };
+
+    page.ExpectTextEqualsTo = function(elementToCheck, compareValuesString, success, failure){
+        return page.executeSequence([elementToCheck.getText().then((Text)=>{
+            if (Text.trim() == compareValuesString) {
+                success();
+            }
+            else {
+                console.log('Text: |'+Text+'| is not equal to compareValuesString: |'+ compareValuesString+'|');
+                failure();
+            }
+        })]);
+        //this kill script and dont fail gracely and report are blank "DONT USE EXPECT
+        // expect(elementToCheck.getText()).to.eventually.equal(compareValuesString);
+    };
+
     /**
      * Give focus to an element (just a descriptive alias for a click)
      * @param {WebElement} element

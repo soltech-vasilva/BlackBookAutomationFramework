@@ -13,7 +13,7 @@ Feature:  "Verify each Role UI"
      #ADDED THIS TO CONTINUE TEST CASES
     And I reload LogIn Page
       Then I verify BlackBook "Login" page with Applitools
-    #And I wait
+
 #######################################################################################################################
 #                                            Administration                                                           #
 #######################################################################################################################
@@ -38,6 +38,7 @@ Feature:  "Verify each Role UI"
       Then I verify BlackBook "Edit Administration Role" page with Applitools
     And I click on Save button in Role Editor
       Then I verify BlackBook "Save Administration Role message" page with Applitools
+    And I click Edit Button in Edit Roles
     And I click Reset Button in Edit Roles
       Then I verify BlackBook "Reset Administration Role" page with Applitools
     And I click Cancel Button from Edit Roles
@@ -70,6 +71,7 @@ Feature:  "Verify each Role UI"
       Then I verify BlackBook "Edit User Profile all@example.com" page with Applitools
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile all@example.com message" page with Applitools
+    And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
       Then I verify BlackBook "Reset User Profile" page with Applitools
     And I click Cancel Button in Edit User Profile
@@ -104,6 +106,7 @@ Feature:  "Verify each Role UI"
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile user1@example.com message" page with Applitools
+    And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
       Then I verify BlackBook "Reset My Profile" page with Applitools
     And I click Cancel Button in Edit User Profile
@@ -140,6 +143,7 @@ Feature:  "Verify each Role UI"
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile user2@example.com message" page with Applitools
+    And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
       Then I verify BlackBook "Reset My Profile" page with Applitools
     And I click Cancel Button in Edit User Profile
@@ -188,6 +192,7 @@ Examples:
       Then I verify BlackBook "Edit User Profile all@example.com" page with Applitools
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile all@example.com message" page with Applitools
+   And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
       Then I verify BlackBook "Reset User Profile" page with Applitools
     And I click Cancel Button in Edit User Profile
@@ -218,6 +223,7 @@ Examples:
       Then I verify BlackBook "Edit My Profile" page with Applitools
    And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile user3@example.com message" page with Applitools
+   And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
       Then I verify BlackBook "Reset My Profile" page with Applitools
     And I click Cancel Button in Edit User Profile
@@ -256,6 +262,7 @@ Examples:
       Then I verify BlackBook "Edit Administration Role" page with Applitools
     And I click on Save button in Role Editor
       Then I verify BlackBook "Save Administration Role message" page with Applitools
+    And I click Edit Button in Edit Roles
     And I click Reset Button in Edit Roles
       Then I verify BlackBook "Reset Administration Role" page with Applitools
     And I click Cancel Button from Edit Roles
@@ -289,6 +296,7 @@ Examples:
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile editor@example.com message" page with Applitools
+    And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
       Then I verify BlackBook "Reset My Profile" page with Applitools
     And I click Cancel Button in Edit User Profile
@@ -330,6 +338,7 @@ Examples:
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile admin@example.com message" page with Applitools
+    And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
       Then I verify BlackBook "Reset My Profile" page with Applitools
     And I click Cancel Button in Edit User Profile
@@ -367,6 +376,7 @@ Examples:
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile none@example.com message" page with Applitools
+    #And I click Edit Button in Edit User Profile
     And I click Reset Button in Edit User Profile
       Then I verify BlackBook "Reset My Profile" page with Applitools
     And I click Cancel Button in Edit User Profile
@@ -461,6 +471,7 @@ Examples:
     And I click on Save button in Role Editor
       Then I verify BlackBook "Save RoleName8 Role message" page with Applitools
     #And I wait
+    And I click Edit Button in Edit Roles
     And I click on Delete button in Role Editor
       Then I verify BlackBook "Pop up:Are you sure you want to delete the role, RoleName8? This action can't be undone." page with Applitools
     And I click "Confirm" Button for modal warning message from Edit Roles
@@ -546,11 +557,12 @@ Examples:
     And I enter my last name LastName39 in Form
     And I clear text box selected "EmailAddress" in User Profile
     And I enter my email address admintestemail39@yopmail.com in Form
-    And  I clear text box selected "PhoneNumber" in User Profile
+    And I clear text box selected "PhoneNumber" in User Profile
       Then I verify BlackBook "Edit User Profile -Update Form-" page with Applitools
     #And I wait
     And I click on Save button in Edit User Profile
       Then I verify BlackBook "Save User Profile admintestemail39@yopmail.com" page with Applitools
+    And I click Edit Button in Edit User Profile
     And I click Cancel Button in Edit User Profile
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click Avatar Image Button

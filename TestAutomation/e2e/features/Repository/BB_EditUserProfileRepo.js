@@ -23,10 +23,11 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Element_FilterRoleSearchTextbox   = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[2]/div[3]/div[2]/div/div/input'));
 
     //Components Buttons
-     //BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element.all(by.css('button.button')).get(0);
-     BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.css('button.button'));
-    BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.css('.button.yellow-btn.pull-right'));
-    BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.css('.button.red-btn.pull-right'));
+     BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element.all(by.css('button.button')).get(0);
+
+     //BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button'));
+    BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[2]'));
+    BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[1]'));
     BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.css('button.button.green-btn.pull-right'));
     BB_EditUserProfileRepo.prototype.Select_Element_UserActiveCheckbox = element(by.css('span.checkbox-label'));
     BB_EditUserProfileRepo.prototype.Select_Element_UsersRolesCheckbox_Administrator = element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2);
