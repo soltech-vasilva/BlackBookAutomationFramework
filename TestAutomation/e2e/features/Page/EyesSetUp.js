@@ -9,7 +9,6 @@ chai.use(chaiAsPromised);
 var Eyes = require('eyes.protractor').Eyes;
 var request = require("request");
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
-var page = require ('../Page/Page_Objects');
 
 var EyesSetUp = function EyesSetUp(){
 
@@ -42,14 +41,8 @@ var EyesSetUp = function EyesSetUp(){
     EyesSetUp.prototype.EyesClose_EndTestcase = function(eyes){
 
         if (protractorConfig.config.ApplitoolsOn == true) {
-            console.log("EYE close");
+            //console.log("EYE close");
             browser.driver.wait(eyes.close(false).then(function (testResults) {
-                // request({
-                //     uri: "https://soltech2:mnKfscqSMQ8C7jFfZR2Y@www.browserstack.com/automate/sessions/<session-id>.json",
-                //     method: "PUT",
-                //     form: {"status": "completed", "reason": ""}
-                // });
-                // console.log('testResults:'+ request);
             }));
         }
     };
@@ -58,18 +51,7 @@ var EyesSetUp = function EyesSetUp(){
 
         if (isBooleanApplitoolsOn == true) {
             eyes.checkWindow(verifyScreenElementName);
-            console.log("Capture:" + verifyScreenElementName);
-
-            // page.executeSequence([browser.driver.sleep(2000),
-            //     eyes.checkWindow(verifyScreenElementName).then(() => {
-            //         console.log("before sleep");
-            //     }),
-            //     browser.driver.sleep(2000).then(() => {
-            //         console.log("after sleep");
-            //     })
-            // ]).then(() => {
-            //     console.log("Capture:" + verifyScreenElementName)
-            // });
+            //console.log("Capture:" + verifyScreenElementName);
         }
     }
 };

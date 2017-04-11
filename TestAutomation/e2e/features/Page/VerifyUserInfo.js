@@ -20,12 +20,9 @@ var VerifyUserInfo = function VerifyUserInfo() {
 
             return Element.getAttribute("value").then(function (currentValue) {
                 this.ValueStored = currentValue;
-                //console.log('Value Stored:|' + this.ValueStored.toString() + '|');
                 if (this.ValueStored == ValueCompare) {
                     //if (this.ValueEntered == 'dd') {
                     return page.clickButton(Element, protractorConfig.config.WaitTime,success);
-                    //Element.click();
-                    //return success();
                 }
                 else {
                     console.log(TextboxName + ' value stored: |' + this.ValueStored + '| is not equal to Value (Compare): |' + ValueCompare + '|');
@@ -38,51 +35,42 @@ var VerifyUserInfo = function VerifyUserInfo() {
         return new Promise ((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
                 case 'firstname':
-                    // console.log(TextboxName.toLowerCase());
                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_FirstNameTextbox);
-                   // browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_FirstNameTextbox), 10000);
                     VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_FirstNameTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 case 'lastname':
                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_LastNameTextbox);
-                    //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_LastNameTextbox), 10000);
-                    VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_LastNameTextbox, ValueCompare, TextboxName, success, failure);
+                   VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_LastNameTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 case 'emailaddress':
                         utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox);
-                        //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_EmailAddressTextbox), 10000);
                         VerifyUserInfo.prototype.AssertElementAttributeDisplay(BB_editUserProfileRepo.Select_Element_EmailAddressTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 case 'phonenumber':
                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox);
-                    //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox), 10000);
                     VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_PhoneNumberTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 case 'newpassword':
                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox);
-                    //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_NewPasswordTextbox), 10000);
                     VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 case 'confirmnewpassword':
                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox);
-                    //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox), 10000);
-                    VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox, ValueCompare, TextboxName, success, failure);
+                   VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_ConfirmNewPasswordTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 case 'previouspassword' :
                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox);
-                    //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox), 10000);
                     VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 
                 case 'filterroles' :
                     utilities.ExpectedElement_StopAutomationAtFail(BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox);
-                    //browser.wait(protractor.ExpectedConditions.presenceOf( BB_editUserProfileRepo.Select_Element_PreviousPasswordTextbox), 10000);
                     VerifyUserInfo.prototype.AssertElementAttributeDisplay( BB_editUserProfileRepo.Select_Element_FilterRoleSearchTextbox, ValueCompare, TextboxName, success, failure);
                     break;
 

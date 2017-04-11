@@ -9,7 +9,6 @@ chai.use(chaiAsPromised);
 var BB_LoginRepo = function BB_LoginRepo () {
 
     //Strings
-    BB_LoginRepo.prototype.EyesVerify_BB_Login = 'BlackBook LogIn';
     //BB_LoginRepo.prototype.BlackBookEnvironmentUrl = 'https://autobahn.';
     BB_LoginRepo.prototype.BlackBookEnvironmentUrl = 'https://qa-autobahn.';
     BB_LoginRepo.prototype.BlackBookUrl = this.BlackBookEnvironmentUrl+'blackbookcloud.com';

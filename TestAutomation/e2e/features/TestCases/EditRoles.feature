@@ -28,7 +28,7 @@ Feature:  "Add a new Role"
 
     Given I enter BlackBook Login Website
      #ADDED THIS TO CONTINUE TEST CASES
-    And I reload LogIn Page
+    And I reload "LogIn" page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button

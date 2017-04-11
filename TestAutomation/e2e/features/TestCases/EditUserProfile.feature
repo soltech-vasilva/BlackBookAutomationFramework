@@ -24,9 +24,8 @@ Feature: Enter data on "Edit User Profile"
   Background:
 
     Given I enter BlackBook Login Website
-    And I wait
        #ADDED THIS TO CONTINUE TEST CASES
-    And I reload LogIn Page
+      And I reload "LogIn" page
       #Remmeber to add permission "CanAdd/EditUser","CanResetUsersPasswords","CanViewOtherUsers","CanViewUserList", "CanAdd/EditRoles","CanViewRoleList"
       And I enter my user email address user3@example.com in Login
       And I enter my Password Password1 in Login

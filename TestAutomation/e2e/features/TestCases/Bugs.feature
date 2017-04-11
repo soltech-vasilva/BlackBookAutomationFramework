@@ -13,7 +13,7 @@ Feature:  "Verify that this bugs dont return to the application."
 
     Given I enter BlackBook Login Website
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -53,7 +53,6 @@ Feature:  "Verify that this bugs dont return to the application."
 #  Scenario Outline: "@TestCases_A-3" (BB-367) Modify New Password as same Confirm Password cant click "SAVE" button to create user.(NOT FIX) (BUG)
 #    And I click on Admin Tab
 #    And I click on Users submenu from Admin Tab
-#    And I wait
 #    And I click on New User Button in User List
 #    When I enter my first name <firstName> in Form
 #      Then I should not see in "firstName" errors displayed
@@ -70,7 +69,6 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I add extra string "1" to my "newPassWord"
 #    And I delete the amount "1" characters from my "newPassWord"
 #    And I click checkbox User's Roles "Administrators" "in Edit User Profile"
-#    And I wait
 #      Then I should see in "Save button" "active"
 #
 #    Examples:
@@ -117,7 +115,7 @@ Feature:  "Verify that this bugs dont return to the application."
     #Dont takeout wait
     And I wait
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     #User has "Edit-Full-Roles"
     And I enter my user email address editor@example.com in Login
     And I enter my Password Password1 in Login
@@ -299,7 +297,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Logout sub menu from Avatar
     #User2
    #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address editor@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -633,14 +631,14 @@ Feature:  "Verify that this bugs dont return to the application."
     #Dont take wait
     And I wait
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user2@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
     And I click on Admin Tab
       Then I should not see "Setting" Button in AdminTab
    #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -653,14 +651,14 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user2@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
     And I click on Admin Tab
     And I click on Settings submenu from Admin Tab
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -692,7 +690,7 @@ Feature:  "Verify that this bugs dont return to the application."
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
     #USER 2
    #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user2@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -703,7 +701,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Gear Icons 1 inactive "in User List"
     #USER 1
    #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -724,7 +722,7 @@ Feature:  "Verify that this bugs dont return to the application."
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
      #USER 2
    #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user2@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -737,7 +735,7 @@ Feature:  "Verify that this bugs dont return to the application."
       Then I should see user's "emailAddress" displayed in screen with value "user3@example.com"
      #USER 1   disable all permission Basic Account
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -785,7 +783,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user2@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -797,7 +795,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Edit from Gear Icon "in User List"
       Then I should not see "NewPassword" "Textbox" in Edit Profile
    #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -813,7 +811,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Save button in Role Editor
       Then I should see "Role successfully updated" displayed on "EditRoles" popup
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user2@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -825,7 +823,7 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Edit from Gear Icon "in User List"
     And I enter my new Password Password1 in Form
     #Added this to continue test if previous did not end
-    And I reload LogIn Page
+    And  I reload "LogIn" page
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -870,9 +868,9 @@ Feature:  "Verify that this bugs dont return to the application."
   Scenario: "@TestCases_A-42" (BB-348) Using basic ULR will load Dashboard instead of Login page.
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I reload page "https://qa-autobahn.blackbookcloud.com"
-    #And I reload page "https://autobahn.blackbookcloud.com"
+    And I reload "https://qa-autobahn.blackbookcloud.com" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
+    #And I reload "https://autobahn.blackbookcloud.com" page
       #Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
 
      #TODO aqui
@@ -881,54 +879,54 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
     #HOME
-    And I reload page "https://qa-autobahn.blackbookcloud.com/dashboard"
+    And I reload "https://qa-autobahn.blackbookcloud.com/dashboard" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/dashboard"
+#    And I reload  "https://autobahn.blackbookcloud.com/dashboard" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
     #ROLE
-    And I reload page "https://qa-autobahn.blackbookcloud.com/role/list"
+    And I reload "https://qa-autobahn.blackbookcloud.com/role/list" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    And I reload page "https://qa-autobahn.blackbookcloud.com/role"
+    And I reload "https://qa-autobahn.blackbookcloud.com/role" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    And I reload page "https://qa-autobahn.blackbookcloud.com/role/2"
+    And I reload "https://qa-autobahn.blackbookcloud.com/role/2" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    And I reload page "https://qa-autobahn.blackbookcloud.com/role/2?edit=true"
+    And I reload "https://qa-autobahn.blackbookcloud.com/role/2?edit=true" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/role/list"
+#    And I reload  "https://autobahn.blackbookcloud.com/role/list" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/role"
+#    And I reload "https://autobahn.blackbookcloud.com/role" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/role/2"
+#    And I reload "https://autobahn.blackbookcloud.com/role/2" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/role/2?edit=true"
+#    And I reload "https://autobahn.blackbookcloud.com/role/2?edit=true" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
     #USER
-    And I reload page "https://qa-autobahn.blackbookcloud.com/user/list"
+    And I reload "https://qa-autobahn.blackbookcloud.com/user/list" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    And I reload page "https://qa-autobahn.blackbookcloud.com/user"
+    And I reload "https://qa-autobahn.blackbookcloud.com/user" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    And I reload page "https://qa-autobahn.blackbookcloud.com/user/6"
+    And I reload "https://qa-autobahn.blackbookcloud.com/user/6" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    And I reload page "https://qa-autobahn.blackbookcloud.com/user/6?edit=true"
+    And I reload "https://qa-autobahn.blackbookcloud.com/user/6?edit=true" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    And I reload page "https://qa-autobahn.blackbookcloud.com/settings"
+    And I reload "https://qa-autobahn.blackbookcloud.com/settings" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/user/list"
+#    And I reload "https://autobahn.blackbookcloud.com/user/list" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/user"
+#    And I reload "https://autobahn.blackbookcloud.com/user" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/user/6"
+#    And I reload "https://autobahn.blackbookcloud.com/user/6" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/user/6?edit=true"
+#    And I reload "https://autobahn.blackbookcloud.com/user/6?edit=true" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/settings"
+#    And I reload "https://autobahn.blackbookcloud.com/settings" page
 #      Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
     #Segment
-    And I reload page "https://qa-autobahn.blackbookcloud.com/segments/list"
+    And I reload "https://qa-autobahn.blackbookcloud.com/segments/list" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-    And I reload page "https://qa-autobahn.blackbookcloud.com/segments"
+    And I reload "https://qa-autobahn.blackbookcloud.com/segments" page
       Then I should see that I am in "full" "qa-autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/segments/list"
-#    Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
-#    And I reload page "https://autobahn.blackbookcloud.com/segments"
-#    Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
+#    And I reload "https://autobahn.blackbookcloud.com/segments/list" page
+#     Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
+#    And I reload "https://autobahn.blackbookcloud.com/segments" page
+#     Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL

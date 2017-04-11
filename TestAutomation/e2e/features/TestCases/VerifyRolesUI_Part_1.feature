@@ -11,7 +11,7 @@ Feature:  "Verify each Role UI"
   Background:
   Given I enter BlackBook Login Website
      #ADDED THIS TO CONTINUE TEST CASES
-    And I reload LogIn Page
+    And I reload "LogIn" page
       Then I verify BlackBook "Login" page with Applitools
 
 #######################################################################################################################
@@ -481,7 +481,7 @@ Examples:
     And I click Login Button
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
-      Then  I store value #of Users displayed for Administration in Role List
+      Then  I store value #of Users displayed for "Administration" in Role List
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
     And I click on New User Button in User List
@@ -507,10 +507,10 @@ Examples:
       Then I should see user's Role "Administrators" in User List
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
-      Then I should see #of Users has increase value for Administration in Role List
+      Then I should see #of Users has increase value for "Administration" in Role List
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+    And I reload "https://qa-autobahn.blackbookcloud.com/login" page
     And I enter my user email address admintestemail40@yopmail.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
@@ -538,7 +538,7 @@ Examples:
       Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-    And I reload page "https://qa-autobahn.blackbookcloud.com/login"
+    And I reload "https://qa-autobahn.blackbookcloud.com/login" page
     And I enter my user email address admintestemail39@yopmail.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button

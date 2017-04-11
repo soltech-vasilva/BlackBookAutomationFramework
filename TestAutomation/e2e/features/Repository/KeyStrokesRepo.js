@@ -4,9 +4,7 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-var captureBrowserCapabilities = require ('../Page/CaptureBrowserCapabilities.js');
 var protractor = require('protractor');
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 var KeyStrokeRepo = function KeyStrokeRepo () {
 
