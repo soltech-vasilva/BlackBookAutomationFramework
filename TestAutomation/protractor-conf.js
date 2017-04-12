@@ -9,10 +9,11 @@ exports.config = {
     // ],
     'StopRunAtFail': true,   //false original
     'WaitTime': 15000,
-    'BuildTestNumber': '151',
+    'BuildTestNumber': '155',
 
     //Turn off applitool
-    'ApplitoolsOn': false,
+    'ApplitoolsOn': true,
+    //'ApplitoolsOn': false,
 
     //Running Test Cases in specific order.
     specs: [
@@ -91,7 +92,7 @@ exports.config = {
          'browserstack.debug': 'false',
 
          //Video recording
-         'browserstack.video': 'false'//,
+         'browserstack.video': 'true'//,
     },
     //
     //Browserstack multiple browsers at a time testing

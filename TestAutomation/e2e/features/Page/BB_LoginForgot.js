@@ -16,6 +16,14 @@ var BB_LoginForgot = function BB_LoginForgot() {
 
     BB_LoginForgot.prototype.emailAddress = '';
 
+    BB_LoginForgot.prototype.Click_SendLinkButton = function () {
+        return new Promise((success, failure) => {
+            page.executeSequence([
+                page.clickElement(BB_loginForgotRepo.Select_Element_SendLinkButton, protractorConfig.config.WaitTime),
+                page.clearFocus()
+            ]).then(()=>{success();});
+        });
+    };
 
     BB_LoginForgot.prototype.Enter_EmailAdress = function (emailAddress) {
         return new Promise((success, failure) => {
@@ -23,15 +31,6 @@ var BB_LoginForgot = function BB_LoginForgot() {
                 page.fill(BB_loginForgotRepo.Select_Element_EmailAddressTextbox, this.emailAddress, protractorConfig.config.WaitTime, BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
             ]).then(() => {
             });
-        });
-    };
-
-    BB_LoginForgot.prototype.Click_SendLinkButton = function () {
-        return new Promise((success, failure) => {
-            page.executeSequence([
-                page.clickElement(BB_loginForgotRepo.Select_Element_SendLinkButton, protractorConfig.config.WaitTime),
-                page.clearFocus()
-            ]).then(()=>{success();});
         });
     };
 };

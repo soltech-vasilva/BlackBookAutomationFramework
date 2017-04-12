@@ -15,6 +15,18 @@ var BB_Login = function BB_Login() {
     BB_Login.prototype.currentEmailAddress = '';
     BB_Login.prototype.currentPassword = '';
 
+    BB_Login.prototype.Click_LoginButton_Login = function () {
+        return new Promise((success, failure)=> {
+            page.clickButton(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime,success);
+        });
+    };
+
+    BB_Login.prototype.Click_ForgotPasswordLink_Login = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_loginRepo.Select_Element_ForgotPasswordLink, protractorConfig.config.WaitTime, success);
+        });
+    };
+
     BB_Login.prototype.Click_LoginButtonX3 = function () {
         return page.executeSequence([
             page.clickElement(BB_loginRepo.Select_Element_UserPasswordTextbox, protractorConfig.config.WaitTime),
@@ -22,6 +34,22 @@ var BB_Login = function BB_Login() {
             page.clickElement(BB_loginRepo.Select_Element_UserPasswordTextbox, protractorConfig.config.WaitTime),
             browser.driver.sleep(2000),
             BB_Login.prototype.Click_LoginButton_Login()]).then(() => {
+        });
+    };
+
+    BB_Login.prototype.Enter_CurrentEmailAddress_Login = function (currentEmail) {
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString()),
+                page.fill(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress, protractorConfig.config.WaitTime,BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
+            ]).then(()=>{});
+        });
+    };
+
+    BB_Login.prototype.Enter_CurrentPassword_Login = function (currentPasswordEntered) {
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.currentPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentPasswordEntered.toString()),
+                page.fill(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword, protractorConfig.config.WaitTime,BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
+            ]).then(()=>{});
         });
     };
 
@@ -59,34 +87,6 @@ var BB_Login = function BB_Login() {
             page.executeSequence([page.setResolution(protractorConfig.config.width, protractorConfig.config.height),
                 page.openUrl(true, BB_loginRepo.BlackBookUrl, 4000).then(()=>{success();})
             ]).then(()=>{});
-        });
-    };
-
-    BB_Login.prototype.Enter_CurrentEmailAddress_Login = function (currentEmail) {
-        return new Promise((success, failure)=> {
-            page.executeSequence([this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString()),
-            page.fill(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress, protractorConfig.config.WaitTime,BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
-            ]).then(()=>{});
-        });
-    };
-
-    BB_Login.prototype.Enter_CurrentPassword_Login = function (currentPasswordEntered) {
-        return new Promise((success, failure)=> {
-            page.executeSequence([this.currentPassword = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentPasswordEntered.toString()),
-                page.fill(BB_loginRepo.Select_Element_UserPasswordTextbox, this.currentPassword, protractorConfig.config.WaitTime,BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
-            ]).then(()=>{});
-        });
-    };
-
-    BB_Login.prototype.Click_LoginButton_Login = function () {
-        return new Promise((success, failure)=> {
-           page.clickButton(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime,success);
-        });
-    };
-
-    BB_Login.prototype.Click_ForgotPasswordLink_Login = function () {
-        return new Promise((success, failure) => {
-            page.clickButton(BB_loginRepo.Select_Element_ForgotPasswordLink, protractorConfig.config.WaitTime, success);
         });
     };
 };

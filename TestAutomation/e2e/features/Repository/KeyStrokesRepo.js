@@ -16,10 +16,6 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
         browser.driver.actions().sendKeys(protractor.Key.NUMPAD1).perform();
     };
 
-    KeyStrokeRepo.prototype.ARROWDOWN = function () {
-        browser.driver.actions().sendKeys(protractor.Key.ARROW_DOWN).perform();
-    };
-
     //Keystroke only on windows machine machine (safai is not working even with COMMAND)
     KeyStrokeRepo.prototype.CONTROL_ALL_DELETE = function () {
 
@@ -37,6 +33,10 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
                 browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.CONTROL, 'a')).sendKeys(protractor.Key.DELETE).perform();
             }
         });
+    };
+
+    KeyStrokeRepo.prototype.ARROWDOWN = function () {
+        browser.driver.actions().sendKeys(protractor.Key.ARROW_DOWN).perform();
     };
 };
 module.exports = new KeyStrokeRepo();

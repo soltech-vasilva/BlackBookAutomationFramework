@@ -10,15 +10,35 @@ var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js')
 
 var BB_Menu = function BB_Menu() {
 
-    BB_Menu.prototype.Verify_ButtonNotInPage_Menu = function (buttonName) {
-        return new Promise((success, failure) => {
-            page.verifyElementNotInPage(BB_menuRepo.Select_Element_SettingsSubMenuButton, 4000, success);
-        });
-    };
-
     BB_Menu.prototype.Click_HomeTab = function () {
         return new Promise((success, failure) => {
             page.clickButton(BB_menuRepo.Select_Element_HomeTab, protractorConfig.config.WaitTime, success);
+        });
+    };
+
+    BB_Menu.prototype.Click_AdminTab = function () {
+        return new Promise((success, failure) => {
+            page.executeSequence([page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
+                browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform().then(()=>{  success();})
+            ]).then(() => {});
+        });
+    };
+
+    BB_Menu.prototype.Click_Users_Submenu = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_menuRepo.Select_Element_UsersSubMenuButton,protractorConfig.config.WaitTime, success);
+        });
+    };
+
+    BB_Menu.prototype.Click_Roles_Submenu = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime, success);
+        });
+    };
+
+    BB_Menu.prototype.Click_Settings_Submenu = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_menuRepo.Select_Element_SettingsSubMenuButton, protractorConfig.config.WaitTime, success);
         });
     };
 
@@ -44,29 +64,9 @@ var BB_Menu = function BB_Menu() {
         });
     };
 
-    BB_Menu.prototype.Click_AdminTab = function () {
+    BB_Menu.prototype.Verify_ButtonNotInPage_Menu = function (buttonName) {
         return new Promise((success, failure) => {
-            page.executeSequence([page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
-                browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform().then(()=>{  success();})
-            ]).then(() => {});
-        });
-    };
-
-    BB_Menu.prototype.Click_Users_Submenu = function () {
-        return new Promise((success, failure) => {
-            page.clickButton(BB_menuRepo.Select_Element_UsersSubMenuButton,protractorConfig.config.WaitTime, success);
-        });
-    };
-
-    BB_Menu.prototype.Click_Roles_Submenu = function () {
-        return new Promise((success, failure) => {
-          page.clickButton(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime, success);
-        });
-    };
-
-    BB_Menu.prototype.Click_Settings_Submenu = function () {
-        return new Promise((success, failure) => {
-            page.clickButton(BB_menuRepo.Select_Element_SettingsSubMenuButton, protractorConfig.config.WaitTime, success);
+            page.verifyElementNotInPage(BB_menuRepo.Select_Element_SettingsSubMenuButton, 4000, success);
         });
     };
 };

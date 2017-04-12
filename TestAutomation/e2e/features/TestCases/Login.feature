@@ -101,22 +101,22 @@ Feature: Enter data on "LOGIN" page
            |  admintestemail2@yopmail.com       |        Password0   |
 
 #    #(BUG NOT FIX)
-#      @TC_Login_B-4
-#      Scenario Outline: "@TC_Login_B-4" Enter invalid login 6 times for Login Page will throw error "Invalid login. Please reset your password."
-#           #BUG ADDED THIS TO CONTINUE
-#        And I reload "https://qa-autobahn.blackbookcloud.com/login" page
-#        And I enter my user email address <currentEmailAddress> in Login
-#        And I enter my Password <currentPassword> in Login
-#        And I click Login Button
-#        #ADDED 2 task
-#        And I re-enter the same user name and password
-#        And I re-enter the same user name and password
-#        #And I re-enter the same user name and password
-#          Then I should see "currentEmailAddress" message "Invalid login. Please reset your password." displayed for this "filled" field
-#
-#        Examples:
-#          | currentEmailAddress                |   currentPassword  |
-#          | admintestemail3@yopmail.com        |        Password0   |
+      @TC_Login_B-4
+      Scenario Outline: "@TC_Login_B-4" Enter invalid login 6 times for Login Page will throw error "Invalid login. Please reset your password."
+           #BUG ADDED THIS TO CONTINUE
+        And I reload "https://qa-autobahn.blackbookcloud.com/login" page
+        And I enter my user email address <currentEmailAddress> in Login
+        And I enter my Password <currentPassword> in Login
+        And I click Login Button
+        #ADDED 2 task
+        And I re-enter the same user name and password
+        And I re-enter the same user name and password
+        #And I re-enter the same user name and password
+          Then I should see "currentEmailAddress" message "Invalid login. Please reset your password." displayed for this "filled" field
+
+        Examples:
+          | currentEmailAddress                |   currentPassword  |
+          | admintestemail3@yopmail.com        |        Password0   |
 
 
 
@@ -141,17 +141,17 @@ Feature: Enter data on "LOGIN" page
 #                                               TC_Login_D                                                              #
 #########################################################################################################################
 #   #(BUG NOT FIX)
-# @TC_Login_D
-#  Scenario Outline: "@TC_Login_D" Enter a Deactivated account for Login Page will throw error "Unable to log in. Please contact your administrator." (Require  @TestCases_A-1 Userlist).
-#    And I enter my user email address <currentEmailAddress> in Login
-#    And I enter my Password <currentPassword> in Login
-#    And I click Login Button
-#      Then I should see "currentEmailAddress" message "Unable to log in. Please contact your administrator." displayed for this "filled" field
-#
-#    Examples:
-#           | currentEmailAddress             |   currentPassword  |
-##invalid log in Users
-#           |  admintestemail5@yopmail.com    |       QaAdmin123   |
+ @TC_Login_D
+  Scenario Outline: "@TC_Login_D" Enter a Deactivated account for Login Page will throw error "Unable to log in. Please contact your administrator." (Require  @TestCases_A-1 Userlist).
+    And I enter my user email address <currentEmailAddress> in Login
+    And I enter my Password <currentPassword> in Login
+    And I click Login Button
+      Then I should see "currentEmailAddress" message "Unable to log in. Please contact your administrator." displayed for this "filled" field
+
+    Examples:
+           | currentEmailAddress             |   currentPassword  |
+#invalid log in Users
+           |  admintestemail5@yopmail.com    |       QaAdmin123   |
 
 
 #########################################################################################################################

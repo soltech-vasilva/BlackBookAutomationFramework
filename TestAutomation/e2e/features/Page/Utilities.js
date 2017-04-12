@@ -15,6 +15,26 @@ var Utilities = function Utilities() {
 
     Utilities.prototype.ValueEntered = '';
 
+    Utilities.prototype.RefreshPage = function () {
+        return new Promise((success, failure) => {
+            page.executeSequence([browser.refresh(),
+                success()]).then(() => {
+            });
+        });
+    };
+
+    Utilities.prototype.ReplaceDoubleQuotesWithWhiteSpace = function (stringToReplace) {
+        stringToReplace = stringToReplace.replace(/"/g, " ");
+        return stringToReplace;
+    };
+
+    Utilities.prototype.SendKeysSlower = function (Element , strValue) {
+        for (var i = 0; i < strValue.toString().length; i++) {
+            var c = strValue.charAt(i);
+            Element.sendKeys(c);
+        }
+    };
+
     Utilities.prototype.Verify_BlackBookPage_Applitools = function (namePage, eyesSetUp, eyes) {
         return new Promise((success, failure) => {
             page.executeSequence([browser.driver.sleep(1000),
@@ -25,12 +45,20 @@ var Utilities = function Utilities() {
         });
     };
 
-    Utilities.prototype.RefreshPage = function () {
-        return new Promise((success, failure) => {
-            page.executeSequence([browser.refresh(),
-                success()]).then(() => {
+    Utilities.prototype.ExpectedElement_StopAutomationAtFail = function(element)
+    {
+        if (protractorConfig.config.StopRunAtFail == true) {
+            page.waitForElementTobePresent(element, protractorConfig.config.WaitTime).then(() => {
             });
-        });
+        }
+        else {
+            page.executeSequence([browser.driver.sleep(5000)]).then(()=>{});
+        }
+    };
+
+    Utilities.prototype.ElapsedTime = function(startTime)
+    {
+        console.log('Elapsed time: ' + Math.round((((new Date().getTime() - startTime)/1000)/60)*100)/100 + ' minutes');
     };
 
     Utilities.prototype.VerifyActualURLLoaded = function (partURL, VerifyURL) {
@@ -69,18 +97,6 @@ var Utilities = function Utilities() {
         });
     };
 
-    Utilities.prototype.ReplaceDoubleQuotesWithWhiteSpace = function (stringToReplace) {
-        stringToReplace = stringToReplace.replace(/"/g, " ");
-        return stringToReplace;
-    };
-
-    Utilities.prototype.SendKeysSlower = function (Element , strValue) {
-        for (var i = 0; i < strValue.toString().length; i++) {
-            var c = strValue.charAt(i);
-            Element.sendKeys(c);
-        }
-    };
-
     Utilities.prototype.VerifyValueEntered_RetypeValue = function (Element,  ValueCompare ) {
           return browser.driver.wait(Element.getAttribute("value").then(function (currentValue) {
               this.ValueEntered = currentValue;
@@ -101,22 +117,6 @@ var Utilities = function Utilities() {
                   }
               }
           }));
-    };
-
-    Utilities.prototype.ExpectedElement_StopAutomationAtFail = function(element)
-    {
-        if (protractorConfig.config.StopRunAtFail == true) {
-            page.waitForElementTobePresent(element, protractorConfig.config.WaitTime).then(() => {
-            });
-        }
-        else {
-            page.executeSequence([browser.driver.sleep(5000)]).then(()=>{});
-        }
-    };
-
-    Utilities.prototype.ElapsedTime = function(startTime)
-    {
-        console.log('Elapsed time: ' + Math.round((((new Date().getTime() - startTime)/1000)/60)*100)/100 + ' minutes');
     };
 
     Utilities.prototype.VerifyButtonStatus_isEnableorDisable = function(Element , isEnableOrDisable, success, failure) {

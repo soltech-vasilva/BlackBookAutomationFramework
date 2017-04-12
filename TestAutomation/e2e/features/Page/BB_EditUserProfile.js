@@ -24,16 +24,32 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
     BB_EditUserProfile.prototype.previousPassword = '';
     BB_EditUserProfile.prototype.filterRoles = '';
 
-
-    BB_EditUserProfile.prototype.Click_UsersRolesCheckbox_Administrator = function () {
+    BB_EditUserProfile.prototype.Click_EditButton_EditUserProfile = function () {
         return new Promise((success, failure) => {
-            page.clickButton(BB_editUserProfileRepo.Select_Element_UsersRolesCheckbox_Administrator, protractorConfig.config.WaitTime, success);
+            page.executeSequence([ browser.driver.sleep(2000),
+                page.clickElement(BB_editUserProfileRepo.Select_Element_EditButton,protractorConfig.config.WaitTime),
+                page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
+            ]).then(()=>{});
         });
     };
 
-    BB_EditUserProfile.prototype.VerifyElementNotInPage_NewPasswordTextbox = function () {
+    BB_EditUserProfile.prototype.Click_ResetButton_EditUserProfile = function () {
         return new Promise((success, failure) => {
-            page.verifyElementNotInPage(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, 4000, success);
+            page.executeSequence([page.clickElement(BB_editUserProfileRepo.Select_Element_ResetButton,protractorConfig.config.WaitTime),
+                page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
+            ]).then(()=>{});
+        });
+    };
+
+    BB_EditUserProfile.prototype.Click_CancelButton_EditUserProfile = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_editUserProfileRepo.Select_Element_CancelButton,protractorConfig.config.WaitTime,success);
+        });
+    };
+
+    BB_EditUserProfile.prototype.Click_SaveButton_EditUserProfile = function () {
+        return new Promise((success, failure)=> {
+            page.clickButton(BB_editUserProfileRepo.Select_Element_SaveButton, protractorConfig.config.WaitTime, success);
         });
     };
 
@@ -46,42 +62,13 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         });
     };
 
-    BB_EditUserProfile.prototype.Click_UserActive_checkbox = function () {
-        return new Promise((success, failure) => {
-            page.clickButton(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime, success);
+    BB_EditUserProfile.prototype.Enter_FirstName_inForm = function (firstName) {
+        return new Promise((success, failure)=> {
+            page.executeSequence([this.firstName = utilities.ReplaceDoubleQuotesWithWhiteSpace(firstName.toString()),
+                page.fill(BB_editUserProfileRepo.Select_Element_FirstNameTextbox, this.firstName, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
+            ]).then(()=>{});
         });
     };
-
-    BB_EditUserProfile.prototype.Verify_UserActive_Checkbox_Inactive = function () {
-        return new Promise((success, failure) => {
-            page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime),
-                // browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
-                // browser.driver.sleep(1000),
-                //TODO si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
-                browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content').then(function (data) {
-                    // console.log(data);
-
-                    if (data == '""') {
-                        console.log('Pass, It wont change setting');
-                        success();
-                    }
-                    else {
-                        console.log("Fail, User Active change settings");
-                        failure();
-                    }
-                })
-            ]).then(() => {
-            });
-        });
-    };
-
-   BB_EditUserProfile.prototype.Enter_FirstName_inForm = function (firstName) {
-       return new Promise((success, failure)=> {
-           page.executeSequence([this.firstName = utilities.ReplaceDoubleQuotesWithWhiteSpace(firstName.toString()),
-               page.fill(BB_editUserProfileRepo.Select_Element_FirstNameTextbox, this.firstName, protractorConfig.config.WaitTime,BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)
-           ]).then(()=>{});
-       });
-   };
 
     BB_EditUserProfile.prototype.Enter_LastName_inForm = function (lastName) {
         return new Promise((success, failure)=> {
@@ -132,7 +119,48 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         });
     };
 
-    BB_EditUserProfile.prototype.DeleteContentInTextBox = function (TextboxName) {
+    BB_EditUserProfile.prototype.Click_UserActive_checkbox = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime, success);
+        });
+    };
+
+    BB_EditUserProfile.prototype.Click_UsersRolesCheckbox_Administrator = function () {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_editUserProfileRepo.Select_Element_UsersRolesCheckbox_Administrator, protractorConfig.config.WaitTime, success);
+        });
+    };
+
+    BB_EditUserProfile.prototype.VerifyElementNotInPage_NewPasswordTextbox = function () {
+        return new Promise((success, failure) => {
+            page.verifyElementNotInPage(BB_editUserProfileRepo.Select_Element_NewPasswordTextbox, 4000, success);
+        });
+    };
+
+    BB_EditUserProfile.prototype.Verify_UserActive_Checkbox_Inactive = function () {
+        return new Promise((success, failure) => {
+            page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime),
+                // browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
+                // browser.driver.sleep(1000),
+                //TODO si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
+                browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content').then(function (data) {
+                    // console.log(data);
+
+                    if (data == '""') {
+                        console.log('Pass, It wont change setting');
+                        success();
+                    }
+                    else {
+                        console.log("Fail, User Active change settings");
+                        failure();
+                    }
+                })
+            ]).then(() => {
+            });
+        });
+    };
+
+    BB_EditUserProfile.prototype.DeleteContentInTextBox_RoleEditor = function (TextboxName) {
         return new Promise((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
                 case 'firstname':
@@ -160,7 +188,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
                     break;
 
                 default:
-                    console.log(TextboxName + ' : is not part of switch statement in DeleteContentInTextBox function.');
+                    console.log(TextboxName + ' : is not part of switch statement in DeleteContentInTextBox_RoleEditor function.');
                     failure();
             }
         });
@@ -173,33 +201,6 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         });
     };
 
-    BB_EditUserProfile.prototype.Click_EditButton_EditUserProfile = function () {
-        return new Promise((success, failure) => {
-            page.executeSequence([ browser.driver.sleep(2000),
-                page.clickElement(BB_editUserProfileRepo.Select_Element_EditButton,protractorConfig.config.WaitTime),
-            page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
-            ]).then(()=>{});
-        });
-    };
 
-    BB_EditUserProfile.prototype.Click_ResetButton_EditUserProfile = function () {
-        return new Promise((success, failure) => {
-            page.executeSequence([page.clickElement(BB_editUserProfileRepo.Select_Element_ResetButton,protractorConfig.config.WaitTime),
-                page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
-            ]).then(()=>{});
-        });
-    };
-
-    BB_EditUserProfile.prototype.Click_CancelButton_EditUserProfile = function () {
-        return new Promise((success, failure) => {
-            page.clickButton(BB_editUserProfileRepo.Select_Element_CancelButton,protractorConfig.config.WaitTime,success);
-        });
-    };
-
-    BB_EditUserProfile.prototype.Click_SaveButton_EditUserProfile = function () {
-        return new Promise((success, failure)=> {
-            page.clickButton(BB_editUserProfileRepo.Select_Element_SaveButton, protractorConfig.config.WaitTime, success);
-        });
-    };
 };
 module.exports = new BB_EditUserProfile();

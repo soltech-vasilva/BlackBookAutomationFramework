@@ -91,7 +91,7 @@ exports.config = {
          'browserstack.debug': 'false',
 
          //Video recording
-         'browserstack.video': 'false'//,
+         'browserstack.video': 'true'//,
     },
 
     //Browserstack multiple browsers at a time testing

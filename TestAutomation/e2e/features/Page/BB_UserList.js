@@ -16,55 +16,6 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.FilterValue = '';
 
-    BB_UserList.prototype.Verify_ButtonNotInPage = function (buttonName) {
-        return new Promise((success, failure) => {
-            page.verifyElementNotInPage(BB_userListRepo.Select_Element_NewUserButton, 4000, success);
-        });
-    };
-
-    BB_UserList.prototype.Verify_UsersRole = function (userRole) {
-        return new Promise((success, failure) => {
-            page.verifyMessageDisplay(BB_userListRepo.Select_Element_CellAdmin, userRole, protractorConfig.config.WaitTime, success, failure);
-        });
-    };
-
-    BB_UserList.prototype.VerifyGearSubMenuOptions = function () {
-        return new Promise((success, failure) => {
-            page.executeSequence([BB_userListRepo.Select_Element_Gear_All_Submenu.getText().then(function (arr) {
-                var headers = arr.toString().split("\n");
-
-                if (headers[0] == "View") {
-                    //console.log("header:|"+headers[0]+"|");
-                    if (headers[1] == "Edit") {
-                        //  console.log("header:|"+headers[1]+"|");
-                        if (headers[2] == "Deactivate") {
-                            //    console.log("header:|"+headers[2]+"|");
-                            success();
-                        }
-                    }
-                }
-                else {
-                    failure();
-                }
-            })]).then(() => {
-            });
-        });
-    };
-
-    BB_UserList.prototype.VerifyButtonsEnableOrDisable = function (ButtonName, isEnableOrDisable) {
-        return new Promise((success, failure) => {
-            switch (ButtonName.toString().toLowerCase()) {
-                case "newuser":
-                    utilities.VerifyButtonStatus_isEnableorDisable(BB_userListRepo.Select_Element_NewUserButton, isEnableOrDisable, success, failure);
-                    break;
-
-                default:
-                    console.log("Button Name selection is not in function.");
-                    failure();
-            }
-        });
-    };
-
     BB_UserList.prototype.Click_NewUser_Button = function () {
         return new Promise((success, failure)=> {
             page.clickButton(BB_userListRepo.Select_Element_NewUserButton, protractorConfig.config.WaitTime, success );
@@ -137,6 +88,55 @@ var BB_UserList = function BB_UserList() {
     BB_UserList.prototype.Click_Gear_Delete_Submenu = function () {
         return new Promise((success, failure)=> {
             page.clickButton(BB_userListRepo.Select_Element_Gear_Delete_Submenu, protractorConfig.config.WaitTime, success);
+        });
+    };
+
+    BB_UserList.prototype.Verify_ButtonNotInPage = function (buttonName) {
+        return new Promise((success, failure) => {
+            page.verifyElementNotInPage(BB_userListRepo.Select_Element_NewUserButton, 4000, success);
+        });
+    };
+
+    BB_UserList.prototype.Verify_UsersRole = function (userRole) {
+        return new Promise((success, failure) => {
+            page.verifyMessageDisplay(BB_userListRepo.Select_Element_CellAdmin, userRole, protractorConfig.config.WaitTime, success, failure);
+        });
+    };
+
+    BB_UserList.prototype.VerifyGearSubMenuOptions = function () {
+        return new Promise((success, failure) => {
+            page.executeSequence([BB_userListRepo.Select_Element_Gear_All_Submenu.getText().then(function (arr) {
+                var headers = arr.toString().split("\n");
+
+                if (headers[0] == "View") {
+                    //console.log("header:|"+headers[0]+"|");
+                    if (headers[1] == "Edit") {
+                        //  console.log("header:|"+headers[1]+"|");
+                        if (headers[2] == "Deactivate") {
+                            //    console.log("header:|"+headers[2]+"|");
+                            success();
+                        }
+                    }
+                }
+                else {
+                    failure();
+                }
+            })]).then(() => {
+            });
+        });
+    };
+
+    BB_UserList.prototype.Verify_ButtonsEnableOrDisable_RoleEditor = function (ButtonName, isEnableOrDisable) {
+        return new Promise((success, failure) => {
+            switch (ButtonName.toString().toLowerCase()) {
+                case "newuser":
+                    utilities.VerifyButtonStatus_isEnableorDisable(BB_userListRepo.Select_Element_NewUserButton, isEnableOrDisable, success, failure);
+                    break;
+
+                default:
+                    console.log("Button Name selection is not in function.");
+                    failure();
+            }
         });
     };
 };

@@ -14,6 +14,18 @@ var BB_RoleList = function BB_RoleList() {
 
     BB_RoleList.prototype.numberofUsers = 0;
 
+    BB_RoleList.prototype.Click_NewRole_Button = function () {
+        return new Promise((success, failure)=> {
+            page.clickButton(BB_roleListRepo.Select_Element_NewRoleButton, protractorConfig.config.WaitTime, success);
+        });
+    };
+
+    BB_RoleList.prototype.Click_Gear_View_Submenu = function (rowNumber) {
+        return new Promise((success, failure) => {
+            page.clickButton(BB_roleListRepo.Select_Element_Gear_View_Submenu(rowNumber),protractorConfig.config.WaitTime,success);
+        });
+    };
+
     BB_RoleList.prototype.Store_NumberOfUsersColumn = function (RoleName) {
 
         var element = '';
@@ -26,7 +38,7 @@ var BB_RoleList = function BB_RoleList() {
                     break;
 
                 case 'administration':
-                    page.executeSequence([page.waitForElementTobePresent(BB_roleListRepo.Select_Element_ColumnNumberOfUsers.get(1), protractorConfig.config.WaitTime),
+                    page.executeSequence([page.waitForElementTobePresent(BB_roleListRepo.Select_Element_NumberOfUsersColumn.get(1), protractorConfig.config.WaitTime),
                         element = BB_roleListRepo.Select_Element_NumberOfUsersColumn.get(1)]).then(() => {
                     });
                     break;
@@ -55,7 +67,7 @@ var BB_RoleList = function BB_RoleList() {
                     break;
 
                 case 'administration':
-                    page.executeSequence([page.waitForElementTobePresent(BB_roleListRepo.Select_Element_ColumnNumberOfUsers.get(1), protractorConfig.config.WaitTime),
+                    page.executeSequence([page.waitForElementTobePresent(BB_roleListRepo.Select_Element_NumberOfUsersColumn.get(1), protractorConfig.config.WaitTime),
                         element = BB_roleListRepo.Select_Element_NumberOfUsersColumn.get(1)]).then(() => {
                     });
                     break;
@@ -79,20 +91,6 @@ var BB_RoleList = function BB_RoleList() {
                 }
             })]).then(() => {
             });
-        });
-    };
-
-
-
-    BB_RoleList.prototype.Click_NewRole_Button = function () {
-        return new Promise((success, failure)=> {
-            page.clickButton(BB_roleListRepo.Select_Element_NewRoleButton, protractorConfig.config.WaitTime, success);
-        });
-    };
-
-    BB_RoleList.prototype.Click_Gear_View_Submenu = function (rowNumber) {
-        return new Promise((success, failure) => {
-            page.clickButton(BB_roleListRepo.Select_Element_Gear_View_Submenu(rowNumber),protractorConfig.config.WaitTime,success);
         });
     };
 };
