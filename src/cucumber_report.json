@@ -1,0 +1,249 @@
+[
+  {
+    "id": "Enter-data-on-\"LOGIN\"-page",
+    "name": "Enter data on \"LOGIN\" page",
+    "description": "\nRules:\n-Verify that All inputs boxes are working and login correctly \"No ERROR\". (TC_Login_A)\n\nQuestion:\n-What happens if email entered is empty \"Display ERROR\"? Yes [TC_Login_B-1]\n-What happens if data entered on  email is bad \"Display ERROR\"? Yes [TC_Login_B-2]\n-What happens if data entered on  email is good and password is bad \"Display ERROR\"? Yes [TC_Login_B-3]\n-What happens if data user and password entered too many times \"6 time\" wrong \"Display ERROR\"? Yes [TC_Login_B-4]\n-What happens if password entered is empty \"Display ERROR\"? Yes [TC_Login_C]\n-What happens if User is Desactivated \"Display ERROR\"? YES [TC_Login_D]\n-What happens on successful log in (home page)? for now (TC_Login_A)\n-What happens if Password is Expired?\n\n-BUG: not loading the page correctly , I am adding reload page.",
+    "line": 5,
+    "keyword": "Feature",
+    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/Login.feature",
+    "elements": [
+      {
+        "name": "",
+        "keyword": "Background",
+        "description": "",
+        "type": "background",
+        "line": 22,
+        "steps": [
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given "
+          },
+          {
+            "name": "I reload \"LogIn\" page",
+            "line": 25,
+            "keyword": "And "
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-3\" Enter bad data on password for Login Page will throw error (\"Invalid Login. Please try again.\" first time entering bad password)",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-3\"-enter-bad-data-on-password-for-login-page-will-throw-error-(\"invalid-login.-please-try-again.\"-first-time-entering-bad-password)",
+        "line": 101,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-3",
+            "line": 91
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 10227224
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 11067909431
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload \"LogIn\" page",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 197878875
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail13@yopmail.com in Login",
+            "line": 93,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1851608160
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password0 in Login",
+            "line": 94,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1737417383
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 95,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 408070472
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid Login. Please try again.\" displayed for this \"filled\" field",
+            "line": 96,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2580075275
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 586959
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_Login_B-4\" Enter invalid login 6 times for Login Page will throw error \"Invalid login. Please reset your password.\"",
+        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-4\"-enter-invalid-login-6-times-for-login-page-will-throw-error-\"invalid-login.-please-reset-your-password.\"",
+        "line": 119,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_Login_B-4",
+            "line": 104
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 5679095
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 23,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 8829101700
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload \"LogIn\" page",
+            "line": 25,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 136582738
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload \"https://qa-autobahn.blackbookcloud.com/login\" page",
+            "line": 107,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 83304337
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail15@yopmail.com in Login",
+            "line": 108,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1225094377
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password Password0 in Login",
+            "line": 109,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1088013751
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 110,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 486684706
+            },
+            "match": {}
+          },
+          {
+            "name": "I re-enter the same user name and password",
+            "line": 112,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7619765214
+            },
+            "match": {}
+          },
+          {
+            "name": "I re-enter the same user name and password",
+            "line": 113,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 7447920176
+            },
+            "match": {}
+          },
+          {
+            "name": "I should see \"currentEmailAddress\" message \"Invalid login. Please reset your password.\" displayed for this \"filled\" field",
+            "line": 115,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 2608392370
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 392427
+            },
+            "match": {}
+          }
+        ]
+      }
+    ]
+  }
+]

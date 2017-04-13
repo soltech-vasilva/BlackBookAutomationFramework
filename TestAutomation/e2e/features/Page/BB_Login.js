@@ -7,11 +7,12 @@ var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
 var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
-var BB_loginRepo = require('../Repository/BB_LoginRepo.js');
+var BB_loginRepo = require ('../Repository/BB_LoginRepo.js');
 var utilities = require('../Page/Utilities.js');
 var page = require ('../Page/Page_Objects');
 
 var BB_Login = function BB_Login() {
+
     BB_Login.prototype.currentEmailAddress = '';
     BB_Login.prototype.currentPassword = '';
 
@@ -29,9 +30,10 @@ var BB_Login = function BB_Login() {
 
     BB_Login.prototype.Click_LoginButtonX3 = function () {
         return page.executeSequence([
-            page.clickElement(BB_loginRepo.Select_Element_UserPasswordTextbox, protractorConfig.config.WaitTime),
             browser.driver.sleep(2000),
-            page.clickElement(BB_loginRepo.Select_Element_UserPasswordTextbox, protractorConfig.config.WaitTime),
+            page.clickElement(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime),
+            browser.driver.sleep(2000),
+            page.clickElement(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime),
             browser.driver.sleep(2000),
             BB_Login.prototype.Click_LoginButton_Login()]).then(() => {
         });
