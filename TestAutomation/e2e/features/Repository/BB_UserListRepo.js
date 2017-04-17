@@ -18,6 +18,8 @@ var BB_UserListRepo = function BB_UserListRepo () {
     BB_UserListRepo.prototype.Select_Element_Gear_Deactivate_Submenu = element(by.linkText('Deactivate'));
     BB_UserListRepo.prototype.Select_Element_Gear_Edit_Submenu = element(by.linkText('Edit'));
     BB_UserListRepo.prototype.Select_Element_Gear_Delete_Submenu = element(by.linkText('Delete'));
+    //todo checking if delete button works xpath
+    //BB_UserListRepo.prototype.Select_Element_Gear_Delete_Submenu = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[7]/div[3]/action-icon/div/div/ul/li[3]/a'));
     BB_UserListRepo.prototype.Select_Element_Gear_All_Submenu  = element(by.css('ul.action-menu'));
     BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu =   function(rowNumber){
         this.rowNumber = rowNumber;

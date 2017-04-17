@@ -121,7 +121,7 @@ var Utilities = function Utilities() {
 
     Utilities.prototype.VerifyButtonStatus_isEnableorDisable = function(Element , isEnableOrDisable, success, failure) {
         if (isEnableOrDisable.toString().toLowerCase() == "enable") {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(Element), protractorConfig.config.WaitTime)]).then(() => {
+            page.executeSequence([browser.driver.sleep(1000),browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(Element), protractorConfig.config.WaitTime)]).then(() => {
                 success();
             });
         }

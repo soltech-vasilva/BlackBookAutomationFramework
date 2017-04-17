@@ -65,7 +65,7 @@ var BB_Login = function BB_Login() {
 
         return new Promise((success, failure) => {
             browser.ignoreSynchronization = true;
-            page.executeSequence([browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+            page.executeSequence([browser.driver.sleep(2000),browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
                 var currentURL = getCurrentURL.split("://");
                 var getURL = URL.toString().split("://");
 

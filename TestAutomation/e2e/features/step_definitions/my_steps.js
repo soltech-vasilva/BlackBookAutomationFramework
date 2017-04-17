@@ -26,9 +26,11 @@ var utilities = require('../Page/Utilities.js');
 var page = require ('../Page/Page_Objects');
 var BB_loginForgot = require('../Page/BB_LoginForgot.js');
 var BB_roleList = require('../Page/BB_RoleList.js');
+var BB_editSegments = require('../Page/BB_EditSegments.js');
 
 //testing
 var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
+var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -595,5 +597,333 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
+    //TODO SEGEMENTS needs refactoring
+    this.Given(/^I click on Segment Tab$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click on Add submenu from Segment Tab$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/ul/li[2]/a')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+
+    this.Given(/^I enter Segment Name "([^"]*)"$/, function (segmentName) {
+        return BB_editSegments.Enter_SegmentName_inForm_SegmentEditor(segmentName);
+        // var SegmentName = '';
+        // return new Promise((success, failure)=> {
+        //     page.executeSequence([SegmentName = utilities.ReplaceDoubleQuotesWithWhiteSpace(segmentName.toString()),
+        //         page.fill(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[1]/input')), SegmentName, protractorConfig.config.WaitTime, element(by.xpath('//*[@id="page-box"]/create-segment/div/div/h1/span')), success)
+        //     ]).then(()=>{});
+        // });
+    });
+
+    this.Given(/^I click on Save button in Edit Segment$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[1]/button[3]')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click Add Query Button in Edit Segment$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[3]/div[1]/div[1]/div/button')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I enter Query Name "([^"]*)"$/, function (queryName) {
+        var QueryName = '';
+        return new Promise((success, failure)=> {
+            page.executeSequence([QueryName = utilities.ReplaceDoubleQuotesWithWhiteSpace(queryName.toString()),
+                page.fill(element(by.xpath('//*[@id="page-box"]/segment-view/div/div/div/div[2]/div/div[1]/div/input')), QueryName, protractorConfig.config.WaitTime, element(by.xpath('//*[@id="page-box"]/segment-view/div/div/h1/span/span')), success)
+            ]).then(()=>{});
+        });
+    });
+
+    this.Then(/^I should see in "([^"]*)" button "([^"]*)" in Edit Query Segment$/, function (ButtonName, isEnableOrDisable) {
+        return new Promise((success, failure) => {
+            switch (ButtonName.toString().toLowerCase()) {
+                case "addquery":
+                    utilities.VerifyButtonStatus_isEnableorDisable(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[3]/div[1]/div[1]/div/button')), isEnableOrDisable, success, failure);
+                    break;
+
+                default:
+                    console.log("Button Name selection is not in function.");
+                    failure();
+            }
+        });
+    });
+
+    this.Given(/^I click Circle icon in Filter grid to (.*) "([^"]*)" in Edit Query$/, function (numberColumn, filterName) {
+        return new Promise((success, failure) => {
+          //  page.clickButton(element.all(by.xpath('//*[@id="page-box"]/segment-view/div/div/div/segment-filter/div/div/ul/li[2]/div/span')).get(0), protractorConfig.config.WaitTime, success);
+            page.clickButton(element.all(by.xpath('//*[@id="page-box"]/segment-view/div/div/div/segment-filter/div/div/ul/li['+numberColumn+']/div/span')).get(0), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click checkbox Make "([^"]*)" in Edit Query$/, function (arg1) {
+        //cambia el numberp antes de span
+        //*[@id="page-box"]/segment-view/div/div/div/segment-filter/div/div/ul/li[2]/ul/li[1]/span
+        return new Promise((success, failure) => {
+            page.clickButton(element.all(by.xpath('//*[@id="page-box"]/segment-view/div/div/div/segment-filter/div/div/ul/li[2]/ul/li[2]/span')).get(0), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click on Add\/Save Query button in Edit Query$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/segment-view/div/div/div/div[1]/button[4]')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click on Open submenu from Segment Tab$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/ul/li[1]/a')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click on Gear Icon (\d+) "([^"]*)" in Open Segment$/, function (numberElementToSelect, arg2) {
+        var index = parseInt(numberElementToSelect) - 1;
+
+        return new Promise((success, failure)=> {
+            page.clickButton(element.all(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[2]/action-icon/div/div')).get(0), protractorConfig.config.WaitTime, success);
+            //page.clickButton(element.all(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[2]/action-icon/div/div')).get(index), protractorConfig.config.WaitTime, success);
+           // page.clickButton(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[2]/action-icon/div/div')), protractorConfig.config.WaitTime, success);
+        });
+
+    });
+
+    this.Given(/^I click Edit in submenu from Gear Icon$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[2]/action-icon/div/div/ul/li[3]/a')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I clear text box selected "([^"]*)" in Segment Editor$/, function (TextboxName) {
+        return new Promise((success, failure)=> {
+            switch (TextboxName.toLowerCase()) {
+                case 'segmentname':
+                    BB_editUserProfile.Click_Delete_Content(success, element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[1]/input')) ,element(by.xpath('//*[@id="page-box"]/create-segment/div/div/h1/span')));
+                    break;
+                case 'searchusers':
+                    BB_editUserProfile.Click_Delete_Content(success, element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/dynamic-modal[1]/share-modal/div/div/div[2]/div[1]/div/input')) ,element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/dynamic-modal[1]/share-modal/div/div/div[1]/h2')));
+                    break;
+                default:
+                    console.log(TextboxName + ' : is not part of switch statement in DeleteContentInTextBox_RoleEditor function role editor.');
+                    failure();
+            }
+        });
+    });
+
+    this.Given(/^I click Edit Button in Edit Segments$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[1]/button')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Then(/^I should see in "([^"]*)" button "([^"]*)" in Edit Segment$/, function (ButtonName, isEnableOrDisable) {
+        return new Promise((success, failure) => {
+            switch (ButtonName.toString().toLowerCase()) {
+                case "save":
+                    utilities.VerifyButtonStatus_isEnableorDisable(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[1]/button[3]')), isEnableOrDisable, success, failure);
+                    break;
+
+                default:
+                    console.log("Button Name selection is not in function.");
+                    failure();
+            }
+        });
+    });
+
+    this.Given(/^I click on More submenu from Make in Edit Query$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/segment-view/div/div/div/segment-filter/div/div/ul/li[1]/ul/li[6]')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click Cancel Button from Add More Filters menu$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/segment-view/div/div/div/dynamic-modal/filter-modal/div/div/div[2]/div[3]/div[2]/button')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Then(/^I should see Add More Filters "([^"]*)" checkbox "([^"]*)" in Role Editor$/, function (filterName, isCheckedorUnchecked) {
+        return new Promise((success, failure)=> {
+
+            var checkbox = "";
+
+            switch (filterName.toString().toLowerCase()) {
+                case "acura":
+                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[1]/span/span[1]/span[1]')), protractorConfig.config.WaitTime),
+                        checkbox = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[1]/span/span[1]/span[1]'))]).then(()=>{});
+                    break;
+
+                default:
+                    console.log('|'+filterName +'|'+' : is not part of switch statement in Verify_RolePermissions_CheckedOrUnchecked_RoleEditor function.');
+                    return failure();
+            }
+
+            checkbox.getAttribute('class').then((currentClass)=>{
+
+                if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Checked && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
+                    return success();
+                }
+                else  if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Unchecked && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
+                    return success();
+                }
+                else
+                {
+                    console.log('FAIL for checkbox:|' + currentClass +'|');
+                    return failure();
+                }
+            });
+        });
+    });
+
+    this.Given(/^I click \+ icon for Queries in Edit Segments$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[3]/div[1]/div[2]/div/div/div[1]/i')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click Edit Button for Queries in Edit Segment$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[3]/div[1]/div[2]/div/div/div[2]/div[2]/div/button[2]')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click Shared Users Button in Edit Segments$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[2]/div')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I enter Filter Edit Shared Users (.*) in Edit Segment$/, function (userName) {
+        //click tittle is the modal one popup window
+        var UserName = '';
+        return new Promise((success, failure)=> {
+            page.executeSequence([UserName = utilities.ReplaceDoubleQuotesWithWhiteSpace(userName.toString()),
+                page.fill(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/dynamic-modal[1]/share-modal/div/div/div[2]/div[1]/div/input')), UserName, protractorConfig.config.WaitTime, element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/dynamic-modal[1]/share-modal/div/div/div[1]/h2')), success)
+            ]).then(()=>{});
+        });
+    });
+
+    this.Then(/^I should see Filter Edit Shared Users "([^"]*)" checkbox "([^"]*)" in Edit Segments$/,  function (filterName, isCheckedorUnchecked) {
+        return new Promise((success, failure)=> {
+
+            var checkbox = "";
+            //todo refactor element to function
+            page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[1]/span/span[1]/span[1]')), protractorConfig.config.WaitTime),
+                checkbox = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[1]/span/span[1]/span[1]'))]).then(()=>{});
+
+
+            checkbox.getAttribute('class').then((currentClass)=>{
+
+                if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Checked && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
+                    return success();
+                }
+                else  if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Unchecked && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
+                    return success();
+                }
+                else
+                {
+                    console.log('FAIL for checkbox:|' + currentClass +'|');
+                    return failure();
+                }
+            });
+        });
+    });
+
+    this.Then(/^I click Add Button for Edit Shared User popup in Edit Segments$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/dynamic-modal[1]/share-modal/div/div/div[2]/div[3]/div[1]/button')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Then(/^I click Cancel Button for Edit Shared User popup in Edit Segments$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/dynamic-modal[1]/share-modal/div/div/div[2]/div[3]/div[2]/button')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I click on Reset button in Edit Segment$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath(' //*[@id="page-box"]/create-segment/div/div/div/div[1]/button[2]')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
+    this.Given(/^I should see in "([^"]*)" button "([^"]*)" in Edit Segments$/,  function (ButtonName, isEnableOrDisable) {
+        return new Promise((success, failure) => {
+            switch (ButtonName.toString().toLowerCase()) {
+                case "sharedusers":
+                    utilities.VerifyButtonStatus_isEnableorDisable(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[2]/div')), isEnableOrDisable, success, failure);
+                    break;
+
+                default:
+                    console.log("Button Name selection is not in function.");
+                    failure();
+            }
+        });
+    });
+
+    var numberofUsers = "";
+
+    this.Given(/^I store value Count "([^"]*)" displayed in Edit Segments$/, function (nameToCount) {
+        var ele = '';
+        return new Promise((success, failure) => {
+            switch (nameToCount.toString().toLowerCase()) {
+                case 'sharedusers':
+                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[1]/span')), protractorConfig.config.WaitTime),
+                        ele = element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[1]/span'))]).then(() => {
+                    });
+                    break;
+
+                default:
+                    console.log(nameToCount + ' : is not part of switch statement in Store_NumberCount function.');
+                    failure();
+            }
+
+            page.executeSequence([ele.getText().then((currentValue) => {
+                console.log('Store value:'+currentValue);
+                var value = currentValue.split(' ');
+                numberofUsers = value[1];
+                console.log("numberofUsers:"+numberofUsers);
+                success();
+            })]).then(()=>{});
+        });
+    });
+
+    this.Then(/^I should see Count has increase value for "([^"]*)" in Edit Segments$/, function (nameToCount) {
+        var ele = '';
+        return new Promise((success, failure) => {
+            switch (nameToCount.toString().toLowerCase()) {
+                case 'sharedusers':
+                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[1]/span')), protractorConfig.config.WaitTime),
+                        ele = element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[1]/span'))]).then(() => {
+                    });
+                    break;
+                default:
+                    console.log(TextboxName + ' : is not part of switch statement in Verify_NumberOfUsersColumn_Increase function.');
+                    failure();
+            }
+
+            page.executeSequence([ele.getText().then((currentValue) => {
+                var value = currentValue.split(' ');
+                console.log("currentValue:"+value[1]);
+                numberofUsers++;
+                console.log(numberofUsers);
+
+                if (numberofUsers == value[1]) {
+                    success();
+                }
+                else {
+                    console.log('Did not see any change number of users.');
+                    failure();
+                }
+            })]).then(() => {
+            });
+        });
+    });
 };
 module.exports = myBlackBookSteps;

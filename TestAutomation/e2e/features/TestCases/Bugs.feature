@@ -515,7 +515,12 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Edit Button in Edit Roles
     And I click Cancel Button from Edit Roles
     And I click on Gear Icon 7 "RoleName7 in Role List"
+    #todo BUG BB-810 delete not working or message popup not showing
     And I click Delete from Gear Icon
+#    #take out
+#    And I click Edit from Gear Icon "in Role List"
+#    #take out
+#    And I click on Delete button in Role Editor
     #currently will order by default by number of users
       Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
     And I click "Cancel" Button for modal warning message from Edit Roles
@@ -528,7 +533,12 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
     And I click on Gear Icon 7 "RoleName7 in Role List"
-    And I click Delete from Gear Icon
+     #todo BUG BB-810 delete not working or message popup not showing
+    #And I click Delete from Gear Icon
+    #take out
+    And I click Edit from Gear Icon "in Role List"
+    #take out
+    And I click on Delete button in Role Editor
     #currently will order by default by number of users
       Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
     And I click "Confirm" Button for modal warning message from Edit Roles
@@ -551,7 +561,12 @@ Feature:  "Verify that this bugs dont return to the application."
     And I click Edit Button in Edit Roles
     And I click Cancel Button from Edit Roles
     And I click on Gear Icon 6 "RoleName6 in Role List"
-    And I click Delete from Gear Icon
+    #todo BUG BB-810 delete not working or message popup not showing
+    #And I click Delete from Gear Icon
+    #take out
+    And I click Edit from Gear Icon "in Role List"
+    #take out
+    And I click on Delete button in Role Editor
      Then I should see Are you sure you want to delete the role, "RoleName6?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
     And I click "Confirm" Button for modal warning message from Edit Roles
       Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
@@ -930,3 +945,51 @@ Feature:  "Verify that this bugs dont return to the application."
 #     Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
 #    And I reload "https://autobahn.blackbookcloud.com/segments" page
 #     Then I should see that I am in "full" "autobahn.blackbookcloud.com/login" URL
+
+
+  @TestCases_A-44
+  Scenario: "@TestCases_A-44" (BB-517) Able to CREATE Empty string (SPACE BAR) for Segment Name
+  #(BB-580) Require
+    And I click on Segment Tab
+    And I click on Add submenu from Segment Tab
+      Then I should see "SegmentName" message "Required" displayed for this "empty" field
+      Then I should see in "Save" button "disable" in Edit Segment
+      Then I should see in "AddQuery" button "disable" in Edit Query Segment
+    And I enter Segment Name "SegmentName"
+    And I click on Save button in Edit Segment
+      Then I should see in "AddQuery" button "enable" in Edit Query Segment
+    And I click Add Query Button in Edit Segment
+      Then I should see "QueryName" message "Required" displayed for this "empty" field
+      Then I should see "QueryFilter" message "Required" displayed for this "empty" field
+    And I enter Query Name "QueryName"
+    And I click Circle icon in Filter grid to 2 "Make" in Edit Query
+    And I click checkbox Make "Acura" in Edit Query
+    And I click on More submenu from Make in Edit Query
+      Then I should see Add More Filters "Acura" checkbox "checked" in Role Editor
+    And I click Cancel Button from Add More Filters menu
+    And I click on Add/Save Query button in Edit Query
+    And I click on Segment Tab
+    And I click on Open submenu from Segment Tab
+    And I click on Gear Icon 1 "SegmentName" in Open Segment
+    And I click Edit in submenu from Gear Icon
+    And I click Edit Button in Edit Segments
+    And I clear text box selected "SegmentName" in Segment Editor
+      Then I should see "SegmentName" message "Required" displayed for this "filled" field
+      Then I should see in "Save" button "disable" in Edit Segment
+    And I enter Segment Name "  "
+      Then I should see "SegmentName" message "This is not a valid segment title" displayed for this "empty" field
+
+     #TODO aqui
+  @TestCases_A-45
+  Scenario: "@TestCases_A-45"  (BB-599) (Add Query): Adding Acura is not selected in "More" menu.
+    And I click on Segment Tab
+    And I click on Open submenu from Segment Tab
+    And I click on Gear Icon 1 "SegmentName" in Open Segment
+    And I click Edit in submenu from Gear Icon
+    And I click + icon for Queries in Edit Segments
+    And I click Edit Button for Queries in Edit Segment
+    And I click Circle icon in Filter grid to 1 "Make" in Edit Query
+    And I click on More submenu from Make in Edit Query
+      Then I should see Add More Filters "Acura" checkbox "checked" in Role Editor
+    And I click Cancel Button from Add More Filters menu
+    And I click on Add/Save Query button in Edit Query

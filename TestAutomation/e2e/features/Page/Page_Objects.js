@@ -112,7 +112,7 @@ var Page_Objects = function Page_Objects () {
     };
 
     page.clickButton = function(element, WaitTime, success) {
-        return page.executeSequence([page.clickElement(element, WaitTime)
+        return page.executeSequence([/*browser.driver.sleep(1000),*/page.clickElement(element, WaitTime)
         ]).then(() => {
             success();
         });
@@ -126,7 +126,7 @@ var Page_Objects = function Page_Objects () {
     };
 
     page.verifyMessageDisplay = function ( element , errorMessage, WaitTime, success, failure) {
-        return  page.executeSequence([page.waitForElementTobePresent(element, WaitTime),
+        return  page.executeSequence([browser.driver.sleep(1000),page.waitForElementTobePresent(element, WaitTime),
             browser.isElementPresent(element).then((isPresente) => {
                 page.AssertElementsToDisplay(isPresente, element, errorMessage, 'It is not showing any message', success, failure);
             })]).then(() => {
