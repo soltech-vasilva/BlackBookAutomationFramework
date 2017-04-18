@@ -73,7 +73,7 @@ exports.config = {
         //'browserstack.selenium_version' : '3.0.1',
 
         //Screenshot
-         'browserstack.debug': 'true',
+         'browserstack.debug': 'false',
 
          //Video recording
          'browserstack.video': 'true'//,

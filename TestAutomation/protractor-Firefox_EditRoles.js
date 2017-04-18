@@ -17,7 +17,7 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-          'e2e/features/TestCases/EditUserProfile.feature'//,
+        'e2e/features/TestCases/EditRoles.feature'//,
     ],
 
 
@@ -26,7 +26,7 @@ exports.config = {
     // },
 
     //BrowserStack
-    seleniumAddress: 'http://hub.browserstack.com/wd/hub',
+    'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 
     //Settings for the local machine (Run "webdriver-manager start" from any directory  + calls inside capabilities)
     //Selenium
@@ -63,11 +63,10 @@ exports.config = {
     // 'height': 1430,
 
     'commonCapabilities': {
-         //Label
-       // 'build': ' #169 |Run: Firefox| Test: "Edit User Profile"| Date: ' + new Date().toString(),
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : Edit User Profile_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+       // 'build': ' #169 | Run: IE| Test: "Login" | Date: ' + new Date().toString(),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : Edit Roles____________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-        'name': 'Edit User Profile',
+        'name': 'Edit Roles',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',

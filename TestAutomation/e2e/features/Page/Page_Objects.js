@@ -347,6 +347,7 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
         return page.executeSequence([
             page.clickElement(dropdown),
             dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).first().click(),
+            keyStrokesRepo.ENTER(),
             page.clearFocus()
         ]).then(()=>{success();});
     };

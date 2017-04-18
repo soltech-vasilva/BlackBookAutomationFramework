@@ -748,6 +748,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
+    this.Then(/^I click Apply Button from Add More Filters menu$/, function () {
+        return new Promise((success, failure) => {
+            page.clickButton(element(by.xpath('//*[@id="page-box"]/segment-view/div/div/div/dynamic-modal/filter-modal/div/div/div[2]/div[3]/div[1]/button')), protractorConfig.config.WaitTime, success);
+        });
+    });
+
     this.Then(/^I should see Add More Filters "([^"]*)" checkbox "([^"]*)" in Role Editor$/, function (filterName, isCheckedorUnchecked) {
         return new Promise((success, failure)=> {
 
@@ -809,26 +815,47 @@ var myBlackBookSteps = function myBlackBookSteps() {
         });
     });
 
-    this.Then(/^I should see Filter Edit Shared Users "([^"]*)" checkbox "([^"]*)" in Edit Segments$/,  function (filterName, isCheckedorUnchecked) {
+    this.Then(/^I should see Filter Edit Shared Users "([^"]*)" (.*) checkbox "([^"]*)" in Edit Segments$/,  function (filterName, userName, isCheckedorUnchecked) {
         return new Promise((success, failure)=> {
 
             var checkbox = "";
-            //todo refactor element to function
-            page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[1]/span/span[1]/span[1]')), protractorConfig.config.WaitTime),
-                checkbox = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[1]/span/span[1]/span[1]'))]).then(()=>{});
 
+            switch (filterName.toString().toLowerCase()) {
+                case 'person':
+                    //todo refactor element to function
+                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[1]/span/span[1]/span[1]')), protractorConfig.config.WaitTime),
+                        checkbox = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[1]/span/span[1]/span[1]'))]).then(() => {
+                    });
+                    break;
+
+                case 'writeaccess':
+                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[4]/write-access/div/i')), protractorConfig.config.WaitTime),
+                        checkbox = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[4]/write-access/div/i'))]).then(() => {
+                    });
+                    break;
+
+                case 'adjustaccess':
+                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[5]/write-access/div/i')), protractorConfig.config.WaitTime),
+                        checkbox = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[5]/write-access/div/i'))]).then(() => {
+                    });
+                    break;
+
+                default:
+                    console.log(filterName + ' : is not part of switch statement in  function.');
+                    failure();
+            }
 
             checkbox.getAttribute('class').then((currentClass)=>{
 
-                if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Checked && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
+                if (currentClass.includes("grid-checkbox-checked") == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Checked.includes("grid-checkbox-checked") && currentClass.includes("ag-hidden") != BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Unchecked.includes("ag-hidden") && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
                     return success();
                 }
-                else  if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Unchecked && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
+                else  if ((currentClass.includes("ag-hidden") == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Unchecked.includes("ag-hidden")  && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") || ( currentClass.includes("grid-checkbox-unchecked") && isCheckedorUnchecked.toString().toLowerCase() == "unchecked")) {
                     return success();
                 }
                 else
                 {
-                    console.log('FAIL for checkbox:|' + currentClass +'|');
+                    console.log(filterName+' FAIL for '+isCheckedorUnchecked+' checkbox:|' + currentClass +'|');
                     return failure();
                 }
             });
@@ -912,7 +939,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                 var value = currentValue.split(' ');
                 console.log("currentValue:"+value[1]);
                 numberofUsers++;
-                console.log(numberofUsers);
+                console.log('numberofUsers:'+ numberofUsers);
 
                 if (numberofUsers == value[1]) {
                     success();
@@ -923,6 +950,23 @@ var myBlackBookSteps = function myBlackBookSteps() {
                 }
             })]).then(() => {
             });
+        });
+    });
+
+    this.Given(/^I click checkbox on "([^"]*)" user found from Filter Users in Edit Segments$/, function (NameAccess) {
+        return new Promise((success, failure) => {
+
+            switch (NameAccess.toString().toLowerCase()) {
+                case 'writeaccess':
+                    page.clickButton( element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[4]/write-access/div/i')), protractorConfig.config.WaitTime, success);
+                    break;
+                case 'adjustaccess':
+                    page.clickButton( element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div/div[5]/write-access/div/i')), protractorConfig.config.WaitTime, success);
+                    break;
+                default:
+                    console.log(NameAccess + ' : is not part of switch statement in  function.');
+                    failure();
+            }
         });
     });
 };

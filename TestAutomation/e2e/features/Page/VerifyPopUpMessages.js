@@ -72,6 +72,15 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
                     });
 
                     break;
+
+                case 'editsegment':
+                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/message-box/div/div')), protractorConfig.config.WaitTime),
+                        browser.isElementPresent(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/message-box/div/div'))).then((isPresente) => {
+                            verifyErrorMessage.AssertElementsToDisplay(isPresente, element(by.xpath('//*[@id="page-box"]/create-segment/div/div/message-box/div/div')), compareValuesString, 'It is not showing any message', success, failure);
+                        })]).then(() => {
+                    });
+
+                    break;
                 default:
                     console.log(PopUpPageName+' : is not part of switch statement in Verify_UserInformation function.');
                     failure();

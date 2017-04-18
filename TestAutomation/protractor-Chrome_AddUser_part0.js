@@ -79,7 +79,7 @@ exports.config = {
          //Label
         'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Chrome_______________ Test : Add User Part0_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-         'name': 'Add User Part 1',
+         'name': 'Add User Part0',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',

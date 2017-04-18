@@ -17,7 +17,20 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-          'e2e/features/TestCases/EditUserProfile.feature'//,
+        //  'e2e/features/TestCases/START_eyes.feature',
+        //  'e2e/features/TestCases/AddUser_part0.feature'
+        //'e2e/features/TestCases/AddUser_part0.feature'//,
+        // 'e2e/features/TestCases/AddUser_part1.feature'//,
+        //'e2e/features/TestCases/AddUser_part2.feature'//,
+        // 'e2e/features/TestCases/EditUserProfile.feature'//,
+        //  'e2e/features/TestCases/UsersList.feature'//,
+        //'e2e/features/TestCases/Login.feature'//,
+        // 'e2e/features/TestCases/EditRoles.feature'//,
+        // 'e2e/features/TestCases/Bugs.feature'//,
+         'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
+        // 'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
+        //'e2e/features/TestCases/Test1.feature'//,
+        // 'e2e/features/TestCases/END_eyes.feature'//,
     ],
 
 
@@ -26,7 +39,7 @@ exports.config = {
     // },
 
     //BrowserStack
-    seleniumAddress: 'http://hub.browserstack.com/wd/hub',
+    'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 
     //Settings for the local machine (Run "webdriver-manager start" from any directory  + calls inside capabilities)
     //Selenium
@@ -64,10 +77,9 @@ exports.config = {
 
     'commonCapabilities': {
          //Label
-       // 'build': ' #169 |Run: Firefox| Test: "Edit User Profile"| Date: ' + new Date().toString(),
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : Edit User Profile_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : Verify Roles Part 1_______ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-        'name': 'Edit User Profile',
+         'name': 'Add User Part 1',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',

@@ -17,7 +17,7 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-          'e2e/features/TestCases/EditUserProfile.feature'//,
+        'e2e/features/TestCases/Bugs.feature'//,
     ],
 
 
@@ -26,7 +26,7 @@ exports.config = {
     // },
 
     //BrowserStack
-    seleniumAddress: 'http://hub.browserstack.com/wd/hub',
+    'seleniumAddress': 'http://hub-cloud.browserstack.com/wd/hub',
 
     //Settings for the local machine (Run "webdriver-manager start" from any directory  + calls inside capabilities)
     //Selenium
@@ -63,11 +63,10 @@ exports.config = {
     // 'height': 1430,
 
     'commonCapabilities': {
-         //Label
-       // 'build': ' #169 |Run: Firefox| Test: "Edit User Profile"| Date: ' + new Date().toString(),
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Firefox________________ Test : Edit User Profile_________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+       // 'build': ' #169 | Run: IE| Test: "Login" | Date: ' + new Date().toString(),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : EDGE_________________ Test : BUGS_________________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-        'name': 'Edit User Profile',
+        'name': 'Bugs',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
@@ -94,15 +93,15 @@ exports.config = {
             // 'resolution' : '1920x1200'
             // }
           //   ,
-          // {
-          //     ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
-          //     //Browser Type
-          //     'os': 'Windows',
-          //     'os_version': '10',
-          //     'browserName': 'Edge',
-          //     'browser_version': '13.0',
-          //     'resolution': '1920x1200'
-          // }
+          {
+              ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
+              //Browser Type
+              'os': 'Windows',
+              'os_version': '10',
+              'browserName': 'Edge',
+              'browser_version': '13.0',
+              'resolution': '1920x1200'
+          }
           //   ,
           // {
           //     ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
@@ -122,15 +121,15 @@ exports.config = {
           //     // }
           // }
           // ,
-          {
-              //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
-              // Browser Type
-              'os': 'Windows',
-              'os_version': '10',
-              'browserName': 'Firefox',
-              'browser_version': '47.0',
-              'resolution': '1920x1200'
-          }
+          // {
+          //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
+          //     // Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Firefox',
+          //     'browser_version': '47.0',
+          //     'resolution': '1920x1200'
+          // }
           // ,
           // {
           //     ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
