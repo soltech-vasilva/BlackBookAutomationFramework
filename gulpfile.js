@@ -453,129 +453,129 @@ gulp.task('Edge_Login',['Edge_UsersList'],()=>
 });
 
 
-
-
-// gulp.task('Firefox_AddUserPart1', ()=>
-// {
-//     return new Promise((resolve, reject) => {
-//         gulp.src([])
-//         //Firefox
-//             .pipe(protractor({
-//                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Firefox_AddUser_part1.js'
-//             }))
-//             .on('end', resolve)
-//             .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Firefox_AddUserPart2', ['Firefox_AddUserPart1'], ()=>
-// {
-//     return new Promise((resolve, reject) => {
-//         gulp.src([])
-//         //Firefox
-//             .pipe(protractor({
-//                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Firefox_AddUser_part2.js'
-//             }))
-//             .on('end', resolve)
-//             .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Firefox_EditUserProfile', ['Firefox_AddUserPart2'], ()=>
-// {
-//     return new Promise((resolve, reject) => {
-//      gulp.src([])
-//         //Firefox
-//         .pipe(protractor({
-//             configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Firefox_EditUserProfile.js'
-//         }))
-//          .on('end', resolve)
-//          .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Firefox_UsersList',['Firefox_EditUserProfile'], ()=>
-// {
-//     return new Promise((resolve, reject) => {
-//         gulp.src([])
-//         //Firefox
-//             .pipe(protractor({
-//                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Firefox_UsersList.js'
-//             }))
-//             .on('end', resolve)
-//             .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Firefox_Login', ['Firefox_UsersList'],()=>
-// {
-//     return new Promise((resolve, reject) => {
-//      gulp.src([])
-//         //Firefox
-//         .pipe(protractor({
-//             configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Firefox_Login.js'
-//         }))
-//          .on('end', resolve)
-//          .on('error', resolve);
-//     });
-// });
-
-gulp.task('IE_AddUserPart1',['Firefox_Login'],()=>
-{
-    return new Promise((resolve, reject) => {
-     gulp.src([])
-        //IE
-        .pipe(protractor({
-            configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_AddUser_part1.js'
-        }))
-         .on('end', resolve)
-         .on('error', resolve);
-    });
-});
-
-gulp.task('IE_AddUserPart2',['IE_AddUserPart1'],()=>
+gulp.task('IE_Setup',  ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
-        //IE
+        //Edge
             .pipe(protractor({
-                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_AddUser_part2.js'
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_Setup.js'
             }))
             .on('end', resolve)
             .on('error', resolve);
     });
 });
 
-gulp.task('IE_EditUserProfile',['IE_AddUserPart2'], ()=>
+gulp.task('IE_VerifyRoles_Part1', ['IE_Setup'], ()=>
 {
     return new Promise((resolve, reject) => {
-     gulp.src([])
-        //IE
-        .pipe(protractor({
-            configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_EditUserProfile.js'
-        }))
-        .on('end', resolve)
-        .on('error', resolve);
-});
-});
-
-gulp.task('IE_UsersList', ['IE_EditUserProfile'], ()=>
-{
-    return new Promise((resolve, reject) => {
-     gulp.src([])
-        //IE
-        .pipe(protractor({
-            configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_UsersList.js'
-        }))
-         .on('end', resolve)
-         .on('error', resolve);
+        gulp.src([])
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_VerifyRoles_Part1.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
     });
 });
 
-gulp.task('IE_Login', ['IE_UsersList'],()=> {
+
+gulp.task('IE_AddUserPart0', ['IE_VerifyRoles_Part1'], ()=>
+{
     return new Promise((resolve, reject) => {
         gulp.src([])
-        //IE
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_AddUser_part0.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('IE_EditRoles', ['IE_AddUserPart0'],  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_EditRoles.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('IE_VerifyRoles_Part2', ['IE_EditRoles'],  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_VerifyRoles_Part2.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('IE_Bugs',['IE_VerifyRoles_Part2'],  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_Bugs.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('IE_AddUserPart1', ['IE_Bugs'],  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_AddUser_part1.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('IE_EditUserProfile', ['IE_AddUserPart1'],()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_EditUserProfile.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('IE_UsersList', ['IE_EditUserProfile'],()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_UsersList.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
+
+gulp.task('IE_Login',['IE_UsersList'],()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Edge
             .pipe(protractor({
                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_Login.js'
             }))
@@ -584,118 +584,26 @@ gulp.task('IE_Login', ['IE_UsersList'],()=> {
     });
 });
 
-// gulp.task('Edge_AddUserPart1',/*['IE_Login'],*/()=>
-// {
-//     return new Promise((resolve, reject) => {
-//      gulp.src([])
-//     //EDGE
-//     .pipe(protractor({
-//         configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Edge_AddUser_part1.js'
-//     }))
-//          .on('end', resolve)
-//          .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Edge_AddUserPart2',['Edge_AddUserPart1'],()=>
-// {
-//     return new Promise((resolve, reject) => {
-//         gulp.src([])
-//         //EDGE
-//             .pipe(protractor({
-//                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Edge_AddUser_part2.js'
-//             }))
-//             .on('end', resolve)
-//             .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Edge_EditUserProfile',['Edge_AddUserPart2'], ()=>
-// {
-//     return new Promise((resolve, reject) => {
-//      gulp.src([])
-//         //EDGE
-//         .pipe(protractor({
-//             configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Edge_EditUserProfile.js'
-//         }))
-//         .on('end', resolve)
-//         .on('error', resolve);
-// });
-// });
-//
-// gulp.task('Edge_UsersList',['Edge_EditUserProfile'], ()=>
-// {
-//     return new Promise((resolve, reject) => {
-//      gulp.src([])
-//         //EDGE
-//         .pipe(protractor({
-//             configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Edge_UsersList.js'
-//         }))
-//          .on('end', resolve)
-//          .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Edge_Login',['Edge_UsersList'], ()=> {
-//     return new Promise((resolve, reject) => {
-//         gulp.src([])
-//         //EDGE
-//             .pipe(protractor({
-//                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Edge_Login.js'
-//             }))
-//             .on('end', resolve)
-//             .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('IE_Bugs', ()=> {
-//     return new Promise((resolve, reject) => {
-//         gulp.src([])
-//         //EDGE
-//             .pipe(protractor({
-//                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-IE_Bugs.js'
-//             }))
-//             .on('end', resolve)
-//             .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Test1',()=>
-// {
-//     return new Promise((resolve, reject) => {
-//         gulp.src([])
-//         //Chrome
-//             .pipe(protractor({
-//                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js'
-//             }))
-//             .on('end', resolve)
-//             .on('error', resolve);
-//     });
-// });
-//
-// gulp.task('Test2',['Test1'],()=>
-// {
-//     return new Promise((resolve, reject) => {
-//         gulp.src([])
-//         //Chrome
-//             .pipe(protractor({
-//                 configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf1.js'
-//             }))
-//             .on('end', resolve)
-//             .on('error', resolve);
-//     });
-// });
-//gulp.task('default', ['Test1','Test2']); //falta userlist and login
+gulp.task('Safari_Setup',  ()=>
+{
+    return new Promise((resolve, reject) => {
+        gulp.src([])
+        //Edge
+            .pipe(protractor({
+                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Safari_Setup.js'
+            }))
+            .on('end', resolve)
+            .on('error', resolve);
+    });
+});
 
-
+//PASS
 //gulp.task('default', ['Chrome_Setup' ,'Chrome_VerifyRoles_Part1', 'Chrome_AddUserPart0','Chrome_EditRoles','Chrome_VerifyRoles_Part2', 'Chrome_Bugs','Chrome_AddUserPart1' , 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login']); //falta userlist and login
-gulp.task('default', ['Firefox_Setup' ,'Firefox_VerifyRoles_Part1', 'Firefox_AddUserPart0','Firefox_EditRoles','Firefox_VerifyRoles_Part2', 'Firefox_Bugs','Firefox_AddUserPart1' , 'Firefox_EditUserProfile', 'Firefox_UsersList','Firefox_Login']); //falta userlist and login
 //gulp.task('default', ['Edge_Setup' ,'Edge_VerifyRoles_Part1', 'Edge_AddUserPart0','Edge_EditRoles','Edge_VerifyRoles_Part2', 'Edge_Bugs','Edge_AddUserPart1' , 'Edge_EditUserProfile', 'Edge_UsersList','Edge_Login']); //falta userlist and login
-// gulp.task('default', ['Firefox_AddUserPart1', 'Firefox_AddUserPart2','Firefox_EditUserProfile','Firefox_UsersList','Firefox_Login']);
-//gulp.task('default', ['IE_AddUserPart1','IE_AddUserPart2','IE_EditUserProfile','IE_UsersList','IE_Login']);
-// gulp.task('default', ['Edge_AddUserPart1','Edge_AddUserPart2','Edge_EditUserProfile','Edge_UsersList','Edge_Login']);
 
-//gulp.task('default', ['IE_Bugs']);
+//gulp.task('default', ['Firefox_Setup' /*,'Firefox_VerifyRoles_Part1', 'Firefox_AddUserPart0','Firefox_EditRoles','Firefox_VerifyRoles_Part2', 'Firefox_Bugs','Firefox_AddUserPart1' , 'Firefox_EditUserProfile', 'Firefox_UsersList','Firefox_Login'*/]); //falta userlist and login
+//gulp.task('default', ['IE_Setup'/* ,'IE_VerifyRoles_Part1', 'IE_AddUserPart0','IE_EditRoles','IE_VerifyRoles_Part2', 'IE_Bugs','IE_AddUserPart1' , 'IE_EditUserProfile', 'IE_UsersList','IE_Login'*/]); //falta userlist and login
+gulp.task('default', ['Safari_Setup'/* ,'IE_VerifyRoles_Part1', 'IE_AddUserPart0','IE_EditRoles','IE_VerifyRoles_Part2', 'IE_Bugs','IE_AddUserPart1' , 'IE_EditUserProfile', 'IE_UsersList','IE_Login'*/]); //falta userlist and login
 
 // git-r-done
 // gulp.task('default', [/*'webdriver','report',*/

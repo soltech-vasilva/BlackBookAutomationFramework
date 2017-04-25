@@ -43,8 +43,9 @@ var Page_Objects = function Page_Objects () {
         browser.ignoreSynchronisation = bool_IgnoreSynchronisation;
         return page.executeSequence([
             browser.driver.get(str_URL),
+            browser.driver.manage().window().setPosition(0,0),
             browser.driver.sleep(waitTime)
-        ]);
+        ]).then(()=>{});
     };
 
     page.verifyCurrentUrl = function (str_compareURL, element_PageVerify , WaitTime , success, failure) {
@@ -106,16 +107,29 @@ var Page_Objects = function Page_Objects () {
         // focus from another element instead of actually clicking the thing you want 
         // page.clearFocus(), 
         return page.executeSequence([page.waitForElementTobePresent(element, WaitTime),
-             browser.driver.actions().click(element).perform()
-           // element.click()
+            // browser.driver.actions().click(element).perform()
+            element.click()
         ]).then(()=>{});
     };
 
     page.clickButton = function(element, WaitTime, success) {
-        return page.executeSequence([/*browser.driver.sleep(1000),*/page.clickElement(element, WaitTime)
-        ]).then(() => {
+        return page.executeSequence([browser.driver.sleep(2000), page.clickElement(element, WaitTime),
+                browser.getProcessedConfig().then((config) => {
+                    //added click element since Firefox and safari does not like clearfocus in clickButton
+                    if (config.capabilities.browserName != 'Firefox' && config.capabilities.browserName != 'Safari') {
+                        page.clearFocus().then(()=>{});
+                    }
+                    })
+            ]).then(() => {
             success();
         });
+
+
+        // return page.executeSequence([browser.driver.sleep(1000), page.clickElement(element, WaitTime),
+        //     page.clearFocus()
+        // ]).then(() => {
+        //     success();
+        // });
     };
 
     page.verifyElementNotInPage = function ( element ,WaitTime, success) {
@@ -343,13 +357,28 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
      * @param {WebElement} dropdown
      * @param {string} value
      */
-    page.selectDropdownItemByValue = function(dropdown, value, success) {
+    page.selectDropdownItemByValue = function(dropdown, value, success, elementClearFocus) {
         return page.executeSequence([
             page.clickElement(dropdown),
             dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).first().click(),
-            keyStrokesRepo.ENTER(),
-            page.clearFocus()
-        ]).then(()=>{success();});
+            browser.getProcessedConfig().then((config) => {
+                //Only firefox , it wont select item
+                if (config.capabilities.browserName == 'Firefox') {
+                    dropdown.sendKeys("All");
+                    keyStrokesRepo.ENTER();
+                    dropdown.sendKeys(value);
+                    keyStrokesRepo.ENTER();
+                }
+
+                if (config.capabilities.browserName == 'Edge') {
+                    //Dont remove Added this Edge did not close dropdown, so click again close it.
+                    page.clickElement(dropdown);
+                }
+            }),
+            page.focus(elementClearFocus, success)
+        ]).then(()=>{
+            //success();
+        });
     };
 
     /* * * * * * * * * * * * * * *

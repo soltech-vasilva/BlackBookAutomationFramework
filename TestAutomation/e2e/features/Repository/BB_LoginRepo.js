@@ -14,7 +14,9 @@ var BB_LoginRepo = function BB_LoginRepo () {
     BB_LoginRepo.prototype.BlackBookUrl = this.BlackBookEnvironmentUrl+'blackbookcloud.com';
 
     //Components BUTTONS
-    BB_LoginRepo.prototype.Select_Element_LogInButton =  element(by.css('button[type="submit"]'));
+    //BB_LoginRepo.prototype.Select_Element_LogInButton =  element(by.css('button[type="submit"]'));
+    //Todo check if xpath wotk for button click login
+    BB_LoginRepo.prototype.Select_Element_LogInButton =  element(by.xpath('//*[@id="login-box"]/div/form/div[3]/button'));
     BB_LoginRepo.prototype.Select_Element_ForgotPasswordLink = element(by.css('a[href="/login/forgot"]'));
 
     //Components TEXTBOX

@@ -18,7 +18,6 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
 
     //Keystroke only on windows machine machine (safai is not working even with COMMAND)
     KeyStrokeRepo.prototype.CONTROL_ALL_DELETE = function () {
-
         browser.getProcessedConfig().then((config) => {
            // console.log(config);
            // console.log('config.capabilities.os: |'+config.capabilities.os+'|');

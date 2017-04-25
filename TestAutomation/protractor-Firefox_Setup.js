@@ -72,10 +72,10 @@ exports.config = {
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
         // 'acceptSslCerts': true,
-       // 'browserstack.selenium_version' : '3.0.1',
+       // 'browserstack.selenium_version' : '2.53.1',
 
         //Screenshot
-         'browserstack.debug': 'false',
+        'browserstack.debug': 'false',
 
          //Video recording
          'browserstack.video': 'true'//,
@@ -127,7 +127,9 @@ exports.config = {
               'os': 'Windows',
               'os_version': '10',
               'browserName': 'Firefox',
-              'browser_version': '47.0',
+               'browser_version': '47.0',
+              //Latest but not working GeikoDriver
+              //'browser_version': '52.0',
               'resolution': '1920x1200'
           }
           // ,

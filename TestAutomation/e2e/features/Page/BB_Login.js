@@ -18,7 +18,7 @@ var BB_Login = function BB_Login() {
 
     BB_Login.prototype.Click_LoginButton_Login = function () {
         return new Promise((success, failure)=> {
-            page.clickButton(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime,success);
+                page.clickButton(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime,success);
         });
     };
 

@@ -72,7 +72,8 @@ exports.config = {
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
         // 'acceptSslCerts': true,
-       // 'browserstack.selenium_version' : '3.0.1',
+        // 'browserstack.selenium_version' : '3.0.1',
+         'browserstack.selenium_version' : '3.3.1',
 
         //Screenshot
          'browserstack.debug': 'false',
@@ -94,12 +95,12 @@ exports.config = {
             // }
           //   ,
           {
-              ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
+              ////////////////////////////////////////////// Windows 10 Edge 14.0 1920x1200 ///////////////////
               //Browser Type
               'os': 'Windows',
               'os_version': '10',
               'browserName': 'Edge',
-              'browser_version': '13.0',
+              'browser_version': '14.0',
               'resolution': '1920x1200'
           }
           //   ,

@@ -41,15 +41,7 @@ var BB_UserList = function BB_UserList() {
 
     BB_UserList.prototype.Click_FilterUserListStatus_Submenu = function (PermissionsName) {
         return new Promise ((success, failure)=>{
-            page.selectDropdownItemByValue(BB_userListRepo.Select_Element_StatusFilter, PermissionsName, success);
-        });
-    };
-
-    BB_UserList.prototype.Click_GearIcon = function (numberElementToSelect) {
-        var index = parseInt(numberElementToSelect) - 1;
-
-        return new Promise((success, failure)=> {
-            page.clickButton(BB_userListRepo.Select_Element_EditGeardIcon.get(index), protractorConfig.config.WaitTime, success);
+            page.selectDropdownItemByValue(BB_userListRepo.Select_Element_StatusFilter, PermissionsName, success, BB_userListRepo.Select_Element_TittleUserList);
         });
     };
 
@@ -60,16 +52,41 @@ var BB_UserList = function BB_UserList() {
     };
 
     BB_UserList.prototype.Click_Gear_Deactivate_Submenu = function () {
-        return new Promise((success, failure)=> {
-            page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu, protractorConfig.config.WaitTime),
-                page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+
+        return new Promise((success, failure) => {
+            console.log('this.index:' + this.index);
+            page.executeSequence([
+                browser.getProcessedConfig().then((config) => {
+
+                    if (config.capabilities.browserName == 'Edge') {
+                        console.log('EDGE');
+                        page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.get(this.index), protractorConfig.config.WaitTime),
+                            page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+                    }
+                    else {
+                        page.executeSequence([page.clickElement(BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.first(), protractorConfig.config.WaitTime),
+                            page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+                    }
+                })]).then(() => {});
         });
     };
 
     BB_UserList.prototype.Click_Gear_Activate_Submenu = function () {
-        return new Promise((success, failure)=> {
-            page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Activate_Submenu, protractorConfig.config.WaitTime),
-                page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+        return new Promise((success, failure) => {
+          //  console.log('this.index:' + this.index);
+            page.executeSequence([
+                browser.getProcessedConfig().then((config) => {
+
+                    if (config.capabilities.browserName == 'Edge') {
+                       // console.log('EDGE');
+                        page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Activate_Submenu.get(this.index), protractorConfig.config.WaitTime),
+                            page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+                    }
+                    else {
+                        page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Activate_Submenu.first(), protractorConfig.config.WaitTime),
+                            page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+                    }
+                })]).then(() => {});
         });
     };
 
@@ -79,15 +96,48 @@ var BB_UserList = function BB_UserList() {
         });
     };
 
-    BB_UserList.prototype.Click_Gear_Edit_Submenu = function () {
+    BB_UserList.prototype.index = '';
+
+    BB_UserList.prototype.Click_GearIcon = function (numberElementToSelect) {
+        this.index = parseInt(numberElementToSelect) - 1;
+
         return new Promise((success, failure)=> {
-            page.clickButton(BB_userListRepo.Select_Element_Gear_Edit_Submenu, protractorConfig.config.WaitTime, success);
+            page.clickButton(BB_userListRepo.Select_Element_EditGeardIcon.get(this.index), protractorConfig.config.WaitTime, success);
+        });
+    };
+
+    BB_UserList.prototype.Click_Gear_Edit_Submenu = function () {
+        return new Promise((success, failure) => {
+           // console.log('this.index:' + this.index);
+            page.executeSequence([
+                browser.getProcessedConfig().then((config) => {
+
+                    if (config.capabilities.browserName == 'Edge') {
+             //           console.log('EDGE');
+                        page.clickButton(BB_userListRepo.Select_Element_Gear_Edit_Submenu.get(this.index), protractorConfig.config.WaitTime, success);
+                    }
+                    else{
+                        page.clickButton(BB_userListRepo.Select_Element_Gear_Edit_Submenu.first(), protractorConfig.config.WaitTime, success);
+                    }
+                })]).then(() => {});
         });
     };
 
     BB_UserList.prototype.Click_Gear_Delete_Submenu = function () {
-        return new Promise((success, failure)=> {
-            page.clickButton(BB_userListRepo.Select_Element_Gear_Delete_Submenu, protractorConfig.config.WaitTime, success);
+
+        return new Promise((success, failure) => {
+         //   console.log('this.index:' + this.index);
+            page.executeSequence([
+                browser.getProcessedConfig().then((config) => {
+
+                    if (config.capabilities.browserName == 'Edge') {
+           //             console.log('EDGE');
+                        page.clickButton(BB_userListRepo.Select_Element_Gear_Delete_Submenu.get(this.index), protractorConfig.config.WaitTime, success);
+                    }
+                    else {
+                        page.clickButton(BB_userListRepo.Select_Element_Gear_Delete_Submenu.first(), protractorConfig.config.WaitTime, success);
+                    }
+                })]).then(() => {});
         });
     };
 

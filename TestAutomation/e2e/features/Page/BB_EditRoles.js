@@ -109,13 +109,13 @@ var BB_EditRoles = function BB_EditRoles() {
 
     BB_EditRoles.prototype.Click_FilterByStatusName_RoleEditor = function (FilterByStatusName) {
         return new Promise((success, failure) => {
-            page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_FilterByStatusDropdown, FilterByStatusName, success);
+            page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_FilterByStatusDropdown, FilterByStatusName, success, BB_editRolesRepo.Select_Element_TittleAddNewRole);
         });
     };
 
     BB_EditRoles.prototype.Click_FilterByGroupPermissionsName_RoleEditor = function (PermissionsName) {
         return new Promise((success, failure) => {
-            page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_FilterByGroupDropdown, PermissionsName, success);
+            page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_FilterByGroupDropdown, PermissionsName, success, BB_editRolesRepo.Select_Element_TittleAddNewRole);
         });
     };
 
@@ -123,11 +123,11 @@ var BB_EditRoles = function BB_EditRoles() {
         return new Promise((success, failure) => {
             switch (roleMarketSelection) {
                 case "US Used Car":
-                    page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_RoleMarketDropdown, '5', success);
+                    page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_RoleMarketDropdown, '5', success, BB_editRolesRepo.Select_Element_TittleAddNewRole);
                     break;
 
                 case "Canada Used Car":
-                    page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_RoleMarketDropdown, '6', success);
+                    page.selectDropdownItemByValue(BB_editRolesRepo.Select_Element_RoleMarketDropdown, '6', success, BB_editRolesRepo.Select_Element_TittleAddNewRole);
                     break;
 
                 default:

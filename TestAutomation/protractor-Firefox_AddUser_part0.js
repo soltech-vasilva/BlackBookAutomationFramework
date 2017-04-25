@@ -85,7 +85,7 @@ exports.config = {
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
         // 'acceptSslCerts': true,
-       // 'browserstack.selenium_version' : '3.0.1',
+        'browserstack.selenium_version' : '2.53.1',
 
         //Screenshot
          'browserstack.debug': 'false',

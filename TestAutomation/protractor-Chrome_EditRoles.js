@@ -72,7 +72,7 @@ exports.config = {
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
         // 'acceptSslCerts': true,
-       // 'browserstack.selenium_version' : '3.0.1',
+        'browserstack.selenium_version' : '3.3.1',
 
         //Screenshot
          'browserstack.debug': 'false',
@@ -104,13 +104,26 @@ exports.config = {
           // }
           //   ,
           {
-              ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
+              ////////////////////////////////////////////// Windows 10 Chrome 57.0  1920x1200 ///////////////////
               // Browser Type
               'os': 'Windows',
               'os_version': '10',
               'browserName': 'Chrome',
-              'browser_version': '55.0',
-              'resolution': '1920x1200'//,
+              'browser_version': '57.0',
+              'resolution': '1920x1200',
+
+              'chromeOptions': {
+                  'excludeSwitches': ["disable-popup-blocking"],
+                  'args': [
+                      '--disable-infobars'
+                  ],
+                  'prefs': {
+                      // disable chrome's annoying password manager
+                      'profile.password_manager_enabled': false,
+                      'credentials_enable_service': false,
+                      'password_manager_enabled': false
+                  }
+              }
 
               // 'chromeOptions': {
               //     'excludeSwitches': ["disable-popup-blocking"]

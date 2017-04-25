@@ -17,20 +17,7 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-        //  'e2e/features/TestCases/START_eyes.feature',
-        //  'e2e/features/TestCases/AddUser_part0.feature'
-        //'e2e/features/TestCases/AddUser_part0.feature'//,
-        // 'e2e/features/TestCases/AddUser_part1.feature'//,
-        //'e2e/features/TestCases/AddUser_part2.feature'//,
-        // 'e2e/features/TestCases/EditUserProfile.feature'//,
-        //  'e2e/features/TestCases/UsersList.feature'//,
-        //'e2e/features/TestCases/Login.feature'//,
-        // 'e2e/features/TestCases/EditRoles.feature'//,
-        // 'e2e/features/TestCases/Bugs.feature'//,
-        // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
-         'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
-        //'e2e/features/TestCases/Test1.feature'//,
-        // 'e2e/features/TestCases/END_eyes.feature'//,
+          'e2e/features/TestCases/Setup.feature'//,
     ],
 
 
@@ -77,15 +64,19 @@ exports.config = {
 
     'commonCapabilities': {
          //Label
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Chrome_______________ Test : Verify Roles Part 2____ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Safari________________ Test : Setup_________________ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
-         'name': 'Add User Part 1',
+         'name': 'Setup',
 
         'browserstack.user': 'soltech2',
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
-        // 'acceptSslCerts': true,
-        'browserstack.selenium_version' : '3.3.1',
+         //'acceptSslCerts': 'false',
+        // 'browserstack.selenium_version' : '3.0.1',
+      //   'browserstack.selenium_version' : '2.45.0 ',
+       // 'browserstack.safari.enablePopups' : 'false',
+         'browserstack.safari.driver' : '2.48',
+        //'browserstack.safari.driver' : '2.45',
 
         //Screenshot
          'browserstack.debug': 'false',
@@ -96,56 +87,43 @@ exports.config = {
 
     //Browserstack multiple browsers at a time testing
       multiCapabilities: [
-            // {
-            // ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
-            // //Browser Type
-            // 'browserName' : 'IE',
-            // 'browser_version' : '11.0',
-            // 'os' : 'Windows',
-            // 'os_version' : '10',
-            // 'resolution' : '1920x1200'
-            // }
+          // {
+          //     ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
+          //     //Browser Type
+          //     'browserName' : 'IE',
+          //     'browser_version' : '11.0',
+          //     'os' : 'Windows',
+          //     'os_version' : '10',
+          //     'resolution' : '1920x1200'
+          // }
           //   ,
           // {
-          //     ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
+          //     ////////////////////////////////////////////// Windows 10 Edge 14.0 1920x1200 ///////////////////
           //     //Browser Type
           //     'os': 'Windows',
           //     'os_version': '10',
           //     'browserName': 'Edge',
-          //     'browser_version': '13.0',
+          //     'browser_version': '14.0',
           //     'resolution': '1920x1200'
           // }
           //   ,
-          {
-              ////////////////////////////////////////////// Windows 10 Chrome 57.0  1920x1200 ///////////////////
-              // Browser Type
-              'os': 'Windows',
-              'os_version': '10',
-              'browserName': 'Chrome',
-              'browser_version': '57.0',
-              'resolution': '1920x1200',
-
-              'chromeOptions': {
-                  'excludeSwitches': ["disable-popup-blocking"],
-                  'args': [
-                      '--disable-infobars'
-                  ],
-                  'prefs': {
-                      // disable chrome's annoying password manager
-                      'profile.password_manager_enabled': false,
-                      'credentials_enable_service': false,
-                      'password_manager_enabled': false
-                  }
-              }
-
-              // 'chromeOptions': {
-              //     'excludeSwitches': ["disable-popup-blocking"]
-              // }
-
-              // 'chromeOptions': {
-              //     'args': ["--disable-popup-blocking"]
-              // }
-          }
+          // {
+          //     ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
+          //     // Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Chrome',
+          //     'browser_version': '55.0',
+          //     'resolution': '1920x1200'//,
+          //
+          //     // 'chromeOptions': {
+          //     //     'excludeSwitches': ["disable-popup-blocking"]
+          //     // }
+          //
+          //     // 'chromeOptions': {
+          //     //     'args': ["--disable-popup-blocking"]
+          //     // }
+          // }
           // ,
           // {
           //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////
@@ -157,16 +135,31 @@ exports.config = {
           //     'resolution': '1920x1200'
           // }
           // ,
-          // {
-          //     ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
-          //     // Browser Type
-          //     'os': 'OS X',
-          //     'os_version': 'Sierra',
-          //     'browserName': 'Safari',
-          //     'browser_version': '10.0',
-          //     'resolution': '1920x1080' //,
-          //     //'browserstack.safari.enablePopups': false
-          // }
+          {
+              ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
+              // Browser Type
+              'os': 'OS X',
+             'os_version': 'Sierra',
+              'browserName': 'Safari',
+              'browser_version': '10.0',
+
+              // 'os_version': 'El Capitan',
+              // 'browserName': 'Safari',
+              // 'browser_version': '9.1',
+
+              'resolution': '1920x1080' ,
+              'browserstack.safari.enablePopups': 'false',
+              'browserstack.safari.allowAllCookies': 'false',
+              'acceptSslCerts': 'true',
+
+
+
+
+              // 'safari.options': {
+              //     'technologyPreview': ['true']
+              // }//,
+               //'mode' : 'proxy'
+          }
 
           /////////////NOT NEED FOR MOMENT/////
           //  ,
@@ -219,6 +212,7 @@ exports.config = {
           // }
 
     ],
+
 
     // capabilities: {
     // //46.0b9

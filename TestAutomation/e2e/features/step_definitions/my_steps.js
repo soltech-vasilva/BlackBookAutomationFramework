@@ -600,7 +600,10 @@ var myBlackBookSteps = function myBlackBookSteps() {
     //TODO SEGEMENTS needs refactoring
     this.Given(/^I click on Segment Tab$/, function () {
         return new Promise((success, failure) => {
-            page.clickButton(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span')), protractorConfig.config.WaitTime, success);
+            page.executeSequence([
+                page.clickElement(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span')), protractorConfig.config.WaitTime),
+                browser.driver.actions().mouseMove(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span'))).perform().then(()=>{  success();})
+            ]).then(() => {success();});
         });
     });
 

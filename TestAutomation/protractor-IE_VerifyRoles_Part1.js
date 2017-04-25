@@ -27,8 +27,8 @@ exports.config = {
         //'e2e/features/TestCases/Login.feature'//,
         // 'e2e/features/TestCases/EditRoles.feature'//,
         // 'e2e/features/TestCases/Bugs.feature'//,
-        // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
-         'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
+         'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
+        // 'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
         //'e2e/features/TestCases/Test1.feature'//,
         // 'e2e/features/TestCases/END_eyes.feature'//,
     ],
@@ -77,7 +77,7 @@ exports.config = {
 
     'commonCapabilities': {
          //Label
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Chrome_______________ Test : Verify Roles Part 2____ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : IE____________________ Test : Verify Roles Part 1_______ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
          'name': 'Add User Part 1',
 
@@ -96,56 +96,43 @@ exports.config = {
 
     //Browserstack multiple browsers at a time testing
       multiCapabilities: [
-            // {
-            // ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
-            // //Browser Type
-            // 'browserName' : 'IE',
-            // 'browser_version' : '11.0',
-            // 'os' : 'Windows',
-            // 'os_version' : '10',
-            // 'resolution' : '1920x1200'
-            // }
+            {
+            ////////////////////////////////////////////// Windows 10 IE 11.0 1920x1200 ///////////////////
+            //Browser Type
+            'browserName' : 'IE',
+            'browser_version' : '11.0',
+            'os' : 'Windows',
+            'os_version' : '10',
+            'resolution' : '1920x1200'
+            }
           //   ,
           // {
-          //     ////////////////////////////////////////////// Windows 10 Edge 13.0 1920x1200 ///////////////////
+          //     ////////////////////////////////////////////// Windows 10 Edge 14.0 1920x1200 ///////////////////
           //     //Browser Type
           //     'os': 'Windows',
           //     'os_version': '10',
           //     'browserName': 'Edge',
-          //     'browser_version': '13.0',
+          //     'browser_version': '14.0',
           //     'resolution': '1920x1200'
           // }
           //   ,
-          {
-              ////////////////////////////////////////////// Windows 10 Chrome 57.0  1920x1200 ///////////////////
-              // Browser Type
-              'os': 'Windows',
-              'os_version': '10',
-              'browserName': 'Chrome',
-              'browser_version': '57.0',
-              'resolution': '1920x1200',
-
-              'chromeOptions': {
-                  'excludeSwitches': ["disable-popup-blocking"],
-                  'args': [
-                      '--disable-infobars'
-                  ],
-                  'prefs': {
-                      // disable chrome's annoying password manager
-                      'profile.password_manager_enabled': false,
-                      'credentials_enable_service': false,
-                      'password_manager_enabled': false
-                  }
-              }
-
-              // 'chromeOptions': {
-              //     'excludeSwitches': ["disable-popup-blocking"]
-              // }
-
-              // 'chromeOptions': {
-              //     'args': ["--disable-popup-blocking"]
-              // }
-          }
+          // {
+          //     ////////////////////////////////////////////// Windows 10 Chrome 55.0  1920x1200 ///////////////////
+          //     // Browser Type
+          //     'os': 'Windows',
+          //     'os_version': '10',
+          //     'browserName': 'Chrome',
+          //     'browser_version': '55.0',
+          //     'resolution': '1920x1200'//,
+          //
+          //     // 'chromeOptions': {
+          //     //     'excludeSwitches': ["disable-popup-blocking"]
+          //     // }
+          //
+          //     // 'chromeOptions': {
+          //     //     'args': ["--disable-popup-blocking"]
+          //     // }
+          // }
           // ,
           // {
           //     //////////////////////////////////////////////  Windows 10 Firefox 47.0  1920x1200 ///////////////////

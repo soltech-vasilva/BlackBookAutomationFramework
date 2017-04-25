@@ -16,6 +16,7 @@ var BB_RolesListRepo = function BB_RolesListRepo () {
     };
 
     //Components OTHERS
+    BB_RolesListRepo.prototype.Select_Element_TittleRoleListProfileText = element(by.xpath('//*[@id="page-box"]/role-list/div/div/h1/span'));
     BB_RolesListRepo.prototype.Select_Element_NumberOfUsersColumn  = element.all(by.css('div[colid="users"]'));
 };
 module.exports = new BB_RolesListRepo();
