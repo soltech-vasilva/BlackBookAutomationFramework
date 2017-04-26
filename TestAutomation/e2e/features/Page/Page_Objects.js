@@ -220,11 +220,13 @@ var Page_Objects = function Page_Objects () {
                 if (str_SendValue != '') {
                     page.executeSequence([
                         element.sendKeys(str_SendValue),
-                        page.VerifyValueEntered_RetypeValue(element, str_SendValue)]).then(()=>{page.focus(elementClearFocus, success);});
+                        elementClearFocus.click(),
+                        page.VerifyValueEntered_RetypeValue(element, str_SendValue),
+                    ]).then(()=>{page.focus(elementClearFocus, success).then(()=>{});});
                 }
                 else
                 {
-                    page.focus(elementClearFocus, success);
+                    page.focus(elementClearFocus, success).then(()=>{});
                 }
             })]).then(()=>{});
     };
@@ -237,22 +239,22 @@ var Page_Objects = function Page_Objects () {
             ValueEntered = currentValue;
             page.executeSequence([browser.getProcessedConfig().then((config) => {
                 //console.log('BEFORE: ValueEntered:'+ValueEntered + ":Different:" + 'ValueCompare'+ValueCompare);
-                while (ValueEntered != ValueCompare) {
-                    //console.log('AFTER: ValueEntered:'+ValueEntered + ":Different:" + 'ValueCompare'+ValueCompare); 
+                while ( ValueEntered.trim() != ValueCompare.toString().trim()) {
+                    console.log('AFTER: ValueEntered:'+ValueEntered + ":Different:" + 'ValueCompare'+ValueCompare); 
                     // console.log('config.capabilities.os: |' + config.capabilities.os + '|'); 
                     //  console.log(" config.capabilities.browserName: " +  config.capabilities.browserName);  
                     if (config.capabilities.browserName == 'safari' || config.capabilities.os === undefined) {
                         //console.log('Mycomputer'); 
-                        page.executeSequence([browser.driver.sleep(1000), element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(element, ValueCompare)])
+                        page.executeSequence([browser.driver.sleep(1000), element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(element, ValueCompare, browser.driver.sleep(1000))])
                             .then(() => {
                             });
                     } else {
-                        page.executeSequence([browser.driver.sleep(1000), element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(element, ValueCompare)])
+                        page.executeSequence([browser.driver.sleep(1000), element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(element, ValueCompare), browser.driver.sleep(1000)])
                             .then(() => {
                             });
                     }
                     count++;
-                    if (count == 3) {
+                    if (count == 2) {
                         break;
                     }
                 }

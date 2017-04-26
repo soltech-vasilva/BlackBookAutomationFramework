@@ -338,15 +338,15 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
         return new Promise((success, failure) => {
             switch (TextboxName.toLowerCase()) {
                 case 'rolename':
-                    browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleName_Require).then((isPresente) => {
+                    page.executeSequence([browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleName_Require).then((isPresente) => {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleName_Require, 'It should not show any errors in Role Name', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'rolemarket':
-                    browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleMarket_Require).then((isPresente) => {
+                    page.executeSequence([browser.isElementPresent(BB_editRolesRepo.Select_xpath_ERRORMESSAGE_RoleMarket_Require).then((isPresente) => {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editRolesRepo.Select_Element_ERRORMESSAGE_RoleMarket_Require, 'It should not show any errors in Role Market', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 default:
@@ -360,62 +360,62 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
         return new Promise ((success, failure)=> {
             switch (TextboxName.toLowerCase()) {
                 case 'firstname':
-                    browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_FirstName_Require).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_FirstName_Require).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_FirstName_Require, 'It should not show any errors in First Name', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'lastname':
-                    browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_LastName_Require).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_editUserProfileRepo.Select_Xpath_ERRORMESSAGE_LastName_Require).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_LastName_Require, 'It should not show any errors in Last Name', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'emailaddress':
-                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_Email_Require).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_Email_Require).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_Email_Require, 'It should not show any errors in Email Address', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'phonenumber':
-                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PhoneNumber).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PhoneNumber).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PhoneNumber, 'It should not show any errors in Phone Number', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'newpassword':
-                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Leastbe8Character).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_NewPassword_Leastbe8Character).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_NewPassword_Leastbe8Character, 'It should not show any errors in New Password', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'confirmnewpassword':
-                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword_PassDontMatch).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_ConfirmNewPassword_PassDontMatch).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_ConfirmNewPassword_PassDontMatch, 'It should not show any errors in Confirm New Password', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'currentemailaddress':
-                    browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword , 'It should not show any errors in Current Email Address', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'currentpassword':
-                    browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword , 'It should not show any errors in Current Password', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
                 case 'previouspassword':
-                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PreviousPassword_Require).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_PreviousPassword_Require).then((isPresente)=> {
                        VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_PreviousPassword_Require , 'It should not show any errors in Previous Password', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 case 'userrole' :
-                    browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_UserRole).then((isPresente)=> {
+                    page.executeSequence([browser.isElementPresent(BB_editUserProfileRepo.Select_xpath_ERRORMESSAGE_UserRole).then((isPresente)=> {
                         VerifyErrorMessage.prototype.AssertElementsNotToDisplay(isPresente, BB_editUserProfileRepo.Select_Element_ERRORMESSAGE_UserRole , 'It should not show any errors in User is Roles', success, failure);
-                    });
+                    })]).then(()=>{});
                     break;
 
                 default:

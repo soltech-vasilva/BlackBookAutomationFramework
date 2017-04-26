@@ -242,7 +242,7 @@ exports.config = {
         //     }
         // }
           'browserName': 'safari',
-
+      //  "selenium-version": "3.4.0",
 
         // 'safari.options': {
         //     technologyPreview: true

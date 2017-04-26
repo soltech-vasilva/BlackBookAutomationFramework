@@ -126,8 +126,12 @@ exports.config = {
               // Browser Type
               'os': 'Windows',
               'os_version': '10',
+              // 'browserName': 'Firefox',
+              //  'browser_version': '47.0',
+
               'browserName': 'Firefox',
-               'browser_version': '47.0',
+              'browser_version': '51.0',
+
               //Latest but not working GeikoDriver
               //'browser_version': '52.0',
               'resolution': '1920x1200'
@@ -229,7 +233,7 @@ exports.config = {
     //     });
     // },
 
-    //directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
+    directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
 
 
 
