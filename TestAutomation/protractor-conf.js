@@ -226,8 +226,8 @@ exports.config = {
 
     capabilities: {
         //46.0b9
-        //'browserName': 'firefox'
-
+        'browserName': 'firefox',
+        'marionette': true
         //58
         // 'browserName': 'chrome',
         // chromeOptions: {
@@ -241,14 +241,14 @@ exports.config = {
         //         'password_manager_enabled': false
         //     }
         // }
-          'browserName': 'safari',
+       //   'browserName': 'safari',
       //  "selenium-version": "3.4.0",
 
         // 'safari.options': {
         //     technologyPreview: true
         // },
-           'acceptSslCerts': true,
-         'mode' : 'proxy'
+        //   'acceptSslCerts': true,
+         //'mode' : 'proxy'
 
     },
 
@@ -274,7 +274,7 @@ exports.config = {
     //     });
     // },
 
-   // directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
+    directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
 
 
 

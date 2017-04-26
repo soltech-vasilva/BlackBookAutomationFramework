@@ -72,7 +72,12 @@ exports.config = {
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
         // 'acceptSslCerts': true,
-       // 'browserstack.selenium_version' : '2.53.1',
+       // 'browserstack.selenium_version' : '2.53.1', //ends 47 works
+         'browserstack.selenium_version' : '3.1.0', //starts 48 does not work mousemoveTo
+        // 'browserstack.selenium_version' : '3.2.0',
+        // 'browserstack.selenium_version' : '3.3.0',
+        // 'browserstack.selenium_version' : '3.3.1',
+        // 'browserstack.selenium_version' : '3.4.0',
 
         //Screenshot
         'browserstack.debug': 'false',
@@ -126,15 +131,18 @@ exports.config = {
               // Browser Type
               'os': 'Windows',
               'os_version': '10',
-              // 'browserName': 'Firefox',
-              //  'browser_version': '47.0',
-
               'browserName': 'Firefox',
-              'browser_version': '51.0',
+              //works
+              //'browser_version': '47.0',
+              'browser_version': '48.0',
+
+
+              // 'browser_version': '51.0',
 
               //Latest but not working GeikoDriver
               //'browser_version': '52.0',
-              'resolution': '1920x1200'
+              'resolution': '1920x1200',
+              'marionette': true
           }
           // ,
           // {
@@ -233,7 +241,7 @@ exports.config = {
     //     });
     // },
 
-    directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
+   // directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server only my computer for this (no Browserstack)
 
 
 
