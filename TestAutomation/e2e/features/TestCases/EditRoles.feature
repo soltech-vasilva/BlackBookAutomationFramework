@@ -32,6 +32,7 @@ Feature:  "Add a new Role"
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
+    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
 
@@ -53,9 +54,9 @@ Feature:  "Add a new Role"
     And I enter Role Name "Basic Role-No Permissions"
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-    And I enter "Can View User List" on Filter Permissions in Role Editor
-    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+    And I enter "View user list" on Filter Permissions in Role Editor
+    And I click checkbox  "1" "Checked - View user list" Permission row in Role Editor
     And I clear text box selected "FilterPermissions" in Role Editor
     And I enter "admintestemail10@yopmail.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
@@ -77,23 +78,23 @@ Feature:  "Add a new Role"
     And I enter Role Name "T_Admin View All Only"
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-      Then I should see "User" display for Filter By Group in Role Editor
+    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+      Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
     #fix below delete
-    And I click checkbox  "0" "Users" Permission row in Role Editor
-    And I click checkbox  "6" "Can view User List" Permission row in Role Editor
-    And I click checkbox  "4" "Can view Other Users" Permission row in Role Editor
+    #And I click checkbox  "0" "Users" Permission row in Role Editor
+    And I click checkbox  "9" "View user list" Permission row in Role Editor
+    And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
     #fix below delete
-    And I click checkbox  "0" "Users" Permission row in Role Editor
+    #And I click checkbox  "0" "Users" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
      #fix below delete
-    And I click checkbox  "0" "Roles" Permission row in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
+    #And I click checkbox  "0" "Roles" Permission row in Role Editor
+    And I click checkbox  "2" "View role list" Permission row in Role Editor
      #fix below delete
-    And I click checkbox  "0" "Roles" Permission row in Role Editor
+     #And I click checkbox  "0" "Roles" Permission row in Role Editor
     And I click Filter By Group dropdown "Settings" Permissions in Role Editor
       Then I should see "Settings" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
@@ -120,20 +121,22 @@ Feature:  "Add a new Role"
     And I enter Role Name "U_Edit Other Users Basic"
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-      Then I should see "User" display for Filter By Group in Role Editor
+    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+      Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "0" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "6" "Can view User List" Permission row in Role Editor
-    And I click checkbox  "4" "Can view Other Users" Permission row in Role Editor
+    And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
+    And I click checkbox  "3" "Update other user's profile" Permission row in Role Editor
+    And I click checkbox  "4" "Update other user's roles" Permission row in Role Editor
+    And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "9" "View user list" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
     #fix below delete
-    And I click checkbox  "0" "Roles" Permission row in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
+    #And I click checkbox  "0" "Roles" Permission row in Role Editor
+    And I click checkbox  "2" "View role list" Permission row in Role Editor
      #fix below delete
-    And I click checkbox  "0" "Roles" Permission row in Role Editor
+    #And I click checkbox  "0" "Roles" Permission row in Role Editor
     #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
@@ -157,21 +160,22 @@ Feature:  "Add a new Role"
     And I enter Role Name "V_Edit Other Users Basic + Password"
     Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-      Then I should see "User" display for Filter By Group in Role Editor
+    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+      Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "0" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "6" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "4" "Can View Other Users" Permission row in Role Editor
-    And I click checkbox  "3" "Can Reset Users Passwords" Permission row in Role Editor
+    And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
+    And I click checkbox  "2" "Update other user's password" Permission row in Role Editor
+    And I click checkbox  "3" "Update other user's profile" Permission row in Role Editor
+    And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "9" "View user list" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
     #fix below delete
-    And I click checkbox  "0" "Roles" Permission row in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
+    #And I click checkbox  "0" "Roles" Permission row in Role Editor
+    And I click checkbox  "2" "View role list" Permission row in Role Editor
      #fix below delete
-    And I click checkbox  "0" "Roles" Permission row in Role Editor
+    #And I click checkbox  "0" "Roles" Permission row in Role Editor
     #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
@@ -196,17 +200,19 @@ Feature:  "Add a new Role"
     And I enter Role Name "W_Edit Other Users Basic + Roles"
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-      Then I should see "User" display for Filter By Group in Role Editor
+    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+      Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "0" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "6" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "4" "Can View Other Users" Permission row in Role Editor
+    And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
+    And I click checkbox  "3" "Update other user's profile" Permission row in Role Editor
+    And I click checkbox  "4" "Update other user's roles" Permission row in Role Editor
+    And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "9" "View user list" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "0" "Can Add/Edit Roles" Permission row in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
+    #And I click checkbox  "0" "Can Add/Edit Roles" Permission row in Role Editor
+    And I click checkbox  "2" "View role list" Permission row in Role Editor
     #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
@@ -231,18 +237,20 @@ Feature:  "Add a new Role"
     And I enter Role Name "X_Edit Other Users Basic + Roles + Password"
       Then I should not see in "RoleName" errors displayed in Edit Role
       Then I should see in "Save" button "enable" in Edit Role
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
-      Then I should see "User" display for Filter By Group in Role Editor
+    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+      Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "0" "Can Add/Edit Users" Permission row in Role Editor
-    And I click checkbox  "6" "Can View User List" Permission row in Role Editor
-    And I click checkbox  "3" "Can Reset Users Passwords" Permission row in Role Editor
-    And I click checkbox  "4" "Can View Other Users" Permission row in Role Editor
+    And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
+    And I click checkbox  "2" "Update other user's password" Permission row in Role Editor
+    And I click checkbox  "3" "Update other user's profile" Permission row in Role Editor
+    And I click checkbox  "4" "Update other user's roles" Permission row in Role Editor
+    And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "9" "View user list" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "0" "Can Add/Edit Roles" Permission row in Role Editor
-    And I click checkbox  "2" "Can view Role List" Permission row in Role Editor
+    #And I click checkbox  "0" "Can Add/Edit Roles" Permission row in Role Editor
+    And I click checkbox  "2" "View role list" Permission row in Role Editor
     #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
@@ -278,34 +286,3 @@ Feature:  "Add a new Role"
     And I click Cancel Button from Edit Roles
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
-
-
-#  @TestCases_3
-#  Scenario: "TestCases_3" Edit a Role. Button "Delete" needs to show up.
-#    And I click on Gear Icon 2
-#    And I click Edit from Gear Icon
-#    And I wait
-#
-#
-#    And I enter Role Name "BasicAccount"
-#    Then I should see in "Save" button "disable" in Edit Role
-#    And I select Role Market "US Used Car" in Role Editor
-#    And I wait
-#    Then I should see Role Market value "US Used Car"
-#    Then I should see in "Save" button "enable" in Edit Role
-#    And I enter "Can View User List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
-#    And I clear text box selected "FilterPermissions" in Role Editor
-#    Then I should see in "Delete" button "enable" in Edit Role
-#    And I wait
-#    And I enter "User2" on Filter Users in Role Editor
-#    And I click checkbox on first user found from Filter Users in Role Editor
-#    And I wait
-#    Then I should see in "Delete" button "disable" in Edit Role
-#    And I click on Save button in Role Editor
-#    Then I should see "Role has been successfully added" displayed on "EditRoles" popup
-#    And I wait
-#
-#
-#    And I enter Role Name "  "
-#     Then I should see "RoleName" message "This is not a valid role title" displayed for this "filled" field in Role Editor

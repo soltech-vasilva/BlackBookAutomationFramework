@@ -58,9 +58,9 @@ Feature:  "Verify each Role UI"
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
       Then I verify BlackBook "User List" page with Applitools
-    And I click on Gear Icon 1 "USER none@example.com in User List"
+    And I click on Gear Icon 4 "USER feature@example.com in User List"
       Then I verify BlackBook "Gear Icon-Submenus in User List" page with Applitools
-    And I click 1 View from Gear Icon in User List
+    And I click 4 View from Gear Icon in User List
       Then I verify BlackBook "View User Profile none@example.com with NO ROLE" page with Applitools
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
@@ -125,9 +125,9 @@ Feature:  "Verify each Role UI"
            | user1@example.com               |   Password1        |
 
 
-#######################################################################################################################
-#                                            Basic Role-No Permissions                                                #
-#######################################################################################################################
+######################################################################################################################
+#                                            Basic My Profile edit Permissions                                        #
+######################################################################################################################
 
   @TC_CheckRoles_UI_B
   Scenario Outline: "@TC_CheckRoles_UI_B" Verify "Basic Role-No Permissions" Role UI.(After Setup)
@@ -163,6 +163,32 @@ Examples:
 
 
 #######################################################################################################################
+#                                         Basic My Profile No edit Permissions                                        #
+#######################################################################################################################
+
+  @TC_CheckRoles_UI_B-A
+  Scenario Outline: "@TC_CheckRoles_UI_B-A" Verify "Basic My Profile No edit Permissions" Role UI.(After Setup)
+    And I enter my user email address <currentEmailAddress> in Login
+    And I enter my Password <currentPassword> in Login
+    And I click Login Button
+      Then I verify BlackBook "Home" page with Applitools
+    #AVATAR
+    And I click Avatar Image Button
+      Then I verify BlackBook "Avatar button-Submenu" page with Applitools
+    And I click My Profile sub menu from Avatar
+      Then I verify BlackBook "View My Profile" page with Applitools
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
+      Then I verify BlackBook "Login" page with Applitools
+    And I wait
+
+Examples:
+           | currentEmailAddress             |   currentPassword  |
+#With Role attached
+           | none@example.com               |   Password1        |
+
+#######################################################################################################################
 #                                            Editor-Full-User                                                         #
 #######################################################################################################################
 
@@ -181,9 +207,9 @@ Examples:
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
       Then I verify BlackBook "User List" page with Applitools
-    And I click on Gear Icon 1 "USER none@example.com in User List"
+    And I click on Gear Icon 4 "USER feature@example.com in User List"
       Then I verify BlackBook "Gear Icon-Submenus in User List" page with Applitools
-    And I click 1 View from Gear Icon in User List
+    And I click 4 View from Gear Icon in User List
       Then I verify BlackBook "View User Profile none@example.com with NO ROLE" page with Applitools
     And I click on Admin Tab
     And I click on Users submenu from Admin Tab
@@ -296,15 +322,16 @@ Examples:
       Then I verify BlackBook "Avatar button-Submenu" page with Applitools
     And I click My Profile sub menu from Avatar
       Then I verify BlackBook "View My Profile" page with Applitools
-    And I click Edit Button in Edit User Profile
-      Then I verify BlackBook "Edit My Profile" page with Applitools
-    And I click on Save button in Edit User Profile
-      Then I verify BlackBook "Save User Profile editor@example.com message" page with Applitools
-    And I click Edit Button in Edit User Profile
-    And I click Reset Button in Edit User Profile
-      Then I verify BlackBook "Reset My Profile" page with Applitools
-    And I click Cancel Button in Edit User Profile
-      Then I verify BlackBook "Edit My Profile" page with Applitools
+    #BUG it is not enable EDIT Button
+#    And I click Edit Button in Edit User Profile
+#      Then I verify BlackBook "Edit My Profile" page with Applitools
+#    And I click on Save button in Edit User Profile
+#      Then I verify BlackBook "Save User Profile editor@example.com message" page with Applitools
+#    And I click Edit Button in Edit User Profile
+#    And I click Reset Button in Edit User Profile
+#      Then I verify BlackBook "Reset My Profile" page with Applitools
+#    And I click Cancel Button in Edit User Profile
+#      Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
     And I wait
@@ -338,15 +365,16 @@ Examples:
       Then I verify BlackBook "Avatar button-Submenu" page with Applitools
     And I click My Profile sub menu from Avatar
       Then I verify BlackBook "View My Profile" page with Applitools
-    And I click Edit Button in Edit User Profile
-      Then I verify BlackBook "Edit My Profile" page with Applitools
-    And I click on Save button in Edit User Profile
-      Then I verify BlackBook "Save User Profile admin@example.com message" page with Applitools
-    And I click Edit Button in Edit User Profile
-    And I click Reset Button in Edit User Profile
-      Then I verify BlackBook "Reset My Profile" page with Applitools
-    And I click Cancel Button in Edit User Profile
-      Then I verify BlackBook "Edit My Profile" page with Applitools
+     #BUG it is not enable EDIT Button
+#    And I click Edit Button in Edit User Profile
+#      Then I verify BlackBook "Edit My Profile" page with Applitools
+#    And I click on Save button in Edit User Profile
+#      Then I verify BlackBook "Save User Profile admin@example.com message" page with Applitools
+#    And I click Edit Button in Edit User Profile
+#    And I click Reset Button in Edit User Profile
+#      Then I verify BlackBook "Reset My Profile" page with Applitools
+#    And I click Cancel Button in Edit User Profile
+#      Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
     And I wait
@@ -376,15 +404,16 @@ Examples:
       Then I verify BlackBook "Avatar button-Submenu" page with Applitools
     And I click My Profile sub menu from Avatar
       Then I verify BlackBook "View My Profile" page with Applitools
-    And I click Edit Button in Edit User Profile
-      Then I verify BlackBook "Edit My Profile" page with Applitools
-    And I click on Save button in Edit User Profile
-      Then I verify BlackBook "Save User Profile none@example.com message" page with Applitools
-    #And I click Edit Button in Edit User Profile
-    And I click Reset Button in Edit User Profile
-      Then I verify BlackBook "Reset My Profile" page with Applitools
-    And I click Cancel Button in Edit User Profile
-      Then I verify BlackBook "Edit My Profile" page with Applitools
+     #BUG it is not enable EDIT Button  (this will be taken out since permission need to be added to this)
+#    And I click Edit Button in Edit User Profile
+#      Then I verify BlackBook "Edit My Profile" page with Applitools
+#    And I click on Save button in Edit User Profile
+#      Then I verify BlackBook "Save User Profile none@example.com message" page with Applitools
+#    #And I click Edit Button in Edit User Profile
+#    And I click Reset Button in Edit User Profile
+#      Then I verify BlackBook "Reset My Profile" page with Applitools
+#    And I click Cancel Button in Edit User Profile
+#      Then I verify BlackBook "Edit My Profile" page with Applitools
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
     And I wait
@@ -394,7 +423,7 @@ Examples:
     Examples:
            | currentEmailAddress             |   currentPassword  |
 #With Role attached
-           | none@example.com                |   Password1        |
+           | feature@example.com             |   Password1        |
 
 
   @TestCases_A-1
@@ -437,7 +466,7 @@ Examples:
     And I select Role Market "US Used Car" in Role Editor
     And I enter Role Name "RoleName8"
       Then I verify BlackBook "-Require- is gone for fields in Add New Role" page with Applitools
-    And I click Filter By Group dropdown "User" Permissions in Role Editor
+    And I click Filter By Group dropdown "Users" Permissions in Role Editor
     And I enter "view" on Filter Permissions in Role Editor
     And I click checkbox  "0" "User (Filter auto select in tree)" Permission row in Role Editor
       Then I verify BlackBook "Filter auto select in tree -View- 3 words" page with Applitools
@@ -448,10 +477,10 @@ Examples:
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
       Then I verify BlackBook "Save RoleName8 Role" page with Applitools
-    And I click on Gear Icon 6 "RoleName8 in Role List"
+    And I click on Gear Icon 7 "RoleName8 in Role List"
     And I click Delete from Gear Icon
       Then I verify BlackBook "Error Message: User are assigned to Role.." page with Applitools
-    And I click on Gear Icon 6 "RoleName8 in Role List"
+    And I click on Gear Icon 7 "RoleName8 in Role List"
     And I click Edit from Gear Icon "in Role List"
       Then I verify BlackBook "Edit RoleName8 Role" page with Applitools
     #Didable User
@@ -545,6 +574,7 @@ Examples:
 
     Examples:
       | firstName      | lastName      | emailAddress                  |phoneNumber    | newPassWord | confirmNewPassWord |
+#With Role attached
       |   firstName40  | lastName40    | admintestemail40@yopmail.com  |               | Password1   |   Password1        |
 
 

@@ -72,12 +72,9 @@ exports.config = {
         'browserstack.key': 'mnKfscqSMQ8C7jFfZR2Y',
         //'browserstack.local' : 'true',
         // 'acceptSslCerts': true,
-       // 'browserstack.selenium_version' : '2.53.1', //ends 47 works
-         'browserstack.selenium_version' : '3.1.0', //starts 48 does not work mousemoveTo
-        // 'browserstack.selenium_version' : '3.2.0',
-        // 'browserstack.selenium_version' : '3.3.0',
-        // 'browserstack.selenium_version' : '3.3.1',
-        // 'browserstack.selenium_version' : '3.4.0',
+        'browserstack.selenium_version' : '2.53.1', //ends 47 works
+        // 'browserstack.selenium_version' : '3.1.0', //starts 48 does not work mousemoveTo
+        // 'browserstack.selenium_version' : '3.4.0', need not in browserstack
 
         //Screenshot
         'browserstack.debug': 'false',
@@ -132,15 +129,8 @@ exports.config = {
               'os': 'Windows',
               'os_version': '10',
               'browserName': 'Firefox',
-              //works
-              //'browser_version': '47.0',
-              'browser_version': '48.0',
-
-
-              // 'browser_version': '51.0',
-
-              //Latest but not working GeikoDriver
-              //'browser_version': '52.0',
+              //works Browserstack need to update drivers
+              'browser_version': '47.0',
               'resolution': '1920x1200',
               'marionette': true
           }

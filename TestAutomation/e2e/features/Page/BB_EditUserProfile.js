@@ -196,7 +196,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
 
     BB_EditUserProfile.prototype.Click_Delete_Content = function(success, elementToClick, elementTitlePage) {
         return page.executeSequence([page.clickElement(elementToClick, protractorConfig.config.WaitTime),
-            keyStrokesRepo.CONTROL_ALL_DELETE(),
+            keyStrokesRepo.CONTROL_ALL_DELETE(elementToClick),
             page.focus(elementTitlePage, success)]).then(() => {
         });
     };

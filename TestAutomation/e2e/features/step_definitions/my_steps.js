@@ -250,7 +250,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return BB_menu.Click_Settings_Submenu();
     });
 
-    this.Then(/^I should not see "([^"]*)" Button in AdminTab$/, function (buttonName) {
+    this.Then(/^I should not see "([^"]*)" Button in "([^"]*)"$/, function (buttonName, arg2) {
         return BB_menu.Verify_ButtonNotInPage_Menu(buttonName);
     });
 

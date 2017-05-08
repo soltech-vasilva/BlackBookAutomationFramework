@@ -116,7 +116,8 @@ var Page_Objects = function Page_Objects () {
         return page.executeSequence([browser.driver.sleep(2000), page.clickElement(element, WaitTime),
                 browser.getProcessedConfig().then((config) => {
                     //added click element since Firefox and safari does not like clearfocus in clickButton
-                    if (config.capabilities.browserName != 'Firefox' && config.capabilities.browserName != 'Safari') {
+                    console.log('config.capabilities.browserName: '+config.capabilities.browserName);
+                    if (config.capabilities.browserName.toLowerCase() != 'firefox' && config.capabilities.browserName.toLowerCase() != 'safari') {
                         page.clearFocus().then(()=>{});
                     }
                     })
@@ -270,7 +271,7 @@ var Page_Objects = function Page_Objects () {
 
     page.ClickDeleteContent = function( elementToClick, elementClearFocus, success) {
        return page.executeSequence([ page.clickElement(elementToClick),
-        keyStrokesRepo.CONTROL_ALL_DELETE(),
+        keyStrokesRepo.CONTROL_ALL_DELETE(elementToClick),
          page.focus(elementClearFocus, success)]);
     };
     /**
@@ -362,13 +363,18 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
         return page.executeSequence([
             page.clickElement(dropdown),
             dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).first().click(),
+           // dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).click(),
             browser.getProcessedConfig().then((config) => {
                 //Only firefox , it wont select item
-                if (config.capabilities.browserName == 'Firefox') {
-                    dropdown.sendKeys("All");
-                    keyStrokesRepo.ENTER();
-                    dropdown.sendKeys(value);
-                    keyStrokesRepo.ENTER();
+                if (config.capabilities.browserName == 'firefox') {
+                    console.log('firefox:'+value);
+                    page.executeSequence([
+                   // dropdown.sendKeys("All"),
+                    //dropdown.sendKeys(protractor.Key.ENTER),
+                    //page.clickElement(dropdown),
+                    //dropdown.sendKeys("use"),
+                   // dropdown.sendKeys(protractor.Key.ENTER),
+                    page.clickElement(dropdown)]).then(()=>{});
                 }
 
                 if (config.capabilities.browserName == 'Edge') {

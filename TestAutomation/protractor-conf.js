@@ -3,13 +3,27 @@
 //var paths = require('build/paths');
 
 exports.config = {
+    // shim: {
+    //     'class.mutators': {
+    //         deps: [
+    //             'jquery',
+    //             'mootools'
+    //         ],
+    //         exports: 'classmutators'
+    //     },
+    //     'underscore': {
+    //         exports: '_'
+    //     },
+    //     'bootstrap-wizard': ['jquery']
+    // },
+
 
     //specs: [
     //'e2e/features/TestCases/*.feature'
     // ],
     'StopRunAtFail': true,   //false original
     'WaitTime': 15000,
-    'BuildTestNumber': '163',
+    'BuildTestNumber': '194',
 
     //Turn off applitool
     'ApplitoolsOn': true,
@@ -19,8 +33,8 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-         'e2e/features/TestCases/Setup.feature'//,
-        // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
+        // 'e2e/features/TestCases/Setup.feature'//,
+         'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
         // 'e2e/features/TestCases/AddUser_part0.feature'//,
          //'e2e/features/TestCases/EditRoles.feature'//,
         // 'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
@@ -226,8 +240,8 @@ exports.config = {
 
     capabilities: {
         //46.0b9
-        'browserName': 'firefox',
-        'marionette': true
+       'browserName': 'firefox',
+        'marionette': true,
         //58
         // 'browserName': 'chrome',
         // chromeOptions: {
@@ -241,8 +255,8 @@ exports.config = {
         //         'password_manager_enabled': false
         //     }
         // }
-       //   'browserName': 'safari',
-      //  "selenium-version": "3.4.0",
+        //  'browserName': 'safari'//,
+
 
         // 'safari.options': {
         //     technologyPreview: true
@@ -274,7 +288,7 @@ exports.config = {
     //     });
     // },
 
-    directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
+    //directConnect: true, //Protractor can test directly against Chrome and Firefox without using a Selenium Server
 
 
 

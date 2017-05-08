@@ -16,7 +16,12 @@ var BB_MenuRepo = function BB_MenuRepo () {
     BB_MenuRepo.prototype.Select_Element_LogOutSubMenuButton = element(by.xpath('//*[@id="page-box"]/header/div[2]/ul/li[1]/a'));
 
     //Components TAB
-    BB_MenuRepo.prototype.Select_Element_AdminTab = element.all(by.css('span.nav-item-link')).get(0); //todo code change testting this
+    //BB_MenuRepo.prototype.Select_Element_AdminTab = element.all(by.css('span.nav-item-link')).get(0); //todo code change testting this
+    //*[@id="page-box"]/header/ul/li[1]/a
+    //*[@id="page-box"]/header/ul/li[2]/span
+    //*[@id="page-box"]/header/ul/li[3]/span
+    BB_MenuRepo.prototype.Select_Element_AdminTab = element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/span'));
+
     BB_MenuRepo.prototype.Select_Element_HomeTab = element(by.linkText('Home'));
 
     //Components SubMenu Button for Admin Tab

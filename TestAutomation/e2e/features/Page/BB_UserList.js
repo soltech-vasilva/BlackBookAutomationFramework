@@ -58,7 +58,7 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([
                 browser.getProcessedConfig().then((config) => {
 
-                    if (config.capabilities.browserName == 'Edge') {
+                    if (config.capabilities.browserName == 'Edge' ||  config.capabilities.browserName =='firefox') {
                         console.log('EDGE');
                         page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.get(this.index), protractorConfig.config.WaitTime),
                             page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
@@ -77,7 +77,7 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([
                 browser.getProcessedConfig().then((config) => {
 
-                    if (config.capabilities.browserName == 'Edge') {
+                    if (config.capabilities.browserName == 'Edge' || config.capabilities.browserName =='firefox') {
                        // console.log('EDGE');
                         page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Activate_Submenu.get(this.index), protractorConfig.config.WaitTime),
                             page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
@@ -112,8 +112,8 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([
                 browser.getProcessedConfig().then((config) => {
 
-                    if (config.capabilities.browserName == 'Edge') {
-             //           console.log('EDGE');
+                    if (config.capabilities.browserName == 'Edge' || config.capabilities.browserName == 'firefox') {
+                       console.log('EDGE');
                         page.clickButton(BB_userListRepo.Select_Element_Gear_Edit_Submenu.get(this.index), protractorConfig.config.WaitTime, success);
                     }
                     else{
@@ -130,7 +130,7 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([
                 browser.getProcessedConfig().then((config) => {
 
-                    if (config.capabilities.browserName == 'Edge') {
+                    if (config.capabilities.browserName == 'Edge' || config.capabilities.browserName =='firefox') {
            //             console.log('EDGE');
                         page.clickButton(BB_userListRepo.Select_Element_Gear_Delete_Submenu.get(this.index), protractorConfig.config.WaitTime, success);
                     }

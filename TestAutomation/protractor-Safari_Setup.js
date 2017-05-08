@@ -75,7 +75,7 @@ exports.config = {
         // 'browserstack.selenium_version' : '3.0.1',
       //   'browserstack.selenium_version' : '2.45.0 ',
        // 'browserstack.safari.enablePopups' : 'false',
-         'browserstack.safari.driver' : '2.48',
+       //  'browserstack.safari.driver' : '2.48',
         //'browserstack.safari.driver' : '2.45',
 
         //Screenshot
@@ -139,18 +139,22 @@ exports.config = {
               ////////////////////////////////////////////// MAC SIERRA Safari 10.0  1920x1080 ///////////////////
               // Browser Type
               'os': 'OS X',
-             'os_version': 'Sierra',
-              'browserName': 'Safari',
-              'browser_version': '10.0',
+             // 'os_version': 'Sierra',
+             //  'browserName': 'Safari',
+             //  'browser_version': '10.0',
 
-              // 'os_version': 'El Capitan',
+              'os_version': 'El Capitan',
+              'browserName': 'Safari',
+              'browser_version': '9.1',
+
+              // 'os_version': 'Yosemite',
               // 'browserName': 'Safari',
-              // 'browser_version': '9.1',
+              // 'browser_version': '8.0',
 
               'resolution': '1920x1080' ,
-              'browserstack.safari.enablePopups': 'false',
-              'browserstack.safari.allowAllCookies': 'false',
-              'acceptSslCerts': 'true',
+              //'browserstack.safari.enablePopups': 'true',
+              //'browserstack.safari.allowAllCookies': 'false',
+              //'acceptSslCerts': 'true',
 
 
 

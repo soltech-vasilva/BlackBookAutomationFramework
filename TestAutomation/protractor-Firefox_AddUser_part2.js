@@ -129,8 +129,10 @@ exports.config = {
               'os': 'Windows',
               'os_version': '10',
               'browserName': 'Firefox',
+              //works Browserstack need to update drivers
               'browser_version': '47.0',
-              'resolution': '1920x1200'
+              'resolution': '1920x1200',
+              'marionette': true
           }
           // ,
           // {

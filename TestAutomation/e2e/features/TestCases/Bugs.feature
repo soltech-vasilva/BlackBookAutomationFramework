@@ -80,7 +80,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #  Scenario: "@TestCases_A-4" (BB-413) Click "Save" twice in Edit Role list will show error (weird state).
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3 "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4 "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
@@ -94,7 +94,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      And I click X on Message Popup in Role list
 #      And I click Edit Button in Edit Roles
 #    And I click Cancel Button from Edit Roles
-#    And I click on Gear Icon 3 "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4 "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Turn off "Settings" submenu
 #    And I click checkbox Permission "Settings" in Role Editor
@@ -349,7 +349,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #  Scenario: "@TestCases_A-20" (BB-476) "Role Market" dropdown box get clear after "Reset".
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 5 "Editor-Full-User in Role List"
+#    And I click on Gear Icon 6 "Editor-Full-User in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #      Then I should see Role Market value "US Used Car"
 #    And I click Reset Button in Edit Roles
@@ -361,7 +361,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #  Scenario: "@TestCases_A-21" (BB-414) Button "Save" is gray out in "Editing Roles".
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 5 "Editor-Full-User in Role List"
+#    And I click on Gear Icon 6 "Editor-Full-User in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    And I clear text box selected "RoleName" in Role Editor
 #    And I enter Role Name "Editor-Full-UserHIHI"
@@ -428,7 +428,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Roles submenu from Admin Tab
 #    And I click on Gear Icon 2 "AllPermissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
 #    And I click Filter By Status dropdown "Inactive" in Role Editor
 #    And I click Reset Button in Edit Roles
 #      Then I should see "All" display for Filter By Group in Role Editor
@@ -454,7 +454,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on New Role Button in Role List
 #    And I enter Role Name "RoleName6"
 #     #html has User as Value but Users as text.
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
 #    And I click checkbox  "0" "Users" Permission row in Role Editor
 #    And I select Role Market "US Used Car" in Role Editor
 #    And I click on Save button in Role Editor
@@ -467,7 +467,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    #require @TestCases_A-27
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 6 "RoleName6 in Role List"
+#    And I click on Gear Icon 7 "RoleName6 in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    And I enter "User1" on Filter Users in Role Editor
 #    And I click checkbox on first user found from Filter Users in Role Editor
@@ -476,7 +476,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #       And I click Edit Button in Edit Roles
 #    And I click Cancel Button from Edit Roles
-#    And I click on Gear Icon 6 "RoleName6 in Role List"
+#    And I click on Gear Icon 7 "RoleName6 in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #      Then I should see Permissions "Users" checkbox "checked" in Role Editor
 #      Then I should see Permissions "Settings" checkbox "unchecked" in Role Editor
@@ -508,14 +508,14 @@ Feature:  "Verify that this bugs dont return to the application."
 #    #require @TestCases_A-29
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 7 "RoleName7 in Role List"
+#    And I click on Gear Icon 8 "RoleName7 in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    And I enter "User1" on Filter Users in Role Editor
 #    And I click checkbox on first user found from Filter Users in Role Editor
 #    And I click on Save button in Role Editor
 #    And I click Edit Button in Edit Roles
 #    And I click Cancel Button from Edit Roles
-#    And I click on Gear Icon 7 "RoleName7 in Role List"
+#    And I click on Gear Icon 8 "RoleName7 in Role List"
 #    And I click Delete from Gear Icon
 #    #currently will order by default by number of users
 #      Then I should see Are you sure you want to delete the role, "RoleName7?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
@@ -528,7 +528,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #     #require @TestCases_A-30
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 7 "RoleName7 in Role List"
+#    And I click on Gear Icon 8 "RoleName7 in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    And I click on Delete button in Role Editor
 #    #currently will order by default by number of users
@@ -543,7 +543,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #     #require @TestCases_A-31
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 6 "RoleName6 in Role List"
+#    And I click on Gear Icon 7 "RoleName6 in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Disable User
 #    And I enter "User1" on Filter Users in Role Editor
@@ -551,7 +551,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click on Save button in Role Editor
 #    And I click Edit Button in Edit Roles
 #    And I click Cancel Button from Edit Roles
-#    And I click on Gear Icon 6 "RoleName6 in Role List"
+#    And I click on Gear Icon 7 "RoleName6 in Role List"
 #    And I click Delete from Gear Icon
 #     Then I should see Are you sure you want to delete the role, "RoleName6?" This action can't be undone. displayed for Confirm Role Deletion in Role Editor
 #    And I click "Confirm" Button for modal warning message from Edit Roles
@@ -609,7 +609,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #  Scenario: "@TestCases_A-37" (BB-655) (Edit Roles): Cant change "Role Market". Error Message
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 4 "Editor-Full_Roles in Role List"
+#    And I click on Gear Icon 5 "Editor-Full_Roles in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    And I select Role Market "Canada Used Car" in Role Editor
 #      Then I should see Role Market value "Canada Used Car"
@@ -617,7 +617,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I click Edit Button in Edit Roles
 #    And I click Cancel Button from Edit Roles
-#    And I click on Gear Icon 4 "Editor-Full_Roles in Role List"
+#    And I click on Gear Icon 5 "Editor-Full_Roles in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    And I select Role Market "US Used Car" in Role Editor
 #      Then I should see Role Market value "US Used Car"
@@ -625,7 +625,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    And I click Avatar Image Button
 #    And I click Logout sub menu from Avatar
-#
+
 #    #@TestCases_A-38-40 uses "Basic Role-No Permissions" to update permissions
 #  @TestCases_A-38
 #  Scenario: "@TestCases_A-38" (BB-626) (Permission canEditSettings): Enable "Settings" for a user will not show Tab "Settings"
@@ -633,11 +633,10 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I wait
 #    #Added this to continue test if previous did not end
 #    And  I reload "LogIn" page
-#    And I enter my user email address user2@example.com in Login
+#    And I enter my user email address none@example.com in Login
 #    And I enter my Password Password1 in Login
 #    And I click Login Button
-#    And I click on Admin Tab
-#      Then I should not see "Setting" Button in AdminTab
+#      Then I should not see "AdminTab" Button in "Menu"
 #   #Added this to continue test if previous did not end
 #    And  I reload "LogIn" page
 #    And I enter my user email address user1@example.com in Login
@@ -645,7 +644,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Login Button
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3 "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4 "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Turn On "Settings" submenu
 #    And I click checkbox Permission "Settings" in Role Editor
@@ -653,7 +652,7 @@ Feature:  "Verify that this bugs dont return to the application."
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    #Added this to continue test if previous did not end
 #    And  I reload "LogIn" page
-#    And I enter my user email address user2@example.com in Login
+#    And I enter my user email address none@example.com in Login
 #    And I enter my Password Password1 in Login
 #    And I click Login Button
 #    And I click on Admin Tab
@@ -665,14 +664,14 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Login Button
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3 "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4 "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Turn Off "Settings" submenu
 #    And I click checkbox Permission "Settings" in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
-#
-#
+
+
 #  #TODO I just took all wait here but not refatoring yet just want to run this
 #     #@TestCases_A-38-40 uses "Basic Role-No Permissions" to update permissions
 #  @TestCases_A-39
@@ -680,19 +679,19 @@ Feature:  "Verify that this bugs dont return to the application."
 #    #USER 1
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3  "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4  "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Enable Permission
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And I enter "Can View User List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+#    And I enter "View user list" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "View user list" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    #USER 2
 #   #Added this to continue test if previous did not end
 #    And  I reload "LogIn" page
-#    And I enter my user email address user2@example.com in Login
+#    And I enter my user email address none@example.com in Login
 #    And I enter my Password Password1 in Login
 #    And I click Login Button
 #    And I click on Admin Tab
@@ -708,23 +707,23 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Login Button
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3  "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4  "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #     #Enable Permission
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And I enter "Can View Other Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can View Other Users" Permission row in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+#    And I enter "View other user's profile" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "View other user's profile" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #     #Enable Permission
-#    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
-#    And I enter "can View Role List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "can View Role List" Permission row in Role Editor
+##    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
+##    And I enter "can View Role List" on Filter Permissions in Role Editor
+##    And I click checkbox  "1" "can View Role List" Permission row in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #     #USER 2
 #   #Added this to continue test if previous did not end
 #    And  I reload "LogIn" page
-#    And I enter my user email address user2@example.com in Login
+#    And I enter my user email address none@example.com in Login
 #    And I enter my Password Password1 in Login
 #    And I click Login Button
 #    And I click on Admin Tab
@@ -742,50 +741,50 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Login Button
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3  "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4  "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Disable Permission
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And I enter "Can View Other Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can View Other Users" Permission row in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+#    And I enter "View other user's profile" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "View other user's profile" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
+##     #Disable Permission
+##    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
+##    And I enter "can View Role List" on Filter Permissions in Role Editor
+##    And I click checkbox  "1" "can View Role List" Permission row in Role Editor
+##    And I clear text box selected "FilterPermissions" in Role Editor
 #     #Disable Permission
-#    And I click Filter By Group dropdown "Roles" Permissions in Role Editor
-#    And I enter "can View Role List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "can View Role List" Permission row in Role Editor
-#    And I clear text box selected "FilterPermissions" in Role Editor
-#     #Disable Permission
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And I enter "Can View User List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can view User List" Permission row in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+#    And I enter "View user list" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "View user list" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
-#
+
 #     #@TestCases_A-38-40 uses "Basic Role-No Permissions" to update permissions
 #  @TestCases_A-40
 #  Scenario: "@TestCases_A-40" (BB-624) (Permission CanResetUsersPasswords): Unselected permission "Can Reset Users Passwords" can still add password to user.
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3  "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4  "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Enable Permission
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And I enter "Can Add/Edit Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can Add/Edit Users" Permission row in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+#    And I enter "Update other user's profile" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "Update other user's profile" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #     #Enable Permission
-#    And I enter "Can View Other Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can View Other Users" Permission row in Role Editor
+#    And I enter "View other user's profile" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "View other user's profile" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #     #Enable Permission
-#    And I enter "Can View User List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can View User List" Permission row in Role Editor
+#    And I enter "View user list" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "View user list" Permission row in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    #Added this to continue test if previous did not end
 #    And  I reload "LogIn" page
-#    And I enter my user email address user2@example.com in Login
+#    And I enter my user email address none@example.com in Login
 #    And I enter my Password Password1 in Login
 #    And I click Login Button
 #    And I click on Admin Tab
@@ -802,18 +801,18 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Login Button
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3  "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4  "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Enable Permission
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And I enter "Can Reset Users Passwords" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can Reset Users Passwords" Permission row in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+#    And I enter "Update other user's password" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "Update other user's password" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup
 #    #Added this to continue test if previous did not end
 #    And  I reload "LogIn" page
-#    And I enter my user email address user2@example.com in Login
+#    And I enter my user email address none@example.com in Login
 #    And I enter my Password Password1 in Login
 #    And I click Login Button
 #    And I click on Admin Tab
@@ -830,24 +829,24 @@ Feature:  "Verify that this bugs dont return to the application."
 #    And I click Login Button
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    And I click on Gear Icon 3  "Basic Role-No Permissions in Role List"
+#    And I click on Gear Icon 4  "Basic Role-No Permissions in Role List"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Disable Permission
-#    And I click Filter By Group dropdown "User" Permissions in Role Editor
-#    And I enter "Can Add/Edit Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can Add/Edit Users" Permission row in Role Editor
+#    And I click Filter By Group dropdown "Users" Permissions in Role Editor
+#    And I enter "Update other user's profile" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "Update other user's profile" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #     #Disable Permission
-#    And I enter "Can View Other Users" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can View Other Users" Permission row in Role Editor
+#    And I enter "View other user's profile" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "View other user's profile" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #     #Disable Permission
-#    And I enter "Can Reset Users Passwords" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can Reset Users Passwords" Permission row in Role Editor
+#    And I enter "Update other user's password" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "Update other user's password" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #     #Disable Permission
-#    And I enter "Can View User List" on Filter Permissions in Role Editor
-#    And I click checkbox  "1" "Can View User List" Permission row in Role Editor
+#    And I enter "View user list" on Filter Permissions in Role Editor
+#    And I click checkbox  "1" "View user list" Permission row in Role Editor
 #    And I clear text box selected "FilterPermissions" in Role Editor
 #    And I click on Save button in Role Editor
 #      Then I should see "Role successfully updated" displayed on "EditRoles" popup

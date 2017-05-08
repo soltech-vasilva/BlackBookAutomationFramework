@@ -23,6 +23,7 @@ var BB_UserListRepo = function BB_UserListRepo () {
     BB_UserListRepo.prototype.Select_Element_Gear_All_Submenu  = element(by.css('ul.action-menu'));
     BB_UserListRepo.prototype.Select_Element_Gear_View_Submenu =   function(rowNumber){
         this.rowNumber = rowNumber;
+                             //*[@id="center"]/div/div[4]/div[3]/div/div/div[2]                                /div[9]/action-icon/div/div/ul/li[1]/div
         return element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div['+this.rowNumber.toString()+']/div[9]/action-icon/div/div/ul/li[1]/div'));
     };
 
