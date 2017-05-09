@@ -31,6 +31,7 @@ var BB_editSegments = require('../Page/BB_EditSegments.js');
 //testing
 var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
 var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
+var BB_menuRepo = require('../Repository/BB_MenuRepo.js');
 
 var myBlackBookSteps = function myBlackBookSteps() {
 
@@ -599,6 +600,16 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     //TODO SEGEMENTS needs refactoring
     this.Given(/^I click on Segment Tab$/, function () {
+        // return new Promise((success, failure) => {
+        //     page.executeSequence([
+        //         page.clickElement( BB_menuRepo.Select_Element_SegmentTab, protractorConfig.config.WaitTime),
+        //         browser.driver.actions().mouseMove( BB_menuRepo.Select_Element_SegmentTab).perform().then(()=>{
+        //         //success();
+        //     })]).then(() => {
+        //        success();
+        //     });
+        // });
+
         return new Promise((success, failure) => {
             page.executeSequence([
                 page.clickElement(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span')), protractorConfig.config.WaitTime),
@@ -763,9 +774,10 @@ var myBlackBookSteps = function myBlackBookSteps() {
             var checkbox = "";
 
             switch (filterName.toString().toLowerCase()) {
-                case "acura":
-                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[1]/span/span[1]/span[1]')), protractorConfig.config.WaitTime),
-                        checkbox = element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[1]/span/span[1]/span[1]'))]).then(()=>{});
+        case "acura":
+
+                    page.executeSequence([page.waitForElementTobePresent(element(by.xpath('/html/body/my-app/div/main-container/div/segment-view/div/div/div/dynamic-modal/filter-modal/div/div/div[2]/div[2]/ag-grid-ng2/div/div[2]/div[2]/div/div[1]/div/div[4]/div[3]/div/div/div/div[1]/span/span[1]/span[2]')), protractorConfig.config.WaitTime),
+                        checkbox = element(by.xpath('/html/body/my-app/div/main-container/div/segment-view/div/div/div/dynamic-modal/filter-modal/div/div/div[2]/div[2]/ag-grid-ng2/div/div[2]/div[2]/div/div[1]/div/div[4]/div[3]/div/div/div/div[1]/span/span[1]/span[2]'))]).then(()=>{});
                     break;
 
                 default:
@@ -786,6 +798,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
                     console.log('FAIL for checkbox:|' + currentClass +'|');
                     return failure();
                 }
+
             });
         });
     });
@@ -804,8 +817,12 @@ var myBlackBookSteps = function myBlackBookSteps() {
 
     this.Given(/^I click Shared Users Button in Edit Segments$/, function () {
         return new Promise((success, failure) => {
-            page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[2]/div')), protractorConfig.config.WaitTime, success);
+                      page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[2]/button')), protractorConfig.config.WaitTime, success);
         });
+
+        // return new Promise((success, failure) => {
+        //               page.clickButton(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[2]/div')), protractorConfig.config.WaitTime, success);
+        // });
     });
 
     this.Given(/^I enter Filter Edit Shared Users (.*) in Edit Segment$/, function (userName) {
@@ -887,7 +904,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return new Promise((success, failure) => {
             switch (ButtonName.toString().toLowerCase()) {
                 case "sharedusers":
-                    utilities.VerifyButtonStatus_isEnableorDisable(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[2]/div')), isEnableOrDisable, success, failure);
+                    utilities.VerifyButtonStatus_isEnableorDisable(element(by.xpath('//*[@id="page-box"]/create-segment/div/div/div/div[2]/div/div[3]/div[2]/button')), isEnableOrDisable, success, failure);
                     break;
 
                 default:

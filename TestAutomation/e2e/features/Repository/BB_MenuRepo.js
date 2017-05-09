@@ -22,6 +22,28 @@ var BB_MenuRepo = function BB_MenuRepo () {
     //*[@id="page-box"]/header/ul/li[3]/span
     BB_MenuRepo.prototype.Select_Element_AdminTab = element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/span'));
 
+    BB_MenuRepo.prototype.Select_Element_SegmentTab = element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span'));
+
+    //     var ele = '';
+    //
+    //     return element(by.xpath('//*[@id="page-box"]/header/ul/li[2]/span')).getText().then((text) => {
+    //         console.log('//*[@id="page-box"]/header/ul/li[2]/span');
+    //         if (text == 'Segment') {
+    //             console.log('//*[@id="page-box"]/header/ul/li[2]/span');
+    //             return ele = '//*[@id="page-box"]/header/ul/li[2]/span';
+    //         }
+    //         else {
+    //             element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span')).getText().then((text) => {
+    //                 console.log('//*[@id="page-box"]/header/ul/li[3]/span');
+    //                 if (text == 'Segment') {
+    //                     console.log('//*[@id="page-box"]/header/ul/li[3]/span');
+    //                     return ele = '//*[@id="page-box"]/header/ul/li[3]/span';
+    //                 }
+    //             });
+    //         }
+    //     });
+    // };
+
     BB_MenuRepo.prototype.Select_Element_HomeTab = element(by.linkText('Home'));
 
     //Components SubMenu Button for Admin Tab

@@ -62,3 +62,4 @@ Feature:  "Add a new User Profile"
       |   firstName13 | lastName13   | admintestemail13@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName14 | lastName14   | admintestemail14@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
       |   firstName15 | lastName15   | admintestemail15@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |
+      |   firstName16 | lastName16   | admintestemail16@yopmail.com |(123)456-7890  | QaAdmin123  |   QaAdmin123       |

@@ -136,11 +136,9 @@ var BB_Menu = function BB_Menu() {
         //browser.executeScript('$("#page-box > header > ul > li:nth-child(2) > span").scrollTop(1000);');
 
         return new Promise((success, failure) => {
-            page.executeSequence([
-                 page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
-                browser.driver.sleep(1000),
+            page.executeSequence([page.waitForElementTobePresent(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
                 browser.getProcessedConfig().then((config) => {
-                    if (config.capabilities.browserName != 'firefox') {
+                    if (config.capabilities.browserName != 'firefox' || config.capabilities.browserName != 'Chrome') {
                         console.log("click");
                         browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform().then(() => {
                             success();
@@ -161,7 +159,8 @@ var BB_Menu = function BB_Menu() {
                             success();
                         });
                     }
-                })
+                }),
+                page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime)
             ]).then(() => {
             });
         });
