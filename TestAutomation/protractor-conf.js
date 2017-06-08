@@ -22,7 +22,7 @@ exports.config = {
     //'e2e/features/TestCases/*.feature'
     // ],
     'StopRunAtFail': true,   //false original
-    'WaitTime': 15000,
+    'WaitTime': 20000,
     'BuildTestNumber': '194',
 
     //Turn off applitool
@@ -33,8 +33,8 @@ exports.config = {
     specs: [
         //Browserstack can only run for 2 hours long. Then it will stop
         //add test cases here below:
-        // 'e2e/features/TestCases/Setup.feature'//,
-         'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
+         'e2e/features/TestCases/Setup.feature'//,
+        // 'e2e/features/TestCases/VerifyRolesUI_Part_1.feature'//,
         // 'e2e/features/TestCases/AddUser_part0.feature'//,
          //'e2e/features/TestCases/EditRoles.feature'//,
         // 'e2e/features/TestCases/VerifyRolesUI_Part_2.feature'//,
@@ -240,21 +240,21 @@ exports.config = {
 
     capabilities: {
         //46.0b9
-       'browserName': 'firefox',
-        'marionette': true,
+       // 'browserName': 'firefox',
+       //  'marionette': true,
         //58
-        // 'browserName': 'chrome',
-        // chromeOptions: {
-        //     args: [
-        //         '--disable-infobars'
-        //     ],
-        //     prefs: {
-        //         // disable chrome's annoying password manager
-        //         'profile.password_manager_enabled': false,
-        //         'credentials_enable_service': false,
-        //         'password_manager_enabled': false
-        //     }
-        // }
+        'browserName': 'chrome',
+        chromeOptions: {
+            args: [
+                '--disable-infobars'
+            ],
+            prefs: {
+                // disable chrome's annoying password manager
+                'profile.password_manager_enabled': false,
+                'credentials_enable_service': false,
+                'password_manager_enabled': false
+            }
+        }
         //  'browserName': 'safari'//,
 
 

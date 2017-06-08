@@ -20,7 +20,7 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
         return new Promise((success, failure) => {
             switch (PopUpPageName.toLowerCase()) {
                 case 'editroles':
-                    page.executeSequence([browser.driver.sleep(2000), browser.driver.getCurrentUrl().then(function (getCurrentURL) {
+                    page.executeSequence([browser.sleep(2000), browser.getCurrentUrl().then(function (getCurrentURL) {
 
                         var currentURL = getCurrentURL.split("://");
                         var URL = BB_loginRepo.BlackBookUrl.split("://");
@@ -43,7 +43,7 @@ var VerifyPopUpMessage = function VerifyPopUpMessage() {
                     break;
 
                 case 'userlist':
-                    page.executeSequence([browser.driver.sleep(2000), browser.driver.getCurrentUrl().then(function (getCurrentURL) {
+                    page.executeSequence([browser.sleep(2000), browser.getCurrentUrl().then(function (getCurrentURL) {
 
                         var currentURL = getCurrentURL.split("://");
                         var URL = BB_loginRepo.BlackBookUrl.split("://");

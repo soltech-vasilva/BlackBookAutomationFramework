@@ -227,7 +227,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
                 case 'currentemailaddress' :
                     if ((BB_login.currentEmailAddress != '' && FilledOrEmptyField == 'filled') || (BB_login.currentEmailAddress == '' && FilledOrEmptyField == 'empty')) {
                         page.executeSequence([utilities.ExpectedElement_StopAutomationAtFail(BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword),
-                            browser.driver.sleep(2000),
+                            browser.sleep(2000),
                             browser.isElementPresent(BB_loginRepo.Select_Xpath_ERRORMESSAGE_CurrentEmailAddressAndPassword).then(function (isPresente) {
                                 VerifyErrorMessage.prototype.AssertElementsToDisplay(isPresente, BB_loginRepo.Select_Element_ERRORMESSAGE_CurrentEmailAddressAndPassword, str_VerifyErrorName, 'ERROR: "' + str_VerifyErrorName + '"' + ' is missing in Current Email Address', success, failure);
                             })]).then(() => {
@@ -314,7 +314,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     VerifyErrorMessage.prototype.AssertElementsNotToDisplay = function (isElementPresent, elementToCheck, consoleErrorMessageDisplay, success, failure )
     {
         if (isElementPresent == true) {
-            return browser.driver.wait(elementToCheck.getText().then((Text)=> {
+            return browser.wait(elementToCheck.getText().then((Text)=> {
 
                 if (Text.trim() != "") {
                     console.log('ERROR: |' + Text + '|. ' + consoleErrorMessageDisplay);
@@ -334,7 +334,7 @@ var VerifyErrorMessage = function VerifyErrorMessage(){
     };
 
     VerifyErrorMessage.prototype.Verify_ErrorMessagesNotToDisplay_RoleEditor = function (TextboxName) {
-        browser.driver.sleep(2000);
+        browser.sleep(2000);
         return new Promise((success, failure) => {
             switch (TextboxName.toLowerCase()) {
                 case 'rolename':

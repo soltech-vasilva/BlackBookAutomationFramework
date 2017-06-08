@@ -58,7 +58,7 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([
                 browser.getProcessedConfig().then((config) => {
 
-                    if (config.capabilities.browserName == 'Edge' ||  config.capabilities.browserName =='firefox') {
+                    if (config.capabilities.browserName === 'Edge' ||  config.capabilities.browserName ==='firefox') {
                         console.log('EDGE');
                         page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.get(this.index), protractorConfig.config.WaitTime),
                             page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
@@ -77,7 +77,7 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([
                 browser.getProcessedConfig().then((config) => {
 
-                    if (config.capabilities.browserName == 'Edge' || config.capabilities.browserName =='firefox') {
+                    if (config.capabilities.browserName === 'Edge' || config.capabilities.browserName ==='firefox') {
                        // console.log('EDGE');
                         page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Activate_Submenu.get(this.index), protractorConfig.config.WaitTime),
                             page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
@@ -112,7 +112,7 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([
                 browser.getProcessedConfig().then((config) => {
 
-                    if (config.capabilities.browserName == 'Edge' || config.capabilities.browserName == 'firefox') {
+                    if (config.capabilities.browserName === 'Edge' || config.capabilities.browserName === 'firefox') {
                        console.log('EDGE');
                         page.clickButton(BB_userListRepo.Select_Element_Gear_Edit_Submenu.get(this.index), protractorConfig.config.WaitTime, success);
                     }
@@ -130,7 +130,7 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([
                 browser.getProcessedConfig().then((config) => {
 
-                    if (config.capabilities.browserName == 'Edge' || config.capabilities.browserName =='firefox') {
+                    if (config.capabilities.browserName === 'Edge' || config.capabilities.browserName ==='firefox') {
            //             console.log('EDGE');
                         page.clickButton(BB_userListRepo.Select_Element_Gear_Delete_Submenu.get(this.index), protractorConfig.config.WaitTime, success);
                     }
@@ -158,11 +158,11 @@ var BB_UserList = function BB_UserList() {
             page.executeSequence([BB_userListRepo.Select_Element_Gear_All_Submenu.getText().then(function (arr) {
                 var headers = arr.toString().split("\n");
 
-                if (headers[0] == "View") {
+                if (headers[0] === "View") {
                     //console.log("header:|"+headers[0]+"|");
-                    if (headers[1] == "Edit") {
+                    if (headers[1] === "Edit") {
                         //  console.log("header:|"+headers[1]+"|");
-                        if (headers[2] == "Deactivate") {
+                        if (headers[2] === "Deactivate") {
                             //    console.log("header:|"+headers[2]+"|");
                             success();
                         }

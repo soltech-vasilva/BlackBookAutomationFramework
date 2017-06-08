@@ -29,6 +29,7 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Element_UsersRolesCheckbox_Administrator = element.all(by.css('span.icon-square-o.grid-checkbox-unchecked.grid-checkbox')).get(2);
 
     //Components OTHERS
+    BB_EditUserProfileRepo.prototype.Select_Element_TittleUnauthorizeProfileText = element(by.xpath('//*[@id="page-box"]/error-page/div/div/h1/span'));
     BB_EditUserProfileRepo.prototype.Select_Element_TittleAddNewUserProfileText = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/h1/span'));
 
     //Components "ERROR MESSAGE DISPLAY"

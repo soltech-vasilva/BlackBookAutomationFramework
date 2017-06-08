@@ -1,42 +1,42 @@
 [
   {
-    "id": "Enter-data-on-\"LOGIN\"-page",
-    "name": "Enter data on \"LOGIN\" page",
-    "description": "\nRules:\n-Verify that All inputs boxes are working and login correctly \"No ERROR\". (TC_Login_A)\n\nQuestion:\n-What happens if email entered is empty \"Display ERROR\"? Yes [TC_Login_B-1]\n-What happens if data entered on  email is bad \"Display ERROR\"? Yes [TC_Login_B-2]\n-What happens if data entered on  email is good and password is bad \"Display ERROR\"? Yes [TC_Login_B-3]\n-What happens if data user and password entered too many times \"6 time\" wrong \"Display ERROR\"? Yes [TC_Login_B-4]\n-What happens if password entered is empty \"Display ERROR\"? Yes [TC_Login_C]\n-What happens if User is Desactivated \"Display ERROR\"? YES [TC_Login_D]\n-What happens on successful log in (home page)? for now (TC_Login_A)\n-What happens if Password is Expired?\n\n-BUG: not loading the page correctly , I am adding reload page.",
+    "id": "\"Verify-each-Role-UI\"",
+    "name": "\"Verify each Role UI\"",
+    "description": "\nRules: Each role have different permission enable and things get disable or hidden in UI.\n\nQuestion:",
     "line": 5,
     "keyword": "Feature",
-    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/Login.feature",
+    "uri": "/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/TestCases/VerifyRolesUI_Part_2.feature",
     "elements": [
       {
         "name": "",
         "keyword": "Background",
         "description": "",
         "type": "background",
-        "line": 22,
+        "line": 11,
         "steps": [
           {
             "name": "I enter BlackBook Login Website",
-            "line": 23,
+            "line": 12,
             "keyword": "Given "
           },
           {
             "name": "I reload \"LogIn\" page",
-            "line": 25,
+            "line": 14,
             "keyword": "And "
           }
         ]
       },
       {
-        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
-        "line": 48,
+        "name": "\"@TC_CheckRoles_UI_A\" Verify \"T_Admin View All Only\" Role UI.(After EditRoles)",
+        "id": "\"Verify-each-Role-UI\";\"@tc_checkroles_ui_a\"-verify-\"t_admin-view-all-only\"-role-ui.(after-editroles)",
+        "line": 72,
         "keyword": "Scenario",
         "description": "",
         "type": "scenario",
         "tags": [
           {
-            "name": "@TC_Login_A",
-            "line": 31
+            "name": "@TC_CheckRoles_UI_A",
+            "line": 20
           }
         ],
         "steps": [
@@ -45,2011 +45,287 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 12129780
+              "duration": 15929405
             },
             "match": {}
           },
           {
             "name": "I enter BlackBook Login Website",
-            "line": 23,
+            "line": 12,
             "keyword": "Given ",
             "result": {
               "status": "passed",
-              "duration": 10536170755
+              "duration": 12100823626
             },
             "match": {}
           },
           {
             "name": "I reload \"LogIn\" page",
-            "line": 25,
+            "line": 14,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2069599552
+              "duration": 2092460508
             },
             "match": {}
           },
           {
-            "name": "I enter my user email address admintestemail1@yopmail.com in Login",
-            "line": 33,
+            "name": "I enter my user email address admintestemail11@yopmail.com in Login",
+            "line": 23,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1407037555
+              "duration": 1803780268
             },
             "match": {}
           },
           {
             "name": "I enter my Password QaAdmin123 in Login",
-            "line": 34,
+            "line": 24,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 973479312
+              "duration": 1471244340
             },
             "match": {}
           },
           {
             "name": "I click Login Button",
-            "line": 35,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2484230482
-            },
-            "match": {}
-          },
-          {
-            "name": "I should not see in \"currentEmailAddress\" errors displayed",
-            "line": 36,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 301561462
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 37,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2455852023
-            },
-            "match": {}
-          },
-          {
-            "name": "I click My Profile sub menu from Avatar",
-            "line": 38,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1353950912
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Edit Button in Edit User Profile",
-            "line": 39,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2872301528
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Reset Button in Edit User Profile",
-            "line": 40,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 755281240
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Cancel Button in Edit User Profile",
-            "line": 41,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2480842268
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 42,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1434808649
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Logout sub menu from Avatar",
-            "line": 43,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2495127020
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 751554
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
-        "line": 49,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_A",
-            "line": 31
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 3578202
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8432973258
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
             "line": 25,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2058667625
+              "duration": 1598022318
             },
             "match": {}
           },
           {
-            "name": "I enter my user email address user1@example.com in Login",
-            "line": 33,
+            "name": "I wait",
+            "line": 28,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1099758228
+              "duration": 5010865915
             },
             "match": {}
           },
           {
-            "name": "I enter my Password Password1 in Login",
-            "line": 34,
+            "name": "I click on Home Tab",
+            "line": 29,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 974720287
+              "duration": 1136621825
             },
             "match": {}
           },
           {
-            "name": "I click Login Button",
-            "line": 35,
+            "name": "I wait",
+            "line": 30,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2556861445
-            },
-            "match": {}
-          },
-          {
-            "name": "I should not see in \"currentEmailAddress\" errors displayed",
-            "line": 36,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 296827765
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 37,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2356624510
-            },
-            "match": {}
-          },
-          {
-            "name": "I click My Profile sub menu from Avatar",
-            "line": 38,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1225665000
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Edit Button in Edit User Profile",
-            "line": 39,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2706181106
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Reset Button in Edit User Profile",
-            "line": 40,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 638636572
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Cancel Button in Edit User Profile",
-            "line": 41,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2573633890
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 42,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1461317095
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Logout sub menu from Avatar",
-            "line": 43,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2446625868
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 900825
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
-        "line": 50,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_A",
-            "line": 31
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 5079117
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8493405865
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2076660785
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address user3@example.com in Login",
-            "line": 33,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1015485343
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 34,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 952025490
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 35,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2534290500
-            },
-            "match": {}
-          },
-          {
-            "name": "I should not see in \"currentEmailAddress\" errors displayed",
-            "line": 36,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 259477652
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 37,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2383484385
-            },
-            "match": {}
-          },
-          {
-            "name": "I click My Profile sub menu from Avatar",
-            "line": 38,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1029490055
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Edit Button in Edit User Profile",
-            "line": 39,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2753895922
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Reset Button in Edit User Profile",
-            "line": 40,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1644736850
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Cancel Button in Edit User Profile",
-            "line": 41,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2616127205
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 42,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1558676353
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Logout sub menu from Avatar",
-            "line": 43,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2527155473
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 696385
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_A\" Enter good data for Login Page (NO ERRORS) display",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_a\"-enter-good-data-for-login-page-(no-errors)-display",
-        "line": 52,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_A",
-            "line": 31
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 4490262
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8837835168
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2119199670
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address user2@example.com in Login",
-            "line": 33,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1116826392
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 34,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2002341450
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 35,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2456341870
-            },
-            "match": {}
-          },
-          {
-            "name": "I should not see in \"currentEmailAddress\" errors displayed",
-            "line": 36,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 291797371
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 37,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2319080554
-            },
-            "match": {}
-          },
-          {
-            "name": "I click My Profile sub menu from Avatar",
-            "line": 38,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1211315373
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Edit Button in Edit User Profile",
-            "line": 39,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 3213752962
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Reset Button in Edit User Profile",
-            "line": 40,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 631247142
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Cancel Button in Edit User Profile",
-            "line": 41,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2587152900
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Avatar Image Button",
-            "line": 42,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1492770225
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Logout sub menu from Avatar",
-            "line": 43,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2534820057
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1683620
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-1\" Enter nothing on email/User for Login Page will throw error \"Email Is Required\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-1\"-enter-nothing-on-email/user-for-login-page-will-throw-error-\"email-is-required\"",
-        "line": 69,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-1",
-            "line": 58
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 4469005
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8594374360
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2099282509
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address  in Login",
-            "line": 61,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 629895979
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 62,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 921970642
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 63,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2551038048
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Email Is Required\" displayed for this \"empty\" field",
-            "line": 64,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2435839080
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 880797
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
-        "line": 81,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-2",
-            "line": 71
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 9724160
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8397082767
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2146278790
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address \"\"\" in Login",
-            "line": 73,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 934086613
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 74,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 927078323
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 75,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2493686500
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
-            "line": 76,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2374600242
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 568802
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
-        "line": 82,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-2",
-            "line": 71
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 5077735
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8248280812
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2102642374
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address emailAddress in Login",
-            "line": 73,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 956156632
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 74,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 936776302
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 75,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2515350060
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
-            "line": 76,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2422783915
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 517446
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
-        "line": 83,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-2",
-            "line": 71
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 2797083
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8543331800
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2111038165
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address AemailAddress.@email.com in Login",
-            "line": 73,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1021255392
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 74,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 869109208
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 75,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2498565942
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
-            "line": 76,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2430760190
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 749082
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
-        "line": 84,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-2",
-            "line": 71
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 5789910
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8657344302
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2119261603
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address AemailAddress@@email.com in Login",
-            "line": 73,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1398062910
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 74,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 992858528
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 75,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2520926478
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
-            "line": 76,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2395296883
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 611897
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
-        "line": 85,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-2",
-            "line": 71
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 4623278
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 7979774214
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2059398473
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address A in Login",
-            "line": 73,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 981411470
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 74,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 946070815
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 75,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2510452015
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
-            "line": 76,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2466959600
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 693175
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
-        "line": 86,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-2",
-            "line": 71
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6198975
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 7960961097
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2133961752
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address A@.c in Login",
-            "line": 73,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1412172522
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 74,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 952839770
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 75,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2543794392
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
-            "line": 76,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2404751805
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 651493
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-2\" Enter bad data on email for Login Page will throw error \"Invalid log in. Please contact your administrator.\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-2\"-enter-bad-data-on-email-for-login-page-will-throw-error-\"invalid-log-in.-please-contact-your-administrator.\"",
-        "line": 87,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-2",
-            "line": 71
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 6237840
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8099651958
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2136742782
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address A@. in Login",
-            "line": 73,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1174656697
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 74,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 835475727
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 75,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2436393078
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid log in. Please contact your administrator.\" displayed for this \"filled\" field",
-            "line": 76,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2403047460
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 1247448
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-3\" Enter bad data on password for Login Page will throw error (\"Invalid Login. Please try again.\" first time entering bad password)",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-3\"-enter-bad-data-on-password-for-login-page-will-throw-error-(\"invalid-login.-please-try-again.\"-first-time-entering-bad-password)",
-        "line": 99,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-3",
-            "line": 89
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 8782608
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 7952333292
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2053865607
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address admintestemail13@yopmail.com in Login",
-            "line": 91,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1021137300
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password0 in Login",
-            "line": 92,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 868951114
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 93,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2534235425
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid Login. Please try again.\" displayed for this \"filled\" field",
-            "line": 94,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2424687228
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 917839
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_B-4\" Enter invalid login 6 times for Login Page will throw error \"Invalid login. Please reset your password.\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_b-4\"-enter-invalid-login-6-times-for-login-page-will-throw-error-\"invalid-login.-please-reset-your-password.\"",
-        "line": 115,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_B-4",
-            "line": 101
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 3281596
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 7973339249
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2117436780
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"https://qa-autobahn.blackbookcloud.com/login\" page",
-            "line": 104,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2076158848
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address admintestemail15@yopmail.com in Login",
-            "line": 105,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1549926850
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password0 in Login",
-            "line": 106,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1197121617
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 107,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2537788716
-            },
-            "match": {}
-          },
-          {
-            "name": "I re-enter the same user name and password",
-            "line": 109,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 9651066427
-            },
-            "match": {}
-          },
-          {
-            "name": "I re-enter the same user name and password",
-            "line": 110,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 9138699690
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Invalid login. Please reset your password.\" displayed for this \"filled\" field",
-            "line": 111,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2599850850
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 692798
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_C\" Enter nothing on Password for Login Page will throw error \"Password Is Required\"",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_c\"-enter-nothing-on-password-for-login-page-will-throw-error-\"password-is-required\"",
-        "line": 133,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_C",
-            "line": 123
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 8332495
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8574189912
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2144636622
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address admintestemail4@yopmail.com in Login",
-            "line": 125,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1036551973
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password  in Login",
-            "line": 126,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 577541583
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 127,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2493745883
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentPassword\" message \"Password Is Required\" displayed for this \"empty\" field",
-            "line": 128,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 475180958
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 461697
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_D\" Enter a Deactivated account for Login Page will throw error \"Unable to log in. Please contact your administrator.\" (Require  @TestCases_A-1 Userlist).",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_d\"-enter-a-deactivated-account-for-login-page-will-throw-error-\"unable-to-log-in.-please-contact-your-administrator.\"-(require--@testcases_a-1-userlist).",
-        "line": 149,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_D",
-            "line": 139
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 3255020
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 8336078086
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2138486240
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address admintestemail5@yopmail.com in Login",
-            "line": 141,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 1108689891
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password QaAdmin123 in Login",
-            "line": 142,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 869097300
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 143,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2458195740
-            },
-            "match": {}
-          },
-          {
-            "name": "I should see \"currentEmailAddress\" message \"Unable to log in. Please contact your administrator.\" displayed for this \"filled\" field",
-            "line": 144,
-            "keyword": "Then ",
-            "result": {
-              "status": "passed",
-              "duration": 2421750587
-            },
-            "match": {}
-          },
-          {
-            "keyword": "After ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 873195
-            },
-            "match": {}
-          }
-        ]
-      },
-      {
-        "name": "\"@TC_Login_E\" Activate a Deactivated account.Then, Login with Account. (NO ERROR)",
-        "id": "Enter-data-on-\"LOGIN\"-page;\"@tc_login_e\"-activate-a-deactivated-account.then,-login-with-account.-(no-error)",
-        "line": 179,
-        "keyword": "Scenario",
-        "description": "",
-        "type": "scenario",
-        "tags": [
-          {
-            "name": "@TC_Login_E",
-            "line": 155
-          }
-        ],
-        "steps": [
-          {
-            "keyword": "Before ",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 7011852
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter BlackBook Login Website",
-            "line": 23,
-            "keyword": "Given ",
-            "result": {
-              "status": "passed",
-              "duration": 7929258792
-            },
-            "match": {}
-          },
-          {
-            "name": "I reload \"LogIn\" page",
-            "line": 25,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2056730308
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my user email address user1@example.com in Login",
-            "line": 157,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 941708667
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password Password1 in Login",
-            "line": 158,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 838953875
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 159,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2502883252
+              "duration": 5010423268
             },
             "match": {}
           },
           {
             "name": "I click on Admin Tab",
-            "line": 160,
+            "line": 34,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 1611195705
+              "duration": 2091002625
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Admin Tab-Submenu (Administartor Account)\" page with Applitools",
+            "line": 35,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 12561563000
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 36,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1987532937
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Role List\" page with Applitools",
+            "line": 37,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7333927065
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 39,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1649304654
             },
             "match": {}
           },
           {
             "name": "I click on Users submenu from Admin Tab",
-            "line": 161,
+            "line": 40,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2551244225
+              "duration": 1886721244
             },
             "match": {}
           },
           {
-            "name": "I enter Filter User List admintestemail5@yopmail.com in User List",
-            "line": 162,
-            "keyword": "And ",
+            "name": "I verify BlackBook \"User List\" page with Applitools",
+            "line": 41,
+            "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 3430491136
+              "duration": 7370163361
             },
             "match": {}
           },
           {
-            "name": "I click Filter By User List Status dropdown \"Inactive\" in User List",
-            "line": 164,
+            "name": "I click on Gear Icon 1 \"USER admin@example.com in User List\"",
+            "line": 42,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 857691363
+              "duration": 1993499692
             },
             "match": {}
           },
           {
-            "name": "I click on Gear Icon 1 \"admintestemail5@yopmail.com in User List\"",
-            "line": 165,
-            "keyword": "And ",
+            "name": "I verify BlackBook \"Gear Icon-Submenus in User List\" page with Applitools",
+            "line": 43,
+            "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 2716454275
+              "duration": 8251697565
             },
             "match": {}
           },
           {
-            "name": "I click Activate in submenu from Gear Icon",
-            "line": 166,
+            "name": "I click 1 View from Gear Icon in User List",
+            "line": 44,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 653396681
+              "duration": 2066697030
             },
             "match": {}
           },
           {
-            "name": "I click Avatar Image Button",
-            "line": 167,
-            "keyword": "And ",
+            "name": "I verify BlackBook \"View User Profile admin@example.com with ROLE\" page with Applitools",
+            "line": 45,
+            "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 1514207428
+              "duration": 7657218210
             },
             "match": {}
           },
           {
-            "name": "I click Logout sub menu from Avatar",
-            "line": 168,
+            "name": "I click on Admin Tab",
+            "line": 47,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2523832703
+              "duration": 1610285973
             },
             "match": {}
           },
           {
-            "name": "I reload \"https://qa-autobahn.blackbookcloud.com/login\" page",
-            "line": 169,
+            "name": "I click on Settings submenu from Admin Tab",
+            "line": 48,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2069906680
+              "duration": 1893513357
             },
             "match": {}
           },
           {
-            "name": "I enter my user email address admintestemail5@yopmail.com in Login",
-            "line": 170,
-            "keyword": "And ",
+            "name": "I verify BlackBook \"Settings\" page with Applitools",
+            "line": 49,
+            "keyword": "Then ",
             "result": {
               "status": "passed",
-              "duration": 1063628004
-            },
-            "match": {}
-          },
-          {
-            "name": "I enter my Password QaAdmin123 in Login",
-            "line": 171,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 856729375
-            },
-            "match": {}
-          },
-          {
-            "name": "I click Login Button",
-            "line": 172,
-            "keyword": "And ",
-            "result": {
-              "status": "passed",
-              "duration": 2561291387
+              "duration": 6750083157
             },
             "match": {}
           },
           {
             "name": "I click Avatar Image Button",
-            "line": 173,
+            "line": 51,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2755830603
+              "duration": 324982548
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Avatar button-Submenu\" page with Applitools",
+            "line": 52,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7130584475
+            },
+            "match": {}
+          },
+          {
+            "name": "I click My Profile sub menu from Avatar",
+            "line": 53,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 704443402
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View My Profile\" page with Applitools",
+            "line": 54,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7300340682
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 65,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 394072420
             },
             "match": {}
           },
           {
             "name": "I click Logout sub menu from Avatar",
-            "line": 174,
+            "line": 66,
             "keyword": "And ",
             "result": {
               "status": "passed",
-              "duration": 2473158435
+              "duration": 1581794690
             },
             "match": {}
           },
@@ -2058,7 +334,1527 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 667160
+              "duration": 1316358
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_CheckRoles_UI_B\" Verify \"U_Edit Other Users Basic\" Role UI.(After EditRoles)",
+        "id": "\"Verify-each-Role-UI\";\"@tc_checkroles_ui_b\"-verify-\"u_edit-other-users-basic\"-role-ui.(after-editroles)",
+        "line": 128,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_CheckRoles_UI_B",
+            "line": 79
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4400510717
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 12,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 9564332235
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload \"LogIn\" page",
+            "line": 14,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2112125075
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail12@yopmail.com in Login",
+            "line": 82,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1725630703
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password QaAdmin123 in Login",
+            "line": 83,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1372286565
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 84,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1959424067
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 87,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5004408822
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Home Tab",
+            "line": 88,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 971439297
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 89,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5004080005
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 93,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1957471482
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Admin Tab-Submenu (Administartor Account)\" page with Applitools",
+            "line": 94,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 13105377607
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 95,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2038312120
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Role List\" page with Applitools",
+            "line": 96,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7715389192
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 98,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2019224005
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 99,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2075054245
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"User List\" page with Applitools",
+            "line": 100,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7730215672
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List feature@example.com in User List",
+            "line": 101,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3406135518
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"USER none@example.com in User List\"",
+            "line": 102,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1888233765
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Gear Icon-Submenus in User List\" page with Applitools",
+            "line": 103,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7962980815
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 1 View from Gear Icon in User List",
+            "line": 104,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3277002835
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View User Profile none@example.com with NO ROLE\" page with Applitools",
+            "line": 105,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 8184662515
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 106,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2089168390
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 107,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1939816600
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 2 \"USER all@example.com in User List\"",
+            "line": 108,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2424196980
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 2 View from Gear Icon in User List",
+            "line": 109,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2758010790
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View User Profile all@example.com with ROLE\" page with Applitools",
+            "line": 110,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 7286611515
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 111,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 4217220060
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Edit User Profile all@example.com\" page with Applitools",
+            "line": 112,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 10603985067
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Edit User Profile",
+            "line": 113,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2137626500
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Save User Profile all@example.com message\" page with Applitools",
+            "line": 114,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9440730308
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 115,
+            "keyword": "And ",
+            "result": {
+              "status": "failed",
+              "duration": 80002466592,
+              "error_message": "Error: Step timed out after 80000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 116,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Reset User Profile\" page with Applitools",
+            "line": 117,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 118,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 121,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 122,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1801947
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_CheckRoles_UI_C\" Verify \"V_Edit Other Users Basic + Password\" Role UI.(After EditRoles)",
+        "id": "\"Verify-each-Role-UI\";\"@tc_checkroles_ui_c\"-verify-\"v_edit-other-users-basic-+-password\"-role-ui.(after-editroles)",
+        "line": 183,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_CheckRoles_UI_C",
+            "line": 135
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3895140413
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 12,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 9726346832
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload \"LogIn\" page",
+            "line": 14,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 9620679278
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail13@yopmail.com in Login",
+            "line": 137,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1889884573
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password QaAdmin123 in Login",
+            "line": 138,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1194017000
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 139,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1536526110
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 142,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5003090723
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Home Tab",
+            "line": 143,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 547875877
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 144,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5004083390
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 148,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1958752583
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Admin Tab-Submenu (Administartor Account)\" page with Applitools",
+            "line": 149,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 15559698178
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 150,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1784600363
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Role List\" page with Applitools",
+            "line": 151,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9161786235
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 153,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2174755632
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 154,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2293704907
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"User List\" page with Applitools",
+            "line": 155,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9497160915
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List feature@example.com in User List",
+            "line": 156,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3478694197
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"USER none@example.com in User List\"",
+            "line": 157,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1984429592
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Gear Icon-Submenus in User List\" page with Applitools",
+            "line": 158,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9797640660
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 1 View from Gear Icon in User List",
+            "line": 159,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3094475038
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View User Profile none@example.com with NO ROLE\" page with Applitools",
+            "line": 160,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9076350985
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 161,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2095616183
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 162,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1631462520
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 2 \"USER all@example.com in User List\"",
+            "line": 163,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1517826923
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 2 View from Gear Icon in User List",
+            "line": 164,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2839166855
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View User Profile all@example.com with ROLE\" page with Applitools",
+            "line": 165,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9394748775
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 166,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3195621655
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Edit User Profile all@example.com\" page with Applitools",
+            "line": 167,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9678378287
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Edit User Profile",
+            "line": 168,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1644005212
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Save User Profile all@example.com message *BUG*\" page with Applitools",
+            "line": 169,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 10210006635
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 170,
+            "keyword": "And ",
+            "result": {
+              "status": "failed",
+              "duration": 80001500315,
+              "error_message": "Error: Step timed out after 80000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 171,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Reset User Profile\" page with Applitools",
+            "line": 172,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 173,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 176,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 177,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1482558
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_CheckRoles_UI_D\" Verify \"W_Edit Other Users Basic + Roles\" Role UI.(After EditRoles)",
+        "id": "\"Verify-each-Role-UI\";\"@tc_checkroles_ui_d\"-verify-\"w_edit-other-users-basic-+-roles\"-role-ui.(after-editroles)",
+        "line": 237,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_CheckRoles_UI_D",
+            "line": 189
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4033872125
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 12,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 9573150165
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload \"LogIn\" page",
+            "line": 14,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 9977695772
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail14@yopmail.com in Login",
+            "line": 191,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1857369795
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password QaAdmin123 in Login",
+            "line": 192,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1609985628
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 193,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1673620465
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 196,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5010586813
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Home Tab",
+            "line": 197,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1051275660
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 198,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5001995007
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 202,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1842301607
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Admin Tab-Submenu (Administartor Account)\" page with Applitools",
+            "line": 203,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 16809244602
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 204,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1887022645
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Role List\" page with Applitools",
+            "line": 205,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9190765383
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 207,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2040599360
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 208,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1942487495
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"User List\" page with Applitools",
+            "line": 209,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9345625590
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List feature@example.com in User List",
+            "line": 210,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3029499867
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"USER none@example.com in User List\"",
+            "line": 211,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1673104740
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Gear Icon-Submenus in User List\" page with Applitools",
+            "line": 212,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9358059913
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 1 View from Gear Icon in User List",
+            "line": 213,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3621078290
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View User Profile none@example.com with NO ROLE\" page with Applitools",
+            "line": 214,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9066461540
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 215,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1673574852
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 216,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1584348370
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 2 \"USER all@example.com in User List\"",
+            "line": 217,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1679347067
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 2 View from Gear Icon in User List",
+            "line": 218,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3158759503
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View User Profile all@example.com with ROLE\" page with Applitools",
+            "line": 219,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9365435865
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 220,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3011710809
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Edit User Profile all@example.com\" page with Applitools",
+            "line": 221,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9006293300
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Edit User Profile",
+            "line": 222,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1701635070
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Save User Profile all@example.com message *BUG*\" page with Applitools",
+            "line": 223,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9347209465
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 224,
+            "keyword": "And ",
+            "result": {
+              "status": "failed",
+              "duration": 80002253085,
+              "error_message": "Error: Step timed out after 80000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 225,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Reset User Profile\" page with Applitools",
+            "line": 226,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 227,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 230,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 231,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1494170
+            },
+            "match": {}
+          }
+        ]
+      },
+      {
+        "name": "\"@TC_CheckRoles_UI_E\" Verify \"X_Edit Other Users Basic + Roles + Password\" Role UI.(After EditRoles)",
+        "id": "\"Verify-each-Role-UI\";\"@tc_checkroles_ui_e\"-verify-\"x_edit-other-users-basic-+-roles-+-password\"-role-ui.(after-editroles)",
+        "line": 292,
+        "keyword": "Scenario",
+        "description": "",
+        "type": "scenario",
+        "tags": [
+          {
+            "name": "@TC_CheckRoles_UI_E",
+            "line": 244
+          }
+        ],
+        "steps": [
+          {
+            "keyword": "Before ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3905814078
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter BlackBook Login Website",
+            "line": 12,
+            "keyword": "Given ",
+            "result": {
+              "status": "passed",
+              "duration": 9843124567
+            },
+            "match": {}
+          },
+          {
+            "name": "I reload \"LogIn\" page",
+            "line": 14,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 10023314905
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my user email address admintestemail15@yopmail.com in Login",
+            "line": 246,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1826893640
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter my Password QaAdmin123 in Login",
+            "line": 247,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1763439970
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Login Button",
+            "line": 248,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1586156855
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 251,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5007530990
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Home Tab",
+            "line": 252,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1151378563
+            },
+            "match": {}
+          },
+          {
+            "name": "I wait",
+            "line": 253,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 5002775925
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 257,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1780995865
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Admin Tab-Submenu (Administartor Account)\" page with Applitools",
+            "line": 258,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 17041777290
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Roles submenu from Admin Tab",
+            "line": 259,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1976877364
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Role List\" page with Applitools",
+            "line": 260,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9096673697
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 262,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2032018800
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 263,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1917972311
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"User List\" page with Applitools",
+            "line": 264,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9839497112
+            },
+            "match": {}
+          },
+          {
+            "name": "I enter Filter User List feature@example.com in User List",
+            "line": 265,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3662787287
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 1 \"USER none@example.com in User List\"",
+            "line": 266,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 2241013005
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Gear Icon-Submenus in User List\" page with Applitools",
+            "line": 267,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 8779600447
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 1 View from Gear Icon in User List",
+            "line": 268,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3634109642
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View User Profile none@example.com with NO ROLE\" page with Applitools",
+            "line": 269,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9237664872
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Admin Tab",
+            "line": 270,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1789648157
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Users submenu from Admin Tab",
+            "line": 271,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1770967120
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Gear Icon 2 \"USER all@example.com in User List\"",
+            "line": 272,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1827207104
+            },
+            "match": {}
+          },
+          {
+            "name": "I click 2 View from Gear Icon in User List",
+            "line": 273,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3228023090
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"View User Profile all@example.com with ROLE\" page with Applitools",
+            "line": 274,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9298661265
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 275,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 3242820748
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Edit User Profile all@example.com\" page with Applitools",
+            "line": 276,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9460580650
+            },
+            "match": {}
+          },
+          {
+            "name": "I click on Save button in Edit User Profile",
+            "line": 277,
+            "keyword": "And ",
+            "result": {
+              "status": "passed",
+              "duration": 1721889817
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Save User Profile all@example.com message *BUG*\" page with Applitools",
+            "line": 278,
+            "keyword": "Then ",
+            "result": {
+              "status": "passed",
+              "duration": 9182109092
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Edit Button in Edit User Profile",
+            "line": 279,
+            "keyword": "And ",
+            "result": {
+              "status": "failed",
+              "duration": 80002431170,
+              "error_message": "Error: Step timed out after 80000 milliseconds\n    at ontimeout (timers.js:365:14)\n    at tryOnTimeout (timers.js:237:5)\n    at Timer.listOnTimeout (timers.js:207:5)"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Reset Button in Edit User Profile",
+            "line": 280,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I verify BlackBook \"Reset User Profile\" page with Applitools",
+            "line": 281,
+            "keyword": "Then ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Cancel Button in Edit User Profile",
+            "line": 282,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Avatar Image Button",
+            "line": 285,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "name": "I click Logout sub menu from Avatar",
+            "line": 286,
+            "keyword": "And ",
+            "result": {
+              "status": "skipped"
+            },
+            "match": {}
+          },
+          {
+            "keyword": "After ",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1378944
             },
             "match": {}
           }

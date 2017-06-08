@@ -60,13 +60,13 @@ var BB_EditRoles = function BB_EditRoles() {
                     break;
 
                 case 'confirm':
-                    browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+                    browser.wait(browser.getCurrentUrl()).then(function (getCurrentURL) {
                         var currentURL = getCurrentURL.split("://");
                         // console.log('currentURL:'+currentURL[1]);
 
                         var URL = BB_loginRepo.BlackBookUrl.split("://");
 
-                        if (currentURL[1].trim() == URL[1] + '/role/list') {
+                        if (currentURL[1].trim() === URL[1] + '/role/list') {
                             page.clickButton(BB_editRolesRepo.Select_Element_Confirm_button_RoleList, protractorConfig.config.WaitTime, success);
                         }
                         else {
@@ -271,10 +271,10 @@ var BB_EditRoles = function BB_EditRoles() {
 
             checkbox.getAttribute('class').then((currentClass)=>{
 
-                if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Checked && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
+                if (currentClass === BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Checked && isCheckedorUnchecked.toString().toLowerCase() == "checked") {
                     return success();
                 }
-                else  if (currentClass == BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Unchecked && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
+                else  if (currentClass === BB_editRolesRepo.AttributeString_Permission_GridCheckbox_Unchecked && isCheckedorUnchecked.toString().toLowerCase() == "unchecked") {
                     return success();
                 }
                 else
@@ -289,9 +289,9 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.Verify_RoleMarketValue_Dropdownbox_RoleEditor = function (roleMarketSelection) {
         return new Promise((success, failure) => {
             page.executeSequence([page.waitForElementTobePresent(BB_editRolesRepo.Select_Element_RoleMarketDropdown, protractorConfig.config.WaitTime),
-                browser.driver.wait(BB_editRolesRepo.Select_Element_RoleMarketDropdown.getAttribute('value').then((value) => {
+                browser.wait(BB_editRolesRepo.Select_Element_RoleMarketDropdown.getAttribute('value').then((value) => {
                         element(by.css('option[value="' + value + '"]')).getText().then((text) => {
-                            if (roleMarketSelection == text) {
+                            if (roleMarketSelection === text) {
                                 success();
                             }
                             else {

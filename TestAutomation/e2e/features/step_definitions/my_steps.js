@@ -45,7 +45,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     //           //  eyes.open(browser, 'App Name: BlackBook' , 'Test Name: Simple Soltech Test');
     //
     //             //no angular page
-    //             browser.driver.get('http://soltech.net/');
+    //             browser.get('http://soltech.net/');
     //             browser.manage().window().maximize();
     //             //browser.ignoreSynchronization = false;
     //             //element(by.xpath('//*[@id="navbar"]/div/ul/li[1]')).click();
@@ -512,7 +512,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     ///BUGS FIXES TO TEST OTHER THINGS
     this.Given(/^I wait$/, function () {
         return new Promise((success, failure)=> {
-            page.executeSequence([browser.driver.sleep(5000).then(() => {
+            page.executeSequence([browser.sleep(5000).then(() => {
                 console.log("wait before success");
             })]).then(() => {
                 success();
@@ -528,7 +528,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
             var a = isEnableOrDisable;
 
             page.executeSequence([
-                browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(BB_editUserProfileRepo.Select_Element_SaveButton), protractorConfig.config.WaitTime)]).then(() => {
+                browser.wait(protractor.ExpectedConditions.elementToBeClickable(BB_editUserProfileRepo.Select_Element_SaveButton), protractorConfig.config.WaitTime)]).then(() => {
                 success();
             });
         });
@@ -562,11 +562,11 @@ var myBlackBookSteps = function myBlackBookSteps() {
     //TODO STILL NOT USED BUT SAVE FOR FUTURE TEST CASES
     this.Then(/^I click User Active checkbox "([^"]*)"$/, function (isEnableOrDisable) {
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
+            page.executeSequence([browser.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
                 element(by.css('span.checkbox-label')).click(),
-                browser.driver.sleep(1000),
+                browser.sleep(1000),
                 //Si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
-                browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content')
+                browser.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content')
                     .then(function (data) {
                         // console.log(data);
 
@@ -603,7 +603,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         // return new Promise((success, failure) => {
         //     page.executeSequence([
         //         page.clickElement( BB_menuRepo.Select_Element_SegmentTab, protractorConfig.config.WaitTime),
-        //         browser.driver.actions().mouseMove( BB_menuRepo.Select_Element_SegmentTab).perform().then(()=>{
+        //         browser.actions().mouseMove( BB_menuRepo.Select_Element_SegmentTab).perform().then(()=>{
         //         //success();
         //     })]).then(() => {
         //        success();
@@ -613,7 +613,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
         return new Promise((success, failure) => {
             page.executeSequence([
                 page.clickElement(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span')), protractorConfig.config.WaitTime),
-                browser.driver.actions().mouseMove(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span'))).perform().then(()=>{  success();})
+                browser.actions().mouseMove(element(by.xpath('//*[@id="page-box"]/header/ul/li[3]/span'))).perform().then(()=>{  success();})
             ]).then(() => {success();});
         });
     });

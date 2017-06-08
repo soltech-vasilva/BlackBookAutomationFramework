@@ -300,6 +300,7 @@ Feature:  "Add a new User Profile"
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
 
+
     Examples:
       | firstName     | lastName  | emailAddress              | phoneNumber   | newPassWord    | confirmNewPassWord   |
  #All Empty Fields

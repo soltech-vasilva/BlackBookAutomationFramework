@@ -32,7 +32,6 @@ Feature:  "Add a new Role"
     And I enter my user email address user1@example.com in Login
     And I enter my Password Password1 in Login
     And I click Login Button
-    And I wait
     And I click on Admin Tab
     And I click on Roles submenu from Admin Tab
 
@@ -81,10 +80,11 @@ Feature:  "Add a new Role"
     And I click Filter By Group dropdown "Users" Permissions in Role Editor
       Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    #fix below delete
-    #And I click checkbox  "0" "Users" Permission row in Role Editor
-    And I click checkbox  "9" "View user list" Permission row in Role Editor
+    And I click checkbox  "5" "Update users" Permission row in Role Editor
+    And I click checkbox  "6" "View and Update user's own profile" Permission row in Role Editor
     And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "8" "View user" Permission row in Role Editor
+    And I click checkbox  "9" "View user list" Permission row in Role Editor
     #fix below delete
     #And I click checkbox  "0" "Users" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
@@ -99,6 +99,11 @@ Feature:  "Add a new Role"
       Then I should see "Settings" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
     And I click checkbox  "0" "Settings" Permission row in Role Editor
+     #added to make Home work
+    And I click Filter By Group dropdown "Activities" Permissions in Role Editor
+    And I enter "List user's own activities" on Filter Permissions in Role Editor
+    And I click checkbox  "1" "Checked - List user's own activities" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
     And I enter "admintestemail11@yopmail.com" on Filter Users in Role Editor
@@ -124,10 +129,11 @@ Feature:  "Add a new Role"
     And I click Filter By Group dropdown "Users" Permissions in Role Editor
       Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
+    #And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
     And I click checkbox  "3" "Update other user's profile" Permission row in Role Editor
-    And I click checkbox  "4" "Update other user's roles" Permission row in Role Editor
+    #And I click checkbox  "4" "Update other user's roles" Permission row in Role Editor
     And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "8" "View user" Permission row in Role Editor
     And I click checkbox  "9" "View user list" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
@@ -140,6 +146,11 @@ Feature:  "Add a new Role"
     #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
+     #added to make Home work
+    And I click Filter By Group dropdown "Activities" Permissions in Role Editor
+    And I enter "List user's own activities" on Filter Permissions in Role Editor
+    And I click checkbox  "1" "Checked - List user's own activities" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
     And I enter "admintestemail12@yopmail.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
@@ -163,10 +174,12 @@ Feature:  "Add a new Role"
     And I click Filter By Group dropdown "Users" Permissions in Role Editor
       Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
+    #And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
     And I click checkbox  "2" "Update other user's password" Permission row in Role Editor
     And I click checkbox  "3" "Update other user's profile" Permission row in Role Editor
+    #And I click checkbox  "4" "Update other user's roles" Permission row in Role Editor
     And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "8" "View user" Permission row in Role Editor
     And I click checkbox  "9" "View user list" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
@@ -179,6 +192,11 @@ Feature:  "Add a new Role"
     #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
+     #added to make Home work
+    And I click Filter By Group dropdown "Activities" Permissions in Role Editor
+    And I enter "List user's own activities" on Filter Permissions in Role Editor
+    And I click checkbox  "1" "Checked - List user's own activities" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
     And I enter "admintestemail13@yopmail.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
@@ -203,10 +221,11 @@ Feature:  "Add a new Role"
     And I click Filter By Group dropdown "Users" Permissions in Role Editor
       Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
+    #And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
     And I click checkbox  "3" "Update other user's profile" Permission row in Role Editor
     And I click checkbox  "4" "Update other user's roles" Permission row in Role Editor
     And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "8" "View user" Permission row in Role Editor
     And I click checkbox  "9" "View user list" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
@@ -216,6 +235,11 @@ Feature:  "Add a new Role"
     #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
+     #added to make Home work
+    And I click Filter By Group dropdown "Activities" Permissions in Role Editor
+    And I enter "List user's own activities" on Filter Permissions in Role Editor
+    And I click checkbox  "1" "Checked - List user's own activities" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
     And I enter "admintestemail14@yopmail.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
@@ -240,11 +264,12 @@ Feature:  "Add a new Role"
     And I click Filter By Group dropdown "Users" Permissions in Role Editor
       Then I should see "Users" display for Filter By Group in Role Editor
     And I click Circle icon in permissions grid to "expand" in Role Editor
-    And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
+    #And I click checkbox  "1" "Update other user's active" Permission row in Role Editor
     And I click checkbox  "2" "Update other user's password" Permission row in Role Editor
     And I click checkbox  "3" "Update other user's profile" Permission row in Role Editor
     And I click checkbox  "4" "Update other user's roles" Permission row in Role Editor
     And I click checkbox  "7" "View other user's profile" Permission row in Role Editor
+    And I click checkbox  "8" "View user" Permission row in Role Editor
     And I click checkbox  "9" "View user list" Permission row in Role Editor
     And I click Filter By Group dropdown "Roles" Permissions in Role Editor
       Then I should see "Roles" display for Filter By Group in Role Editor
@@ -254,6 +279,11 @@ Feature:  "Add a new Role"
     #And I click Filter By Group dropdown "Settings" Permissions in Role Editor
     And I click Filter By Status dropdown "Active" in Role Editor
       Then I should see "Active" display for Filter By Status in Role Editor
+     #added to make Home work
+    And I click Filter By Group dropdown "Activities" Permissions in Role Editor
+    And I enter "List user's own activities" on Filter Permissions in Role Editor
+    And I click checkbox  "1" "Checked - List user's own activities" Permission row in Role Editor
+    And I clear text box selected "FilterPermissions" in Role Editor
     And I enter "admintestemail15@yopmail.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor

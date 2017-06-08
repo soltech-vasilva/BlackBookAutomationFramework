@@ -40,16 +40,16 @@ var EyesSetUp = function EyesSetUp(){
 
     EyesSetUp.prototype.EyesClose_EndTestcase = function(eyes){
 
-        if (protractorConfig.config.ApplitoolsOn == true) {
+        if (protractorConfig.config.ApplitoolsOn === true) {
             //console.log("EYE close");
-            browser.driver.wait(eyes.close(false).then(function (testResults) {
+            browser.wait(eyes.close(false).then(function (testResults) {
             }));
         }
     };
 
     EyesSetUp.prototype.EyesCheckWindow = function (eyes, verifyScreenElementName , isBooleanApplitoolsOn ) {
 
-        if (isBooleanApplitoolsOn == true) {
+        if (isBooleanApplitoolsOn === true) {
             eyes.checkWindow(verifyScreenElementName);
             //console.log("Capture:" + verifyScreenElementName);
         }

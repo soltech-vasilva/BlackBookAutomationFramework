@@ -9,13 +9,13 @@ var page = require ('../Page/Page_Objects');
 var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
 var BB_roleListRepo = require('../Repository/BB_RoleListRepo.js');
 var robot = require("robotjs");
-var Robot = require("robot-server");
-var webdriver = require('selenium-webdriver'),
-    By = webdriver.By,
-    until = webdriver.until;
-var jQueryM = require("jquery");
+//var Robot = require("robot-server");
+//var webdriver = require('selenium-webdriver'),
+//    By = webdriver.By,
+//    until = webdriver.until;
+//var jQueryM = require("jquery");
 
-var proQuery = require('proquery');
+//var proQuery = require('proquery');
 
 var BB_Menu = function BB_Menu() {
 
@@ -24,10 +24,11 @@ var BB_Menu = function BB_Menu() {
             page.executeSequence([
                 page.clickElement(BB_menuRepo.Select_Element_HomeTab, protractorConfig.config.WaitTime),
                 browser.getProcessedConfig().then((config) => {
-                    if (config.capabilities.browserName != 'firefox') {
-                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_HomeTab).perform().then(() => {
-                            success();
-                        });
+                    if (config.capabilities.browserName !== 'firefox') {
+                        browser.actions().mouseMove(BB_menuRepo.Select_Element_HomeTab).perform();
+                        // .then(() => {
+                        //     success();
+                        // });
                     }
                     else {
 
@@ -42,11 +43,12 @@ var BB_Menu = function BB_Menu() {
                             console.log('location Y:' + y);
 
                             robot.moveMouse(location.x + 10, location.y + 130);
-                            success();
+                           // success();
                         });
                     }
                 })
             ]).then(() => {
+                success();
             });
         });
     };
@@ -136,15 +138,22 @@ var BB_Menu = function BB_Menu() {
         //browser.executeScript('$("#page-box > header > ul > li:nth-child(2) > span").scrollTop(1000);');
 
         return new Promise((success, failure) => {
-            page.executeSequence([page.waitForElementTobePresent(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
+            page.executeSequence([
+              //  console.log('a'),
+                page.waitForElementTobePresent(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
+               // console.log('b'),
+               // console.log('c'),
                 browser.getProcessedConfig().then((config) => {
-                    if (config.capabilities.browserName != 'firefox' || config.capabilities.browserName != 'Chrome') {
-                        console.log("click");
-                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform().then(() => {
-                            success();
-                        });
+                    if (config.capabilities.browserName !== 'firefox' /*|| config.capabilities.browserName != 'Chrome'*/) {
+                //        console.log("click");
+                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform();
+                        //.then(() => {
+                 //           console.log('possible succes');
+                           // success();
+                       // });
                     }
                     else {
+                        console.log("Robot");
                         var x;
                         var y;
 
@@ -156,12 +165,16 @@ var BB_Menu = function BB_Menu() {
                             console.log('location Y:' + y);
 
                             robot.moveMouse(location.x + 10, location.y + 130);
-                            success();
+                           // success();
                         });
                     }
                 }),
+                browser.sleep(1000),
                 page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime)
+                //console.log('d')
             ]).then(() => {
+                //console.log('e');
+                success();
             });
         });
     };
@@ -203,13 +216,17 @@ var BB_Menu = function BB_Menu() {
 
     BB_Menu.prototype.Click_AvatarImageButton = function () {
         return new Promise((success, failure) => {
-            page.executeSequence([page.clickElement(BB_menuRepo.Select_Element_ProfileButton, protractorConfig.config.WaitTime),
-                browser.driver.sleep(1000),
+            page.executeSequence([
+                page.waitForElementTobePresent(BB_menuRepo.Select_Element_ProfileButton, protractorConfig.config.WaitTime),
+               // page.clickElement(BB_menuRepo.Select_Element_ProfileButton, protractorConfig.config.WaitTime),
+              //  browser.sleep(1000),
                 browser.getProcessedConfig().then((config) => {
-                    if (config.capabilities.browserName != 'firefox') {
-                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform().then(() => {
-                            success();
-                        });
+                    if (config.capabilities.browserName !== 'firefox') {
+                        //console.log('click');
+                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform();
+                        // .then(() => {
+                        //   //  success();
+                        // });
                     }
                     else {
 
@@ -224,19 +241,33 @@ var BB_Menu = function BB_Menu() {
                             console.log('location Y:' + y);
 
                             robot.moveMouse(location.x + 10, location.y + 130);
-                            success();
+                          //  success();
                         });
                     }})
             ]).then(() => {
+                success();
             });
         });
     };
 
     BB_Menu.prototype.Click_MyProfileSubmenu = function () {
         return new Promise((success, failure) => {
-            page.executeSequence([page.clickElement(BB_menuRepo.Select_Element_MyProfileSubMenuButton, protractorConfig.config.WaitTime),
-                page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success)]).then(() => {
-            });
+            page.executeSequence([
+                page.clickElement(BB_menuRepo.Select_Element_MyProfileSubMenuButton, protractorConfig.config.WaitTime),
+                // BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText.getText().then((text)=>{
+                //     console.log("text:"+text);
+                // }),
+                page.clearFocus(),
+                // browser.isElementPresent(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText).then((isPresente) => {
+                //     console.log('isPresente:'+isPresente);
+                //     if (isPresente == false) {
+                //         page.focus(BB_editUserProfileRepo.Select_Element_TittleUnauthorizeProfileText, success).then(() => {});
+                //     }
+                //     else {
+                //         page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText, success).then(() => {});
+                //     }
+                // })
+            ]).then(() => {success();});
         });
     };
 
@@ -247,21 +278,23 @@ var BB_Menu = function BB_Menu() {
     };
 
     BB_Menu.prototype.Verify_ButtonNotInPage_Menu = function (buttonName) {
+        return new Promise((success, failure) => {
         switch (buttonName.toLowerCase()) {
             case 'admintab':
-                return new Promise((success, failure) => {
                     page.verifyElementNotInPage(BB_menuRepo.Select_Element_AdminTab, 4000, success);
-                });
                 break;
+
             case 'settingssubmenu':
                 return new Promise((success, failure) => {
                     page.verifyElementNotInPage(BB_menuRepo.Select_Element_SettingsSubMenuButton, 4000, success);
                 });
                 break;
+
             default:
-                console.log(PopUpPageName+' : is not part of switch statement in Verify_UserInformation function.');
+                console.log(buttonName+' : is not part of switch statement in Verify_UserInformation function.');
                 failure();
         }
+        });
     };
 };
 module.exports = new BB_Menu();

@@ -31,7 +31,7 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
                 if (config.capabilities.browserName == 'firefox') {
                     elementToClick.sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys(protractor.Key.DELETE);
                 } else {
-                    browser.driver.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys(protractor.Key.DELETE).perform();
+                    browser.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys(protractor.Key.DELETE).perform();
                 }
             }
             else {

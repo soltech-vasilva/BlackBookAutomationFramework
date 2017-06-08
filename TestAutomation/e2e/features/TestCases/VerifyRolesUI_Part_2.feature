@@ -23,6 +23,12 @@ Feature:  "Verify each Role UI"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
+
+    #BUG IT OPENS UNOTHORIZE PAGE
+    And I wait
+    And I click on Home Tab
+    And I wait
+
       #Then I verify BlackBook "Home" page with Applitools
     #ROLES
     And I click on Admin Tab
@@ -76,6 +82,12 @@ Feature:  "Verify each Role UI"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
+
+    #BUG IT OPENS UNOTHORIZE PAGE
+    And I wait
+    And I click on Home Tab
+    And I wait
+
       #Then I verify BlackBook "Home" page with Applitools
      #ROLES
     And I click on Admin Tab
@@ -125,6 +137,12 @@ Feature:  "Verify each Role UI"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
+
+    #BUG IT OPENS UNOTHORIZE PAGE
+    And I wait
+    And I click on Home Tab
+    And I wait
+
       #Then I verify BlackBook "Home" page with Applitools
      #ROLES
     And I click on Admin Tab
@@ -173,6 +191,12 @@ Feature:  "Verify each Role UI"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
+
+    #BUG IT OPENS UNOTHORIZE PAGE
+    And I wait
+    And I click on Home Tab
+    And I wait
+
       #Then I verify BlackBook "Home" page with Applitools
      #ROLES
     And I click on Admin Tab
@@ -222,6 +246,12 @@ Feature:  "Verify each Role UI"
     And I enter my user email address <currentEmailAddress> in Login
     And I enter my Password <currentPassword> in Login
     And I click Login Button
+
+    #BUG IT OPENS UNOTHORIZE PAGE
+    And I wait
+    And I click on Home Tab
+    And I wait
+
       #Then I verify BlackBook "Home" page with Applitools
      #ROLES
     And I click on Admin Tab

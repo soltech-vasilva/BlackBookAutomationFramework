@@ -44,7 +44,7 @@ var BB_RoleList = function BB_RoleList() {
                     break;
 
                 default:
-                    console.log(TextboxName + ' : is not part of switch statement in Store_NumberOfUsersColumn function.');
+                    console.log(RoleName + ' : is not part of switch statement in Store_NumberOfUsersColumn function.');
                     failure();
             }
 
@@ -73,7 +73,7 @@ var BB_RoleList = function BB_RoleList() {
                     break;
 
                 default:
-                    console.log(TextboxName + ' : is not part of switch statement in Verify_NumberOfUsersColumn_Increase function.');
+                    console.log(RoleName + ' : is not part of switch statement in Verify_NumberOfUsersColumn_Increase function.');
                     failure();
             }
 
@@ -82,7 +82,7 @@ var BB_RoleList = function BB_RoleList() {
                 this.numberofUsers++;
                 console.log(this.numberofUsers);
 
-                if (this.numberofUsers == currentValue) {
+                if (this.numberofUsers === currentValue) {
                     success();
                 }
                 else {

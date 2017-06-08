@@ -26,7 +26,7 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
 
     BB_EditUserProfile.prototype.Click_EditButton_EditUserProfile = function () {
         return new Promise((success, failure) => {
-            page.executeSequence([ browser.driver.sleep(2000),
+            page.executeSequence([ browser.sleep(2000),
                 page.clickElement(BB_editUserProfileRepo.Select_Element_EditButton,protractorConfig.config.WaitTime),
                 page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
             ]).then(()=>{});
@@ -140,13 +140,13 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
     BB_EditUserProfile.prototype.Verify_UserActive_Checkbox_Inactive = function () {
         return new Promise((success, failure) => {
             page.executeSequence([page.waitForElementTobePresent(BB_editUserProfileRepo.Select_Element_UserActiveCheckbox, protractorConfig.config.WaitTime),
-                // browser.driver.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
-                // browser.driver.sleep(1000),
+                // browser.wait(protractor.ExpectedConditions.presenceOf(element(by.css('span.checkbox-label'))), protractorConfig.config.WaitTime),
+                // browser.sleep(1000),
                 //TODO si funciono :Before tira "" con double quotes  y cuando no esta el :After tira "none" sin double quotes cuando no existe y cuando existe tira "".
-                browser.driver.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content').then(function (data) {
+                browser.executeScript('return window.getComputedStyle(document.querySelector(".checkbox-label"), "::after").content').then(function (data) {
                     // console.log(data);
 
-                    if (data == '""') {
+                    if (data === '""') {
                         console.log('Pass, It wont change setting');
                         success();
                     }

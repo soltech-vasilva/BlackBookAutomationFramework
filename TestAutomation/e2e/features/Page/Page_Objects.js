@@ -28,9 +28,9 @@ var Page_Objects = function Page_Objects () {
     };
 
     page.setResolution = function (int_width, int_height) {
-        page.executeSequence([ browser.driver.sleep(1000),
-            browser.driver.manage().window().setSize(int_width, int_height),
-            browser.driver.sleep(1000)]).then(()=>{});
+        page.executeSequence([ browser.sleep(1000),
+            browser.manage().window().setSize(int_width, int_height),
+            browser.sleep(1000)]).then(()=>{});
     };
 
     /**
@@ -42,14 +42,14 @@ var Page_Objects = function Page_Objects () {
         //page is non-angular
         browser.ignoreSynchronisation = bool_IgnoreSynchronisation;
         return page.executeSequence([
-            browser.driver.get(str_URL),
-            browser.driver.manage().window().setPosition(0,0),
-            browser.driver.sleep(waitTime)
+            browser.get(str_URL),
+            browser.manage().window().setPosition(0,0),
+            browser.sleep(waitTime)
         ]).then(()=>{});
     };
 
     page.verifyCurrentUrl = function (str_compareURL, element_PageVerify , WaitTime , success, failure) {
-        return page.executeSequence([browser.driver.getCurrentUrl().then(function (getCurrentURL) {
+        return page.executeSequence([browser.getCurrentUrl().then(function (getCurrentURL) {
             var currentURL = getCurrentURL.split("://");
             var compareURL = str_compareURL.toString().split("://");
 
@@ -98,7 +98,7 @@ var Page_Objects = function Page_Objects () {
     //         // clear focus first to avoid a rare condition where the click only clears
     //         // focus from another element instead of actually clicking the thing you want
     //        // page.clearFocus(),
-    //         browser.driver.actions().click(element).perform()
+    //         browser.actions().click(element).perform()
     //     ]);
     // };
 
@@ -107,26 +107,34 @@ var Page_Objects = function Page_Objects () {
         // focus from another element instead of actually clicking the thing you want 
         // page.clearFocus(), 
         return page.executeSequence([page.waitForElementTobePresent(element, WaitTime),
-            // browser.driver.actions().click(element).perform()
+            // browser.actions().click(element).perform()
             element.click()
         ]).then(()=>{});
     };
 
     page.clickButton = function(element, WaitTime, success) {
-        return page.executeSequence([browser.driver.sleep(2000), page.clickElement(element, WaitTime),
+        return page.executeSequence([
+            //console.log('1'),
+
+            page.clickElement(element, WaitTime),
+            browser.sleep(1000),
+            //console.log('2'),
                 browser.getProcessedConfig().then((config) => {
                     //added click element since Firefox and safari does not like clearfocus in clickButton
-                    console.log('config.capabilities.browserName: '+config.capabilities.browserName);
-                    if (config.capabilities.browserName.toLowerCase() != 'firefox' && config.capabilities.browserName.toLowerCase() != 'safari') {
-                        page.clearFocus().then(()=>{});
+                    // console.log('config.capabilities.browserName: '+config.capabilities.browserName);
+                    if (config.capabilities.browserName.toLowerCase() !== 'firefox' && config.capabilities.browserName.toLowerCase() !== 'safari') {
+            //             console.log("clear focus");
+                        page.clearFocus();
                     }
-                    })
+                })//,
+          //  console.log('3')
             ]).then(() => {
+            //console.log('4')
             success();
         });
 
 
-        // return page.executeSequence([browser.driver.sleep(1000), page.clickElement(element, WaitTime),
+        // return page.executeSequence([browser.sleep(1000), page.clickElement(element, WaitTime),
         //     page.clearFocus()
         // ]).then(() => {
         //     success();
@@ -134,14 +142,14 @@ var Page_Objects = function Page_Objects () {
     };
 
     page.verifyElementNotInPage = function ( element ,WaitTime, success) {
-        return page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.stalenessOf(element), WaitTime)])
+        return page.executeSequence([browser.wait(protractor.ExpectedConditions.stalenessOf(element), WaitTime)])
             .then(() => {
                 success();
             });
     };
 
     page.verifyMessageDisplay = function ( element , errorMessage, WaitTime, success, failure) {
-        return  page.executeSequence([browser.driver.sleep(1000),page.waitForElementTobePresent(element, WaitTime),
+        return  page.executeSequence([browser.sleep(1000),page.waitForElementTobePresent(element, WaitTime),
             browser.isElementPresent(element).then((isPresente) => {
                 page.AssertElementsToDisplay(isPresente, element, errorMessage, 'It is not showing any message', success, failure);
             })]).then(() => {
@@ -150,7 +158,7 @@ var Page_Objects = function Page_Objects () {
 
     page.AssertElementsToDisplay = function (isElementPresent, elementToCheck, compareValuesString, consoleErrorMessageDisplay , success, failure ) {
 
-        if (isElementPresent == true) {
+        if (isElementPresent === true) {
             return  page.executeSequence([page.ExpectTextEqualsTo(elementToCheck, compareValuesString, success, failure)]).then(()=>{});
         }
         else {
@@ -162,7 +170,7 @@ var Page_Objects = function Page_Objects () {
 
     page.ExpectTextEqualsTo = function(elementToCheck, compareValuesString, success, failure){
         return page.executeSequence([elementToCheck.getText().then((Text)=>{
-            if (Text.trim() == compareValuesString) {
+            if (Text.trim() === compareValuesString) {
                 success();
             }
             else {
@@ -194,7 +202,7 @@ var Page_Objects = function Page_Objects () {
      * @returns {Promise}
      */
     page.clearFocus = function () {
-        return browser.driver.actions().mouseMove({x: 9999, y: 9999}).click().perform();
+        return browser.actions().mouseMove({x: 9999, y: 9999}).click().perform();
     };
 
     /**
@@ -218,7 +226,7 @@ var Page_Objects = function Page_Objects () {
 
     page.fill = function (element , str_SendValue, WaitTime , elementClearFocus , success) {
         return page.executeSequence([page.clickElement(element, WaitTime).then(() => {
-                if (str_SendValue != '') {
+                if (str_SendValue !== '') {
                     page.executeSequence([
                         element.sendKeys(str_SendValue),
                         page.VerifyValueEntered_RetypeValue(element, str_SendValue),
@@ -239,22 +247,22 @@ var Page_Objects = function Page_Objects () {
             page.executeSequence([ ValueEntered = currentValue,
                 browser.getProcessedConfig().then((config) => {
                 //console.log('BEFORE: ValueEntered:'+ValueEntered + ":Different:" + 'ValueCompare'+ValueCompare);
-                while ( ValueEntered != ValueCompare && ValueEntered != null) {
+                while ( ValueEntered !== ValueCompare && ValueEntered !== null) {
                     console.log('AFTER: ValueEntered:'+ValueEntered + ":Different:" + 'ValueCompare'+ValueCompare); 
                     // console.log('config.capabilities.os: |' + config.capabilities.os + '|'); 
                     //  console.log(" config.capabilities.browserName: " +  config.capabilities.browserName);  
-                    if (config.capabilities.browserName == 'safari' || config.capabilities.os === undefined) {
+                    if (config.capabilities.browserName === 'safari' || config.capabilities.os === undefined) {
                         //console.log('Mycomputer'); 
-                        page.executeSequence([browser.driver.sleep(1000), element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(element, ValueCompare, browser.driver.sleep(1000))])
+                        page.executeSequence([browser.sleep(1000), element.click().sendKeys(protractor.Key.COMMAND, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.sleep(1000), page.SendKeysSlower(element, ValueCompare, browser.sleep(1000))])
                             .then(() => {
                             });
                     } else {
-                        page.executeSequence([browser.driver.sleep(1000), element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.driver.sleep(1000), page.SendKeysSlower(element, ValueCompare), browser.driver.sleep(1000)])
+                        page.executeSequence([browser.sleep(1000), element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.sleep(1000), page.SendKeysSlower(element, ValueCompare), browser.sleep(1000)])
                             .then(() => {
                             });
                     }
                     count++;
-                    if (count == 2) {
+                    if (count === 2) {
                         break;
                     }
                 }
@@ -297,7 +305,7 @@ var Page_Objects = function Page_Objects () {
 page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,success, failure ) {
     return page.executeSequence([page.getContent(element).then((attributeValue) => {
         //console.log("text:" + attributeValue);
-        if (verifyDropdownName.toString().toLowerCase() == attributeValue.toString().toLowerCase()) {
+        if (verifyDropdownName.toString().toLowerCase() === attributeValue.toString().toLowerCase()) {
             success();
         }
         else {
@@ -366,7 +374,7 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
            // dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).click(),
             browser.getProcessedConfig().then((config) => {
                 //Only firefox , it wont select item
-                if (config.capabilities.browserName == 'firefox') {
+                if (config.capabilities.browserName === 'firefox') {
                     console.log('firefox:'+value);
                     page.executeSequence([
                    // dropdown.sendKeys("All"),
@@ -377,7 +385,7 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
                     page.clickElement(dropdown)]).then(()=>{});
                 }
 
-                if (config.capabilities.browserName == 'Edge') {
+                if (config.capabilities.browserName === 'Edge') {
                     //Dont remove Added this Edge did not close dropdown, so click again close it.
                     page.clickElement(dropdown);
                 }
@@ -397,7 +405,7 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
      * @returns {Promise}
      */
     page.waitForElementTobePresent = function(element , WaitTime) {
-       return page.executeSequence([browser.driver.wait(protractor.ExpectedConditions.presenceOf(element), WaitTime)]).then(()=>{});
+       return page.executeSequence([browser.wait(protractor.ExpectedConditions.presenceOf(element), WaitTime)]).then(()=>{});
     };
 };
 module.exports =  new Page_Objects();

@@ -30,11 +30,11 @@ var BB_Login = function BB_Login() {
 
     BB_Login.prototype.Click_LoginButtonX3 = function () {
         return page.executeSequence([
-            browser.driver.sleep(2000),
+            browser.sleep(2000),
             page.clickElement(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime),
-            browser.driver.sleep(2000),
+            browser.sleep(2000),
             page.clickElement(BB_loginRepo.Select_Element_LogInButton, protractorConfig.config.WaitTime),
-            browser.driver.sleep(2000),
+            browser.sleep(2000),
             BB_Login.prototype.Click_LoginButton_Login()]).then(() => {
         });
     };
@@ -59,17 +59,17 @@ var BB_Login = function BB_Login() {
 
         var URL = url;
 
-        if (URL.toString().toLowerCase() == 'login') {
+        if (URL.toString().toLowerCase() === 'login') {
             URL = BB_loginRepo.BlackBookUrl + '/login';
         }
 
         return new Promise((success, failure) => {
             browser.ignoreSynchronization = true;
-            page.executeSequence([browser.driver.sleep(2000),browser.driver.wait(browser.driver.getCurrentUrl()).then(function (getCurrentURL) {
+            page.executeSequence([browser.sleep(2000),browser.wait(browser.getCurrentUrl()).then(function (getCurrentURL) {
                 var currentURL = getCurrentURL.split("://");
                 var getURL = URL.toString().split("://");
 
-                if (currentURL[1].trim() != getURL[1].trim()) {
+                if (currentURL[1].trim() !== getURL[1].trim()) {
                     page.openUrl(true, URL, 4000).then(() => {
                         success();
                     });

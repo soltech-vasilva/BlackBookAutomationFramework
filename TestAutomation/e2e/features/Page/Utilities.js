@@ -37,9 +37,9 @@ var Utilities = function Utilities() {
 
     Utilities.prototype.Verify_BlackBookPage_Applitools = function (namePage, eyesSetUp, eyes) {
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.sleep(1000),
+            page.executeSequence([browser.sleep(1000),
                 eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn),
-                browser.driver.sleep(1000)]).then(() => {
+                browser.sleep(1000)]).then(() => {
                 success();
             });
         });
@@ -47,12 +47,12 @@ var Utilities = function Utilities() {
 
     Utilities.prototype.ExpectedElement_StopAutomationAtFail = function(element)
     {
-        if (protractorConfig.config.StopRunAtFail == true) {
+        if (protractorConfig.config.StopRunAtFail === true) {
             page.waitForElementTobePresent(element, protractorConfig.config.WaitTime).then(() => {
             });
         }
         else {
-            page.executeSequence([browser.driver.sleep(5000)]).then(()=>{});
+            page.executeSequence([browser.sleep(5000)]).then(()=>{});
         }
     };
 
@@ -63,8 +63,8 @@ var Utilities = function Utilities() {
 
     Utilities.prototype.VerifyActualURLLoaded = function (partURL, VerifyURL) {
         return new Promise((success, failure) => {
-            page.executeSequence([browser.driver.sleep(4000),
-                browser.driver.wait(browser.driver.getCurrentUrl().then(function (getCurrentURL) {
+            page.executeSequence([browser.sleep(4000),
+                browser.wait(browser.getCurrentUrl().then(function (getCurrentURL) {
 
                         var currentURL = getCurrentURL.split("://");
 
@@ -74,16 +74,16 @@ var Utilities = function Utilities() {
                                 var modURL2 = modURL1[0] + '/' + modURL1[1];
                                 console.log(modURL2);
 
-                                if (modURL2.trim() == VerifyURL) {
-                                    browser.driver.sleep(2000);
+                                if (modURL2.trim() === VerifyURL) {
+                                    browser.sleep(2000);
                                     success();
                                 }
                                 break;
 
                             case 'full':
                                 console.log(currentURL[1].trim());
-                                if (currentURL[1].trim() == VerifyURL) {
-                                    browser.driver.sleep(2000);
+                                if (currentURL[1].trim() === VerifyURL) {
+                                    browser.sleep(2000);
                                     success();
                                 }
                                 break;
@@ -98,21 +98,21 @@ var Utilities = function Utilities() {
     };
 
     Utilities.prototype.VerifyValueEntered_RetypeValue = function (Element,  ValueCompare ) {
-          return browser.driver.wait(Element.getAttribute("value").then(function (currentValue) {
+          return browser.wait(Element.getAttribute("value").then(function (currentValue) {
               this.ValueEntered = currentValue;
 
               var count = 0;
               // if (this.ValueEntered != ValueCompare) {
               //if  (this.ValueEntered != 'dd') {
               //while (this.ValueEntered != 'dd') {
-              while (this.ValueEntered != ValueCompare) {
+              while (this.ValueEntered !== ValueCompare) {
                   console.log(this.ValueEntered + ":Different:" + ValueCompare);
 
                   page.executeSequence([Element.click().sendKeys(protractor.Key.CONTROL, "a", protractor.Key.NULL, protractor.Key.DELETE), browser.sleep(1000), Utilities.prototype.SendKeysSlower(Element, ValueCompare)])
                       .then(()=>{});
 
                   count++;
-                  if (count == 3) {
+                  if (count === 3) {
                       break;
                   }
               }
@@ -120,15 +120,15 @@ var Utilities = function Utilities() {
     };
 
     Utilities.prototype.VerifyButtonStatus_isEnableorDisable = function(Element , isEnableOrDisable, success, failure) {
-        if (isEnableOrDisable.toString().toLowerCase() == "enable") {
-            page.executeSequence([browser.driver.sleep(1000),browser.driver.wait(protractor.ExpectedConditions.elementToBeClickable(Element), protractorConfig.config.WaitTime)]).then(() => {
+        if (isEnableOrDisable.toString().toLowerCase() === "enable") {
+            page.executeSequence([browser.sleep(1000),browser.wait(protractor.ExpectedConditions.elementToBeClickable(Element), protractorConfig.config.WaitTime)]).then(() => {
                 success();
             });
         }
-        else if (isEnableOrDisable.toString().toLowerCase() == "disable") {
+        else if (isEnableOrDisable.toString().toLowerCase() === "disable") {
             page.executeSequence([page.waitForElementTobePresent(Element, protractorConfig.config.WaitTime),
             Element.getAttribute("disabled").then((attribute) => {
-                if (attribute == 'true') {
+                if (attribute === 'true') {
                     return success();
                 }
                 else {

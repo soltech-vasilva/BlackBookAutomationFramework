@@ -22,7 +22,7 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
     //
     //     var name = '';
     //
-    //    return browser.driver.wait (  browser.driver.getCapabilities().then(function (capability) {
+    //    return browser.wait (  browser.getCapabilities().then(function (capability) {
     //
     //         try {
     //             name = protractorConfig.config.capabilities.browserName;
@@ -35,7 +35,7 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
     //
     //         if (eaqualOrNot == true) {
     //             if (name.toLowerCase() == BrowserCompare) {
-    //                 browser.driver.actions().mouseMove(element).perform();
+    //                 browser.actions().mouseMove(element).perform();
     //                 console.log("FOUNT IT SAFARI");
     //             }
     //         }
@@ -51,7 +51,7 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
 
     CaptureBrowserCapabilities.prototype.captureCurrentBrowserCapabilities = function (eyes, scenario) {
 
-        browser.driver.getCapabilities().then(function (capability) {
+        browser.getCapabilities().then(function (capability) {
 
             try {
                 this.currentBrowserName = protractorConfig.config.capabilities.browserName;
@@ -103,7 +103,7 @@ var CaptureBrowserCapabilities = function CaptureBrowserCapabilities()
             // console.log(this.currentHeightTestResolution);
             // console.log(this.currentOSVersion);
 
-            if (protractorConfig.config.ApplitoolsOn == true) {
+            if (protractorConfig.config.ApplitoolsOn === true) {
                 console.log('START EYES');
                 eyesSetUp.EyesInitialSetUp(eyes);
                 eyesSetUp.EyesSetBranchName(eyes);
