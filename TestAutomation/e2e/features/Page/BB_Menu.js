@@ -227,11 +227,11 @@ BB_Menu = function BB_Menu() {
                     }
                     else {
                       //  page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime).then(()=>{success();});
-                        page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime)
-                            .then(()=>{
-                                //    success();
-                            });
-                        //page.clickButton(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime, success);
+                      //   page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime)
+                      //       .then(()=>{
+                      //           //    success();
+                      //       });
+                        page.clickButton(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime, success);
                     }
 
                 })
