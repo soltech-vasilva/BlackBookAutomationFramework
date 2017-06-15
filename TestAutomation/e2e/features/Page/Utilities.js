@@ -37,11 +37,20 @@ var Utilities = function Utilities() {
 
     Utilities.prototype.Verify_BlackBookPage_Applitools = function (namePage, eyesSetUp, eyes) {
         return new Promise((success, failure) => {
-            page.executeSequence([browser.sleep(1000),
+         page.executeSequence([
+            //    console.log('1'),
+                browser.sleep(1000),
+              //  console.log('2'),
                 eyesSetUp.EyesCheckWindow(eyes, namePage, protractorConfig.config.ApplitoolsOn),
-                browser.sleep(1000)]).then(() => {
+                //console.log('3'),
+                browser.sleep(1000)//,
+                //console.log('4')
+                //success()
+           ]).then(() => {
+                //console.log('5');
+             //necesita estar aqui para quecheckwindows termine
                 success();
-            });
+           });
         });
     };
 

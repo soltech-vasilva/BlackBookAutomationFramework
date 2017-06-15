@@ -50,9 +50,10 @@ var EyesSetUp = function EyesSetUp(){
     EyesSetUp.prototype.EyesCheckWindow = function (eyes, verifyScreenElementName , isBooleanApplitoolsOn ) {
 
         if (isBooleanApplitoolsOn === true) {
-            eyes.checkWindow(verifyScreenElementName);
-            //console.log("Capture:" + verifyScreenElementName);
+          //  console.log("Capture:" + verifyScreenElementName);
+          return eyes.checkWindow(verifyScreenElementName);
+
         }
-    }
+    };
 };
 module.exports = new EyesSetUp();

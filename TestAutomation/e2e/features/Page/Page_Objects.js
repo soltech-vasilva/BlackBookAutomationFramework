@@ -106,27 +106,28 @@ var Page_Objects = function Page_Objects () {
         // clear focus first to avoid a rare condition where the click only clears 
         // focus from another element instead of actually clicking the thing you want 
         // page.clearFocus(), 
-        return page.executeSequence([page.waitForElementTobePresent(element, WaitTime),
-            // browser.actions().click(element).perform()
-            element.click()
+        return page.executeSequence([
+            page.waitForElementTobePresent(element, WaitTime),
+             browser.actions().click(element).perform()
+            //element.click()
         ]).then(()=>{});
     };
 
     page.clickButton = function(element, WaitTime, success) {
         return page.executeSequence([
             //console.log('1'),
-
             page.clickElement(element, WaitTime),
-            browser.sleep(1000),
             //console.log('2'),
                 browser.getProcessedConfig().then((config) => {
                     //added click element since Firefox and safari does not like clearfocus in clickButton
                     // console.log('config.capabilities.browserName: '+config.capabilities.browserName);
                     if (config.capabilities.browserName.toLowerCase() !== 'firefox' && config.capabilities.browserName.toLowerCase() !== 'safari') {
             //             console.log("clear focus");
-                        page.clearFocus();
+                        browser.sleep(1000);
+                        page.clearFocus().then(()=>{});
                     }
                 })//,
+           // success()
           //  console.log('3')
             ]).then(() => {
             //console.log('4')

@@ -22,20 +22,20 @@ Feature:  "SetUp"
   @Setup
   Scenario: "Setup Roles"
     And I wait
-    And I click on Admin Tab
-    And I click on Roles submenu from Admin Tab
-    ########################################
-    #Delete Role - DefaultPermissions
-    And I click on Gear Icon 3 "DefaultPermissions"
-    And I click Edit from Gear Icon "in Role List"
-    #Disable -  User
-    And I enter "default@example.com" on Filter Users in Role Editor
-    And I click checkbox on first user found from Filter Users in Role Editor
-    And I click on Save button in Role Editor
-    And I click Edit Button in Edit Roles
-    And I click on Delete button in Role Editor
-    And I click "Confirm" Button for modal warning message from Edit Roles
-      Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
+#    And I click on Admin Tab
+#    And I click on Roles submenu from Admin Tab
+#    ########################################
+#    #Delete Role - DefaultPermissions
+#    And I click on Gear Icon 3 "DefaultPermissions"
+#    And I click Edit from Gear Icon "in Role List"
+#    #Disable -  User
+#    And I enter "default@example.com" on Filter Users in Role Editor
+#    And I click checkbox on first user found from Filter Users in Role Editor
+#    And I click on Save button in Role Editor
+#    And I click Edit Button in Edit Roles
+#    And I click on Delete button in Role Editor
+#    And I click "Confirm" Button for modal warning message from Edit Roles
+#      Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
     ########################################
     #Delete Role - FeaturePermissions
     And I click on Admin Tab
@@ -232,7 +232,7 @@ Feature:  "SetUp"
     And I enter "admin@example.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
-      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+      #Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     ########################################
     #USER 1 edit first name
     And I click on Admin Tab

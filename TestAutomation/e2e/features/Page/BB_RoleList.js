@@ -82,7 +82,7 @@ var BB_RoleList = function BB_RoleList() {
                 this.numberofUsers++;
                 console.log(this.numberofUsers);
 
-                if (this.numberofUsers === currentValue) {
+                if (this.numberofUsers == currentValue) {
                     success();
                 }
                 else {

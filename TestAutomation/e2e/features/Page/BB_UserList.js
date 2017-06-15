@@ -65,7 +65,9 @@ var BB_UserList = function BB_UserList() {
                     }
                     else {
                         page.executeSequence([page.clickElement(BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.first(), protractorConfig.config.WaitTime),
-                            page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+                            page.clearFocus()
+                        //    page.focus(BB_userListRepo.Select_Element_TittleUserList, success)
+                        ]).then(()=>{success();});
                     }
                 })]).then(() => {});
         });
