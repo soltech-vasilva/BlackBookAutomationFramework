@@ -1,6 +1,7 @@
 //var paths = require('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/build/paths');
 //var browserstack = require('browserstack-local');
 //var paths = require('build/paths');
+var protractorConfig = require ('./e2e/features/Repository/BB_configuration.js');
 
 exports.config = {
     // shim: {
@@ -21,12 +22,12 @@ exports.config = {
     //specs: [
     //'e2e/features/TestCases/*.feature'
     // ],
-    'StopRunAtFail': true,   //false original
-    'WaitTime': 20000,
-    'BuildTestNumber': '194',
+    'StopRunAtFail': protractorConfig.StopRunAtFail,   //false original
+    'WaitTime': protractorConfig.WaitTime,
+    'BuildTestNumber': protractorConfig.BuildTestNumber,
 
     //Turn off applitool
-    'ApplitoolsOn': true,
+    'ApplitoolsOn': protractorConfig.ApplitoolsOn,
     //'ApplitoolsOn': false,
 
     //Running Test Cases in specific order.
@@ -83,8 +84,8 @@ exports.config = {
     // 'height': 666,
 
     //Test 2 on this resolution (Mac max resolution)
-    'width': 1814,
-    'height': 974,
+    'width': protractorConfig.width,
+    'height': protractorConfig.height,
 
     // // //windows all version max resolution
     // 'width': 1942,
@@ -310,7 +311,7 @@ exports.config = {
         //require: [paths.distFiles, paths.support],
         // require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/support/JsonOutputHook.js'],
 
-        require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/step_definitions/my_steps.js' ],
+        require: [protractorConfig.Path_mySteps.toString()],
 
         // tags: false,
        // tags: '@TC_Login_B-3',

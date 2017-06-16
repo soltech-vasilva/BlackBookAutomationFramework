@@ -63,20 +63,20 @@ gulp.task('Chrome_Setup',  ()=>
         gulp.src([])
         //Chrome
             .pipe(protractor({
-                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_Setup.js'
+                configFile: '/Users/visilva/WebstormProjects/BlackBookAutomationFramework/TestAutomation/protractor-Chrome_Setup.js'
             }))
             .on('end', resolve)
             .on('error', resolve);
     });
 });
 
-gulp.task('Chrome_VerifyRoles_Part1', ['Chrome_Setup'], ()=>
+gulp.task('Chrome_VerifyRoles_Part1', /*['Chrome_Setup'],*/ ()=>
 {
     return new Promise((resolve, reject) => {
         gulp.src([])
         //Chrome
             .pipe(protractor({
-                configFile: '/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-Chrome_VerifyRoles_Part1.js'
+                configFile: '/Users/visilva/WebstormProjects/BlackBookAutomationFramework/TestAutomation/protractor-Chrome_VerifyRoles_Part1.js'
             }))
             .on('end', resolve)
             .on('error', resolve);

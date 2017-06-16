@@ -6,7 +6,9 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+// var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var protractorConfigfile = require('../Repository/BB_configuration.js');
+var protractorConfig = require (protractorConfigfile.Path_protractorConfig);
 var BB_loginRepo = require ('../Repository/BB_LoginRepo.js');
 var utilities = require('../Page/Utilities.js');
 var page = require ('../Page/Page_Objects');
@@ -42,7 +44,7 @@ var BB_Login = function BB_Login() {
     BB_Login.prototype.Enter_CurrentEmailAddress_Login = function (currentEmail) {
         return new Promise((success, failure)=> {
             page.executeSequence([this.currentEmailAddress = utilities.ReplaceDoubleQuotesWithWhiteSpace(currentEmail.toString()),
-                page.fill(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress, protractorConfig.config.WaitTime,BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
+                page.fill(BB_loginRepo.Select_Element_UserEmailAddressTextbox, this.currentEmailAddress, protractorConfig.WaitTime,BB_loginRepo.Select_Element_AutoBahnLogInPageImage, success)
             ]).then(()=>{});
         });
     };

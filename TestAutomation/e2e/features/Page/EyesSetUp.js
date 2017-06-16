@@ -6,9 +6,11 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
+// var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var protractorConfigfile = require('../Repository/BB_configuration.js');
+var protractorConfig = require (protractorConfigfile.Path_protractorConfig);
 var Eyes = require('eyes.protractor').Eyes;
 var request = require("request");
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 var EyesSetUp = function EyesSetUp(){
 

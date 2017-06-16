@@ -10,8 +10,8 @@ var BB_LoginRepo = function BB_LoginRepo () {
 
     //Components STRING
     //BB_LoginRepo.prototype.BlackBookEnvironmentUrl = 'https://autobahn.';
-    //BB_LoginRepo.prototype.BlackBookEnvironmentUrl = 'https://qa-autobahn.';
-    BB_LoginRepo.prototype.BlackBookEnvironmentUrl = 'https://dev-autobahn.';
+    BB_LoginRepo.prototype.BlackBookEnvironmentUrl = 'https://qa-autobahn.';
+    //BB_LoginRepo.prototype.BlackBookEnvironmentUrl = 'https://dev-autobahn.';
     BB_LoginRepo.prototype.BlackBookUrl = this.BlackBookEnvironmentUrl+'blackbookcloud.com';
 
     //Components BUTTONS

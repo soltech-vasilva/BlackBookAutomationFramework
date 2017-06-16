@@ -6,8 +6,10 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
+// var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var protractorConfigfile = require('../Repository/BB_configuration.js');
+var protractorConfig = require (protractorConfigfile.Path_protractorConfig);
 var BB_roleListRepo = require('../Repository/BB_RoleListRepo.js');
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var page = require ('../Page/Page_Objects');
 
 var BB_RoleList = function BB_RoleList() {

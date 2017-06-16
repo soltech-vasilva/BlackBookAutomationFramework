@@ -6,13 +6,15 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
+// var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var protractorConfigfile = require('../Repository/BB_configuration.js');
+var protractorConfig = require (protractorConfigfile.Path_protractorConfig);
 var verifyErrorMessage = require('../Page/VerifyErrorMessage.js');
 var BB_editRolesRepo =  require('../Repository/BB_EditRolesRepo.js');
 var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
 var BB_userListRepo =  require('../Repository/BB_UserListRepo.js');
 var BB_loginRepo = require('../Repository/BB_LoginRepo.js');
 var page = require ('../Page/Page_Objects');
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 
 var VerifyPopUpMessage = function VerifyPopUpMessage() {
 

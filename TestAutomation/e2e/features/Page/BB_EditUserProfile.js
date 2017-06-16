@@ -6,11 +6,12 @@ var expect = chai.expect;
 var chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 
-
+// var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var protractorConfigfile = require('../Repository/BB_configuration.js');
+var protractorConfig = require (protractorConfigfile.Path_protractorConfig);
 var BB_editUserProfileRepo =  require('../Repository/BB_EditUserProfileRepo.js');
 var utilities = require('../Page/Utilities.js');
 var keyStrokesRepo = require ('../Repository/KeyStrokesRepo.js');
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var page = require ('../Page/Page_Objects');
 
 var BB_EditUserProfile = function BB_UserProfileEdit(){

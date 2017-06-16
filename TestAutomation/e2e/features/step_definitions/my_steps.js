@@ -10,6 +10,9 @@ var Eyes = require('eyes.protractor').Eyes;
 var eyes = new Eyes();
 eyes.setApiKey('3YYHRcaSI3DcqsNPRFm3WnU1BFg3vP72Ftxe6e8t6iY110');
 
+// var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var protractorConfigfile = require('../Repository/BB_configuration.js');
+var protractorConfig = require (protractorConfigfile.Path_protractorConfig);
 var BB_editUserProfile = require('../Page/BB_EditUserProfile.js');
 var BB_login = require('../Page/BB_Login');
 var eyesSetUp = require('../Page/EyesSetUp.js');
@@ -20,7 +23,6 @@ var BB_userList = require('../Page/BB_UserList');
 var verify_UserInformation = require('../Page/VerifyUserInfo.js');
 var BB_editRoles = require('../Page/BB_EditRoles.js');
 var verifyPopUpMessages = require('../Page/VerifyPopUpMessages.js');
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
 var protractor = require('protractor');
 var utilities = require('../Page/Utilities.js');
 var page = require ('../Page/Page_Objects');

@@ -2,7 +2,7 @@
 //var browserstack = require('browserstack-local');
 //var paths = require('build/paths');
 var dateFormat = require('dateformat');
-var protractorConfig = require ('/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/protractor-conf.js');
+var protractorConfig = require ('./e2e/features/Repository/BB_configuration.js');
 
 exports.config = {
 
@@ -11,7 +11,7 @@ exports.config = {
     // ],
 
     //Turn off applitool
-    'ApplitoolsOn': false,
+    'ApplitoolsOn': protractorConfig.ApplitoolsOn,
 
     //Running Test Cases in specific order.
     specs: [
@@ -68,8 +68,8 @@ exports.config = {
     // 'height': 666,
 
     //Test 2 on this resolution (Mac max resolution)
-    'width': 1814,
-    'height': 974,
+    'width': protractorConfig.width,
+    'height': protractorConfig.height,
 
     // // //windows all version max resolution
     // 'width': 1942,
@@ -77,7 +77,7 @@ exports.config = {
 
     'commonCapabilities': {
          //Label
-        'build':''+protractorConfig.config.BuildTestNumber+'__________________ Run : Chrome_______________ Test : Verify Roles Part 1_______ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
+        'build':''+protractorConfig.BuildTestNumber+'__________________ Run : Chrome_______________ Test : Verify Roles Part 1_______ ' + dateFormat(new Date(), "mmmm dS, yyyy, h:MM TT"),
         'project': 'Black Book',
          'name': 'Add User Part 1',
 
@@ -275,7 +275,7 @@ exports.config = {
         //require: [paths.distFiles, paths.support],
         // require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/support/JsonOutputHook.js'],
 
-        require: ['/Users/Vsilva/WebstormProjects/BlackBook_AutomationFramework/TestAutomation/e2e/features/step_definitions/my_steps.js' ],
+        require: [protractorConfig.Path_mySteps.toString()],
 
         // tags: false,
         //tags: ' @TestCases_C-7',
