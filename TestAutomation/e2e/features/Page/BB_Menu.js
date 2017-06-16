@@ -287,7 +287,6 @@ BB_Menu = function BB_Menu() {
                 //  browser.sleep(1000),
                 browser.getProcessedConfig().then((config) => {
                     if (config.capabilities.browserName !== 'firefox') {
-                        //console.log('click');
                         browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform();
                         // .then(() => {
                         //   //  success();
