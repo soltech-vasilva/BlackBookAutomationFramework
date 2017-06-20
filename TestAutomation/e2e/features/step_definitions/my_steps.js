@@ -331,7 +331,7 @@ var myBlackBookSteps = function myBlackBookSteps() {
     });
 
     //TODO delete is not used anymore to close pop ups it better to change it to click to close
-    this.Given(/^I click X on Message Popup in Role list$/, function ( ) {
+    this.Given(/^I click X on Message Popup in "([^"]*)"$/, function (pageName) {
         return BB_editRoles.Click_X_CloseMessagePopup_RoleEditor();
     });
 

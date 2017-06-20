@@ -35,8 +35,10 @@ var BB_UserList = function BB_UserList() {
     BB_UserList.prototype.Click_StatusFilter = function () {
         return new Promise((success, failure) => {
             page.executeSequence([page.clickElement(BB_userListRepo.Select_Element_StatusFilter, protractorConfig.config.WaitTime),
-                page.focus(BB_userListRepo.Select_Element_TittleUserList, success)
+                page.clearFocus()
+                // page.focus(BB_userListRepo.Select_Element_TittleUserList, success)
             ]).then(() => {
+                success();
             });
         });
     };
@@ -63,7 +65,9 @@ var BB_UserList = function BB_UserList() {
                     if (config.capabilities.browserName === 'Edge' ||  config.capabilities.browserName ==='firefox') {
                         console.log('EDGE');
                         page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.get(this.index), protractorConfig.config.WaitTime),
-                            page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+                            page.clearFocus()
+                        //    page.focus(BB_userListRepo.Select_Element_TittleUserList, success)
+                        ]).then(()=>{success();});
                     }
                     else {
                         page.executeSequence([page.clickElement(BB_userListRepo.Select_Element_Gear_Deactivate_Submenu.first(), protractorConfig.config.WaitTime),
@@ -84,11 +88,15 @@ var BB_UserList = function BB_UserList() {
                     if (config.capabilities.browserName === 'Edge' || config.capabilities.browserName ==='firefox') {
                        // console.log('EDGE');
                         page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Activate_Submenu.get(this.index), protractorConfig.config.WaitTime),
-                            page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+                            page.clearFocus()
+                         //   page.focus(BB_userListRepo.Select_Element_TittleUserList, success)
+                        ]).then(()=>{success();});
                     }
                     else {
                         page.executeSequence([page.clickElement( BB_userListRepo.Select_Element_Gear_Activate_Submenu.first(), protractorConfig.config.WaitTime),
-                            page.focus(BB_userListRepo.Select_Element_TittleUserList, success)]).then(()=>{});
+                            page.clearFocus()
+                        //    page.focus(BB_userListRepo.Select_Element_TittleUserList, success)
+                        ]).then(()=>{success();});
                     }
                 })]).then(() => {});
         });

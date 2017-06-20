@@ -26,9 +26,9 @@ var KeyStrokeRepo = function KeyStrokeRepo () {
           //  console.log(" config.capabilities.browserName: " +  config.capabilities.browserName);
             browser.driver.sleep(1000);
 
-            if (config.capabilities.browserName == 'safari' || config.capabilities.os === undefined) {
+            if (config.capabilities.browserName.toLowerCase() === 'safari' || config.capabilities.os === undefined) {
                 console.log('Mycomputer');
-                if (config.capabilities.browserName == 'firefox') {
+                if (config.capabilities.browserName.toLowerCase() === 'firefox') {
                     elementToClick.sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys(protractor.Key.DELETE);
                 } else {
                     browser.actions().sendKeys(protractor.Key.chord(protractor.Key.COMMAND, 'a')).sendKeys(protractor.Key.DELETE).perform();

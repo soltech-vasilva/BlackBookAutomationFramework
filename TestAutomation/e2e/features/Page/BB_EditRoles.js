@@ -38,7 +38,9 @@ var BB_EditRoles = function BB_EditRoles() {
     BB_EditRoles.prototype.Click_ResetButton_RoleEditor = function () {
         return new Promise((success, failure) => {
             page.executeSequence([page.clickElement(BB_editRolesRepo.Select_Element_Reset_button, protractorConfig.config.WaitTime),
-                page.focus(BB_editRolesRepo.Select_Element_TittleAddNewRole ,success)]).then(()=>{});
+                page.clearFocus()
+                //page.focus(BB_editRolesRepo.Select_Element_TittleAddNewRole ,success)
+            ]).then(()=>{success();});
         });
     };
 
@@ -72,7 +74,7 @@ var BB_EditRoles = function BB_EditRoles() {
                             page.clickButton(BB_editRolesRepo.Select_Element_Confirm_button_RoleList, protractorConfig.config.WaitTime, success);
                         }
                         else {
-                            //   console.log('Confirm button on other page CHECK URL BUG');
+                               console.log('Confirm button on other page CHECK URL BUG');
                             //  console.log('currentURL:'+currentURL[1]);
                             page.clickButton(BB_editRolesRepo.Select_Element_Confirm_button_RoleProfile, protractorConfig.config.WaitTime, success);
                         }
@@ -181,7 +183,8 @@ var BB_EditRoles = function BB_EditRoles() {
 
     BB_EditRoles.prototype.Click_CheckboxfoundFilterUsers_RoleEditor = function () {
         return new Promise((success, failure) => {
-           page.clickButton(BB_editRolesRepo.Select_Element_RolesIsUser_AllCheckbox.get(0), protractorConfig.config.WaitTime, success);
+            page.clickButton(BB_editRolesRepo.Select_Element_RolesIsUser_AllCheckbox.first(), protractorConfig.config.WaitTime, success);
+          // page.clickButton(element(by.xpath('//*[@id="center"]/div/div[4]/div[3]/div/div/div[1]/div[1]/span')), protractorConfig.config.WaitTime, success);
         });
     };
 

@@ -29,16 +29,18 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
         return new Promise((success, failure) => {
             page.executeSequence([ browser.sleep(2000),
                 page.clickElement(BB_editUserProfileRepo.Select_Element_EditButton,protractorConfig.config.WaitTime),
-                page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
-            ]).then(()=>{});
+               page.clearFocus()
+                // page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
+            ]).then(()=>{success();});
         });
     };
 
     BB_EditUserProfile.prototype.Click_ResetButton_EditUserProfile = function () {
         return new Promise((success, failure) => {
             page.executeSequence([page.clickElement(BB_editUserProfileRepo.Select_Element_ResetButton,protractorConfig.config.WaitTime),
-                page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
-            ]).then(()=>{});
+                page.clearFocus()
+                // page.focus(BB_editUserProfileRepo.Select_Element_TittleAddNewUserProfileText,success )
+            ]).then(()=>{success();});
         });
     };
 
@@ -198,7 +200,10 @@ var BB_EditUserProfile = function BB_UserProfileEdit(){
     BB_EditUserProfile.prototype.Click_Delete_Content = function(success, elementToClick, elementTitlePage) {
         return page.executeSequence([page.clickElement(elementToClick, protractorConfig.config.WaitTime),
             keyStrokesRepo.CONTROL_ALL_DELETE(elementToClick),
-            page.focus(elementTitlePage, success)]).then(() => {
+            page.clearFocus()
+                //page.focus(elementTitlePage, success)
+        ]).then(() => {
+            success();
         });
     };
 

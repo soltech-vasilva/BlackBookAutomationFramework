@@ -598,7 +598,7 @@ gulp.task('Safari_Setup',  ()=>
 });
 
 //PASS
-gulp.task('default', [/*'Chrome_Setup',*/'Chrome_VerifyRoles_Part1'/*, 'Chrome_AddUserPart0' ,'Chrome_EditRoles','Chrome_VerifyRoles_Part2', 'Chrome_Bugs','Chrome_AddUserPart1' , 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login'*/]); //falta userlist and login
+gulp.task('default', ['Chrome_Setup'/*,'Chrome_VerifyRoles_Part1', 'Chrome_AddUserPart0' ,'Chrome_EditRoles','Chrome_VerifyRoles_Part2', 'Chrome_Bugs','Chrome_AddUserPart1' , 'Chrome_EditUserProfile', 'Chrome_UsersList','Chrome_Login'*/]); //falta userlist and login
 //gulp.task('default', ['Edge_Setup' ,'Edge_VerifyRoles_Part1', 'Edge_AddUserPart0','Edge_EditRoles','Edge_VerifyRoles_Part2', 'Edge_Bugs','Edge_AddUserPart1' , 'Edge_EditUserProfile', 'Edge_UsersList','Edge_Login']); //falta userlist and login
 //gulp.task('default', [/*'IE_Setup' ,'IE_VerifyRoles_Part1', 'IE_AddUserPart0','IE_EditRoles','IE_VerifyRoles_Part2', */'IE_Bugs','IE_AddUserPart1' , 'IE_EditUserProfile', 'IE_UsersList','IE_Login']); //falta userlist and login
 

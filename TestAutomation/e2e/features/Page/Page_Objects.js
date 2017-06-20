@@ -53,7 +53,7 @@ var Page_Objects = function Page_Objects () {
             var currentURL = getCurrentURL.split("://");
             var compareURL = str_compareURL.toString().split("://");
 
-            if (currentURL[1].trim() == compareURL[1].trim()) {
+            if (currentURL[1].trim() === compareURL[1].trim()) {
                 page.waitForElementTobePresent(element_PageVerify, WaitTime)
                     .then(() => {
                         success();
@@ -108,30 +108,31 @@ var Page_Objects = function Page_Objects () {
         // page.clearFocus(), 
         return page.executeSequence([
             page.waitForElementTobePresent(element, WaitTime),
-             browser.actions().click(element).perform()
-            //element.click()
+            // browser.actions().click(element).perform()
+            element.click()
         ]).then(()=>{});
     };
 
     page.clickButton = function(element, WaitTime, success) {
         return page.executeSequence([
+            //browser.sleep(1000),
             //console.log('1'),
             page.clickElement(element, WaitTime),
             //console.log('2'),
-                browser.getProcessedConfig().then((config) => {
-                    //added click element since Firefox and safari does not like clearfocus in clickButton
-                    // console.log('config.capabilities.browserName: '+config.capabilities.browserName);
-                    if (config.capabilities.browserName.toLowerCase() !== 'firefox' && config.capabilities.browserName.toLowerCase() !== 'safari') {
-            //             console.log("clear focus");
-                        browser.sleep(1000);
-                        page.clearFocus().then(()=>{});
-                    }
-                })//,
-           // success()
-          //  console.log('3')
-            ]).then(() => {
+            browser.getProcessedConfig().then((config) => {
+                //added click element since Firefox and safari does not like clearfocus in clickButton
+                // console.log('config.capabilities.browserName: '+config.capabilities.browserName);
+                if (config.capabilities.browserName.toLowerCase() !== 'firefox' && config.capabilities.browserName.toLowerCase() !== 'safari') {
+                    //             console.log("clear focus");
+                    //  browser.sleep(1000);
+                    page.clearFocus().then(()=>{});
+                }
+            })//,
+            // success()
+            //  console.log('3')
+        ]).then(() => {
             //console.log('4')
-            success();
+            return success();
         });
 
 
@@ -225,17 +226,23 @@ var Page_Objects = function Page_Objects () {
     //     return element.sendKeys(value);
     // };
 
-    page.fill = function (element , str_SendValue, WaitTime , elementClearFocus , success) {
+    page.fill = function ( element , str_SendValue, WaitTime , elementClearFocus , success) {
         return page.executeSequence([page.clickElement(element, WaitTime).then(() => {
                 if (str_SendValue !== '') {
                     page.executeSequence([
                         element.sendKeys(str_SendValue),
                         page.VerifyValueEntered_RetypeValue(element, str_SendValue),
-                    ]).then(()=>{page.focus(elementClearFocus, success).then(()=>{});});
+                    ]).then(() => {
+                        page.clearFocus().then(() => {
+                            success();
+                        });
+                    });
+                    //  page.focus(elementClearFocus, success).then(()=>{});});
                 }
                 else
                 {
-                    page.focus(elementClearFocus, success).then(()=>{});
+                    page.clearFocus().then(()=>{success ();});
+                    // page.focus(elementClearFocus, success).then(()=>{});
                 }
             })]).then(()=>{});
     };
@@ -281,7 +288,9 @@ var Page_Objects = function Page_Objects () {
     page.ClickDeleteContent = function( elementToClick, elementClearFocus, success) {
        return page.executeSequence([ page.clickElement(elementToClick),
         keyStrokesRepo.CONTROL_ALL_DELETE(elementToClick),
-         page.focus(elementClearFocus, success)]);
+         page.clearFocus()
+           //page.focus(elementClearFocus, success)
+       ]).then(()=>{success();});
     };
     /**
      * Clears any content from an input before entering a new value
@@ -371,8 +380,8 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
     page.selectDropdownItemByValue = function(dropdown, value, success, elementClearFocus) {
         return page.executeSequence([
             page.clickElement(dropdown),
-            dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).first().click(),
-           // dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).click(),
+           // dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).first().click(),
+            dropdown.all(by.css('option[value="' + value.toString().toLowerCase() + '"]')).click(),
             browser.getProcessedConfig().then((config) => {
                 //Only firefox , it wont select item
                 if (config.capabilities.browserName === 'firefox') {
@@ -391,9 +400,9 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
                     page.clickElement(dropdown);
                 }
             }),
-            page.focus(elementClearFocus, success)
+            page.clearFocus()
         ]).then(()=>{
-            //success();
+            success();
         });
     };
 
@@ -406,7 +415,7 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
      * @returns {Promise}
      */
     page.waitForElementTobePresent = function(element , WaitTime) {
-       return page.executeSequence([browser.wait(protractor.ExpectedConditions.presenceOf(element), WaitTime)]).then(()=>{});
+       return page.executeSequence([browser.wait(protractor.ExpectedConditions.presenceOf(element), WaitTime), browser.sleep(1000)]).then(()=>{});
     };
 };
 module.exports =  new Page_Objects();

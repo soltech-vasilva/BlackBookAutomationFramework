@@ -15,22 +15,33 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     BB_EditRolesRepo.prototype.o_AttributeString_Permission_GridCheckbox_Checked  =  'icon-square-o grid-checkbox-unchecked grid-checkbox';
 
     //Components BUTTONS
-    BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleList  =    element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button'));
-    BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleProfile  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button'));
-    BB_EditRolesRepo.prototype.Select_Element_Edit_button  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button'));
-    BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.css('button.button.green-btn'));
+   //BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleProfile  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button'));
+    BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleProfile  = element(by.id('confirmSubmit'));
+    // BB_EditRolesRepo.prototype.Select_Element_Edit_button  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button'));
+    BB_EditRolesRepo.prototype.Select_Element_Edit_button  = element(by.id('roleEditButton'));
+    // BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.css('button.button.green-btn'));
+    BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.id('roleSaveButton'));
     BB_EditRolesRepo.prototype.Select_Element_Cancel_button  = element(by.buttonText('Cancel'));
     BB_EditRolesRepo.prototype.Select_Element_Reset_button  = element(by.css('button.button.yellow-btn'));
-    BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button[2]'));
-    BB_EditRolesRepo.prototype.Select_Element_Cancel_button_PopMenu  = element(by.css('button.button.red-btn'));
+    // BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button[2]'));
+    BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.id('roleDeleteButton'));
+    // BB_EditRolesRepo.prototype.Select_Element_Cancel_button_PopMenu  = element(by.css('button.button.red-btn'));
+    BB_EditRolesRepo.prototype.Select_Element_Cancel_button_PopMenu  = element(by.id('confirmCancel'));
+     BB_EditRolesRepo.prototype.Select_Element_Confirm_button_RoleList  =    element(by.xpath('//*[@id="page-box"]/role-list/div/div/div/dynamic-modal/modal/div/div/div[2]/div[2]/div[1]/button'));
 
     //Components TEXTBOX
-    BB_EditRolesRepo.prototype.Select_Element_FilterPermissionsTextbox = element.all(by.css('input[type="text"]')).get(1);
-    BB_EditRolesRepo.prototype.Select_Element_FilterUsersTextbox = element.all(by.css('input[type="text"]')).get(2);
-    BB_EditRolesRepo.prototype.Select_Element_RoleNameTextbox = element.all(by.css('input[type="text"]')).get(0);
+    // BB_EditRolesRepo.prototype.Select_Element_FilterPermissionsTextbox = element.all(by.css('input[type="text"]')).get(1);
+    BB_EditRolesRepo.prototype.Select_Element_FilterPermissionsTextbox = element(by.id("permissionSearchInput"));
+    // BB_EditRolesRepo.prototype.Select_Element_FilterUsersTextbox = element.all(by.css('input[type="text"]')).get(2);
+    BB_EditRolesRepo.prototype.Select_Element_FilterUsersTextbox = element(by.id('userSearchInput'));
+    // BB_EditRolesRepo.prototype.Select_Element_RoleNameTextbox = element.all(by.css('input[type="text"]')).get(0);
+
+    BB_EditRolesRepo.prototype.Select_Element_RoleNameTextbox = element(by.id('roleNameInput'));
 
     //Components DROPDOWN
-    BB_EditRolesRepo.prototype.Select_Element_FilterByGroupDropdown  = element.all(by.css('select[name="filterGroupTerm"]')).get(0);
+    BB_EditRolesRepo.prototype.Select_Element_FilterByGroupDropdown  = element(by.id("permissionFilterList"));
+    // BB_EditRolesRepo.prototype.Select_Element_FilterByGroupDropdown  = element.all(by.css('select[name="filterGroupTerm"]')).get(0);
+
     BB_EditRolesRepo.prototype.Select_Element_FilterByStatusDropdown  = element.all(by.css('select[name="filterGroupTerm"]')).get(1);
     BB_EditRolesRepo.prototype.Select_Element_RoleMarketDropdown = element(by.css('select[name="market"]'));
 
@@ -38,7 +49,9 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     BB_EditRolesRepo.prototype.Select_Element_Permission_Users_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(4);
     BB_EditRolesRepo.prototype.Select_Element_Permission_Settings_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(2);
     BB_EditRolesRepo.prototype.Select_Element_Permission_Roles_Checkbox  =  element.all(by.css('span.ag-group-checkbox')).get(0);
-    BB_EditRolesRepo.prototype.Select_Element_RolesIsUser_AllCheckbox  = element.all(by.css('.ag-cell-wrapper'));
+
+    BB_EditRolesRepo.prototype.Select_Element_RolesIsUser_AllCheckbox  = element.all(by.css('span.ag-cell-wrapper'));
+
     BB_EditRolesRepo.prototype.Select_Element_Permission_AllCheckboxs  =  element.all(by.css('span.ag-group-checkbox'));
     BB_EditRolesRepo.prototype.Select_Element_Permission_GridCheckbox  = element.all(by.css('span.icon-check-square.grid-checkbox-checked.grid-checkbox'));
 
@@ -48,8 +61,12 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
 
     //Components "SUCCESS MESSAGE DISPLAY"
     BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup_RoleList =by.xpath('//*[@id="page-box"]/role-list/div/div/message-box/div/div');
-    BB_EditRolesRepo.prototype.Select_Element_SuccessMessage_Popup_RoleList  = element(by.css('div.message-container.success'));//so I added css
-    BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup_EditRoles =by.xpath('//*[@id="page-box"]/role-profile/div/div/message-box/div/div');
+    // BB_EditRolesRepo.prototype.Select_Element_SuccessMessage_Popup_RoleList  = element(by.css('div.message-container.success'));//so I added css
+    BB_EditRolesRepo.prototype.Select_Element_SuccessMessage_Popup_RoleList  = element(by.id('notification0'));
+
+    // BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup_EditRoles =by.xpath('//*[@id="page-box"]/role-profile/div/div/message-box/div/div');
+    BB_EditRolesRepo.prototype.Select_Xpath_SuccessMessage_Popup_EditRoles = by.id('notification0');
+
     BB_EditRolesRepo.prototype.Select_Element_SuccessMessage_Popup_EditRoles = element(this.Select_Xpath_SuccessMessage_Popup_EditRoles);
 
     //Components "ERROR MESSAGE DISPLAY"

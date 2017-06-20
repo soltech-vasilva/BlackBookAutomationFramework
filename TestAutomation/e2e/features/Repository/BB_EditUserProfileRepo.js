@@ -12,10 +12,12 @@ var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
     BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element.all(by.css('button.button')).get(0);
     BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[2]'));
     BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[1]'));
-    BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.css('button.button.green-btn.pull-right'));
+    // BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.css('button.button.green-btn.pull-right'));
+    BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.id('saveUserButton'));
 
     //Components TEXTBOX
-    BB_EditUserProfileRepo.prototype.Select_Element_FirstNameTextbox = element(by.css('input[placeholder="First Name"]'));
+    // BB_EditUserProfileRepo.prototype.Select_Element_FirstNameTextbox = element(by.css('input[placeholder="First Name"]'));
+    BB_EditUserProfileRepo.prototype.Select_Element_FirstNameTextbox = element(by.id('userFirstName'));
     BB_EditUserProfileRepo.prototype.Select_Element_LastNameTextbox = element(by.css('input[placeholder="Last Name"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_EmailAddressTextbox = element(by.css('input[placeholder="Email"]'));
     BB_EditUserProfileRepo.prototype.Select_Element_PhoneNumberTextbox = element(by.css('input[placeholder="Phone Number"]'));

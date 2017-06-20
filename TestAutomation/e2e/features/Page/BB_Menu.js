@@ -146,17 +146,17 @@ BB_Menu = function BB_Menu() {
                 page.waitForElementTobePresent(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
                // console.log('b'),
                // console.log('c'),
-                //page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
-                //browser.sleep(1000),
+                page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
+                browser.sleep(1000),
                 browser.wait(browser.getProcessedConfig().then((config) => {
                  //   console.log("config:" + config.capabilities.browserName);
                     if (config.capabilities.browserName !== 'firefox' /*|| config.capabilities.browserName != 'Chrome'*/) {
                    //     console.log("click");
-                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform();
-                        //  .then(() => {
-                        //    // console.log('possible succes');
-                        //     success();
-                        // });
+                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform()
+                         .then(() => {
+                           // console.log('possible succes');
+                            success();
+                        });
                     }
                     else {
                         console.log("Robot");
@@ -171,13 +171,13 @@ BB_Menu = function BB_Menu() {
                             console.log('location Y:' + y);
 
                             robot.moveMouse(location.x + 10, location.y + 130);
-                          //   success();
+                             success();
                         });
                     }
                 }))
             ]).then(() => {
                 //console.log('e');
-                success();
+               // success();
             });
         });
     };
@@ -208,37 +208,51 @@ BB_Menu = function BB_Menu() {
     BB_Menu.prototype.Click_Roles_Submenu = function () {
         return new Promise((success, failure) => {
             page.executeSequence([
-                //page.clearFocus().then(()=>{}),
-                //browser.sleep(1000),
-                BB_menuRepo.Select_Element_RolesSubMenuButton.isDisplayed().then((isDisplay)=>{
-                    console.log("isDisplay:"+isDisplay);
+                //  page.clearFocus().then(()=>{}),
+                // browser.sleep(1000),
+                BB_menuRepo.Select_Element_RolesSubMenuButton.isDisplayed().then((isDisplay) => {
+                    console.log("isDisplay:" + isDisplay);
 
-                    if (isDisplay === false)
-                    {
-                        console.log('false**');
-                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform();
-                        //browser.sleep(1000);
-                       // page.waitForElementTobePresent(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime).then(()=>{});
-                        page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime)
-                            .then(()=>{
-                        //    success();
+                    if (isDisplay == false) {
+
+                        page.executeSequence([
+                           // page.clearFocus(),
+                           // browser.sleep(1000),
+                            // console.log('false** start'),
+                            page.clickElement(BB_menuRepo.Select_Element_AdminTab, protractorConfig.config.WaitTime),
+                            browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_AdminTab).perform(),
+                            browser.sleep(1000),
+                            page.waitForElementTobePresent(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime),
+                            browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_RolesSubMenuButton).perform(),
+                            browser.sleep(1000),
+                            // page.waitForElementTobePresent(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime).then(()=>{});
+                            //  page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime)
+                            //      .then(()=>{
+                            //      success();
+                            //  })//,
+                            page.clickButton(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime, success)//,
+                            //    console.log('false**1 ends')
+                        ]).then(() => {
                         });
                         // page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime);
-                             //.then(()=>{success ();})//,
-                       // page.clickButton(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime, success);
+                        //.then(()=>{success ();})//,
+                        // page.clickButton(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime, success);
                     }
-                    else {
-                      //  page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime).then(()=>{success();});
-                      //   page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime)
-                      //       .then(()=>{
-                      //           //    success();
-                      //       });
+
+                    if (isDisplay == true) {
+                        //  page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime).then(()=>{success();});
+                        //   page.clickElement(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime)
+                        //       .then(()=>{
+                        //           //    success();
+                        //       });
+                        browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_RolesSubMenuButton).perform();
+                        browser.sleep(1000);
                         page.clickButton(BB_menuRepo.Select_Element_RolesSubMenuButton, protractorConfig.config.WaitTime, success);
                     }
 
                 })
-            ]).then(()=>{
-                success();
+            ]).then(() => {
+
             });
             // page.clearFocus().then(()=>{});
             // BB_menuRepo.Select_Element_RolesSubMenuButton.isDisplayed().then((isDisplay)=>{
@@ -283,8 +297,8 @@ BB_Menu = function BB_Menu() {
         return new Promise((success, failure) => {
             page.executeSequence([
                 page.waitForElementTobePresent(BB_menuRepo.Select_Element_ProfileButton, protractorConfig.config.WaitTime),
-                // page.clickElement(BB_menuRepo.Select_Element_ProfileButton, protractorConfig.config.WaitTime),
-                //  browser.sleep(1000),
+                 page.clickElement(BB_menuRepo.Select_Element_ProfileButton, protractorConfig.config.WaitTime),
+                  browser.sleep(1000),
                 browser.getProcessedConfig().then((config) => {
                     if (config.capabilities.browserName !== 'firefox') {
                         browser.driver.actions().mouseMove(BB_menuRepo.Select_Element_ProfileButton).perform();

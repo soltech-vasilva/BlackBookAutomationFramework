@@ -22,9 +22,9 @@ Feature:  "SetUp"
   @Setup
   Scenario: "Setup Roles"
     And I wait
+#    ########################################
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    ########################################
 #    #Delete Role - DefaultPermissions
 #    And I click on Gear Icon 3 "DefaultPermissions"
 #    And I click Edit from Gear Icon "in Role List"
@@ -46,10 +46,11 @@ Feature:  "SetUp"
     And I enter "feature@example.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
+    And I click X on Message Popup in "Role Editor"
     And I click Edit Button in Edit Roles
     And I click on Delete button in Role Editor
     And I click "Confirm" Button for modal warning message from Edit Roles
-      Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
+     # Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
     ########################################
     #Editing Role - Administrator
     And I click on Admin Tab
@@ -74,7 +75,8 @@ Feature:  "SetUp"
     And I click checkbox on first user found from Filter Users in Role Editor
     And I clear text box selected "FilterUsers" in Role Editor
     And I click on Save button in Role Editor
-      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+    And I click X on Message Popup in "Role Editor"
+      #Then I should see "Role successfully updated" displayed on "EditRoles" popup
     ########################################
     #Create new Role Editor-Full-User
     And I click on Admin Tab
@@ -117,7 +119,8 @@ Feature:  "SetUp"
     And I click checkbox on first user found from Filter Users in Role Editor
     And I clear text box selected "FilterUsers" in Role Editor
     And I click on Save button in Role Editor
-      Then I should see "Role successfully updated" displayed on "EditRoles" popup
+    And I click X on Message Popup in "Role Editor"
+      #Then I should see "Role successfully updated" displayed on "EditRoles" popup
     ########################################
     #Create new Role "Basic Role-No Permissions"
     And I click on Admin Tab
@@ -130,7 +133,8 @@ Feature:  "SetUp"
     And I enter "none@example.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
-      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+    And I click X on Message Popup in "Role Editor"
+     # Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     ########################################
      #Create new Role "Basic My Profile edit Permissions"
     And I click on Admin Tab
@@ -159,7 +163,8 @@ Feature:  "SetUp"
     And I enter "user2@example.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
-        Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+    And I click X on Message Popup in "Role Editor"
+      #  Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     ########################################
     #Create new Role "Editor-Full-Roles"
     And I click on Admin Tab
@@ -197,7 +202,8 @@ Feature:  "SetUp"
     And I enter "editor@example.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
-      Then I should see "Role has been successfully added" displayed on "EditRoles" popup
+    And I click X on Message Popup in "Role Editor"
+      #Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     ########################################
      #Create new Role "Setting-Only"
     And I click on Admin Tab
@@ -232,6 +238,7 @@ Feature:  "SetUp"
     And I enter "admin@example.com" on Filter Users in Role Editor
     And I click checkbox on first user found from Filter Users in Role Editor
     And I click on Save button in Role Editor
+    And I click X on Message Popup in "Role Editor"
       #Then I should see "Role has been successfully added" displayed on "EditRoles" popup
     ########################################
     #USER 1 edit first name
@@ -243,6 +250,7 @@ Feature:  "SetUp"
     And I clear text box selected "firstName" in User Profile
     And I enter my first name user1 in Form
     And I click on Save button in Edit User Profile
+    And I click X on Message Popup in "Role Editor"
     ########################################
     #USER 2 edit first name
     And I click on Admin Tab
@@ -253,6 +261,7 @@ Feature:  "SetUp"
     And I clear text box selected "firstName" in User Profile
     And I enter my first name user2 in Form
     And I click on Save button in Edit User Profile
+    And I click X on Message Popup in "Role Editor"
     ########################################
      #USER 3 edit first name
     And I click on Admin Tab
@@ -263,5 +272,7 @@ Feature:  "SetUp"
     And I clear text box selected "firstName" in User Profile
     And I enter my first name user3 in Form
     And I click on Save button in Edit User Profile
+    And I click X on Message Popup in "Role Editor"
+     ########################################
     And I click Avatar Image Button
     And I click Logout sub menu from Avatar
