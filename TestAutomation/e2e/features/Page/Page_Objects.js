@@ -108,8 +108,8 @@ var Page_Objects = function Page_Objects () {
         // page.clearFocus(), 
         return page.executeSequence([
             page.waitForElementTobePresent(element, WaitTime),
-            // browser.actions().click(element).perform()
-            element.click()
+             browser.actions().click(element).perform()
+            //element.click()
         ]).then(()=>{});
     };
 

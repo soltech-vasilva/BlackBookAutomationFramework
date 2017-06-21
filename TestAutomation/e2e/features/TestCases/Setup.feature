@@ -21,7 +21,7 @@ Feature:  "SetUp"
 
   @Setup
   Scenario: "Setup Roles"
-    And I wait
+   # And I wait
 #    ########################################
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
