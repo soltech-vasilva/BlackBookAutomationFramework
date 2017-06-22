@@ -23,9 +23,9 @@ Feature:  "SetUp"
   Scenario: "Setup Roles"
    # And I wait
 #    ########################################
+#    #Delete Role - DefaultPermissions
 #    And I click on Admin Tab
 #    And I click on Roles submenu from Admin Tab
-#    #Delete Role - DefaultPermissions
 #    And I click on Gear Icon 3 "DefaultPermissions"
 #    And I click Edit from Gear Icon "in Role List"
 #    #Disable -  User

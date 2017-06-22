@@ -123,16 +123,18 @@ var Page_Objects = function Page_Objects () {
                 //added click element since Firefox and safari does not like clearfocus in clickButton
                 // console.log('config.capabilities.browserName: '+config.capabilities.browserName);
                 if (config.capabilities.browserName.toLowerCase() !== 'firefox' && config.capabilities.browserName.toLowerCase() !== 'safari') {
-                    //             console.log("clear focus");
+                   // console.log("clear focus");
                     //  browser.sleep(1000);
                     page.clearFocus().then(()=>{});
                 }
+
+                success();
             })//,
             // success()
             //  console.log('3')
         ]).then(() => {
             //console.log('4')
-            return success();
+            // success();
         });
 
 
@@ -397,12 +399,11 @@ page.VerifyDropdownAttributeValue = function (element , verifyDropdownName,succe
 
                 if (config.capabilities.browserName === 'Edge') {
                     //Dont remove Added this Edge did not close dropdown, so click again close it.
-                    page.clickElement(dropdown);
+                    page.clickElement(dropdown).then(()=>{});
                 }
-            }),
-            page.clearFocus()
+            })
         ]).then(()=>{
-            success();
+            page.clearFocus().then(()=>{success();});
         });
     };
 

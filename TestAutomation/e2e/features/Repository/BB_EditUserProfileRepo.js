@@ -9,9 +9,14 @@ chai.use(chaiAsPromised);
 var BB_EditUserProfileRepo = function BB_EditUserProfileRepo () {
 
     //Components BUTTONS
-    BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element.all(by.css('button.button')).get(0);
-    BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[2]'));
-    BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[1]'));
+    // BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element.all(by.css('button.button')).get(0);
+    BB_EditUserProfileRepo.prototype.Select_Element_EditButton = element(by.id('editUserButton'));
+
+    // BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[2]'));
+    BB_EditUserProfileRepo.prototype.Select_Element_ResetButton = element(by.id('resetUserButton'));
+
+    // BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.xpath('//*[@id="page-box"]/user-profile/div/div/div[1]/div[1]/button[1]'));
+    BB_EditUserProfileRepo.prototype.Select_Element_CancelButton = element(by.id('cancelUserButton'));
     // BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.css('button.button.green-btn.pull-right'));
     BB_EditUserProfileRepo.prototype.Select_Element_SaveButton = element(by.id('saveUserButton'));
 

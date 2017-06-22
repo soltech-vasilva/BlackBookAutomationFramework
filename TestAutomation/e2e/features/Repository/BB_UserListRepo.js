@@ -11,7 +11,9 @@ var BB_UserListRepo = function BB_UserListRepo () {
     BB_UserListRepo.prototype.rowNumber = '0';
 
     //Components BUTTON
-    BB_UserListRepo.prototype.Select_Element_NewUserButton  = element(by.xpath('//*[@id="page-box"]/user-list/div/div/div/div[1]/button'));
+    // BB_UserListRepo.prototype.Select_Element_NewUserButton  = element(by.xpath('//*[@id="page-box"]/user-list/div/div/div/div[1]/button'));
+    // BB_UserListRepo.prototype.Select_Element_NewUserButton  = element(by.id('newUserButton'));
+    BB_UserListRepo.prototype.Select_Element_NewUserButton  = element(by.xpath('//*[@id="newUserButton"]'));
 
     BB_UserListRepo.prototype.Select_Element_EditGeardIcon = element.all(by.css('div.icon-cog.parent'));
 

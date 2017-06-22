@@ -22,7 +22,8 @@ var BB_EditRolesRepo = function BB_EditRolesRepo () {
     // BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.css('button.button.green-btn'));
     BB_EditRolesRepo.prototype.Select_Element_Save_button  = element(by.id('roleSaveButton'));
     BB_EditRolesRepo.prototype.Select_Element_Cancel_button  = element(by.buttonText('Cancel'));
-    BB_EditRolesRepo.prototype.Select_Element_Reset_button  = element(by.css('button.button.yellow-btn'));
+    // BB_EditRolesRepo.prototype.Select_Element_Reset_button  = element(by.css('button.button.yellow-btn'));
+    BB_EditRolesRepo.prototype.Select_Element_Reset_button  = element(by.id('roleResetButton'));
     // BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.xpath('//*[@id="page-box"]/role-profile/div/div/div[1]/div/button[2]'));
     BB_EditRolesRepo.prototype.Select_Element_Delete_button  = element(by.id('roleDeleteButton'));
     // BB_EditRolesRepo.prototype.Select_Element_Cancel_button_PopMenu  = element(by.css('button.button.red-btn'));

@@ -67,21 +67,25 @@ var BB_Login = function BB_Login() {
 
         return new Promise((success, failure) => {
             browser.ignoreSynchronization = true;
-            page.executeSequence([browser.sleep(2000),browser.wait(browser.getCurrentUrl()).then(function (getCurrentURL) {
+            page.executeSequence([
+                browser.sleep(2000),
+                browser.getCurrentUrl().then(function (getCurrentURL) {
                 var currentURL = getCurrentURL.split("://");
                 var getURL = URL.toString().split("://");
 
                 if (currentURL[1].trim() !== getURL[1].trim()) {
-                    page.openUrl(true, URL, 4000).then(() => {
-                        success();
+                    page.openUrl(true, URL, 4000)
+                        .then(() => {
+                       // success();
                     });
                 }
-                else {
-                    success();
-                }
+                // else {
+                //     success();
+                // }
             })]).then(() => {
-                page.clickElement(BB_loginRepo.Select_Element_AutoBahnLogInPageImage, protractorConfig.config.WaitTime).then(() => {
-                });
+                page.clearFocus().then(()=>{success();});
+                // page.clickElement(BB_loginRepo.Select_Element_AutoBahnLogInPageImage, protractorConfig.config.WaitTime).then(() => {
+                // });
             });
         });
     };
