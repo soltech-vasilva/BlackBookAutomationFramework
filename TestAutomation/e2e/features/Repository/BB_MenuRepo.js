@@ -49,7 +49,8 @@ var BB_MenuRepo = function BB_MenuRepo () {
     //     });
     // };
 
-    BB_MenuRepo.prototype.Select_Element_HomeTab = element(by.linkText('Home'));
+    // BB_MenuRepo.prototype.Select_Element_HomeTab = element(by.linkText('Home'));
+    BB_MenuRepo.prototype.Select_Element_HomeTab = element(by.id('dashboardLink'));
 
     //Components SubMenu Button for Admin Tab
     // BB_MenuRepo.prototype.Select_Element_UsersSubMenuButton = element(by.css('a[href="/user/list"]'));

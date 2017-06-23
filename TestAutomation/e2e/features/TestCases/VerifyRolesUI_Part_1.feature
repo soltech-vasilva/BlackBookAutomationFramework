@@ -14,122 +14,122 @@ Feature:  "Verify each Role UI"
     And I reload "LogIn" page
       Then I verify BlackBook "Login" page with Applitools
 
-#######################################################################################################################
-#                                            Administration                                                           #
-#######################################################################################################################
-
-  @TC_CheckRoles_UI_A
-  Scenario Outline: "@TC_CheckRoles_UI_A" Verify "Administration" Role UI.(After Setup)
-     #(BB-726),(BB-725)(BB-588)(BB-471 p-2) (BB-732) (BB-734)
-    And I enter my user email address <currentEmailAddress> in Login
-    And I enter my Password <currentPassword> in Login
-    And I click Login Button
-      Then I verify BlackBook "Home" page with Applitools
-    #ROLES
-    And I click on Admin Tab
-      Then I verify BlackBook "Admin Tab-Submenu (Administartor Account)" page with Applitools
-    And I click on Roles submenu from Admin Tab
-      Then I verify BlackBook "Role List" page with Applitools
-    And I click on Gear Icon 1 "Administrator in Role List"
-      Then I verify BlackBook "Gear Icon-Submenus in Role List" page with Applitools
-    And I click 1 View from Gear Icon in Role List
-      Then I verify BlackBook "View Administration Role" page with Applitools
-    And I click Edit Button in Edit Roles
-      Then I verify BlackBook "Edit Administration Role" page with Applitools
-    And I click on Save button in Role Editor
-      Then I verify BlackBook "Save Administration Role message" page with Applitools
-    And I click X on Message Popup in "Edit Role"
-    And I click Edit Button in Edit Roles
-    And I click Reset Button in Edit Roles
-      Then I verify BlackBook "Reset Administration Role" page with Applitools
-    And I click Cancel Button from Edit Roles
-      Then I verify BlackBook "Role List" page with Applitools
-    And I click on Gear Icon 1 "Administrator in Role List"
-    And I click Edit from Gear Icon "in Role List"
-      Then I verify BlackBook "Edit Administration Role" page with Applitools
-    And I click Cancel Button from Edit Roles
-      Then I verify BlackBook "Role List" page with Applitools
-    And I click on New Role Button in Role List
-      Then I verify BlackBook "Add New Role" page with Applitools
-    And I click Reset Button in Edit Roles
-      Then I verify BlackBook "Reset Administration Role" page with Applitools
-    And I click Cancel Button from Edit Roles
-      Then I verify BlackBook "Role List" page with Applitools
-    #USER
-    And I click on Admin Tab
-    And I click on Users submenu from Admin Tab
-      Then I verify BlackBook "User List" page with Applitools
-    And I click on Gear Icon 5 "USER feature@example.com in User List"
-      Then I verify BlackBook "Gear Icon-Submenus in User List" page with Applitools
-    And I click 5 View from Gear Icon in User List
-      Then I verify BlackBook "View User Profile none@example.com with NO ROLE" page with Applitools
-    And I click on Admin Tab
-    And I click on Users submenu from Admin Tab
-    And I click on Gear Icon 2 "USER all@example.com in User List"
-    And I click 2 View from Gear Icon in User List
-      Then I verify BlackBook "View User Profile all@example.com with ROLE" page with Applitools
-    And I click Edit Button in Edit User Profile
-      Then I verify BlackBook "Edit User Profile all@example.com" page with Applitools
-    #bug
-    #And I click on Save button in Edit User Profile
-      Then I verify BlackBook "Save User Profile all@example.com message" page with Applitools
-    #bug
-    #And I click Edit Button in Edit User Profile
-    And I click Reset Button in Edit User Profile
-      Then I verify BlackBook "Reset User Profile" page with Applitools
-    And I click Cancel Button in Edit User Profile
-      Then I verify BlackBook "User List" page with Applitools
-    And I click on Gear Icon 2 "USER all@example.com in User List"
-    And I click Deactivate in submenu from Gear Icon
-      Then I verify BlackBook "Should Not see USER all@example.com (Deactivate) in User List" page with Applitools
-    And I click Filter By User List Status dropdown "All" in User List
-    #And I click All in submenu from Status FilterValue
-     Then I verify BlackBook "All active and Inactive Users in User List" page with Applitools
-    And I click Filter By User List Status dropdown "Inactive" in User List
-      Then I verify BlackBook "Inactive USER all@example.com in User List" page with Applitools
-    And I click on Gear Icon 1 "USER all@example.com in User List"
-    And I click Activate in submenu from Gear Icon
-      Then I verify BlackBook "Should Not see USER all@example.com (Activate) in User List" page with Applitools
-    And I click Filter By User List Status dropdown "Active" in User List
-    #And I click Active in submenu from Status FilterValue
-      Then I verify BlackBook "User List" page with Applitools
-    And I click on New User Button in User List
-      Then I verify BlackBook "Add New User" page with Applitools
-    And I click Cancel Button in Edit User Profile
-      Then I verify BlackBook "User List" page with Applitools
-    #SETTINGS
-    And I click on Admin Tab
-    And I click on Settings submenu from Admin Tab
-     Then I verify BlackBook "Settings" page with Applitools
-    #SEGMENTS need more
-    #AVATAR
-    And I click Avatar Image Button
-      Then I verify BlackBook "Avatar button-Submenu" page with Applitools
-    And I click My Profile sub menu from Avatar
-      Then I verify BlackBook "View My Profile" page with Applitools
-    And I click Edit Button in Edit User Profile
-      Then I verify BlackBook "Edit My Profile" page with Applitools
-    #bug
-    #And I click on Save button in Edit User Profile
-      Then I verify BlackBook "Save User Profile user1@example.com message" page with Applitools
-    #bug
-    #And I click Edit Button in Edit User Profile
-    And I click Reset Button in Edit User Profile
-      Then I verify BlackBook "Reset My Profile" page with Applitools
-    And I click Cancel Button in Edit User Profile
-      Then I verify BlackBook "Edit My Profile" page with Applitools
-    And I click Avatar Image Button
-    And I click Logout sub menu from Avatar
-    And I wait
-      Then I verify BlackBook "Login" page with Applitools
-    And I wait
-
-    Examples:
-           | currentEmailAddress             |   currentPassword  |
-#With Role attached
-           | user1@example.com               |   Password1        |
-
-
+########################################################################################################################
+##                                            Administration                                                           #
+########################################################################################################################
+#
+#  @TC_CheckRoles_UI_A
+#  Scenario Outline: "@TC_CheckRoles_UI_A" Verify "Administration" Role UI.(After Setup)
+#     #(BB-726),(BB-725)(BB-588)(BB-471 p-2) (BB-732) (BB-734)
+#    And I enter my user email address <currentEmailAddress> in Login
+#    And I enter my Password <currentPassword> in Login
+#    And I click Login Button
+#      Then I verify BlackBook "Home" page with Applitools
+#    #ROLES
+#    And I click on Admin Tab
+#      Then I verify BlackBook "Admin Tab-Submenu (Administartor Account)" page with Applitools
+#    And I click on Roles submenu from Admin Tab
+#      Then I verify BlackBook "Role List" page with Applitools
+#    And I click on Gear Icon 1 "Administrator in Role List"
+#      Then I verify BlackBook "Gear Icon-Submenus in Role List" page with Applitools
+#    And I click 1 View from Gear Icon in Role List
+#      Then I verify BlackBook "View Administration Role" page with Applitools
+#    And I click Edit Button in Edit Roles
+#      Then I verify BlackBook "Edit Administration Role" page with Applitools
+#    And I click on Save button in Role Editor
+#      Then I verify BlackBook "Save Administration Role message" page with Applitools
+#    And I click X on Message Popup in "Edit Role"
+#    And I click Edit Button in Edit Roles
+#    And I click Reset Button in Edit Roles
+#      Then I verify BlackBook "Reset Administration Role" page with Applitools
+#    And I click Cancel Button from Edit Roles
+#      Then I verify BlackBook "Role List" page with Applitools
+#    And I click on Gear Icon 1 "Administrator in Role List"
+#    And I click Edit from Gear Icon "in Role List"
+#      Then I verify BlackBook "Edit Administration Role" page with Applitools
+#    And I click Cancel Button from Edit Roles
+#      Then I verify BlackBook "Role List" page with Applitools
+#    And I click on New Role Button in Role List
+#      Then I verify BlackBook "Add New Role" page with Applitools
+#    And I click Reset Button in Edit Roles
+#      Then I verify BlackBook "Reset Administration Role" page with Applitools
+#    And I click Cancel Button from Edit Roles
+#      Then I verify BlackBook "Role List" page with Applitools
+#    #USER
+#    And I click on Admin Tab
+#    And I click on Users submenu from Admin Tab
+#      Then I verify BlackBook "User List" page with Applitools
+#    And I click on Gear Icon 5 "USER feature@example.com in User List"
+#      Then I verify BlackBook "Gear Icon-Submenus in User List" page with Applitools
+#    And I click 5 View from Gear Icon in User List
+#      Then I verify BlackBook "View User Profile none@example.com with NO ROLE" page with Applitools
+#    And I click on Admin Tab
+#    And I click on Users submenu from Admin Tab
+#    And I click on Gear Icon 2 "USER all@example.com in User List"
+#    And I click 2 View from Gear Icon in User List
+#      Then I verify BlackBook "View User Profile all@example.com with ROLE" page with Applitools
+#    And I click Edit Button in Edit User Profile
+#      Then I verify BlackBook "Edit User Profile all@example.com" page with Applitools
+#    #bug
+#    #And I click on Save button in Edit User Profile
+#      Then I verify BlackBook "Save User Profile all@example.com message" page with Applitools
+#    #bug
+#    #And I click Edit Button in Edit User Profile
+#    And I click Reset Button in Edit User Profile
+#      Then I verify BlackBook "Reset User Profile" page with Applitools
+#    And I click Cancel Button in Edit User Profile
+#      Then I verify BlackBook "User List" page with Applitools
+#    And I click on Gear Icon 2 "USER all@example.com in User List"
+#    And I click Deactivate in submenu from Gear Icon
+#      Then I verify BlackBook "Should Not see USER all@example.com (Deactivate) in User List" page with Applitools
+#    And I click Filter By User List Status dropdown "All" in User List
+#    #And I click All in submenu from Status FilterValue
+#     Then I verify BlackBook "All active and Inactive Users in User List" page with Applitools
+#    And I click Filter By User List Status dropdown "Inactive" in User List
+#      Then I verify BlackBook "Inactive USER all@example.com in User List" page with Applitools
+#    And I click on Gear Icon 1 "USER all@example.com in User List"
+#    And I click Activate in submenu from Gear Icon
+#      Then I verify BlackBook "Should Not see USER all@example.com (Activate) in User List" page with Applitools
+#    And I click Filter By User List Status dropdown "Active" in User List
+#    #And I click Active in submenu from Status FilterValue
+#      Then I verify BlackBook "User List" page with Applitools
+#    And I click on New User Button in User List
+#      Then I verify BlackBook "Add New User" page with Applitools
+#    And I click Cancel Button in Edit User Profile
+#      Then I verify BlackBook "User List" page with Applitools
+#    #SETTINGS
+#    And I click on Admin Tab
+#    And I click on Settings submenu from Admin Tab
+#     Then I verify BlackBook "Settings" page with Applitools
+#    #SEGMENTS need more
+#    #AVATAR
+#    And I click Avatar Image Button
+#      Then I verify BlackBook "Avatar button-Submenu" page with Applitools
+#    And I click My Profile sub menu from Avatar
+#      Then I verify BlackBook "View My Profile" page with Applitools
+#    And I click Edit Button in Edit User Profile
+#      Then I verify BlackBook "Edit My Profile" page with Applitools
+#    #bug
+#    #And I click on Save button in Edit User Profile
+#      Then I verify BlackBook "Save User Profile user1@example.com message" page with Applitools
+#    #bug
+#    #And I click Edit Button in Edit User Profile
+#    And I click Reset Button in Edit User Profile
+#      Then I verify BlackBook "Reset My Profile" page with Applitools
+#    And I click Cancel Button in Edit User Profile
+#      Then I verify BlackBook "Edit My Profile" page with Applitools
+#    And I click Avatar Image Button
+#    And I click Logout sub menu from Avatar
+#    And I wait
+#      Then I verify BlackBook "Login" page with Applitools
+#    And I wait
+#
+#    Examples:
+#           | currentEmailAddress             |   currentPassword  |
+##With Role attached
+#           | user1@example.com               |   Password1        |
+#
+#
 #######################################################################################################################
 ##                                            Basic My Profile edit Permissions                                        #
 #######################################################################################################################
@@ -288,79 +288,79 @@ Feature:  "Verify each Role UI"
 ########################################################################################################################
 ##                                          Editor-Full-Roles                                                          #
 ########################################################################################################################
-#
-#  @TC_CheckRoles_UI_D
-#  Scenario Outline: "@TC_CheckRoles_UI_D" Verify "Editor-Full-Roles" Role UI.(After Setup)
-#    And I enter my user email address <currentEmailAddress> in Login
-#    And I enter my Password <currentPassword> in Login
-#    And I click Login Button
-#      Then I verify BlackBook "Home" page with Applitools
-#    #ROLES
-#    And I click on Admin Tab
-#      Then I verify BlackBook "Admin Tab-Submenu (Editor-Full-Roles Account)" page with Applitools
-#    And I click on Roles submenu from Admin Tab
-#      Then I verify BlackBook "Role List" page with Applitools
-#    And I click on Gear Icon 1 "Administrator in Role List"
-#      Then I verify BlackBook "Gear Icon-Submenus in Role List" page with Applitools
-#    And I click 1 View from Gear Icon in Role List
-#      Then I verify BlackBook "View Administration Role" page with Applitools
-#    And I click Edit Button in Edit Roles
-#      Then I verify BlackBook "Edit Administration Role" page with Applitools
-#    And I click on Save button in Role Editor
-#      Then I verify BlackBook "Save Administration Role message" page with Applitools
-#    And I click Edit Button in Edit Roles
-#    And I click Reset Button in Edit Roles
-#      Then I verify BlackBook "Reset Administration Role" page with Applitools
-#    And I click Cancel Button from Edit Roles
-#      Then I verify BlackBook "Role List" page with Applitools
-#    And I click on Gear Icon 1 "Administrator in Role List"
-#    And I click Edit from Gear Icon "in Role List"
-#      Then I verify BlackBook "Edit Administration Role" page with Applitools
-#    And I click Cancel Button from Edit Roles
-#      Then I verify BlackBook "Role List" page with Applitools
-#    And I click on New Role Button in Role List
-#      Then I verify BlackBook "Add New Role" page with Applitools
-#    And I click Reset Button in Edit Roles
-#      Then I verify BlackBook "Reset Administration Role" page with Applitools
-#    And I click Cancel Button from Edit Roles
-#      Then I verify BlackBook "Role List" page with Applitools
-#    #USER need more
-#    And I click on Admin Tab
-#    And I click on Users submenu from Admin Tab
-#      Then I verify BlackBook "User List" page with Applitools
-#    And I click on Gear Icon 4 "USER Editor@example.com in User List"
-#      Then I verify BlackBook "Gear Icon-Submenus in User List" page with Applitools
-#    And I click 4 View from Gear Icon in User List
-#      Then I verify BlackBook "View User Profile Editor@example.com with ROLE" page with Applitools
-#    #SEGMENTS need more
-#    #AVATAR
-#    And I click Avatar Image Button
-#      Then I verify BlackBook "Avatar button-Submenu" page with Applitools
-#    And I click My Profile sub menu from Avatar
-#      Then I verify BlackBook "View My Profile" page with Applitools
-#    #BUG it is not enable EDIT Button
-#    And I click Edit Button in Edit User Profile
-#      Then I verify BlackBook "Edit My Profile" page with Applitools
-#    #bug
-#    #And I click on Save button in Edit User Profile
-#      Then I verify BlackBook "Save User Profile editor@example.com message" page with Applitools
-#    #bug
-#    # And I click Edit Button in Edit User Profile
-#    And I click Reset Button in Edit User Profile
-#      Then I verify BlackBook "Reset My Profile" page with Applitools
-#    And I click Cancel Button in Edit User Profile
-#      Then I verify BlackBook "Edit My Profile" page with Applitools
-#    And I click Avatar Image Button
-#    And I click Logout sub menu from Avatar
-#    And I wait
-#      Then I verify BlackBook "Login" page with Applitools
-#    And I wait
-#
-#    Examples:
-#           | currentEmailAddress             |   currentPassword  |
-##With Role attached
-#           | editor@example.com               |   Password1        |
-#
+
+  @TC_CheckRoles_UI_D
+  Scenario Outline: "@TC_CheckRoles_UI_D" Verify "Editor-Full-Roles" Role UI.(After Setup)
+    And I enter my user email address <currentEmailAddress> in Login
+    And I enter my Password <currentPassword> in Login
+    And I click Login Button
+      Then I verify BlackBook "Home" page with Applitools
+    #ROLES
+    And I click on Admin Tab
+      Then I verify BlackBook "Admin Tab-Submenu (Editor-Full-Roles Account)" page with Applitools
+    And I click on Roles submenu from Admin Tab
+      Then I verify BlackBook "Role List" page with Applitools
+    And I click on Gear Icon 1 "Administrator in Role List"
+      Then I verify BlackBook "Gear Icon-Submenus in Role List" page with Applitools
+    And I click 1 View from Gear Icon in Role List
+      Then I verify BlackBook "View Administration Role" page with Applitools
+    And I click Edit Button in Edit Roles
+      Then I verify BlackBook "Edit Administration Role" page with Applitools
+    And I click on Save button in Role Editor
+      Then I verify BlackBook "Save Administration Role message" page with Applitools
+    And I click Edit Button in Edit Roles
+    And I click Reset Button in Edit Roles
+      Then I verify BlackBook "Reset Administration Role" page with Applitools
+    And I click Cancel Button from Edit Roles
+      Then I verify BlackBook "Role List" page with Applitools
+    And I click on Gear Icon 1 "Administrator in Role List"
+    And I click Edit from Gear Icon "in Role List"
+      Then I verify BlackBook "Edit Administration Role" page with Applitools
+    And I click Cancel Button from Edit Roles
+      Then I verify BlackBook "Role List" page with Applitools
+    And I click on New Role Button in Role List
+      Then I verify BlackBook "Add New Role" page with Applitools
+    And I click Reset Button in Edit Roles
+      Then I verify BlackBook "Reset Administration Role" page with Applitools
+    And I click Cancel Button from Edit Roles
+      Then I verify BlackBook "Role List" page with Applitools
+    #USER need more
+    And I click on Admin Tab
+    And I click on Users submenu from Admin Tab
+      Then I verify BlackBook "User List" page with Applitools
+    And I click on Gear Icon 4 "USER Editor@example.com in User List"
+      Then I verify BlackBook "Gear Icon-Submenus in User List" page with Applitools
+    And I click 4 View from Gear Icon in User List
+      Then I verify BlackBook "View User Profile Editor@example.com with ROLE" page with Applitools
+    #SEGMENTS need more
+    #AVATAR
+    And I click Avatar Image Button
+      Then I verify BlackBook "Avatar button-Submenu" page with Applitools
+    And I click My Profile sub menu from Avatar
+      Then I verify BlackBook "View My Profile" page with Applitools
+    #BUG it is not enable EDIT Button
+    And I click Edit Button in Edit User Profile
+      Then I verify BlackBook "Edit My Profile" page with Applitools
+    #bug
+    #And I click on Save button in Edit User Profile
+      Then I verify BlackBook "Save User Profile editor@example.com message" page with Applitools
+    #bug
+    # And I click Edit Button in Edit User Profile
+    And I click Reset Button in Edit User Profile
+      Then I verify BlackBook "Reset My Profile" page with Applitools
+    And I click Cancel Button in Edit User Profile
+      Then I verify BlackBook "Edit My Profile" page with Applitools
+    And I click Avatar Image Button
+    And I click Logout sub menu from Avatar
+    And I wait
+      Then I verify BlackBook "Login" page with Applitools
+    And I wait
+
+    Examples:
+           | currentEmailAddress             |   currentPassword  |
+#With Role attached
+           | editor@example.com               |   Password1        |
+
 ########################################################################################################################
 ##                                          Setting-Only                                                               #
 ########################################################################################################################

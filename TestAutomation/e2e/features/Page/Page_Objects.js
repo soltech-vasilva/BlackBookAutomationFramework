@@ -108,7 +108,7 @@ var Page_Objects = function Page_Objects () {
         // page.clearFocus(), 
         return page.executeSequence([
             page.waitForElementTobePresent(element, WaitTime),
-             browser.actions().click(element).perform()
+             browser.actions().mouseMove(element).click().perform()
             //element.click()
         ]).then(()=>{});
     };
@@ -117,7 +117,7 @@ var Page_Objects = function Page_Objects () {
         return page.executeSequence([
             //browser.sleep(1000),
             //console.log('1'),
-            page.clickElement(element, WaitTime),
+            page.clickElement(element, WaitTime).then(()=>{}),
             //console.log('2'),
             browser.getProcessedConfig().then((config) => {
                 //added click element since Firefox and safari does not like clearfocus in clickButton

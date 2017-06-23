@@ -113,9 +113,9 @@ var BB_UserList = function BB_UserList() {
     BB_UserList.prototype.Click_GearIcon = function (numberElementToSelect) {
         this.index = parseInt(numberElementToSelect) - 1;
 
-        return new Promise((success, failure)=> {
-            page.clickButton(BB_userListRepo.Select_Element_EditGeardIcon.get(this.index), protractorConfig.config.WaitTime, success);
+        return page.clickElement(BB_userListRepo.Select_Element_EditGeardIcon.get(this.index), protractorConfig.config.WaitTime).then(() => {
         });
+
     };
 
     BB_UserList.prototype.Click_Gear_Edit_Submenu = function () {

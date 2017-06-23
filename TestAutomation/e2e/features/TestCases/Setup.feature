@@ -50,7 +50,8 @@ Feature:  "SetUp"
     And I click Edit Button in Edit Roles
     And I click on Delete button in Role Editor
     And I click "Confirm" Button for modal warning message from Edit Roles
-     # Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
+      #Then I should see "The Role has been successfully deleted" displayed on "EditRoles" popup
+    And I click X on Message Popup in "Role Editor"
     ########################################
     #Editing Role - Administrator
     And I click on Admin Tab
